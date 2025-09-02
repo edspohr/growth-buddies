@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth Buddies | Tecnología. Estrategia. ROI.</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilos base y variables de color */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000; /* Fondo negro puro para mayor impacto */
+            color: #f8fafc; /* Color de texto principal (blanco casi puro) */
+        }
+
+        :root {
+            --color-accent: #00f6ff; /* Turquesa más vibrante */
+            --color-dark: #0a0a0a;
+        }
+
+        /* Estilo para el fondo de video */
+        .video-background-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        #video-background {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            opacity: 0.3; /* Menos opacidad para que el texto resalte más */
+        }
+        
+        /* Overlay oscuro sobre el video */
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.9) 70%, rgba(0,0,0,1) 100%);
+            z-index: -1;
+        }
+
+        /* Animación de gradiente para el texto del H1 */
+        .animated-gradient-text {
+            background-image: linear-gradient(90deg, #e2e8f0, #f8fafc, #e2e8f0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 100%;
+            animation: gradient-animation 4s ease infinite;
+        }
+
+        @keyframes gradient-animation {
+            0% { background-position: 200% center; }
+            50% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        /* Animaciones de entrada */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Estilo para los botones de alto impacto */
+        .impact-button {
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            transform-origin: center;
+        }
+        .impact-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(0, 246, 255, 0.5);
+        }
+
+        /* Animación de pulso para el botón de WhatsApp */
+        .pulse-whatsapp {
+            animation: pulse-animation 2s infinite;
+        }
+
+        @keyframes pulse-animation {
+            0% { box-shadow: 0 0 0 0 rgba(0, 246, 255, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(0, 246, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 246, 255, 0); }
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden antialiased">
+
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <a href="https://wa.me/56965863160" target="_blank" class="pulse-whatsapp fixed bottom-6 right-6 z-50 h-16 w-16 bg-[var(--color-accent)] rounded-full flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg>
+    </a>
+
+    <!-- HERO SECTION -->
+    <header class="relative min-h-screen flex flex-col items-center justify-center text-center p-6 overflow-hidden">
+        <div class="video-background-container">
+            <video autoplay loop muted playsinline id="video-background" poster="https://placehold.co/1920x1080/000000/00f6ff?text=GB">
+                <!-- Video de fondo. Reemplaza este enlace si lo deseas -->
+                <source src="https://videos.pexels.com/video-files/3209828/3209828-hd_1920_1080_25fps.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+
+        <div class="z-10 reveal">
+            <!-- Logo Oficial -->
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsAQAAAAAASyotAAAAAnRSTlMAAQGU/a4AAAAJcEhZcwAACxMAAAsTAQCanBgAAAGWSURBVHic7c3BDYAwEMDA8I9eAqjghg58AAT4F4zV2Vt3LwH2SoYFizYs2rBoI8vBglVsYBNHsISFLdiwacOiDYs2suxs2MIiFrewgUUsYcGCBRs2bViwYcGSFSwiYQtbsImFLdiwacOiDYs2LGo5g1UsYcGCBRs2bViwYcGSFSxhwYIFGzZtWLRh0YbVHcEKNrCIRSxswYYNGzZtWLRh0YbVHcGiljBhwYIFGzZtWLRh0YYla1i0YdGGwYIFGzZtWLRh0Yala1i0YdGGwYIFGzZtWLRh0Yala1i0YdGGwYIFGzZtWLRh0Yala1i0YdGGwYIFGzZtWLRh0Yala1i0YdGGwYIFGzZtWLRh0Yala1i0YdGGwYIFGzZtWLRh0Yala1i0YdGGwYIFGzZtWLRh0Yala1i0YdGGwYIFGzZtWLRh0Yala1i0YdGGwYIFGzZtWLRh0Yala1i0YdGGwYIFGzZtWLRh0Yala1i0YdGGwYIFGzZtWLRh0Yala1i0YdGGwYIFGzZtWLRh0Yala1i0YdGGwYIFGzZtWLRh0Yala1i0YdGGwYIFGzZtWLRh0YbNX3LAggULf5I5LFSyAAsWbFi0YdGGRRsWbY5gCxZtWLRhsGDBgg0bNm34vxwsWLBgiwo2sYhFLGzBgg0bNm3YsGHBgiUrWLRh0YbBggULNmzatGHBggVL1rBoI8vBggULNmzatGHBggVL1rBoI8vBggULNmzatGHBggVL1rBoI8vBggULNmzatGHBggVL1rBIAxYsWLBggQY2sYhFLGzBgg0bNm3YsGHBgg0bNm1YtGHqOQcQ/iLg/wAAAABJRU5ErkJggg==" alt="Logo Growth Buddies" class="mx-auto mb-10 h-28 w-28 drop-shadow-[0_0_15px_rgba(0,246,255,0.4)]">
+            
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter animated-gradient-text">
+                Tecnología que genera ROI.
+            </h1>
+            <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-slate-300">
+                Soluciones de IA y Automatización para firmas que exigen resultados.
+            </p>
+            <div class="mt-12">
+                <a href="#contacto" class="impact-button inline-block bg-[var(--color-accent)] text-black font-bold py-4 px-10 rounded-full text-lg">
+                    Agendar Sesión Estratégica
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECCIÓN DE SERVICIOS -->
+    <section class="py-24 md:py-32 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center reveal mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-slate-100">Soluciones de Alto Impacto.</h2>
+            </div>
+
+            <div class="space-y-10">
+                <!-- Solución 1 -->
+                <div class="reveal flex items-center gap-6 md:gap-8 p-6 bg-zinc-900/50 rounded-2xl border border-zinc-800">
+                    <div class="flex-shrink-0 text-[var(--color-accent)]"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 12a9.5 9.5 0 1 1-9.5-9.5 9.5 9.5 0 0 1 9.5 9.5Z"/><path d="M12 8v8"/></svg></div>
+                    <div>
+                        <h3 class="text-2xl font-bold">Automatización Inteligente</h3>
+                        <p class="text-slate-400 mt-1">Eliminamos tareas repetitivas. Maximizamos horas facturables.</p>
+                    </div>
+                </div>
+                 <!-- Solución 2 -->
+                <div class="reveal flex items-center gap-6 md:gap-8 p-6 bg-zinc-900/50 rounded-2xl border border-zinc-800" style="transition-delay: 150ms;">
+                    <div class="flex-shrink-0 text-[var(--color-accent)]"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 12.5c2.5 2.5 2.5 6.5 0 9s-6.5 2.5-9 0"/><path d="M9.5 2.5c-2.5 2.5-2.5 6.5 0 9s6.5 2.5 9 0"/></svg></div>
+                    <div>
+                        <h3 class="text-2xl font-bold">IA a Medida</h3>
+                        <p class="text-slate-400 mt-1">Implementamos la ventaja competitiva que su firma necesita.</p>
+                    </div>
+                </div>
+                 <!-- Solución 3 -->
+                <div class="reveal flex items-center gap-6 md:gap-8 p-6 bg-zinc-900/50 rounded-2xl border border-zinc-800" style="transition-delay: 300ms;">
+                    <div class="flex-shrink-0 text-[var(--color-accent)]"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m22 13-1-1-1 1"/><path d="m16 3 1 1 1-1"/></svg></div>
+                    <div>
+                        <h3 class="text-2xl font-bold">Adopción Estratégica</h3>
+                        <p class="text-slate-400 mt-1">Convertimos herramientas en cultura. Aseguramos el éxito.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CEO -->
+    <section class="py-24 md:py-32 px-6 bg-[var(--color-dark)]">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16 reveal">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsAQAAAAAASyotAAAAAnRSTlMAAQGU/a4AAAAJcEhZcwAACxMAAAsTAQCanBgAAAGWSURBVHic7c3BDYAwEMDA8I9eAqjghg58AAT4F4zV2Vt3LwH2SoYFizYs2rBoI8vBglVsYBNHsISFLdiwacOiDYs2suxs2MIiFrewgUUsYcGCBRs2bViwYcGSFSwiYQtbsImFLdiwacOiDYs2LGo5g1UsYcGCBRs2bViwYcGSFSxhwYIFGzZtWLRh0YbVHcEKNrCIRSxswYYNGzZtWLRh0YbVHcGiljBhwYIFGzZtWLRh0YYla1i0YdGGwYIFGzZtWLRh0Yala1i0YdGGwYIFGzZtWLRh0Yala1i0YdGGwYIFGzZtWLRh0Yala1i0YdGGwYIFGzZtWLRh0Yala1i0YdGGwYIFGzZtWLRh0Yala1i0YdGGwYIFGzZtWLRh0Yala1i0YdGGwYIFGzZtWLRh0Yala1i0YdGGwYIFGzZtWLRh0Yala1i0YdGGwYIFGzZtWLRh0Yala1i0YdGGwYIFGzZtWLRh0Yala1i0YdGGwYIFGzZtWLRh0Yala1i0YdGGwYIFGzZtWLRh0Yala1i0YdGGwYIFGzZtWLRh0Yala1i0YdGGwYIFGzZtWLRh0YbNX3LAggULf5I5LFSyAAsWbFi0YdGGRRsWbY5gCxZtWLRhsGDBgg0bNm34vxwsWLBgiwo2sYhFLGzBgg0bNm3YsGHBgiUrWLRh0YbBggULNmzatGHBggVL1rBoI8vBggULNmzatGHBggVL1rBoI8vBggULNmzatGHBggVL1rBoI8vBggULNmzatGHBggVL1rBIAxYsWLBggQY2sYhFLGzBgg0bNm3YsGHBgg0bNm1YtGHqOQcQ/iLg/wAAAABJRU5ErkJggg==" alt="Avatar Growth Buddies" class="h-40 w-40 flex-shrink-0 drop-shadow-[0_0_20px_rgba(0,246,255,0.3)]">
+            <div class="text-center md:text-left">
+                <p class="text-2xl md:text-3xl font-medium text-slate-100 leading-tight">
+                    "Somos el puente entre la tecnología y su rentabilidad."
+                </p>
+                <p class="mt-6 font-bold text-slate-300">Edmundo Spohr, CEO & Fundador</p>
+                <a href="https://www.linkedin.com/in/edmundo-spohr" target="_blank" class="mt-8 impact-button inline-block border-2 border-[var(--color-accent)] text-[var(--color-accent)] font-bold py-3 px-8 rounded-full text-lg hover:bg-[var(--color-accent)] hover:text-black">
+                    Conectar en LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section id="contacto" class="py-24 md:py-40 px-6 text-center">
+        <div class="max-w-3xl mx-auto reveal">
+            <h2 class="text-4xl md:text-6xl font-black tracking-tighter animated-gradient-text">
+                Transformemos su organización.
+            </h2>
+            <p class="mt-6 max-w-xl mx-auto text-lg text-slate-300">
+                Agende una sesión y descubra el ROI oculto en sus procesos.
+            </p>
+            <div class="mt-12">
+                <a href="#" class="impact-button inline-block bg-[var(--color-accent)] text-black font-bold py-5 px-12 rounded-full text-xl">
+                    Agendar Sesión Estratégica
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-10 px-6 border-t border-zinc-900 text-center text-zinc-500">
+        <p>&copy; 2025 Growth Buddies. Tecnología con Visión de Negocio.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Script para animaciones al hacer scroll
+            const revealElements = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            revealElements.forEach(elem => observer.observe(elem));
+        });
+    </script>
+
+</body>
+</html>
+
