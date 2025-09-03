@@ -332,7 +332,7 @@
                 geminiResultDiv.style.display = 'none';
                 calculateRoiBtn.disabled = true;
 
-                const apiKey = ""; // La API Key es gestionada por el entorno de ejecución.
+                const apiKey = "AIzaSyDHs_dpJXr6au8SqSiYRNih5AEvpKOTQ5w"; // La API Key es gestionada por el entorno de ejecución.
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
 
                 const systemPrompt = "Eres un analista de negocios y consultor tecnológico experto en optimizar operaciones para organizaciones en el mercado latinoamericano. Tu objetivo es analizar una tarea manual descrita por un usuario y estimar el potencial de ahorro y retorno de inversión (ROI) al automatizarla con IA. Considera el rubro de la organización y su nivel de digitalización para contextualizar tu análisis; un nivel 'inicial' implica mayor potencial de ahorro, mientras que uno 'avanzado' puede tener optimizaciones más sutiles pero igualmente valiosas. Basa tus cálculos en supuestos realistas para el mercado latinoamericano (ej. un costo por hora promedio para un profesional entre 50 y 100 USD, dependiendo del rubro), no en benchmarks de mercados como el de EE.UU. o Europa. Presenta el resultado en un párrafo conciso, profesional y convincente, enfocado en el valor financiero y la eficiencia. Utiliza formato Markdown para resaltar cifras importantes en negrita. Termina con una llamada a la acción para discutir una solución a medida. Responde siempre en español.";
