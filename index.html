@@ -105,6 +105,30 @@
             70% { box-shadow: 0 0 0 20px rgba(0, 246, 255, 0); }
             100% { box-shadow: 0 0 0 0 rgba(0, 246, 255, 0); }
         }
+
+                /* Estilos para los campos del formulario de Gemini */
+        .gemini-input-label {
+            display: block;
+            text-align: left;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            color: #94a3b8; /* slate-400 */
+        }
+        .gemini-input, .gemini-select {
+             width: 100%;
+             background-color: #1e293b; /* slate-800 */
+             border: 1px solid #334155; /* slate-700 */
+             border-radius: 0.5rem;
+             padding: 0.75rem 1rem;
+             color: #f1f5f9; /* slate-100 */
+             transition: all 0.2s ease-in-out;
+        }
+        .gemini-input:focus, .gemini-select:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 2px rgba(0, 246, 255, 0.5);
+        }
+        
     </style>
 </head>
 <body class="overflow-x-hidden antialiased">
@@ -186,6 +210,51 @@
         </div>
     </section>
 
+    <!-- SECCIÓN GEMINI API - ROI CALCULATOR -->
+    <section class="py-24 md:py-32 px-6 bg-[var(--color-dark)]">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="reveal mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-slate-100">Descubra su Potencial de ROI.</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-400">
+                    Describa una tarea manual en su organización y nuestra IA estimará el ahorro potencial con una solución a medida.
+                </p>
+            </div>
+            <div class="reveal bg-zinc-900/50 rounded-2xl border border-zinc-800 p-8 space-y-6">
+                <div>
+                    <label for="task-input" class="gemini-input-label">Tarea Repetitiva a Analizar</label>
+                    <textarea id="task-input" class="gemini-input" rows="4" placeholder="Ej: 'Generar reportes de ventas semanales a partir de 3 planillas diferentes'..."></textarea>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="industry-input" class="gemini-input-label">Rubro de su Organización</label>
+                        <input type="text" id="industry-input" class="gemini-input" placeholder="Ej: Retail, Minería, Educación">
+                    </div>
+                    <div>
+                        <label for="digitalization-level" class="gemini-input-label">Nivel de Digitalización Actual</label>
+                        <select id="digitalization-level" class="gemini-select">
+                            <option value="" disabled selected>Seleccione un nivel</option>
+                            <option value="inicial">Inicial</option>
+                            <option value="intermedio">Intermedio</option>
+                            <option value="avanzado">Avanzado</option>
+                        </select>
+                    </div>
+                </div>
+                <button id="calculate-roi-btn" class="impact-button w-full md:w-auto inline-block bg-[var(--color-accent)] text-black font-bold py-4 px-10 rounded-full text-lg">
+                    ✨ Estimar Ahorro Anual
+                </button>
+                <div id="gemini-result" class="text-left text-slate-300 bg-zinc-900 rounded-lg p-6 border border-zinc-800" style="display: none; white-space: pre-wrap;">
+                    <!-- El resultado de Gemini aparecerá aquí -->
+                </div>
+                <div id="gemini-loader" class="mt-8" style="display: none;">
+                    <div class="flex justify-center items-center">
+                        <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-[var(--color-accent)]"></div>
+                        <p class="ml-4 text-slate-400">Analizando potencial...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- SECCIÓN CEO -->
     <section class="py-24 md:py-32 px-6 bg-[var(--color-dark)]">
         <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16 reveal">
@@ -239,6 +308,79 @@
             });
             revealElements.forEach(elem => observer.observe(elem));
         });
+
+            // Gemini API Functionality
+            const calculateRoiBtn = document.getElementById('calculate-roi-btn');
+            const taskInput = document.getElementById('task-input');
+            const industryInput = document.getElementById('industry-input');
+            const digitalizationLevel = document.getElementById('digitalization-level');
+            const geminiResultDiv = document.getElementById('gemini-result');
+            const geminiLoader = document.getElementById('gemini-loader');
+
+            calculateRoiBtn.addEventListener('click', async () => {
+                const userInput = taskInput.value.trim();
+                const industry = industryInput.value.trim();
+                const digitalization = digitalizationLevel.value;
+
+                if (!userInput || !industry || !digitalization) {
+                    geminiResultDiv.style.display = 'block';
+                    geminiResultDiv.innerHTML = '<p class="text-amber-400">Por favor, complete todos los campos para realizar el análisis.</p>';
+                    return;
+                }
+
+                geminiLoader.style.display = 'block';
+                geminiResultDiv.style.display = 'none';
+                calculateRoiBtn.disabled = true;
+
+                const apiKey = ""; // La API Key es gestionada por el entorno de ejecución.
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+                const systemPrompt = "Eres un analista de negocios y consultor tecnológico experto en optimizar operaciones para organizaciones en el mercado latinoamericano. Tu objetivo es analizar una tarea manual descrita por un usuario y estimar el potencial de ahorro y retorno de inversión (ROI) al automatizarla con IA. Considera el rubro de la organización y su nivel de digitalización para contextualizar tu análisis; un nivel 'inicial' implica mayor potencial de ahorro, mientras que uno 'avanzado' puede tener optimizaciones más sutiles pero igualmente valiosas. Basa tus cálculos en supuestos realistas para el mercado latinoamericano (ej. un costo por hora promedio para un profesional entre 50 y 100 USD, dependiendo del rubro), no en benchmarks de mercados como el de EE.UU. o Europa. Presenta el resultado en un párrafo conciso, profesional y convincente, enfocado en el valor financiero y la eficiencia. Utiliza formato Markdown para resaltar cifras importantes en negrita. Termina con una llamada a la acción para discutir una solución a medida. Responde siempre en español.";
+                
+                const userQuery = `Analiza la siguiente tarea manual y estima el ahorro anual que se podría conseguir al automatizarla. Contexto de la organización: Rubro: "${industry}", Nivel de digitalización: "${digitalization}". Tarea a analizar: "${userInput}"`;
+
+                const payload = {
+                    contents: [{
+                        parts: [{ text: userQuery }]
+                    }],
+                    systemInstruction: {
+                        parts: [{ text: systemPrompt }]
+                    },
+                };
+
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`Error en la API: ${response.statusText}`);
+                    }
+
+                    const result = await response.json();
+                    const candidate = result.candidates?.[0];
+                    
+                    if (candidate && candidate.content?.parts?.[0]?.text) {
+                        const formattedText = candidate.content.parts[0].text
+                            .replace(/\*\*(.*?)\*\*/g, '<strong class="text-[var(--color-accent)]">$1</strong>')
+                            .replace(/\n/g, '<br>');
+                        geminiResultDiv.innerHTML = `<p>${formattedText}</p>`;
+                    } else {
+                        throw new Error("No se recibió una respuesta válida del modelo.");
+                    }
+
+                } catch (error) {
+                    console.error("Error al llamar a la API de Gemini:", error);
+                    geminiResultDiv.innerHTML = '<p class="text-red-400">Lo sentimos, ocurrió un error al procesar su solicitud. Por favor, intente de nuevo más tarde.</p>';
+                } finally {
+                    geminiLoader.style.display = 'none';
+                    geminiResultDiv.style.display = 'block';
+                    calculateRoiBtn.disabled = false;
+                }
+            });
+        
     </script>
 
 </body>
