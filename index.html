@@ -3,31 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Growth Buddies | Tecnología. Estrategia. ROI.</title>
-    <link rel="icon" type="image/png" href="img/avatar.png">
-    
-    <!-- Tailwind CSS -->
+    <title>Vectorial Home - Construimos tu sueño en la costa</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Librería para animaciones en scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
-        /* Estilos base y variables de color */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #000000; /* Fondo negro puro para mayor impacto */
-            color: #f8fafc; /* Color de texto principal (blanco casi puro) */
+            background-color: #FDFDFB; /* Un blanco roto muy sutil */
         }
-
-        :root {
-            --color-accent: #00f6ff; /* Turquesa más vibrante */
-            --color-dark: #0a0a0a;
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
-
-        /* Estilo para el fondo de video */
+        /* Estilos para el video de fondo */
         .video-background-container {
             position: absolute;
             top: 0;
@@ -35,354 +28,283 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
-            z-index: -1;
         }
-
         #video-background {
-            width: 100%;
-            height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translateX(-50%) translateY(-50%);
             object-fit: cover;
-            object-position: center center;
-            opacity: 0.3; /* Menos opacidad para que el texto resalte más */
         }
-        
-        /* Overlay oscuro sobre el video */
         .video-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.9) 70%, rgba(0,0,0,1) 100%);
-            z-index: -1;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        /* Botón flotante de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 6px rgba(0,0,0,0.25);
+            z-index: 100;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        .whatsapp-float svg {
+            margin-top: 15px;
         }
 
-        /* Animación de gradiente para el texto del H1 */
-        .animated-gradient-text {
-            background-image: linear-gradient(90deg, #e2e8f0, #f8fafc, #e2e8f0);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 200% 100%;
-            animation: gradient-animation 4s ease infinite;
+        /* Ocultar animaciones en dispositivos que prefieren movimiento reducido */
+        @media (prefers-reduced-motion: reduce) {
+            [data-aos] {
+                transform: none !important;
+                opacity: 1 !important;
+            }
         }
-
-        @keyframes gradient-animation {
-            0% { background-position: 200% center; }
-            50% { background-position: 0% center; }
-            100% { background-position: 200% center; }
-        }
-
-        /* Animaciones de entrada */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), transform 1s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Estilo para los botones de alto impacto */
-        .impact-button {
-            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-            transform-origin: center;
-        }
-        .impact-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(0, 246, 255, 0.5);
-        }
-
-        /* Animación de pulso para el botón de WhatsApp */
-        .pulse-whatsapp {
-            animation: pulse-animation 2s infinite;
-        }
-
-        @keyframes pulse-animation {
-            0% { box-shadow: 0 0 0 0 rgba(0, 246, 255, 0.7); }
-            70% { box-shadow: 0 0 0 20px rgba(0, 246, 255, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 246, 255, 0); }
-        }
-
-                /* Estilos para los campos del formulario de Gemini */
-        .gemini-input-label {
-            display: block;
-            text-align: left;
-            margin-bottom: 0.5rem;
-            font-size: 0.875rem;
-            color: #94a3b8; /* slate-400 */
-        }
-        .gemini-input, .gemini-select {
-             width: 100%;
-             background-color: #1e293b; /* slate-800 */
-             border: 1px solid #334155; /* slate-700 */
-             border-radius: 0.5rem;
-             padding: 0.75rem 1rem;
-             color: #f1f5f9; /* slate-100 */
-             transition: all 0.2s ease-in-out;
-        }
-        .gemini-input:focus, .gemini-select:focus {
-            outline: none;
-            border-color: var(--color-accent);
-            box-shadow: 0 0 0 2px rgba(0, 246, 255, 0.5);
-        }
-        
     </style>
 </head>
-<body class="overflow-x-hidden antialiased">
-
-    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
-    <a href="https://wa.me/56965863160" target="_blank" class="pulse-whatsapp fixed bottom-6 right-6 z-50 h-16 w-16 bg-[var(--color-accent)] rounded-full flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform duration-300">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg>
-    </a>
+<body class="text-gray-800 antialiased">
 
     <!-- HERO SECTION -->
-    <header class="relative min-h-screen flex flex-col items-center justify-center text-center p-6 overflow-hidden">
+    <header class="relative h-screen flex flex-col items-center justify-center text-white overflow-hidden">
         <div class="video-background-container">
-            <video autoplay loop muted playsinline id="video-background" poster="https://placehold.co/1920x1080/000000/00f6ff?text=GB">
-                <!-- Video de fondo. Reemplaza este enlace si lo deseas -->
+            <video autoplay loop muted playsinline id="video-background" poster="https://images.unsplash.com/photo-1509305717900-84f40e786d82?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1920&fit=max">
                 <source src="vid/hero.mp4" type="video/mp4">
+                Tu navegador no soporta videos HTML5.
             </video>
             <div class="video-overlay"></div>
         </div>
 
-        <div class="z-10 reveal">
-            <!-- Logo Oficial -->
-            <img src="img/logo.png" alt="Logo Growth Buddies" class="mx-auto mb-10 h-80 w-80 drop-shadow-[0_0_15px_rgba(0,246,255,0.4)]">
+        <div class="relative z-10 flex flex-col items-center justify-center h-full w-full p-4 text-center">
+            <!-- Logo de la empresa -->
+            <img src="img/logo.png" alt="Logo Vectorial Home" class="w-120 h-auto mb-6" data-aos="fade-down" data-aos-delay="100">
             
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter animated-gradient-text">
-                Tecnología que<br>genera Rentabilidad.
-            </h1>
-            <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-slate-300">
-                Soluciones de IA y Automatización para quienes exigen resultados.
-            </p>
-            <div class="mt-12">
-                <a href="https://calendly.com/espohr/conversemos" target="_blank" class="impact-button inline-block bg-[var(--color-accent)] text-black font-bold py-4 px-10 rounded-full text-lg">
-                    Agendar Sesión Estratégica
-                </a>
-            </div>
+            <h1 data-aos="fade-down" data-aos-delay="300" class="text-4xl md:text-6xl font-bold leading-tight mb-4 text-shadow">Del diseño a la recepción final, sin dramas.</h1>
+            <p data-aos="fade-down" data-aos-delay="500" class="text-lg md:text-2xl font-light max-w-3xl text-shadow">Construimos el refugio de tus sueños en la costa.<br>Un espacio para disfrutar, un legado para tu familia.</p>
+        </div>
+        
+        <!-- Flecha para indicar scroll -->
+        <div class="absolute bottom-10 z-10">
+             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 animate-bounce text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
         </div>
     </header>
 
-    <!-- SECCIÓN DE SERVICIOS -->
-    <section class="py-24 md:py-32 px-6">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center reveal mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-slate-100">Soluciones de alto impacto.</h2>
-            </div>
-
-            <div class="space-y-10">
-                <!-- Solución 1 -->
-                <div class="reveal flex items-center gap-6 md:gap-8 p-6 bg-zinc-900/50 rounded-2xl border border-zinc-800">
-                    <div class="flex-shrink-0 text-[var(--color-accent)]">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-repeat"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold">Automatización Inteligente</h3>
-                        <p class="text-slate-400 mt-1">Eliminamos tareas repetitivas. Maximizamos horas facturables.</p>
-                    </div>
-                </div>
-                 <!-- Solución 2 -->
-                <div class="reveal flex items-center gap-6 md:gap-8 p-6 bg-zinc-900/50 rounded-2xl border border-zinc-800" style="transition-delay: 150ms;">
-                    <div class="flex-shrink-0 text-[var(--color-accent)]">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 19L8 5l4 14"/>
-                            <path d="M5.5 14h5"/>
-                            <path d="M16 5v14"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold">Inteligencia Artificial a la medida</h3>
-                        <p class="text-slate-400 mt-1">Implementamos la ventaja competitiva que su firma necesita.</p>
-                    </div>
-                </div>
-                 <!-- Solución 3 -->
-                <div class="reveal flex items-center gap-6 md:gap-8 p-6 bg-zinc-900/50 rounded-2xl border border-zinc-800" style="transition-delay: 300ms;">
-                    <div class="flex-shrink-0 text-[var(--color-accent)]"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m22 13-1-1-1 1"/><path d="m16 3 1 1 1-1"/></svg></div>
-                    <div>
-                        <h3 class="text-2xl font-bold">Adopción Estratégica</h3>
-                        <p class="text-slate-400 mt-1">Convertimos herramientas en cultura. Aseguramos el éxito.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN GEMINI API - ROI CALCULATOR -->
-    <section class="py-24 md:py-32 px-6 bg-[var(--color-dark)]">
-        <div class="max-w-4xl mx-auto text-center">
-            <div class="reveal mb-12">
-                <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-slate-100">Descubra su potencial<br>de Rentabilidad (ROI).</h2>
-                <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-400">
-                    Describa una tarea manual en su organización y nuestra IA estimará el ahorro potencial con una solución a medida.
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- SECCIÓN DE BIENVENIDA / FILOSOFÍA -->
+        <section id="philosophy" class="py-20 md:py-32 overflow-hidden">
+            <div class="container mx-auto px-6 max-w-4xl text-center">
+                <h2 data-aos="fade-up" class="text-3xl md:text-4xl font-light mb-6 text-gray-700">Tu casa en la costa, sin preocupaciones.</h2>
+                <div data-aos="fade-up" data-aos-delay="100" class="w-24 h-1 bg-teal-800 mx-auto mb-8"></div>
+                <p data-aos="fade-up" data-aos-delay="200" class="text-lg text-gray-600 leading-relaxed">
+                    Con más de 20 años de experiencia, en Vectorial Home transformamos tu terreno en el lugar que siempre imaginaste. Nos encargamos de todo: desde el diseño arquitectónico moderno y la gestión de permisos, hasta la construcción final. Un servicio boutique para que tu única ocupación sea disfrutar.
                 </p>
             </div>
-            <div class="reveal bg-zinc-900/50 rounded-2xl border border-zinc-800 p-8 space-y-6">
-                <div>
-                    <label for="task-input" class="gemini-input-label">Tarea repetitiva a analizar</label>
-                    <textarea id="task-input" class="gemini-input" rows="4" placeholder="Ej: 'Generar reportes de ventas semanales a partir de 3 planillas diferentes'..."></textarea>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label for="industry-input" class="gemini-input-label">Rubro de su organización</label>
-                        <input type="text" id="industry-input" class="gemini-input" placeholder="Ej: Retail, Minería, Educación">
+        </section>
+
+        <!-- SECCIÓN DE SERVICIOS / BENEFICIOS -->
+        <section class="py-20 md:py-24 bg-gray-50 overflow-hidden">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-3 gap-12 text-center">
+                    <div data-aos="fade-up" data-aos-delay="100" class="flex flex-col items-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-teal-800 text-white mb-4 transition-transform duration-300 hover:scale-110">
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A11.953 11.953 0 0112 13.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0021 12c0-.778.099-1.533.284-2.253M18.716 14.253A11.953 11.953 0 0112 16.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A11.953 11.953 0 0112 19.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0021 12c0-.778.099-1.533.284-2.253"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Diseño y Arquitectura</h3>
+                        <p class="text-gray-600">Creamos diseños modernos y funcionales que se integran armónicamente con el entorno costero de Maitencillo, Marbella, Matanzas o Puertecillo.</p>
                     </div>
-                    <div>
-                        <label for="digitalization-level" class="gemini-input-label">Nivel de digitalización actual</label>
-                        <select id="digitalization-level" class="gemini-select">
-                            <option value="" disabled selected>Seleccione un nivel</option>
-                            <option value="inicial">Inicial</option>
-                            <option value="intermedio">Intermedio</option>
-                            <option value="avanzado">Avanzado</option>
-                        </select>
+                    <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col items-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-teal-800 text-white mb-4 transition-transform duration-300 hover:scale-110">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Gestión Integral</h3>
+                        <p class="text-gray-600">Nos ocupamos de todos los permisos y trámites legales. Tu tranquilidad es nuestra prioridad para que el proceso sea fluido y sin sorpresas.</p>
                     </div>
-                </div>
-                <button id="calculate-roi-btn" class="impact-button w-full md:w-auto inline-block bg-[var(--color-accent)] text-black font-bold py-4 px-10 rounded-full text-lg">
-                    🐻✨ Estimar impacto
-                </button>
-                <div id="gemini-result" class="text-left text-slate-300 bg-zinc-900 rounded-lg p-6 border border-zinc-800" style="display: none; white-space: pre-wrap;">
-                    <!-- El resultado de Gemini aparecerá aquí -->
-                </div>
-                <div id="gemini-loader" class="mt-8" style="display: none;">
-                    <div class="flex justify-center items-center">
-                        <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-[var(--color-accent)]"></div>
-                        <p class="ml-4 text-slate-400">Analizando potencial...</p>
+                    <div data-aos="fade-up" data-aos-delay="300" class="flex flex-col items-center">
+                         <div class="flex items-center justify-center h-16 w-16 rounded-full bg-teal-800 text-white mb-4 transition-transform duration-300 hover:scale-110">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.121 14.121L19 19M16.473 10.737a5.737 5.737 0 11-11.474 0 5.737 5.737 0 0111.474 0z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Construcción Boutique</h3>
+                        <p class="text-gray-600">Atención al detalle y acabados de alta calidad. Construimos un número limitado de proyectos al año para garantizar la máxima dedicación.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SECCIÓN CEO -->
-    <section class="py-24 md:py-32 px-6 bg-[var(--color-dark)]">
-        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16 reveal">
-            <img src="img/foto.png" alt="Avatar Growth Buddies" class="h-40 w-40 flex-shrink-0 drop-shadow-[0_0_20px_rgba(0,246,255,0.3)]">
-            <div class="text-center md:text-left">
-                <p class="text-2xl md:text-3xl font-medium text-slate-100 leading-tight">
-                    "Somos el puente entre la tecnología y su rentabilidad."
-                </p>
-                <p class="mt-6 font-bold text-slate-300">Edmundo Spohr, CEO & Fundador</p>
-                <a href="https://www.linkedin.com/in/edmundo-spohr" target="_blank" class="mt-8 impact-button inline-block border-2 border-[var(--color-accent)] text-[var(--color-accent)] font-bold py-3 px-8 rounded-full text-lg hover:bg-[var(--color-accent)] hover:text-black">
-                    Conectar en LinkedIn
+        <!-- SECCIÓN DE PROYECTOS -->
+        <section id="projects" class="py-20 md:py-32 overflow-hidden">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-4xl mx-auto mb-12 md:mb-16">
+                    <h2 data-aos="fade-up" class="text-3xl md:text-4xl font-light mb-6 text-gray-700">Nuestros Proyectos</h2>
+                    <div data-aos="fade-up" data-aos-delay="100" class="w-24 h-1 bg-teal-800 mx-auto mb-8"></div>
+                    <p data-aos="fade-up" data-aos-delay="200" class="text-lg text-gray-600 leading-relaxed">
+                        Cada casa que construimos es un testimonio de nuestro compromiso con el diseño, la calidad y el sueño de nuestros clientes.
+                    </p>
+                </div>
+        
+                <!-- Galería de Proyectos -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Proyecto 1 -->
+                    <div data-aos="fade-up" data-aos-delay="300" class="group relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600" alt="Casa en Maitencillo" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <h3 class="text-xl font-bold text-shadow">Casa Maitencillo</h3>
+                            <p class="text-sm font-light text-shadow">Diseño contemporáneo con vista al mar.</p>
+                        </div>
+                    </div>
+                    <!-- Proyecto 2 -->
+                    <div data-aos="fade-up" data-aos-delay="400" class="group relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600" alt="Refugio en Puertecillo" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <h3 class="text-xl font-bold text-shadow">Refugio Puertecillo</h3>
+                            <p class="text-sm font-light text-shadow">Integración con el entorno natural.</p>
+                        </div>
+                    </div>
+                    <!-- Proyecto 3 -->
+                    <div data-aos="fade-up" data-aos-delay="300" class="group relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600" alt="Villa en Marbella" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <h3 class="text-xl font-bold text-shadow">Villa Marbella</h3>
+                            <p class="text-sm font-light text-shadow">Lujo y confort en un espacio exclusivo.</p>
+                        </div>
+                    </div>
+                    <!-- Proyecto 4 -->
+                    <div data-aos="fade-up" data-aos-delay="400" class="group relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600" alt="Casa en Matanzas" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <h3 class="text-xl font-bold text-shadow">Casa Matanzas</h3>
+                            <p class="text-sm font-light text-shadow">Minimalismo y conexión con la naturaleza.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION SECTION -->
+        <section id="cta" class="py-20 md:py-32 overflow-hidden">
+            <div class="container mx-auto px-6 max-w-4xl text-center">
+                <h2 data-aos="fade-up" class="text-3xl md:text-4xl font-semibold mb-4 text-gray-800">¿Ya tienes tu terreno en la costa?</h2>
+                <p data-aos="fade-up" data-aos-delay="100" class="text-lg text-gray-600 mb-8">Es el primer gran paso. Ahora, déjanos guiarte en la construcción de tu proyecto. Conversemos sobre tus ideas.</p>
+                <a data-aos="fade-up" data-aos-delay="200" href="#contact" class="inline-block bg-teal-800 text-white font-bold py-4 px-10 rounded-lg hover:bg-teal-700 transition-all duration-300 ease-in-out text-lg shadow-lg hover:shadow-xl hover:-translate-y-1">
+                    Agendar Consultoría Gratuita
                 </a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- FINAL CTA -->
-    <section id="contacto" class="py-24 md:py-40 px-6 text-center">
-        <div class="max-w-3xl mx-auto reveal">
-            <h2 class="text-4xl md:text-6xl font-black tracking-tighter animated-gradient-text">
-                Transformemos su organización.
-            </h2>
-            <p class="mt-6 max-w-xl mx-auto text-lg text-slate-300">
-                Agende una sesión y descubra el ROI oculto en sus procesos.
-            </p>
-            <div class="mt-12">
-                <a href="https://calendly.com/espohr/conversemos" target="_blank" class="impact-button inline-block bg-[var(--color-accent)] text-black font-bold py-5 px-12 rounded-full text-xl">
-                    Agendar Sesión Estratégica
-                </a>
+        <!-- SECCIÓN DE CONTACTO -->
+        <section id="contact" class="py-20 md:py-32 overflow-hidden bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-4xl mx-auto mb-12 md:mb-16">
+                    <h2 data-aos="fade-up" class="text-3xl md:text-4xl font-light mb-6 text-gray-700">Hablemos de tu proyecto</h2>
+                    <div data-aos="fade-up" data-aos-delay="100" class="w-24 h-1 bg-teal-800 mx-auto mb-8"></div>
+                    <p data-aos="fade-up" data-aos-delay="200" class="text-lg text-gray-600 leading-relaxed">
+                        Completa el formulario o contáctanos directamente. Rodrigo Lozano, nuestro Gerente General, te atenderá personalmente para explorar las posibilidades de tu futuro hogar.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-16 items-start max-w-5xl mx-auto">
+                    <!-- Formulario de contacto -->
+                    <form data-aos="fade-right" data-aos-delay="300" action="#" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Nombre</label>
+                            <input type="text" name="name" id="name" required class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500 transition">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <input type="email" name="email" id="email" required class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500 transition">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700">Teléfono</label>
+                            <input type="tel" name="phone" id="phone" class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500 transition">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">Mensaje</label>
+                            <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500 transition"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full inline-block bg-teal-800 text-white font-bold py-4 px-8 rounded-lg hover:bg-teal-700 transition-all duration-300 ease-in-out text-lg shadow-lg hover:shadow-xl hover:-translate-y-1">
+                                Enviar Mensaje
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Datos de Contacto -->
+                    <div data-aos="fade-left" data-aos-delay="400" class="mt-8 md:mt-0">
+                        <div class="bg-white p-8 rounded-lg shadow-lg h-full">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-6">Contacto Directo</h3>
+                            <div class="flex items-center mb-6">
+                                <div>
+                                    <p class="text-lg font-bold text-gray-800">Rodrigo Lozano</p>
+                                    <p class="text-md text-gray-600">Gerente General</p>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-start text-gray-700">
+                                    <svg class="w-6 h-6 mr-4 text-teal-800 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                    <a href="mailto:rodrigo.lozano@vectorialhome.cl" class="hover:text-teal-800 transition duration-300">rodrigo.lozano@vectorialhome.cl</a>
+                                </div>
+                                <div class="flex items-start text-gray-700">
+                                    <svg class="w-6 h-6 mr-4 text-teal-800 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                                    <a href="tel:+56912345678" class="hover:text-teal-800 transition duration-300">+56 9 1234 5678</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+    </main>
+    
+    <!-- Botón Flotante de WhatsApp -->
+    <!-- Reemplaza 56912345678 con tu número de teléfono, incluyendo el código de país sin el '+' -->
+    <a href="https://wa.me/56912345678" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+        </svg>
+    </a>
 
     <!-- FOOTER -->
-    <footer class="py-10 px-6 border-t border-zinc-900 text-center text-zinc-500">
-        <p>&copy; 2025 Growth Buddies. Tecnología con Visión de Negocio.</p>
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Vectorial Home. Todos los derechos reservados.</p>
+            <p class="text-sm text-gray-400 mt-2">Construyendo sueños en la costa de Chile.</p>
+        </div>
     </footer>
 
+    <!-- Script para inicializar animaciones -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Script para animaciones al hacer scroll
-            const revealElements = document.querySelectorAll('.reveal');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-            revealElements.forEach(elem => observer.observe(elem));
+        AOS.init({
+            duration: 800, // Duración de la animación en milisegundos
+            once: true, // La animación ocurre solo una vez
+            offset: 100, // Empieza la animación 100px antes de que el elemento sea visible
         });
-
-            // Gemini API Functionality
-            const calculateRoiBtn = document.getElementById('calculate-roi-btn');
-            const taskInput = document.getElementById('task-input');
-            const industryInput = document.getElementById('industry-input');
-            const digitalizationLevel = document.getElementById('digitalization-level');
-            const geminiResultDiv = document.getElementById('gemini-result');
-            const geminiLoader = document.getElementById('gemini-loader');
-
-            calculateRoiBtn.addEventListener('click', async () => {
-                const userInput = taskInput.value.trim();
-                const industry = industryInput.value.trim();
-                const digitalization = digitalizationLevel.value;
-
-                if (!userInput || !industry || !digitalization) {
-                    geminiResultDiv.style.display = 'block';
-                    geminiResultDiv.innerHTML = '<p class="text-amber-400">Por favor, complete todos los campos para realizar el análisis.</p>';
-                    return;
-                }
-
-                geminiLoader.style.display = 'block';
-                geminiResultDiv.style.display = 'none';
-                calculateRoiBtn.disabled = true;
-
-                const apiKey = "AIzaSyDHs_dpJXr6au8SqSiYRNih5AEvpKOTQ5w"; // La API Key es gestionada por el entorno de ejecución.
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-
-                const systemPrompt = "Eres un analista de negocios y consultor tecnológico experto en optimizar operaciones para organizaciones en el mercado latinoamericano. Tu objetivo es analizar una tarea manual descrita por un usuario y estimar el potencial de ahorro al automatizarla con IA. Considera el rubro de la organización y su nivel de digitalización para contextualizar tu análisis; un nivel 'inicial' implica mayor potencial de ahorro, mientras que uno 'avanzado' puede tener optimizaciones más sutiles pero igualmente valiosas. Basa tus cálculos en supuestos realistas para el mercado latinoamericano (ej. un costo por hora promedio para un profesional entre 50 y 100 USD, dependiendo del rubro), no en benchmarks de mercados como el de EE.UU. o Europa. Presenta el resultado en un párrafo breve, conciso, profesional y convincente, enfocado en el valor financiero y la eficiencia. Utiliza formato Markdown para resaltar cifras importantes en negrita. No es necesario que te presentes al comenzar el párrafo. Exprésate en frases cortas, haciendo saltos de líneas para generar una lectura más liviana. Termina con una llamada a la acción para discutir una solución a medida. Responde siempre en español.";
-                
-                const userQuery = `Analiza la siguiente tarea manual y estima el ahorro anual que se podría conseguir al automatizarla. Contexto de la organización: Rubro: "${industry}", Nivel de digitalización: "${digitalization}". Tarea a analizar: "${userInput}"`;
-
-                const payload = {
-                    contents: [{
-                        parts: [{ text: userQuery }]
-                    }],
-                    systemInstruction: {
-                        parts: [{ text: systemPrompt }]
-                    },
-                };
-
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (!response.ok) {
-                        throw new Error(`Error en la API: ${response.statusText}`);
-                    }
-
-                    const result = await response.json();
-                    const candidate = result.candidates?.[0];
-                    
-                    if (candidate && candidate.content?.parts?.[0]?.text) {
-                        const formattedText = candidate.content.parts[0].text
-                            .replace(/\*\*(.*?)\*\*/g, '<strong class="text-[var(--color-accent)]">$1</strong>')
-                            .replace(/\n/g, '<br>');
-                        geminiResultDiv.innerHTML = `<p>${formattedText}</p>`;
-                    } else {
-                        throw new Error("No se recibió una respuesta válida del modelo.");
-                    }
-
-                } catch (error) {
-                    console.error("Error al llamar a la API de Gemini:", error);
-                    geminiResultDiv.innerHTML = '<p class="text-red-400">Lo sentimos, ocurrió un error al procesar su solicitud. Por favor, intente de nuevo más tarde.</p>';
-                } finally {
-                    geminiLoader.style.display = 'none';
-                    geminiResultDiv.style.display = 'block';
-                    calculateRoiBtn.disabled = false;
-                }
-            });
-        
     </script>
-
 </body>
 </html>
 
