@@ -106,7 +106,24 @@
             100% { box-shadow: 0 0 0 0 rgba(0, 246, 255, 0); }
         }
 
-                /* Estilos para los campos del formulario de Gemini */
+        /* Estilos para el botón flotante del Lab */
+        #lab-button:hover {
+            border-color: var(--color-accent);
+            box-shadow: 0 0 20px rgba(0, 246, 255, 0.5);
+        }
+        
+        /* Animación de resplandor para el botón del Lab */
+        .pulse-lab {
+            animation: pulse-lab-glow 3s infinite 1s; /* 3s de duración, se repite, con 1s de retraso */
+        }
+        
+        @keyframes pulse-lab-glow {
+            0% { box-shadow: 0 0 0 0 rgba(0, 246, 255, 0); border-color: #3f3f46; } /* zinc-700 */
+            50% { box-shadow: 0 0 20px 5px rgba(0, 246, 255, 0.5); border-color: var(--color-accent); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 246, 255, 0); border-color: #3f3f46; } /* zinc-700 */
+        }
+
+        /* Estilos para los campos del formulario de Gemini */
         .gemini-input-label {
             display: block;
             text-align: left;
@@ -132,6 +149,14 @@
     </style>
 </head>
 <body class="overflow-x-hidden antialiased">
+
+    <!-- BOTÓN FLOTANTE GRODDY'S LAB - con animación -->
+    <a href="#" id="lab-button" class="pulse-lab fixed bottom-6 left-6 z-50 h-16 w-16 bg-zinc-900 border-2 border-zinc-700 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 group">
+        <svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-flask-conical text-zinc-400 group-hover:text-[var(--color-accent)] transition-colors duration-300"><path d="M10 2v7.527a2 2 0 0 1-.211.898L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.125A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
+        <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-max bg-black text-white text-xs font-bold rounded-md py-1 px-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+            Groddy's Lab
+        </span>
+    </a>
 
     <!-- BOTÓN FLOTANTE DE WHATSAPP -->
     <a href="https://wa.me/56965863160" target="_blank" class="pulse-whatsapp fixed bottom-6 right-6 z-50 h-16 w-16 bg-[var(--color-accent)] rounded-full flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform duration-300">
