@@ -19,7 +19,9 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Growth Buddies | Automatización y Gestión del Cambio">
     <meta property="og:description" content="Tecnología que genera Rentabilidad. Soluciones de IA para empresas en toda Latinoamérica.">
-    <meta property="og:image" content="https://growthbuddies.cl/img/og-image.jpg"> <script src="https://cdn.tailwindcss.com"></script>
+    <meta property="og:image" content="https://growthbuddies.cl/img/og-image.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -95,18 +97,6 @@
             border-color: rgba(0, 246, 255, 0.3);
             box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
             transform: translateY(-5px);
-        }
-
-        /* Logos Clientes/Partners */
-        .partner-logo {
-            filter: grayscale(100%) opacity(0.6);
-            transition: all 0.3s ease;
-            max-width: 100%;
-            height: auto;
-        }
-        .partner-logo:hover {
-            filter: grayscale(0%) opacity(1);
-            transform: scale(1.05);
         }
 
         /* Scroll Indicator */
@@ -193,15 +183,65 @@
         </div>
     </header>
 
-    <section class="py-12 border-b border-zinc-900 bg-zinc-950/50 backdrop-blur-sm">
-        <div class="max-w-6xl mx-auto px-6">
-            <p class="text-center text-sm font-semibold text-slate-500 tracking-widest uppercase mb-8">Líderes que confían en nuestra gestión</p>
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-80">
-                <div class="w-32 md:w-40 flex justify-center"><img src="https://placehold.co/160x60/18181b/64748b?text=CLIENTE+1" alt="Cliente Growth Buddies 1" class="partner-logo"></div>
-                <div class="w-32 md:w-40 flex justify-center"><img src="https://placehold.co/160x60/18181b/64748b?text=CLIENTE+2" alt="Cliente Growth Buddies 2" class="partner-logo"></div>
-                <div class="w-32 md:w-40 flex justify-center"><img src="https://placehold.co/160x60/18181b/64748b?text=CLIENTE+3" alt="Cliente Growth Buddies 3" class="partner-logo"></div>
-                <div class="w-32 md:w-40 flex justify-center"><img src="https://placehold.co/160x60/18181b/64748b?text=CLIENTE+4" alt="Cliente Growth Buddies 4" class="partner-logo"></div>
-                <div class="w-32 md:w-40 flex justify-center"><img src="https://placehold.co/160x60/18181b/64748b?text=CLIENTE+5" alt="Cliente Growth Buddies 5" class="partner-logo"></div>
+    <section class="py-20 border-b border-zinc-900 bg-zinc-950/50 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                 <p class="text-sm font-semibold text-[var(--color-accent)] tracking-widest uppercase mb-2">Casos de Éxito</p>
+                 <h3 class="text-3xl font-bold text-slate-100">ALGUNOS DE NUESTROS CLIENTES</h3>
+            </div>
+           
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
+                
+                <a href="https://spiamericas.com/" target="_blank" class="group relative flex flex-col p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300">
+                    <div class="h-16 w-full flex items-center justify-start mb-4">
+                        <div class="h-12 w-auto p-2 bg-white rounded-lg flex items-center justify-center">
+                            <img src="img/spi.png" alt="Logo SPI Americas" class="max-h-full max-w-full object-contain">
+                        </div>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors">SPI Americas</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">Expertos en asuntos regulatorios, propiedad intelectual, derecho corporativo y desarrollo de negocios.</p>
+                </a>
+
+                <a href="https://hitscorredoraseguros.cl/" target="_blank" class="group relative flex flex-col p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300">
+                    <div class="h-16 w-full flex items-center justify-start mb-4">
+                         <div class="h-12 w-auto p-2 bg-white rounded-lg flex items-center justify-center">
+                            <img src="img/hits.png" alt="Logo Hits Corredora de Seguros" class="max-h-full max-w-full object-contain">
+                        </div>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors">Hits Corredora de Seguros</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">Corredora de seguros líder en el mercado de responsabilidad civil para médicos.</p>
+                </a>
+
+                <a href="https://www.mlmchile.com/" target="_blank" class="group relative flex flex-col p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300">
+                    <div class="h-16 w-full flex items-center justify-start mb-4">
+                         <div class="h-12 w-auto p-2 bg-white rounded-lg flex items-center justify-center">
+                            <img src="img/mlm.png" alt="Logo MLM Abogados" class="max-h-full max-w-full object-contain">
+                        </div>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors">MLM Abogados</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">Estudio jurídico abocado a Derecho de Familia, ley antidiscriminación, Ley TEA y afines.</p>
+                </a>
+
+                <a href="https://fsummer.org/" target="_blank" class="group relative flex flex-col p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300">
+                    <div class="h-16 w-full flex items-center justify-start mb-4">
+                         <div class="h-12 w-auto overflow-hidden rounded-lg flex items-center justify-center bg-white">
+                            <img src="img/summer.jpg" alt="Logo Fundación Katy Summer" class="h-full w-full object-cover">
+                        </div>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors">Fundación Katy Summer</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">Experiencias profundas y vivenciales que motivan e inspiran, honrando la memoria de Katy.</p>
+                </a>
+
+                <a href="https://potenciarte.cl/" target="_blank" class="group relative flex flex-col p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300 lg:col-span-2 lg:w-1/2 lg:mx-auto">
+                    <div class="h-16 w-full flex items-center justify-start mb-4">
+                         <div class="h-12 w-auto p-2 bg-white rounded-lg flex items-center justify-center">
+                            <img src="img/potenciarte.png" alt="Logo Potenciarte" class="max-h-full max-w-full object-contain">
+                        </div>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors">Potenciarte Eventos</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">Diseño y producción de eventos para organizaciones públicas y privadas, con cobertura nacional e internacional.</p>
+                </a>
+
             </div>
         </div>
     </section>
@@ -340,13 +380,43 @@
         </div>
     </section>
 
-    <section class="py-16 border-t border-zinc-900">
-        <div class="max-w-4xl mx-auto px-6 text-center reveal">
-            <h3 class="text-xl font-bold text-slate-100 mb-8">Partners Estratégicos</h3>
-            <div class="flex flex-wrap justify-center gap-10 md:gap-20 items-center opacity-70">
-                <div class="w-32 md:w-40 flex justify-center"><img src="https://placehold.co/180x80/000000/64748b?text=PARTNER+1" alt="Partner Tecnológico 1" class="partner-logo"></div>
-                <div class="w-32 md:w-40 flex justify-center"><img src="https://placehold.co/180x80/000000/64748b?text=PARTNER+2" alt="Partner Tecnológico 2" class="partner-logo"></div>
-                <div class="w-32 md:w-40 flex justify-center"><img src="https://placehold.co/180x80/000000/64748b?text=PARTNER+3" alt="Partner Tecnológico 3" class="partner-logo"></div>
+    <section class="py-20 border-t border-zinc-900 bg-zinc-950">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center reveal mb-16">
+                <h3 class="text-3xl font-bold text-slate-100">Partners Estratégicos</h3>
+                <p class="mt-4 text-slate-400">Alianzas tecnológicas que potencian nuestros resultados.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <a href="https://www.kizeo-forms.com/lat/" target="_blank" class="group flex flex-col items-center text-center p-6 rounded-2xl border border-zinc-800 bg-zinc-900/30 hover:bg-zinc-900 hover:border-[var(--color-accent)] transition-all duration-300">
+                    <div class="h-16 w-full flex items-center justify-center mb-6">
+                         <div class="h-14 w-auto p-2 bg-white rounded-lg flex items-center justify-center shadow-lg">
+                            <img src="img/kizeo-forms.svg" alt="Kizeo Forms" class="max-h-full max-w-full object-contain">
+                        </div>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-100 mb-3">Kizeo Forms</h4>
+                    <p class="text-sm text-slate-400">Optimiza tus procesos al estandarizar la recolección de información con formularios digitales.</p>
+                </a>
+
+                <a href="https://www.mage.ai/" target="_blank" class="group flex flex-col items-center text-center p-6 rounded-2xl border border-zinc-800 bg-zinc-900/30 hover:bg-zinc-900 hover:border-[var(--color-accent)] transition-all duration-300">
+                    <div class="h-16 w-full flex items-center justify-center mb-6">
+                         <div class="h-14 w-auto p-2 bg-white rounded-lg flex items-center justify-center shadow-lg">
+                            <img src="img/mage.svg" alt="Mage AI" class="max-h-full max-w-full object-contain">
+                        </div>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-100 mb-3">Mage AI</h4>
+                    <p class="text-sm text-slate-400">Construye, despliega y gestiona flujos de datos a través de una interfaz intuitiva en minutos.</p>
+                </a>
+
+                <a href="https://www.sumadots.com/" target="_blank" class="group flex flex-col items-center text-center p-6 rounded-2xl border border-zinc-800 bg-zinc-900/30 hover:bg-zinc-900 hover:border-[var(--color-accent)] transition-all duration-300">
+                    <div class="h-16 w-full flex items-center justify-center mb-6">
+                         <div class="h-14 w-auto p-2 bg-white rounded-lg flex items-center justify-center shadow-lg">
+                            <img src="img/sumadots.svg" alt="Sumadots" class="max-h-full max-w-full object-contain">
+                        </div>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-100 mb-3">Sumadots</h4>
+                    <p class="text-sm text-slate-400">Datos, automatización e impacto medible para tu organización.</p>
+                </a>
             </div>
         </div>
     </section>
