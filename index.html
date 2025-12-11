@@ -1,128 +1,210 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Growth Buddies | Automatización de Procesos y Gestión del Cambio en Latinoamérica</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Growth Buddies | Automatización, IA y Gestión del Cambio</title>
     
     <meta name="description" content="Consultora líder en Automatización de Procesos, IA y Gestión del Cambio. Impulsamos la rentabilidad y eficiencia operativa de empresas en toda Latinoamérica.">
     
     <meta name="keywords" content="Automatización de Procesos, Gestión del Cambio, Inteligencia Artificial, Consultoría Estratégica, Transformación Digital Latam, Eficiencia Operativa, Growth Buddies">
     
-    <meta name="author" content="Growth Buddies">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://growthbuddies.cl/">
-    <link rel="icon" type="image/png" href="img/avatar.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ConsultingService",
+      "name": "Growth Buddies",
+      "description": "Consultora líder en Automatización de Procesos, IA y Gestión del Cambio en Latinoamérica.",
+      "url": "https://growthbuddies.cl/",
+      "logo": "https://growthbuddies.cl/img/avatar.png",
+      "image": "https://growthbuddies.cl/img/og-image.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "CL"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/edmundo-spohr",
+        "https://www.linkedin.com/in/fssantibanez/"
+      ],
+      "priceRange": "$$"
+    }
+    </script>
 
-    <meta property="og:locale" content="es_LA">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Growth Buddies | Automatización y Gestión del Cambio">
-    <meta property="og:description" content="Tecnología que genera Rentabilidad. Soluciones de IA para empresas en toda Latinoamérica.">
-    <meta property="og:image" content="https://growthbuddies.cl/img/og-image.jpg">
+    <meta name="author" content="Growth Buddies" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://growthbuddies.cl/" />
+    <link rel="icon" type="image/png" href="img/avatar.png" />
+
+    <meta property="og:locale" content="es_LA" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Growth Buddies | Automatización y Gestión del Cambio"
+    />
+    <meta
+      property="og:description"
+      content="Tecnología que genera Rentabilidad. Soluciones de IA para empresas en toda Latinoamérica."
+    />
+    <meta
+      property="og:image"
+      content="https://growthbuddies.cl/img/og-image.jpg"
+    />
 
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
-        /* --- Estilos Base --- */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #000000;
-            color: #f8fafc;
-            overflow-x: hidden;
-        }
+      /* --- Estilos Base --- */
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #000000;
+        color: #f8fafc;
+        overflow-x: hidden;
+      }
 
-        :root {
-            --color-accent: #00f6ff;
-            --color-dark: #0a0a0a;
-        }
+      :root {
+        --color-accent: #00f6ff;
+        --color-dark: #0a0a0a;
+      }
 
-        /* --- Fondo de Video --- */
-        .video-background-container {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            overflow: hidden; z-index: -1;
-        }
-        #video-background {
-            width: 100%; height: 100%;
-            object-fit: cover; opacity: 0.3;
-        }
-        .video-overlay {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(ellipse at center, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.8) 60%, rgba(0,0,0,1) 100%);
-            z-index: -1;
-        }
+      /* --- Fondo de Video --- */
+      .video-background-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+      }
+      #video-background {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.3;
+      }
+      .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          ellipse at center,
+          rgba(0, 0, 0, 0.4) 0%,
+          rgba(0, 0, 0, 0.8) 60%,
+          rgba(0, 0, 0, 1) 100%
+        );
+        z-index: -1;
+      }
 
-        /* --- Animaciones y Efectos --- */
-        .animated-gradient-text {
-            background-image: linear-gradient(90deg, #e2e8f0, #f8fafc, #e2e8f0);
-            -webkit-background-clip: text; background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 200% 100%;
-            animation: gradient-animation 4s ease infinite;
+      /* --- Animaciones y Efectos --- */
+      .animated-gradient-text {
+        background-image: linear-gradient(90deg, #e2e8f0, #f8fafc, #e2e8f0);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% 100%;
+        animation: gradient-animation 4s ease infinite;
+      }
+      @keyframes gradient-animation {
+        0% {
+          background-position: 200% center;
         }
-        @keyframes gradient-animation {
-            0% { background-position: 200% center; }
-            50% { background-position: 0% center; }
-            100% { background-position: 200% center; }
+        50% {
+          background-position: 0% center;
         }
+        100% {
+          background-position: 200% center;
+        }
+      }
 
-        .reveal {
-            opacity: 0; transform: translateY(30px);
-            transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-        
-        /* Botones y Cards */
-        .impact-button {
-            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-        .impact-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(0, 246, 255, 0.4);
-        }
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1),
+          transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-        /* Glassmorphism */
-        .glass-card {
-            background-color: rgba(24, 24, 27, 0.6);
-            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(63, 63, 70, 0.4);
-            transition: all 0.4s ease;
-        }
-        .glass-card:hover {
-            border-color: rgba(0, 246, 255, 0.3);
-            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
-            transform: translateY(-5px);
-        }
+      /* Botones y Cards */
+      .impact-button {
+        transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+      .impact-button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 30px rgba(0, 246, 255, 0.4);
+      }
 
-        /* Scroll Indicator */
-        .scroll-indicator { animation: bounce 2s infinite; }
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-10px);}
-            60% {transform: translateY(-5px);}
-        }
+      /* Glassmorphism */
+      .glass-card {
+        background-color: rgba(24, 24, 27, 0.6);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(63, 63, 70, 0.4);
+        transition: all 0.4s ease;
+      }
+      .glass-card:hover {
+        border-color: rgba(0, 246, 255, 0.3);
+        box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+        transform: translateY(-5px);
+      }
 
-        /* Botones Flotantes */
-        .pulse-whatsapp { animation: pulse-animation 2s infinite; }
-        @keyframes pulse-animation {
-            0% { box-shadow: 0 0 0 0 rgba(0, 246, 255, 0.7); }
-            70% { box-shadow: 0 0 0 20px rgba(0, 246, 255, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 246, 255, 0); }
+      /* Scroll Indicator */
+      .scroll-indicator {
+        animation: bounce 2s infinite;
+      }
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
         }
-        #lab-button:hover {
+        40% {
+          transform: translateY(-10px);
+        }
+        60% {
+          transform: translateY(-5px);
+        }
+      }
+
+      /* Botones Flotantes */
+      .pulse-whatsapp {
+        animation: pulse-animation 2s infinite;
+      }
+      @keyframes pulse-animation {
+        0% {
+          box-shadow: 0 0 0 0 rgba(0, 246, 255, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 20px rgba(0, 246, 255, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(0, 246, 255, 0);
+        }
+      }
+            #lab-button:hover {
             border-color: var(--color-accent);
-            box-shadow: 0 0 20px rgba(0, 246, 255, 0.5);
+            box-shadow: 0 0 25px rgba(0, 246, 255, 0.6);
+            transform: scale(1.1);
         }
-        .pulse-lab { animation: pulse-lab-glow 3s infinite 1s; }
+        .pulse-lab { animation: pulse-lab-glow 2s infinite; }
         @keyframes pulse-lab-glow {
-            0% { box-shadow: 0 0 0 0 rgba(0, 246, 255, 0); border-color: #3f3f46; }
-            50% { box-shadow: 0 0 20px 5px rgba(0, 246, 255, 0.5); border-color: var(--color-accent); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 246, 255, 0); border-color: #3f3f46; }
+            0% { box-shadow: 0 0 0 0 rgba(0, 246, 255, 0.4); border-color: rgba(0, 246, 255, 0.3); }
+            50% { box-shadow: 0 0 25px 5px rgba(0, 246, 255, 0.6); border-color: var(--color-accent); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 246, 255, 0); border-color: rgba(0, 246, 255, 0.3); }
         }
 
         /* Inputs */
@@ -142,396 +224,811 @@
             background-color: rgba(30, 41, 59, 0.8);
         }
     </style>
-</head>
-<body class="antialiased selection:bg-[#00f6ff] selection:text-black">
+  </head>
+  <body class="antialiased selection:bg-[#00f6ff] selection:text-black">
 
-    <a href="https://lab.growthbuddies.cl/" id="lab-button" class="pulse-lab fixed bottom-6 left-6 z-50 h-16 w-16 bg-zinc-900/90 backdrop-blur-sm border-2 border-zinc-700 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 group">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-400 group-hover:text-[var(--color-accent)] transition-colors"><path d="M10 2v7.527a2 2 0 0 1-.211.898L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.125A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
-        <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-max bg-black text-white text-xs font-bold rounded-md py-1 px-3 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">Groddy's Lab</span>
+    <a href="https://lab.growthbuddies.cl/" id="lab-button" class="pulse-lab fixed bottom-6 left-6 z-50 h-16 w-16 bg-zinc-900/90 backdrop-blur-sm border-2 border-[var(--color-accent)] rounded-full flex items-center justify-center shadow-lg transition-all duration-300 group">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[var(--color-accent)] group-hover:drop-shadow-[0_0_8px_rgba(0,246,255,0.8)] transition-all"><path d="M10 2v7.527a2 2 0 0 1-.211.898L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.125A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
+        <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-max bg-black text-[var(--color-accent)] border border-[var(--color-accent)] font-bold text-xs rounded-md py-2 px-4 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-[0_0_15px_rgba(0,246,255,0.3)]">Ir a Groddy's Lab</span>
     </a>
 
-    <a href="https://wa.me/56965863160" target="_blank" class="pulse-whatsapp fixed bottom-6 right-6 z-50 h-16 w-16 bg-[var(--color-accent)] rounded-full flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg>
+    <a
+      href="https://wa.me/56965863160"
+      target="_blank"
+      class="pulse-whatsapp fixed bottom-6 right-6 z-50 h-16 w-16 bg-[var(--color-accent)] rounded-full flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform group"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#000000"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z" />
+      </svg>
+        <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-max bg-black text-[var(--color-accent)] border border-[var(--color-accent)] font-bold text-xs rounded-md py-2 px-4 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-[0_0_15px_rgba(0,246,255,0.3)]">¡Hablemos!</span>
     </a>
 
-    <header class="relative min-h-screen flex flex-col items-center justify-center text-center p-6 overflow-hidden">
-        <div class="video-background-container">
-            <video autoplay loop muted playsinline id="video-background" poster="https://placehold.co/1920x1080/000000/00f6ff?text=GB">
-                <source src="vid/hero.mp4" type="video/mp4">
-            </video>
-            <div class="video-overlay"></div>
-        </div>
+    <header
+      class="relative min-h-screen flex flex-col items-center justify-center text-center p-6 overflow-hidden"
+    >
+      <div class="video-background-container">
+        <video
+          autoplay
+          loop
+          muted
+          playsinline
+          id="video-background"
+          poster="https://placehold.co/1920x1080/000000/00f6ff?text=GB"
+        >
+          <source src="vid/hero.mp4" type="video/mp4" />
+        </video>
+        <div class="video-overlay"></div>
+      </div>
 
-        <div class="z-10 reveal flex flex-col items-center max-w-5xl">
-            <img src="img/logo.png" alt="Growth Buddies - Automatización y Gestión del Cambio" class="mb-8 h-64 w-64 md:h-80 md:w-80 drop-shadow-[0_0_25px_rgba(0,246,255,0.3)] hover:scale-105 transition-transform duration-500">
-            
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter animated-gradient-text leading-tight">
-                Tecnología que<br>genera Rentabilidad.
-            </h1>
-            <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-slate-300 font-light">
-                Automatización de Procesos y Gestión del Cambio para empresas líderes en Latinoamérica.
-            </p>
-            <div class="mt-12">
-                <a href="https://calendly.com/espohr/conversemos" target="_blank" class="impact-button inline-block bg-[var(--color-accent)] text-black font-bold py-4 px-10 rounded-full text-lg">
-                    Agendar Sesión Estratégica
-                </a>
-            </div>
-        </div>
+      <div class="z-10 reveal flex flex-col items-center max-w-5xl">
+        <img
+          src="img/logo.png"
+          alt="Growth Buddies - Automatización y Gestión del Cambio"
+          class="mb-8 h-64 w-64 md:h-80 md:w-80 drop-shadow-[0_0_25px_rgba(0,246,255,0.3)] hover:scale-105 transition-transform duration-500"
+        />
 
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-indicator opacity-70">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400"><path d="m7 13 5 5 5-5"/><path d="m7 6 5 5 5-5"/></svg>
+        <h1
+          class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter animated-gradient-text leading-tight"
+        >
+          Tecnología que<br />genera Rentabilidad.
+        </h1>
+        <p
+          class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-slate-300 font-light"
+        >
+          Automatización de Procesos y Gestión del Cambio para empresas líderes
+          en Latinoamérica.
+        </p>
+        <div class="mt-12">
+          <a
+            href="https://calendly.com/espohr/conversemos"
+            target="_blank"
+            class="impact-button inline-block bg-[var(--color-accent)] text-black font-bold py-4 px-10 rounded-full text-lg"
+          >
+            Agendar Sesión Estratégica
+          </a>
         </div>
+      </div>
+
+      <div
+        class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-indicator opacity-70"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="text-slate-400"
+        >
+          <path d="m7 13 5 5 5-5" />
+          <path d="m7 6 5 5 5-5" />
+        </svg>
+      </div>
     </header>
 
-    <section class="py-20 border-b border-zinc-900 bg-zinc-950/50 backdrop-blur-sm">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12">
-                 <p class="text-sm font-semibold text-[var(--color-accent)] tracking-widest uppercase mb-2">Casos de Éxito</p>
-                 <h3 class="text-3xl font-bold text-slate-100">ALGUNOS DE NUESTROS CLIENTES</h3>
-            </div>
-           
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
-                
-                <a href="https://spiamericas.com/" target="_blank" class="group relative flex flex-col p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300">
-                    <div class="h-16 w-full flex items-center justify-start mb-4">
-                        <div class="h-12 w-auto p-2 bg-white rounded-lg flex items-center justify-center">
-                            <img src="img/spi.png" alt="Logo SPI Americas" class="max-h-full max-w-full object-contain">
-                        </div>
-                    </div>
-                    <h4 class="text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors">SPI Americas</h4>
-                    <p class="text-sm text-slate-400 leading-relaxed">Expertos en asuntos regulatorios, propiedad intelectual, derecho corporativo y desarrollo de negocios.</p>
-                </a>
-
-                <a href="https://hitscorredoraseguros.cl/" target="_blank" class="group relative flex flex-col p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300">
-                    <div class="h-16 w-full flex items-center justify-start mb-4">
-                         <div class="h-12 w-auto p-2 bg-white rounded-lg flex items-center justify-center">
-                            <img src="img/hits.png" alt="Logo Hits Corredora de Seguros" class="max-h-full max-w-full object-contain">
-                        </div>
-                    </div>
-                    <h4 class="text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors">Hits Corredora de Seguros</h4>
-                    <p class="text-sm text-slate-400 leading-relaxed">Corredora de seguros líder en el mercado de responsabilidad civil para médicos.</p>
-                </a>
-
-                <a href="https://www.mlmchile.com/" target="_blank" class="group relative flex flex-col p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300">
-                    <div class="h-16 w-full flex items-center justify-start mb-4">
-                         <div class="h-12 w-auto p-2 bg-white rounded-lg flex items-center justify-center">
-                            <img src="img/mlm.png" alt="Logo MLM Abogados" class="max-h-full max-w-full object-contain">
-                        </div>
-                    </div>
-                    <h4 class="text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors">MLM Abogados</h4>
-                    <p class="text-sm text-slate-400 leading-relaxed">Estudio jurídico abocado a Derecho de Familia, ley antidiscriminación, Ley TEA y afines.</p>
-                </a>
-
-                <a href="https://fsummer.org/" target="_blank" class="group relative flex flex-col p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300">
-                    <div class="h-16 w-full flex items-center justify-start mb-4">
-                         <div class="h-12 w-auto overflow-hidden rounded-lg flex items-center justify-center bg-white">
-                            <img src="img/summer.jpg" alt="Logo Fundación Katy Summer" class="h-full w-full object-cover">
-                        </div>
-                    </div>
-                    <h4 class="text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors">Fundación Katy Summer</h4>
-                    <p class="text-sm text-slate-400 leading-relaxed">Experiencias profundas y vivenciales que motivan e inspiran, honrando la memoria de Katy.</p>
-                </a>
-
-                <a href="https://potenciarte.cl/" target="_blank" class="group relative flex flex-col p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300">
-                    <div class="h-16 w-full flex items-center justify-start mb-4">
-                         <div class="h-12 w-auto p-2 bg-white rounded-lg flex items-center justify-center">
-                            <img src="img/potenciarte.png" alt="Logo Potenciarte" class="max-h-full max-w-full object-contain">
-                        </div>
-                    </div>
-                    <h4 class="text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors">Potenciarte Eventos</h4>
-                    <p class="text-sm text-slate-400 leading-relaxed">Diseño y producción de eventos para organizaciones públicas y privadas, con cobertura nacional e internacional.</p>
-                </a>
-                
-                <a href="https://www.ingeglobal.cl/" target="_blank" class="group relative flex flex-col p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300">
-                    <div class="h-16 w-full flex items-center justify-start mb-4">
-                         <div class="h-12 w-auto p-2 bg-white rounded-lg flex items-center justify-center">
-                            <img src="img/ingeglobal.webp" alt="Logo Ingeglobal" class="max-h-full max-w-full object-contain">
-                        </div>
-                    </div>
-                    <h4 class="text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors">Ingeglobal</h4>
-                    <p class="text-sm text-slate-400 leading-relaxed">Tecnología láser para el control de procesos productivos.</p>
-                </a>
-
-            </div>
+    <section
+      class="py-20 border-b border-zinc-900 bg-zinc-950/50 backdrop-blur-sm"
+    >
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12">
+          <p
+            class="text-sm font-semibold text-[var(--color-accent)] tracking-widest uppercase mb-2"
+          >
+            Casos de Éxito
+          </p>
+          <h2 class="text-3xl font-bold text-slate-100">
+            ALGUNOS DE NUESTROS CLIENTES
+          </h2>
         </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center"
+        >
+          <a
+            href="https://spiamericas.com/"
+            target="_blank"
+            class="group relative flex flex-col p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300"
+          >
+            <div class="h-16 w-full flex items-center justify-start mb-4">
+              <div
+                class="h-12 w-auto p-2 bg-white rounded-lg flex items-center justify-center"
+              >
+                <img
+                  src="img/spi.png"
+                  alt="Logo SPI Americas"
+                  class="max-h-full max-w-full object-contain"
+                />
+              </div>
+            </div>
+            <h4
+              class="text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors"
+            >
+              SPI Americas
+            </h4>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Expertos en asuntos regulatorios, propiedad intelectual, derecho
+              corporativo y desarrollo de negocios.
+            </p>
+          </a>
+
+          <a
+            href="https://hitscorredoraseguros.cl/"
+            target="_blank"
+            class="group relative flex flex-col p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300"
+          >
+            <div class="h-16 w-full flex items-center justify-start mb-4">
+              <div
+                class="h-12 w-auto p-2 bg-white rounded-lg flex items-center justify-center"
+              >
+                <img
+                  src="img/hits.png"
+                  alt="Logo Hits Corredora de Seguros"
+                  class="max-h-full max-w-full object-contain"
+                />
+              </div>
+            </div>
+            <h4
+              class="text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors"
+            >
+              Hits Corredora de Seguros
+            </h4>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Corredora de seguros líder en el mercado de responsabilidad civil
+              para médicos.
+            </p>
+          </a>
+
+          <a
+            href="https://www.mlmchile.com/"
+            target="_blank"
+            class="group relative flex flex-col p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300"
+          >
+            <div class="h-16 w-full flex items-center justify-start mb-4">
+              <div
+                class="h-12 w-auto p-2 bg-white rounded-lg flex items-center justify-center"
+              >
+                <img
+                  src="img/mlm.png"
+                  alt="Logo MLM Abogados"
+                  class="max-h-full max-w-full object-contain"
+                />
+              </div>
+            </div>
+            <h4
+              class="text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors"
+            >
+              MLM Abogados
+            </h4>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Estudio jurídico abocado a Derecho de Familia, ley
+              antidiscriminación, Ley TEA y afines.
+            </p>
+          </a>
+
+          <a
+            href="https://fsummer.org/"
+            target="_blank"
+            class="group relative flex flex-col p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300"
+          >
+            <div class="h-16 w-full flex items-center justify-start mb-4">
+              <div
+                class="h-12 w-auto overflow-hidden rounded-lg flex items-center justify-center bg-white"
+              >
+                <img
+                  src="img/summer.jpg"
+                  alt="Logo Fundación Katy Summer"
+                  class="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+            <h4
+              class="text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors"
+            >
+              Fundación Katy Summer
+            </h4>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Experiencias profundas y vivenciales que motivan e inspiran,
+              honrando la memoria de Katy.
+            </p>
+          </a>
+
+          <a
+            href="https://potenciarte.cl/"
+            target="_blank"
+            class="group relative flex flex-col p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300"
+          >
+            <div class="h-16 w-full flex items-center justify-start mb-4">
+              <div
+                class="h-12 w-auto p-2 bg-white rounded-lg flex items-center justify-center"
+              >
+                <img
+                  src="img/potenciarte.png"
+                  alt="Logo Potenciarte"
+                  class="max-h-full max-w-full object-contain"
+                />
+              </div>
+            </div>
+            <h4
+              class="text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors"
+            >
+              Potenciarte Eventos
+            </h4>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Diseño y producción de eventos para organizaciones públicas y
+              privadas, con cobertura nacional e internacional.
+            </p>
+          </a>
+
+          <a
+            href="https://www.ingeglobal.cl/"
+            target="_blank"
+            class="group relative flex flex-col p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300"
+          >
+            <div class="h-16 w-full flex items-center justify-start mb-4">
+              <div
+                class="h-12 w-auto p-2 bg-white rounded-lg flex items-center justify-center"
+              >
+                <img
+                  src="img/ingeglobal.webp"
+                  alt="Logo Ingeglobal"
+                  class="max-h-full max-w-full object-contain"
+                />
+              </div>
+            </div>
+            <h4
+              class="text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors"
+            >
+              Ingeglobal
+            </h4>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Tecnología láser para el control de procesos productivos.
+            </p>
+          </a>
+        </div>
+      </div>
     </section>
 
     <section class="py-24 md:py-32 px-6">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center reveal mb-20">
-                <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-slate-100">Soluciones para escalar en Latam.</h2>
-                <p class="mt-4 text-slate-400">Transformación digital pragmática, enfocada en el ROI.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="reveal glass-card p-8 rounded-2xl flex flex-col items-start h-full">
-                    <div class="p-3 bg-zinc-900/80 rounded-lg text-[var(--color-accent)] mb-6 border border-zinc-800">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3 text-slate-100">Automatización Inteligente</h3>
-                    <p class="text-slate-400 leading-relaxed">Eliminamos tareas repetitivas mediante flujos de trabajo automatizados. Maximizamos la eficiencia operativa para que su equipo se centre en el negocio.</p>
-                </div>
-                 <div class="reveal glass-card p-8 rounded-2xl flex flex-col items-start h-full" style="transition-delay: 150ms;">
-                    <div class="p-3 bg-zinc-900/80 rounded-lg text-[var(--color-accent)] mb-6 border border-zinc-800">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19L8 5l4 14"/><path d="M5.5 14h5"/><path d="M16 5v14"/></svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3 text-slate-100">IA Corporativa</h3>
-                    <p class="text-slate-400 leading-relaxed">Implementamos modelos de Inteligencia Artificial seguros y personalizados para análisis de datos, atención al cliente y toma de decisiones.</p>
-                </div>
-                 <div class="reveal glass-card p-8 rounded-2xl flex flex-col items-start h-full" style="transition-delay: 300ms;">
-                    <div class="p-3 bg-zinc-900/80 rounded-lg text-[var(--color-accent)] mb-6 border border-zinc-800">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m22 13-1-1-1 1"/><path d="m16 3 1 1 1-1"/></svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3 text-slate-100">Gestión del Cambio</h3>
-                    <p class="text-slate-400 leading-relaxed">La tecnología sin adopción falla. Gestionamos el cambio cultural y la capacitación para asegurar que las nuevas herramientas generen valor real.</p>
-                </div>
-            </div>
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center reveal mb-20">
+          <h2
+            class="text-4xl md:text-5xl font-bold tracking-tight text-slate-100"
+          >
+            Soluciones para escalar en Latam.
+          </h2>
+          <p class="mt-4 text-slate-400">
+            Transformación digital pragmática, enfocada en el ROI.
+          </p>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="reveal glass-card p-8 rounded-2xl flex flex-col items-start h-full"
+          >
+            <div
+              class="p-3 bg-zinc-900/80 rounded-lg text-[var(--color-accent)] mb-6 border border-zinc-800"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="m17 2 4 4-4 4" />
+                <path d="M3 11v-1a4 4 0 0 1 4-4h14" />
+                <path d="m7 22-4-4 4-4" />
+                <path d="M21 13v1a4 4 0 0 1-4 4H3" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-3 text-slate-100">
+              Automatización Inteligente
+            </h3>
+            <p class="text-slate-400 leading-relaxed">
+              Eliminamos tareas repetitivas mediante flujos de trabajo
+              automatizados. Maximizamos la eficiencia operativa para que su
+              equipo se centre en el negocio.
+            </p>
+          </div>
+          <div
+            class="reveal glass-card p-8 rounded-2xl flex flex-col items-start h-full"
+            style="transition-delay: 150ms"
+          >
+            <div
+              class="p-3 bg-zinc-900/80 rounded-lg text-[var(--color-accent)] mb-6 border border-zinc-800"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 19L8 5l4 14" />
+                <path d="M5.5 14h5" />
+                <path d="M16 5v14" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-3 text-slate-100">
+              IA Corporativa
+            </h3>
+            <p class="text-slate-400 leading-relaxed">
+              Implementamos modelos de Inteligencia Artificial seguros y
+              personalizados para análisis de datos, atención al cliente y toma
+              de decisiones.
+            </p>
+          </div>
+          <div
+            class="reveal glass-card p-8 rounded-2xl flex flex-col items-start h-full"
+            style="transition-delay: 300ms"
+          >
+            <div
+              class="p-3 bg-zinc-900/80 rounded-lg text-[var(--color-accent)] mb-6 border border-zinc-800"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="m22 13-1-1-1 1" />
+                <path d="m16 3 1 1 1-1" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-3 text-slate-100">
+              Gestión del Cambio
+            </h3>
+            <p class="text-slate-400 leading-relaxed">
+              La tecnología sin adopción falla. Gestionamos el cambio cultural y
+              la capacitación para asegurar que las nuevas herramientas generen
+              valor real.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="py-24 md:py-32 px-6 bg-[var(--color-dark)] relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-1/3 h-full bg-[var(--color-accent)] opacity-[0.03] blur-[100px] pointer-events-none"></div>
-        <div class="max-w-4xl mx-auto text-center relative z-10">
-            <div class="reveal mb-12">
-                <span class="text-[var(--color-accent)] font-bold tracking-wider text-sm uppercase">Potenciado por Gemini AI</span>
-                <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-slate-100 mt-2">Calcule su potencial de ROI.</h2>
-                <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-400">
-                    Describa un proceso manual en su empresa y nuestra IA estimará el ahorro financiero anual.
+    <section
+      class="py-24 md:py-32 px-6 bg-[var(--color-dark)] relative overflow-hidden"
+    >
+      <div
+        class="absolute top-0 right-0 w-1/3 h-full bg-[var(--color-accent)] opacity-[0.03] blur-[100px] pointer-events-none"
+      ></div>
+      <div class="max-w-6xl mx-auto relative z-10">
+        <div class="text-center reveal mb-16">
+          <span
+            class="text-[var(--color-accent)] font-bold tracking-wider text-sm uppercase"
+            >Portal de Cliente Exclusivo</span
+          >
+          <h2
+            class="text-4xl md:text-5xl font-bold tracking-tight text-slate-100 mt-2"
+          >
+            Groddy's Lab: Control Total.
+          </h2>
+          <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-400">
+            El complemento perfecto para nuestro servicio de Gerente Digital
+            Outsourced. Gestiona, aprende y escala.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Card 1: Dashboard -->
+          <div
+            class="reveal glass-card p-8 rounded-2xl flex flex-col items-start h-full group hover:bg-zinc-900/60 transition-all"
+          >
+            <div
+              class="p-3 bg-zinc-900/80 rounded-lg text-[var(--color-accent)] mb-6 border border-zinc-800 group-hover:scale-110 transition-transform"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                <line x1="3" x2="21" y1="9" y2="9" />
+                <line x1="9" x2="9" y1="21" y2="9" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-slate-100">
+              Dashboard de Impacto
+            </h3>
+            <p class="text-sm text-slate-400 leading-relaxed mb-6">
+              Visualiza métricas clave en tiempo real: tareas activas,
+              eficiencia operativa y ahorros generados por las automatizaciones
+              implementadas.
+            </p>
+          </div>
+
+          <!-- Card 2: Kanban -->
+          <div
+            class="reveal glass-card p-8 rounded-2xl flex flex-col items-start h-full group hover:bg-zinc-900/60 transition-all"
+            style="transition-delay: 100ms"
+          >
+            <div
+              class="p-3 bg-zinc-900/80 rounded-lg text-[var(--color-accent)] mb-6 border border-zinc-800 group-hover:scale-110 transition-transform"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 3h18v18H3zM9 3v18M15 3v18" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-slate-100">
+              Gestión Kanban
+            </h3>
+            <p class="text-sm text-slate-400 leading-relaxed mb-6">
+              Sigue el progreso de cada implementación paso a paso. Tablero
+              interactivo (Drag & Drop) para que nunca pierdas el control del
+              estado de tus proyectos.
+            </p>
+          </div>
+
+          <!-- Card 3: Academy -->
+          <div
+            class="reveal glass-card p-8 rounded-2xl flex flex-col items-start h-full group hover:bg-zinc-900/60 transition-all"
+            style="transition-delay: 200ms"
+          >
+            <div
+              class="p-3 bg-zinc-900/80 rounded-lg text-[var(--color-accent)] mb-6 border border-zinc-800 group-hover:scale-110 transition-transform"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 10v6M2 10v6" />
+                <path d="M12 2 2 7l10 5 10-5-10-5z" />
+                <path d="m22 2-10 5-10-5" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-slate-100">
+              Growth Academy
+            </h3>
+            <p class="text-sm text-slate-400 leading-relaxed mb-6">
+              Acceso exclusivo a cursos de capacitación y recursos descargables
+              para que tu equipo adopte las nuevas tecnologías sin fricción.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center reveal">
+          <a
+            href="https://lab.growthbuddies.cl/"
+            target="_blank"
+            class="impact-button inline-flex items-center gap-2 bg-transparent border border-[var(--color-accent)] text-[var(--color-accent)] font-bold py-4 px-10 rounded-full text-lg hover:bg-[var(--color-accent)] hover:text-black transition-colors"
+          >
+            Acceder a Groddy's Lab
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+              />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" x2="21" y1="14" y2="3" />
+            </svg>
+          </a>
+          <p class="mt-4 text-xs text-slate-500">
+            * Acceso disponible para clientes activos y usuarios registrados.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 md:py-32 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center reveal mb-16">
+          <h2
+            class="text-4xl md:text-5xl font-bold tracking-tight text-slate-100"
+          >
+            Expertos en Negocios y Tech.
+          </h2>
+          <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-400">
+            El equilibrio perfecto entre estrategia corporativa e innovación
+            técnica.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+          <div
+            class="reveal glass-card flex flex-col items-center text-center md:flex-row md:text-left gap-8 p-8 rounded-2xl h-full group hover:bg-zinc-900/80 transition-colors"
+          >
+            <div class="relative">
+              <div
+                class="absolute -inset-1 bg-gradient-to-r from-[#00f6ff] to-blue-600 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-500"
+              ></div>
+              <img
+                src="img/foto.jpg"
+                alt="Edmundo Spohr - CEO Growth Buddies"
+                class="relative h-32 w-32 md:h-40 md:w-40 rounded-full object-cover border-2 border-zinc-800 group-hover:border-[var(--color-accent)] transition-colors"
+              />
+            </div>
+            <div>
+              <p class="text-lg text-slate-200 italic leading-snug">
+                "Somos el puente pragmático entre la tecnología compleja y su
+                rentabilidad."
+              </p>
+              <div class="mt-4">
+                <p class="font-bold text-white text-lg">Edmundo Spohr</p>
+                <p class="text-sm text-[var(--color-accent)] font-medium">
+                  CEO & Fundador
                 </p>
+              </div>
+              <a
+                href="https://www.linkedin.com/in/edmundo-spohr"
+                target="_blank"
+                class="mt-4 inline-flex items-center gap-2 text-xs text-slate-400 hover:text-[var(--color-accent)] transition-colors uppercase tracking-wider font-bold"
+              >
+                LinkedIn
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 7h10v10" />
+                  <path d="M7 17 17 7" />
+                </svg>
+              </a>
             </div>
-            
-            <div class="reveal glass-card p-8 md:p-10 rounded-2xl text-left">
-                <div class="mb-6">
-                    <label for="task-input" class="gemini-input-label">Tarea manual a automatizar</label>
-                    <textarea id="task-input" class="gemini-input" rows="3" placeholder="Ej: 'Mi equipo dedica 10 horas semanales a pasar datos de facturas PDF a Excel manualmente...'"></textarea>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                    <div>
-                        <label for="industry-input" class="gemini-input-label">Industria</label>
-                        <input type="text" id="industry-input" class="gemini-input" placeholder="Ej: Logística, Finanzas, Salud">
-                    </div>
-                    <div>
-                        <label for="digitalization-level" class="gemini-input-label">Nivel de Madurez Digital</label>
-                        <select id="digitalization-level" class="gemini-select">
-                            <option value="" disabled selected>Seleccione nivel</option>
-                            <option value="inicial">Inicial (Manual / Papel)</option>
-                            <option value="intermedio">Intermedio (Silos de datos)</option>
-                            <option value="avanzado">Avanzado (Integrado)</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="flex flex-col md:flex-row items-center gap-6">
-                    <button id="calculate-roi-btn" class="impact-button w-full md:w-auto bg-[var(--color-accent)] text-black font-bold py-3 px-8 rounded-full text-lg flex items-center justify-center gap-2">
-                        <span>✨</span> Estimar Ahorro
-                    </button>
-                    <p class="text-xs text-slate-500 italic">Cálculos basados en costos laborales promedio de Latam.</p>
-                </div>
+          </div>
 
-                <div id="gemini-result-container" class="mt-8 pt-6 border-t border-zinc-800" style="display: none;">
-                    <div id="gemini-loader" style="display: none;">
-                        <div class="flex items-center gap-3 text-slate-300">
-                            <div class="animate-spin rounded-full h-5 w-5 border-2 border-slate-500 border-t-[var(--color-accent)]"></div>
-                            <span>Analizando viabilidad y costos...</span>
-                        </div>
-                    </div>
-                    <div id="gemini-result" class="text-slate-300 leading-relaxed animate-fade-in"></div>
-                </div>
+          <div
+            class="reveal glass-card flex flex-col items-center text-center md:flex-row md:text-left gap-8 p-8 rounded-2xl h-full group hover:bg-zinc-900/80 transition-colors"
+            style="transition-delay: 150ms"
+          >
+            <div class="relative">
+              <div
+                class="absolute -inset-1 bg-gradient-to-r from-[#00f6ff] to-blue-600 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-500"
+              ></div>
+              <img
+                src="img/felipe.png"
+                alt="Felipe Soto Santibañez - Consultor Senior"
+                class="relative h-32 w-32 md:h-40 md:w-40 rounded-full object-cover border-2 border-zinc-800 group-hover:border-[var(--color-accent)] transition-colors"
+              />
             </div>
+            <div>
+              <p class="text-lg text-slate-200 italic leading-snug">
+                "Los datos sólidos son los cimientos innegociables de cualquier
+                transformación."
+              </p>
+              <div class="mt-4">
+                <p class="font-bold text-white text-lg">
+                  Felipe Soto Santibañez
+                </p>
+                <p class="text-sm text-[var(--color-accent)] font-medium">
+                  Consultor Senior
+                </p>
+              </div>
+              <a
+                href="https://www.linkedin.com/in/fssantibanez/"
+                target="_blank"
+                class="mt-4 inline-flex items-center gap-2 text-xs text-slate-400 hover:text-[var(--color-accent)] transition-colors uppercase tracking-wider font-bold"
+              >
+                LinkedIn
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 7h10v10" />
+                  <path d="M7 17 17 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
-    </section>
-
-    <section class="py-24 md:py-32 px-6">
-        <div class="max-w-6xl mx-auto">
-             <div class="text-center reveal mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-slate-100">Expertos en Negocios y Tech.</h2>
-                <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-400">El equilibrio perfecto entre estrategia corporativa e innovación técnica.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-                <div class="reveal glass-card flex flex-col items-center text-center md:flex-row md:text-left gap-8 p-8 rounded-2xl h-full group hover:bg-zinc-900/80 transition-colors">
-                    <div class="relative">
-                        <div class="absolute -inset-1 bg-gradient-to-r from-[#00f6ff] to-blue-600 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
-                        <img src="img/foto.jpg" alt="Edmundo Spohr - CEO Growth Buddies" class="relative h-32 w-32 md:h-40 md:w-40 rounded-full object-cover border-2 border-zinc-800 group-hover:border-[var(--color-accent)] transition-colors">
-                    </div>
-                    <div>
-                        <p class="text-lg text-slate-200 italic leading-snug">
-                            "Somos el puente pragmático entre la tecnología compleja y su rentabilidad."
-                        </p>
-                        <div class="mt-4">
-                            <p class="font-bold text-white text-lg">Edmundo Spohr</p>
-                            <p class="text-sm text-[var(--color-accent)] font-medium">CEO & Fundador</p>
-                        </div>
-                        <a href="https://www.linkedin.com/in/edmundo-spohr" target="_blank" class="mt-4 inline-flex items-center gap-2 text-xs text-slate-400 hover:text-[var(--color-accent)] transition-colors uppercase tracking-wider font-bold">
-                            LinkedIn <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="reveal glass-card flex flex-col items-center text-center md:flex-row md:text-left gap-8 p-8 rounded-2xl h-full group hover:bg-zinc-900/80 transition-colors" style="transition-delay: 150ms;">
-                    <div class="relative">
-                         <div class="absolute -inset-1 bg-gradient-to-r from-[#00f6ff] to-blue-600 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
-                        <img src="img/felipe.png" alt="Felipe Soto Santibañez - Consultor Senior" class="relative h-32 w-32 md:h-40 md:w-40 rounded-full object-cover border-2 border-zinc-800 group-hover:border-[var(--color-accent)] transition-colors">
-                    </div>
-                    <div>
-                        <p class="text-lg text-slate-200 italic leading-snug">
-                            "Los datos sólidos son los cimientos innegociables de cualquier transformación."
-                        </p>
-                        <div class="mt-4">
-                            <p class="font-bold text-white text-lg">Felipe Soto Santibañez</p>
-                            <p class="text-sm text-[var(--color-accent)] font-medium">Consultor Senior</p>
-                        </div>
-                        <a href="https://www.linkedin.com/in/fssantibanez/" target="_blank" class="mt-4 inline-flex items-center gap-2 text-xs text-slate-400 hover:text-[var(--color-accent)] transition-colors uppercase tracking-wider font-bold">
-                            LinkedIn <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </section>
 
     <section class="py-20 border-t border-zinc-900 bg-zinc-950">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center reveal mb-16">
-                <h3 class="text-3xl font-bold text-slate-100">Partners Estratégicos</h3>
-                <p class="mt-4 text-slate-400">Alianzas tecnológicas que potencian nuestros resultados.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <a href="https://www.kizeo-forms.com/lat/" target="_blank" class="group flex flex-col items-center text-center p-6 rounded-2xl border border-zinc-800 bg-zinc-900/30 hover:bg-zinc-900 hover:border-[var(--color-accent)] transition-all duration-300">
-                    <div class="h-16 w-full flex items-center justify-center mb-6">
-                         <div class="h-14 w-auto p-2 bg-white rounded-lg flex items-center justify-center shadow-lg">
-                            <img src="img/kizeo-forms.png" alt="Kizeo Forms" class="max-h-full max-w-full object-contain">
-                        </div>
-                    </div>
-                    <h4 class="text-lg font-bold text-slate-100 mb-3">Kizeo Forms</h4>
-                    <p class="text-sm text-slate-400">Optimiza tus procesos al estandarizar la recolección de información con formularios digitales.</p>
-                </a>
-
-                <a href="https://www.mage.ai/" target="_blank" class="group flex flex-col items-center text-center p-6 rounded-2xl border border-zinc-800 bg-zinc-900/30 hover:bg-zinc-900 hover:border-[var(--color-accent)] transition-all duration-300">
-                    <div class="h-16 w-full flex items-center justify-center mb-6">
-                         <div class="h-14 w-auto p-2 bg-white rounded-lg flex items-center justify-center shadow-lg">
-                            <img src="img/mage.svg" alt="Mage AI" class="max-h-full max-w-full object-contain">
-                        </div>
-                    </div>
-                    <h4 class="text-lg font-bold text-slate-100 mb-3">Mage AI</h4>
-                    <p class="text-sm text-slate-400">Construye, despliega y gestiona flujos de datos a través de una interfaz intuitiva en minutos.</p>
-                </a>
-
-                <a href="https://www.sumadots.com/" target="_blank" class="group flex flex-col items-center text-center p-6 rounded-2xl border border-zinc-800 bg-zinc-900/30 hover:bg-zinc-900 hover:border-[var(--color-accent)] transition-all duration-300">
-                    <div class="h-16 w-full flex items-center justify-center mb-6">
-                         <div class="h-14 w-auto p-2 bg-white rounded-lg flex items-center justify-center shadow-lg">
-                            <img src="img/sumadots.svg" alt="Sumadots" class="max-h-full max-w-full object-contain">
-                        </div>
-                    </div>
-                    <h4 class="text-lg font-bold text-slate-100 mb-3">Sumadots</h4>
-                    <p class="text-sm text-slate-400">Datos, automatización e impacto medible para tu organización.</p>
-                </a>
-            </div>
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center reveal mb-16">
+          <h2 class="text-3xl font-bold text-slate-100">
+            Partners Estratégicos
+          </h2>
+          <p class="mt-4 text-slate-400">
+            Alianzas tecnológicas que potencian nuestros resultados.
+          </p>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <a
+            href="https://www.kizeo-forms.com/lat/"
+            target="_blank"
+            class="group flex flex-col items-center text-center p-6 rounded-2xl border border-zinc-800 bg-zinc-900/30 hover:bg-zinc-900 hover:border-[var(--color-accent)] transition-all duration-300"
+          >
+            <div class="h-16 w-full flex items-center justify-center mb-6">
+              <div
+                class="h-14 w-auto p-2 bg-white rounded-lg flex items-center justify-center shadow-lg"
+              >
+                <img
+                  src="img/kizeo-forms.png"
+                  alt="Kizeo Forms"
+                  class="max-h-full max-w-full object-contain"
+                />
+              </div>
+            </div>
+            <h4 class="text-lg font-bold text-slate-100 mb-3">Kizeo Forms</h4>
+            <p class="text-sm text-slate-400">
+              Optimiza tus procesos al estandarizar la recolección de
+              información con formularios digitales.
+            </p>
+          </a>
+
+          <a
+            href="https://www.mage.ai/"
+            target="_blank"
+            class="group flex flex-col items-center text-center p-6 rounded-2xl border border-zinc-800 bg-zinc-900/30 hover:bg-zinc-900 hover:border-[var(--color-accent)] transition-all duration-300"
+          >
+            <div class="h-16 w-full flex items-center justify-center mb-6">
+              <div
+                class="h-14 w-auto p-2 bg-white rounded-lg flex items-center justify-center shadow-lg"
+              >
+                <img
+                  src="img/mage.svg"
+                  alt="Mage AI"
+                  class="max-h-full max-w-full object-contain"
+                />
+              </div>
+            </div>
+            <h4 class="text-lg font-bold text-slate-100 mb-3">Mage AI</h4>
+            <p class="text-sm text-slate-400">
+              Construye, despliega y gestiona flujos de datos a través de una
+              interfaz intuitiva en minutos.
+            </p>
+          </a>
+
+          <a
+            href="https://www.sumadots.com/"
+            target="_blank"
+            class="group flex flex-col items-center text-center p-6 rounded-2xl border border-zinc-800 bg-zinc-900/30 hover:bg-zinc-900 hover:border-[var(--color-accent)] transition-all duration-300"
+          >
+            <div class="h-16 w-full flex items-center justify-center mb-6">
+              <div
+                class="h-14 w-auto p-2 bg-white rounded-lg flex items-center justify-center shadow-lg"
+              >
+                <img
+                  src="img/sumadots.svg"
+                  alt="Sumadots"
+                  class="max-h-full max-w-full object-contain"
+                />
+              </div>
+            </div>
+            <h4 class="text-lg font-bold text-slate-100 mb-3">Sumadots</h4>
+            <p class="text-sm text-slate-400">
+              Datos, automatización e impacto medible para tu organización.
+            </p>
+          </a>
+        </div>
+      </div>
     </section>
 
-    <section id="contacto" class="py-24 md:py-40 px-6 text-center relative overflow-hidden">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-zinc-900/50 via-black to-black -z-10"></div>
-        
-        <div class="max-w-3xl mx-auto reveal">
-            <h2 class="text-4xl md:text-6xl font-black tracking-tighter text-white mb-6">
-                Transformemos su organización.
-            </h2>
-            <p class="max-w-xl mx-auto text-lg text-slate-300 mb-10">
-                Agende una sesión y descubra oportunidades de eficiencia y ahorro inmediato.
-            </p>
-            <a href="https://calendly.com/espohr/conversemos" target="_blank" class="impact-button inline-block bg-[var(--color-accent)] text-black font-bold py-5 px-12 rounded-full text-xl shadow-[0_0_20px_rgba(0,246,255,0.3)]">
-                Agendar Sesión Estratégica
-            </a>
-        </div>
+    <section
+      id="contacto"
+      class="py-24 md:py-40 px-6 text-center relative overflow-hidden"
+    >
+      <div
+        class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-zinc-900/50 via-black to-black -z-10"
+      ></div>
+
+      <div class="max-w-3xl mx-auto reveal">
+        <h2
+          class="text-4xl md:text-6xl font-black tracking-tighter text-white mb-6"
+        >
+          Transformemos su organización.
+        </h2>
+        <p class="max-w-xl mx-auto text-lg text-slate-300 mb-10">
+          Agende una sesión y descubra oportunidades de eficiencia y ahorro
+          inmediato.
+        </p>
+        <a
+          href="https://calendly.com/espohr/conversemos"
+          target="_blank"
+          class="impact-button inline-block bg-[var(--color-accent)] text-black font-bold py-5 px-12 rounded-full text-xl shadow-[0_0_20px_rgba(0,246,255,0.3)]"
+        >
+          Agendar Sesión Estratégica
+        </a>
+      </div>
     </section>
 
     <footer class="py-10 px-6 border-t border-zinc-900 bg-black text-center">
-        <div class="flex flex-col items-center gap-4">
-            <img src="img/logo.png" alt="Growth Buddies Logo" class="h-12 w-12 opacity-50 grayscale hover:grayscale-0 transition-all">
-            <p class="text-zinc-500 text-sm">&copy; 2025 Growth Buddies. Tecnología con Visión de Negocio.</p>
-        </div>
+      <div class="flex flex-col items-center gap-4">
+        <img
+          src="img/logo.png"
+          alt="Growth Buddies Logo"
+          class="h-12 w-12 opacity-50 grayscale hover:grayscale-0 transition-all"
+        />
+        <p class="text-zinc-500 text-sm">
+          &copy; 2025 Growth Buddies. Tecnología con Visión de Negocio.
+        </p>
+      </div>
     </footer>
 
     <script>
-        // Efecto Reveal al hacer scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const revealElements = document.querySelectorAll('.reveal');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1 });
-            revealElements.forEach(elem => observer.observe(elem));
-        });
-
-        // Lógica de Gemini (ROI Calculator)
-        const calculateRoiBtn = document.getElementById('calculate-roi-btn');
-        const geminiContainer = document.getElementById('gemini-result-container');
-        const geminiResult = document.getElementById('gemini-result');
-        const geminiLoader = document.getElementById('gemini-loader');
-
-        calculateRoiBtn.addEventListener('click', async () => {
-            const task = document.getElementById('task-input').value.trim();
-            const industry = document.getElementById('industry-input').value.trim();
-            const level = document.getElementById('digitalization-level').value;
-
-            // Validación simple
-            if (!task || !industry || !level) {
-                if(!task) document.getElementById('task-input').style.borderColor = '#ef4444';
-                if(!industry) document.getElementById('industry-input').style.borderColor = '#ef4444';
-                if(!level) document.getElementById('digitalization-level').style.borderColor = '#ef4444';
-                setTimeout(() => {
-                    document.querySelectorAll('.gemini-input, .gemini-select').forEach(el => el.style.borderColor = '#334155');
-                }, 2000);
-                return;
-            }
-
-            geminiContainer.style.display = 'block';
-            geminiLoader.style.display = 'block';
-            geminiResult.innerHTML = '';
-            calculateRoiBtn.disabled = true;
-            calculateRoiBtn.classList.add('opacity-50', 'cursor-not-allowed');
-
-            /* ADVERTENCIA: Protege tu API Key en producción */
-            const apiKey = "AIzaSyDHs_dpJXr6au8SqSiYRNih5AEvpKOTQ5w"; 
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-
-            const systemPrompt = "Eres un consultor de negocios senior experto en automatización y gestión del cambio en Latinoamérica. Analiza la tarea manual descrita. Calcula un estimado de ahorro anual en USD y horas considerando sueldos promedio de la región. Sé conciso y usa negritas para las cifras.";
-            const userQuery = `Industria: ${industry}. Madurez: ${level}. Tarea: ${task}`;
-
-            try {
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        contents: [{ parts: [{ text: userQuery }] }],
-                        systemInstruction: { parts: [{ text: systemPrompt }] }
-                    })
-                });
-
-                if (!response.ok) throw new Error('Error API');
-                const data = await response.json();
-                const text = data.candidates?.[0]?.content?.parts?.[0]?.text || "No se pudo generar el análisis.";
-                
-                const formattedText = text
-                    .replace(/\*\*(.*?)\*\*/g, '<strong class="text-[var(--color-accent)]">$1</strong>')
-                    .replace(/\n/g, '<br>');
-
-                geminiResult.innerHTML = formattedText;
-
-            } catch (error) {
-                console.error(error);
-                geminiResult.innerHTML = '<span class="text-red-400">Error de conexión. Intente nuevamente.</span>';
-            } finally {
-                geminiLoader.style.display = 'none';
-                calculateRoiBtn.disabled = false;
-                calculateRoiBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-            }
-        });
+      // Efecto Reveal al hacer scroll
+      document.addEventListener("DOMContentLoaded", function () {
+        const revealElements = document.querySelectorAll(".reveal");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+        revealElements.forEach((elem) => observer.observe(elem));
+      });
     </script>
-</body>
+  </body>
 </html>
