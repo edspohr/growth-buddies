@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -51,7 +51,7 @@
       content="https://growthbuddies.cl/img/og-image.jpg"
     />
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="./dist/output.css" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -60,251 +60,9 @@
       rel="stylesheet"
     />
 
-    <style>
-      /* --- Estilos Base --- */
-      body {
-        font-family: "Inter", sans-serif;
-        background-color: #000000;
-        color: #f8fafc;
-        overflow-x: hidden;
-      }
 
-      :root {
-        --color-accent: #00f6ff;
-        --color-dark: #0a0a0a;
-      }
-
-      /* --- Fondo de Video --- */
-      .video-background-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        z-index: -1;
-      }
-      #video-background {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0.3;
-      }
-      .video-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(
-          ellipse at center,
-          rgba(0, 0, 0, 0.4) 0%,
-          rgba(0, 0, 0, 0.8) 60%,
-          rgba(0, 0, 0, 1) 100%
-        );
-        z-index: -1;
-      }
-
-      /* --- Animaciones y Efectos --- */
-      .animated-gradient-text {
-        background-image: linear-gradient(90deg, #e2e8f0, #f8fafc, #e2e8f0);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-size: 200% 100%;
-        animation: gradient-animation 4s ease infinite;
-      }
-      @keyframes gradient-animation {
-        0% {
-          background-position: 200% center;
-        }
-        50% {
-          background-position: 0% center;
-        }
-        100% {
-          background-position: 200% center;
-        }
-      }
-
-      .reveal {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1),
-          transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
-      }
-      .reveal.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      /* Botones y Cards */
-      .impact-button {
-        transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-      }
-      .impact-button:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 30px rgba(0, 246, 255, 0.4);
-      }
-
-      /* Glassmorphism */
-      .glass-card {
-        background-color: rgba(24, 24, 27, 0.6);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(63, 63, 70, 0.4);
-        transition: all 0.4s ease;
-      }
-      .glass-card:hover {
-        border-color: rgba(0, 246, 255, 0.3);
-        box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
-        transform: translateY(-5px);
-      }
-
-      /* Scroll Indicator */
-      .scroll-indicator {
-        animation: bounce 2s infinite;
-      }
-      @keyframes bounce {
-        0%,
-        20%,
-        50%,
-        80%,
-        100% {
-          transform: translateY(0);
-        }
-        40% {
-          transform: translateY(-10px);
-        }
-        60% {
-          transform: translateY(-5px);
-        }
-      }
-
-      /* Botones Flotantes */
-      .pulse-whatsapp {
-        animation: pulse-animation 2s infinite;
-      }
-      @keyframes pulse-animation {
-        0% {
-          box-shadow: 0 0 0 0 rgba(0, 246, 255, 0.7);
-        }
-        70% {
-          box-shadow: 0 0 0 20px rgba(0, 246, 255, 0);
-        }
-        100% {
-          box-shadow: 0 0 0 0 rgba(0, 246, 255, 0);
-        }
-      }
-            #lab-button:hover {
-            border-color: var(--color-accent);
-            box-shadow: 0 0 25px rgba(0, 246, 255, 0.6);
-            transform: scale(1.1);
-        }
-        .pulse-lab { animation: pulse-lab-glow 2s infinite; }
-        @keyframes pulse-lab-glow {
-            0% { box-shadow: 0 0 0 0 rgba(0, 246, 255, 0.4); border-color: rgba(0, 246, 255, 0.3); }
-            50% { box-shadow: 0 0 25px 5px rgba(0, 246, 255, 0.6); border-color: var(--color-accent); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 246, 255, 0); border-color: rgba(0, 246, 255, 0.3); }
-        }
-
-        /* Inputs */
-        .gemini-input-label {
-            display: block; text-align: left; margin-bottom: 0.5rem;
-            font-size: 0.875rem; color: #94a3b8;
-        }
-        .gemini-input, .gemini-select {
-             width: 100%; background-color: rgba(30, 41, 59, 0.5);
-             border: 1px solid #334155; border-radius: 0.5rem;
-             padding: 0.75rem 1rem; color: #f1f5f9;
-             transition: all 0.2s ease-in-out;
-        }
-        .gemini-input:focus, .gemini-select:focus {
-            outline: none; border-color: var(--color-accent);
-            box-shadow: 0 0 0 2px rgba(0, 246, 255, 0.5);
-            background-color: rgba(30, 41, 59, 0.8);
-        }
-    /* --- Lenis Smooth Scroll --- */
-      html.lenis {
-        height: auto;
-      }
-      .lenis.lenis-smooth {
-        scroll-behavior: auto !important;
-      }
-      .lenis.lenis-smooth [data-lenis-prevent] {
-        overscroll-behavior: contain;
-      }
-      .lenis.lenis-stopped {
-        overflow: hidden;
-      }
-      .lenis.lenis-scrolling iframe {
-        pointer-events: none;
-      }
-
-      /* --- Noise Overlay --- */
-      .noise-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 40;
-        pointer-events: none;
-        opacity: 0.03;
-        mix-blend-mode: overlay;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-      }
-
-      /* --- Navigation --- */
-      .glass-nav {
-        background: rgba(0, 0, 0, 0.7);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      }
-
-      /* --- Cards Spotlight Effect --- */
-      .spotlight-card {
-        position: relative;
-        background-color: rgba(24, 24, 27, 0.6);
-        border: 1px solid rgba(63, 63, 70, 0.4);
-        overflow: hidden;
-      }
-      .spotlight-card::before {
-        content: "";
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        top: 0;
-        left: 0;
-        background: radial-gradient(
-          800px circle at var(--mouse-x) var(--mouse-y),
-          rgba(255, 255, 255, 0.06),
-          transparent 40%
-        );
-        opacity: 0;
-        transition: opacity 0.5s;
-        pointer-events: none;
-        z-index: 1;
-      }
-      .spotlight-card:hover::before {
-        opacity: 1;
-      }
-      
-      /* --- Groddy's Lab Visuals --- */
-      #lab.lab-section {
-        background: radial-gradient(circle at center, rgba(0, 246, 255, 0.08) 0%, rgba(0,0,0,0) 60%);
-      }
-      .lab-card-glow {
-        border-color: rgba(0, 246, 255, 0.2);
-        animation: subtle-pulse 4s infinite ease-in-out;
-      }
-      @keyframes subtle-pulse {
-        0%, 100% { border-color: rgba(0, 246, 255, 0.2); }
-        50% { border-color: rgba(0, 246, 255, 0.4); box-shadow: 0 0 15px rgba(0, 246, 255, 0.1); }
-      }
-
-    </style>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
+  </head>
   <body class="antialiased selection:bg-[#00f6ff] selection:text-black">
     <div class="noise-overlay"></div>
 
@@ -617,7 +375,7 @@
       </div>
     </section>
 
-    <section id="servicios" class="py-24 md:py-32 px-6">
+    <section id="servicios" class="py-16 md:py-24 px-6">
       <div class="max-w-6xl mx-auto">
         <div class="text-center reveal mb-20">
           <h2
@@ -734,7 +492,7 @@
 
     <section
       id="lab"
-      class="lab-section py-24 md:py-32 px-6 bg-[var(--color-dark)] relative overflow-hidden"
+      class="lab-section py-16 md:py-24 px-6 bg-[var(--color-dark)] relative overflow-hidden"
     >
       <div
         class="absolute top-0 right-0 w-1/3 h-full bg-[var(--color-accent)] opacity-[0.03] blur-[100px] pointer-events-none"
@@ -888,7 +646,7 @@
       </div>
     </section>
 
-    <section class="py-24 md:py-32 px-6">
+    <section class="py-16 md:py-24 px-6">
       <div class="max-w-6xl mx-auto">
         <div class="text-center reveal mb-16">
           <h2
@@ -1088,31 +846,125 @@
       </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="py-16 md:py-24 px-6 border-b border-zinc-900 bg-zinc-950/30">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center reveal mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-100">
+            Preguntas Frecuentes
+          </h2>
+          <p class="mt-4 text-slate-400">
+            Resolvemos tus dudas sobre automatización e IA.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <!-- FAQ 1 -->
+          <details class="reveal group glass-card rounded-xl overflow-hidden">
+            <summary class="flex items-center justify-between p-6 font-medium text-lg cursor-pointer text-slate-200 hover:text-[var(--color-accent)] transition-colors">
+              <span>¿La automatización reemplazará a mi equipo actual?</span>
+              <span class="transform group-open:rotate-180 transition-transform duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-400 leading-relaxed">
+              <p>No, nuestro enfoque es potenciarlo. Automatizamos las tareas repetitivas de bajo valor (carga de datos, reportes manuales) para que tu equipo pueda dedicarse a tareas estratégicas, creativas y de atención al cliente que realmente requieren criterio humano.</p>
+            </div>
+          </details>
+
+          <!-- FAQ 2 -->
+          <details class="reveal group glass-card rounded-xl overflow-hidden">
+            <summary class="flex items-center justify-between p-6 font-medium text-lg cursor-pointer text-slate-200 hover:text-[var(--color-accent)] transition-colors">
+              <span>¿Cuánto tiempo toma ver el retorno de inversión (ROI)?</span>
+              <span class="transform group-open:rotate-180 transition-transform duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-400 leading-relaxed">
+              <p>Depende de la complejidad, pero nuestros clientes suelen ver resultados tangibles desde el primer mes de implementación. Muchos proyectos de automatización simple se pagan a sí mismos en menos de 90 días gracias al ahorro en horas-hombre y reducción de errores.</p>
+            </div>
+          </details>
+
+          <!-- FAQ 3 -->
+          <details class="reveal group glass-card rounded-xl overflow-hidden">
+            <summary class="flex items-center justify-between p-6 font-medium text-lg cursor-pointer text-slate-200 hover:text-[var(--color-accent)] transition-colors">
+              <span>¿Es segura la implementación de IA con mis datos?</span>
+              <span class="transform group-open:rotate-180 transition-transform duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-400 leading-relaxed">
+              <p>Absolutamente. Priorizamos la seguridad y la confidencialidad. Utilizamos entornos aislados y cumplimos con estrictos protocolos de protección de datos. No utilizamos tus datos privados para entrenar modelos públicos.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <section
       id="contacto"
-      class="py-24 md:py-40 px-6 text-center relative overflow-hidden"
+      class="py-20 md:py-32 px-6 relative overflow-hidden"
     >
       <div
         class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-zinc-900/50 via-black to-black -z-10"
       ></div>
 
-      <div class="max-w-3xl mx-auto reveal">
-        <h2
-          class="text-4xl md:text-6xl font-black tracking-tighter text-white mb-6"
-        >
-          Transformemos su organización.
-        </h2>
-        <p class="max-w-xl mx-auto text-lg text-slate-300 mb-10">
-          Agende una sesión y descubra oportunidades de eficiencia y ahorro
-          inmediato.
-        </p>
-        <a
-          href="https://calendly.com/espohr/conversemos"
-          target="_blank"
-          class="impact-button inline-block bg-[var(--color-accent)] text-black font-bold py-5 px-12 rounded-full text-xl shadow-[0_0_20px_rgba(0,246,255,0.3)]"
-        >
-          Agendar Sesión Estratégica
-        </a>
+      <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Left Column: Text & Calendly -->
+        <div class="text-left reveal">
+            <h2 class="text-4xl md:text-6xl font-black tracking-tight text-white mb-6">
+                ¿Listo para <span class="text-[var(--color-accent)]">Escalar?</span>
+            </h2>
+            <p class="text-xl text-slate-300 mb-8 font-light">
+                Agenda una sesión estratégica gratuita de 30 minutos. Analizaremos tus cuellos de botella y te propondremos un plan de acción inmediato.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                <a
+                href="https://calendly.com/espohr/conversemos"
+                target="_blank"
+                class="impact-button group inline-flex items-center justify-center bg-[var(--color-accent)] text-black font-bold py-4 px-8 rounded-full text-lg w-full sm:w-auto text-center hover:bg-white transition-all duration-300"
+                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3 group-hover:scale-110 transition-transform"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                Agendar en Calendly
+                </a>
+            </div>
+
+            <div class="flex items-center gap-4 text-slate-500 text-sm">
+                <div class="flex -space-x-2">
+                    <div class="w-8 h-8 rounded-full bg-slate-700 border-2 border-black"></div>
+                    <div class="w-8 h-8 rounded-full bg-slate-600 border-2 border-black"></div>
+                    <div class="w-8 h-8 rounded-full bg-slate-500 border-2 border-black"></div>
+                </div>
+                <p>Únete a +50 empresas innovadoras.</p>
+            </div>
+        </div>
+
+        <!-- Right Column: Contact Form -->
+        <div class="reveal glass-card p-8 rounded-2xl border border-zinc-800 bg-zinc-900/30">
+            <h3 class="text-2xl font-bold text-white mb-6">Consulta Rápida</h3>
+            <form id="contact-form" class="space-y-4">
+                <div>
+                    <label for="name" class="gemini-input-label">Nombre Completo</label>
+                    <input type="text" id="name" name="name" class="gemini-input" placeholder="Ej. Juan Pérez" required>
+                </div>
+                <div>
+                    <label for="email" class="gemini-input-label">Correo Corporativo</label>
+                    <input type="email" id="email" name="email" class="gemini-input" placeholder="juan@empresa.com" required>
+                </div>
+                <div>
+                    <label for="message" class="gemini-input-label">¿En qué podemos ayudarte?</label>
+                    <textarea id="message" name="message" rows="4" class="gemini-input resize-none" placeholder="Cuéntanos brevemente tu desafío..." required></textarea>
+                </div>
+                <button type="submit" class="group w-full bg-white/10 hover:bg-[var(--color-accent)] hover:text-black text-white font-bold py-3 px-6 rounded-lg border border-white/20 transition-all duration-300 flex items-center justify-center gap-2">
+                    <span>Enviar a WhatsApp</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+                <p class="text-xs text-center text-slate-500 mt-4">
+                    Tus datos serán enviados de forma segura.
+                </p>
+            </form>
+        </div>
       </div>
     </section>
 
@@ -1130,32 +982,122 @@
     </footer>
 
     <script>
-      // --- Lenis Smooth Scroll ---
-      const lenis = new Lenis({
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
-        orientation: 'vertical',
-        smoothWheel: true
-      });
+      // --- Safe Lenis Smooth Scroll ---
+      try {
+        if (typeof Lenis !== 'undefined') {
+          const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+            orientation: 'vertical',
+            smoothWheel: true
+          });
 
-      function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
+          function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+          }
+          requestAnimationFrame(raf);
+
+          // Handle anchor links with Lenis
+          document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+              e.preventDefault();
+              const targetId = this.getAttribute('href');
+              if (targetId && targetId !== '#') {
+                  lenis.scrollTo(targetId);
+              }
+            });
+          });
+        } else {
+          console.warn('Lenis not loaded');
+          document.documentElement.style.scrollBehavior = 'smooth';
+        }
+      } catch (e) {
+        console.error('Lenis init failed', e);
+        document.documentElement.style.scrollBehavior = 'smooth';
       }
-      requestAnimationFrame(raf);
 
-      // Handle anchor links with Lenis
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          lenis.scrollTo(this.getAttribute('href'));
-        });
-      });
+    </script>
 
-      // --- Spotlight Effect ---
-      document.addEventListener("DOMContentLoaded", function () {
-        const cards = document.querySelectorAll(".glass-card, .spotlight-card");
+    <script type="module">
+      // --- Firebase SDK ---
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+      import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+      // TODO: Replace with your actual Firebase Project Configuration
+      const firebaseConfig = {
+        apiKey: "YOUR_API_KEY",
+        authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+        projectId: "YOUR_PROJECT_ID",
+        storageBucket: "YOUR_PROJECT_ID.appspot.com",
+        messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+        appId: "YOUR_APP_ID"
+      };
+
+      // Initialize Firebase
+      let db;
+      try {
+        const app = initializeApp(firebaseConfig);
+        db = getFirestore(app);
+        console.log("Firebase initialized successfully");
+      } catch (error) {
+        console.error("Firebase initialization error. Did you add your keys?", error);
+      }
+
+      // --- Form to WhatsApp + FireStore Logic ---
+      document.getElementById('contact-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
         
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerHTML;
+
+        try {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span>Procesando...</span>';
+
+            // Save to Firestore
+            if (db) {
+                await addDoc(collection(db, "leads"), {
+                    name: name,
+                    email: email,
+                    message: message,
+                    timestamp: serverTimestamp(),
+                    source: 'web_contact_form'
+                });
+                console.log("Lead saved to Firestore");
+            } else {
+                console.warn("Firestore not available. Proceeding to WhatsApp.");
+            }
+        } catch (error) {
+            console.error("Error saving lead:", error);
+            // We continue to WhatsApp even if DB fails, to not lose the lead interaction
+        } finally {
+             submitBtn.disabled = false;
+             submitBtn.innerHTML = originalBtnText;
+
+            // Construct WhatsApp Message
+            const phoneNumber = "56965863160"; // Growth Buddies Number
+            const text = `Hola Growth Buddies! 👋%0A%0AMi nombre es: *${name}*%0ACorreo: ${email}%0A%0AMensaje:%0A${message}`;
+            
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${text}`;
+            
+            // Redirect
+            window.open(whatsappUrl, '_blank');
+            
+            // Optional: reset form
+            // document.getElementById('contact-form').reset();
+        }
+      });
+    </script>
+
+    <script>
+      // --- Safe Lenis Smooth Scroll ---
+      document.addEventListener("DOMContentLoaded", function () {
+        // Spotlight
+        const cards = document.querySelectorAll(".glass-card, .spotlight-card");
         cards.forEach((card) => {
           card.addEventListener("mousemove", (e) => {
             const rect = card.getBoundingClientRect();
@@ -1167,9 +1109,8 @@
           });
         });
 
-        // --- Staggered Reveal ---
+        // Staggered Reveal
         const observerOptions = { threshold: 0.1 };
-        
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -1179,6 +1120,14 @@
         }, observerOptions);
 
         document.querySelectorAll(".reveal").forEach((elem) => observer.observe(elem));
+        
+        // Safety: Ensure hero is visible if observer fails or on immediate load
+        setTimeout(() => {
+            const heroContent = document.querySelector('header .reveal');
+            if(heroContent && !heroContent.classList.contains('visible')) {
+                heroContent.classList.add('visible');
+            }
+        }, 500);
       });
     </script>
   </body>
