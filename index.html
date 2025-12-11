@@ -223,9 +223,116 @@
             box-shadow: 0 0 0 2px rgba(0, 246, 255, 0.5);
             background-color: rgba(30, 41, 59, 0.8);
         }
+    /* --- Lenis Smooth Scroll --- */
+      html.lenis {
+        height: auto;
+      }
+      .lenis.lenis-smooth {
+        scroll-behavior: auto !important;
+      }
+      .lenis.lenis-smooth [data-lenis-prevent] {
+        overscroll-behavior: contain;
+      }
+      .lenis.lenis-stopped {
+        overflow: hidden;
+      }
+      .lenis.lenis-scrolling iframe {
+        pointer-events: none;
+      }
+
+      /* --- Noise Overlay --- */
+      .noise-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 40;
+        pointer-events: none;
+        opacity: 0.03;
+        mix-blend-mode: overlay;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
+
+      /* --- Navigation --- */
+      .glass-nav {
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      /* --- Cards Spotlight Effect --- */
+      .spotlight-card {
+        position: relative;
+        background-color: rgba(24, 24, 27, 0.6);
+        border: 1px solid rgba(63, 63, 70, 0.4);
+        overflow: hidden;
+      }
+      .spotlight-card::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: radial-gradient(
+          800px circle at var(--mouse-x) var(--mouse-y),
+          rgba(255, 255, 255, 0.06),
+          transparent 40%
+        );
+        opacity: 0;
+        transition: opacity 0.5s;
+        pointer-events: none;
+        z-index: 1;
+      }
+      .spotlight-card:hover::before {
+        opacity: 1;
+      }
+      
+      /* --- Groddy's Lab Visuals --- */
+      #lab.lab-section {
+        background: radial-gradient(circle at center, rgba(0, 246, 255, 0.08) 0%, rgba(0,0,0,0) 60%);
+      }
+      .lab-card-glow {
+        border-color: rgba(0, 246, 255, 0.2);
+        animation: subtle-pulse 4s infinite ease-in-out;
+      }
+      @keyframes subtle-pulse {
+        0%, 100% { border-color: rgba(0, 246, 255, 0.2); }
+        50% { border-color: rgba(0, 246, 255, 0.4); box-shadow: 0 0 15px rgba(0, 246, 255, 0.1); }
+      }
+
     </style>
-  </head>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
   <body class="antialiased selection:bg-[#00f6ff] selection:text-black">
+    <div class="noise-overlay"></div>
+
+    <nav class="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2 group">
+          <img src="img/logo.png" alt="Growth Buddies" class="h-8 w-8 opacity-90 group-hover:opacity-100 transition-opacity" />
+          <span class="font-bold text-lg tracking-tight text-white group-hover:text-[var(--color-accent)] transition-colors">Growth Buddies</span>
+        </a>
+
+        <!-- Links -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#servicios" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Servicios</a>
+          <a href="#clientes" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Clientes</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="flex items-center gap-4">
+          <a href="#contacto" class="hidden md:inline-block text-sm font-medium text-slate-300 hover:text-white transition-colors">
+            Contacto
+          </a>
+          <a href="https://lab.growthbuddies.cl/" target="_blank" class="px-5 py-2.5 rounded-full bg-zinc-900 border border-[var(--color-accent)] text-[var(--color-accent)] text-sm font-bold hover:bg-[var(--color-accent)] hover:text-black transition-all shadow-[0_0_10px_rgba(0,246,255,0.1)] hover:shadow-[0_0_20px_rgba(0,246,255,0.4)]">
+            Groddy's Lab
+          </a>
+        </div>
+      </div>
+    </nav>
 
     <a href="https://lab.growthbuddies.cl/" id="lab-button" class="pulse-lab fixed bottom-6 left-6 z-50 h-16 w-16 bg-zinc-900/90 backdrop-blur-sm border-2 border-[var(--color-accent)] rounded-full flex items-center justify-center shadow-lg transition-all duration-300 group">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[var(--color-accent)] group-hover:drop-shadow-[0_0_8px_rgba(0,246,255,0.8)] transition-all"><path d="M10 2v7.527a2 2 0 0 1-.211.898L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.125A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
@@ -288,13 +395,20 @@
           Automatización de Procesos y Gestión del Cambio para empresas líderes
           en Latinoamérica.
         </p>
-        <div class="mt-12">
+        <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href="https://calendly.com/espohr/conversemos"
             target="_blank"
-            class="impact-button inline-block bg-[var(--color-accent)] text-black font-bold py-4 px-10 rounded-full text-lg"
+            class="impact-button inline-block bg-[var(--color-accent)] text-black font-bold py-4 px-10 rounded-full text-lg w-full sm:w-auto"
           >
             Agendar Sesión Estratégica
+          </a>
+          <a
+            href="#lab"
+            data-lenis-scroll
+            class="inline-block bg-transparent border border-white/20 text-white font-medium py-4 px-10 rounded-full text-lg hover:bg-white/10 transition-all w-full sm:w-auto"
+          >
+            Descubre Groddy's Lab
           </a>
         </div>
       </div>
@@ -321,6 +435,7 @@
     </header>
 
     <section
+      id="clientes"
       class="py-20 border-b border-zinc-900 bg-zinc-950/50 backdrop-blur-sm"
     >
       <div class="max-w-7xl mx-auto px-6">
@@ -502,7 +617,7 @@
       </div>
     </section>
 
-    <section class="py-24 md:py-32 px-6">
+    <section id="servicios" class="py-24 md:py-32 px-6">
       <div class="max-w-6xl mx-auto">
         <div class="text-center reveal mb-20">
           <h2
@@ -618,7 +733,8 @@
     </section>
 
     <section
-      class="py-24 md:py-32 px-6 bg-[var(--color-dark)] relative overflow-hidden"
+      id="lab"
+      class="lab-section py-24 md:py-32 px-6 bg-[var(--color-dark)] relative overflow-hidden"
     >
       <div
         class="absolute top-0 right-0 w-1/3 h-full bg-[var(--color-accent)] opacity-[0.03] blur-[100px] pointer-events-none"
@@ -643,7 +759,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <!-- Card 1: Dashboard -->
           <div
-            class="reveal glass-card p-8 rounded-2xl flex flex-col items-start h-full group hover:bg-zinc-900/60 transition-all"
+            class="reveal spotlight-card lab-card-glow p-8 rounded-2xl flex flex-col items-start h-full group transition-all"
           >
             <div
               class="p-3 bg-zinc-900/80 rounded-lg text-[var(--color-accent)] mb-6 border border-zinc-800 group-hover:scale-110 transition-transform"
@@ -676,7 +792,7 @@
 
           <!-- Card 2: Kanban -->
           <div
-            class="reveal glass-card p-8 rounded-2xl flex flex-col items-start h-full group hover:bg-zinc-900/60 transition-all"
+            class="reveal spotlight-card lab-card-glow p-8 rounded-2xl flex flex-col items-start h-full group transition-all"
             style="transition-delay: 100ms"
           >
             <div
@@ -708,7 +824,7 @@
 
           <!-- Card 3: Academy -->
           <div
-            class="reveal glass-card p-8 rounded-2xl flex flex-col items-start h-full group hover:bg-zinc-900/60 transition-all"
+            class="reveal spotlight-card lab-card-glow p-8 rounded-2xl flex flex-col items-start h-full group transition-all"
             style="transition-delay: 200ms"
           >
             <div
@@ -1014,20 +1130,55 @@
     </footer>
 
     <script>
-      // Efecto Reveal al hacer scroll
+      // --- Lenis Smooth Scroll ---
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+        orientation: 'vertical',
+        smoothWheel: true
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+
+      // Handle anchor links with Lenis
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          lenis.scrollTo(this.getAttribute('href'));
+        });
+      });
+
+      // --- Spotlight Effect ---
       document.addEventListener("DOMContentLoaded", function () {
-        const revealElements = document.querySelectorAll(".reveal");
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-              }
-            });
-          },
-          { threshold: 0.1 }
-        );
-        revealElements.forEach((elem) => observer.observe(elem));
+        const cards = document.querySelectorAll(".glass-card, .spotlight-card");
+        
+        cards.forEach((card) => {
+          card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            card.style.setProperty("--mouse-x", `${x}px`);
+            card.style.setProperty("--mouse-y", `${y}px`);
+          });
+        });
+
+        // --- Staggered Reveal ---
+        const observerOptions = { threshold: 0.1 };
+        
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        }, observerOptions);
+
+        document.querySelectorAll(".reveal").forEach((elem) => observer.observe(elem));
       });
     </script>
   </body>
