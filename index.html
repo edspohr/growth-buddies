@@ -1233,9 +1233,9 @@
 
     <script>
       // --- Spotlight & Reveal (Critical UI) ---
-      (function() {
+      (function () {
         const cards = document.querySelectorAll(".glass-card, .spotlight-card");
-        
+
         // Spotlight Effect
         cards.forEach((card) => {
           card.addEventListener("mousemove", (e) => {
@@ -1249,9 +1249,9 @@
 
         // Staggered Reveal with Fail-Safe
         const revs = document.querySelectorAll(".reveal");
-        
+
         const observerOptions = { threshold: 0.05, rootMargin: "20px" }; // Reduced threshold for better triggering
-        
+
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -1262,16 +1262,16 @@
         }, observerOptions);
 
         revs.forEach((elem) => observer.observe(elem));
-        
+
         // CRITICAL FAIL-SAFE: Force all elements to be visible after 1.5s
         // This ensures the site is never blank even if the observer fails
         setTimeout(() => {
-            revs.forEach(elem => {
-                if (!elem.classList.contains('visible')) {
-                    console.warn("Force revealing element:", elem);
-                    elem.classList.add('visible');
-                }
-            });
+          revs.forEach((elem) => {
+            if (!elem.classList.contains("visible")) {
+              console.warn("Force revealing element:", elem);
+              elem.classList.add("visible");
+            }
+          });
         }, 1500);
       })();
     </script>
@@ -1325,21 +1325,31 @@
             submitBtn.disabled = true;
             submitBtn.innerHTML = "<span>Procesando...</span>";
 
-            // Save to Firestore
-            if (db) {
-              await addDoc(collection(db, "leads"), {
-                name: name,
-                email: email,
-                message: message,
-                timestamp: serverTimestamp(),
-                source: "web_contact_form",
-              });
-              console.log("Lead saved to Firestore");
+            // Save to Firestore (Only if configured)
+            const isConfigured = firebaseConfig.apiKey !== "YOUR_API_KEY";
+
+            if (db && isConfigured) {
+              try {
+                await addDoc(collection(db, "leads"), {
+                  name: name,
+                  email: email,
+                  message: message,
+                  timestamp: serverTimestamp(),
+                  source: "web_contact_form",
+                });
+                console.log("Lead saved to Firestore");
+              } catch (dbError) {
+                console.error("Firestore save failed (non-fatal):", dbError);
+              }
             } else {
-              console.warn("Firestore not available. Proceeding to WhatsApp.");
+              if (!db) console.warn("Firestore not initialized.");
+              if (!isConfigured)
+                console.warn(
+                  "Firebase not configured (using placeholders). Skipping DB save."
+                );
             }
           } catch (error) {
-            console.error("Error saving lead:", error);
+            console.error("Error in form processing:", error);
             // We continue to WhatsApp even if DB fails, to not lose the lead interaction
           } finally {
             submitBtn.disabled = false;
