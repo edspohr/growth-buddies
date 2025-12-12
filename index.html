@@ -1233,41 +1233,46 @@
 
     <script>
       // --- Spotlight & Reveal (Critical UI) ---
-      (function () {
-        // Run immediately as we are at the end of body
+      (function() {
         const cards = document.querySelectorAll(".glass-card, .spotlight-card");
+        
+        // Spotlight Effect
         cards.forEach((card) => {
           card.addEventListener("mousemove", (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-
             card.style.setProperty("--mouse-x", `${x}px`);
             card.style.setProperty("--mouse-y", `${y}px`);
           });
         });
 
-        // Staggered Reveal
-        const observerOptions = { threshold: 0.1 };
+        // Staggered Reveal with Fail-Safe
+        const revs = document.querySelectorAll(".reveal");
+        
+        const observerOptions = { threshold: 0.05, rootMargin: "20px" }; // Reduced threshold for better triggering
+        
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.classList.add("visible");
+              observer.unobserve(entry.target); // Should only animate once
             }
           });
         }, observerOptions);
 
-        const revs = document.querySelectorAll(".reveal");
         revs.forEach((elem) => observer.observe(elem));
-
-        // Safety: Manual force visible if Observer is slow/fails
+        
+        // CRITICAL FAIL-SAFE: Force all elements to be visible after 1.5s
+        // This ensures the site is never blank even if the observer fails
         setTimeout(() => {
-          const heroContent = document.querySelector("header .reveal");
-          if (heroContent && !heroContent.classList.contains("visible")) {
-            console.log("Force revealing hero");
-            heroContent.classList.add("visible");
-          }
-        }, 500);
+            revs.forEach(elem => {
+                if (!elem.classList.contains('visible')) {
+                    console.warn("Force revealing element:", elem);
+                    elem.classList.add('visible');
+                }
+            });
+        }, 1500);
       })();
     </script>
 
