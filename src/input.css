@@ -132,17 +132,7 @@ body {
         box-shadow: 0 0 0 0 rgba(0, 246, 255, 0);
     }
 }
-#lab-button:hover {
-    border-color: var(--color-accent);
-    box-shadow: 0 0 25px rgba(0, 246, 255, 0.6);
-    transform: scale(1.1);
-}
-.pulse-lab { animation: pulse-lab-glow 2s infinite; }
-@keyframes pulse-lab-glow {
-    0% { box-shadow: 0 0 0 0 rgba(0, 246, 255, 0.4); border-color: rgba(0, 246, 255, 0.3); }
-    50% { box-shadow: 0 0 25px 5px rgba(0, 246, 255, 0.6); border-color: var(--color-accent); }
-    100% { box-shadow: 0 0 0 0 rgba(0, 246, 255, 0); border-color: rgba(0, 246, 255, 0.3); }
-}
+
 
 /* Inputs */
 .gemini-input-label {
@@ -228,18 +218,7 @@ html.lenis {
     opacity: 1;
 }
 
-/* --- Groddy's Lab Visuals --- */
-#lab.lab-section {
-    background: radial-gradient(circle at center, rgba(0, 246, 255, 0.08) 0%, rgba(0,0,0,0) 60%);
-}
-.lab-card-glow {
-    border-color: rgba(0, 246, 255, 0.2);
-    animation: subtle-pulse 4s infinite ease-in-out;
-}
-@keyframes subtle-pulse {
-    0%, 100% { border-color: rgba(0, 246, 255, 0.2); }
-    50% { border-color: rgba(0, 246, 255, 0.4); box-shadow: 0 0 15px rgba(0, 246, 255, 0.1); }
-}
+
 
 /* --- FAQ Accordion --- */
 details > summary {

@@ -59,7 +59,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
@@ -107,46 +107,11 @@
           >
             Contacto
           </a>
-          <a
-            href="https://lab.growthbuddies.cl/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="px-5 py-2.5 rounded-full bg-zinc-900 border border-[var(--color-accent)] text-[var(--color-accent)] text-sm font-bold hover:bg-[var(--color-accent)] hover:text-black transition-all shadow-[0_0_10px_rgba(0,246,255,0.1)] hover:shadow-[0_0_20px_rgba(0,246,255,0.4)]"
-          >
-            Groddy's Lab
-          </a>
         </div>
       </div>
     </nav>
 
-    <a
-      href="https://lab.growthbuddies.cl/"
-      id="lab-button"
-      class="pulse-lab fixed bottom-6 left-6 z-50 h-16 w-16 bg-zinc-900/90 backdrop-blur-sm border-2 border-[var(--color-accent)] rounded-full flex items-center justify-center shadow-lg transition-all duration-300 group"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="32"
-        height="32"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="text-[var(--color-accent)] group-hover:drop-shadow-[0_0_8px_rgba(0,246,255,0.8)] transition-all"
-      >
-        <path
-          d="M10 2v7.527a2 2 0 0 1-.211.898L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.125A2 2 0 0 1 14 9.527V2"
-        />
-        <path d="M8.5 2h7" />
-        <path d="M7 16h10" />
-      </svg>
-      <span
-        class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-max bg-black text-[var(--color-accent)] border border-[var(--color-accent)] font-bold text-xs rounded-md py-2 px-4 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-[0_0_15px_rgba(0,246,255,0.3)]"
-        >Ir a Groddy's Lab</span
-      >
-    </a>
+
 
     <a
       href="https://wa.me/56965863160"
@@ -190,41 +155,36 @@
         <div class="video-overlay"></div>
       </div>
 
-      <div class="z-10 reveal flex flex-col items-center max-w-5xl">
+      <div class="z-10 reveal flex flex-col items-center max-w-5xl px-4">
         <img
           src="img/logo.png"
           alt="Growth Buddies - Automatización y Gestión del Cambio"
-          class="mb-8 h-64 w-64 md:h-80 md:w-80 drop-shadow-[0_0_25px_rgba(0,246,255,0.3)] hover:scale-105 transition-transform duration-500"
+          class="mb-10 h-40 w-40 md:h-56 md:w-56 drop-shadow-[0_0_35px_rgba(0,246,255,0.4)] animate-float"
         />
 
         <h1
-          class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter animated-gradient-text leading-tight"
+          class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight font-display text-center leading-[1.1] mb-6"
         >
-          Tecnología que<br />genera Rentabilidad.
+          <span class="text-white">Transformamos</span>
+          <span class="animated-gradient-text block mt-2">Firmas y Empresas.</span>
         </h1>
-        <p
-          class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-slate-300 font-light"
-        >
-          Automatización de Procesos y Gestión del Cambio para empresas líderes
-          en Latinoamérica.
+        
+        <p class="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-slate-300 font-light text-center leading-relaxed">
+          Garantizamos la adopción de la tecnología. Automatización Inteligente, Legal Tech y Gestión del Cambio para impulsar la rentabilidad real.
         </p>
+
         <div
-          class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4"
+          class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto"
         >
           <a
             href="https://calendly.com/espohr/conversemos"
             target="_blank"
             rel="noopener noreferrer"
-            class="impact-button inline-block bg-[var(--color-accent)] text-black font-bold py-4 px-10 rounded-full text-lg w-full sm:w-auto"
+            class="impact-button group relative inline-flex items-center justify-center gap-3 bg-[var(--color-accent)] text-black font-bold py-4 px-10 rounded-full text-lg w-full sm:w-auto overflow-hidden"
           >
-            Agendar Sesión Estratégica
-          </a>
-          <a
-            href="#lab"
-            data-lenis-scroll
-            class="inline-block bg-transparent border border-white/20 text-white font-medium py-4 px-10 rounded-full text-lg hover:bg-white/10 transition-all w-full sm:w-auto"
-          >
-            Descubre Groddy's Lab
+            <span class="relative z-10">Agendar Sesión Estratégica</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="relative z-10 transition-transform group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            <div class="absolute inset-0 bg-white/30 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
           </a>
         </div>
       </div>
@@ -250,6 +210,21 @@
       </div>
     </header>
 
+    <!-- Success Metrics Ticker -->
+    <div class="border-y border-white/10 bg-black/50 backdrop-blur-md overflow-hidden py-4">
+      <div class="flex items-center justify-around max-w-7xl mx-auto px-6 text-sm md:text-base text-slate-400 font-mono tracking-wider">
+         <div class="flex items-center gap-2">
+            <span class="text-[var(--color-accent)] font-bold text-lg">+30%</span> Eficiencia Operativa
+         </div>
+         <div class="hidden md:flex items-center gap-2">
+            <span class="text-[var(--color-accent)] font-bold text-lg">10k+</span> Documentos Procesados
+         </div>
+         <div class="hidden md:flex items-center gap-2">
+            <span class="text-[var(--color-accent)] font-bold text-lg">100%</span> Adopción Garantizada
+         </div>
+      </div>
+    </div>
+
     <section
       id="clientes"
       class="py-20 border-b border-zinc-900 bg-zinc-950/50 backdrop-blur-sm"
@@ -257,12 +232,12 @@
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-12">
           <p
-            class="text-sm font-semibold text-[var(--color-accent)] tracking-widest uppercase mb-2"
+            class="text-sm font-semibold text-[var(--color-accent)] tracking-widest uppercase mb-2 font-display"
           >
-            Casos de Éxito
+            Nuestros Socios
           </p>
-          <h2 class="text-3xl font-bold text-slate-100">
-            ALGUNOS DE NUESTROS CLIENTES
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-100 font-display">
+            Confían en Nosotros
           </h2>
         </div>
 
@@ -439,392 +414,284 @@
       </div>
     </section>
 
-    <section id="servicios" class="py-16 md:py-24 px-6">
-      <div class="max-w-6xl mx-auto">
+    <section id="servicios" class="py-20 md:py-32 px-6 relative overflow-hidden">
+      <!-- Background Glow -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[var(--color-accent)] opacity-[0.03] blur-[120px] rounded-full pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto relative z-10">
         <div class="text-center reveal mb-20">
+          <span class="text-[var(--color-accent)] font-bold tracking-wider text-sm uppercase font-display">Nuestras Especialidades</span>
           <h2
-            class="text-4xl md:text-5xl font-bold tracking-tight text-slate-100"
+            class="text-4xl md:text-6xl font-black tracking-tight text-white mt-3 font-display"
           >
-            Soluciones para escalar en Latam.
+            Soluciones de Alto Impacto
           </h2>
-          <p class="mt-4 text-slate-400">
-            Transformación digital pragmática, enfocada en el ROI.
+          <p class="mt-6 text-xl text-slate-400 max-w-2xl mx-auto">
+            Combinamos tecnología de punta con estrategia humana para resultados tangibles.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+          <!-- Service 1: Legal Tech (Highlight) -->
           <div
-            class="reveal glass-card p-8 rounded-2xl flex flex-col items-start h-full"
+            class="reveal group glass-card p-1 rounded-3xl relative overflow-hidden"
           >
-            <div
-              class="p-3 bg-zinc-900/80 rounded-lg text-[var(--color-accent)] mb-6 border border-zinc-800"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="m17 2 4 4-4 4" />
-                <path d="M3 11v-1a4 4 0 0 1 4-4h14" />
-                <path d="m7 22-4-4 4-4" />
-                <path d="M21 13v1a4 4 0 0 1-4 4H3" />
-              </svg>
+            <div class="absolute inset-0 bg-gradient-to-b from-[var(--color-accent)] via-transparent to-transparent opacity-10 group-hover:opacity-20 transition-opacity"></div>
+            
+            <div class="bg-zinc-950/90 h-full w-full rounded-[1.3rem] p-8 flex flex-col relative z-10">
+                <div class="h-14 w-14 bg-blue-900/30 rounded-2xl flex items-center justify-center mb-6 border border-blue-500/20 group-hover:border-[var(--color-accent)] transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[var(--color-accent)]"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4 font-display">Legal Tech & Ops</h3>
+                <p class="text-slate-400 leading-relaxed mb-6 flex-grow">
+                    Modernización integral para Firmas Legales y Gerencias Legales. Automatización de documentos, gestión de casos (CLM) y optimización de flujos operativos para abogados.
+                </p>
+                <ul class="space-y-2 text-sm text-slate-300 mb-6">
+                    <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]"></div>Automatización Contractual</li>
+                    <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]"></div>Reportería y KPI Legales</li>
+                    <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]"></div>Implementación de Software</li>
+                </ul>
             </div>
-            <h3 class="text-2xl font-bold mb-3 text-slate-100">
-              Automatización Inteligente
-            </h3>
-            <p class="text-slate-400 leading-relaxed">
-              Eliminamos tareas repetitivas mediante flujos de trabajo
-              automatizados. Maximizamos la eficiencia operativa para que su
-              equipo se centre en el negocio.
-            </p>
           </div>
+
+          <!-- Service 2: Corporate IA -->
           <div
-            class="reveal glass-card p-8 rounded-2xl flex flex-col items-start h-full"
-            style="transition-delay: 150ms"
+            class="reveal group glass-card p-1 rounded-3xl relative overflow-hidden"
+            style="transition-delay: 100ms"
           >
-            <div
-              class="p-3 bg-zinc-900/80 rounded-lg text-[var(--color-accent)] mb-6 border border-zinc-800"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M4 19L8 5l4 14" />
-                <path d="M5.5 14h5" />
-                <path d="M16 5v14" />
-              </svg>
+            <div class="bg-zinc-950/90 h-full w-full rounded-[1.3rem] p-8 flex flex-col relative z-10">
+                <div class="h-14 w-14 bg-purple-900/30 rounded-2xl flex items-center justify-center mb-6 border border-purple-500/20 group-hover:border-purple-400 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-400"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4 font-display">IA Corporativa</h3>
+                <p class="text-slate-400 leading-relaxed mb-6 flex-grow">
+                    Implementación segura de Inteligencia Artificial Generativa. Desarrollo de asistentes virtuales (Agents) y optimización de procesos de negocio.
+                </p>
+                <ul class="space-y-2 text-sm text-slate-300 mb-6">
+                    <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-purple-400"></div>Asistentes (RAG) Privados</li>
+                    <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-purple-400"></div>Análisis de Datos</li>
+                    <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-purple-400"></div>Automatización de Soporte</li>
+                </ul>
             </div>
-            <h3 class="text-2xl font-bold mb-3 text-slate-100">
-              IA Corporativa
-            </h3>
-            <p class="text-slate-400 leading-relaxed">
-              Implementamos modelos de Inteligencia Artificial seguros y
-              personalizados para análisis de datos, atención al cliente y toma
-              de decisiones.
-            </p>
           </div>
+
+          <!-- Service 3: Change Management -->
           <div
-            class="reveal glass-card p-8 rounded-2xl flex flex-col items-start h-full"
-            style="transition-delay: 300ms"
+            class="reveal group glass-card p-1 rounded-3xl relative overflow-hidden"
+            style="transition-delay: 200ms"
           >
-            <div
-              class="p-3 bg-zinc-900/80 rounded-lg text-[var(--color-accent)] mb-6 border border-zinc-800"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="m22 13-1-1-1 1" />
-                <path d="m16 3 1 1 1-1" />
-              </svg>
+            <div class="bg-zinc-950/90 h-full w-full rounded-[1.3rem] p-8 flex flex-col relative z-10">
+                <div class="h-14 w-14 bg-emerald-900/30 rounded-2xl flex items-center justify-center mb-6 border border-emerald-500/20 group-hover:border-emerald-400 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4 font-display">Gestión del Cambio</h3>
+                <p class="text-slate-400 leading-relaxed mb-6 flex-grow">
+                    El "Factor Humano". Aseguramos que su equipo quiera y sepa usar las nuevas herramientas. Reducimos la resistencia y aceleramos el ROI.
+                </p>
+                 <ul class="space-y-2 text-sm text-slate-300 mb-6">
+                    <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-emerald-400"></div>Capacitación y Onboarding</li>
+                    <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-emerald-400"></div>Comunicación Interna</li>
+                    <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-emerald-400"></div>Medición de Adopción</li>
+                </ul>
             </div>
-            <h3 class="text-2xl font-bold mb-3 text-slate-100">
-              Gestión del Cambio
-            </h3>
-            <p class="text-slate-400 leading-relaxed">
-              La tecnología sin adopción falla. Gestionamos el cambio cultural y
-              la capacitación para asegurar que las nuevas herramientas generen
-              valor real.
-            </p>
           </div>
+
         </div>
       </div>
     </section>
 
     <section
-      id="lab"
-      class="lab-section py-16 md:py-24 px-6 bg-[var(--color-dark)] relative overflow-hidden"
+      id="metodologia"
+      class="py-24 px-6 relative overflow-hidden bg-zinc-950"
     >
-      <div
-        class="absolute top-0 right-0 w-1/3 h-full bg-[var(--color-accent)] opacity-[0.03] blur-[100px] pointer-events-none"
-      ></div>
-      <div class="max-w-6xl mx-auto relative z-10">
-        <div class="text-center reveal mb-16">
-          <span
-            class="text-[var(--color-accent)] font-bold tracking-wider text-sm uppercase"
-            >Portal de Cliente Exclusivo</span
-          >
+      <div class="absolute top-0 right-0 w-1/2 h-full bg-blue-900/10 blur-[100px] pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div class="text-center reveal mb-20">
+            <span class="text-blue-500 font-bold tracking-wider text-sm uppercase font-display">Nuestra Metodología</span>
           <h2
-            class="text-4xl md:text-5xl font-bold tracking-tight text-slate-100 mt-2"
+            class="text-4xl md:text-5xl font-black tracking-tight text-white mt-3 font-display"
           >
-            Groddy's Lab: Control Total.
+            Ingeniería de Transformación.
           </h2>
-          <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-400">
-            El complemento perfecto para nuestro servicio de Gerente Digital
-            Outsourced. Gestiona, aprende y escala.
+          <p class="mt-6 max-w-2xl mx-auto text-lg text-slate-400 leading-relaxed">
+            No somos "implementadores". Somos su socio en la reingeniería de su negocio, paso a paso.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Card 1: Dashboard -->
-          <div
-            class="reveal spotlight-card lab-card-glow p-8 rounded-2xl flex flex-col items-start h-full group transition-all"
-          >
-            <div
-              class="p-3 bg-zinc-900/80 rounded-lg text-[var(--color-accent)] mb-6 border border-zinc-800 group-hover:scale-110 transition-transform"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
-                <line x1="3" x2="21" y1="9" y2="9" />
-                <line x1="9" x2="9" y1="21" y2="9" />
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold mb-3 text-slate-100">
-              Dashboard de Impacto
-            </h3>
-            <p class="text-sm text-slate-400 leading-relaxed mb-6">
-              Visualiza métricas clave en tiempo real: tareas activas,
-              eficiencia operativa y ahorros generados por las automatizaciones
-              implementadas.
-            </p>
-          </div>
+        <div class="relative">
+            <!-- Connecting Line (Desktop) -->
+            <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-blue-500/50 to-transparent -translate-y-1/2 z-0"></div>
 
-          <!-- Card 2: Kanban -->
-          <div
-            class="reveal spotlight-card lab-card-glow p-8 rounded-2xl flex flex-col items-start h-full group transition-all"
-            style="transition-delay: 100ms"
-          >
-            <div
-              class="p-3 bg-zinc-900/80 rounded-lg text-[var(--color-accent)] mb-6 border border-zinc-800 group-hover:scale-110 transition-transform"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M3 3h18v18H3zM9 3v18M15 3v18" />
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold mb-3 text-slate-100">
-              Gestión Kanban
-            </h3>
-            <p class="text-sm text-slate-400 leading-relaxed mb-6">
-              Sigue el progreso de cada implementación paso a paso. Tablero
-              interactivo (Drag & Drop) para que nunca pierdas el control del
-              estado de tus proyectos.
-            </p>
-          </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="reveal relative z-10">
+                    <div class="bg-black border border-zinc-800 p-8 rounded-2xl h-full hover:border-blue-500 transition-colors group">
+                        <div class="h-12 w-12 bg-zinc-900 rounded-xl flex items-center justify-center mb-6 text-white font-black text-xl border border-zinc-700 group-hover:bg-blue-600 group-hover:border-blue-500 transition-all shadow-[0_0_20px_rgba(0,0,0,0.5)]">1</div>
+                        <h3 class="text-xl font-bold text-white mb-2 font-display">Diagnóstico</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Analizamos sus procesos actuales con "ojos de ingeniero". Identificamos cuellos de botella y ROI potencial.
+                        </p>
+                    </div>
+                </div>
 
-          <!-- Card 3: Academy -->
-          <div
-            class="reveal spotlight-card lab-card-glow p-8 rounded-2xl flex flex-col items-start h-full group transition-all"
-            style="transition-delay: 200ms"
-          >
-            <div
-              class="p-3 bg-zinc-900/80 rounded-lg text-[var(--color-accent)] mb-6 border border-zinc-800 group-hover:scale-110 transition-transform"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M22 10v6M2 10v6" />
-                <path d="M12 2 2 7l10 5 10-5-10-5z" />
-                <path d="m22 2-10 5-10-5" />
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold mb-3 text-slate-100">
-              Growth Academy
-            </h3>
-            <p class="text-sm text-slate-400 leading-relaxed mb-6">
-              Acceso exclusivo a cursos de capacitación y recursos descargables
-              para que tu equipo adopte las nuevas tecnologías sin fricción.
-            </p>
-          </div>
-        </div>
+                 <!-- Step 2 -->
+                 <div class="reveal relative z-10" style="transition-delay: 100ms">
+                    <div class="bg-black border border-zinc-800 p-8 rounded-2xl h-full hover:border-blue-500 transition-colors group">
+                        <div class="h-12 w-12 bg-zinc-900 rounded-xl flex items-center justify-center mb-6 text-white font-black text-xl border border-zinc-700 group-hover:bg-blue-600 group-hover:border-blue-500 transition-all shadow-[0_0_20px_rgba(0,0,0,0.5)]">2</div>
+                        <h3 class="text-xl font-bold text-white mb-2 font-display">Diseño</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Arquitectura de sistemas y flujos de trabajo. No improvisamos; diseñamos para la escalabilidad.
+                        </p>
+                    </div>
+                </div>
 
-        <div class="mt-12 text-center reveal">
-          <a
-            href="https://lab.growthbuddies.cl/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="impact-button inline-flex items-center gap-2 bg-transparent border border-[var(--color-accent)] text-[var(--color-accent)] font-bold py-4 px-10 rounded-full text-lg hover:bg-[var(--color-accent)] hover:text-black transition-colors"
-          >
-            Acceder a Groddy's Lab
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path
-                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-              />
-              <polyline points="15 3 21 3 21 9" />
-              <line x1="10" x2="21" y1="14" y2="3" />
-            </svg>
-          </a>
-          <p class="mt-4 text-xs text-slate-500">
-            * Acceso disponible para clientes activos y usuarios registrados.
-          </p>
+                 <!-- Step 3 -->
+                 <div class="reveal relative z-10" style="transition-delay: 200ms">
+                    <div class="bg-black border border-zinc-800 p-8 rounded-2xl h-full hover:border-blue-500 transition-colors group">
+                        <div class="h-12 w-12 bg-zinc-900 rounded-xl flex items-center justify-center mb-6 text-white font-black text-xl border border-zinc-700 group-hover:bg-blue-600 group-hover:border-blue-500 transition-all shadow-[0_0_20px_rgba(0,0,0,0.5)]">3</div>
+                        <h3 class="text-xl font-bold text-white mb-2 font-display">Build</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Desarrollo ágil e integraciones robustas. Automatizamos la burocracia para liberar talento.
+                        </p>
+                    </div>
+                </div>
+
+                 <!-- Step 4 -->
+                 <div class="reveal relative z-10" style="transition-delay: 300ms">
+                    <div class="bg-black border border-zinc-800 p-8 rounded-2xl h-full hover:border-[var(--color-accent)] transition-colors group">
+                        <div class="h-12 w-12 bg-zinc-900 rounded-xl flex items-center justify-center mb-6 text-white font-black text-xl border border-zinc-700 group-hover:bg-[var(--color-accent)] group-hover:text-black group-hover:border-[var(--color-accent)] transition-all shadow-[0_0_20px_rgba(0,0,0,0.5)]">4</div>
+                        <h3 class="text-xl font-bold text-white mb-2 font-display">Adopción</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            **Nuestro sello.** Acompañamos a su equipo hasta que la tecnología sea invisible y natural.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
       </div>
     </section>
 
-    <section class="py-16 md:py-24 px-6">
+    <section class="py-24 px-6 relative">
       <div class="max-w-6xl mx-auto">
         <div class="text-center reveal mb-16">
           <h2
-            class="text-4xl md:text-5xl font-bold tracking-tight text-slate-100"
+            class="text-4xl md:text-5xl font-black tracking-tight text-slate-100 font-display"
           >
-            Expertos en Negocios y Tech.
+            Liderazgo Técnico y Estratégico.
           </h2>
           <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-400">
-            El equilibrio perfecto entre estrategia corporativa e innovación
-            técnica.
+            El equilibrio perfecto entre innovación tecnológica y pragmatismo de negocios.
           </p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+          <!-- Edmundo Profile -->
           <div
-            class="reveal glass-card flex flex-col items-center text-center md:flex-row md:text-left gap-8 p-8 rounded-2xl h-full group hover:bg-zinc-900/80 transition-colors"
+            class="reveal group relative overflow-hidden rounded-3xl p-[1px]"
           >
-            <div class="relative">
-              <div
-                class="absolute -inset-1 bg-gradient-to-r from-[#00f6ff] to-blue-600 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-500"
-              ></div>
-              <img
-                src="img/foto.jpg"
-                alt="Edmundo Spohr - CEO Growth Buddies"
-                class="relative h-32 w-32 md:h-40 md:w-40 rounded-full object-cover border-2 border-zinc-800 group-hover:border-[var(--color-accent)] transition-colors"
-              />
-            </div>
-            <div>
-              <p class="text-lg text-slate-200 italic leading-snug">
-                "Somos el puente pragmático entre la tecnología compleja y su
-                rentabilidad."
-              </p>
-              <div class="mt-4">
-                <p class="font-bold text-white text-lg">Edmundo Spohr</p>
-                <p class="text-sm text-[var(--color-accent)] font-medium">
-                  CEO & Fundador
-                </p>
-              </div>
-              <a
-                href="https://www.linkedin.com/in/edmundo-spohr"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="mt-4 inline-flex items-center gap-2 text-xs text-slate-400 hover:text-[var(--color-accent)] transition-colors uppercase tracking-wider font-bold"
-              >
-                LinkedIn
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M7 7h10v10" />
-                  <path d="M7 17 17 7" />
-                </svg>
-              </a>
-            </div>
+             <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-accent)] via-transparent to-transparent opacity-30 group-hover:opacity-60 transition-opacity duration-500"></div>
+            
+             <div class="bg-black/80 backdrop-blur-xl h-full w-full rounded-[1.4rem] p-8 md:p-10 flex flex-col items-center text-center md:flex-row md:text-left gap-8 relative z-10 border border-white/5 group-hover:border-[var(--color-accent)]/30 transition-colors">
+                <div class="relative shrink-0">
+                  <div
+                    class="absolute -inset-4 bg-[var(--color-accent)] rounded-full blur-xl opacity-20 group-hover:opacity-40 transition duration-500"
+                  ></div>
+                  <img
+                    src="img/foto.jpg"
+                    alt="Edmundo Spohr - CEO Growth Buddies"
+                    class="relative h-32 w-32 md:h-40 md:w-40 rounded-full object-cover ring-2 ring-white/10 group-hover:ring-[var(--color-accent)] transition-all"
+                  />
+                </div>
+                <div>
+                  <p class="text-lg text-slate-200 italic leading-snug font-light">
+                    "Automatizamos lo aburrido para que los equipos brillantes puedan enfocarse en lo estratégico."
+                  </p>
+                  <div class="mt-6">
+                    <p class="font-bold text-white text-xl font-display">Edmundo Spohr</p>
+                    <p class="text-sm text-[var(--color-accent)] font-medium tracking-wide uppercase">
+                      CEO & Fundador
+                    </p>
+                  </div>
+                  <a
+                    href="https://www.linkedin.com/in/edmundo-spohr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="mt-4 inline-flex items-center gap-2 text-xs text-slate-500 hover:text-[var(--color-accent)] transition-colors uppercase tracking-wider font-bold"
+                  >
+                    Ver LinkedIn
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M7 7h10v10" />
+                      <path d="M7 17 17 7" />
+                    </svg>
+                  </a>
+                </div>
+             </div>
           </div>
 
+          <!-- Felipe Profile -->
           <div
-            class="reveal glass-card flex flex-col items-center text-center md:flex-row md:text-left gap-8 p-8 rounded-2xl h-full group hover:bg-zinc-900/80 transition-colors"
+            class="reveal group relative overflow-hidden rounded-3xl p-[1px]"
             style="transition-delay: 150ms"
           >
-            <div class="relative">
-              <div
-                class="absolute -inset-1 bg-gradient-to-r from-[#00f6ff] to-blue-600 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-500"
-              ></div>
-              <img
-                src="img/felipe.png"
-                alt="Felipe Soto Santibañez - Consultor Senior"
-                class="relative h-32 w-32 md:h-40 md:w-40 rounded-full object-cover border-2 border-zinc-800 group-hover:border-[var(--color-accent)] transition-colors"
-              />
-            </div>
-            <div>
-              <p class="text-lg text-slate-200 italic leading-snug">
-                "Los datos sólidos son los cimientos innegociables de cualquier
-                transformación."
-              </p>
-              <div class="mt-4">
-                <p class="font-bold text-white text-lg">
-                  Felipe Soto Santibañez
-                </p>
-                <p class="text-sm text-[var(--color-accent)] font-medium">
-                  Consultor Senior
-                </p>
-              </div>
-              <a
-                href="https://www.linkedin.com/in/fssantibanez/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="mt-4 inline-flex items-center gap-2 text-xs text-slate-400 hover:text-[var(--color-accent)] transition-colors uppercase tracking-wider font-bold"
-              >
-                LinkedIn
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M7 7h10v10" />
-                  <path d="M7 17 17 7" />
-                </svg>
-              </a>
-            </div>
+             <div class="absolute inset-0 bg-gradient-to-br from-blue-600 via-transparent to-transparent opacity-30 group-hover:opacity-60 transition-opacity duration-500"></div>
+            
+             <div class="bg-black/80 backdrop-blur-xl h-full w-full rounded-[1.4rem] p-8 md:p-10 flex flex-col items-center text-center md:flex-row md:text-left gap-8 relative z-10 border border-white/5 group-hover:border-blue-500/30 transition-colors">
+                <div class="relative shrink-0">
+                  <div
+                    class="absolute -inset-4 bg-blue-500 rounded-full blur-xl opacity-20 group-hover:opacity-40 transition duration-500"
+                  ></div>
+                  <img
+                    src="img/felipe.png"
+                    alt="Felipe Soto Santibañez - Consultor Senior"
+                    class="relative h-32 w-32 md:h-40 md:w-40 rounded-full object-cover ring-2 ring-white/10 group-hover:ring-blue-500 transition-all"
+                  />
+                </div>
+                <div>
+                  <p class="text-lg text-slate-200 italic leading-snug font-light">
+                    "Los datos sin adopción son solo ruido. Transformamos números en cultura de mejora continua."
+                  </p>
+                  <div class="mt-6">
+                    <p class="font-bold text-white text-xl font-display">
+                      Felipe Soto Santibañez
+                    </p>
+                    <p class="text-sm text-blue-400 font-medium tracking-wide uppercase">
+                      Consultor Senior
+                    </p>
+                  </div>
+                  <a
+                    href="#"
+                    class="mt-4 inline-flex items-center gap-2 text-xs text-slate-500 hover:text-blue-400 transition-colors uppercase tracking-wider font-bold"
+                  >
+                    Ver LinkedIn
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M7 7h10v10" />
+                      <path d="M7 17 17 7" />
+                    </svg>
+                  </a>
+                </div>
+             </div>
           </div>
         </div>
       </div>
@@ -1181,16 +1048,42 @@
       </div>
     </section>
 
-    <footer class="py-10 px-6 border-t border-zinc-900 bg-black text-center">
-      <div class="flex flex-col items-center gap-4">
-        <img
-          src="img/logo.png"
-          alt="Growth Buddies Logo"
-          class="h-12 w-12 opacity-50 grayscale hover:grayscale-0 transition-all"
-        />
-        <p class="text-zinc-500 text-sm">
-          &copy; 2025 Growth Buddies. Tecnología con Visión de Negocio.
+    <section id="contacto" class="py-24 px-6 border-t border-white/5 bg-zinc-950">
+      <div class="max-w-4xl mx-auto text-center reveal">
+        <h2 class="text-3xl md:text-5xl font-black text-white font-display mb-8">
+            ¿Listo para Escalar?
+        </h2>
+        <p class="text-xl text-slate-400 mb-12 max-w-2xl mx-auto">
+            Hablemos de cómo la automatización y la inteligencia artificial pueden transformar tu firma legal o empresa hoy mismo.
         </p>
+        <a
+            href="https://calendly.com/espohr/conversemos"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="impact-button inline-block bg-[var(--color-accent)] text-black font-bold py-4 px-12 rounded-full text-lg shadow-[0_0_40px_rgba(0,246,255,0.3)] hover:shadow-[0_0_60px_rgba(0,246,255,0.5)] transition-all"
+        >
+            Agendar Llamada Sin Costo
+        </a>
+      </div>
+    </section>
+
+    <footer class="bg-black py-16 px-6 border-t border-white/10 text-sm">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="flex items-center gap-3">
+             <img src="img/logo.png" alt="GB" class="h-8 w-8 opacity-80 mix-blend-screen" />
+             <span class="font-bold text-white tracking-widest font-display">GROWTH BUDDIES</span>
+        </div>
+        
+        <div class="flex flex-col md:flex-row items-center gap-6 md:gap-12 text-slate-500">
+             <a href="#servicios" class="hover:text-white transition-colors">Servicios</a>
+             <a href="#metodologia" class="hover:text-white transition-colors">Metodología</a>
+             <a href="https://growthbuddies.cl/sitemap.xml" class="hover:text-white transition-colors">Sitemap</a>
+             <a href="mailto:hola@growthbuddies.cl" class="hover:text-white transition-colors">hola@growthbuddies.cl</a>
+        </div>
+
+        <div class="text-slate-600">
+            &copy; 2026 Growth Buddies SpA. Santiago, Chile.
+        </div>
       </div>
     </footer>
 
