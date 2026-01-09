@@ -1783,6 +1783,24 @@ body {
   transform: translateY(0);
 }
 
+/* SEO Friendly Hero Animation (No JS Required) */
+
+.animate-in {
+  animation: fade-in-up 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Botones y Cards */
 
 .impact-button {
