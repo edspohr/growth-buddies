@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://growthbuddies.cl/</loc>
-    <lastmod>2026-01-08</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://growthbuddies.cl/img/logo.png</video:thumbnail_loc>
+      <video:title>Growth Buddies Hero Video</video:title>
+      <video:description>Video de presentación de Growth Buddies, consultora de automatización e IA.</video:description>
+      <video:content_loc>https://growthbuddies.cl/vid/hero.mp4</video:content_loc>
+      <video:publication_date>2024-01-01T08:00:00+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
