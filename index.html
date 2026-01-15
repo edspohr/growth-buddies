@@ -210,20 +210,21 @@
           Garantizamos la adopción de la tecnología. Automatización Inteligente, Legal Tech y Gestión del Cambio para impulsar la rentabilidad real.
         </p>
 
-        <div
-          class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto"
-        >
-          <a
-            href="https://calendly.com/espohr/conversemos"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="impact-button group relative inline-flex items-center justify-center gap-3 bg-[var(--color-accent)] text-black font-bold py-4 px-10 rounded-full text-lg w-full sm:w-auto overflow-hidden"
-          >
-            <span class="relative z-10">Agendar Sesión Estratégica</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="relative z-10 transition-transform group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            <div class="absolute inset-0 bg-white/30 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-          </a>
-        </div>
+          <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto unique-magnetic-container">
+             <div class="magnetic-wrap">
+                <a
+                  href="https://calendly.com/espohr/conversemos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="impact-button magnetic-btn group relative inline-flex items-center justify-center gap-3 bg-[var(--color-accent)] text-black font-bold py-4 px-10 rounded-full text-lg w-full sm:w-auto overflow-hidden"
+                >
+                  <span class="magnetic-area"></span>
+                  <span class="relative z-10">Agendar Sesión Estratégica</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="relative z-10 transition-transform group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  <div class="absolute inset-0 bg-white/30 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                </a>
+             </div>
+          </div>
       </div>
 
       <div
@@ -553,7 +554,7 @@
           <!-- Service 1: Legal Tech (Highlight) -->
           <a
             href="/servicios/automatizacion-inteligente/"
-            class="reveal group glass-card p-1 rounded-3xl relative overflow-hidden block"
+            class="reveal group glass-card glass-card-premium type-tilt p-1 rounded-3xl relative overflow-hidden block"
           >
             <div class="absolute inset-0 bg-gradient-to-b from-[var(--color-accent)] via-transparent to-transparent opacity-10 group-hover:opacity-20 transition-opacity"></div>
             
@@ -576,7 +577,7 @@
           <!-- Service 2: Corporate IA -->
           <a
             href="/servicios/ia-corporativa/"
-            class="reveal group glass-card p-1 rounded-3xl relative overflow-hidden block"
+            class="reveal group glass-card glass-card-premium type-tilt p-1 rounded-3xl relative overflow-hidden block"
             style="transition-delay: 100ms"
           >
             <div class="bg-zinc-950/90 h-full w-full rounded-[1.3rem] p-8 flex flex-col relative z-10">
@@ -598,7 +599,7 @@
           <!-- Service 3: Change Management -->
           <a
             href="/servicios/gestion-del-cambio/"
-            class="reveal group glass-card p-1 rounded-3xl relative overflow-hidden block"
+            class="reveal group glass-card glass-card-premium type-tilt p-1 rounded-3xl relative overflow-hidden block"
             style="transition-delay: 200ms"
           >
             <div class="bg-zinc-950/90 h-full w-full rounded-[1.3rem] p-8 flex flex-col relative z-10">
@@ -640,9 +641,12 @@
           </p>
         </div>
 
-        <div class="relative">
+        <div class="relative" id="methodology-container">
             <!-- Connecting Line (Desktop) -->
-            <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-blue-500/50 to-transparent -translate-y-1/2 z-0"></div>
+            <svg class="hidden md:block absolute top-[20%] left-0 w-full h-[60%] z-0 pointer-events-none" preserveAspectRatio="none">
+                <path id="methodology-line" d="M 100 50 Q 250 50 400 50 T 700 50 T 1000 50" fill="none" stroke="#1e293b" stroke-width="4" />
+                <path id="methodology-line-draw" d="M 100 50 Q 250 50 400 50 T 700 50 T 1000 50" fill="none" stroke="#00f6ff" stroke-width="4" class="path-line" />
+            </svg>
 
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <!-- Step 1 -->
@@ -774,7 +778,7 @@
                     class="absolute -inset-4 bg-blue-500 rounded-full blur-xl opacity-20 group-hover:opacity-40 transition duration-500"
                   ></div>
                   <img
-                    src="img/felipe.png"
+                    src="img/felipe-2026.png"
                     alt="Felipe Soto Santibañez - Consultor Senior Transformación Digital"
                     loading="lazy"
                     class="relative h-32 w-32 md:h-40 md:w-40 rounded-full object-cover ring-2 ring-white/10 group-hover:ring-blue-500 transition-all"
@@ -1189,24 +1193,60 @@
       </div>
     </section>
 
-    <footer class="bg-black py-16 px-6 border-t border-white/10 text-sm">
-      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-        <div class="flex items-center gap-3">
-             <img src="img/logo.png" alt="GB" class="h-8 w-8 opacity-80 mix-blend-screen" />
-             <span class="font-bold text-white tracking-widest font-display">GROWTH BUDDIES</span>
-        </div>
-        
-        <div class="flex flex-col md:flex-row items-center gap-6 md:gap-12 text-slate-500">
-             <a href="#servicios" class="hover:text-white transition-colors">Servicios</a>
-             <a href="#metodologia" class="hover:text-white transition-colors">Metodología</a>
-             <a href="https://growthbuddies.cl/sitemap.xml" class="hover:text-white transition-colors">Sitemap</a>
-             <a href="mailto:edmundo@growthbuddies.cl" class="hover:text-white transition-colors">edmundo@growthbuddies.cl</a>
-        </div>
+    <footer class="bg-black py-20 px-6 border-t border-white/10 text-sm relative overflow-hidden">
+        <div class="noise-overlay opacity-5"></div>
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 relative z-10">
+            <!-- Brand Column (Big) -->
+            <div class="md:col-span-6 flex flex-col justify-between">
+                <div>
+                     <a href="#" class="flex items-center gap-3 group mb-8">
+                        <img src="img/logo.png" alt="GB" class="h-12 w-12 opacity-90 group-hover:opacity-100 transition-opacity" />
+                        <span class="font-bold text-2xl text-white tracking-tighter font-display">GROWTH BUDDIES</span>
+                    </a>
+                    <p class="text-slate-400 text-lg max-w-sm leading-relaxed mb-8">
+                        Ingeniería de Transformación para empresas que no se conforman.
+                    </p>
+                </div>
+                <div class="text-slate-600 text-xs uppercase tracking-widest mt-auto">
+                    &copy; 2026 Growth Buddies SpA. <br> Santiago de Chile.
+                </div>
+            </div>
 
-        <div class="text-slate-600">
-            &copy; 2026 Growth Buddies SpA. Santiago, Chile.
+            <!-- Links Column 1 -->
+            <div class="md:col-span-2">
+                <h4 class="text-white font-bold mb-6 font-display text-lg">Explora</h4>
+                <ul class="space-y-4 text-slate-400">
+                    <li><a href="#productos" class="hover:text-[var(--color-accent)] transition-colors">Mini Apps</a></li>
+                    <li><a href="#servicios" class="hover:text-[var(--color-accent)] transition-colors">Servicios</a></li>
+                    <li><a href="#metodologia" class="hover:text-[var(--color-accent)] transition-colors">Metodología</a></li>
+                    <li><a href="#liderazgo" class="hover:text-[var(--color-accent)] transition-colors">Equipo</a></li>
+                </ul>
+            </div>
+
+             <!-- Links Column 2 -->
+             <div class="md:col-span-2">
+                <h4 class="text-white font-bold mb-6 font-display text-lg">Legal</h4>
+                <ul class="space-y-4 text-slate-400">
+                    <li><a href="#" class="hover:text-white transition-colors">Privacidad</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Términos</a></li>
+                    <li><a href="https://growthbuddies.cl/sitemap.xml" class="hover:text-white transition-colors">Sitemap</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Column -->
+             <div class="md:col-span-2">
+                <h4 class="text-white font-bold mb-6 font-display text-lg">Contacto</h4>
+                <ul class="space-y-4 text-slate-400">
+                    <li><a href="mailto:edmundo@growthbuddies.cl" class="hover:text-white transition-colors">edmundo@growthbuddies.cl</a></li>
+                    <li><a href="https://wa.me/56965863160" class="hover:text-white transition-colors">+56 9 6586 3160</a></li>
+                    <li class="flex gap-4 mt-4">
+                        <a href="https://www.linkedin.com/company/growth-buddies" target="_blank" class="text-slate-400 hover:text-[var(--color-accent)] transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </footer>
 
     <script>
@@ -1246,50 +1286,132 @@
       }
     </script>
 
-    <script>
-      // --- Spotlight & Reveal (Critical UI) ---
-      (function () {
-        const cards = document.querySelectorAll(".glass-card, .spotlight-card");
+     <script>
+       // --- Spotlight & Reveal (Critical UI) ---
+       (function () {
+         const cards = document.querySelectorAll(".glass-card, .spotlight-card");
+ 
+         // Spotlight Effect
+         cards.forEach((card) => {
+           card.addEventListener("mousemove", (e) => {
+             const rect = card.getBoundingClientRect();
+             const x = e.clientX - rect.left;
+             const y = e.clientY - rect.top;
+             card.style.setProperty("--mouse-x", `${x}px`);
+             card.style.setProperty("--mouse-y", `${y}px`);
+           });
+         });
+ 
+         // Staggered Reveal with Fail-Safe
+         const revs = document.querySelectorAll(".reveal");
+ 
+         const observerOptions = { threshold: 0.05, rootMargin: "20px" }; 
+ 
+         const observer = new IntersectionObserver((entries) => {
+           entries.forEach((entry) => {
+             if (entry.isIntersecting) {
+               entry.target.classList.add("visible");
+               observer.unobserve(entry.target); 
+             }
+           });
+         }, observerOptions);
+ 
+         revs.forEach((elem) => observer.observe(elem));
+ 
+         // CRITICAL FAIL-SAFE
+         setTimeout(() => {
+           revs.forEach((elem) => {
+             if (!elem.classList.contains("visible")) {
+               elem.classList.add("visible");
+             }
+           });
+         }, 1500);
+       })();
 
-        // Spotlight Effect
-        cards.forEach((card) => {
-          card.addEventListener("mousemove", (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            card.style.setProperty("--mouse-x", `${x}px`);
-            card.style.setProperty("--mouse-y", `${y}px`);
+       // --- PREMIUM EFFECTS SCRIPT (The "Wow" Factor) ---
+       document.addEventListener("DOMContentLoaded", () => {
+          
+          // 1. Magnetic Button Effect
+          const magneticBtns = document.querySelectorAll(".magnetic-btn");
+          magneticBtns.forEach(btn => {
+              btn.addEventListener("mousemove", (e) => {
+                  const rect = btn.getBoundingClientRect();
+                  const x = e.clientX - rect.left - rect.width / 2;
+                  const y = e.clientY - rect.top - rect.height / 2;
+                  
+                  // Move button slightly
+                  btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+                  
+                  // Move text/icon more (parallax)
+                  const children = btn.children;
+                  for(let i=0; i<children.length; i++) {
+                      if(children[i].classList.contains("magnetic-area")) continue;
+                      children[i].style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+                  }
+              });
+              
+              btn.addEventListener("mouseleave", () => {
+                  btn.style.transform = "translate(0px, 0px)";
+                   const children = btn.children;
+                  for(let i=0; i<children.length; i++) {
+                      if(children[i].classList.contains("magnetic-area")) continue;
+                      children[i].style.transform = "translate(0px, 0px)";
+                  }
+              });
           });
-        });
 
-        // Staggered Reveal with Fail-Safe
-        const revs = document.querySelectorAll(".reveal");
-
-        const observerOptions = { threshold: 0.05, rootMargin: "20px" }; // Reduced threshold for better triggering
-
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              observer.unobserve(entry.target); // Should only animate once
-            }
+          // 2. 3D Tilt Effect for Premium Cards
+          const tiltCards = document.querySelectorAll(".type-tilt");
+          tiltCards.forEach(card => {
+              card.addEventListener("mousemove", (e) => {
+                  const rect = card.getBoundingClientRect();
+                  const x = e.clientX - rect.left;
+                  const y = e.clientY - rect.top;
+                  
+                  const centerX = rect.width / 2;
+                  const centerY = rect.height / 2;
+                  
+                  const rotateX = ((y - centerY) / centerY) * -5; // Max 5deg
+                  const rotateY = ((x - centerX) / centerX) * 5;
+                  
+                  card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+              });
+              
+              card.addEventListener("mouseleave", () => {
+                   card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)`;
+              });
           });
-        }, observerOptions);
 
-        revs.forEach((elem) => observer.observe(elem));
-
-        // CRITICAL FAIL-SAFE: Force all elements to be visible after 1.5s
-        // This ensures the site is never blank even if the observer fails
-        setTimeout(() => {
-          revs.forEach((elem) => {
-            if (!elem.classList.contains("visible")) {
-              console.warn("Force revealing element:", elem);
-              elem.classList.add("visible");
-            }
-          });
-        }, 1500);
-      })();
-    </script>
+          // 3. Scrollytelling Line Animation
+          const methodSection = document.getElementById('methodology-container');
+          const methodLineDraw = document.getElementById('methodology-line-draw');
+          
+          if(methodSection && methodLineDraw) {
+              const pathLength = methodLineDraw.getTotalLength();
+              // Initialize
+              methodLineDraw.style.strokeDasharray = pathLength;
+              methodLineDraw.style.strokeDashoffset = pathLength;
+              
+              window.addEventListener("scroll", () => {
+                  const rect = methodSection.getBoundingClientRect();
+                  const windowHeight = window.innerHeight;
+                  
+                  // Calculate percentage of section scrolled (from entering viewport to leaving)
+                  // Start drawing when top of section hits middle of viewport
+                  const start = windowHeight * 0.8;
+                  const end = -rect.height * 0.2;
+                  
+                  const progress = 1 - (rect.top - end) / (start - end);
+                  
+                  // Clamp between 0 and 1
+                  const clampedProgress = Math.min(Math.max(progress, 0), 1);
+                  
+                  const drawLength = pathLength * clampedProgress;
+                  methodLineDraw.style.strokeDashoffset = pathLength - drawLength;
+              });
+          }
+       });
+     </script>
 
     <script type="module">
       // --- Firebase SDK ---
