@@ -457,6 +457,134 @@
         </div>
       </div>
     </section>
+    
+    <!-- ROI Calculator Lead Magnet -->
+    <section id="roi-calculator" class="py-24 px-6 relative bg-gradient-to-b from-zinc-950 to-zinc-900 border-y border-white/5">
+        <div class="absolute inset-0 bg-[var(--color-accent)]/5 blur-[100px] pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+            <!-- Left: Persuasion Text -->
+            <div class="reveal">
+                <span class="text-[var(--color-accent)] font-bold tracking-wider text-sm uppercase font-display">Descubre tu Potencial</span>
+                <h2 class="text-4xl md:text-5xl font-black tracking-tight text-white mt-3 mb-6 font-display leading-tight">
+                    ¿Cuánto dinero pierde tu empresa en <span class="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-accent)] to-white">procesos manuales?</span>
+                </h2>
+                <p class="text-lg text-slate-400 mb-8 leading-relaxed">
+                    Las tareas repetitivas no solo aburren a tu equipo, drenan tu rentabilidad. Usa nuestra calculadora interactiva para estimar, conservadoramente, cuánto podrías recuperar anualmente con Automatización Inteligente.
+                </p>
+                <ul class="space-y-4 text-slate-300 mb-8">
+                    <li class="flex items-center gap-3">
+                        <div class="h-6 w-6 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center">✓</div>
+                        <span>Reducción de Facturación "Fugada"</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="h-6 w-6 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center">✓</div>
+                        <span>Eliminación de Multas por Atrasos</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="h-6 w-6 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center">✓</div>
+                        <span>Liberación de Talento Senior</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right: Interactive Calculator -->
+            <div class="reveal glass-card p-8 md:p-10 rounded-3xl border border-zinc-700 bg-black/40 shadow-2xl relative">
+                <!-- Inputs -->
+                <div class="space-y-8">
+                    <!-- Input 1: Employees -->
+                    <div>
+                        <div class="flex justify-between items-end mb-4">
+                            <label class="text-white font-bold text-sm uppercase tracking-wide">Personas en el Equipo</label>
+                            <span class="text-[var(--color-accent)] font-mono text-xl" id="display-employees">10</span>
+                        </div>
+                        <input type="range" min="1" max="100" value="10" class="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-[var(--color-accent)]" id="input-employees">
+                        <p class="text-xs text-slate-500 mt-2">Cantidad de administrativos/profesionales.</p>
+                    </div>
+
+                    <!-- Input 2: Hours/Week -->
+                    <div>
+                        <div class="flex justify-between items-end mb-4">
+                            <label class="text-white font-bold text-sm uppercase tracking-wide">Horas Manuales / Semana (pp)</label>
+                            <span class="text-[var(--color-accent)] font-mono text-xl" id="display-hours">5</span>
+                        </div>
+                        <input type="range" min="1" max="20" value="5" class="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-[var(--color-accent)]" id="input-hours">
+                        <p class="text-xs text-slate-500 mt-2">Promedio de horas perdidas en Excel, data entry, reportes.</p>
+                    </div>
+
+                    <!-- Input 3: Salary -->
+                    <div>
+                        <div class="flex justify-between items-end mb-4">
+                            <label class="text-white font-bold text-sm uppercase tracking-wide">Costo Hora Promedio (CLP)</label>
+                            <span class="text-[var(--color-accent)] font-mono text-xl" id="display-rate">$15.000</span>
+                        </div>
+                        <input type="range" min="5000" max="100000" step="5000" value="15000" class="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-[var(--color-accent)]" id="input-rate">
+                    </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="h-px bg-zinc-700 my-8"></div>
+
+                <!-- Result -->
+                <div class="text-center">
+                    <p class="text-slate-400 text-sm uppercase tracking-widest mb-2 font-semibold">Ahorro Potencial Anual</p>
+                    <div class="text-5xl md:text-6xl font-black text-white font-mono tracking-tighter" id="total-savings">
+                        $39.0M
+                    </div>
+                    <p class="text-xs text-slate-500 mt-4 max-w-xs mx-auto">
+                        *Cálculo estimativo (52 semanas). No incluye costo de oportunidad ni ventas perdidas.
+                    </p>
+                </div>
+
+                <!-- CTA -->
+                 <div class="mt-8">
+                    <a href="#contacto" class="block w-full text-center bg-[var(--color-accent)] text-black font-bold py-4 rounded-xl hover:shadow-[0_0_20px_rgba(0,246,255,0.4)] transition-all">
+                        Solicitar Auditoría Gratuita
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Logic Script -->
+        <script>
+            const employeesInput = document.getElementById('input-employees');
+            const hoursInput = document.getElementById('input-hours');
+            const rateInput = document.getElementById('input-rate');
+            
+            const displayEmployees = document.getElementById('display-employees');
+            const displayHours = document.getElementById('display-hours');
+            const displayRate = document.getElementById('display-rate');
+            const totalSavings = document.getElementById('total-savings');
+
+            function formatCurrency(num) {
+                if (num >= 1000000) {
+                    return '$' + (num / 1000000).toFixed(1) + 'M';
+                }
+                return '$' + num.toLocaleString('es-CL');
+            }
+
+            function calculate() {
+                const employees = parseInt(employeesInput.value);
+                const hours = parseInt(hoursInput.value);
+                const rate = parseInt(rateInput.value);
+
+                // Update displays
+                displayEmployees.innerText = employees;
+                displayHours.innerText = hours + ' hrs';
+                displayRate.innerText = '$' + rate.toLocaleString('es-CL');
+
+                // Calculation: Employees * Hours * Rate * 52 weeks
+                const annual = employees * hours * rate * 52;
+                totalSavings.innerText = formatCurrency(annual);
+            }
+
+            employeesInput.addEventListener('input', calculate);
+            hoursInput.addEventListener('input', calculate);
+            rateInput.addEventListener('input', calculate);
+
+            // Init
+            calculate();
+        </script>
 
     <!-- Mini Apps Plug & Play Section -->
     <section id="productos" class="py-24 px-6 relative bg-zinc-900/30 border-y border-white/5">
