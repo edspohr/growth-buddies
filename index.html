@@ -515,10 +515,10 @@
                     <!-- Input 3: Salary -->
                     <div>
                         <div class="flex justify-between items-end mb-4">
-                            <label class="text-white font-bold text-sm uppercase tracking-wide">Costo Hora Promedio (CLP)</label>
-                            <span class="text-[var(--color-accent)] font-mono text-xl" id="display-rate">$15.000</span>
+                            <label class="text-white font-bold text-sm uppercase tracking-wide">Costo Hora Promedio (USD)</label>
+                            <span class="text-[var(--color-accent)] font-mono text-xl" id="display-rate">US$ 20</span>
                         </div>
-                        <input type="range" min="5000" max="100000" step="5000" value="15000" class="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-[var(--color-accent)]" id="input-rate">
+                        <input type="range" min="5" max="100" step="1" value="20" class="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-[var(--color-accent)]" id="input-rate">
                     </div>
                 </div>
 
@@ -529,7 +529,7 @@
                 <div class="text-center">
                     <p class="text-slate-400 text-sm uppercase tracking-widest mb-2 font-semibold">Ahorro Potencial Anual</p>
                     <div class="text-5xl md:text-6xl font-black text-white font-mono tracking-tighter" id="total-savings">
-                        $39.0M
+                        US$ 52.000
                     </div>
                     <p class="text-xs text-slate-500 mt-4 max-w-xs mx-auto">
                         *Cálculo estimativo (52 semanas). No incluye costo de oportunidad ni ventas perdidas.
@@ -557,10 +557,7 @@
             const totalSavings = document.getElementById('total-savings');
 
             function formatCurrency(num) {
-                if (num >= 1000000) {
-                    return '$' + (num / 1000000).toFixed(1) + 'M';
-                }
-                return '$' + num.toLocaleString('es-CL');
+                return num.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
             }
 
             function calculate() {
@@ -571,7 +568,7 @@
                 // Update displays
                 displayEmployees.innerText = employees;
                 displayHours.innerText = hours + ' hrs';
-                displayRate.innerText = '$' + rate.toLocaleString('es-CL');
+                displayRate.innerText = formatCurrency(rate);
 
                 // Calculation: Employees * Hours * Rate * 52 weeks
                 const annual = employees * hours * rate * 52;
