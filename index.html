@@ -104,7 +104,7 @@
       rel="stylesheet"
     />
 
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js" defer></script>
     <noscript>
       <style>
         .reveal { opacity: 1 !important; transform: none !important; }
@@ -156,6 +156,12 @@
           >
         </div>
 
+        <!-- CTA Right -->
+        <div class="hidden md:block">
+            <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="bg-[var(--color-accent)]/10 hover:bg-[var(--color-accent)]/20 text-[var(--color-accent)] hover:text-white border border-[var(--color-accent)]/30 hover:border-[var(--color-accent)] font-semibold text-sm py-2 px-5 rounded-full transition-all duration-300">
+                Agendar Auditoría
+            </a>
+        </div>
 
       </div>
     </nav>
@@ -217,8 +223,8 @@
           Garantizamos la adopción de la tecnología. Automatización Inteligente, Legal Tech y Gestión del Cambio para impulsar la rentabilidad real.
         </p>
 
-          <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto unique-magnetic-container">
-             <div class="magnetic-wrap">
+          <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto unique-magnetic-container">
+             <div class="magnetic-wrap w-full sm:w-auto">
                 <a
                   href="https://calendly.com/espohr/conversemos"
                   target="_blank"
@@ -229,6 +235,17 @@
                   <span class="relative z-10">Agenda tu Auditoría de Automatización</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="relative z-10 transition-transform group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                   <div class="absolute inset-0 bg-white/30 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                </a>
+             </div>
+             
+             <!-- Secondary CTA -->
+             <div class="w-full sm:w-auto">
+                <a
+                  href="/soluciones/catalogo.html"
+                  class="group relative inline-flex items-center justify-center gap-2 bg-transparent text-white border border-white/20 hover:border-white/60 hover:bg-white/5 font-semibold py-4 px-8 rounded-full text-lg w-full sm:w-auto transition-all duration-300"
+                >
+                  <span>Explorar Soluciones</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </a>
              </div>
           </div>
@@ -255,6 +272,7 @@
       </div>
     </header>
 
+    <main>
     <!-- Success Metrics Ticker -->
     <aside aria-label="Métricas de éxito" class="border-y border-white/10 bg-black/50 backdrop-blur-md overflow-hidden py-4">
       <div class="flex items-center justify-around max-w-7xl mx-auto px-6 text-sm md:text-base text-slate-400 font-mono tracking-wider">
@@ -307,11 +325,11 @@
                 />
               </div>
             </div>
-            <h4
+            <h3
               class="text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors"
             >
               SPI Americas
-            </h4>
+            </h3>
             <p class="text-sm text-slate-400 leading-relaxed">
               Expertos en asuntos regulatorios, propiedad intelectual, derecho
               corporativo y desarrollo de negocios.
@@ -336,11 +354,11 @@
                 />
               </div>
             </div>
-            <h4
+            <h3
               class="text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors"
             >
               Hits Corredora de Seguros
-            </h4>
+            </h3>
             <p class="text-sm text-slate-400 leading-relaxed">
               Corredora de seguros líder en el mercado de responsabilidad civil
               para médicos.
@@ -365,11 +383,11 @@
                 />
               </div>
             </div>
-            <h4
+            <h3
               class="text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors"
             >
               MLM Abogados
-            </h4>
+            </h3>
             <p class="text-sm text-slate-400 leading-relaxed">
               Estudio jurídico abocado a Derecho de Familia, ley
               antidiscriminación, Ley TEA y afines.
@@ -394,11 +412,11 @@
                 />
               </div>
             </div>
-            <h4
+            <h3
               class="text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors"
             >
               Fundación Katy Summer
-            </h4>
+            </h3>
             <p class="text-sm text-slate-400 leading-relaxed">
               Experiencias profundas y vivenciales que motivan e inspiran,
               honrando la memoria de Katy.
@@ -423,11 +441,11 @@
                 />
               </div>
             </div>
-            <h4
+            <h3
               class="text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors"
             >
               Potenciarte Eventos
-            </h4>
+            </h3>
             <p class="text-sm text-slate-400 leading-relaxed">
               Diseño y producción de eventos para organizaciones públicas y
               privadas, con cobertura nacional e internacional.
@@ -452,11 +470,11 @@
                 />
               </div>
             </div>
-            <h4
+            <h3
               class="text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors"
             >
               Ingeglobal
-            </h4>
+            </h3>
             <p class="text-sm text-slate-400 leading-relaxed">
               Tecnología láser para el control de procesos productivos.
             </p>
@@ -567,6 +585,26 @@
                 return num.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
             }
 
+            function animateValue(obj, start, end, duration, formatFn) {
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    // easeOutQuart
+                    const easeProgress = 1 - Math.pow(1 - progress, 4);
+                    const currentVal = Math.floor(easeProgress * (end - start) + start);
+                    obj.innerText = formatFn(currentVal);
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    } else {
+                        obj.innerText = formatFn(end);
+                    }
+                };
+                window.requestAnimationFrame(step);
+            }
+
+            let previousSavings = 0;
+
             function calculate() {
                 const employees = parseInt(employeesInput.value);
                 const hours = parseInt(hoursInput.value);
@@ -579,7 +617,12 @@
 
                 // Calculation: Employees * Hours * Rate * 52 weeks
                 const annual = employees * hours * rate * 52;
-                totalSavings.innerText = formatCurrency(annual);
+                
+                // Animate to new value
+                if (previousSavings !== annual) {
+                    animateValue(totalSavings, previousSavings, annual, 800, formatCurrency);
+                    previousSavings = annual;
+                }
             }
 
             employeesInput.addEventListener('input', calculate);
@@ -686,19 +729,21 @@
           <!-- Service 1: Legal Tech (Highlight) -->
           <a
             href="/servicios/automatizacion-inteligente"
-            class="reveal group glass-card glass-card-premium type-tilt p-1 rounded-3xl relative overflow-hidden block"
+            class="glow-card border border-zinc-800 reveal group glass-card glass-card-premium type-tilt p-1 rounded-3xl relative overflow-hidden block"
+            style="--glow-color: var(--color-accent);"
           >
-            <div class="absolute inset-0 bg-gradient-to-b from-[var(--color-accent)] via-transparent to-transparent opacity-10 group-hover:opacity-20 transition-opacity"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-[var(--color-accent)] via-transparent to-transparent opacity-0 group-hover:opacity-10 transition-opacity"></div>
             
-            <div class="bg-zinc-950/90 h-full w-full rounded-[1.3rem] p-8 flex flex-col relative z-10">
-                <div class="h-14 w-14 bg-blue-900/30 rounded-2xl flex items-center justify-center mb-6 border border-blue-500/20 group-hover:border-[var(--color-accent)] transition-colors">
+            <div class="bg-zinc-950/90 h-full w-full rounded-[1.3rem] p-8 flex flex-col relative z-10 transition-colors group-hover:bg-zinc-950/70">
+                <div class="glow-blob"></div>
+                <div class="h-14 w-14 bg-blue-900/30 rounded-2xl flex items-center justify-center mb-6 border border-blue-500/20 group-hover:border-[var(--color-accent)] transition-colors relative z-20">
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[var(--color-accent)]"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
                 </div>
-                <h3 class="text-2xl font-bold text-white mb-4 font-display">Legal Tech & Ops</h3>
-                <p class="text-slate-400 leading-relaxed mb-6 flex-grow">
+                <h3 class="text-2xl font-bold text-white mb-4 font-display relative z-20">Legal Tech & Ops</h3>
+                <p class="text-slate-400 leading-relaxed mb-6 flex-grow relative z-20">
                     Modernización integral para Firmas Legales y Gerencias Legales. Automatización de documentos, gestión de casos (CLM) y optimización de flujos operativos para abogados.
                 </p>
-                <ul class="space-y-2 text-sm text-slate-300 mb-6">
+                <ul class="space-y-2 text-sm text-slate-300 mb-6 relative z-20">
                     <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]"></div>Automatización Contractual</li>
                     <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]"></div>Reportería y KPI Legales</li>
                     <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]"></div>Implementación de Software</li>
@@ -709,18 +754,19 @@
           <!-- Service 2: Corporate IA -->
           <a
             href="/servicios/ia-corporativa"
-            class="reveal group glass-card glass-card-premium type-tilt p-1 rounded-3xl relative overflow-hidden block"
-            style="transition-delay: 100ms"
+            class="glow-card border border-zinc-800 reveal group glass-card glass-card-premium type-tilt p-1 rounded-3xl relative overflow-hidden block"
+            style="transition-delay: 100ms; --glow-color: #a855f7;"
           >
-            <div class="bg-zinc-950/90 h-full w-full rounded-[1.3rem] p-8 flex flex-col relative z-10">
-                <div class="h-14 w-14 bg-purple-900/30 rounded-2xl flex items-center justify-center mb-6 border border-purple-500/20 group-hover:border-purple-400 transition-colors">
+            <div class="bg-zinc-950/90 h-full w-full rounded-[1.3rem] p-8 flex flex-col relative z-10 transition-colors group-hover:bg-zinc-950/70">
+                <div class="glow-blob"></div>
+                <div class="h-14 w-14 bg-purple-900/30 rounded-2xl flex items-center justify-center mb-6 border border-purple-500/20 group-hover:border-purple-400 transition-colors relative z-20">
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-400"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
                 </div>
-                <h3 class="text-2xl font-bold text-white mb-4 font-display">IA Corporativa</h3>
-                <p class="text-slate-400 leading-relaxed mb-6 flex-grow">
+                <h3 class="text-2xl font-bold text-white mb-4 font-display relative z-20">IA Corporativa</h3>
+                <p class="text-slate-400 leading-relaxed mb-6 flex-grow relative z-20">
                     Implementación segura de Inteligencia Artificial Generativa. Desarrollo de asistentes virtuales (Agents) y optimización de procesos de negocio.
                 </p>
-                <ul class="space-y-2 text-sm text-slate-300 mb-6">
+                <ul class="space-y-2 text-sm text-slate-300 mb-6 relative z-20">
                     <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-purple-400"></div>Asistentes (RAG) Privados</li>
                     <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-purple-400"></div>Análisis de Datos</li>
                     <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-purple-400"></div>Automatización de Soporte</li>
@@ -731,18 +777,19 @@
           <!-- Service 3: Change Management -->
           <a
             href="/servicios/gestion-del-cambio"
-            class="reveal group glass-card glass-card-premium type-tilt p-1 rounded-3xl relative overflow-hidden block"
-            style="transition-delay: 200ms"
+            class="glow-card border border-zinc-800 reveal group glass-card glass-card-premium type-tilt p-1 rounded-3xl relative overflow-hidden block"
+            style="transition-delay: 200ms; --glow-color: #34d399;"
           >
-            <div class="bg-zinc-950/90 h-full w-full rounded-[1.3rem] p-8 flex flex-col relative z-10">
-                <div class="h-14 w-14 bg-emerald-900/30 rounded-2xl flex items-center justify-center mb-6 border border-emerald-500/20 group-hover:border-emerald-400 transition-colors">
+            <div class="bg-zinc-950/90 h-full w-full rounded-[1.3rem] p-8 flex flex-col relative z-10 transition-colors group-hover:bg-zinc-950/70">
+                <div class="glow-blob"></div>
+                <div class="h-14 w-14 bg-emerald-900/30 rounded-2xl flex items-center justify-center mb-6 border border-emerald-500/20 group-hover:border-emerald-400 transition-colors relative z-20">
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                 </div>
-                <h3 class="text-2xl font-bold text-white mb-4 font-display">Gestión del Cambio</h3>
-                <p class="text-slate-400 leading-relaxed mb-6 flex-grow">
+                <h3 class="text-2xl font-bold text-white mb-4 font-display relative z-20">Gestión del Cambio</h3>
+                <p class="text-slate-400 leading-relaxed mb-6 flex-grow relative z-20">
                     El "Factor Humano". Aseguramos que su equipo quiera y sepa usar las nuevas herramientas. Reducimos la resistencia y aceleramos el ROI.
                 </p>
-                 <ul class="space-y-2 text-sm text-slate-300 mb-6">
+                 <ul class="space-y-2 text-sm text-slate-300 mb-6 relative z-20">
                     <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-emerald-400"></div>Capacitación y Onboarding</li>
                     <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-emerald-400"></div>Comunicación Interna</li>
                     <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-emerald-400"></div>Medición de Adopción</li>
@@ -1325,6 +1372,8 @@
       </div>
     </section>
 
+    </main>
+
     <footer class="bg-black py-16 px-6 border-t border-white/10 text-sm">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
             <!-- Brand -->
@@ -1628,20 +1677,23 @@
             console.error("Error in form processing:", error);
             // We continue to WhatsApp even if DB fails, to not lose the lead interaction
           } finally {
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = originalBtnText;
-
-            // Construct WhatsApp Message
+            // Construimos el mensaje de WhatsApp primero
             const phoneNumber = "56965863160"; // Growth Buddies Number
             const text = `Hola Growth Buddies! 👋%0A%0AMi nombre es: *${name}*%0ACorreo: ${email}%0A%0AMensaje:%0A${message}`;
-
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${text}`;
 
-            // Redirect
-            window.open(whatsappUrl, "_blank");
-
-            // Optional: reset form
-            // document.getElementById('contact-form').reset();
+            // Mejoramos la UX cambiando a estado verde temporalmente
+            submitBtn.innerHTML = "<span class='text-green-400 font-bold'>¡Todo listo! Redirigiendo a WhatsApp...</span>";
+            submitBtn.classList.add("border-green-500", "bg-green-500/10");
+            
+            // Le damos 1.5 segundos para que lea antes de la redirección
+            setTimeout(() => {
+                window.open(whatsappUrl, "_blank");
+                // Restauramos el botón a su estado original después de abrir WhatsApp
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.classList.remove("border-green-500", "bg-green-500/10");
+            }, 1500);
           }
         });
     </script>
