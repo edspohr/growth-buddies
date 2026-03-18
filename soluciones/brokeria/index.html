@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TJRCBKJKFX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-TJRCBKJKFX");
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const whatsappLinks = document.querySelectorAll("a[href*=\"wa.me\"]");
+        whatsappLinks.forEach(link => {
+          link.addEventListener("click", () => {
+            gtag("event", "contact", {
+              "method": "whatsapp",
+              "event_category": "lead",
+              "event_label": document.title
+            });
+          });
+        });
+      });
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#050510" />
+
+    <title>BrokerIA — Plataforma de Corretaje Inteligente con IA | Growth Buddies</title>
+
+    <meta
+      name="description"
+      content="Evalúa leads y propiedades con Inteligencia Artificial. Property Score + Client Score + Pitch de Cierre automático para corredoras de propiedades en Chile."
+    />
+    <meta
+      name="keywords"
+      content="BrokerIA, Corretaje Inteligente, PropTech Chile, IA Corredora Propiedades, Evaluación Financiera Leads, Habitabilidad Propiedades"
+    />
+
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://growthbuddies.cl/soluciones/brokeria/" />
+    <link rel="icon" type="image/png" href="../../img/avatar.webp" />
+
+    <meta property="og:locale" content="es_CL" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="BrokerIA — Plataforma de Corretaje Inteligente con IA" />
+    <meta
+      property="og:description"
+      content="Cruza el perfil financiero de tu lead con el análisis de habitabilidad de la propiedad. Genera un Pitch de Cierre automático con IA en segundos. PropTech hecho en Chile."
+    />
+    <meta property="og:url" content="https://growthbuddies.cl/soluciones/brokeria/" />
+    <meta property="og:image" content="https://growthbuddies.cl/img/logo.webp" />
+    <meta property="og:site_name" content="Growth Buddies" />
+
+    <!-- Assets -->
+    <link href="../../dist/output.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://growthbuddies.cl/" },
+        { "@type": "ListItem", "position": 2, "name": "Soluciones", "item": "https://growthbuddies.cl/soluciones/catalogo.html" },
+        { "@type": "ListItem", "position": 3, "name": "BrokerIA", "item": "https://growthbuddies.cl/soluciones/brokeria/" }
+      ]
+    }
+    </script>
+
+    <!-- Structured Data: SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "BrokerIA",
+      "operatingSystem": "Web",
+      "applicationCategory": "BusinessApplication",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "CLP",
+        "availability": "https://schema.org/PreOrder"
+      },
+      "description": "Plataforma SaaS para corredoras de propiedades que cruza el perfil financiero del lead con el análisis de habitabilidad de la propiedad. Genera un Pitch de Cierre automático con IA.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Growth Buddies",
+        "url": "https://growthbuddies.cl"
+      }
+    }
+    </script>
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "¿Qué datos necesita subir el lead?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El lead sube su cédula de identidad (CI), liquidaciones de sueldo de los últimos 3 meses, cartola AFP y el informe CMF. La IA extrae los datos automáticamente mediante OCR, sin que el corredor deba revisar ningún documento manualmente."
+        }
+      }, {
+        "@type": "Question",
+        "name": "¿Cómo se calcula el Property Score (HomeRisk)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HomeRisk combina índices de criminalidad del sector, conectividad de internet (cobertura y velocidad promedio), y estabilidad de servicios básicos (luz, agua, gas). El resultado es un score de 0 a 100 que se genera automáticamente en menos de 3 minutos al registrar una propiedad."
+        }
+      }, {
+        "@type": "Question",
+        "name": "¿Puedo personalizar la landing page de mi agencia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El MVP incluye personalización de marca básica: logo, nombre de la agencia y color principal. La personalización avanzada (dominio propio, plantillas de correo y páginas adicionales) está planificada para la siguiente iteración."
+        }
+      }, {
+        "@type": "Question",
+        "name": "¿Es multi-tenant? ¿Cómo se gestiona el acceso?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, BrokerIA es completamente multi-tenant. Cada agencia opera en su propio espacio aislado en Firestore. El sistema de roles incluye SuperAdmin (Growth Buddies), Admin (dueño de agencia) y Corredor (agente individual), cada uno con permisos específicos."
+        }
+      }]
+    }
+    </script>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
+    <noscript>
+      <style>
+        .reveal { opacity: 1 !important; transform: none !important; }
+      </style>
+    </noscript>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "vkf6fbh8zc");
+    </script>
+
+    <style>
+      .brokeria-gradient {
+        background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+      }
+      .brokeria-text-gradient {
+        background: linear-gradient(135deg, #fbbf24 0%, #fb923c 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .brokeria-glow {
+        box-shadow: 0 0 40px rgba(251, 146, 60, 0.15);
+      }
+      .brokeria-glow:hover {
+        box-shadow: 0 0 60px rgba(251, 146, 60, 0.3);
+      }
+      .module-card {
+        transition: all 0.3s ease;
+        border: 1px solid rgba(251, 146, 60, 0.1);
+      }
+      .module-card:hover {
+        border-color: rgba(251, 146, 60, 0.4);
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(251, 146, 60, 0.1);
+      }
+      .step-connector {
+        width: 2px;
+        background: linear-gradient(to bottom, rgba(251, 146, 60, 0.6), rgba(251, 146, 60, 0.1));
+        flex-shrink: 0;
+      }
+      .score-badge {
+        background: linear-gradient(135deg, rgba(251, 146, 60, 0.2), rgba(249, 115, 22, 0.1));
+        border: 1px solid rgba(251, 146, 60, 0.4);
+      }
+      .tech-badge {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.08);
+        transition: all 0.2s ease;
+      }
+      .tech-badge:hover {
+        background: rgba(255,255,255,0.08);
+        border-color: rgba(251, 146, 60, 0.3);
+      }
+      .kanban-card {
+        background: rgba(30,30,40,0.8);
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 10px;
+        padding: 10px 14px;
+        font-size: 0.75rem;
+      }
+      .kanban-col-header {
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 4px 10px;
+        border-radius: 20px;
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body class="antialiased selection:bg-amber-400 selection:text-black">
+    <div class="noise-overlay"></div>
+
+    <!-- Nav -->
+    <nav class="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-2 group">
+          <img
+            src="/img/logo.webp"
+            alt="Growth Buddies - Consultora de Automatización e IA en Chile"
+            class="h-8 w-8 opacity-90 group-hover:opacity-100 transition-opacity"
+          />
+          <span class="font-bold text-lg tracking-tight text-white group-hover:text-[var(--color-accent)] transition-colors">
+            Growth Buddies
+          </span>
+        </a>
+        <div class="hidden md:flex items-center gap-6">
+          <a href="/#servicios" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Servicios</a>
+          <a href="/soluciones/catalogo.html" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Mini Apps</a>
+          <a href="/blog/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Blog</a>
+          <a
+            href="/#contacto"
+            class="impact-button text-xs md:text-sm font-bold bg-white text-black py-2 px-5 rounded-full"
+          >
+            Solicitar Acceso
+          </a>
+        </div>
+        <!-- Hamburger Button (Mobile) -->
+        <button id="mobile-menu-btn" aria-label="Abrir menú" class="md:hidden flex flex-col justify-center items-center w-11 h-11 gap-[6px] rounded-lg hover:bg-white/10 transition-colors">
+          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
+          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
+          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" style="display:none;" class="fixed inset-0 z-[200] flex-col" aria-hidden="true">
+      <div class="absolute inset-0 bg-[#050510]/96 backdrop-blur-xl"></div>
+      <div class="relative flex flex-col h-full px-6 py-6 overflow-y-auto">
+        <div class="flex justify-between items-center mb-10">
+          <a href="/" class="flex items-center gap-2">
+            <img src="/img/logo.webp" alt="Growth Buddies - Consultora de Automatización e IA en Chile" class="h-8 w-8" />
+            <span class="font-bold text-lg text-white">Growth Buddies</span>
+          </a>
+          <button id="mobile-menu-close" aria-label="Cerrar menú" class="flex items-center justify-center w-11 h-11 text-white hover:bg-white/10 rounded-lg transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+                <nav class="flex flex-col" role="navigation" aria-label="Menu movil">
+          <a href="/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Inicio</a>
+          <a href="/#servicios" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Servicios</a>
+          <a href="/soluciones/catalogo.html" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Soluciones</a>
+          <a href="/blog/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Blog</a>
+          <a href="/#contacto" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Contacto</a>
+        </nav>
+        <div class="mt-8">
+          <a href="/#contacto" class="block w-full text-center bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 border border-amber-500/30 hover:border-amber-400 font-semibold text-base py-4 px-5 rounded-full transition-all duration-300">
+            Solicitar Acceso Anticipado
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- WhatsApp Button -->
+    <a
+      href="https://wa.me/56965863160"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-[#25D366] text-white py-3 px-6 rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] transform hover:scale-105 transition-all font-bold tracking-wide group"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+      </svg>
+      <span>Hablemos por WhatsApp</span>
+    </a>
+
+    <!-- ═══════════════════════════════════════════
+         HERO SECTION
+    ════════════════════════════════════════════ -->
+    <header class="relative pt-40 pb-24 px-6 overflow-hidden min-h-[85vh] flex items-center">
+      <!-- Ambient glow -->
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-amber-500/10 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-orange-600/8 rounded-full blur-[100px]"></div>
+      </div>
+
+      <div class="max-w-5xl mx-auto text-center relative z-10">
+        <!-- Breadcrumb -->
+        <nav aria-label="Migas de pan" class="mb-8">
+          <ol class="flex items-center justify-center gap-2 text-xs text-slate-500">
+            <li><a href="/" class="hover:text-amber-400 transition-colors">Inicio</a></li>
+            <li><span aria-hidden="true">/</span></li>
+            <li><a href="/soluciones/catalogo.html" class="hover:text-amber-400 transition-colors">Soluciones</a></li>
+            <li><span aria-hidden="true">/</span></li>
+            <li class="text-amber-400" aria-current="page">BrokerIA</li>
+          </ol>
+        </nav>
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/25 text-amber-400 text-xs font-bold uppercase tracking-wider mb-8 reveal">
+          <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+          Nuevo — Plataforma PropTech
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-black tracking-tight text-white mb-8 font-display leading-[1.05] reveal">
+          Cierra más propiedades<br />
+          <span class="brokeria-text-gradient">con Inteligencia Artificial.</span>
+        </h1>
+
+        <p class="text-xl md:text-2xl text-slate-300 max-w-2xl mx-auto leading-relaxed mb-6 reveal">
+          <strong class="text-white">BrokerIA</strong> cruza el perfil financiero de tu lead con el análisis de habitabilidad de la propiedad. Genera un <strong class="text-amber-400">Pitch de Cierre</strong> con IA en segundos.
+        </p>
+
+        <!-- Score preview strip -->
+        <div class="flex flex-wrap items-center justify-center gap-4 mb-12 reveal">
+          <div class="score-badge flex items-center gap-3 px-5 py-3 rounded-2xl">
+            <div class="text-2xl font-black text-amber-400">87</div>
+            <div class="text-left">
+              <div class="text-xs text-slate-400 font-medium">HomeRisk Score</div>
+              <div class="text-xs text-green-400 font-bold">Propiedad Certificada</div>
+            </div>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="rgba(251,146,60,0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" class="hidden sm:block"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          <div class="score-badge flex items-center gap-3 px-5 py-3 rounded-2xl">
+            <div class="text-2xl font-black text-amber-400">74</div>
+            <div class="text-left">
+              <div class="text-xs text-slate-400 font-medium">Client Score</div>
+              <div class="text-xs text-yellow-400 font-bold">Perfil Medio-Alto</div>
+            </div>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="rgba(251,146,60,0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" class="hidden sm:block"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          <div class="score-badge flex items-center gap-3 px-5 py-3 rounded-2xl">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+            <div class="text-left">
+              <div class="text-xs text-slate-400 font-medium">Pitch de Cierre</div>
+              <div class="text-xs text-amber-400 font-bold">Generado en &lt;3 min</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center reveal">
+          <a
+            href="/#contacto"
+            class="px-8 py-4 rounded-full font-bold text-black brokeria-gradient hover:shadow-[0_0_30px_rgba(251,146,60,0.4)] transition-all text-base"
+          >
+            Solicitar Acceso Anticipado
+          </a>
+          <a
+            href="#como-funciona"
+            class="px-8 py-4 bg-white/5 border border-white/10 rounded-full text-white font-medium hover:bg-white/10 transition-colors text-base"
+          >
+            Ver Cómo Funciona ↓
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════
+         PROBLEM / SOLUTION SECTION
+    ════════════════════════════════════════════ -->
+    <section id="como-funciona" class="py-24 px-6 bg-zinc-950/60">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+
+          <!-- Left: The Problem -->
+          <div class="reveal">
+            <div class="inline-block text-xs font-bold uppercase tracking-widest text-red-400 mb-4 px-3 py-1 bg-red-500/10 rounded-full border border-red-500/20">
+              El Problema
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 font-display leading-tight">
+              El corretaje tradicional<br />
+              <span class="text-red-400">opera a ciegas.</span>
+            </h2>
+            <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+              En Chile, las corredoras de propiedades pierden semanas completas en prospectos que nunca concretarán una operación. El problema no es la captación — es la <strong class="text-slate-200">falta de datos objetivos en el momento correcto.</strong>
+            </p>
+            <ul class="space-y-5">
+              <li class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-red-500/15 flex items-center justify-center mt-0.5">
+                  <span class="text-red-400 text-sm font-bold">✕</span>
+                </div>
+                <div>
+                  <div class="text-white font-medium">Tiempo perdido en leads que no califican</div>
+                  <div class="text-slate-500 text-sm mt-1">Los corredores visitan propiedades con clientes que tienen historial financiero incompatible con el precio.</div>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-red-500/15 flex items-center justify-center mt-0.5">
+                  <span class="text-red-400 text-sm font-bold">✕</span>
+                </div>
+                <div>
+                  <div class="text-white font-medium">Sin datos objetivos del entorno</div>
+                  <div class="text-slate-500 text-sm mt-1">Los clientes desconfían de propiedades que no tienen información verificable sobre criminalidad, conectividad o servicios.</div>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-red-500/15 flex items-center justify-center mt-0.5">
+                  <span class="text-red-400 text-sm font-bold">✕</span>
+                </div>
+                <div>
+                  <div class="text-white font-medium">Ninguna herramienta chilena lo cruza todo</div>
+                  <div class="text-slate-500 text-sm mt-1">No existe en el mercado nacional una plataforma que combine perfil financiero del lead + habitabilidad de la propiedad en un solo reporte accionable.</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right: Solution Card -->
+          <div class="glass-card p-8 rounded-3xl border border-amber-500/20 brokeria-glow relative reveal">
+            <div class="absolute -top-4 left-8 brokeria-gradient text-black text-xs font-bold px-4 py-2 rounded-full shadow-lg">
+              Solución BrokerIA
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-2 mt-2">3 pasos. Un cierre.</h3>
+            <p class="text-slate-400 text-sm mb-6">BrokerIA automatiza el análisis y te entrega una recomendación clara antes de la primera visita.</p>
+
+            <div class="space-y-3">
+              <div class="bg-zinc-900/60 p-4 rounded-2xl border border-amber-500/10 flex items-start gap-4">
+                <div class="h-10 w-10 flex-shrink-0 rounded-xl flex items-center justify-center font-bold text-sm text-black brokeria-gradient">
+                  1
+                </div>
+                <div>
+                  <div class="text-white font-medium text-sm">Registra la propiedad</div>
+                  <div class="text-slate-400 text-xs mt-0.5">HomeRisk genera el Property Score automáticamente en menos de 3 minutos usando datos del sector.</div>
+                </div>
+              </div>
+              <div class="bg-zinc-900/60 p-4 rounded-2xl border border-amber-500/10 flex items-start gap-4">
+                <div class="h-10 w-10 flex-shrink-0 rounded-xl flex items-center justify-center font-bold text-sm text-black brokeria-gradient">
+                  2
+                </div>
+                <div>
+                  <div class="text-white font-medium text-sm">El lead sube sus documentos</div>
+                  <div class="text-slate-400 text-xs mt-0.5">El OCR extrae datos de liquidaciones, AFP y CMF. El Client Score se calcula al instante.</div>
+                </div>
+              </div>
+              <div class="bg-zinc-900/60 p-4 rounded-2xl border border-amber-500/10 flex items-start gap-4">
+                <div class="h-10 w-10 flex-shrink-0 rounded-xl flex items-center justify-center font-bold text-sm text-black brokeria-gradient">
+                  3
+                </div>
+                <div>
+                  <div class="text-white font-medium text-sm">Gemini genera el Pitch de Cierre</div>
+                  <div class="text-slate-400 text-xs mt-0.5">La IA cruza ambos scores, genera alertas de riesgo y te entrega recomendaciones concretas para negociar.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         5-MODULE BREAKDOWN
+    ════════════════════════════════════════════ -->
+    <section class="py-24 px-6 bg-black">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16 reveal">
+          <div class="inline-block text-xs font-bold uppercase tracking-widest text-amber-400 mb-4 px-3 py-1 bg-amber-500/10 rounded-full border border-amber-500/20">
+            Arquitectura del Producto
+          </div>
+          <h2 class="text-3xl md:text-5xl font-black text-white font-display mb-4">Los 5 Módulos del MVP</h2>
+          <p class="text-slate-400 max-w-xl mx-auto">Cada módulo resuelve una brecha específica del proceso de corretaje. Juntos, forman el pipeline más inteligente del mercado chileno.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Module 1: Auth + Multi-tenant -->
+          <div class="module-card glass-card p-6 rounded-2xl reveal">
+            <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+            </div>
+            <div class="text-xs font-bold text-amber-400/60 uppercase tracking-wider mb-1">Módulo 01</div>
+            <h3 class="text-lg font-bold text-white mb-2">Auth + Multi-tenant</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">Autenticación segura con Firebase Auth. Cada agencia opera en su propio tenant aislado en Firestore, con sistema de roles granular (SuperAdmin, Admin, Corredor).</p>
+            <div class="bg-amber-500/5 border border-amber-500/15 rounded-xl p-3">
+              <div class="text-xs text-amber-400 font-bold mb-1">Output</div>
+              <div class="text-xs text-slate-400">Sesión segura con tenant asignado. Panel diferenciado por rol.</div>
+            </div>
+          </div>
+
+          <!-- Module 2: Property + HomeRisk -->
+          <div class="module-card glass-card p-6 rounded-2xl reveal">
+            <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="text-xs font-bold text-amber-400/60 uppercase tracking-wider mb-1">Módulo 02</div>
+            <h3 class="text-lg font-bold text-white mb-2">Inventario + HomeRisk</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">Al registrar una propiedad, un Cloud Function dispara el worker de HomeRisk. Analiza criminalidad, conectividad de internet y confiabilidad de servicios básicos del sector usando Google Maps Places API.</p>
+            <div class="bg-amber-500/5 border border-amber-500/15 rounded-xl p-3">
+              <div class="text-xs text-amber-400 font-bold mb-1">Output</div>
+              <div class="text-xs text-slate-400">Property Score 0-100 con badge <span class="text-green-400 font-bold">Certificada</span> / <span class="text-yellow-400 font-bold">Revisión</span> / <span class="text-red-400 font-bold">Alerta</span></div>
+            </div>
+          </div>
+
+          <!-- Module 3: Lead Capture + OCR -->
+          <div class="module-card glass-card p-6 rounded-2xl reveal">
+            <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+            </div>
+            <div class="text-xs font-bold text-amber-400/60 uppercase tracking-wider mb-1">Módulo 03</div>
+            <h3 class="text-lg font-bold text-white mb-2">Lead Capture + Evaluación OCR</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">Landing page branded de la agencia donde el lead sube sus documentos financieros. Gemini Vision extrae datos de liquidaciones de sueldo, cartola AFP e informe CMF mediante OCR avanzado.</p>
+            <div class="bg-amber-500/5 border border-amber-500/15 rounded-xl p-3">
+              <div class="text-xs text-amber-400 font-bold mb-1">Output</div>
+              <div class="text-xs text-slate-400">Client Score 0-100 con desglose: renta verificada, nivel de deuda, estabilidad laboral.</div>
+            </div>
+          </div>
+
+          <!-- Module 4: AI Matchmaking + Pitch -->
+          <div class="module-card glass-card p-6 rounded-2xl reveal" style="border-color: rgba(251,146,60,0.2);">
+            <div class="w-12 h-12 rounded-xl brokeria-gradient flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+            </div>
+            <div class="text-xs font-bold text-amber-400/60 uppercase tracking-wider mb-1">Módulo 04 — Core</div>
+            <h3 class="text-lg font-bold text-white mb-2">AI Matchmaking + Pitch de Cierre</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">Cuando ambos scores están listos, Gemini 2.5 Flash genera un reporte de compatibilidad detallado. Incluye alertas contextuales de riesgo, fortalezas del match y recomendaciones de negociación para el corredor.</p>
+            <div class="bg-amber-500/5 border border-amber-500/15 rounded-xl p-3">
+              <div class="text-xs text-amber-400 font-bold mb-1">Output</div>
+              <div class="text-xs text-slate-400">Pitch de Cierre PDF/web: match score, alertas, argumentos de venta personalizados.</div>
+            </div>
+          </div>
+
+          <!-- Module 5: Notifications + Scheduling -->
+          <div class="module-card glass-card p-6 rounded-2xl reveal">
+            <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+            </div>
+            <div class="text-xs font-bold text-amber-400/60 uppercase tracking-wider mb-1">Módulo 05</div>
+            <h3 class="text-lg font-bold text-white mb-2">Notificaciones + Agenda</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">Push notifications y correos automáticos cuando el Pitch de Cierre está listo. Sistema de agenda integrado para coordinar visitas directamente desde el Kanban de leads, con recordatorios automáticos.</p>
+            <div class="bg-amber-500/5 border border-amber-500/15 rounded-xl p-3">
+              <div class="text-xs text-amber-400 font-bold mb-1">Output</div>
+              <div class="text-xs text-slate-400">Corredor notificado al instante. Visita agendada en 1 clic desde el panel.</div>
+            </div>
+          </div>
+
+          <!-- Kanban Preview Card -->
+          <div class="module-card glass-card p-6 rounded-2xl reveal">
+            <div class="text-xs font-bold text-amber-400/60 uppercase tracking-wider mb-4">Vista Previa</div>
+            <h3 class="text-sm font-bold text-white mb-4">Kanban de Leads en Tiempo Real</h3>
+            <div class="grid grid-cols-3 gap-2">
+              <div>
+                <div class="kanban-col-header bg-slate-700/50 text-slate-400">Nuevo</div>
+                <div class="kanban-card text-slate-300 mb-2">Carlos M.<br/><span class="text-slate-500">Procesando...</span></div>
+                <div class="kanban-card text-slate-300">Ana V.<br/><span class="text-slate-500">Doc. pendiente</span></div>
+              </div>
+              <div>
+                <div class="kanban-col-header bg-amber-500/15 text-amber-400">En evaluación</div>
+                <div class="kanban-card text-slate-300 mb-2">Luis P.<br/><span class="text-amber-400 font-bold">Score: 68</span></div>
+              </div>
+              <div>
+                <div class="kanban-col-header bg-green-500/15 text-green-400">Listo</div>
+                <div class="kanban-card text-slate-300 mb-2">María S.<br/><span class="text-green-400 font-bold">Score: 91</span></div>
+                <div class="kanban-card text-slate-300">Jorge R.<br/><span class="text-green-400 font-bold">Score: 83</span></div>
+              </div>
+            </div>
+            <div class="mt-3 text-xs text-slate-500">Color automático según Client Score calculado.</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         HOW IT WORKS — VISUAL FLOW
+    ════════════════════════════════════════════ -->
+    <section class="py-24 px-6 bg-zinc-950/70 border-t border-zinc-900">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-16 reveal">
+          <div class="inline-block text-xs font-bold uppercase tracking-widest text-amber-400 mb-4 px-3 py-1 bg-amber-500/10 rounded-full border border-amber-500/20">
+            Flujo de Datos
+          </div>
+          <h2 class="text-3xl md:text-5xl font-black text-white font-display mb-4">De cero a Pitch<br />en menos de 3 minutos.</h2>
+          <p class="text-slate-400 max-w-lg mx-auto">Tres eventos coordinados por el backend. Tú solo registras la propiedad y esperas al lead.</p>
+        </div>
+
+        <!-- Flow Step 1 -->
+        <div class="flex gap-6 mb-6 reveal">
+          <div class="flex flex-col items-center gap-0">
+            <div class="w-12 h-12 flex-shrink-0 rounded-full brokeria-gradient flex items-center justify-center text-black font-black text-lg">1</div>
+            <div class="step-connector flex-1 mt-2" style="min-height:60px;"></div>
+          </div>
+          <div class="flex-1 pb-8">
+            <div class="glass-card p-6 rounded-2xl border border-amber-500/15">
+              <div class="flex flex-col md:flex-row gap-6">
+                <div class="flex-1">
+                  <div class="text-xs text-slate-500 font-bold uppercase tracking-wider mb-2">Entrada</div>
+                  <div class="bg-zinc-900/50 rounded-xl p-3 text-sm text-slate-300 border border-zinc-800">
+                    🏠 Corredor registra propiedad<br />
+                    <span class="text-slate-500 text-xs">Dirección, fotos, precio, descripción</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-center text-amber-400/40">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="hidden md:block rotate-0"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="md:hidden rotate-90"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="text-xs text-slate-500 font-bold uppercase tracking-wider mb-2">Caja Negra</div>
+                  <div class="bg-zinc-900/50 rounded-xl p-3 text-sm text-slate-300 border border-amber-500/15">
+                    ⚡ Cloud Function dispara HomeRisk worker<br />
+                    <span class="text-slate-500 text-xs">Maps API · Índices criminalidad · ISP data</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-center text-amber-400/40">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="hidden md:block"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="md:hidden rotate-90"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="text-xs text-slate-500 font-bold uppercase tracking-wider mb-2">Resultado</div>
+                  <div class="bg-green-500/5 rounded-xl p-3 text-sm text-slate-300 border border-green-500/20">
+                    <span class="text-green-400 font-bold">Property Score: 87/100</span><br />
+                    <span class="text-slate-500 text-xs">Badge "Certificada" asignado</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flow Step 2 -->
+        <div class="flex gap-6 mb-6 reveal">
+          <div class="flex flex-col items-center gap-0">
+            <div class="w-12 h-12 flex-shrink-0 rounded-full brokeria-gradient flex items-center justify-center text-black font-black text-lg">2</div>
+            <div class="step-connector flex-1 mt-2" style="min-height:60px;"></div>
+          </div>
+          <div class="flex-1 pb-8">
+            <div class="glass-card p-6 rounded-2xl border border-amber-500/15">
+              <div class="flex flex-col md:flex-row gap-6">
+                <div class="flex-1">
+                  <div class="text-xs text-slate-500 font-bold uppercase tracking-wider mb-2">Entrada</div>
+                  <div class="bg-zinc-900/50 rounded-xl p-3 text-sm text-slate-300 border border-zinc-800">
+                    👤 Lead sube documentos<br />
+                    <span class="text-slate-500 text-xs">CI · Liquidaciones · AFP · CMF</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-center text-amber-400/40">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="hidden md:block"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="md:hidden rotate-90"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="text-xs text-slate-500 font-bold uppercase tracking-wider mb-2">Caja Negra</div>
+                  <div class="bg-zinc-900/50 rounded-xl p-3 text-sm text-slate-300 border border-amber-500/15">
+                    🔍 Gemini Vision OCR extrae datos<br />
+                    <span class="text-slate-500 text-xs">Renta · Deudas · Antigüedad laboral</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-center text-amber-400/40">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="hidden md:block"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="md:hidden rotate-90"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="text-xs text-slate-500 font-bold uppercase tracking-wider mb-2">Resultado</div>
+                  <div class="bg-amber-500/5 rounded-xl p-3 text-sm text-slate-300 border border-amber-500/20">
+                    <span class="text-amber-400 font-bold">Client Score: 74/100</span><br />
+                    <span class="text-slate-500 text-xs">Perfil Medio-Alto · Renta verificada</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flow Step 3 -->
+        <div class="flex gap-6 reveal">
+          <div class="flex flex-col items-center">
+            <div class="w-12 h-12 flex-shrink-0 rounded-full brokeria-gradient flex items-center justify-center text-black font-black text-lg">3</div>
+          </div>
+          <div class="flex-1">
+            <div class="glass-card p-6 rounded-2xl border border-amber-500/30 brokeria-glow">
+              <div class="flex flex-col md:flex-row gap-6">
+                <div class="flex-1">
+                  <div class="text-xs text-slate-500 font-bold uppercase tracking-wider mb-2">Trigger</div>
+                  <div class="bg-zinc-900/50 rounded-xl p-3 text-sm text-slate-300 border border-zinc-800">
+                    🤖 Aggregator detecta ambos scores listos<br />
+                    <span class="text-slate-500 text-xs">Evento Firestore dispara función</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-center text-amber-400/40">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="hidden md:block"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="md:hidden rotate-90"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="text-xs text-slate-500 font-bold uppercase tracking-wider mb-2">Caja Negra</div>
+                  <div class="bg-zinc-900/50 rounded-xl p-3 text-sm text-slate-300 border border-amber-500/15">
+                    ✨ Gemini 2.5 Flash genera Pitch<br />
+                    <span class="text-slate-500 text-xs">Matchmaking · Alertas · Recomendaciones</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-center text-amber-400/40">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="hidden md:block"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="md:hidden rotate-90"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="text-xs text-slate-500 font-bold uppercase tracking-wider mb-2">Resultado</div>
+                  <div class="bg-amber-500/10 rounded-xl p-3 text-sm text-slate-300 border border-amber-500/30">
+                    <span class="text-amber-400 font-bold">🎯 Pitch de Cierre listo</span><br />
+                    <span class="text-slate-500 text-xs">Corredor notificado · Visita en 1 clic</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         TECH STACK
+    ════════════════════════════════════════════ -->
+    <section class="py-20 px-6 bg-black border-t border-zinc-900">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="reveal">
+          <div class="inline-block text-xs font-bold uppercase tracking-widest text-slate-500 mb-4 px-3 py-1 bg-white/5 rounded-full border border-white/10">
+            Stack Tecnológico
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white font-display mb-3">Construido sobre infraestructura<br />de nivel enterprise.</h2>
+          <p class="text-slate-500 text-sm max-w-lg mx-auto mb-12">No hay componentes propietarios que no puedas auditar. Tecnología abierta, escalable y con SLA de Google Cloud.</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
+          <!-- Next.js -->
+          <div class="tech-badge rounded-2xl p-5 flex flex-col items-center gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="white" opacity="0.85">
+              <path d="M11.572 0c-.176 0-.31.001-.358.007a19.76 19.76 0 0 1-.364.033C7.443.346 4.25 2.185 2.228 5.012a11.875 11.875 0 0 0-2.119 5.243c-.096.659-.108.854-.108 1.747s.012 1.089.108 1.748c.652 4.506 3.86 8.292 8.209 9.695.779.25 1.6.422 2.534.525.363.04 1.935.04 2.299 0 1.611-.178 2.977-.577 4.323-1.264.207-.106.247-.134.219-.158-.02-.013-.9-1.193-1.955-2.62l-1.919-2.592-2.404-3.558a338.739 338.739 0 0 0-2.422-3.556c-.009-.002-.018 1.579-.023 3.51-.007 3.38-.01 3.515-.052 3.595a.426.426 0 0 1-.206.214c-.075.037-.14.044-.495.044H7.81l-.108-.068a.438.438 0 0 1-.157-.171l-.05-.106.006-4.703.007-4.705.072-.092a.645.645 0 0 1 .174-.143c.096-.047.134-.051.54-.051.478 0 .558.018.682.154.035.038 1.337 1.999 2.895 4.361a10760.433 10760.433 0 0 0 4.735 7.17l1.9 2.879.096-.063a12.317 12.317 0 0 0 2.466-2.163 11.944 11.944 0 0 0 2.824-6.134c.096-.66.108-.854.108-1.748 0-.893-.012-1.088-.108-1.747C23.268 4.732 20.535 1.348 16.687.445A12.692 12.692 0 0 0 14.138.017c-.123-.008-.712-.017-1.174-.017l-.392.001Z"/>
+            </svg>
+            <div>
+              <div class="text-white font-semibold text-sm">Next.js + React</div>
+              <div class="text-slate-500 text-xs">Frontend SaaS</div>
+            </div>
+          </div>
+
+          <!-- Firebase -->
+          <div class="tech-badge rounded-2xl p-5 flex flex-col items-center gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="#FFCA28">
+              <path d="M3.89 15.673L6.255.461A.542.542 0 0 1 7.27.288l2.543 4.771zm16.794 3.692l-2.25-14a.54.54 0 0 0-.919-.295L3.316 19.365l7.856 4.427a1.621 1.621 0 0 0 1.588 0zM14.3 7.147l-1.82-3.482a.542.542 0 0 0-.96 0L3.53 17.984z"/>
+            </svg>
+            <div>
+              <div class="text-white font-semibold text-sm">Firebase</div>
+              <div class="text-slate-500 text-xs">Auth · Firestore · Storage</div>
+            </div>
+          </div>
+
+          <!-- Vertex AI -->
+          <div class="tech-badge rounded-2xl p-5 flex flex-col items-center gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4285F4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="m2 17 10 5 10-5"/>
+              <path d="m2 12 10 5 10-5"/>
+            </svg>
+            <div>
+              <div class="text-white font-semibold text-sm">Vertex AI</div>
+              <div class="text-slate-500 text-xs">Gemini 2.5 Flash</div>
+            </div>
+          </div>
+
+          <!-- Google Maps -->
+          <div class="tech-badge rounded-2xl p-5 flex flex-col items-center gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#34A853" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <div>
+              <div class="text-white font-semibold text-sm">Google Maps</div>
+              <div class="text-slate-500 text-xs">Places API · HomeRisk</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cloud Functions note -->
+        <div class="mt-8 inline-flex items-center gap-2 text-xs text-slate-500 reveal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+          Toda la lógica de negocio corre en Cloud Functions (Node.js). Zero server management.
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         FAQ SECTION
+    ════════════════════════════════════════════ -->
+    <section class="py-24 px-6 bg-zinc-950/60 border-t border-zinc-900">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <h2 class="text-3xl md:text-4xl font-bold text-white font-display mb-3">Preguntas Frecuentes</h2>
+          <p class="text-slate-400">Todo lo que necesitas saber antes de unirte al programa piloto.</p>
+        </div>
+
+        <div class="space-y-3 reveal">
+          <details class="group glass-card rounded-2xl overflow-hidden">
+            <summary class="flex items-center justify-between p-6 font-medium cursor-pointer text-slate-200 hover:text-amber-400 transition-colors list-none">
+              <span>¿Qué datos necesita subir el lead?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="flex-shrink-0 transform group-open:rotate-180 transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="px-6 pb-6 text-slate-400 text-sm leading-relaxed">
+              El lead sube su cédula de identidad (CI), liquidaciones de sueldo de los últimos 3 meses, cartola AFP e informe CMF. <strong class="text-slate-300">La IA extrae los datos automáticamente mediante OCR</strong> — el corredor no necesita revisar ningún documento manualmente. Todo el proceso toma menos de 2 minutos para el lead.
+            </div>
+          </details>
+
+          <details class="group glass-card rounded-2xl overflow-hidden">
+            <summary class="flex items-center justify-between p-6 font-medium cursor-pointer text-slate-200 hover:text-amber-400 transition-colors list-none">
+              <span>¿Cómo se calcula el Property Score (HomeRisk)?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="flex-shrink-0 transform group-open:rotate-180 transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="px-6 pb-6 text-slate-400 text-sm leading-relaxed">
+              HomeRisk combina tres dimensiones del sector: <strong class="text-slate-300">índices de criminalidad</strong> (datos CEAD y fuentes públicas), <strong class="text-slate-300">conectividad de internet</strong> (cobertura y velocidad promedio de ISPs) y <strong class="text-slate-300">estabilidad de servicios básicos</strong> (historial de cortes de luz, agua y gas). El resultado es un score de 0 a 100 generado automáticamente en menos de 3 minutos al registrar la propiedad.
+            </div>
+          </details>
+
+          <details class="group glass-card rounded-2xl overflow-hidden">
+            <summary class="flex items-center justify-between p-6 font-medium cursor-pointer text-slate-200 hover:text-amber-400 transition-colors list-none">
+              <span>¿Puedo personalizar la landing page de mi agencia?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="flex-shrink-0 transform group-open:rotate-180 transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="px-6 pb-6 text-slate-400 text-sm leading-relaxed">
+              El MVP incluye personalización de marca básica: logo de la agencia, nombre y color principal. Esta landing es donde tus leads suben sus documentos, así que tiene tu identidad visual. La personalización avanzada — dominio propio, plantillas de correo, páginas adicionales — está planificada para la siguiente iteración del producto.
+            </div>
+          </details>
+
+          <details class="group glass-card rounded-2xl overflow-hidden">
+            <summary class="flex items-center justify-between p-6 font-medium cursor-pointer text-slate-200 hover:text-amber-400 transition-colors list-none">
+              <span>¿Es multi-tenant? ¿Cómo se gestiona el acceso?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="flex-shrink-0 transform group-open:rotate-180 transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="px-6 pb-6 text-slate-400 text-sm leading-relaxed">
+              Sí, BrokerIA es completamente multi-tenant. Cada agencia opera en su propio espacio aislado en Firestore — ninguna agencia puede ver los datos de otra. El sistema de roles incluye <strong class="text-slate-300">SuperAdmin</strong> (Growth Buddies), <strong class="text-slate-300">Admin</strong> (dueño o gerente de la agencia) y <strong class="text-slate-300">Corredor</strong> (agente individual), cada uno con permisos específicos sobre propiedades, leads y reportes.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         FINAL CTA
+    ════════════════════════════════════════════ -->
+    <section class="py-28 px-6 relative overflow-hidden text-center">
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute inset-0 bg-gradient-to-b from-amber-900/10 via-black to-black"></div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-amber-500/8 rounded-full blur-[80px]"></div>
+      </div>
+
+      <div class="relative z-10 max-w-2xl mx-auto reveal">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/25 text-amber-400 text-xs font-bold uppercase tracking-wider mb-8">
+          <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+          Programa Piloto — Cupos Limitados
+        </div>
+
+        <h2 class="text-4xl md:text-5xl font-black text-white font-display mb-6 leading-tight">
+          ¿Eres corredor o administras<br />una agencia?
+        </h2>
+        <p class="text-xl text-slate-400 mb-10 leading-relaxed">
+          Únete al programa piloto. Las agencias participantes obtendrán acceso anticipado, tarifa preferencial y acompañamiento directo del equipo de Growth Buddies durante el onboarding.
+        </p>
+
+        <a
+          href="/#contacto"
+          class="inline-flex items-center gap-3 text-black font-bold py-5 px-12 rounded-full text-lg brokeria-gradient hover:shadow-[0_0_40px_rgba(251,146,60,0.5)] transition-all transform hover:scale-105"
+        >
+          Solicitar Acceso al Programa Piloto
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+
+        <div class="mt-8 flex flex-wrap justify-center gap-6 text-sm text-slate-500">
+          <span class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="#4ade80" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Sin tarjeta de crédito
+          </span>
+          <span class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="#4ade80" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Onboarding incluido
+          </span>
+          <span class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="#4ade80" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Soporte directo del equipo
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         FOOTER
+    ════════════════════════════════════════════ -->
+    <!-- Explorar Soluciones -->
+    <section class="py-16 px-6 bg-zinc-950 border-t border-zinc-900">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-10 reveal">
+                <span class="text-[var(--color-accent)] font-bold tracking-wider text-sm uppercase font-display mb-3 block">Catálogo Mini Apps</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-white font-display mb-3">Explorar Otras Soluciones</h2>
+                <p class="text-slate-400">Implementación en 30 días &middot; Costo fijo &middot; Adopción garantizada</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 reveal">
+          <a href="/soluciones/automatizacion-legal-emails/" class="group flex flex-col p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:border-[var(--color-accent)]/50 transition-all duration-300 hover:bg-zinc-900/80">
+            <div class="h-12 w-12 bg-zinc-800 border-zinc-700 text-[var(--color-accent)] rounded-xl flex items-center justify-center mb-4 border">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-[var(--color-accent)] transition-colors">Triaje Legal</h3>
+            <p class="text-sm text-slate-400 leading-relaxed mb-4 flex-1">Filtrado automático de consultas para que los abogados solo atiendan leads calificados.</p>
+            <span class="inline-flex items-center gap-1 text-[var(--color-accent)] hover:text-white text-sm font-semibold transition-colors">Ver Detalle <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </a>
+          <a href="/soluciones/gestion-documental-ip/" class="group flex flex-col p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:border-[var(--color-accent)]/50 transition-all duration-300 hover:bg-zinc-900/80">
+            <div class="h-12 w-12 bg-zinc-800 border-zinc-700 text-[var(--color-accent)] rounded-xl flex items-center justify-center mb-4 border">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-[var(--color-accent)] transition-colors">Validación Documental</h3>
+            <p class="text-sm text-slate-400 leading-relaxed mb-4 flex-1">OCR + LLM clasifica y archiva documentos automáticamente en una base consultable.</p>
+            <span class="inline-flex items-center gap-1 text-[var(--color-accent)] hover:text-white text-sm font-semibold transition-colors">Ver Detalle <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </a>
+          <a href="/soluciones/rendicion-gastos-ia/" class="group flex flex-col p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:border-[var(--color-accent)]/50 transition-all duration-300 hover:bg-zinc-900/80">
+            <div class="h-12 w-12 bg-zinc-800 border-zinc-700 text-[var(--color-accent)] rounded-xl flex items-center justify-center mb-4 border">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 12h4"/><path d="M10 16h4"/><path d="M10 8h1"/></svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-[var(--color-accent)] transition-colors">Rendición de Gastos IA</h3>
+            <p class="text-sm text-slate-400 leading-relaxed mb-4 flex-1">Captura boletas con OCR y genera el reporte de gastos al instante, sin planilla manual.</p>
+            <span class="inline-flex items-center gap-1 text-[var(--color-accent)] hover:text-white text-sm font-semibold transition-colors">Ver Detalle <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </a>
+            </div>
+            <div class="text-center reveal">
+                <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="impact-button inline-block bg-[var(--color-accent)] text-black font-bold py-3 px-8 rounded-full shadow-[0_0_30px_rgba(0,246,255,0.3)] hover:shadow-[0_0_50px_rgba(0,246,255,0.5)] transition-all">Calcular ROI con mi Equipo</a>
+            </div>
+        </div>
+    </section>
+
+            <footer class="bg-black py-16 px-6 border-t border-white/10 text-sm">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+            <div class="space-y-6">
+                <a href="/" class="flex items-center gap-3 group">
+                    <img src="/img/logo.webp" alt="Logotipo de Growth Buddies, Consultora Legal Tech y Automatizacion" class="h-10 w-10 opacity-90 group-hover:opacity-100 transition-opacity" />
+                    <span class="font-bold text-xl text-white tracking-widest font-display">GROWTH BUDDIES</span>
+                </a>
+                <p class="text-slate-400 leading-relaxed max-w-xs">Ingenieria de Transformacion. Automatizamos lo aburrido para que te enfoques en lo estrategico.</p>
+                <div class="flex gap-4">
+                    <a href="https://www.linkedin.com/company/growth-buddies" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Growth Buddies" class="text-slate-400 hover:text-[var(--color-accent)] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+                    <a href="mailto:edmundo@growthbuddies.cl" aria-label="Enviar correo electronico a Growth Buddies" class="text-slate-400 hover:text-[var(--color-accent)] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Servicios</h4>
+                <ul class="space-y-3 text-slate-400">
+                    <li><a href="/servicios/automatizacion-inteligente/" class="hover:text-[var(--color-accent)] transition-colors">Legal Tech &amp; Ops</a></li>
+                    <li><a href="/servicios/ia-corporativa/" class="hover:text-[var(--color-accent)] transition-colors">IA Corporativa</a></li>
+                    <li><a href="/servicios/gestion-del-cambio/" class="hover:text-[var(--color-accent)] transition-colors">Gestion del Cambio</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Mini Apps</h4>
+                <ul class="space-y-3 text-slate-400">
+                    <li><a href="/soluciones/automatizacion-legal-emails/" class="hover:text-[var(--color-accent)] transition-colors">Triaje Legal</a></li>
+                    <li><a href="/soluciones/gestion-documental-ip/" class="hover:text-[var(--color-accent)] transition-colors">Validacion Documental</a></li>
+                    <li><a href="/soluciones/rendicion-gastos-ia/" class="hover:text-[var(--color-accent)] transition-colors">Rendicion Gastos IA</a></li>
+                    <li><a href="/soluciones/catalogo.html#timesheet" class="hover:text-[var(--color-accent)] transition-colors">Auto Timesheet</a></li>
+                    <li><a href="/soluciones/brokeria/" class="text-amber-400 hover:text-amber-300 transition-colors font-medium">BrokerIA ✦</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Explora</h4>
+                <ul class="space-y-3 text-slate-400">
+                    <li><a href="/metodologia/diagnostico/" class="hover:text-[var(--color-accent)] transition-colors">Metodologia</a></li>
+                    <li><a href="/equipo/edmundo-spohr/" class="hover:text-[var(--color-accent)] transition-colors">Equipo</a></li>
+                    <li><a href="/blog/" class="hover:text-[var(--color-accent)] transition-colors">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
+            <div>&copy; 2026 Growth Buddies SpA. Santiago, Chile.</div>
+            <div class="flex gap-6"><a href="/sitemap.xml" class="hover:text-slate-400 transition-colors">Sitemap</a></div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      try {
+        if (typeof Lenis !== "undefined") {
+          const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            orientation: "vertical",
+            smoothWheel: true,
+          });
+          function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+          }
+          requestAnimationFrame(raf);
+        }
+      } catch (e) {}
+    </script>
+
+    <!-- Reveal on scroll -->
+    <script>
+      (function() {
+        var els = document.querySelectorAll('.reveal');
+        if (!els.length) return;
+        var io = new IntersectionObserver(function(entries) {
+          entries.forEach(function(e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('visible');
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        els.forEach(function(el) { io.observe(el); });
+      })();
+    </script>
+
+    <!-- Mobile menu -->
+    <script>
+      (function() {
+        var btn = document.getElementById('mobile-menu-btn');
+        var menu = document.getElementById('mobile-menu');
+        var close = document.getElementById('mobile-menu-close');
+        if (!btn || !menu) return;
+        function openMenu() {
+          menu.style.display = 'flex';
+          menu.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        }
+        function closeMenu() {
+          menu.style.display = 'none';
+          menu.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+        }
+        btn.addEventListener('click', openMenu);
+        if (close) close.addEventListener('click', closeMenu);
+        menu.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', closeMenu);
+        });
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && menu.style.display === 'flex') closeMenu();
+        });
+      })();
+    </script>
+  </body>
+</html>

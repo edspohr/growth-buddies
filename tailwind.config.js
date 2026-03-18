@@ -6,6 +6,7 @@ module.exports = {
     "./soluciones/**/*.{html,js}",
     "./equipo/**/*.{html,js}",
     "./blog/**/*.{html,js}",
+    "./metodologia/**/*.{html,js}",
   ],
   theme: {
     extend: {

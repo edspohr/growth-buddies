@@ -7,306 +7,541 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag("js", new Date());
-
       gtag("config", "G-TJRCBKJKFX");
-
       document.addEventListener("DOMContentLoaded", () => {
-        const whatsappLinks = document.querySelectorAll("a[href*=\"wa.me\"]");
-        whatsappLinks.forEach(link => {
+        document.querySelectorAll("a[href*='wa.me']").forEach(link => {
           link.addEventListener("click", () => {
-            gtag("event", "contact", {
-              "method": "whatsapp",
-              "event_category": "lead",
-              "event_label": document.title
-            });
+            gtag("event", "contact", { method: "whatsapp", event_category: "lead", event_label: document.title });
           });
         });
       });
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#050510" />
 
-    <title>Inteligencia Artificial Corporativa | Growth Buddies | Consultores de Automatización, IA y Legal Tech en Chile</title>
+    <title>IA Corporativa y IA Generativa para Empresas en Chile | Asistentes RAG y Análisis de Datos | Growth Buddies</title>
 
-    <meta
-      name="description"
-      content="Implementación segura de Inteligencia Artificial Generativa. Desarrollo de asistentes virtuales (RAG) y análisis de datos para empresas. Potencia tu rentabilidad con servicios de Inteligencia Artificial y Automatización de Procesos (RPA) en Chile. Agenda una sesión."
-    />
+    <meta name="description" content="Implementa IA Generativa segura en tu empresa chilena. Asistentes RAG privados, análisis de datos con IA y automatización de soporte. Resultados medibles en Santiago." />
+    <meta name="keywords" content="IA Corporativa Chile, Inteligencia Artificial Empresas, RAG, LLM Privado, Chatbots Empresariales, Análisis de Datos IA, Growth Buddies" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Growth Buddies" />
+    <link rel="canonical" href="https://growthbuddies.cl/servicios/ia-corporativa/" />
+    <link rel="icon" type="image/png" href="../../img/avatar.webp" />
 
-    <meta
-      name="keywords"
-      content="Inteligencia Artificial Empresas, AI Consulting, LLM Corporativo, Chatbots, Data Analysis, Growth Buddies"
-    />
+    <meta property="og:locale" content="es_CL" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="IA Corporativa y IA Generativa para Empresas en Chile | Growth Buddies" />
+    <meta property="og:description" content="Implementa IA Generativa segura en tu empresa chilena. Asistentes RAG privados, análisis de datos con IA y automatización de soporte con resultados medibles." />
+    <meta property="og:url" content="https://growthbuddies.cl/servicios/ia-corporativa/" />
+    <meta property="og:image" content="https://growthbuddies.cl/img/logo.webp" />
 
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://growthbuddies.cl/" },
+        { "@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://growthbuddies.cl/#servicios" },
+        { "@type": "ListItem", "position": 3, "name": "IA Corporativa", "item": "https://growthbuddies.cl/servicios/ia-corporativa/" }
+      ]
+    }
+    </script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Service",
       "serviceType": "Corporate AI Consulting",
-      "provider": {
-        "@type": "Organization",
-        "name": "Growth Buddies"
-      },
-      "areaServed": ["Chile", "Latin America"],
-      "description": "Implementación segura de Inteligencia Artificial Generativa y asistentes virtuales para empresas."
+      "provider": { "@type": "Organization", "name": "Growth Buddies", "url": "https://growthbuddies.cl" },
+      "areaServed": ["Chile", "Santiago", "Latin America"],
+      "description": "Implementación segura de IA Generativa para empresas: asistentes privados RAG, análisis predictivo de datos y automatización de soporte al cliente."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Mis datos empresariales se usan para entrenar modelos de IA públicos?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Implementamos arquitecturas RAG (Retrieval-Augmented Generation) donde sus documentos nunca salen de su infraestructura. El modelo de IA consulta sus datos de manera puntual para responder preguntas, pero no los memoriza ni los utiliza para entrenamiento. Sus datos confidenciales permanecen bajo su control." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta implementar un asistente de IA corporativo?",
+          "acceptedAnswer": { "@type": "Answer", "text": "El costo varía según la complejidad y el volumen de documentos a indexar. Un asistente RAG básico sobre un repositorio de 1.000 documentos puede implementarse en 4-6 semanas con un costo fijo. Agenda un Diagnóstico gratuito para recibir una propuesta detallada sin compromiso." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué modelos de IA utilizan?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Trabajamos principalmente con la familia GPT-4 de OpenAI (versión enterprise con acuerdo de no entrenamiento), Claude de Anthropic, y modelos open-source como Mistral o LLaMA para casos donde la privacidad es crítica y se requiere despliegue completamente local." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿La IA puede equivocarse o inventar respuestas?",
+          "acceptedAnswer": { "@type": "Answer", "text": "La arquitectura RAG minimiza las alucinaciones porque el modelo solo responde basándose en documentos reales de su empresa, citando la fuente. Implementamos un umbral de confianza: si el asistente no encuentra información suficiente, responde 'no tengo información sobre esto' en lugar de inventar. Esta configuración se calibra en la etapa de pruebas." }
+        }
+      ]
     }
     </script>
 
-    
-    <meta name="robots" content="index, follow" />
-    <link rel="icon" type="image/png" href="../../img/avatar.webp" />
-
-    <meta property="og:locale" content="es_CL" />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="Inteligencia Artificial Corporativa | Growth Buddies | IA y Automatización en Chile"
-    />
-    <meta
-      property="og:description"
-      content="Transforma tus datos en decisiones. IA Generativa segura y escalable para tu negocio. Soluciones empresariales en Legal Tech y Automatización en Chile."
-    />
-    <meta property="og:url" content="https://growthbuddies.cl/servicios/ia-corporativa/" />
-    <meta property="og:image" content="https://growthbuddies.cl/img/logo.webp" />
-
+    <link rel="preload" href="../../dist/output.css" as="style" />
     <link href="../../dist/output.css" rel="stylesheet" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
-    <noscript>
-      <style>
-        .reveal { opacity: 1 !important; transform: none !important; }
-      </style>
-    </noscript>
-      <link rel="canonical" href="https://growthbuddies.cl/servicios/ia-corporativa/" />
-      <!-- Microsoft Clarity -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" as="style" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js" defer></script>
+    <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+    <!-- Microsoft Clarity -->
     <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "vkf6fbh8zc");
+      (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","vkf6fbh8zc");
     </script>
   </head>
   <body class="antialiased selection:bg-[#00f6ff] selection:text-black">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--color-accent)] focus:text-black focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
     <div class="noise-overlay"></div>
 
+    <!-- Nav -->
     <nav class="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
-      <div
-        class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between"
-      >
+      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <a href="/" class="flex items-center gap-2 group">
-          <img
-            src="../../img/logo.webp"
-            alt="Growth Buddies"
-            class="h-8 w-8 opacity-90 group-hover:opacity-100 transition-opacity"
-          />
-          <span
-            class="font-bold text-lg tracking-tight text-white group-hover:text-[var(--color-accent)] transition-colors"
-            >Growth Buddies</span
-          >
+          <img src="/img/logo.webp" alt="Growth Buddies — Consultora de IA Corporativa en Chile" class="h-8 w-8 opacity-90 group-hover:opacity-100 transition-opacity" />
+          <span class="font-bold text-lg tracking-tight text-white group-hover:text-[var(--color-accent)] transition-colors">Growth Buddies</span>
         </a>
-
-        <div class="hidden md:flex items-center gap-8">
-          <a
-            href="/#clientes"
-            class="text-sm font-medium text-slate-300 hover:text-white transition-colors"
-            >Clientes</a
-          >
-          <a
-            href="/#servicios"
-            class="text-sm font-medium text-white transition-colors"
-            >Servicios</a
-          >
-           <a
-            href="/#metodologia"
-            class="text-sm font-medium text-slate-300 hover:text-white transition-colors"
-            >Metodología</a
-          >
-           <a
-            href="/#productos"
-            class="text-sm font-medium text-slate-300 hover:text-white transition-colors"
-            >Soluciones</a
-          >
-           <a
-            href="/#liderazgo"
-            class="text-sm font-medium text-slate-300 hover:text-white transition-colors"
-            >Equipo</a
-          >
-           <a
-            href="/#partners"
-            class="text-sm font-medium text-slate-300 hover:text-white transition-colors"
-            >Partners</a
-          >
+                <div class="hidden md:flex items-center gap-8">
+          <a href="/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Inicio</a>
+          <a href="/#servicios" class="text-sm font-medium text-white transition-colors">Servicios</a>
+          <a href="/soluciones/catalogo.html" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Soluciones</a>
+          <a href="/blog/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Blog</a>
+          <a href="/#contacto" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Contacto</a>
         </div>
-
         <div class="flex items-center gap-4">
-          <a
-            href="/#contacto"
-            class="hidden md:inline-block text-sm font-medium text-slate-300 hover:text-white transition-colors"
-          >
-            Contacto
-          </a>
+          <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="hidden md:inline-block bg-purple-500/10 hover:bg-purple-500/20 text-purple-400 border border-purple-500/30 hover:border-purple-400 font-semibold text-sm py-2 px-5 rounded-full transition-all duration-300">Agendar Auditoría</a>
         </div>
+        <button id="mobile-menu-btn" aria-expanded="false" aria-label="Abrir menú" class="md:hidden flex flex-col justify-center items-center w-11 h-11 gap-[6px] rounded-lg hover:bg-white/10 transition-colors">
+          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
+          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
+          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
+        </button>
       </div>
     </nav>
 
-    <a
-      href="https://wa.me/56965863160"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-[#25D366] text-white py-3 px-6 rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] transform hover:scale-105 transition-all font-bold tracking-wide group"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-      >
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
-      </svg>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" style="display:none;" class="fixed inset-0 z-[200] flex-col" aria-hidden="true">
+      <div class="absolute inset-0 bg-[#050510]/96 backdrop-blur-xl"></div>
+      <div class="relative flex flex-col h-full px-6 py-6 overflow-y-auto">
+        <div class="flex justify-between items-center mb-10">
+          <a href="/" class="flex items-center gap-2"><img src="/img/logo.webp" alt="Growth Buddies - Consultora de Automatización e IA en Chile" class="h-8 w-8" /><span class="font-bold text-lg text-white">Growth Buddies</span></a>
+          <button id="mobile-menu-close" aria-label="Cerrar menú" class="flex items-center justify-center w-11 h-11 text-white hover:bg-white/10 rounded-lg transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+                <nav class="flex flex-col" role="navigation" aria-label="Menu movil">
+          <a href="/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Inicio</a>
+          <a href="/#servicios" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Servicios</a>
+          <a href="/soluciones/catalogo.html" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Soluciones</a>
+          <a href="/blog/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Blog</a>
+          <a href="/#contacto" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Contacto</a>
+        </nav>
+        <div class="mt-8">
+          <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[#00f6ff]/10 hover:bg-[#00f6ff]/20 text-[#00f6ff] border border-[#00f6ff]/30 hover:border-[#00f6ff] font-semibold text-base py-4 px-5 rounded-full transition-all duration-300">Agendar Auditoría</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/56965863160" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-[#25D366] text-white py-3 px-6 rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] transform hover:scale-105 transition-all font-bold tracking-wide"
+      aria-label="Contactar a Growth Buddies por WhatsApp"
+      aria-label="Contactar a Growth Buddies por WhatsApp" aria-label="Contactar a Growth Buddies por WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
       <span>Hablemos por WhatsApp</span>
     </a>
 
-    <header class="relative pt-32 pb-20 px-6 overflow-hidden">
-       <div class="absolute inset-0 bg-purple-900/10 blur-[100px] pointer-events-none"></div>
-       <div class="max-w-4xl mx-auto text-center relative z-10">
-          <span class="text-purple-400 font-bold tracking-wider text-sm uppercase font-display">Servicios</span>
-          <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white mt-4 font-display">
-            IA Corporativa
+    <!-- Hero -->
+    <header class="relative pt-36 pb-16 px-6 overflow-hidden">
+      <div class="absolute inset-0 bg-purple-900/10 blur-[100px] pointer-events-none"></div>
+      <div class="max-w-5xl mx-auto relative z-10">
+        <!-- Breadcrumb -->
+        <nav aria-label="Migas de pan" class="mb-8">
+          <ol class="flex items-center gap-2 text-xs text-slate-500">
+            <li><a href="/" class="hover:text-purple-400 transition-colors">Inicio</a></li>
+            <li><span aria-hidden="true">/</span></li>
+            <li><a href="/#servicios" class="hover:text-purple-400 transition-colors">Servicios</a></li>
+            <li><span aria-hidden="true">/</span></li>
+            <li class="text-purple-400" aria-current="page">IA Corporativa</li>
+          </ol>
+        </nav>
+        <div class="text-center">
+          <span class="text-purple-400 font-bold tracking-wider text-sm uppercase font-display">IA Generativa para Empresas</span>
+          <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white mt-4 font-display leading-tight">
+            Inteligencia Artificial Corporativa<br />que Respeta tus Datos
           </h1>
-          <p class="mt-6 text-xl text-slate-400 max-w-2xl mx-auto">
-             Implementación segura de Inteligencia Artificial Generativa. Desarrollo de asistentes virtuales y optimización de datos.
+          <p class="mt-6 text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+            Llevamos la potencia de los LLMs a tu empresa chilena con privacidad garantizada. Asistentes inteligentes, análisis de datos y automatización de soporte, sin perder el control de tu información.
           </p>
-       </div>
+          <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="impact-button inline-flex items-center justify-center gap-2 bg-purple-500 hover:bg-purple-400 text-black font-bold py-4 px-8 rounded-full hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
+              Solicitar Diagnóstico Gratuito
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="#que-es" class="inline-flex items-center justify-center gap-2 bg-white/5 border border-white/10 text-white font-medium py-4 px-8 rounded-full hover:bg-white/10 transition-colors">
+              Entender el servicio ↓
+            </a>
+          </div>
+        </div>
+      </div>
     </header>
 
-    <section class="py-16 px-6 bg-zinc-950/50">
-        <div class="max-w-4xl mx-auto">
-            <div class="glass-card p-8 rounded-3xl border border-zinc-800 bg-zinc-900/30">
-                <div class="flex flex-col md:flex-row gap-8 items-start">
-                    <div class="p-4 bg-zinc-900 rounded-2xl text-purple-400 border border-zinc-700 shrink-0">
-                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
-                    </div>
-                    <div>
-                        <h2 class="text-2xl font-bold text-white mb-4">Soluciones de IA Generativa</h2>
-                        <p class="text-slate-300 leading-relaxed mb-6">
-                            Llevamos la potencia de los LLMs (Large Language Models) a su empresa, con privacidad y control.
-                        </p>
-                        <ul class="space-y-4">
-                            <li class="flex items-start gap-3">
-                                <div class="mt-1.5 h-1.5 w-1.5 rounded-full bg-purple-400 shrink-0"></div>
-                                <div>
-                                    <strong class="text-white block">Asistentes Privados (RAG)</strong>
-                                    <span class="text-sm text-slate-400">Chatbots que conocen sus manuales, leyes y políticas internas, sin alucinar.</span>
-                                </div>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <div class="mt-1.5 h-1.5 w-1.5 rounded-full bg-purple-400 shrink-0"></div>
-                                <div>
-                                    <strong class="text-white block">Análisis de Datos</strong>
-                                    <span class="text-sm text-slate-400">Predicción de demanda, clasificación automática y extracción de insights.</span>
-                                </div>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <div class="mt-1.5 h-1.5 w-1.5 rounded-full bg-purple-400 shrink-0"></div>
-                                <div>
-                                    <strong class="text-white block">Automatización de Soporte</strong>
-                                    <span class="text-sm text-slate-400">Atención al cliente 24/7 con respuestas precisas y humanas.</span>
-                                </div>
-                            </li>
-                        </ul>
-                        
-                        <div class="mt-10">
-                            <a href="/#contacto" class="impact-button inline-block bg-purple-500 hover:bg-purple-400 text-black font-bold py-3 px-8 rounded-full transition-colors">
-                                Explorar Soluciones IA
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <main id="main-content">
+
+    <!-- ¿Qué es la IA Corporativa? -->
+    <section id="que-es" class="py-20 px-6 bg-zinc-950/60">
+      <div class="max-w-4xl mx-auto">
+        <div class="reveal">
+          <span class="text-purple-400 font-bold tracking-wider text-xs uppercase font-display">Definición</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-white mt-3 mb-6 font-display">¿Qué es la IA Corporativa?</h2>
+          <div class="space-y-5 text-slate-300 leading-relaxed text-lg">
+            <p>
+              La <strong class="text-white">IA Corporativa</strong> es la aplicación práctica y segura de modelos de lenguaje de gran escala (LLMs) dentro del contexto operativo de una empresa. A diferencia del ChatGPT que usa el público general, una implementación corporativa significa que el modelo de IA <strong class="text-white">conoce los documentos, políticas, productos y datos internos de tu organización</strong>, y solo puede ser consultado por tu equipo.
+            </p>
+            <p>
+              El modelo de arquitectura que implementamos se llama <strong class="text-white">RAG (Retrieval-Augmented Generation)</strong>: cuando un empleado hace una pregunta al asistente, el sistema primero busca los documentos relevantes en la base de conocimiento de la empresa y luego le pide al modelo de IA que formule una respuesta basada en esos documentos, citando la fuente. Esto elimina casi por completo las "alucinaciones" (respuestas inventadas) y garantiza que el asistente <strong class="text-white">solo habla de lo que tu empresa dice que es correcto</strong>.
+            </p>
+            <p>
+              En Growth Buddies hemos implementado IA Corporativa para empresas de seguros, estudios jurídicos y organizaciones de salud en Chile, en todos los casos cumpliendo con estándares de privacidad de datos y sin utilizar información confidencial para el entrenamiento de modelos públicos. Lee nuestro <a href="/blog/roi-ia-estudios-juridicos/" class="text-purple-400 hover:underline">análisis de ROI de IA en estudios jurídicos</a> para más contexto.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
-    <footer class="bg-black py-12 px-6 border-t border-white/10 text-sm mt-12">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-            <!-- Brand -->
-            <div class="space-y-4">
+    <!-- ¿Para quién? -->
+    <section class="py-20 px-6 bg-black border-t border-zinc-900">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center reveal mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-white font-display">¿Quién se beneficia de la IA Corporativa?</h2>
+          <p class="mt-4 text-slate-400 max-w-xl mx-auto">Cualquier organización con conocimiento interno valioso que hoy está bloqueado en documentos, correos o bases de datos sin explotar.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="reveal glass-card p-6 rounded-2xl border border-purple-500/10 hover:border-purple-500/30 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center mb-4" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/></svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Empresas con Documentación Densa</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Seguradoras, bancos, estudios legales y empresas de salud que tienen cientos de manuales, regulaciones y políticas que el equipo necesita consultar constantemente. Un asistente RAG responde en segundos lo que antes requería buscar media hora.</p>
+          </div>
+          <div class="reveal glass-card p-6 rounded-2xl border border-purple-500/10 hover:border-purple-500/30 transition-colors" style="transition-delay:80ms">
+            <div class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center mb-4" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Equipos de Análisis de Datos</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Organizaciones que quieren extraer patrones e insights de sus datos históricos usando IA predictiva: predicción de demanda, clasificación de clientes, detección de anomalías o scoring de riesgo.</p>
+          </div>
+          <div class="reveal glass-card p-6 rounded-2xl border border-purple-500/10 hover:border-purple-500/30 transition-colors" style="transition-delay:160ms">
+            <div class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center mb-4" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Áreas de Soporte y Atención al Cliente</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Equipos de atención que responden las mismas 50 preguntas repetidamente. Un chatbot entrenado sobre los productos y políticas reales de la empresa reduce el volumen de tickets y mejora los tiempos de respuesta.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Los 3 Pilares -->
+    <section class="py-20 px-6 bg-zinc-950/50 border-t border-zinc-900">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center reveal mb-14">
+          <h2 class="text-3xl md:text-4xl font-bold text-white font-display">Los Tres Pilares del Servicio</h2>
+          <p class="mt-4 text-slate-400 max-w-xl mx-auto">Cada empresa tiene necesidades distintas. Trabajamos los tres pilares de forma integrada o independiente según su madurez digital.</p>
+        </div>
+
+        <!-- RAG -->
+        <div class="reveal glass-card rounded-3xl p-8 mb-6 border border-zinc-800 hover:border-purple-500/30 transition-colors">
+          <div class="flex flex-col md:flex-row gap-6 items-start">
+            <div class="p-3 rounded-xl bg-purple-500/10 border border-purple-500/20 shrink-0" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-white mb-3">Asistentes Privados con RAG</h3>
+              <p class="text-slate-300 leading-relaxed mb-4">
+                Un <strong class="text-white">asistente RAG</strong> es un chatbot que conoce profundamente el conocimiento de tu empresa. Lo alimentamos con tus manuales operacionales, contratos tipo, regulaciones sectoriales, FAQs internas y base de conocimiento de soporte. El empleado hace preguntas en lenguaje natural y recibe respuestas precisas con la cita exacta del documento fuente. No hay alucinaciones porque el modelo no inventa: solo interpreta lo que tu empresa ya tiene documentado.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
+                  <span class="text-purple-400 font-bold block mb-1">Formatos soportados</span>
+                  PDF, Word, Excel, páginas web, bases de datos SQL, Notion, Confluence
+                </div>
+                <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
+                  <span class="text-purple-400 font-bold block mb-1">Privacidad</span>
+                  Datos nunca salen de tu infraestructura. Deploy en Azure, AWS o GCP privado
+                </div>
+                <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
+                  <span class="text-purple-400 font-bold block mb-1">Resultado típico</span>
+                  Reducción del 60% en tiempo de búsqueda de información interna
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Análisis de datos -->
+        <div class="reveal glass-card rounded-3xl p-8 mb-6 border border-zinc-800 hover:border-purple-500/30 transition-colors">
+          <div class="flex flex-col md:flex-row gap-6 items-start">
+            <div class="p-3 rounded-xl bg-purple-500/10 border border-purple-500/20 shrink-0" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-white mb-3">Análisis de Datos e IA Predictiva</h3>
+              <p class="text-slate-300 leading-relaxed mb-4">
+                Muchas empresas chilenas tienen datos acumulados durante años en ERP, CRM y hojas de cálculo que nunca han sido aprovechados para tomar decisiones. Construimos <strong class="text-white">pipelines de datos automatizados</strong> que limpian, transforman y alimentan modelos de IA para predicción de demanda, clasificación de clientes por rentabilidad, detección de fraude o churn prediction. Usamos frameworks como <strong class="text-white">Mage AI para los pipelines de datos</strong> y modelos entrenados sobre datos propios de la empresa, no modelos genéricos.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
+                  <span class="text-purple-400 font-bold block mb-1">Casos de uso</span>
+                  Predicción de demanda · Scoring de riesgo · Detección de anomalías
+                </div>
+                <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
+                  <span class="text-purple-400 font-bold block mb-1">Fuentes de datos</span>
+                  ERP, CRM, Excel histórico, APIs externas, bases de datos SQL/NoSQL
+                </div>
+                <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
+                  <span class="text-purple-400 font-bold block mb-1">Entregable</span>
+                  Dashboard con predicciones actualizadas y alertas automáticas
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soporte -->
+        <div class="reveal glass-card rounded-3xl p-8 border border-zinc-800 hover:border-purple-500/30 transition-colors">
+          <div class="flex flex-col md:flex-row gap-6 items-start">
+            <div class="p-3 rounded-xl bg-purple-500/10 border border-purple-500/20 shrink-0" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-white mb-3">Automatización de Soporte al Cliente</h3>
+              <p class="text-slate-300 leading-relaxed mb-4">
+                Un chatbot de IA entrenado sobre los productos, políticas y FAQs reales de tu empresa puede resolver el <strong class="text-white">60-80% de los tickets de soporte de primer nivel</strong> sin intervención humana. Los casos complejos se escalan automáticamente al agente correcto, con el contexto de la conversación ya documentado. Integramos con plataformas como <strong class="text-white">Zendesk, Intercom, WhatsApp Business API y Teams</strong>, manteniendo el historial de conversaciones en tus sistemas actuales.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
+                  <span class="text-purple-400 font-bold block mb-1">Canales</span>
+                  WhatsApp · Web chat · Teams · Slack · Zendesk · Intercom
+                </div>
+                <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
+                  <span class="text-purple-400 font-bold block mb-1">Disponibilidad</span>
+                  24/7 sin costo incremental por volumen de consultas
+                </div>
+                <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
+                  <span class="text-purple-400 font-bold block mb-1">Resultado típico</span>
+                  Reducción del 50% en costo por ticket de soporte
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Casos de uso -->
+    <section class="py-20 px-6 bg-black border-t border-zinc-900">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center reveal mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-white font-display">Casos de Uso Reales</h2>
+          <p class="mt-4 text-slate-400 max-w-xl mx-auto">Ejemplos concretos de cómo la IA corporativa genera valor medible en empresas chilenas.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="reveal glass-card p-6 rounded-2xl border border-zinc-800">
+            <div class="text-purple-400 font-bold text-xs uppercase tracking-wider mb-3">Caso 01 — Corredora de Seguros</div>
+            <h3 class="text-base font-bold text-white mb-3">Asistente de consultas de pólizas</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Una corredora con 15 ejecutivos de venta perdía 2 horas diarias consultando condiciones de pólizas en PDFs. Implementamos un asistente RAG con acceso a 300 pólizas de distintas compañías. Los ejecutivos ahora reciben respuestas en menos de 10 segundos y las propuestas al cliente se generan el mismo día.</p>
+          </div>
+          <div class="reveal glass-card p-6 rounded-2xl border border-zinc-800" style="transition-delay:80ms">
+            <div class="text-purple-400 font-bold text-xs uppercase tracking-wider mb-3">Caso 02 — Empresa Retail</div>
+            <h3 class="text-base font-bold text-white mb-3">Predicción de inventario con IA</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Con 5 años de datos de ventas y patrones estacionales chilenos, construimos un modelo predictivo que anticipa la demanda por SKU con un margen de error del 8%. La empresa redujo quiebres de stock un 35% y liberó capital al bajar el inventario de seguridad. Lee el <a href="/blog/roi-ia-estudios-juridicos/" class="text-purple-400 hover:underline">análisis de ROI de IA</a> para cifras comparativas.</p>
+          </div>
+          <div class="reveal glass-card p-6 rounded-2xl border border-zinc-800" style="transition-delay:160ms">
+            <div class="text-purple-400 font-bold text-xs uppercase tracking-wider mb-3">Caso 03 — Empresa de Servicios</div>
+            <h3 class="text-base font-bold text-white mb-3">Chatbot de soporte técnico 24/7</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Una empresa de servicios con 5.000 clientes recibía 200 tickets semanales, el 70% correspondía a las mismas 30 preguntas. Desplegamos un chatbot en WhatsApp Business entrenado con su base de conocimiento. Hoy el 65% de los tickets se resuelven automáticamente y el tiempo de respuesta bajó de 4 horas a menos de 2 minutos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nuestro enfoque -->
+    <section class="py-20 px-6 bg-zinc-950/50 border-t border-zinc-900">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center reveal mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-white font-display">Proceso de Implementación</h2>
+          <p class="mt-4 text-slate-400 max-w-xl mx-auto">La misma metodología de 4 etapas que aplicamos a todos nuestros proyectos, adaptada al contexto de IA.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <a href="/metodologia/diagnostico/" class="reveal group glass-card p-6 rounded-2xl border border-zinc-800 hover:border-purple-400 transition-colors block">
+            <div class="h-10 w-10 rounded-xl bg-zinc-800 flex items-center justify-center text-white font-black text-base mb-4 group-hover:bg-purple-500 transition-all" aria-hidden="true">1</div>
+            <h3 class="text-base font-bold text-white mb-2">Diagnóstico de Datos</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Auditamos el conocimiento disponible: qué documentos tiene, dónde están y qué calidad tienen los datos.</p>
+          </a>
+          <a href="/metodologia/diseno/" class="reveal group glass-card p-6 rounded-2xl border border-zinc-800 hover:border-purple-400 transition-colors block" style="transition-delay:80ms">
+            <div class="h-10 w-10 rounded-xl bg-zinc-800 flex items-center justify-center text-white font-black text-base mb-4 group-hover:bg-purple-500 transition-all" aria-hidden="true">2</div>
+            <h3 class="text-base font-bold text-white mb-2">Arquitectura de la Solución</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Selección del modelo de IA, diseño del pipeline RAG, definición de permisos y flujo de escalamiento.</p>
+          </a>
+          <a href="/metodologia/build/" class="reveal group glass-card p-6 rounded-2xl border border-zinc-800 hover:border-purple-400 transition-colors block" style="transition-delay:160ms">
+            <div class="h-10 w-10 rounded-xl bg-zinc-800 flex items-center justify-center text-white font-black text-base mb-4 group-hover:bg-purple-500 transition-all" aria-hidden="true">3</div>
+            <h3 class="text-base font-bold text-white mb-2">Build &amp; Fine-tuning</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Construcción del asistente, carga de documentos, calibración del umbral de confianza y pruebas de calidad con casos reales.</p>
+          </a>
+          <a href="/metodologia/adopcion/" class="reveal group glass-card p-6 rounded-2xl border border-purple-500/20 hover:border-purple-400 transition-colors block" style="transition-delay:240ms">
+            <div class="h-10 w-10 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 font-black text-base mb-4 group-hover:bg-purple-500 group-hover:text-black transition-all" aria-hidden="true">4</div>
+            <h3 class="text-base font-bold text-white mb-2">Adopción y Mejora Continua</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Capacitación del equipo, medición de uso y ciclo de retroalimentación para mejorar las respuestas mes a mes.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 px-6 bg-black border-t border-zinc-900">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center reveal mb-12">
+          <h2 class="text-3xl font-bold text-white font-display">Preguntas Frecuentes sobre IA Corporativa</h2>
+          <p class="mt-3 text-slate-400">Las dudas más comunes antes de embarcarse en un proyecto de IA empresarial.</p>
+        </div>
+        <div class="space-y-3 reveal">
+          <details class="group glass-card rounded-2xl overflow-hidden">
+            <summary class="flex items-center justify-between p-6 font-medium cursor-pointer text-slate-200 hover:text-purple-400 transition-colors list-none">
+              <span>¿Mis datos empresariales se usan para entrenar modelos públicos?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="flex-shrink-0 transform group-open:rotate-180 transition-transform duration-300" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="px-6 pb-6 text-slate-400 text-sm leading-relaxed">No. La arquitectura RAG procesa sus documentos de forma puntual para responder preguntas, pero no los memoriza ni los envía a entrenar modelos. Adicionalmente, usamos contratos enterprise con OpenAI/Anthropic que excluyen explícitamente el entrenamiento con datos de clientes.</div>
+          </details>
+          <details class="group glass-card rounded-2xl overflow-hidden">
+            <summary class="flex items-center justify-between p-6 font-medium cursor-pointer text-slate-200 hover:text-purple-400 transition-colors list-none">
+              <span>¿Cuánto cuesta implementar un asistente de IA corporativo?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="flex-shrink-0 transform group-open:rotate-180 transition-transform duration-300" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="px-6 pb-6 text-slate-400 text-sm leading-relaxed">El costo varía según la complejidad y el volumen de documentos. Un asistente RAG básico sobre 1.000 documentos se implementa en 4-6 semanas con un costo fijo definido en el Diagnóstico. Agenda una sesión gratuita para recibir una propuesta concreta.</div>
+          </details>
+          <details class="group glass-card rounded-2xl overflow-hidden">
+            <summary class="flex items-center justify-between p-6 font-medium cursor-pointer text-slate-200 hover:text-purple-400 transition-colors list-none">
+              <span>¿Qué modelos de IA utilizan?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="flex-shrink-0 transform group-open:rotate-180 transition-transform duration-300" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="px-6 pb-6 text-slate-400 text-sm leading-relaxed">Principalmente GPT-4 (versión enterprise), Claude de Anthropic y modelos open-source como Mistral o LLaMA para casos de despliegue completamente local. La selección del modelo depende del caso de uso, presupuesto y requerimientos de privacidad específicos del cliente.</div>
+          </details>
+          <details class="group glass-card rounded-2xl overflow-hidden">
+            <summary class="flex items-center justify-between p-6 font-medium cursor-pointer text-slate-200 hover:text-purple-400 transition-colors list-none">
+              <span>¿La IA puede equivocarse o inventar respuestas?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="flex-shrink-0 transform group-open:rotate-180 transition-transform duration-300" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="px-6 pb-6 text-slate-400 text-sm leading-relaxed">La arquitectura RAG minimiza drásticamente las alucinaciones porque el modelo solo responde basándose en documentos reales, citando la fuente. Implementamos un umbral de confianza configurable: si no encuentra información suficiente, el asistente responde que no tiene datos en lugar de inventar. Esta calibración se ajusta durante la fase de pruebas.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-24 px-6 relative overflow-hidden text-center">
+      <div class="absolute inset-0 bg-gradient-to-b from-purple-900/15 to-black pointer-events-none"></div>
+      <div class="relative z-10 max-w-2xl mx-auto reveal">
+        <h2 class="text-4xl md:text-5xl font-black text-white font-display mb-6 leading-tight">¿Listo para hacer que tu empresa piense más inteligente?</h2>
+        <p class="text-xl text-slate-400 mb-10">Agenda una sesión de Diagnóstico gratuita. Identificaremos el caso de uso de IA con mayor ROI para tu organización en menos de 30 minutos.</p>
+        <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="impact-button inline-flex items-center gap-3 bg-purple-500 hover:bg-purple-400 text-black font-bold py-5 px-12 rounded-full text-lg hover:shadow-[0_0_40px_rgba(168,85,247,0.4)] transition-all transform hover:scale-105">
+          Solicitar Diagnóstico Gratuito
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <p class="mt-6 text-sm text-slate-500">Sin compromiso · Sin tarjeta de crédito · Respuesta en menos de 24 horas</p>
+      </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+            <footer class="bg-black py-16 px-6 border-t border-white/10 text-sm">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+            <div class="space-y-6">
                 <a href="/" class="flex items-center gap-3 group">
-                    <img src="/img/logo.webp" alt="GB" class="h-8 w-8 opacity-80 mix-blend-screen" />
-                    <span class="font-bold text-white tracking-widest font-display">GROWTH BUDDIES</span>
+                    <img src="/img/logo.webp" alt="Logotipo de Growth Buddies, Consultora Legal Tech y Automatizacion" class="h-10 w-10 opacity-90 group-hover:opacity-100 transition-opacity" />
+                    <span class="font-bold text-xl text-white tracking-widest font-display">GROWTH BUDDIES</span>
                 </a>
-                <p class="text-slate-500 leading-relaxed text-xs">
-                    Automatización de Procesos e Inteligencia Artificial.<br>Transformamos negocios con tecnología.
-                </p>
+                <p class="text-slate-400 leading-relaxed max-w-xs">Ingenieria de Transformacion. Automatizamos lo aburrido para que te enfoques en lo estrategico.</p>
+                <div class="flex gap-4">
+                    <a href="https://www.linkedin.com/company/growth-buddies" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Growth Buddies" class="text-slate-400 hover:text-[var(--color-accent)] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+                    <a href="mailto:edmundo@growthbuddies.cl" aria-label="Enviar correo electronico a Growth Buddies" class="text-slate-400 hover:text-[var(--color-accent)] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+                </div>
             </div>
-
-            <!-- Servicios -->
             <div>
-                <h4 class="text-white font-bold mb-4 font-display uppercase tracking-wider text-xs">Servicios</h4>
-                <ul class="space-y-2 text-slate-400 text-xs">
-                    <li><a href="/servicios/automatizacion-inteligente" class="hover:text-[var(--color-accent)] transition-colors">Legal Tech & Ops</a></li>
-                    <li><a href="/servicios/ia-corporativa" class="hover:text-[var(--color-accent)] transition-colors">IA Corporativa</a></li>
-                    <li><a href="/servicios/gestion-del-cambio" class="hover:text-[var(--color-accent)] transition-colors">Gestión del Cambio</a></li>
+                <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Servicios</h4>
+                <ul class="space-y-3 text-slate-400">
+                    <li><a href="/servicios/automatizacion-inteligente/" class="hover:text-[var(--color-accent)] transition-colors">Legal Tech &amp; Ops</a></li>
+                    <li><a href="/servicios/ia-corporativa/" class="hover:text-[var(--color-accent)] transition-colors">IA Corporativa</a></li>
+                    <li><a href="/servicios/gestion-del-cambio/" class="hover:text-[var(--color-accent)] transition-colors">Gestion del Cambio</a></li>
                 </ul>
             </div>
-
-            <!-- Soluciones -->
             <div>
-                 <h4 class="text-white font-bold mb-4 font-display uppercase tracking-wider text-xs">Mini Apps</h4>
-                <ul class="space-y-2 text-slate-400 text-xs">
-                    <li><a href="/soluciones/automatizacion-legal-emails" class="hover:text-[var(--color-accent)] transition-colors">Triaje Legal</a></li>
-                    <li><a href="/soluciones/gestion-documental-ip" class="hover:text-[var(--color-accent)] transition-colors">Validación Documental</a></li>
-                    <li><a href="/soluciones/rendicion-gastos-ia" class="hover:text-[var(--color-accent)] transition-colors">Rendición Gastos IA</a></li>
+                <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Mini Apps</h4>
+                <ul class="space-y-3 text-slate-400">
+                    <li><a href="/soluciones/automatizacion-legal-emails/" class="hover:text-[var(--color-accent)] transition-colors">Triaje Legal</a></li>
+                    <li><a href="/soluciones/gestion-documental-ip/" class="hover:text-[var(--color-accent)] transition-colors">Validacion Documental</a></li>
+                    <li><a href="/soluciones/rendicion-gastos-ia/" class="hover:text-[var(--color-accent)] transition-colors">Rendicion Gastos IA</a></li>
                     <li><a href="/soluciones/catalogo.html#timesheet" class="hover:text-[var(--color-accent)] transition-colors">Auto Timesheet</a></li>
+                    <li><a href="/soluciones/brokeria/" class="text-amber-400 hover:text-amber-300 transition-colors font-medium">BrokerIA ✦</a></li>
                 </ul>
             </div>
-
-             <!-- Metodología -->
-             <div>
-                <h4 class="text-white font-bold mb-4 font-display uppercase tracking-wider text-xs">Explora</h4>
-                <ul class="space-y-2 text-slate-400 text-xs">
-                    <li><a href="/metodologia/diagnostico" class="hover:text-[var(--color-accent)] transition-colors">Metodología</a></li>
-                    <li><a href="/equipo/edmundo-spohr" class="hover:text-[var(--color-accent)] transition-colors">Equipo</a></li>
-                    <li><a href="/blog" class="hover:text-[var(--color-accent)] transition-colors">Blog</a></li>
+            <div>
+                <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Explora</h4>
+                <ul class="space-y-3 text-slate-400">
+                    <li><a href="/metodologia/diagnostico/" class="hover:text-[var(--color-accent)] transition-colors">Metodologia</a></li>
+                    <li><a href="/equipo/edmundo-spohr/" class="hover:text-[var(--color-accent)] transition-colors">Equipo</a></li>
+                    <li><a href="/blog/" class="hover:text-[var(--color-accent)] transition-colors">Blog</a></li>
                 </ul>
             </div>
         </div>
-
-        <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
-            <div class="text-slate-600">
-                &copy; 2026 Growth Buddies SpA. Santiago, Chile.
-            </div>
-             <div class="flex gap-6 text-slate-500">
-                 <a href="/sitemap.xml" class="hover:text-white transition-colors">Sitemap</a>
-                 <a href="mailto:edmundo@growthbuddies.cl" class="hover:text-white transition-colors">Contacto</a>
-            </div>
+        <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
+            <div>&copy; 2026 Growth Buddies SpA. Santiago, Chile.</div>
+            <div class="flex gap-6"><a href="/sitemap.xml" class="hover:text-slate-400 transition-colors">Sitemap</a></div>
         </div>
     </footer>
 
     <script>
-       try {
+      try {
         if (typeof Lenis !== "undefined") {
-          const lenis = new Lenis({
-             duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            orientation: "vertical",
-            smoothWheel: true,
-          });
-          function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-          }
+          const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), orientation: "vertical", smoothWheel: true });
+          function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
           requestAnimationFrame(raf);
         }
       } catch (e) {}
+    </script>
+    <script>
+      (function() {
+        var revs = document.querySelectorAll('.reveal');
+        var io = new IntersectionObserver(function(entries) { entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }); }, { threshold: 0.08 });
+        revs.forEach(function(el) { io.observe(el); });
+        setTimeout(function() { revs.forEach(function(el) { el.classList.add('visible'); }); }, 1500);
+      })();
+    </script>
+    <script>
+      (function() {
+        var btn = document.getElementById('mobile-menu-btn');
+        var menu = document.getElementById('mobile-menu');
+        var close = document.getElementById('mobile-menu-close');
+        if (!btn || !menu) return;
+        function openMenu() { menu.style.display = 'flex'; menu.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden';
+          btn.setAttribute('aria-expanded', 'true'); }
+        function closeMenu() { menu.style.display = 'none'; menu.setAttribute('aria-hidden', 'true'); document.body.style.overflow = '';
+          btn.setAttribute('aria-expanded', 'false'); }
+        btn.addEventListener('click', openMenu);
+        if (close) close.addEventListener('click', closeMenu);
+        menu.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', closeMenu); });
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && menu.style.display === 'flex') closeMenu(); });
+      })();
     </script>
   </body>
 </html>

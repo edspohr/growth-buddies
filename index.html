@@ -25,6 +25,7 @@
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#050510" />
 
     <title>Consultora de Automatización de Procesos e IA en Chile | Growth Buddies</title>
 
@@ -59,6 +60,19 @@
         ],
         "priceRange": "$$",
         "telephone": "+56965863160"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://growthbuddies.cl/",
+        "name": "Growth Buddies",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://growthbuddies.cl/blog/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
       }
     </script>
     <script type="application/ld+json">
@@ -99,6 +113,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" as="style" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -121,6 +136,7 @@
     </script>
   </head>
   <body class="antialiased selection:bg-[#00f6ff] selection:text-black">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--color-accent)] focus:text-black focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
     <div class="noise-overlay"></div>
 
     <nav class="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
@@ -171,16 +187,54 @@
             </a>
         </div>
 
+      
+        <!-- Hamburger Button (Mobile) -->
+        <button id="mobile-menu-btn" aria-expanded="false" aria-label="Abrir menú" class="md:hidden flex flex-col justify-center items-center w-11 h-11 gap-[6px] rounded-lg hover:bg-white/10 transition-colors">
+          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
+          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
+          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
+        </button>
       </div>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" style="display:none;" class="fixed inset-0 z-[200] flex-col" aria-hidden="true">
+      <div class="absolute inset-0 bg-[#050510]/96 backdrop-blur-xl"></div>
+      <div class="relative flex flex-col h-full px-6 py-6 overflow-y-auto">
+        <div class="flex justify-between items-center mb-10">
+          <a href="/" class="flex items-center gap-2">
+            <img src="/img/logo.webp" alt="Growth Buddies - Consultora de Automatización e IA en Chile" class="h-8 w-8" />
+            <span class="font-bold text-lg text-white">Growth Buddies</span>
+          </a>
+          <button id="mobile-menu-close" aria-label="Cerrar menú" class="flex items-center justify-center w-11 h-11 text-white hover:bg-white/10 rounded-lg transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+        <nav class="flex flex-col" role="navigation" aria-label="Menú móvil">
+          <a href="/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Inicio</a>
+          <a href="/#servicios" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Servicios</a>
+          <a href="/soluciones/catalogo.html" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Catálogo Mini Apps</a>
+          <a href="/blog/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Blog</a>
+          <a href="/#liderazgo" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Equipo</a>
+          <a href="/#contacto" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Contacto</a>
+        </nav>
+        <div class="mt-8">
+          <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[#00f6ff]/10 hover:bg-[#00f6ff]/20 text-[#00f6ff] border border-[#00f6ff]/30 hover:border-[#00f6ff] font-semibold text-base py-4 px-5 rounded-full transition-all duration-300">
+            Agendar Auditoría
+          </a>
+        </div>
+      </div>
+    </div>
 
 
 
     <a
+      id="whatsapp-btn"
       href="https://wa.me/56965863160"
       target="_blank"
       rel="noopener noreferrer"
       class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-[#25D366] text-white py-3 px-6 rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] transform hover:scale-105 transition-all font-bold tracking-wide group"
+      aria-label="Contactar a Growth Buddies por WhatsApp"
       aria-label="Contactar a Growth Buddies por WhatsApp"
     >
       <svg
@@ -194,6 +248,61 @@
       </svg>
       <span>Hablemos por WhatsApp</span>
     </a>
+
+    <!-- Mobile Sticky CTA Bar (above WhatsApp button) -->
+    <div
+      id="mobile-sticky-cta"
+      class="hidden fixed bottom-0 left-0 right-0 z-40 bg-zinc-900/95 backdrop-blur-md border-t border-zinc-800 py-3 px-4 items-center justify-between"
+      aria-hidden="true"
+    >
+      <p class="text-sm font-medium text-slate-300">¿Necesitas ayuda?</p>
+      <a
+        href="https://calendly.com/espohr/conversemos"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-[var(--color-accent)] text-black font-bold text-sm px-5 py-2.5 rounded-full hover:bg-white transition-colors whitespace-nowrap"
+      >Agendar</a>
+    </div>
+
+    <!-- Exit-Intent Popup (desktop only) -->
+    <div
+      id="exit-popup-overlay"
+      class="hidden fixed inset-0 z-[300] bg-black/75 backdrop-blur-md items-center justify-center p-6"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="exit-popup-title"
+    >
+      <div
+        id="exit-popup-modal"
+        class="glass-card max-w-md w-full p-8 rounded-2xl border border-zinc-700 relative"
+        style="transform:scale(.95);opacity:0;transition:transform .3s cubic-bezier(.34,1.56,.64,1), opacity .25s ease;"
+      >
+        <button
+          id="exit-popup-close"
+          aria-label="Cerrar"
+          class="absolute top-4 right-4 text-slate-500 hover:text-white transition-colors"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/20 rounded-full flex items-center justify-center mx-auto mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <h3 id="exit-popup-title" class="text-2xl font-black text-white font-display mb-2">¿Te vas sin agendar?</h3>
+          <p class="text-slate-400 text-sm mb-6">Tu primera auditoría de automatización es <strong class="text-white">completamente gratuita</strong>. Sin compromiso.</p>
+          <a
+            href="https://calendly.com/espohr/conversemos"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block w-full bg-[var(--color-accent)] text-black font-bold py-3 px-6 rounded-full hover:bg-white transition-colors mb-3 text-center"
+          >Agendar Ahora — Es Gratis</a>
+          <button
+            id="exit-popup-dismiss"
+            class="text-slate-500 hover:text-slate-300 text-sm transition-colors w-full py-1"
+          >No gracias, lo haré después</button>
+        </div>
+      </div>
+    </div>
 
     <header
       class="relative min-h-screen flex flex-col items-center justify-center text-center p-6 overflow-hidden"
@@ -280,7 +389,19 @@
       </div>
     </header>
 
-    <main>
+    <!-- Sticky Section Nav (desktop only) -->
+    <nav id="section-nav" aria-label="Navegación de secciones" class="hidden md:block sticky top-20 z-40 bg-zinc-950/80 backdrop-blur-md border-b border-white/5 transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-6 h-10 flex items-center gap-8">
+        <a href="#clientes"    data-section="clientes"    class="section-nav-link text-xs uppercase tracking-widest font-semibold text-slate-500 hover:text-white transition-colors py-2 border-b-2 border-transparent">Clientes</a>
+        <a href="#productos"   data-section="productos"   class="section-nav-link text-xs uppercase tracking-widest font-semibold text-slate-500 hover:text-white transition-colors py-2 border-b-2 border-transparent">Soluciones</a>
+        <a href="#servicios"   data-section="servicios"   class="section-nav-link text-xs uppercase tracking-widest font-semibold text-slate-500 hover:text-white transition-colors py-2 border-b-2 border-transparent">Servicios</a>
+        <a href="#metodologia" data-section="metodologia" class="section-nav-link text-xs uppercase tracking-widest font-semibold text-slate-500 hover:text-white transition-colors py-2 border-b-2 border-transparent">Metodología</a>
+        <a href="#liderazgo"   data-section="liderazgo"   class="section-nav-link text-xs uppercase tracking-widest font-semibold text-slate-500 hover:text-white transition-colors py-2 border-b-2 border-transparent">Equipo</a>
+        <a href="#contacto"    data-section="contacto"    class="section-nav-link text-xs uppercase tracking-widest font-semibold text-slate-500 hover:text-white transition-colors py-2 border-b-2 border-transparent">Contacto</a>
+      </div>
+    </nav>
+
+    <main id="main-content">
     <!-- Success Metrics Ticker -->
     <aside aria-label="Métricas de éxito" class="border-y border-white/10 bg-black/50 backdrop-blur-md overflow-hidden py-4">
       <div class="flex items-center justify-around max-w-7xl mx-auto px-6 text-sm md:text-base text-slate-400 font-mono tracking-wider">
@@ -327,7 +448,7 @@
               >
                 <img
                   src="img/spi.webp"
-                  alt="Cliente SPI Americas - Consultoría Estratégica"
+                  alt="Logo de SPI Americas - Cliente de Growth Buddies"
                   loading="lazy" decoding="async"
                   class="max-h-full max-w-full object-contain"
                 />
@@ -342,6 +463,7 @@
               Expertos en asuntos regulatorios, propiedad intelectual, derecho
               corporativo y desarrollo de negocios.
             </p>
+            <p class="text-xs text-slate-500 italic mt-3 pt-3 border-t border-zinc-800/60">"Automatizamos el 80% del flujo de registros de propiedad intelectual." <span class="not-italic text-slate-500 block mt-0.5">— Resultado esperado</span></p>
           </a>
 
           <a
@@ -356,7 +478,7 @@
               >
                 <img
                   src="img/hits.webp"
-                  alt="Cliente Hits Corredora de Seguros - Responsabilidad Civil Médica"
+                  alt="Logo de Hits Corredora de Seguros - Cliente de Growth Buddies"
                   loading="lazy" decoding="async"
                   class="max-h-full max-w-full object-contain"
                 />
@@ -371,6 +493,7 @@
               Corredora de seguros líder en el mercado de responsabilidad civil
               para médicos.
             </p>
+            <p class="text-xs text-slate-500 italic mt-3 pt-3 border-t border-zinc-800/60">"Reducción del 60% en tiempo de emisión de pólizas." <span class="not-italic text-slate-500 block mt-0.5">— Resultado esperado</span></p>
           </a>
 
           <a
@@ -385,7 +508,7 @@
               >
                 <img
                   src="img/mlm.webp"
-                  alt="Cliente MLM Abogados - Estudio Jurídico Familia"
+                  alt="Logo de MLM Abogados - Cliente de Growth Buddies"
                   loading="lazy" decoding="async"
                   class="max-h-full max-w-full object-contain"
                 />
@@ -400,6 +523,7 @@
               Estudio jurídico abocado a Derecho de Familia, ley
               antidiscriminación, Ley TEA y afines.
             </p>
+            <p class="text-xs text-slate-500 italic mt-3 pt-3 border-t border-zinc-800/60">"Triaje automático de consultas familiares disponible 24/7." <span class="not-italic text-slate-500 block mt-0.5">— Resultado esperado</span></p>
           </a>
 
           <a
@@ -414,7 +538,7 @@
               >
                 <img
                   src="img/summer.webp"
-                  alt="Fundación Katy Summer - Prevención Ciberacoso"
+                  alt="Logo de Fundación Katy Summer - Cliente de Growth Buddies"
                   loading="lazy" decoding="async"
                   class="h-full w-full object-cover"
                 />
@@ -429,6 +553,7 @@
               Experiencias profundas y vivenciales que motivan e inspiran,
               honrando la memoria de Katy.
             </p>
+            <p class="text-xs text-slate-500 italic mt-3 pt-3 border-t border-zinc-800/60">"Gestión de inscripciones y comunicaciones automatizada." <span class="not-italic text-slate-500 block mt-0.5">— Resultado esperado</span></p>
           </a>
 
           <a
@@ -443,7 +568,7 @@
               >
                 <img
                   src="img/potenciarte.webp"
-                  alt="Cliente Potenciarte Eventos Corporativos"
+                  alt="Logo de Potenciarte Eventos - Cliente de Growth Buddies"
                   loading="lazy" decoding="async"
                   class="max-h-full max-w-full object-contain"
                 />
@@ -458,6 +583,7 @@
               Diseño y producción de eventos para organizaciones públicas y
               privadas, con cobertura nacional e internacional.
             </p>
+            <p class="text-xs text-slate-500 italic mt-3 pt-3 border-t border-zinc-800/60">"Cotizaciones y logística de eventos sin intervención manual." <span class="not-italic text-slate-500 block mt-0.5">— Resultado esperado</span></p>
           </a>
 
           <a
@@ -472,7 +598,7 @@
               >
                 <img
                   src="img/ingeglobal.webp"
-                  alt="Cliente Ingeglobal - Tecnología Láser Industrial"
+                  alt="Logo de Ingeglobal - Cliente de Growth Buddies"
                   loading="lazy" decoding="async"
                   class="max-h-full max-w-full object-contain"
                 />
@@ -486,11 +612,45 @@
             <p class="text-sm text-slate-400 leading-relaxed">
               Tecnología láser para el control de procesos productivos.
             </p>
+            <p class="text-xs text-slate-500 italic mt-3 pt-3 border-t border-zinc-800/60">"Reportes de calidad generados automáticamente desde sensores." <span class="not-italic text-slate-500 block mt-0.5">— Resultado esperado</span></p>
           </a>
         </div>
       </div>
     </section>
     
+    <!-- Resultados Reales — Social Proof Stats -->
+    <section id="resultados" class="py-20 px-6 bg-black border-b border-zinc-900">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center reveal mb-12">
+          <span class="text-[var(--color-accent)] font-bold tracking-wider text-sm uppercase font-display">Impacto Comprobado</span>
+          <h2 class="text-3xl md:text-4xl font-black tracking-tight text-white mt-3 font-display">Resultados Reales</h2>
+          <p class="mt-4 max-w-xl mx-auto text-slate-400">Métricas consolidadas de nuestros proyectos activos en Chile.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="reveal glass-card rounded-2xl p-8 text-center border border-[var(--color-accent)]/10 hover:border-[var(--color-accent)]/30 transition-colors">
+            <div class="text-5xl font-black text-white font-mono mb-2 stat-counter" data-target="30" data-prefix="+" data-suffix="%">+30%</div>
+            <div class="text-[var(--color-accent)] font-semibold text-sm mb-1">Eficiencia Operativa</div>
+            <p class="text-slate-500 text-xs leading-relaxed">Promedio de mejora en procesos automatizados</p>
+          </div>
+          <div class="reveal glass-card rounded-2xl p-8 text-center border border-[var(--color-accent)]/10 hover:border-[var(--color-accent)]/30 transition-colors" style="transition-delay:80ms">
+            <div class="text-5xl font-black text-white font-mono mb-2 stat-counter" data-target="10000" data-prefix="" data-suffix="+">10.000+</div>
+            <div class="text-[var(--color-accent)] font-semibold text-sm mb-1">Documentos Procesados</div>
+            <p class="text-slate-500 text-xs leading-relaxed">Con IA en producción, sin intervención manual</p>
+          </div>
+          <div class="reveal glass-card rounded-2xl p-8 text-center border border-[var(--color-accent)]/10 hover:border-[var(--color-accent)]/30 transition-colors" style="transition-delay:160ms">
+            <div class="text-5xl font-black text-white font-mono mb-2">&lt;&nbsp;90</div>
+            <div class="text-[var(--color-accent)] font-semibold text-sm mb-1">Días para el ROI</div>
+            <p class="text-slate-500 text-xs leading-relaxed">Tiempo promedio hasta recuperar la inversión</p>
+          </div>
+          <div class="reveal glass-card rounded-2xl p-8 text-center border border-[var(--color-accent)]/10 hover:border-[var(--color-accent)]/30 transition-colors" style="transition-delay:240ms">
+            <div class="text-5xl font-black text-white font-mono mb-2 stat-counter" data-target="100" data-prefix="" data-suffix="%">100%</div>
+            <div class="text-[var(--color-accent)] font-semibold text-sm mb-1">Adopción Garantizada</div>
+            <p class="text-slate-500 text-xs leading-relaxed">Nuestro compromiso contractual con cada cliente</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ROI Calculator Lead Magnet -->
     <section id="roi-calculator" class="py-24 px-6 relative bg-gradient-to-b from-zinc-950 to-zinc-900 border-y border-white/5">
         <div class="absolute inset-0 bg-[var(--color-accent)]/5 blur-[100px] pointer-events-none"></div>
@@ -655,8 +815,50 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- 0. BrokerIA — Featured -->
+            <a href="/soluciones/brokeria/" class="reveal group relative bg-black border border-amber-500/20 rounded-2xl p-8 md:col-span-3 hover:border-amber-500/50 transition-all duration-300 block overflow-hidden" style="box-shadow: 0 0 40px rgba(245,158,11,0.06);">
+                <div class="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
+                <!-- Ambient glow -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-amber-500/5 rounded-full blur-[60px] pointer-events-none"></div>
+                <div class="relative z-10 flex flex-col md:flex-row md:items-center gap-8">
+                    <!-- Icon + badge -->
+                    <div class="flex-shrink-0">
+                        <div class="relative inline-flex">
+                            <div class="p-4 bg-amber-500/10 rounded-2xl border border-amber-500/25 text-amber-400 group-hover:border-amber-500/50 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                            </div>
+                            <div class="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-amber-400 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="black" stroke="none"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Content -->
+                    <div class="flex-1 min-w-0">
+                        <div class="flex flex-wrap items-center gap-3 mb-3">
+                            <h3 class="text-2xl font-bold text-white font-display">BrokerIA — Corretaje Inteligente</h3>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/15 border border-amber-500/30 text-amber-400">
+                                <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+                                Nuevo
+                            </span>
+                            <span class="px-3 py-1 text-xs font-semibold text-orange-300 bg-orange-500/10 rounded-full border border-orange-500/20">PropTech + IA</span>
+                        </div>
+                        <p class="text-slate-300 leading-relaxed text-sm md:text-base max-w-2xl">
+                            Evalúa propiedades y leads con IA. Genera <strong class="text-amber-400">Property Score</strong>, <strong class="text-amber-400">Client Score</strong> y <strong class="text-amber-400">Pitch de Cierre</strong> automático para cerrar más rápido.
+                        </p>
+                    </div>
+                    <!-- CTA -->
+                    <div class="flex-shrink-0">
+                        <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-bold text-black bg-gradient-to-r from-amber-500 to-orange-400 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] transition-all">
+                            Ver plataforma
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </span>
+                    </div>
+                </div>
+            </a>
+
             <!-- 1. Triaje Legal -->
-            <a href="/soluciones/automatizacion-legal-emails" class="reveal group relative bg-black border border-zinc-800 rounded-2xl p-8 hover:border-[var(--color-accent)] transition-all duration-300 block">
+            <a href="/soluciones/automatizacion-legal-emails/" class="reveal group relative bg-black border border-zinc-800 rounded-2xl p-8 hover:border-[var(--color-accent)] transition-all duration-300 block">
                 <div class="absolute inset-0 bg-gradient-to-b from-[var(--color-accent)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
                 <div class="relative z-10">
                     <div class="flex items-center gap-3 mb-6">
@@ -673,7 +875,7 @@
             </a>
 
             <!-- 2. Portal de Validación Documental -->
-            <a href="/soluciones/gestion-documental-ip" class="reveal group relative bg-black border border-zinc-800 rounded-2xl p-8 hover:border-[var(--color-accent)] transition-all duration-300 block" style="transition-delay: 100ms">
+            <a href="/soluciones/gestion-documental-ip/" class="reveal group relative bg-black border border-zinc-800 rounded-2xl p-8 hover:border-[var(--color-accent)] transition-all duration-300 block" style="transition-delay: 100ms">
                 <div class="absolute inset-0 bg-gradient-to-b from-[var(--color-accent)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
                 <div class="relative z-10">
                     <div class="flex items-center gap-3 mb-6">
@@ -707,10 +909,15 @@
             </a>
         </div>
 
-        <div class="mt-12 text-center reveal">
+        <div class="mt-12 text-center reveal flex flex-col sm:flex-row items-center justify-center gap-6">
             <a href="/soluciones/catalogo.html" class="inline-flex items-center gap-2 text-[var(--color-accent)] font-bold uppercase tracking-wider hover:text-white transition-colors">
-                Explorar Soluciones de Automatización
+                Explorar Catálogo Completo
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <span class="hidden sm:block text-zinc-700">|</span>
+            <a href="/soluciones/brokeria/" class="inline-flex items-center gap-2 text-amber-400 font-bold uppercase tracking-wider hover:text-amber-300 transition-colors text-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                Conocer BrokerIA
             </a>
         </div>
       </div>
@@ -837,7 +1044,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <!-- Step 1 -->
-                <a href="/metodologia/diagnostico" class="reveal relative z-10 block">
+                <a href="/metodologia/diagnostico/" class="reveal relative z-10 block">
                     <div class="bg-black border border-zinc-800 p-8 rounded-2xl h-full hover:border-blue-500 transition-colors group cursor-pointer">
                         <div class="h-12 w-12 bg-zinc-900 rounded-xl flex items-center justify-center mb-6 text-white font-black text-xl border border-zinc-700 group-hover:bg-blue-600 group-hover:border-blue-500 transition-all shadow-[0_0_20px_rgba(0,0,0,0.5)]">1</div>
                         <h3 class="text-xl font-bold text-white mb-2 font-display">Diagnóstico</h3>
@@ -1034,7 +1241,8 @@
               >
                 <img
                   src="img/kizeo-forms.webp"
-                  alt="Kizeo Forms"
+                  alt="Logo de Kizeo Forms - Partner de Growth Buddies"
+                  loading="lazy" decoding="async"
                   class="max-h-full max-w-full object-contain"
                 />
               </div>
@@ -1058,7 +1266,8 @@
               >
                 <img
                   src="img/mage.svg"
-                  alt="Mage AI"
+                  alt="Logo de Mage AI - Partner de Growth Buddies"
+                  loading="lazy" decoding="async"
                   class="max-h-full max-w-full object-contain"
                 />
               </div>
@@ -1082,7 +1291,8 @@
               >
                 <img
                   src="img/sumadots.svg"
-                  alt="Sumadots"
+                  alt="Logo de Sumadots - Partner de Growth Buddies"
+                  loading="lazy" decoding="async"
                   class="max-h-full max-w-full object-contain"
                 />
               </div>
@@ -1271,7 +1481,7 @@
             </a>
           </div>
 
-          <div class="flex items-center gap-4 text-slate-500 text-sm">
+          <div class="flex items-center gap-4 text-slate-500 text-sm mb-8">
             <div class="flex -space-x-2">
               <div
                 class="w-8 h-8 rounded-full bg-slate-700 border-2 border-black"
@@ -1285,6 +1495,9 @@
             </div>
             <p>Únete a +50 empresas innovadoras.</p>
           </div>
+
+          <!-- Calendly inline embed (desktop only, injected by JS) -->
+          <div id="calendly-embed-container" class="hidden md:block rounded-xl overflow-hidden border border-zinc-800"></div>
         </div>
 
         <!-- Right Column: Contact Form -->
@@ -1292,11 +1505,9 @@
           class="reveal glass-card p-8 rounded-2xl border border-zinc-800 bg-zinc-900/30"
         >
           <h3 class="text-2xl font-bold text-white mb-6">Consulta Rápida</h3>
-          <form id="contact-form" class="space-y-4">
+          <form id="contact-form" class="space-y-4" novalidate>
             <div>
-              <label for="name" class="gemini-input-label"
-                >Nombre Completo</label
-              >
+              <label for="name" class="gemini-input-label">Nombre Completo</label>
               <input
                 type="text"
                 id="name"
@@ -1305,11 +1516,10 @@
                 placeholder="Ej. Juan Pérez"
                 required
               />
+              <p id="name-error" class="hidden text-xs text-red-400 mt-1">Por favor ingresa tu nombre.</p>
             </div>
             <div>
-              <label for="email" class="gemini-input-label"
-                >Correo Corporativo</label
-              >
+              <label for="email" class="gemini-input-label">Correo Corporativo</label>
               <input
                 type="email"
                 id="email"
@@ -1318,11 +1528,21 @@
                 placeholder="juan@empresa.com"
                 required
               />
+              <p id="email-error" class="hidden text-xs text-red-400 mt-1">Ingresa un correo válido.</p>
             </div>
             <div>
-              <label for="message" class="gemini-input-label"
-                >¿En qué podemos ayudarte?</label
-              >
+              <label for="consulta" class="gemini-input-label">Tipo de consulta</label>
+              <select id="consulta" name="consulta" class="gemini-select" required>
+                <option value="">Selecciona una opción…</option>
+                <option value="Auditoría de Automatización">Auditoría de Automatización</option>
+                <option value="Demo de Mini App">Demo de Mini App</option>
+                <option value="Consulta General">Consulta General</option>
+                <option value="BrokerIA — Programa Piloto">BrokerIA — Programa Piloto</option>
+              </select>
+              <p id="consulta-error" class="hidden text-xs text-red-400 mt-1">Por favor selecciona el tipo de consulta.</p>
+            </div>
+            <div>
+              <label for="message" class="gemini-input-label">¿En qué podemos ayudarte?</label>
               <textarea
                 id="message"
                 name="message"
@@ -1331,12 +1551,15 @@
                 placeholder="Cuéntanos brevemente tu desafío..."
                 required
               ></textarea>
+              <p id="message-error" class="hidden text-xs text-red-400 mt-1">Por favor describe tu consulta.</p>
             </div>
             <button
               type="submit"
+              id="contact-submit-btn"
               class="group w-full bg-white/10 hover:bg-[var(--color-accent)] hover:text-black text-white font-bold py-3 px-6 rounded-lg border border-white/20 transition-all duration-300 flex items-center justify-center gap-2"
             >
-              <span>Enviar a WhatsApp</span>
+              <svg id="contact-spinner" class="hidden animate-spin h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path></svg>
+              <span id="contact-btn-label">Enviar a WhatsApp</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -1348,6 +1571,7 @@
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 class="group-hover:translate-x-1 transition-transform"
+                id="contact-send-icon"
               >
                 <line x1="22" y1="2" x2="11" y2="13"></line>
                 <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
@@ -1417,10 +1641,11 @@
             <div>
                  <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Mini Apps</h4>
                 <ul class="space-y-3 text-slate-400">
-                    <li><a href="/soluciones/automatizacion-legal-emails" class="hover:text-[var(--color-accent)] transition-colors">Triaje Legal</a></li>
-                    <li><a href="/soluciones/gestion-documental-ip" class="hover:text-[var(--color-accent)] transition-colors">Validación Documental</a></li>
-                    <li><a href="/soluciones/rendicion-gastos-ia" class="hover:text-[var(--color-accent)] transition-colors">Rendición Gastos IA</a></li>
+                    <li><a href="/soluciones/automatizacion-legal-emails/" class="hover:text-[var(--color-accent)] transition-colors">Triaje Legal</a></li>
+                    <li><a href="/soluciones/gestion-documental-ip/" class="hover:text-[var(--color-accent)] transition-colors">Validación Documental</a></li>
+                    <li><a href="/soluciones/rendicion-gastos-ia/" class="hover:text-[var(--color-accent)] transition-colors">Rendición Gastos IA</a></li>
                     <li><a href="/soluciones/catalogo.html#timesheet" class="hover:text-[var(--color-accent)] transition-colors">Auto Timesheet</a></li>
+                    <li><a href="/soluciones/brokeria/" class="text-amber-400 hover:text-amber-300 transition-colors font-medium">BrokerIA ✦</a></li>
                 </ul>
             </div>
 
@@ -1428,14 +1653,14 @@
              <div>
                 <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Explora</h4>
                 <ul class="space-y-3 text-slate-400">
-                    <li><a href="/metodologia/diagnostico" class="hover:text-[var(--color-accent)] transition-colors">Metodología</a></li>
-                    <li><a href="/equipo/edmundo-spohr" class="hover:text-[var(--color-accent)] transition-colors">Equipo</a></li>
-                    <li><a href="/blog" class="hover:text-[var(--color-accent)] transition-colors">Blog</a></li>
+                    <li><a href="/metodologia/diagnostico/" class="hover:text-[var(--color-accent)] transition-colors">Metodología</a></li>
+                    <li><a href="/equipo/edmundo-spohr/" class="hover:text-[var(--color-accent)] transition-colors">Equipo</a></li>
+                    <li><a href="/blog/" class="hover:text-[var(--color-accent)] transition-colors">Blog</a></li>
                 </ul>
             </div>
         </div>
 
-        <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-600">
+        <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
             <div>
                 &copy; 2026 Growth Buddies SpA. Santiago, Chile.
             </div>
@@ -1444,6 +1669,66 @@
             </div>
         </div>
     </footer>
+
+    <!-- Section nav highlight + stat counters -->
+    <script>
+      (function() {
+        // Section nav active highlight
+        var navLinks = document.querySelectorAll('.section-nav-link');
+        var sections = ['clientes', 'productos', 'servicios', 'metodologia', 'liderazgo', 'contacto'];
+        var sectionEls = sections.map(function(id) { return document.getElementById(id); });
+
+        function setActive(id) {
+          navLinks.forEach(function(l) {
+            var active = l.getAttribute('data-section') === id;
+            l.classList.toggle('text-white', active);
+            l.classList.toggle('border-b-[var(--color-accent)]', active);
+            l.style.borderBottomColor = active ? 'var(--color-accent)' : 'transparent';
+            l.classList.toggle('text-slate-500', !active);
+          });
+        }
+
+        var io = new IntersectionObserver(function(entries) {
+          entries.forEach(function(e) {
+            if (e.isIntersecting) setActive(e.target.id);
+          });
+        }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+
+        sectionEls.forEach(function(el) { if (el) io.observe(el); });
+
+        // Animated stat counters
+        function animateStat(el) {
+          var target = parseInt(el.getAttribute('data-target'), 10);
+          var prefix = el.getAttribute('data-prefix') || '';
+          var suffix = el.getAttribute('data-suffix') || '';
+          var duration = 1600;
+          var start = null;
+          function step(ts) {
+            if (!start) start = ts;
+            var progress = Math.min((ts - start) / duration, 1);
+            var ease = 1 - Math.pow(1 - progress, 3);
+            var val = Math.round(ease * target);
+            el.textContent = prefix + (target >= 1000 ? val.toLocaleString('es-CL') : val) + suffix;
+            if (progress < 1) requestAnimationFrame(step);
+            else el.textContent = prefix + (target >= 1000 ? target.toLocaleString('es-CL') : target) + suffix;
+          }
+          requestAnimationFrame(step);
+        }
+
+        var statObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(e) {
+            if (e.isIntersecting) {
+              animateStat(e.target);
+              statObserver.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-counter').forEach(function(el) {
+          statObserver.observe(el);
+        });
+      })();
+    </script>
 
     <script>
       // --- Safe Lenis Smooth Scroll ---
@@ -1642,22 +1927,63 @@
         );
       }
 
+      // --- Form inline validation helpers ---
+      (function() {
+        function showError(id, show) {
+          var el = document.getElementById(id);
+          if (el) el.classList.toggle('hidden', !show);
+        }
+        function validateField(fieldId, errorId, checkFn) {
+          var el = document.getElementById(fieldId);
+          if (!el) return;
+          el.addEventListener('blur', function() {
+            showError(errorId, !checkFn(el.value));
+          });
+          el.addEventListener('input', function() {
+            if (!el.classList.contains('border-red-500')) return;
+            showError(errorId, !checkFn(el.value));
+          });
+        }
+        validateField('name', 'name-error', function(v) { return v.trim().length > 0; });
+        validateField('email', 'email-error', function(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); });
+        validateField('consulta', 'consulta-error', function(v) { return v !== ''; });
+        validateField('message', 'message-error', function(v) { return v.trim().length > 0; });
+      })();
+
       // --- Form to WhatsApp + FireStore Logic ---
       document
         .getElementById("contact-form")
         .addEventListener("submit", async function (e) {
           e.preventDefault();
 
-          const name = document.getElementById("name").value;
-          const email = document.getElementById("email").value;
-          const message = document.getElementById("message").value;
-          const submitBtn = this.querySelector('button[type="submit"]');
-          const originalBtnText = submitBtn.innerHTML;
+          const name = document.getElementById("name").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const consulta = document.getElementById("consulta").value;
+          const message = document.getElementById("message").value.trim();
+
+          // Validate before proceeding
+          let hasError = false;
+          function showError(id, show) {
+            var el = document.getElementById(id);
+            if (el) el.classList.toggle('hidden', !show);
+          }
+          if (!name) { showError('name-error', true); hasError = true; }
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('email-error', true); hasError = true; }
+          if (!consulta) { showError('consulta-error', true); hasError = true; }
+          if (!message) { showError('message-error', true); hasError = true; }
+          if (hasError) return;
+
+          const submitBtn = document.getElementById('contact-submit-btn');
+          const spinner = document.getElementById('contact-spinner');
+          const btnLabel = document.getElementById('contact-btn-label');
+          const sendIcon = document.getElementById('contact-send-icon');
+
+          submitBtn.disabled = true;
+          spinner.classList.remove('hidden');
+          btnLabel.textContent = 'Procesando...';
+          if (sendIcon) sendIcon.classList.add('hidden');
 
           try {
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = "<span>Procesando...</span>";
-
             // Save to Firestore (Only if configured)
             const isConfigured = firebaseConfig.apiKey !== "YOUR_API_KEY";
 
@@ -1666,6 +1992,7 @@
                 await addDoc(collection(db, "leads"), {
                   name: name,
                   email: email,
+                  consulta: consulta,
                   message: message,
                   timestamp: serverTimestamp(),
                   source: "web_contact_form",
@@ -1683,27 +2010,146 @@
             }
           } catch (error) {
             console.error("Error in form processing:", error);
-            // We continue to WhatsApp even if DB fails, to not lose the lead interaction
           } finally {
-            // Construimos el mensaje de WhatsApp primero
-            const phoneNumber = "56965863160"; // Growth Buddies Number
-            const text = `Hola Growth Buddies! 👋%0A%0AMi nombre es: *${name}*%0ACorreo: ${email}%0A%0AMensaje:%0A${message}`;
+            // Build WhatsApp message including consulta type
+            const phoneNumber = "56965863160";
+            const text = `Hola Growth Buddies! 👋%0A%0AMi nombre es: *${encodeURIComponent(name)}*%0ACorreo: ${encodeURIComponent(email)}%0ATipo de consulta: *${encodeURIComponent(consulta)}*%0A%0AMensaje:%0A${encodeURIComponent(message)}`;
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${text}`;
 
-            // Mejoramos la UX cambiando a estado verde temporalmente
-            submitBtn.innerHTML = "<span class='text-green-400 font-bold'>¡Todo listo! Redirigiendo a WhatsApp...</span>";
+            spinner.classList.add('hidden');
+            if (sendIcon) sendIcon.classList.remove('hidden');
+            btnLabel.textContent = '¡Todo listo! Redirigiendo…';
             submitBtn.classList.add("border-green-500", "bg-green-500/10");
-            
-            // Le damos 1.5 segundos para que lea antes de la redirección
+
             setTimeout(() => {
                 window.open(whatsappUrl, "_blank");
-                // Restauramos el botón a su estado original después de abrir WhatsApp
                 submitBtn.disabled = false;
-                submitBtn.innerHTML = originalBtnText;
+                btnLabel.textContent = 'Enviar a WhatsApp';
                 submitBtn.classList.remove("border-green-500", "bg-green-500/10");
-            }, 1500);
+            }, 1200);
           }
         });
+    </script>
+  
+    <script>
+      (function() {
+        var btn = document.getElementById('mobile-menu-btn');
+        var menu = document.getElementById('mobile-menu');
+        var close = document.getElementById('mobile-menu-close');
+        if (!btn || !menu) return;
+        function openMenu() {
+          menu.style.display = 'flex';
+          menu.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+          btn.setAttribute('aria-expanded', 'true');
+        }
+        function closeMenu() {
+          menu.style.display = 'none';
+          menu.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+          btn.setAttribute('aria-expanded', 'false');
+        }
+        btn.addEventListener('click', openMenu);
+        if (close) close.addEventListener('click', closeMenu);
+        menu.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', closeMenu);
+        });
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && menu.style.display === 'flex') closeMenu();
+        });
+      })();
+    </script>
+
+    <script>
+      // --- Calendly inline embed (desktop only) ---
+      (function() {
+        if (!window.matchMedia('(min-width: 768px)').matches) return;
+        var container = document.getElementById('calendly-embed-container');
+        if (!container) return;
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://assets.calendly.com/assets/external/widget.css';
+        document.head.appendChild(link);
+        var iframe = document.createElement('div');
+        iframe.className = 'calendly-inline-widget';
+        iframe.setAttribute('data-url', 'https://calendly.com/espohr/conversemos?hide_event_type_details=1&hide_gdpr_banner=1&background_color=09090b&text_color=f1f5f9&primary_color=00f6ff');
+        iframe.style.minWidth = '320px';
+        iframe.style.height = '480px';
+        container.appendChild(iframe);
+        var script = document.createElement('script');
+        script.src = 'https://assets.calendly.com/assets/external/widget.js';
+        script.async = true;
+        document.body.appendChild(script);
+      })();
+
+      // --- Mobile sticky CTA bar ---
+      (function() {
+        var stickyCta = document.getElementById('mobile-sticky-cta');
+        var whatsappBtn = document.getElementById('whatsapp-btn');
+        if (!stickyCta) return;
+        var hero = document.querySelector('header') || document.querySelector('section');
+        if (!hero) return;
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (!entry.isIntersecting) {
+              stickyCta.classList.remove('hidden');
+              stickyCta.classList.add('flex');
+              stickyCta.setAttribute('aria-hidden', 'false');
+              if (whatsappBtn) whatsappBtn.style.bottom = '5rem';
+            } else {
+              stickyCta.classList.add('hidden');
+              stickyCta.classList.remove('flex');
+              stickyCta.setAttribute('aria-hidden', 'true');
+              if (whatsappBtn) whatsappBtn.style.bottom = '';
+            }
+          });
+        }, { threshold: 0 });
+        observer.observe(hero);
+      })();
+
+      // --- Exit-intent popup (desktop only) ---
+      (function() {
+        if (window.matchMedia('(max-width: 767px)').matches) return;
+        if (sessionStorage.getItem('exitPopupShown')) return;
+        var overlay = document.getElementById('exit-popup-overlay');
+        var modal = document.getElementById('exit-popup-modal');
+        if (!overlay || !modal) return;
+        var shown = false;
+        function showPopup() {
+          if (shown) return;
+          shown = true;
+          sessionStorage.setItem('exitPopupShown', '1');
+          overlay.classList.remove('hidden');
+          overlay.classList.add('flex');
+          requestAnimationFrame(function() {
+            requestAnimationFrame(function() {
+              modal.style.transform = 'scale(1)';
+              modal.style.opacity = '1';
+            });
+          });
+        }
+        function hidePopup() {
+          modal.style.transform = 'scale(0.95)';
+          modal.style.opacity = '0';
+          setTimeout(function() {
+            overlay.classList.add('hidden');
+            overlay.classList.remove('flex');
+          }, 300);
+        }
+        document.addEventListener('mouseleave', function(e) {
+          if (e.clientY < 10) showPopup();
+        });
+        var closeBtn = document.getElementById('exit-popup-close');
+        var dismissBtn = document.getElementById('exit-popup-dismiss');
+        if (closeBtn) closeBtn.addEventListener('click', hidePopup);
+        if (dismissBtn) dismissBtn.addEventListener('click', hidePopup);
+        overlay.addEventListener('click', function(e) {
+          if (e.target === overlay) hidePopup();
+        });
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && !overlay.classList.contains('hidden')) hidePopup();
+        });
+      })();
     </script>
   </body>
 </html>

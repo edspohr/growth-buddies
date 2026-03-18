@@ -2419,8 +2419,15 @@ html.lenis {
   z-index: 40;
   pointer-events: none;
   opacity: 0.04;
+  will-change: transform;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   animation: noise-animation 0.2s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .noise-overlay {
+    animation: none;
+  }
 }
 
 @keyframes noise-animation {
@@ -2988,4 +2995,39 @@ details[open] summary ~ * {
     font-size: 4.5rem;
     line-height: 1;
   }
+}
+
+/* ---- Accessibility: focus-visible outlines ---- */
+
+/* Remove browser default outline and add consistent focus-visible style */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Nav links and buttons */
+.glass-nav a:focus-visible,
+.glass-nav button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+/* Interactive cards */
+a.group:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+/* Gemini form inputs already have focus border; ensure visible for keyboard */
+.gemini-input:focus-visible,
+.gemini-select:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 0;
+  box-shadow: 0 0 0 4px rgba(0, 246, 255, 0.15);
 }

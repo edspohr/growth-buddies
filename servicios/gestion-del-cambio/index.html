@@ -7,292 +7,545 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag("js", new Date());
-
       gtag("config", "G-TJRCBKJKFX");
-
       document.addEventListener("DOMContentLoaded", () => {
-        const whatsappLinks = document.querySelectorAll("a[href*=\"wa.me\"]");
-        whatsappLinks.forEach(link => {
+        document.querySelectorAll("a[href*='wa.me']").forEach(link => {
           link.addEventListener("click", () => {
-            gtag("event", "contact", {
-              "method": "whatsapp",
-              "event_category": "lead",
-              "event_label": document.title
-            });
+            gtag("event", "contact", { method: "whatsapp", event_category: "lead", event_label: document.title });
           });
         });
       });
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#050510" />
 
-    <title>Gestión del Cambio y Cultura | Growth Buddies | Consultores de Automatización, IA y Legal Tech en Chile</title>
+    <title>Gestión del Cambio Organizacional y Adopción Digital en Chile | Metodología Prosci ADKAR | Growth Buddies</title>
 
-    <meta
-      name="description"
-      content="Gestión del Cambio Organizacional. Aseguramos la adopción de nuevas tecnologías reduciendo la resistencia y acelerando el ROI. Potencia tu rentabilidad con servicios de Inteligencia Artificial y Automatización de Procesos (RPA) en Chile. Agenda una sesión."
-    />
-
-    <meta
-      name="keywords"
-      content="Gestión del Cambio, Change Management, Adopción Digital, Cultura Organizacional, Capacitación, Growth Buddies"
-    />
-
-    
+    <meta name="description" content="Garantizamos la adopción de nuevas tecnologías en tu empresa chilena. Metodología Prosci certificada, modelo ADKAR y KPIs de adopción medibles. Santiago, Chile." />
+    <meta name="keywords" content="Gestión del Cambio Chile, Adopción Digital, Prosci ADKAR, Change Management, Capacitación Tecnológica, Growth Buddies Santiago" />
     <meta name="robots" content="index, follow" />
+    <meta name="author" content="Growth Buddies" />
+    <link rel="canonical" href="https://growthbuddies.cl/servicios/gestion-del-cambio/" />
     <link rel="icon" type="image/png" href="../../img/avatar.webp" />
 
     <meta property="og:locale" content="es_CL" />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="Gestión del Cambio y Cultura | Growth Buddies | IA y Automatización en Chile"
-    />
-    <meta
-      property="og:description"
-      content="El factor humano en la transformación digital. Asegura que tu equipo ame la nueva tecnología. Soluciones empresariales en Legal Tech y Automatización en Chile."
-    />
+    <meta property="og:title" content="Gestión del Cambio y Adopción Digital en Chile | Growth Buddies" />
+    <meta property="og:description" content="Garantizamos que tu equipo adopte las nuevas tecnologías. Metodología Prosci certificada, modelo ADKAR y KPIs de adopción medibles en Chile." />
     <meta property="og:url" content="https://growthbuddies.cl/servicios/gestion-del-cambio/" />
     <meta property="og:image" content="https://growthbuddies.cl/img/logo.webp" />
 
-    <link href="../../dist/output.css" rel="stylesheet" />
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://growthbuddies.cl/" },
+        { "@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://growthbuddies.cl/#servicios" },
+        { "@type": "ListItem", "position": 3, "name": "Gestión del Cambio", "item": "https://growthbuddies.cl/servicios/gestion-del-cambio/" }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Organizational Change Management",
+      "provider": { "@type": "Organization", "name": "Growth Buddies", "url": "https://growthbuddies.cl" },
+      "areaServed": ["Chile", "Santiago", "Latin America"],
+      "description": "Consultoría de Gestión del Cambio con metodología Prosci certificada. Aseguramos la adopción real de nuevas tecnologías en empresas chilenas."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuánto tiempo toma un programa de gestión del cambio?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Depende del tamaño del equipo y la complejidad del cambio. Para implementaciones tecnológicas en equipos de 10-50 personas, un programa completo de gestión del cambio dura entre 8 y 16 semanas, incluyendo diagnóstico de resistencia, capacitación, comunicación interna y medición de adopción." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa si el equipo se resiste al cambio?",
+          "acceptedAnswer": { "@type": "Answer", "text": "La resistencia al cambio es normal y predecible según el modelo ADKAR. Nuestro diagnóstico inicial identifica los factores de resistencia específicos de cada organización (falta de conciencia, falta de habilidades, factores culturales) y diseña intervenciones directas para cada uno. La resistencia no tratada es la principal causa de fracaso en implementaciones tecnológicas." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se mide el éxito del cambio?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Medimos el éxito con KPIs de adopción concretos: tasa de uso activo del sistema (logins semanales por usuario), reducción del tiempo de ejecución de procesos clave, número de incidentes de soporte post-implementación y encuesta de Net Promoter Score interno sobre la herramienta. Estos indicadores se definen antes de iniciar el proyecto." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿En qué se diferencia la gestión del cambio de la capacitación tradicional?",
+          "acceptedAnswer": { "@type": "Answer", "text": "La capacitación entrega habilidades técnicas para usar una herramienta. La gestión del cambio aborda el 'por qué', el 'qué hay para mí' y el 'cómo encaja esto en mi trabajo diario'. Sin gestión del cambio, el 70% de las capacitaciones no se traducen en uso real de la herramienta pasados 3 meses del lanzamiento." }
+        }
+      ]
+    }
+    </script>
 
+    <link rel="preload" href="../../dist/output.css" as="style" />
+    <link href="../../dist/output.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
-    <noscript>
-      <style>
-        .reveal { opacity: 1 !important; transform: none !important; }
-      </style>
-    </noscript>
-      <link rel="canonical" href="https://growthbuddies.cl/servicios/gestion-del-cambio/" />
-      <!-- Microsoft Clarity -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" as="style" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js" defer></script>
+    <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+    <!-- Microsoft Clarity -->
     <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "vkf6fbh8zc");
+      (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","vkf6fbh8zc");
     </script>
   </head>
   <body class="antialiased selection:bg-[#00f6ff] selection:text-black">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--color-accent)] focus:text-black focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
     <div class="noise-overlay"></div>
 
+    <!-- Nav -->
     <nav class="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
-      <div
-        class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between"
-      >
+      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <a href="/" class="flex items-center gap-2 group">
-          <img
-            src="../../img/logo.webp"
-            alt="Growth Buddies"
-            class="h-8 w-8 opacity-90 group-hover:opacity-100 transition-opacity"
-          />
-          <span
-            class="font-bold text-lg tracking-tight text-white group-hover:text-[var(--color-accent)] transition-colors"
-            >Growth Buddies</span
-          >
+          <img src="/img/logo.webp" alt="Growth Buddies — Gestión del Cambio y Adopción Digital en Chile" class="h-8 w-8 opacity-90 group-hover:opacity-100 transition-opacity" />
+          <span class="font-bold text-lg tracking-tight text-white group-hover:text-[var(--color-accent)] transition-colors">Growth Buddies</span>
         </a>
-
-        <div class="hidden md:flex items-center gap-8">
-          <a
-            href="/#clientes"
-            class="text-sm font-medium text-slate-300 hover:text-white transition-colors"
-            >Clientes</a
-          >
-          <a
-            href="/#servicios"
-            class="text-sm font-medium text-white transition-colors"
-            >Servicios</a
-          >
-           <a
-            href="/#metodologia"
-            class="text-sm font-medium text-slate-300 hover:text-white transition-colors"
-            >Metodología</a
-          >
-           <a
-            href="/#productos"
-            class="text-sm font-medium text-slate-300 hover:text-white transition-colors"
-            >Soluciones</a
-          >
-           <a
-            href="/#liderazgo"
-            class="text-sm font-medium text-slate-300 hover:text-white transition-colors"
-            >Equipo</a
-          >
-           <a
-            href="/#partners"
-            class="text-sm font-medium text-slate-300 hover:text-white transition-colors"
-            >Partners</a
-          >
+                <div class="hidden md:flex items-center gap-8">
+          <a href="/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Inicio</a>
+          <a href="/#servicios" class="text-sm font-medium text-white transition-colors">Servicios</a>
+          <a href="/soluciones/catalogo.html" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Soluciones</a>
+          <a href="/blog/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Blog</a>
+          <a href="/#contacto" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Contacto</a>
         </div>
-
         <div class="flex items-center gap-4">
-          <a
-            href="/#contacto"
-            class="hidden md:inline-block text-sm font-medium text-slate-300 hover:text-white transition-colors"
-          >
-            Contacto
-          </a>
+          <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="hidden md:inline-block bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 hover:border-emerald-400 font-semibold text-sm py-2 px-5 rounded-full transition-all duration-300">Agendar Auditoría</a>
         </div>
+        <button id="mobile-menu-btn" aria-expanded="false" aria-label="Abrir menú" class="md:hidden flex flex-col justify-center items-center w-11 h-11 gap-[6px] rounded-lg hover:bg-white/10 transition-colors">
+          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
+          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
+          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
+        </button>
       </div>
     </nav>
 
-    <a
-      href="https://wa.me/56965863160"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-[#25D366] text-white py-3 px-6 rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] transform hover:scale-105 transition-all font-bold tracking-wide group"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-      >
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
-      </svg>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" style="display:none;" class="fixed inset-0 z-[200] flex-col" aria-hidden="true">
+      <div class="absolute inset-0 bg-[#050510]/96 backdrop-blur-xl"></div>
+      <div class="relative flex flex-col h-full px-6 py-6 overflow-y-auto">
+        <div class="flex justify-between items-center mb-10">
+          <a href="/" class="flex items-center gap-2"><img src="/img/logo.webp" alt="Growth Buddies - Consultora de Automatización e IA en Chile" class="h-8 w-8" /><span class="font-bold text-lg text-white">Growth Buddies</span></a>
+          <button id="mobile-menu-close" aria-label="Cerrar menú" class="flex items-center justify-center w-11 h-11 text-white hover:bg-white/10 rounded-lg transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+                <nav class="flex flex-col" role="navigation" aria-label="Menu movil">
+          <a href="/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Inicio</a>
+          <a href="/#servicios" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Servicios</a>
+          <a href="/soluciones/catalogo.html" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Soluciones</a>
+          <a href="/blog/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Blog</a>
+          <a href="/#contacto" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Contacto</a>
+        </nav>
+        <div class="mt-8">
+          <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[#00f6ff]/10 hover:bg-[#00f6ff]/20 text-[#00f6ff] border border-[#00f6ff]/30 hover:border-[#00f6ff] font-semibold text-base py-4 px-5 rounded-full transition-all duration-300">Agendar Auditoría</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/56965863160" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-[#25D366] text-white py-3 px-6 rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] transform hover:scale-105 transition-all font-bold tracking-wide"
+      aria-label="Contactar a Growth Buddies por WhatsApp"
+      aria-label="Contactar a Growth Buddies por WhatsApp" aria-label="Contactar a Growth Buddies por WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
       <span>Hablemos por WhatsApp</span>
     </a>
 
-    <header class="relative pt-32 pb-20 px-6 overflow-hidden">
-       <div class="absolute inset-0 bg-emerald-900/10 blur-[100px] pointer-events-none"></div>
-       <div class="max-w-4xl mx-auto text-center relative z-10">
-          <span class="text-emerald-400 font-bold tracking-wider text-sm uppercase font-display">Servicios</span>
-          <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white mt-4 font-display">
-            Gestión del Cambio
+    <!-- Hero -->
+    <header class="relative pt-36 pb-16 px-6 overflow-hidden">
+      <div class="absolute inset-0 bg-emerald-900/10 blur-[100px] pointer-events-none"></div>
+      <div class="max-w-5xl mx-auto relative z-10">
+        <!-- Breadcrumb -->
+        <nav aria-label="Migas de pan" class="mb-8">
+          <ol class="flex items-center gap-2 text-xs text-slate-500">
+            <li><a href="/" class="hover:text-emerald-400 transition-colors">Inicio</a></li>
+            <li><span aria-hidden="true">/</span></li>
+            <li><a href="/#servicios" class="hover:text-emerald-400 transition-colors">Servicios</a></li>
+            <li><span aria-hidden="true">/</span></li>
+            <li class="text-emerald-400" aria-current="page">Gestión del Cambio</li>
+          </ol>
+        </nav>
+        <div class="text-center">
+          <span class="text-emerald-400 font-bold tracking-wider text-sm uppercase font-display">El Factor Humano</span>
+          <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white mt-4 font-display leading-tight">
+            Gestión del Cambio que<br />Garantiza Adopción Real
           </h1>
-          <p class="mt-6 text-xl text-slate-400 max-w-2xl mx-auto">
-             El "Factor Humano". Aseguramos que su equipo quiera y sepa usar las nuevas herramientas.
+          <p class="mt-6 text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+            La mejor tecnología falla sin la cultura correcta. Somos los únicos consultores de automatización en Chile con <strong class="text-white">certificación Prosci</strong> en Gestión del Cambio. Garantizamos que tu equipo adopte las nuevas herramientas o seguimos trabajando sin costo adicional.
           </p>
-       </div>
+          <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="impact-button inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-black font-bold py-4 px-8 rounded-full hover:shadow-[0_0_20px_rgba(52,211,153,0.4)] transition-all">
+              Hablar con un Especialista
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="#por-que" class="inline-flex items-center justify-center gap-2 bg-white/5 border border-white/10 text-white font-medium py-4 px-8 rounded-full hover:bg-white/10 transition-colors">
+              Entender por qué importa ↓
+            </a>
+          </div>
+        </div>
+      </div>
     </header>
 
-    <section class="py-16 px-6 bg-zinc-950/50">
-        <div class="max-w-4xl mx-auto">
-            <div class="glass-card p-8 rounded-3xl border border-zinc-800 bg-zinc-900/30">
-                <div class="flex flex-col md:flex-row gap-8 items-start">
-                    <div class="p-4 bg-zinc-900 rounded-2xl text-emerald-400 border border-zinc-700 shrink-0">
-                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    </div>
-                    <div>
-                        <h2 class="text-2xl font-bold text-white mb-4">Adopción Digital</h2>
-                        <p class="text-slate-300 leading-relaxed mb-6">
-                            La mejor tecnología falla sin la cultura correcta. Reducimos la fricción y potenciamos el talento humano.
-                        </p>
-                        <ul class="space-y-4">
-                            <li class="flex items-start gap-3">
-                                <div class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0"></div>
-                                <div>
-                                    <strong class="text-white block">Capacitación y Onboarding</strong>
-                                    <span class="text-sm text-slate-400">Entrenamiento práctico para que el equipo domine las nuevas herramientas.</span>
-                                </div>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <div class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0"></div>
-                                <div>
-                                    <strong class="text-white block">Comunicación Interna</strong>
-                                    <span class="text-sm text-slate-400">Estrategias para alinear a la organización con la visión de cambio.</span>
-                                </div>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <div class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0"></div>
-                                <div>
-                                    <strong class="text-white block">Medición de Adopción</strong>
-                                    <span class="text-sm text-slate-400">KPIs de uso real para garantizar el retorno de inversión.</span>
-                                </div>
-                            </li>
-                        </ul>
-                        
-                        <div class="mt-10">
-                            <a href="/#contacto" class="impact-button inline-block bg-emerald-500 hover:bg-emerald-400 text-black font-bold py-3 px-8 rounded-full transition-colors">
-                                Hablar con un Experto
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <main id="main-content">
+
+    <!-- Por qué importa -->
+    <section id="por-que" class="py-20 px-6 bg-zinc-950/60">
+      <div class="max-w-4xl mx-auto">
+        <div class="reveal">
+          <span class="text-emerald-400 font-bold tracking-wider text-xs uppercase font-display">El Problema del Mercado</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-white mt-3 mb-6 font-display">¿Por qué fracasan las implementaciones tecnológicas?</h2>
+          <div class="space-y-5 text-slate-300 leading-relaxed text-lg">
+            <p>
+              Según estudios de McKinsey y Prosci, el <strong class="text-white">70% de los proyectos de transformación digital no logran sus objetivos</strong> — no por fallas técnicas, sino por resistencia humana al cambio. En Chile, este porcentaje se amplifica por culturas organizacionales donde el "siempre lo hemos hecho así" es un argumento válido y los líderes intermedios bloquean pasivamente la adopción de herramientas que amenazan su posición.
+            </p>
+            <p>
+              En Growth Buddies creemos que la tecnología es solo el 30% del éxito. El otro 70% es la <strong class="text-white">Gestión del Cambio</strong>: asegurarse de que cada persona afectada comprenda por qué cambia, crea que puede aprender a usar la nueva herramienta y tenga los incentivos correctos para hacerlo. Por eso, a diferencia de otras consultoras, incluimos Gestión del Cambio como parte integral de cada proyecto de automatización, no como un anexo opcional.
+            </p>
+            <p>
+              Nuestro fundador <a href="/equipo/edmundo-spohr/" class="text-emerald-400 hover:underline">Edmundo Spohr</a> es <strong class="text-white">Prosci Certified Change Practitioner</strong>, la certificación internacional de referencia en gestión del cambio organizacional. Esto significa que aplicamos el modelo <strong class="text-white">ADKAR</strong> con rigor metodológico, no como un checklist de presentaciones PowerPoint. Lee sobre los <a href="/blog/casos-exito-transformacion-chile/" class="text-emerald-400 hover:underline">casos de éxito de transformación en Chile</a> para ver resultados concretos.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
-    <footer class="bg-black py-12 px-6 border-t border-white/10 text-sm mt-12">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-            <!-- Brand -->
-            <div class="space-y-4">
+    <!-- ADKAR Model -->
+    <section class="py-20 px-6 bg-black border-t border-zinc-900">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center reveal mb-14">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-4">
+            Prosci Certified · Metodología Oficial
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold text-white font-display">El Modelo ADKAR</h2>
+          <p class="mt-4 text-slate-400 max-w-xl mx-auto">ADKAR es el modelo de cambio individual desarrollado por Prosci, el líder mundial en investigación de gestión del cambio. Define las 5 etapas que toda persona debe completar para adoptar un cambio de forma duradera.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-5 gap-3">
+          <div class="reveal glass-card p-5 rounded-2xl border border-emerald-500/15 text-center">
+            <div class="text-3xl font-black text-emerald-400 mb-2">A</div>
+            <div class="text-sm font-bold text-white mb-2">Awareness</div>
+            <p class="text-xs text-slate-400 leading-relaxed">Conciencia de la necesidad del cambio. ¿Por qué cambiamos? ¿Qué pasa si no cambiamos?</p>
+          </div>
+          <div class="reveal glass-card p-5 rounded-2xl border border-emerald-500/15 text-center" style="transition-delay:60ms">
+            <div class="text-3xl font-black text-emerald-400 mb-2">D</div>
+            <div class="text-sm font-bold text-white mb-2">Desire</div>
+            <p class="text-xs text-slate-400 leading-relaxed">Deseo personal de participar y apoyar el cambio. "¿Qué hay en esto para mí?"</p>
+          </div>
+          <div class="reveal glass-card p-5 rounded-2xl border border-emerald-500/15 text-center" style="transition-delay:120ms">
+            <div class="text-3xl font-black text-emerald-400 mb-2">K</div>
+            <div class="text-sm font-bold text-white mb-2">Knowledge</div>
+            <p class="text-xs text-slate-400 leading-relaxed">Conocimiento sobre cómo implementar el cambio: habilidades técnicas y nuevos comportamientos.</p>
+          </div>
+          <div class="reveal glass-card p-5 rounded-2xl border border-emerald-500/15 text-center" style="transition-delay:180ms">
+            <div class="text-3xl font-black text-emerald-400 mb-2">A</div>
+            <div class="text-sm font-bold text-white mb-2">Ability</div>
+            <p class="text-xs text-slate-400 leading-relaxed">Capacidad real para aplicar el cambio en el trabajo diario, no solo teoría.</p>
+          </div>
+          <div class="reveal glass-card p-5 rounded-2xl border border-emerald-500/10 text-center" style="transition-delay:240ms">
+            <div class="text-3xl font-black text-emerald-400 mb-2">R</div>
+            <div class="text-sm font-bold text-white mb-2">Reinforcement</div>
+            <p class="text-xs text-slate-400 leading-relaxed">Refuerzo para sostener el cambio en el tiempo y evitar la regresión a hábitos anteriores.</p>
+          </div>
+        </div>
+        <p class="text-center text-slate-500 text-xs mt-6 reveal">Cada letra del modelo representa una barrera distinta. Nuestro diagnóstico identifica en cuál de las 5 etapas está bloqueada cada persona o grupo del equipo.</p>
+      </div>
+    </section>
+
+    <!-- Qué incluye el servicio -->
+    <section class="py-20 px-6 bg-zinc-950/50 border-t border-zinc-900">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center reveal mb-14">
+          <h2 class="text-3xl md:text-4xl font-bold text-white font-display">Lo que Incluye el Servicio</h2>
+          <p class="mt-4 text-slate-400 max-w-xl mx-auto">Tres líneas de trabajo que se implementan en paralelo con el proyecto técnico de automatización o cambio tecnológico.</p>
+        </div>
+
+        <!-- Capacitación -->
+        <div class="reveal glass-card rounded-3xl p-8 mb-6 border border-zinc-800 hover:border-emerald-500/30 transition-colors">
+          <div class="flex flex-col md:flex-row gap-6 items-start">
+            <div class="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 shrink-0" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-white mb-3">Programa de Capacitación y Onboarding</h3>
+              <p class="text-slate-300 leading-relaxed mb-4">
+                No hacemos cursos genéricos de PowerPoint. Diseñamos <strong class="text-white">programas de capacitación contextualizados</strong> al flujo de trabajo real de cada rol. Un abogado y un asistente administrativo aprenden la misma herramienta de formas distintas: el primero necesita entender cómo la herramienta mejora sus causas; el segundo, cómo reduce las tareas de carga. Incluimos <strong class="text-white">materiales de referencia rápida, videos tutoriales y sesiones de práctica supervisada</strong>. La capacitación se ofrece en formato híbrido (presencial en Santiago o vía Zoom) con grabaciones disponibles para quienes no puedan asistir en tiempo real.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
+                  <span class="text-emerald-400 font-bold block mb-1">Formato</span>
+                  Talleres presenciales · Sesiones Zoom · Videos asíncronos · Guías de referencia rápida
+                </div>
+                <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
+                  <span class="text-emerald-400 font-bold block mb-1">Personalización</span>
+                  Rutas de aprendizaje diferenciadas por rol y nivel de competencia digital
+                </div>
+                <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
+                  <span class="text-emerald-400 font-bold block mb-1">Seguimiento</span>
+                  Check-ins semanales durante las primeras 4 semanas post-lanzamiento
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comunicación Interna -->
+        <div class="reveal glass-card rounded-3xl p-8 mb-6 border border-zinc-800 hover:border-emerald-500/30 transition-colors">
+          <div class="flex flex-col md:flex-row gap-6 items-start">
+            <div class="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 shrink-0" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-white mb-3">Estrategia de Comunicación Interna</h3>
+              <p class="text-slate-300 leading-relaxed mb-4">
+                La resistencia al cambio se alimenta del vacío de información. Cuando el equipo no sabe qué viene, inventa —generalmente en negativo. Desarrollamos una <strong class="text-white">estrategia de comunicación estructurada en fases</strong>: anuncio del cambio con contexto claro, actualizaciones de avance durante la implementación y celebración de primeros logros. Identificamos a los <strong class="text-white">agentes de cambio</strong> dentro de la organización —las personas con mayor influencia informal— y los formamos como embajadores del proyecto para amplificar el mensaje desde adentro.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
+                  <span class="text-emerald-400 font-bold block mb-1">Herramientas</span>
+                  Plan de comunicación · Mensajes clave por audiencia · Kit para líderes
+                </div>
+                <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
+                  <span class="text-emerald-400 font-bold block mb-1">Agentes de Cambio</span>
+                  Identificación, formación y acompañamiento de embajadores internos
+                </div>
+                <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
+                  <span class="text-emerald-400 font-bold block mb-1">Canales</span>
+                  Teams / Slack · Email corporativo · Reuniones one-on-one con líderes
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Medición de Adopción -->
+        <div class="reveal glass-card rounded-3xl p-8 border border-zinc-800 hover:border-emerald-500/30 transition-colors">
+          <div class="flex flex-col md:flex-row gap-6 items-start">
+            <div class="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 shrink-0" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-white mb-3">Medición de Adopción con KPIs</h3>
+              <p class="text-slate-300 leading-relaxed mb-4">
+                "No se puede gestionar lo que no se mide." Definimos en conjunto con el cliente un <strong class="text-white">set de KPIs de adopción</strong> antes de iniciar el proyecto, de modo que el éxito sea objetivo y verificable. Los indicadores típicos incluyen: <strong class="text-white">tasa de uso activo</strong> (% de usuarios que interactuaron con la herramienta en los últimos 7 días), <strong class="text-white">reducción del tiempo</strong> de ejecución del proceso automatizado, <strong class="text-white">volumen de incidentes de soporte</strong> post-lanzamiento y <strong class="text-white">NPS interno</strong> de satisfacción con la herramienta. Reportamos estas métricas cada dos semanas durante los primeros tres meses.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
+                  <span class="text-emerald-400 font-bold block mb-1">KPI principal</span>
+                  Tasa de uso activo semanal (objetivo: &gt;80% a los 90 días)
+                </div>
+                <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
+                  <span class="text-emerald-400 font-bold block mb-1">Reporte</span>
+                  Dashboard de adopción actualizado quincenal con alertas de usuarios en riesgo
+                </div>
+                <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
+                  <span class="text-emerald-400 font-bold block mb-1">Garantía</span>
+                  Si no alcanzamos el KPI acordado, continuamos el acompañamiento sin costo
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Casos de uso -->
+    <section class="py-20 px-6 bg-black border-t border-zinc-900">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center reveal mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-white font-display">Casos de Éxito en Chile</h2>
+          <p class="mt-4 text-slate-400 max-w-xl mx-auto">Transformaciones reales donde la Gestión del Cambio fue el factor diferenciador entre el éxito y el fracaso.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="reveal glass-card p-6 rounded-2xl border border-zinc-800">
+            <div class="text-emerald-400 font-bold text-xs uppercase tracking-wider mb-3">Caso 01 — Firma Legal</div>
+            <h3 class="text-base font-bold text-white mb-3">De 40% a 95% de adopción en 60 días</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Un estudio jurídico implementó LemonTech pero solo el 40% del equipo lo usaba activamente 3 meses después. Aplicamos el diagnóstico ADKAR y encontramos que el problema era "Desire": los abogados senior no entendían el beneficio personal. Rediseñamos la propuesta de valor por rol y en 60 días el uso activo llegó al 95%. Conoce el <a href="/blog/casos-exito-transformacion-chile/" class="text-emerald-400 hover:underline">caso de éxito completo</a>.</p>
+          </div>
+          <div class="reveal glass-card p-6 rounded-2xl border border-zinc-800" style="transition-delay:80ms">
+            <div class="text-emerald-400 font-bold text-xs uppercase tracking-wider mb-3">Caso 02 — Empresa de Seguros</div>
+            <h3 class="text-base font-bold text-white mb-3">Onboarding de 80 personas en 3 semanas</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Una corredora de seguros implementó un nuevo CRM para 80 ejecutivos de venta distribuidos en 4 ciudades de Chile. Diseñamos un programa de onboarding híbrido con rutas diferenciadas por rol y agentes de cambio en cada sucursal. Al día 21 post-lanzamiento, el 88% completó la certificación de uso básico.</p>
+          </div>
+          <div class="reveal glass-card p-6 rounded-2xl border border-zinc-800" style="transition-delay:160ms">
+            <div class="text-emerald-400 font-bold text-xs uppercase tracking-wider mb-3">Caso 03 — Organización Sin Fines de Lucro</div>
+            <h3 class="text-base font-bold text-white mb-3">Digitalización de procesos con equipo voluntario</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Una fundación chilena necesitaba digitalizar su gestión de proyectos con un equipo de voluntarios de distintas edades y niveles de competencia digital. La capacitación tradicional había fallado dos veces. Implementamos un plan ADKAR que empezaba por el "por qué" antes del "cómo". En 45 días, el equipo completo operaba de forma autónoma en la nueva plataforma.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- El Equipo -->
+    <section class="py-16 px-6 bg-zinc-950/50 border-t border-zinc-900">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center reveal mb-10">
+          <h2 class="text-2xl font-bold text-white font-display">El Equipo detrás del Servicio</h2>
+          <p class="mt-2 text-slate-400">Nuestros consultores combinan formación técnica con experiencia real en transformación cultural.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <a href="/equipo/edmundo-spohr/" class="reveal group glass-card p-6 rounded-2xl border border-zinc-800 hover:border-emerald-500/40 transition-colors flex items-center gap-5">
+            <img src="/img/foto.webp" alt="Edmundo Spohr — CEO Growth Buddies, Prosci Certified Change Practitioner" loading="lazy" decoding="async" class="h-16 w-16 rounded-full object-cover ring-2 ring-zinc-700 group-hover:ring-emerald-500 transition-all shrink-0" />
+            <div>
+              <div class="text-base font-bold text-white group-hover:text-emerald-400 transition-colors">Edmundo Spohr</div>
+              <div class="text-xs text-emerald-400 font-semibold mb-1">CEO &amp; Prosci Certified Change Practitioner</div>
+              <p class="text-xs text-slate-500 leading-relaxed">Experto en integración de automatización y gestión del cambio. Lidera los proyectos donde la tecnología y la cultura organizacional deben alinearse.</p>
+            </div>
+          </a>
+          <a href="/equipo/felipe-soto-santibanez/" class="reveal group glass-card p-6 rounded-2xl border border-zinc-800 hover:border-emerald-500/40 transition-colors flex items-center gap-5" style="transition-delay:80ms">
+            <img src="/img/felipe-2026.webp" alt="Felipe Soto Santibañez — Consultor Senior en Transformación Digital y Adopción" loading="lazy" decoding="async" class="h-16 w-16 rounded-full object-cover ring-2 ring-zinc-700 group-hover:ring-emerald-500 transition-all shrink-0" />
+            <div>
+              <div class="text-base font-bold text-white group-hover:text-emerald-400 transition-colors">Felipe Soto Santibañez</div>
+              <div class="text-xs text-emerald-400 font-semibold mb-1">Consultor Senior — Transformación Digital</div>
+              <p class="text-xs text-slate-500 leading-relaxed">"Los datos sin adopción son solo ruido." Especialista en medir y acelerar la adopción tecnológica mediante datos de comportamiento de usuario.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 px-6 bg-black border-t border-zinc-900">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center reveal mb-12">
+          <h2 class="text-3xl font-bold text-white font-display">Preguntas Frecuentes sobre Gestión del Cambio</h2>
+          <p class="mt-3 text-slate-400">Respuestas directas a las dudas más comunes antes de iniciar un programa de cambio.</p>
+        </div>
+        <div class="space-y-3 reveal">
+          <details class="group glass-card rounded-2xl overflow-hidden">
+            <summary class="flex items-center justify-between p-6 font-medium cursor-pointer text-slate-200 hover:text-emerald-400 transition-colors list-none">
+              <span>¿Cuánto tiempo toma un programa de gestión del cambio?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="flex-shrink-0 transform group-open:rotate-180 transition-transform duration-300" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="px-6 pb-6 text-slate-400 text-sm leading-relaxed">Para equipos de 10-50 personas, un programa completo dura entre 8 y 16 semanas. El acompañamiento post-lanzamiento continúa hasta alcanzar el KPI de adopción acordado, sin costo adicional si el equipo no llega al objetivo por causas atribuibles al proceso.</div>
+          </details>
+          <details class="group glass-card rounded-2xl overflow-hidden">
+            <summary class="flex items-center justify-between p-6 font-medium cursor-pointer text-slate-200 hover:text-emerald-400 transition-colors list-none">
+              <span>¿Qué pasa si el equipo se resiste al cambio?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="flex-shrink-0 transform group-open:rotate-180 transition-transform duration-300" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="px-6 pb-6 text-slate-400 text-sm leading-relaxed">La resistencia es predecible y abordable. Nuestro diagnóstico ADKAR identifica el tipo de resistencia de cada grupo (falta de conciencia, falta de habilidades, factores culturales) y diseña intervenciones específicas. La resistencia no tratada es la principal causa de fracaso en implementaciones tecnológicas.</div>
+          </details>
+          <details class="group glass-card rounded-2xl overflow-hidden">
+            <summary class="flex items-center justify-between p-6 font-medium cursor-pointer text-slate-200 hover:text-emerald-400 transition-colors list-none">
+              <span>¿Cómo se mide el éxito del cambio?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="flex-shrink-0 transform group-open:rotate-180 transition-transform duration-300" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="px-6 pb-6 text-slate-400 text-sm leading-relaxed">Con KPIs definidos antes de iniciar el proyecto: tasa de uso activo (logins semanales), reducción del tiempo de proceso clave, incidentes de soporte post-lanzamiento y NPS interno. Todos los indicadores se reportan en un dashboard quincenal compartido con el cliente.</div>
+          </details>
+          <details class="group glass-card rounded-2xl overflow-hidden">
+            <summary class="flex items-center justify-between p-6 font-medium cursor-pointer text-slate-200 hover:text-emerald-400 transition-colors list-none">
+              <span>¿En qué se diferencia de la capacitación tradicional?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="flex-shrink-0 transform group-open:rotate-180 transition-transform duration-300" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="px-6 pb-6 text-slate-400 text-sm leading-relaxed">La capacitación entrega habilidades técnicas. La gestión del cambio aborda el "por qué", el "qué hay para mí" y el "cómo encaja en mi trabajo". Sin gestión del cambio, el 70% de las capacitaciones no se traducen en uso real de la herramienta pasados 3 meses. Integramos ambas cosas desde el inicio.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-24 px-6 relative overflow-hidden text-center">
+      <div class="absolute inset-0 bg-gradient-to-b from-emerald-900/15 to-black pointer-events-none"></div>
+      <div class="relative z-10 max-w-2xl mx-auto reveal">
+        <h2 class="text-4xl md:text-5xl font-black text-white font-display mb-6 leading-tight">¿Tienes un proyecto tecnológico que necesita que la gente lo use de verdad?</h2>
+        <p class="text-xl text-slate-400 mb-10">Agenda una sesión gratuita con nuestro equipo. En 30 minutos identificamos los principales riesgos de adopción de tu proyecto y te entregamos un plan de acción.</p>
+        <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="impact-button inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-black font-bold py-5 px-12 rounded-full text-lg hover:shadow-[0_0_40px_rgba(52,211,153,0.4)] transition-all transform hover:scale-105">
+          Hablar con un Especialista
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <p class="mt-6 text-sm text-slate-500">Sin compromiso · Certificación Prosci · 100% Adopción Garantizada</p>
+      </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+            <footer class="bg-black py-16 px-6 border-t border-white/10 text-sm">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+            <div class="space-y-6">
                 <a href="/" class="flex items-center gap-3 group">
-                    <img src="/img/logo.webp" alt="GB" class="h-8 w-8 opacity-80 mix-blend-screen" />
-                    <span class="font-bold text-white tracking-widest font-display">GROWTH BUDDIES</span>
+                    <img src="/img/logo.webp" alt="Logotipo de Growth Buddies, Consultora Legal Tech y Automatizacion" class="h-10 w-10 opacity-90 group-hover:opacity-100 transition-opacity" />
+                    <span class="font-bold text-xl text-white tracking-widest font-display">GROWTH BUDDIES</span>
                 </a>
-                <p class="text-slate-500 leading-relaxed text-xs">
-                    Automatización de Procesos e Inteligencia Artificial.<br>Transformamos negocios con tecnología.
-                </p>
+                <p class="text-slate-400 leading-relaxed max-w-xs">Ingenieria de Transformacion. Automatizamos lo aburrido para que te enfoques en lo estrategico.</p>
+                <div class="flex gap-4">
+                    <a href="https://www.linkedin.com/company/growth-buddies" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Growth Buddies" class="text-slate-400 hover:text-[var(--color-accent)] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+                    <a href="mailto:edmundo@growthbuddies.cl" aria-label="Enviar correo electronico a Growth Buddies" class="text-slate-400 hover:text-[var(--color-accent)] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+                </div>
             </div>
-
-            <!-- Servicios -->
             <div>
-                <h4 class="text-white font-bold mb-4 font-display uppercase tracking-wider text-xs">Servicios</h4>
-                <ul class="space-y-2 text-slate-400 text-xs">
-                    <li><a href="/servicios/automatizacion-inteligente" class="hover:text-[var(--color-accent)] transition-colors">Legal Tech & Ops</a></li>
-                    <li><a href="/servicios/ia-corporativa" class="hover:text-[var(--color-accent)] transition-colors">IA Corporativa</a></li>
-                    <li><a href="/servicios/gestion-del-cambio" class="hover:text-[var(--color-accent)] transition-colors">Gestión del Cambio</a></li>
+                <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Servicios</h4>
+                <ul class="space-y-3 text-slate-400">
+                    <li><a href="/servicios/automatizacion-inteligente/" class="hover:text-[var(--color-accent)] transition-colors">Legal Tech &amp; Ops</a></li>
+                    <li><a href="/servicios/ia-corporativa/" class="hover:text-[var(--color-accent)] transition-colors">IA Corporativa</a></li>
+                    <li><a href="/servicios/gestion-del-cambio/" class="hover:text-[var(--color-accent)] transition-colors">Gestion del Cambio</a></li>
                 </ul>
             </div>
-
-            <!-- Soluciones -->
             <div>
-                 <h4 class="text-white font-bold mb-4 font-display uppercase tracking-wider text-xs">Mini Apps</h4>
-                <ul class="space-y-2 text-slate-400 text-xs">
-                    <li><a href="/soluciones/automatizacion-legal-emails" class="hover:text-[var(--color-accent)] transition-colors">Triaje Legal</a></li>
-                    <li><a href="/soluciones/gestion-documental-ip" class="hover:text-[var(--color-accent)] transition-colors">Validación Documental</a></li>
-                    <li><a href="/soluciones/rendicion-gastos-ia" class="hover:text-[var(--color-accent)] transition-colors">Rendición Gastos IA</a></li>
+                <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Mini Apps</h4>
+                <ul class="space-y-3 text-slate-400">
+                    <li><a href="/soluciones/automatizacion-legal-emails/" class="hover:text-[var(--color-accent)] transition-colors">Triaje Legal</a></li>
+                    <li><a href="/soluciones/gestion-documental-ip/" class="hover:text-[var(--color-accent)] transition-colors">Validacion Documental</a></li>
+                    <li><a href="/soluciones/rendicion-gastos-ia/" class="hover:text-[var(--color-accent)] transition-colors">Rendicion Gastos IA</a></li>
                     <li><a href="/soluciones/catalogo.html#timesheet" class="hover:text-[var(--color-accent)] transition-colors">Auto Timesheet</a></li>
+                    <li><a href="/soluciones/brokeria/" class="text-amber-400 hover:text-amber-300 transition-colors font-medium">BrokerIA ✦</a></li>
                 </ul>
             </div>
-
-             <!-- Metodología -->
-             <div>
-                <h4 class="text-white font-bold mb-4 font-display uppercase tracking-wider text-xs">Explora</h4>
-                <ul class="space-y-2 text-slate-400 text-xs">
-                    <li><a href="/metodologia/diagnostico" class="hover:text-[var(--color-accent)] transition-colors">Metodología</a></li>
-                    <li><a href="/equipo/edmundo-spohr" class="hover:text-[var(--color-accent)] transition-colors">Equipo</a></li>
-                    <li><a href="/blog" class="hover:text-[var(--color-accent)] transition-colors">Blog</a></li>
+            <div>
+                <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Explora</h4>
+                <ul class="space-y-3 text-slate-400">
+                    <li><a href="/metodologia/diagnostico/" class="hover:text-[var(--color-accent)] transition-colors">Metodologia</a></li>
+                    <li><a href="/equipo/edmundo-spohr/" class="hover:text-[var(--color-accent)] transition-colors">Equipo</a></li>
+                    <li><a href="/blog/" class="hover:text-[var(--color-accent)] transition-colors">Blog</a></li>
                 </ul>
             </div>
         </div>
-
-        <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
-            <div class="text-slate-600">
-                &copy; 2026 Growth Buddies SpA. Santiago, Chile.
-            </div>
-             <div class="flex gap-6 text-slate-500">
-                 <a href="/sitemap.xml" class="hover:text-white transition-colors">Sitemap</a>
-                 <a href="mailto:edmundo@growthbuddies.cl" class="hover:text-white transition-colors">Contacto</a>
-            </div>
+        <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
+            <div>&copy; 2026 Growth Buddies SpA. Santiago, Chile.</div>
+            <div class="flex gap-6"><a href="/sitemap.xml" class="hover:text-slate-400 transition-colors">Sitemap</a></div>
         </div>
     </footer>
 
     <script>
-       try {
+      try {
         if (typeof Lenis !== "undefined") {
-          const lenis = new Lenis({
-             duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            orientation: "vertical",
-            smoothWheel: true,
-          });
-          function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-          }
+          const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), orientation: "vertical", smoothWheel: true });
+          function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
           requestAnimationFrame(raf);
         }
       } catch (e) {}
+    </script>
+    <script>
+      (function() {
+        var revs = document.querySelectorAll('.reveal');
+        var io = new IntersectionObserver(function(entries) { entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }); }, { threshold: 0.08 });
+        revs.forEach(function(el) { io.observe(el); });
+        setTimeout(function() { revs.forEach(function(el) { el.classList.add('visible'); }); }, 1500);
+      })();
+    </script>
+    <script>
+      (function() {
+        var btn = document.getElementById('mobile-menu-btn');
+        var menu = document.getElementById('mobile-menu');
+        var close = document.getElementById('mobile-menu-close');
+        if (!btn || !menu) return;
+        function openMenu() { menu.style.display = 'flex'; menu.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden';
+          btn.setAttribute('aria-expanded', 'true'); }
+        function closeMenu() { menu.style.display = 'none'; menu.setAttribute('aria-hidden', 'true'); document.body.style.overflow = '';
+          btn.setAttribute('aria-expanded', 'false'); }
+        btn.addEventListener('click', openMenu);
+        if (close) close.addEventListener('click', closeMenu);
+        menu.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', closeMenu); });
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && menu.style.display === 'flex') closeMenu(); });
+      })();
     </script>
   </body>
 </html>
