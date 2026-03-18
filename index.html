@@ -235,7 +235,6 @@
       rel="noopener noreferrer"
       class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-[#25D366] text-white py-3 px-6 rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] transform hover:scale-105 transition-all font-bold tracking-wide group"
       aria-label="Contactar a Growth Buddies por WhatsApp"
-      aria-label="Contactar a Growth Buddies por WhatsApp"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -264,43 +263,18 @@
       >Agendar</a>
     </div>
 
-    <!-- Exit-Intent Popup (desktop only) -->
-    <div
-      id="exit-popup-overlay"
-      class="hidden fixed inset-0 z-[300] bg-black/75 backdrop-blur-md items-center justify-center p-6"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="exit-popup-title"
-    >
-      <div
-        id="exit-popup-modal"
-        class="glass-card max-w-md w-full p-8 rounded-2xl border border-zinc-700 relative"
-        style="transform:scale(.95);opacity:0;transition:transform .3s cubic-bezier(.34,1.56,.64,1), opacity .25s ease;"
-      >
-        <button
-          id="exit-popup-close"
-          aria-label="Cerrar"
-          class="absolute top-4 right-4 text-slate-500 hover:text-white transition-colors"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-        <div class="text-center">
-          <div class="w-16 h-16 bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/20 rounded-full flex items-center justify-center mx-auto mb-5">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          </div>
-          <h3 id="exit-popup-title" class="text-2xl font-black text-white font-display mb-2">¿Te vas sin agendar?</h3>
-          <p class="text-slate-400 text-sm mb-6">Tu primera auditoría de automatización es <strong class="text-white">completamente gratuita</strong>. Sin compromiso.</p>
-          <a
-            href="https://calendly.com/espohr/conversemos"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="block w-full bg-[var(--color-accent)] text-black font-bold py-3 px-6 rounded-full hover:bg-white transition-colors mb-3 text-center"
-          >Agendar Ahora — Es Gratis</a>
-          <button
-            id="exit-popup-dismiss"
-            class="text-slate-500 hover:text-slate-300 text-sm transition-colors w-full py-1"
-          >No gracias, lo haré después</button>
-        </div>
+    <!-- Exit Intent Modal -->
+    <div id="exit-modal" class="fixed inset-0 z-[9999] hidden items-center justify-center" role="dialog" aria-modal="true" aria-labelledby="exit-modal-title">
+      <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" id="exit-modal-backdrop"></div>
+      <div id="exit-modal-card" class="relative z-10 bg-zinc-900 border border-zinc-700 rounded-2xl p-8 md:p-10 max-w-md mx-4 text-center shadow-[0_0_60px_rgba(0,246,255,0.15)]" style="transform:scale(0.95);opacity:0;transition:transform 0.3s ease,opacity 0.3s ease;">
+        <button id="exit-modal-close" class="absolute top-4 right-4 text-slate-500 hover:text-white transition-colors text-xl" aria-label="Cerrar">✕</button>
+        <div class="text-4xl mb-4">🤖</div>
+        <h3 id="exit-modal-title" class="text-2xl font-bold text-white font-display mb-3">¿Te vas sin agendar?</h3>
+        <p class="text-slate-400 mb-6">Tu primera auditoría de automatización con IA es <span class="text-[var(--color-accent)] font-semibold">100% gratuita</span>. Sin compromiso.</p>
+        <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="block w-full bg-[var(--color-accent)] text-black font-bold py-3 px-6 rounded-xl hover:shadow-[0_0_20px_rgba(0,246,255,0.4)] transition-all mb-3">
+          Agendar Ahora — Es Gratis
+        </a>
+        <button id="exit-modal-dismiss" class="text-sm text-slate-500 hover:text-slate-300 transition-colors">No gracias, seguiré explorando</button>
       </div>
     </div>
 
@@ -333,11 +307,11 @@
           class="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight font-display text-center leading-[1.1] mb-6 max-w-6xl"
         >
           <span class="text-white block">Consultoría Integral en</span>
-          <span class="animated-gradient-text block mt-2">Automatización Inteligente y Legal Tech.</span>
+          <span class="animated-gradient-text block mt-2">IA, Automatización Inteligente y Legal Tech.</span>
         </h1>
         
         <p class="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-slate-300 font-light text-center leading-relaxed">
-          Garantizamos la adopción de la tecnología. Automatización Inteligente, Legal Tech y Gestión del Cambio para impulsar la rentabilidad real.
+          Garantizamos la adopción de la tecnología. Inteligencia Artificial, Automatización Inteligente y Gestión del Cambio para impulsar la rentabilidad real.
         </p>
 
           <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto unique-magnetic-container">
@@ -349,7 +323,7 @@
                   class="impact-button magnetic-btn group relative inline-flex items-center justify-center gap-3 bg-[var(--color-accent)] text-black font-bold py-4 px-10 rounded-full text-lg w-full sm:w-auto overflow-hidden"
                 >
                   <span class="magnetic-area"></span>
-                  <span class="relative z-10">Agenda tu Auditoría de Automatización</span>
+                  <span class="relative z-10">Agenda tu Auditoría de IA</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="relative z-10 transition-transform group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                   <div class="absolute inset-0 bg-white/30 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                 </a>
@@ -389,27 +363,16 @@
       </div>
     </header>
 
-    <!-- Sticky Section Nav (desktop only) -->
-    <nav id="section-nav" aria-label="Navegación de secciones" class="hidden md:block sticky top-20 z-40 bg-zinc-950/80 backdrop-blur-md border-b border-white/5 transition-all duration-300">
-      <div class="max-w-7xl mx-auto px-6 h-10 flex items-center gap-8">
-        <a href="#clientes"    data-section="clientes"    class="section-nav-link text-xs uppercase tracking-widest font-semibold text-slate-500 hover:text-white transition-colors py-2 border-b-2 border-transparent">Clientes</a>
-        <a href="#productos"   data-section="productos"   class="section-nav-link text-xs uppercase tracking-widest font-semibold text-slate-500 hover:text-white transition-colors py-2 border-b-2 border-transparent">Soluciones</a>
-        <a href="#servicios"   data-section="servicios"   class="section-nav-link text-xs uppercase tracking-widest font-semibold text-slate-500 hover:text-white transition-colors py-2 border-b-2 border-transparent">Servicios</a>
-        <a href="#metodologia" data-section="metodologia" class="section-nav-link text-xs uppercase tracking-widest font-semibold text-slate-500 hover:text-white transition-colors py-2 border-b-2 border-transparent">Metodología</a>
-        <a href="#liderazgo"   data-section="liderazgo"   class="section-nav-link text-xs uppercase tracking-widest font-semibold text-slate-500 hover:text-white transition-colors py-2 border-b-2 border-transparent">Equipo</a>
-        <a href="#contacto"    data-section="contacto"    class="section-nav-link text-xs uppercase tracking-widest font-semibold text-slate-500 hover:text-white transition-colors py-2 border-b-2 border-transparent">Contacto</a>
-      </div>
-    </nav>
 
-    <main id="main-content">
+<main id="main-content">
     <!-- Success Metrics Ticker -->
     <aside aria-label="Métricas de éxito" class="border-y border-white/10 bg-black/50 backdrop-blur-md overflow-hidden py-4">
       <div class="flex items-center justify-around max-w-7xl mx-auto px-6 text-sm md:text-base text-slate-400 font-mono tracking-wider">
          <div class="flex items-center gap-2">
-            <span class="text-[var(--color-accent)] font-bold text-lg">+30%</span> Eficiencia Operativa
+            <span class="text-[var(--color-accent)] font-bold text-lg">+30%</span> Eficiencia con IA
          </div>
          <div class="hidden md:flex items-center gap-2">
-            <span class="text-[var(--color-accent)] font-bold text-lg">10k+</span> Documentos Procesados
+            <span class="text-[var(--color-accent)] font-bold text-lg">10k+</span> Documentos Procesados por IA
          </div>
          <div class="hidden md:flex items-center gap-2">
             <span class="text-[var(--color-accent)] font-bold text-lg">100%</span> Adopción Garantizada
@@ -801,124 +764,122 @@
             calculate();
         </script>
 
-    <!-- Mini Apps Plug & Play Section -->
+    <!-- Agentes IA Especializados Section -->
     <section id="productos" class="py-24 px-6 relative bg-zinc-900/30 border-y border-white/5">
       <div class="max-w-7xl mx-auto">
         <div class="text-center reveal mb-16">
-          <span class="text-[var(--color-accent)] font-bold tracking-wider text-sm uppercase font-display">Tecnología en Acción</span>
+          <span class="text-[var(--color-accent)] font-bold tracking-wider text-sm uppercase font-display">Inteligencia Artificial Aplicada</span>
           <h2 class="text-4xl md:text-5xl font-black tracking-tight text-white mt-3 font-display">
-            Soluciones de Automatización (Mini Apps)
+            Agentes IA Especializados
           </h2>
           <p class="mt-6 max-w-2xl mx-auto text-lg text-slate-400">
-            Con un costo fijo conocido desde el principio desplegamos cualquiera de esas soluciones en un mes ajustándola para optimizar la adopción.
+            Desplegamos agentes de Inteligencia Artificial especializados en tu industria. Costo fijo, implementación en 30 días, adopción garantizada.
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-            <!-- 0. BrokerIA — Featured -->
-            <a href="/soluciones/brokeria/" class="reveal group relative bg-black border border-amber-500/20 rounded-2xl p-8 md:col-span-3 hover:border-amber-500/50 transition-all duration-300 block overflow-hidden" style="box-shadow: 0 0 40px rgba(245,158,11,0.06);">
-                <div class="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
-                <!-- Ambient glow -->
-                <div class="absolute top-0 right-0 w-64 h-64 bg-amber-500/5 rounded-full blur-[60px] pointer-events-none"></div>
-                <div class="relative z-10 flex flex-col md:flex-row md:items-center gap-8">
-                    <!-- Icon + badge -->
-                    <div class="flex-shrink-0">
-                        <div class="relative inline-flex">
-                            <div class="p-4 bg-amber-500/10 rounded-2xl border border-amber-500/25 text-amber-400 group-hover:border-amber-500/50 transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                            </div>
-                            <div class="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-amber-400 flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="black" stroke="none"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Content -->
-                    <div class="flex-1 min-w-0">
-                        <div class="flex flex-wrap items-center gap-3 mb-3">
-                            <h3 class="text-2xl font-bold text-white font-display">BrokerIA — Corretaje Inteligente</h3>
-                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/15 border border-amber-500/30 text-amber-400">
-                                <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
-                                Nuevo
-                            </span>
-                            <span class="px-3 py-1 text-xs font-semibold text-orange-300 bg-orange-500/10 rounded-full border border-orange-500/20">PropTech + IA</span>
-                        </div>
-                        <p class="text-slate-300 leading-relaxed text-sm md:text-base max-w-2xl">
-                            Evalúa propiedades y leads con IA. Genera <strong class="text-amber-400">Property Score</strong>, <strong class="text-amber-400">Client Score</strong> y <strong class="text-amber-400">Pitch de Cierre</strong> automático para cerrar más rápido.
-                        </p>
-                    </div>
-                    <!-- CTA -->
-                    <div class="flex-shrink-0">
-                        <span class="inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-bold text-black bg-gradient-to-r from-amber-500 to-orange-400 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] transition-all">
-                            Ver plataforma
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                        </span>
-                    </div>
-                </div>
-            </a>
+          <!-- 0. BrokerIA — Featured Full Width -->
+          <a href="/soluciones/brokeria/" class="reveal group relative bg-black border border-zinc-800 rounded-2xl p-8 md:p-10 hover:border-amber-500/50 transition-all duration-300 block md:col-span-3 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-amber-500/10 via-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
 
-            <!-- 1. Triaje Legal -->
-            <a href="/soluciones/automatizacion-legal-emails/" class="reveal group relative bg-black border border-zinc-800 rounded-2xl p-8 hover:border-[var(--color-accent)] transition-all duration-300 block">
-                <div class="absolute inset-0 bg-gradient-to-b from-[var(--color-accent)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
-                <div class="relative z-10">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="p-3 bg-zinc-900 rounded-lg text-[var(--color-accent)] border border-zinc-700 group-hover:border-[var(--color-accent)] transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-white font-display">Triaje Legal</h3>
-                    </div>
-                    <p class="text-sm font-semibold text-slate-300 mb-3 bg-zinc-900/50 inline-block px-3 py-1 rounded-full border border-zinc-700">Filtrado Automático</p>
-                    <p class="text-slate-400 leading-relaxed text-sm">
-                        Filtrar y clasificar automáticamente las consultas de clientes potenciales para evitar que los abogados pierdan tiempo en casos no viables.
-                    </p>
-                </div>
-            </a>
+            <!-- "Nuevo" badge -->
+            <div class="absolute top-4 right-4 md:top-6 md:right-6 z-20">
+              <span class="bg-amber-500 text-black text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">Nuevo</span>
+            </div>
 
-            <!-- 2. Portal de Validación Documental -->
-            <a href="/soluciones/gestion-documental-ip/" class="reveal group relative bg-black border border-zinc-800 rounded-2xl p-8 hover:border-[var(--color-accent)] transition-all duration-300 block" style="transition-delay: 100ms">
-                <div class="absolute inset-0 bg-gradient-to-b from-[var(--color-accent)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
-                <div class="relative z-10">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="p-3 bg-zinc-900 rounded-lg text-[var(--color-accent)] border border-zinc-700 group-hover:border-[var(--color-accent)] transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-white font-display">Portal de Validación</h3>
-                    </div>
-                    <p class="text-sm font-semibold text-slate-300 mb-3 bg-zinc-900/50 inline-block px-3 py-1 rounded-full border border-zinc-700">Revisión IA</p>
-                    <p class="text-slate-400 leading-relaxed text-sm">
-                        Asegurar que los documentos críticos cumplan con requisitos mínimos antes de ser firmados, reduciendo errores humanos.
-                    </p>
+            <div class="relative z-10 flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
+              <!-- Left: Icon + Info -->
+              <div class="flex-grow">
+                <div class="flex items-center gap-4 mb-4">
+                  <div class="p-3 bg-amber-500/10 rounded-xl text-amber-400 border border-amber-500/20 group-hover:border-amber-500/40 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                  </div>
+                  <div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-white font-display">BrokerIA</h3>
+                    <p class="text-amber-400 text-sm font-semibold uppercase tracking-wider">Plataforma PropTech + IA</p>
+                  </div>
                 </div>
-            </a>
+                <p class="text-slate-300 leading-relaxed text-lg max-w-2xl mb-4">
+                  La primera plataforma en Chile que cruza el <strong class="text-white">perfil financiero del comprador</strong> con el <strong class="text-white">análisis de habitabilidad de la propiedad</strong>. Genera un Pitch de Cierre con IA que le dice al corredor exactamente cómo cerrar el trato.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="text-xs font-semibold text-amber-300 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">Property Score</span>
+                  <span class="text-xs font-semibold text-amber-300 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">Client Score</span>
+                  <span class="text-xs font-semibold text-amber-300 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">Pitch de Cierre IA</span>
+                  <span class="text-xs font-semibold text-amber-300 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">Multi-Tenant</span>
+                </div>
+              </div>
 
-            <!-- 3. Auto Timesheet -->
-            <a href="/soluciones/catalogo.html#timesheet" class="reveal group relative bg-black border border-zinc-800 rounded-2xl p-8 hover:border-[var(--color-accent)] transition-all duration-300 block" style="transition-delay: 200ms">
-                <div class="absolute inset-0 bg-gradient-to-b from-[var(--color-accent)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
-                <div class="relative z-10">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="p-3 bg-zinc-900 rounded-lg text-[var(--color-accent)] border border-zinc-700 group-hover:border-[var(--color-accent)] transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-white font-display">Auto Timesheet</h3>
-                    </div>
-                    <p class="text-sm font-semibold text-slate-300 mb-3 bg-zinc-900/50 inline-block px-3 py-1 rounded-full border border-zinc-700">Registro Automático</p>
-                    <p class="text-slate-400 leading-relaxed text-sm">
-                        Reconstruir la jornada laboral del abogado para evitar la fuga de horas facturables y eliminar la carga manual de tiempos.
-                    </p>
+              <!-- Right: Arrow indicator -->
+              <div class="hidden md:flex items-center justify-center shrink-0">
+                <div class="h-16 w-16 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:bg-amber-500/20 transition-all">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-400 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </div>
-            </a>
+              </div>
+            </div>
+          </a>
+
+          <!-- 1. Inbox IA Legal -->
+          <a href="/soluciones/automatizacion-legal-emails/" class="reveal group relative bg-black border border-zinc-800 rounded-2xl p-8 hover:border-[var(--color-accent)] transition-all duration-300 block">
+            <div class="absolute inset-0 bg-gradient-to-b from-[var(--color-accent)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
+            <div class="relative z-10">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="p-3 bg-zinc-900 rounded-lg text-[var(--color-accent)] border border-zinc-700 group-hover:border-[var(--color-accent)] transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </div>
+                <h3 class="text-xl font-bold text-white font-display">Inbox IA Legal</h3>
+              </div>
+              <p class="text-xs font-semibold text-[var(--color-accent)] mb-3 bg-zinc-900/50 inline-block px-3 py-1 rounded-full border border-zinc-700">Email + IA Generativa</p>
+              <p class="text-slate-400 leading-relaxed text-[0.9rem] mb-4">
+                Una casilla de correo mágica para abogados. La IA lee cada consulta entrante, evalúa viabilidad del caso, y le entrega al abogado solo los leads calificados con un resumen ejecutivo. El resto se responde automáticamente.
+              </p>
+              <span class="inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-accent)] group-hover:underline">Ver más →</span>
+            </div>
+          </a>
+
+          <!-- 2. DocuAgent IA -->
+          <a href="/soluciones/gestion-documental-ip/" class="reveal group relative bg-black border border-zinc-800 rounded-2xl p-8 hover:border-blue-500 transition-all duration-300 block" style="transition-delay: 100ms">
+            <div class="absolute inset-0 bg-gradient-to-b from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
+            <div class="relative z-10">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="p-3 bg-zinc-900 rounded-lg text-blue-400 border border-zinc-700 group-hover:border-blue-500 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+                </div>
+                <h3 class="text-xl font-bold text-white font-display">DocuAgent IA</h3>
+              </div>
+              <p class="text-xs font-semibold text-blue-400 mb-3 bg-zinc-900/50 inline-block px-3 py-1 rounded-full border border-zinc-700">OCR + Revisión Autónoma</p>
+              <p class="text-slate-400 leading-relaxed text-[0.9rem] mb-4">
+                Tu agente de gestión documental inteligente. Sube cualquier documento y la IA lo clasifica, extrae datos clave, detecta cláusulas faltantes y genera un reporte semáforo en 30 segundos. Sin intervención humana.
+              </p>
+              <span class="inline-flex items-center gap-1 text-sm font-semibold text-blue-400 group-hover:underline">Ver más →</span>
+            </div>
+          </a>
+
+          <!-- 3. TimeKeeper IA -->
+          <a href="/soluciones/catalogo.html#timesheet" class="reveal group relative bg-black border border-zinc-800 rounded-2xl p-8 hover:border-[var(--color-accent)] transition-all duration-300 block" style="transition-delay: 200ms">
+            <div class="absolute inset-0 bg-gradient-to-b from-[var(--color-accent)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
+            <div class="relative z-10">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="p-3 bg-zinc-900 rounded-lg text-[var(--color-accent)] border border-zinc-700 group-hover:border-[var(--color-accent)] transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <h3 class="text-xl font-bold text-white font-display">TimeKeeper IA</h3>
+              </div>
+              <p class="text-xs font-semibold text-[var(--color-accent)] mb-3 bg-zinc-900/50 inline-block px-3 py-1 rounded-full border border-zinc-700">Registro 100% Pasivo</p>
+              <p class="text-slate-400 leading-relaxed text-[0.9rem] mb-4">
+                El abogado trabaja normalmente. TimeKeeper IA reconstruye su jornada completa analizando emails, reuniones y documentos editados. A las 18:00, recibe un borrador de timesheet listo para aprobar con un click.
+              </p>
+              <span class="inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-accent)] group-hover:underline">Ver más →</span>
+            </div>
+          </a>
         </div>
 
-        <div class="mt-12 text-center reveal flex flex-col sm:flex-row items-center justify-center gap-6">
-            <a href="/soluciones/catalogo.html" class="inline-flex items-center gap-2 text-[var(--color-accent)] font-bold uppercase tracking-wider hover:text-white transition-colors">
-                Explorar Catálogo Completo
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-            <span class="hidden sm:block text-zinc-700">|</span>
-            <a href="/soluciones/brokeria/" class="inline-flex items-center gap-2 text-amber-400 font-bold uppercase tracking-wider hover:text-amber-300 transition-colors text-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
-                Conocer BrokerIA
-            </a>
+        <div class="mt-12 text-center reveal">
+          <a href="/soluciones/catalogo.html" class="inline-flex items-center gap-2 text-[var(--color-accent)] font-bold uppercase tracking-wider hover:text-white transition-colors">
+            Ver todos los Agentes IA en el Catálogo
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
         </div>
       </div>
 
@@ -928,11 +889,11 @@
 
       <div class="max-w-7xl mx-auto relative z-10">
         <div class="text-center reveal mb-20">
-          <span class="text-[var(--color-accent)] font-bold tracking-wider text-sm uppercase font-display">Nuestras Especialidades</span>
+          <span class="text-[var(--color-accent)] font-bold tracking-wider text-sm uppercase font-display">Especialidades en Inteligencia Artificial</span>
           <h2
             class="text-4xl md:text-6xl font-black tracking-tight text-white mt-3 font-display"
           >
-            Servicios Especializados en RPA e IA
+            Servicios de Inteligencia Artificial y Automatización
           </h2>
           <p class="mt-6 text-xl text-slate-400 max-w-2xl mx-auto">
             Combinamos tecnología de punta con estrategia humana para resultados tangibles.
@@ -1028,7 +989,7 @@
           <h2
             class="text-4xl md:text-5xl font-black tracking-tight text-white mt-3 font-display"
           >
-            Metodología de Implementación: Ingeniería de Transformación.
+            Metodología de Implementación de IA: Ingeniería de Transformación.
           </h2>
           <p class="mt-6 max-w-2xl mx-auto text-lg text-slate-400 leading-relaxed">
             No somos "implementadores". Somos su socio en la reingeniería de su negocio, paso a paso.
@@ -1127,7 +1088,7 @@
                 </div>
                 <div>
                   <p class="text-lg text-slate-200 italic leading-snug font-light">
-                    "Automatizamos lo aburrido para que los equipos brillantes puedan enfocarse en lo estratégico."
+                    "Implementamos IA para que los equipos brillantes se enfoquen en lo estratégico."
                   </p>
                   <div class="mt-6">
                     <h3 class="font-bold text-white text-xl font-display">Edmundo Spohr</h3>
@@ -1328,7 +1289,7 @@
             <summary
               class="flex items-center justify-between p-6 font-medium text-lg cursor-pointer text-slate-200 hover:text-[var(--color-accent)] transition-colors"
             >
-              <span>¿La automatización reemplazará a mi equipo actual?</span>
+              <span>¿La Inteligencia Artificial reemplazará a mi equipo actual?</span>
               <span
                 class="transform group-open:rotate-180 transition-transform duration-300"
               >
@@ -1349,7 +1310,7 @@
             </summary>
             <div class="px-6 pb-6 text-slate-400 leading-relaxed">
               <p>
-                No, nuestro enfoque es potenciarlo. Automatizamos las tareas
+                No, nuestro enfoque es potenciarlo. La IA elimina las tareas
                 repetitivas de bajo valor (carga de datos, reportes manuales)
                 para que tu equipo pueda dedicarse a tareas estratégicas,
                 creativas y de atención al cliente que realmente requieren
@@ -1433,174 +1394,78 @@
     </section>
 
     <section id="contacto" class="py-20 md:py-32 px-6 relative overflow-hidden">
-      <div
-        class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-zinc-900/50 via-black to-black -z-10"
-      ></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-zinc-900/50 via-black to-black -z-10"></div>
 
-      <div
-        class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
-      >
-        <!-- Left Column: Text & Calendly -->
-        <div class="text-left reveal">
-          <h2
-            class="text-4xl md:text-6xl font-black tracking-tight text-white mb-6"
-          >
-            ¿Listo para <span class="text-[var(--color-accent)]">Escalar tu Negocio Automáticamente?</span>
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16 reveal">
+          <h2 class="text-4xl md:text-6xl font-black tracking-tight text-white font-display mb-6">
+            ¿Listo para <span class="text-[var(--color-accent)]">Automatizar con IA?</span>
           </h2>
-          <p class="text-xl text-slate-300 mb-8 font-light">
-            Agenda una sesión estratégica gratuita de 30 minutos. Analizaremos
-            tus cuellos de botella y te propondremos un plan de acción
-            inmediato.
+          <p class="text-xl text-slate-300 max-w-2xl mx-auto font-light">
+            Agenda una sesión estratégica gratuita de 30 minutos. Analizaremos tus procesos y te propondremos un plan de acción con Inteligencia Artificial.
           </p>
-
-          <div class="flex flex-col sm:flex-row gap-4 mb-12">
-            <a
-              href="https://calendly.com/espohr/conversemos"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="impact-button group inline-flex items-center justify-center bg-[var(--color-accent)] text-black font-bold py-4 px-8 rounded-full text-lg w-full sm:w-auto text-center hover:bg-white transition-all duration-300"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="mr-3 group-hover:scale-110 transition-transform"
-              >
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                <line x1="16" y1="2" x2="16" y2="6"></line>
-                <line x1="8" y1="2" x2="8" y2="6"></line>
-                <line x1="3" y1="10" x2="21" y2="10"></line>
-              </svg>
-              Agendar Estrategia de IA o RPA
-            </a>
-          </div>
-
-          <div class="flex items-center gap-4 text-slate-500 text-sm mb-8">
-            <div class="flex -space-x-2">
-              <div
-                class="w-8 h-8 rounded-full bg-slate-700 border-2 border-black"
-              ></div>
-              <div
-                class="w-8 h-8 rounded-full bg-slate-600 border-2 border-black"
-              ></div>
-              <div
-                class="w-8 h-8 rounded-full bg-slate-500 border-2 border-black"
-              ></div>
-            </div>
-            <p>Únete a +50 empresas innovadoras.</p>
-          </div>
-
-          <!-- Calendly inline embed (desktop only, injected by JS) -->
-          <div id="calendly-embed-container" class="hidden md:block rounded-xl overflow-hidden border border-zinc-800"></div>
         </div>
 
-        <!-- Right Column: Contact Form -->
-        <div
-          class="reveal glass-card p-8 rounded-2xl border border-zinc-800 bg-zinc-900/30"
-        >
-          <h3 class="text-2xl font-bold text-white mb-6">Consulta Rápida</h3>
-          <form id="contact-form" class="space-y-4" novalidate>
-            <div>
-              <label for="name" class="gemini-input-label">Nombre Completo</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                class="gemini-input"
-                placeholder="Ej. Juan Pérez"
-                required
-              />
-              <p id="name-error" class="hidden text-xs text-red-400 mt-1">Por favor ingresa tu nombre.</p>
-            </div>
-            <div>
-              <label for="email" class="gemini-input-label">Correo Corporativo</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                class="gemini-input"
-                placeholder="juan@empresa.com"
-                required
-              />
-              <p id="email-error" class="hidden text-xs text-red-400 mt-1">Ingresa un correo válido.</p>
-            </div>
-            <div>
-              <label for="consulta" class="gemini-input-label">Tipo de consulta</label>
-              <select id="consulta" name="consulta" class="gemini-select" required>
-                <option value="">Selecciona una opción…</option>
-                <option value="Auditoría de Automatización">Auditoría de Automatización</option>
-                <option value="Demo de Mini App">Demo de Mini App</option>
-                <option value="Consulta General">Consulta General</option>
-                <option value="BrokerIA — Programa Piloto">BrokerIA — Programa Piloto</option>
-              </select>
-              <p id="consulta-error" class="hidden text-xs text-red-400 mt-1">Por favor selecciona el tipo de consulta.</p>
-            </div>
-            <div>
-              <label for="message" class="gemini-input-label">¿En qué podemos ayudarte?</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                class="gemini-input resize-none"
-                placeholder="Cuéntanos brevemente tu desafío..."
-                required
-              ></textarea>
-              <p id="message-error" class="hidden text-xs text-red-400 mt-1">Por favor describe tu consulta.</p>
-            </div>
-            <button
-              type="submit"
-              id="contact-submit-btn"
-              class="group w-full bg-white/10 hover:bg-[var(--color-accent)] hover:text-black text-white font-bold py-3 px-6 rounded-lg border border-white/20 transition-all duration-300 flex items-center justify-center gap-2"
-            >
-              <svg id="contact-spinner" class="hidden animate-spin h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path></svg>
-              <span id="contact-btn-label">Enviar a WhatsApp</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="group-hover:translate-x-1 transition-transform"
-                id="contact-send-icon"
-              >
-                <line x1="22" y1="2" x2="11" y2="13"></line>
-                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-              </svg>
-            </button>
-            <p class="text-xs text-center text-slate-500 mt-4">
-              Tus datos serán enviados de forma segura.
-            </p>
-          </form>
-        </div>
-      </div>
-    </section>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <!-- Left: Contact Form -->
+          <div class="reveal glass-card p-8 rounded-2xl border border-zinc-800 bg-zinc-900/30">
+            <h3 class="text-2xl font-bold text-white mb-6">Consulta Rápida</h3>
+            <form id="contact-form" class="space-y-4" novalidate>
+              <div>
+                <label for="name" class="gemini-input-label">Nombre Completo</label>
+                <input type="text" id="name" name="name" class="gemini-input" placeholder="Ej. Juan Pérez" required />
+                <p id="name-error" class="hidden text-xs text-red-400 mt-1">Por favor ingresa tu nombre.</p>
+              </div>
+              <div>
+                <label for="email" class="gemini-input-label">Correo Corporativo</label>
+                <input type="email" id="email" name="email" class="gemini-input" placeholder="juan@empresa.com" required />
+                <p id="email-error" class="hidden text-xs text-red-400 mt-1">Ingresa un correo válido.</p>
+              </div>
+              <div>
+                <label for="interest" class="gemini-input-label">¿Qué te interesa?</label>
+                <select id="interest" name="interest" class="gemini-input">
+                  <option value="auditoria">Auditoría de Automatización</option>
+                  <option value="brokeria">BrokerIA — Programa Piloto</option>
+                  <option value="demo">Demo de Agente IA</option>
+                  <option value="general">Consulta General</option>
+                </select>
+              </div>
+              <div>
+                <label for="message" class="gemini-input-label">¿En qué podemos ayudarte?</label>
+                <textarea id="message" name="message" rows="4" class="gemini-input resize-none" placeholder="Cuéntanos brevemente tu desafío..." required></textarea>
+                <p id="message-error" class="hidden text-xs text-red-400 mt-1">Por favor describe tu consulta.</p>
+              </div>
+              <button type="submit" id="contact-submit-btn" class="group w-full bg-white/10 hover:bg-[var(--color-accent)] hover:text-black text-white font-bold py-3 px-6 rounded-lg border border-white/20 transition-all duration-300 flex items-center justify-center gap-2">
+                <svg id="contact-spinner" class="hidden animate-spin h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path></svg>
+                <span id="contact-btn-label">Enviar a WhatsApp</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform" id="contact-send-icon"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+              <p class="text-xs text-center text-slate-500 mt-2">Tus datos serán enviados de forma segura vía WhatsApp.</p>
+            </form>
+          </div>
 
-    <section id="contacto" class="py-24 px-6 border-t border-white/5 bg-zinc-950">
-      <div class="max-w-4xl mx-auto text-center reveal">
-        <h2 class="text-3xl md:text-5xl font-black text-white font-display mb-8">
-            ¿Listo para Transformar tu Empresa?
-        </h2>
-        <p class="text-xl text-slate-400 mb-12 max-w-2xl mx-auto">
-            Hablemos de cómo la automatización y la inteligencia artificial pueden transformar tu firma legal o empresa hoy mismo.
-        </p>
-        <a
-            href="https://calendly.com/espohr/conversemos"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="impact-button inline-block bg-[var(--color-accent)] text-black font-bold py-4 px-12 rounded-full text-lg shadow-[0_0_40px_rgba(0,246,255,0.3)] hover:shadow-[0_0_60px_rgba(0,246,255,0.5)] transition-all"
-        >
-            Agendar Auditoría de Automatización
-        </a>
+          <!-- Right: Calendly + Social proof -->
+          <div class="flex flex-col gap-6 reveal">
+            <div class="glass-card p-8 rounded-2xl border border-zinc-800 bg-zinc-900/30 text-center">
+              <h3 class="text-2xl font-bold text-white mb-3">¿Prefieres agendar directo?</h3>
+              <p class="text-slate-400 mb-6">Elige el horario que más te acomode. 30 minutos, sin compromiso.</p>
+              <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="impact-button group inline-flex items-center justify-center gap-3 bg-[var(--color-accent)] text-black font-bold py-4 px-8 rounded-full text-lg w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:scale-110 transition-transform"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                Agendar Auditoría Gratuita
+              </a>
+            </div>
+
+            <!-- Social proof -->
+            <div class="flex items-center justify-center gap-4 text-slate-500 text-sm">
+              <div class="flex -space-x-2">
+                <div class="w-8 h-8 rounded-full bg-slate-700 border-2 border-black"></div>
+                <div class="w-8 h-8 rounded-full bg-slate-600 border-2 border-black"></div>
+                <div class="w-8 h-8 rounded-full bg-slate-500 border-2 border-black"></div>
+              </div>
+              <p>+50 empresas ya confían en nuestros Agentes IA.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1637,15 +1502,15 @@
                 </ul>
             </div>
 
-             <!-- Soluciones -->
+             <!-- Agentes IA -->
             <div>
-                 <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Mini Apps</h4>
+                 <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Agentes IA</h4>
                 <ul class="space-y-3 text-slate-400">
-                    <li><a href="/soluciones/automatizacion-legal-emails/" class="hover:text-[var(--color-accent)] transition-colors">Triaje Legal</a></li>
-                    <li><a href="/soluciones/gestion-documental-ip/" class="hover:text-[var(--color-accent)] transition-colors">Validación Documental</a></li>
-                    <li><a href="/soluciones/rendicion-gastos-ia/" class="hover:text-[var(--color-accent)] transition-colors">Rendición Gastos IA</a></li>
-                    <li><a href="/soluciones/catalogo.html#timesheet" class="hover:text-[var(--color-accent)] transition-colors">Auto Timesheet</a></li>
                     <li><a href="/soluciones/brokeria/" class="text-amber-400 hover:text-amber-300 transition-colors font-medium">BrokerIA ✦</a></li>
+                    <li><a href="/soluciones/automatizacion-legal-emails/" class="hover:text-[var(--color-accent)] transition-colors">Inbox IA Legal</a></li>
+                    <li><a href="/soluciones/gestion-documental-ip/" class="hover:text-[var(--color-accent)] transition-colors">DocuAgent IA</a></li>
+                    <li><a href="/soluciones/rendicion-gastos-ia/" class="hover:text-[var(--color-accent)] transition-colors">Rendición Gastos IA</a></li>
+                    <li><a href="/soluciones/catalogo.html#timesheet" class="hover:text-[var(--color-accent)] transition-colors">TimeKeeper IA</a></li>
                 </ul>
             </div>
 
@@ -1670,32 +1535,9 @@
         </div>
     </footer>
 
-    <!-- Section nav highlight + stat counters -->
+    <!-- Stat counters -->
     <script>
       (function() {
-        // Section nav active highlight
-        var navLinks = document.querySelectorAll('.section-nav-link');
-        var sections = ['clientes', 'productos', 'servicios', 'metodologia', 'liderazgo', 'contacto'];
-        var sectionEls = sections.map(function(id) { return document.getElementById(id); });
-
-        function setActive(id) {
-          navLinks.forEach(function(l) {
-            var active = l.getAttribute('data-section') === id;
-            l.classList.toggle('text-white', active);
-            l.classList.toggle('border-b-[var(--color-accent)]', active);
-            l.style.borderBottomColor = active ? 'var(--color-accent)' : 'transparent';
-            l.classList.toggle('text-slate-500', !active);
-          });
-        }
-
-        var io = new IntersectionObserver(function(entries) {
-          entries.forEach(function(e) {
-            if (e.isIntersecting) setActive(e.target.id);
-          });
-        }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
-
-        sectionEls.forEach(function(el) { if (el) io.observe(el); });
-
         // Animated stat counters
         function animateStat(el) {
           var target = parseInt(el.getAttribute('data-target'), 10);
@@ -1946,7 +1788,6 @@
         }
         validateField('name', 'name-error', function(v) { return v.trim().length > 0; });
         validateField('email', 'email-error', function(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); });
-        validateField('consulta', 'consulta-error', function(v) { return v !== ''; });
         validateField('message', 'message-error', function(v) { return v.trim().length > 0; });
       })();
 
@@ -1958,7 +1799,8 @@
 
           const name = document.getElementById("name").value.trim();
           const email = document.getElementById("email").value.trim();
-          const consulta = document.getElementById("consulta").value;
+          const interest = document.getElementById("interest");
+          const interestText = interest ? interest.options[interest.selectedIndex].text : '';
           const message = document.getElementById("message").value.trim();
 
           // Validate before proceeding
@@ -1969,7 +1811,6 @@
           }
           if (!name) { showError('name-error', true); hasError = true; }
           if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('email-error', true); hasError = true; }
-          if (!consulta) { showError('consulta-error', true); hasError = true; }
           if (!message) { showError('message-error', true); hasError = true; }
           if (hasError) return;
 
@@ -1992,7 +1833,7 @@
                 await addDoc(collection(db, "leads"), {
                   name: name,
                   email: email,
-                  consulta: consulta,
+                  interest: interestText,
                   message: message,
                   timestamp: serverTimestamp(),
                   source: "web_contact_form",
@@ -2011,9 +1852,9 @@
           } catch (error) {
             console.error("Error in form processing:", error);
           } finally {
-            // Build WhatsApp message including consulta type
+            // Build WhatsApp message including interest
             const phoneNumber = "56965863160";
-            const text = `Hola Growth Buddies! 👋%0A%0AMi nombre es: *${encodeURIComponent(name)}*%0ACorreo: ${encodeURIComponent(email)}%0ATipo de consulta: *${encodeURIComponent(consulta)}*%0A%0AMensaje:%0A${encodeURIComponent(message)}`;
+            const text = `Hola Growth Buddies! 👋%0A%0AMi nombre es: *${encodeURIComponent(name)}*%0ACorreo: ${encodeURIComponent(email)}%0AInterés: ${encodeURIComponent(interestText)}%0A%0AMensaje:%0A${encodeURIComponent(message)}`;
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${text}`;
 
             spinner.classList.add('hidden');
@@ -2061,27 +1902,6 @@
     </script>
 
     <script>
-      // --- Calendly inline embed (desktop only) ---
-      (function() {
-        if (!window.matchMedia('(min-width: 768px)').matches) return;
-        var container = document.getElementById('calendly-embed-container');
-        if (!container) return;
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = 'https://assets.calendly.com/assets/external/widget.css';
-        document.head.appendChild(link);
-        var iframe = document.createElement('div');
-        iframe.className = 'calendly-inline-widget';
-        iframe.setAttribute('data-url', 'https://calendly.com/espohr/conversemos?hide_event_type_details=1&hide_gdpr_banner=1&background_color=09090b&text_color=f1f5f9&primary_color=00f6ff');
-        iframe.style.minWidth = '320px';
-        iframe.style.height = '480px';
-        container.appendChild(iframe);
-        var script = document.createElement('script');
-        script.src = 'https://assets.calendly.com/assets/external/widget.js';
-        script.async = true;
-        document.body.appendChild(script);
-      })();
-
       // --- Mobile sticky CTA bar ---
       (function() {
         var stickyCta = document.getElementById('mobile-sticky-cta');
@@ -2107,47 +1927,48 @@
         observer.observe(hero);
       })();
 
-      // --- Exit-intent popup (desktop only) ---
+      // --- Exit-intent modal (desktop only) ---
       (function() {
-        if (window.matchMedia('(max-width: 767px)').matches) return;
-        if (sessionStorage.getItem('exitPopupShown')) return;
-        var overlay = document.getElementById('exit-popup-overlay');
-        var modal = document.getElementById('exit-popup-modal');
-        if (!overlay || !modal) return;
+        if (window.innerWidth <= 768) return;
+        if (sessionStorage.getItem('exitShown')) return;
+        var modal = document.getElementById('exit-modal');
+        var card = document.getElementById('exit-modal-card');
+        if (!modal || !card) return;
         var shown = false;
-        function showPopup() {
+        function showModal() {
           if (shown) return;
           shown = true;
-          sessionStorage.setItem('exitPopupShown', '1');
-          overlay.classList.remove('hidden');
-          overlay.classList.add('flex');
+          sessionStorage.setItem('exitShown', 'true');
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+          document.body.style.overflow = 'hidden';
           requestAnimationFrame(function() {
             requestAnimationFrame(function() {
-              modal.style.transform = 'scale(1)';
-              modal.style.opacity = '1';
+              card.style.transform = 'scale(1)';
+              card.style.opacity = '1';
             });
           });
         }
-        function hidePopup() {
-          modal.style.transform = 'scale(0.95)';
-          modal.style.opacity = '0';
+        function hideModal() {
+          card.style.transform = 'scale(0.95)';
+          card.style.opacity = '0';
           setTimeout(function() {
-            overlay.classList.add('hidden');
-            overlay.classList.remove('flex');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
           }, 300);
         }
         document.addEventListener('mouseleave', function(e) {
-          if (e.clientY < 10) showPopup();
+          if (e.clientY < 10) showModal();
         });
-        var closeBtn = document.getElementById('exit-popup-close');
-        var dismissBtn = document.getElementById('exit-popup-dismiss');
-        if (closeBtn) closeBtn.addEventListener('click', hidePopup);
-        if (dismissBtn) dismissBtn.addEventListener('click', hidePopup);
-        overlay.addEventListener('click', function(e) {
-          if (e.target === overlay) hidePopup();
-        });
+        var closeBtn = document.getElementById('exit-modal-close');
+        var dismissBtn = document.getElementById('exit-modal-dismiss');
+        var backdrop = document.getElementById('exit-modal-backdrop');
+        if (closeBtn) closeBtn.addEventListener('click', hideModal);
+        if (dismissBtn) dismissBtn.addEventListener('click', hideModal);
+        if (backdrop) backdrop.addEventListener('click', hideModal);
         document.addEventListener('keydown', function(e) {
-          if (e.key === 'Escape' && !overlay.classList.contains('hidden')) hidePopup();
+          if (e.key === 'Escape' && !modal.classList.contains('hidden')) hideModal();
         });
       })();
     </script>
