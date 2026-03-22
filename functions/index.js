@@ -93,7 +93,7 @@ exports.notifyNewLead = onDocumentCreated(
     const leadId = event.params.leadId;
 
     const waMsg = `Hola ${lead.name || ""}! Vi tu consulta sobre ${lead.interest || "automatización IA"}. ¿Tienes 15 minutos esta semana para conversar?`;
-    const whatsappLink = `https://wa.me/56965863160?text=${encodeURIComponent(waMsg)}`;
+    const whatsappLink = `https://wa.me/56957272191?text=${encodeURIComponent(waMsg)}`;
 
     const attribution = [
       lead.utm_source && `Fuente: ${lead.utm_source}`,
@@ -151,7 +151,7 @@ exports.notifyCalcLead = onDocumentCreated(
     const leadId = event.params.leadId;
 
     const waMsg = `Hola! Usé la calculadora de Growth Buddies y me interesaría saber más sobre la auditoría gratuita.`;
-    const whatsappLink = `https://wa.me/56965863160?text=${encodeURIComponent(waMsg)}`;
+    const whatsappLink = `https://wa.me/56957272191?text=${encodeURIComponent(waMsg)}`;
 
     const body = `
       <table style="width:100%;border-collapse:collapse;">
@@ -299,7 +299,7 @@ exports.sendFollowupSequence = onSchedule(
           </div>
           <p style="font-size:14px;color:#94a3b8;margin:0 0 24px;">30 minutos. Sin compromiso. Sin tarjeta de crédito. Solo una conversación honesta sobre si podemos ayudarte.</p>
           ${ctaButton("https://calendly.com/espohr/conversemos", "📅 Agendar antes del viernes")}
-          <p style="margin-top:16px;text-align:center;font-size:14px;color:#64748b;">¿Prefieres WhatsApp? <a href="https://wa.me/56965863160?text=${encodeURIComponent(`Hola Edmundo, soy ${lead.name || "un interesado"}, quiero coordinar la auditoría.`)}" style="color:#25d366;text-decoration:none;">Escríbeme directo →</a></p>`;
+          <p style="margin-top:16px;text-align:center;font-size:14px;color:#64748b;">¿Prefieres WhatsApp? <a href="https://wa.me/56957272191?text=${encodeURIComponent(`Hola Edmundo, soy ${lead.name || "un interesado"}, quiero coordinar la auditoría.`)}" style="color:#25d366;text-decoration:none;">Escríbeme directo →</a></p>`;
 
         await resend().emails.send({
           from: "Edmundo — Growth Buddies <edmundo@growthbuddies.cl>",

@@ -181,5 +181,5 @@ Inicio | Servicios | Soluciones | Blog | Contacto
 
 - **Edmundo Spöhr** — CEO & Co-founder — [edmundo@growthbuddies.cl](mailto:edmundo@growthbuddies.cl)
 - **Felipe Soto Santibáñez** — Co-founder
-- WhatsApp: [+56 9 6586 3160](https://wa.me/56965863160)
+- WhatsApp: [+56 9 6586 3160](https://wa.me/56957272191)
 - LinkedIn: [linkedin.com/company/growth-buddies](https://www.linkedin.com/company/growth-buddies)
