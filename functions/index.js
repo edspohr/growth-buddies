@@ -54,7 +54,7 @@ function interestContent(interest = "") {
   }
   return {
     tag: "Automatización IA",
-    caseStudyTitle: "Cómo empresas chilenas recuperan el 30% de su tiempo operativo con IA",
+    caseStudyTitle: "Cómo empresas de LATAM recuperan el 30% de su tiempo operativo con IA",
     caseStudyBody: "Empresas en servicios profesionales, retail y finanzas están usando automatización inteligente para eliminar trabajo manual repetitivo. El resultado promedio: 15-30 horas semanales recuperadas por equipo, con ROI visible en menos de 90 días.",
     caseStudyLink: "https://growthbuddies.cl/blog/casos-exito-transformacion-chile/",
     roiLine: "El ROI promedio de nuestros proyectos se alcanza antes de los 90 días.",
@@ -83,6 +83,78 @@ function emailWrapper(headerBg, headerColor, badge, title, body) {
 function ctaButton(href, label, bg = "#00f6ff", color = "#050510") {
   return `<a href="${href}" style="display:block;margin-top:24px;background:${bg};color:${color};font-weight:700;font-size:15px;text-align:center;padding:16px 24px;border-radius:12px;text-decoration:none;">${label}</a>`;
 }
+
+// ─── 0. Guide lead: instant delivery + notify Edmundo ────────────────────────
+
+exports.sendGuideDelivery = onDocumentCreated(
+  { document: "guide_leads/{leadId}", secrets: [resendApiKey] },
+  async (event) => {
+    const lead = event.data.data();
+    const leadId = event.params.leadId;
+    if (!lead.email) return;
+
+    const guideUrl = "https://growthbuddies.cl/recursos/guia-ia-legal/contenido/";
+    const calendlyUrl = "https://calendly.com/espohr/conversemos";
+
+    // ── Email to lead: deliver the guide ──────────────────────────────────────
+    const deliveryBody = `
+      <p style="font-size:16px;line-height:1.7;margin:0 0 16px;">Hola${lead.name ? " <strong>" + lead.name + "</strong>" : ""}, aquí tienes tu guía. 👇</p>
+      ${ctaButton(guideUrl, "📘 Leer la guía ahora")}
+      <div style="margin-top:32px;padding:24px;background:#0d0d1a;border-radius:12px;border-left:3px solid #00f6ff;">
+        <p style="margin:0 0 12px;font-size:13px;color:#00f6ff;font-weight:700;text-transform:uppercase;letter-spacing:.06em;">Lo que encontrarás dentro</p>
+        <ul style="margin:0;padding-left:20px;color:#94a3b8;font-size:14px;line-height:1.8;">
+          <li><strong style="color:#e2e8f0;">Proceso 1:</strong> Triaje inteligente de emails y documentos — ahorra 10–15 hrs/semana</li>
+          <li><strong style="color:#e2e8f0;">Proceso 2:</strong> Generación automática de contratos y fichas — ahorra 30–60 min por doc</li>
+          <li><strong style="color:#e2e8f0;">Proceso 3:</strong> Bot de respuesta a consultas frecuentes — reduce carga de soporte en 60%</li>
+          <li><strong style="color:#e2e8f0;">Proceso 4:</strong> Seguimiento automático de leads — +30–40% de conversión</li>
+          <li><strong style="color:#e2e8f0;">Proceso 5:</strong> Rendición de gastos e informes — cierra el mes en 1 día, no 2 semanas</li>
+        </ul>
+      </div>
+      <p style="font-size:14px;color:#94a3b8;margin:24px 0 8px;line-height:1.6;">Si quieres que revisemos juntos cuál de estos procesos tiene más impacto en tu empresa, agenda una sesión de 30 minutos gratuita:</p>
+      ${ctaButton(calendlyUrl, "📅 Agendar auditoría gratuita", "#1e2035", "#e2e8f0")}
+      <p style="font-size:13px;color:#64748b;margin-top:12px;text-align:center;">Sin compromiso · Sin tarjeta de crédito</p>`;
+
+    await resend().emails.send({
+      from: "Edmundo — Growth Buddies <edmundo@growthbuddies.cl>",
+      to: [lead.email],
+      subject: "Tu guía de automatización IA está lista ✅",
+      html: emailWrapper(
+        "linear-gradient(135deg,#050510,#0d1a2e)",
+        "#00f6ff",
+        "Descarga inmediata",
+        "5 Procesos que puedes automatizar con IA esta semana",
+        deliveryBody
+      ),
+    });
+
+    // ── Email to Edmundo: CRM alert ───────────────────────────────────────────
+    const waMsg = `Hola${lead.name ? " " + lead.name : ""}! Descargaste nuestra guía de automatización IA. ¿Quieres que revisemos juntos qué procesos aplicar en tu empresa?`;
+    const crmBody = `
+      <table style="width:100%;border-collapse:collapse;">
+        <tr><td style="padding:10px 0;border-bottom:1px solid #1e2035;color:#64748b;font-size:13px;width:130px;">Email</td>
+            <td style="padding:10px 0;border-bottom:1px solid #1e2035;"><a href="mailto:${lead.email}" style="color:#00f6ff;text-decoration:none;">${lead.email}</a></td></tr>
+        ${lead.name ? `<tr><td style="padding:10px 0;border-bottom:1px solid #1e2035;color:#64748b;font-size:13px;">Nombre</td><td style="padding:10px 0;border-bottom:1px solid #1e2035;">${lead.name}</td></tr>` : ""}
+        <tr><td style="padding:10px 0;border-bottom:1px solid #1e2035;color:#64748b;font-size:13px;">País</td>
+            <td style="padding:10px 0;border-bottom:1px solid #1e2035;">${lead.country || "—"}</td></tr>
+        <tr><td style="padding:10px 0;border-bottom:1px solid #1e2035;color:#64748b;font-size:13px;">Industria</td>
+            <td style="padding:10px 0;border-bottom:1px solid #1e2035;"><strong>${lead.industry || "—"}</strong></td></tr>
+        <tr><td style="padding:10px 0;color:#64748b;font-size:13px;">Dispositivo</td>
+            <td style="padding:10px 0;">${lead.device || "—"}</td></tr>
+      </table>
+      ${ctaButton(`https://wa.me/56957272191?text=${encodeURIComponent(waMsg)}`, "💬 Responder por WhatsApp", "#25d366", "#fff")}
+      <p style="margin-top:12px;font-size:11px;color:#334155;text-align:center;">Lead ID: ${leadId} · Guía IA</p>`;
+
+    await resend().emails.send({
+      from: "Growth Buddies CRM <crm@growthbuddies.cl>",
+      to: ["edmundo@spohr.cl"],
+      subject: `📘 Descarga guía — ${lead.email}${lead.industry ? " · " + lead.industry : ""}`,
+      html: emailWrapper("#0a0a2e", "#00f6ff", "Guide Lead", `Nueva descarga de guía`, crmBody),
+    });
+
+    await db.collection("guide_leads").doc(leadId).update({ guide_sent: true });
+    console.log(`[sendGuideDelivery] sent for ${leadId}`);
+  }
+);
 
 // ─── 1. Notify Edmundo on every new lead ────────────────────────────────────
 
@@ -228,6 +300,109 @@ exports.sendFollowupSequence = onSchedule(
       .where("partial", "==", false)
       .get();
 
+    // ── Guide leads nurturing ─────────────────────────────────────────────────
+    const guideSnap = await db.collection("guide_leads").get();
+    for (const doc of guideSnap.docs) {
+      const lead = doc.data();
+      const id = doc.id;
+      if (!lead.email || !lead.guide_sent) continue;
+
+      const days = daysSince(lead.timestamp);
+
+      // Day 2 — Deep dive into Proceso 1
+      if (days >= 2 && days < 3 && !lead.followup_day2_sent) {
+        const body = `
+          <p style="font-size:15px;line-height:1.7;color:#94a3b8;margin:0 0 16px;">Hola${lead.name ? " <strong style='color:#e2e8f0;'>" + lead.name + "</strong>," : ","} espero que hayas tenido la oportunidad de revisar la guía.</p>
+          <p style="font-size:15px;line-height:1.7;color:#94a3b8;margin:0 0 24px;">Quería profundizar en el <strong style="color:#e2e8f0;">Proceso 1</strong>, que es donde la mayoría de nuestros clientes ven el mayor impacto inmediato:</p>
+          <div style="padding:24px;background:#0d0d1a;border-radius:12px;border-left:3px solid #00f6ff;margin-bottom:24px;">
+            <p style="margin:0 0 8px;font-size:13px;color:#00f6ff;font-weight:700;text-transform:uppercase;letter-spacing:.06em;">Proceso 1: Triaje inteligente de emails y documentos</p>
+            <p style="margin:0 0 12px;font-size:16px;font-weight:700;color:#e2e8f0;">El problema que nadie mide pero todos sienten</p>
+            <p style="margin:0 0 12px;font-size:14px;color:#94a3b8;line-height:1.6;">En estudios jurídicos y empresas de servicios, el 40–60% del tiempo de los profesionales se va en <em>clasificar, leer y decidir qué hacer</em> con cada email o documento que entra. No en el trabajo de alto valor.</p>
+            <p style="margin:0 0 12px;font-size:14px;color:#94a3b8;line-height:1.6;">Un agente IA entrenado en tus criterios puede leer cada documento, asignarle prioridad, etiquetarlo y hasta redactar un borrador de respuesta — en segundos.</p>
+            <p style="margin:0;font-size:14px;color:#e2e8f0;font-weight:700;">Resultado típico: 10–15 horas semanales por profesional, recuperadas en las primeras 2 semanas.</p>
+          </div>
+          <p style="font-size:14px;color:#94a3b8;margin:0 0 24px;">¿Tu equipo maneja un volumen alto de emails o documentos? Cuéntame en qué industria trabajas y lo conversamos:</p>
+          ${ctaButton("https://wa.me/56957272191?text=" + encodeURIComponent("Hola Edmundo, leí la guía y me interesa el triaje inteligente de documentos."), "💬 Conversar por WhatsApp", "#25d366", "#fff")}
+          ${ctaButton("https://calendly.com/espohr/conversemos", "📅 O agendar llamada de 30 min", "#1e2035", "#e2e8f0")}`;
+
+        await resend().emails.send({
+          from: "Edmundo — Growth Buddies <edmundo@growthbuddies.cl>",
+          replyTo: "edmundo@spohr.cl",
+          to: [lead.email],
+          subject: `El proceso que más horas te devuelve (Proceso 1 de la guía)`,
+          html: emailWrapper("#050510", "#00f6ff", "Deep dive · Guía IA", "Triaje inteligente: 10–15 hrs/semana recuperadas", body),
+        });
+
+        await db.collection("guide_leads").doc(id).update({ followup_day2_sent: true });
+        console.log(`[guide-day2] sent to ${lead.email}`);
+      }
+
+      // Day 5 — Case study + ROI
+      else if (days >= 5 && days < 6 && !lead.followup_day5_sent) {
+        const industryMap = { legal: "estudio jurídico", corredor: "corredora", broker: "corredora", finanzas: "empresa de finanzas" };
+        const industryLabel = Object.entries(industryMap).find(([k]) => (lead.industry || "").toLowerCase().includes(k))?.[1] || "empresa de servicios";
+
+        const body = `
+          <p style="font-size:15px;line-height:1.7;color:#94a3b8;margin:0 0 24px;">Hola${lead.name ? " <strong style='color:#e2e8f0;'>" + lead.name + "</strong>," : ","} hoy quiero mostrarte un caso real.</p>
+          <div style="padding:24px;background:#0d0d1a;border-radius:12px;border-left:3px solid #00f6ff;margin-bottom:24px;">
+            <p style="margin:0 0 8px;font-size:12px;color:#00f6ff;font-weight:700;text-transform:uppercase;letter-spacing:.06em;">Caso real · ${industryLabel}</p>
+            <p style="margin:0 0 12px;font-size:16px;font-weight:700;color:#e2e8f0;">De 3 semanas de trabajo manual a 1 día automatizado</p>
+            <p style="margin:0 0 12px;font-size:14px;color:#94a3b8;line-height:1.6;">Una ${industryLabel} con 8 personas en su equipo operativo implementó 3 de los 5 procesos de la guía. El primer mes recuperó <strong style="color:#e2e8f0;">47 horas de trabajo</strong> que antes se iban en tareas manuales.</p>
+            <p style="margin:0;font-size:14px;color:#94a3b8;line-height:1.6;">El equipo lo adoptó en 2 semanas. No hubo resistencia porque la IA se integró a sus flujos actuales, sin cambiar herramientas.</p>
+          </div>
+          <div style="background:#0d2a1a;border-radius:12px;padding:20px;margin-bottom:24px;text-align:center;">
+            <p style="margin:0 0 4px;font-size:13px;color:#64748b;">Ahorro estimado en tu caso (equipo de 8 personas):</p>
+            <p style="margin:0 0 4px;font-size:28px;font-weight:900;color:#00f6ff;">US$ 28.000–42.000 / año</p>
+            <p style="margin:0;font-size:12px;color:#64748b;">Basado en 47 hrs/mes × salario promedio región</p>
+          </div>
+          <p style="font-size:14px;color:#94a3b8;margin:0 0 24px;">¿Quieres calcular el ROI exacto para tu equipo? Toma 2 minutos:</p>
+          ${ctaButton("https://growthbuddies.cl/#roi", "🧮 Calcular mi ROI ahora")}
+          <p style="margin-top:16px;font-size:13px;color:#64748b;text-align:center;">O agenda una llamada y lo calculamos juntos: <a href="https://calendly.com/espohr/conversemos" style="color:#00f6ff;text-decoration:none;">Agendar →</a></p>`;
+
+        await resend().emails.send({
+          from: "Edmundo — Growth Buddies <edmundo@growthbuddies.cl>",
+          replyTo: "edmundo@spohr.cl",
+          to: [lead.email],
+          subject: `Caso real: 47 horas recuperadas en el primer mes`,
+          html: emailWrapper("#050510", "#00f6ff", "Caso de éxito", "De manual a automatizado en 2 semanas", body),
+        });
+
+        await db.collection("guide_leads").doc(id).update({ followup_day5_sent: true });
+        console.log(`[guide-day5] sent to ${lead.email}`);
+      }
+
+      // Day 10 — Soft CTA + scarcity
+      else if (days >= 10 && days < 11 && !lead.followup_day10_sent) {
+        const waText = encodeURIComponent(`Hola Edmundo, descargué la guía y me gustaría hablar sobre cómo implementar esto en mi empresa.`);
+        const body = `
+          <p style="font-size:15px;line-height:1.7;color:#94a3b8;margin:0 0 16px;">Hola${lead.name ? " <strong style='color:#e2e8f0;'>" + lead.name + "</strong>," : ","} hace 10 días descargaste la guía.</p>
+          <p style="font-size:15px;line-height:1.7;color:#94a3b8;margin:0 0 24px;">Una pregunta directa: ¿ya identificaste qué proceso de los 5 aplicaría mejor a tu empresa?</p>
+          <div style="background:#0d0d1a;border-radius:12px;padding:24px;margin-bottom:24px;border:1px solid #1e2035;">
+            <p style="margin:0 0 12px;font-size:14px;color:#94a3b8;line-height:1.6;">Ofrezco una <strong style="color:#e2e8f0;">sesión de diagnóstico de 30 minutos</strong> donde:</p>
+            <ul style="margin:0;padding-left:20px;color:#94a3b8;font-size:14px;line-height:1.8;">
+              <li>Identificamos cuál proceso tiene más impacto en tu operación</li>
+              <li>Calculamos el ROI específico para tu equipo y país</li>
+              <li>Te digo honestamente si somos la solución correcta</li>
+            </ul>
+          </div>
+          <p style="font-size:14px;color:#64748b;margin:0 0 8px;">Sin presión. Sin pitch de ventas. Solo una conversación honesta.</p>
+          ${ctaButton("https://calendly.com/espohr/conversemos", "📅 Agendar mi sesión de diagnóstico")}
+          <p style="margin-top:16px;text-align:center;font-size:14px;color:#64748b;">¿Prefieres WhatsApp? <a href="https://wa.me/56957272191?text=${waText}" style="color:#25d366;text-decoration:none;">Escríbeme directo →</a></p>`;
+
+        await resend().emails.send({
+          from: "Edmundo — Growth Buddies <edmundo@growthbuddies.cl>",
+          replyTo: "edmundo@spohr.cl",
+          to: [lead.email],
+          subject: `${lead.name ? lead.name + ", ¿" : "¿"}cuál proceso aplicarías primero?`,
+          html: emailWrapper("#050510", "#00f6ff", "Seguimiento", "Tu diagnóstico gratuito sigue disponible", body),
+        });
+
+        await db.collection("guide_leads").doc(id).update({ followup_day10_sent: true });
+        console.log(`[guide-day10] sent to ${lead.email}`);
+      }
+    }
+
+    // ── Contact leads nurturing ───────────────────────────────────────────────
     for (const doc of snapshot.docs) {
       const lead = doc.data();
       const id = doc.id;
