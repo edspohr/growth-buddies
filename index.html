@@ -1774,6 +1774,32 @@
         );
       }
 
+      // --- UTM & Attribution Capture ---
+      (function () {
+        const params = new URLSearchParams(window.location.search);
+        const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid'];
+        utmKeys.forEach(key => {
+          if (params.get(key)) sessionStorage.setItem(key, params.get(key));
+        });
+        if (!sessionStorage.getItem('landing_page')) {
+          sessionStorage.setItem('landing_page', window.location.href);
+        }
+        if (!sessionStorage.getItem('referrer')) {
+          sessionStorage.setItem('referrer', document.referrer || 'direct');
+        }
+      })();
+
+      function getAttribution() {
+        const keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid'];
+        const attr = {};
+        keys.forEach(k => { const v = sessionStorage.getItem(k); if (v) attr[k] = v; });
+        attr.landing_page = sessionStorage.getItem('landing_page') || window.location.href;
+        attr.referrer = sessionStorage.getItem('referrer') || 'direct';
+        attr.device = /Mobi|Android/i.test(navigator.userAgent) ? 'mobile' : 'desktop';
+        attr.convert_page = window.location.href;
+        return attr;
+      }
+
       // --- Form inline validation helpers ---
       (function() {
         function showError(id, show) {
@@ -1842,6 +1868,7 @@
                   message: message,
                   timestamp: serverTimestamp(),
                   source: "web_contact_form",
+                  ...getAttribution(),
                 });
                 console.log("Lead saved to Firestore");
               } catch (dbError) {
