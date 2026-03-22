@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>CRM — Growth Buddies</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --accent: #00f6ff;
+      --bg: #050510;
+      --surface: #0d0d1f;
+      --surface2: #12121f;
+      --border: #1e2035;
+      --text: #e2e8f0;
+      --muted: #64748b;
+      --red: #f87171;
+      --yellow: #fbbf24;
+      --green: #34d399;
+    }
+    html, body { height: 100%; background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; }
+
+    /* ── Auth screen ── */
+    #auth-screen { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 24px; }
+    .auth-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 16px; padding: 40px; width: 100%; max-width: 380px; }
+    .auth-card h1 { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+    .auth-card p { color: var(--muted); font-size: 13px; margin-bottom: 28px; }
+    .field { margin-bottom: 16px; }
+    .field label { display: block; font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; }
+    .field input { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; color: var(--text); font-size: 14px; outline: none; transition: border-color .2s; }
+    .field input:focus { border-color: var(--accent); }
+    .btn-primary { width: 100%; background: var(--accent); color: #050510; font-weight: 700; font-size: 15px; border: none; border-radius: 10px; padding: 12px; cursor: pointer; transition: opacity .2s; }
+    .btn-primary:hover { opacity: .85; }
+    .btn-primary:disabled { opacity: .5; cursor: not-allowed; }
+    #auth-error { color: var(--red); font-size: 13px; margin-top: 12px; text-align: center; display: none; }
+    .logo-mark { font-size: 28px; font-weight: 900; color: var(--accent); letter-spacing: -.02em; margin-bottom: 20px; }
+
+    /* ── Dashboard ── */
+    #dashboard-screen { display: none; min-height: 100vh; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; border-bottom: 1px solid var(--border); background: var(--surface2); position: sticky; top: 0; z-index: 10; }
+    .topbar-left { display: flex; align-items: center; gap: 12px; }
+    .topbar h1 { font-size: 16px; font-weight: 700; }
+    .topbar-badge { background: var(--accent); color: #050510; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 20px; }
+    .btn-sm { background: var(--surface); border: 1px solid var(--border); color: var(--muted); font-size: 12px; font-weight: 600; border-radius: 8px; padding: 6px 14px; cursor: pointer; transition: all .2s; }
+    .btn-sm:hover { color: var(--text); border-color: var(--text); }
+
+    .main { padding: 24px; max-width: 1400px; margin: 0 auto; }
+
+    /* ── Stats ── */
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 24px; }
+    .stat-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; }
+    .stat-card .val { font-size: 28px; font-weight: 900; line-height: 1; margin-bottom: 4px; }
+    .stat-card .lbl { font-size: 12px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; }
+
+    /* ── Filters ── */
+    .filters { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; align-items: center; }
+    .filter-btn { background: var(--surface2); border: 1px solid var(--border); color: var(--muted); font-size: 12px; font-weight: 600; border-radius: 8px; padding: 6px 14px; cursor: pointer; transition: all .2s; }
+    .filter-btn.active, .filter-btn:hover { background: var(--accent); color: #050510; border-color: var(--accent); }
+    .search-input { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 6px 14px; color: var(--text); font-size: 13px; outline: none; width: 220px; margin-left: auto; }
+    .search-input:focus { border-color: var(--accent); }
+
+    /* ── Table ── */
+    .table-wrap { background: var(--surface2); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+    table { width: 100%; border-collapse: collapse; }
+    thead tr { background: var(--surface); }
+    thead th { padding: 12px 16px; text-align: left; font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .07em; white-space: nowrap; }
+    tbody tr { border-top: 1px solid var(--border); transition: background .15s; cursor: default; }
+    tbody tr:hover { background: #ffffff05; }
+    td { padding: 12px 16px; vertical-align: middle; }
+    .score-badge { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 24px; border-radius: 6px; font-size: 12px; font-weight: 700; }
+    .score-hot { background: #34d39920; color: var(--green); }
+    .score-warm { background: #fbbf2420; color: var(--yellow); }
+    .score-cold { background: #64748b20; color: var(--muted); }
+    .status-pill { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 20px; white-space: nowrap; }
+    .pill-hot { background: #34d39915; color: var(--green); border: 1px solid #34d39930; }
+    .pill-partial { background: #fbbf2415; color: var(--yellow); border: 1px solid #fbbf2430; }
+    .pill-calc { background: #00f6ff15; color: var(--accent); border: 1px solid #00f6ff30; }
+    .name-cell { font-weight: 600; max-width: 140px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .email-cell { color: var(--muted); font-size: 13px; max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .interest-cell { font-size: 12px; color: var(--text); max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .campaign-cell { font-size: 11px; color: var(--muted); max-width: 120px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .date-cell { font-size: 12px; color: var(--muted); white-space: nowrap; }
+    .wa-btn { display: inline-flex; align-items: center; gap: 5px; background: #25d36620; color: #25d366; border: 1px solid #25d36640; font-size: 12px; font-weight: 700; padding: 5px 10px; border-radius: 8px; text-decoration: none; white-space: nowrap; transition: all .2s; }
+    .wa-btn:hover { background: #25d366; color: #fff; }
+
+    /* ── Empty / loading ── */
+    .state-msg { text-align: center; padding: 60px 20px; color: var(--muted); font-size: 15px; }
+    .spinner { width: 32px; height: 32px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin .7s linear infinite; margin: 0 auto 16px; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    @media (max-width: 768px) {
+      .hide-mobile { display: none; }
+      .search-input { width: 100%; margin-left: 0; }
+      .filters { flex-direction: column; align-items: stretch; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Auth Screen ────────────────────────────────────────────────────────── -->
+<div id="auth-screen">
+  <div class="auth-card">
+    <div class="logo-mark">GB</div>
+    <h1>CRM · Growth Buddies</h1>
+    <p>Acceso restringido al equipo interno.</p>
+    <div class="field">
+      <label>Email</label>
+      <input type="email" id="auth-email" placeholder="tu@spohr.cl" autocomplete="email" />
+    </div>
+    <div class="field">
+      <label>Contraseña</label>
+      <input type="password" id="auth-password" placeholder="••••••••" autocomplete="current-password" />
+    </div>
+    <button class="btn-primary" id="login-btn">Ingresar</button>
+    <p id="auth-error"></p>
+  </div>
+</div>
+
+<!-- ── Dashboard Screen ───────────────────────────────────────────────────── -->
+<div id="dashboard-screen">
+  <div class="topbar">
+    <div class="topbar-left">
+      <span style="font-weight:900;color:var(--accent);font-size:18px;letter-spacing:-.02em;">GB</span>
+      <h1>CRM</h1>
+      <span class="topbar-badge" id="total-badge">0 leads</span>
+    </div>
+    <button class="btn-sm" id="logout-btn">Cerrar sesión</button>
+  </div>
+
+  <div class="main">
+    <!-- Stats -->
+    <div class="stats" id="stats-row">
+      <div class="stat-card"><div class="val" id="stat-total" style="color:var(--text)">—</div><div class="lbl">Total leads</div></div>
+      <div class="stat-card"><div class="val" id="stat-hot" style="color:var(--green)">—</div><div class="lbl">🔥 Completos</div></div>
+      <div class="stat-card"><div class="val" id="stat-partial" style="color:var(--yellow)">—</div><div class="lbl">⚡ Parciales</div></div>
+      <div class="stat-card"><div class="val" id="stat-calc" style="color:var(--accent)">—</div><div class="lbl">🧮 Calculadora</div></div>
+      <div class="stat-card"><div class="val" id="stat-roi" style="color:var(--green)">—</div><div class="lbl">ROI total estimado</div></div>
+    </div>
+
+    <!-- Filters -->
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="hot">🔥 Completos</button>
+      <button class="filter-btn" data-filter="partial">⚡ Parciales</button>
+      <button class="filter-btn" data-filter="calc">🧮 Calculadora</button>
+      <input class="search-input" id="search-input" placeholder="Buscar email, nombre, interés…" />
+    </div>
+
+    <!-- Table -->
+    <div class="table-wrap">
+      <div id="loading-state" class="state-msg"><div class="spinner"></div>Cargando leads…</div>
+      <div id="empty-state" class="state-msg" style="display:none;">No hay leads con este filtro.</div>
+      <table id="leads-table" style="display:none;">
+        <thead>
+          <tr>
+            <th>Score</th>
+            <th>Estado</th>
+            <th>Nombre / Email</th>
+            <th>Interés</th>
+            <th class="hide-mobile">Campaña</th>
+            <th class="hide-mobile">Dispositivo</th>
+            <th>Fecha</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody id="leads-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged }
+    from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+  import { getFirestore, collection, getDocs, orderBy, query }
+    from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+  const app = initializeApp({
+    apiKey: "AIzaSyBDdOtg0-svyfoiVNoNBBGeQc1BP-SDNjk",
+    authDomain: "growth-buddies.firebaseapp.com",
+    projectId: "growth-buddies",
+    storageBucket: "growth-buddies.firebasestorage.app",
+    messagingSenderId: "1035797595823",
+    appId: "1:1035797595823:web:6e6b9225a6f1ee2047365a",
+  });
+
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+
+  // ── Lead scoring ──────────────────────────────────────────────────────────
+  function scoreLead(lead) {
+    let s = 0;
+    if (lead.gclid || lead.utm_source === "google") s += 20;
+    if (lead.landing_page && lead.landing_page.includes("brokeria")) s += 15;
+    if (lead.source === "roi_calculator") s += 25;
+    if (lead.source === "web_contact_form" && !lead.partial) s += 40;
+    if (lead.message && lead.message.length > 50) s += 10;
+    if (lead.email && !["gmail","hotmail","yahoo","outlook","icloud","live"].some(d => lead.email.includes(d))) s += 15;
+    if (lead.source === "roi_calculator" && lead.annual_savings_usd > 50000) s += 15;
+    return Math.min(s, 100);
+  }
+
+  function scoreBadge(s) {
+    if (s >= 60) return `<span class="score-badge score-hot">${s}</span>`;
+    if (s >= 30) return `<span class="score-badge score-warm">${s}</span>`;
+    return `<span class="score-badge score-cold">${s}</span>`;
+  }
+
+  function fmtDate(ts) {
+    if (!ts) return "—";
+    const d = ts.toDate ? ts.toDate() : new Date(ts);
+    return d.toLocaleDateString("es-CL", { day: "2-digit", month: "short", year: "2-digit" });
+  }
+
+  function waLink(lead) {
+    let msg;
+    if (lead.source === "roi_calculator") {
+      msg = `Hola${lead.email ? " " + lead.email : ""}! Vi que usaste nuestra calculadora de ROI y estimaste un ahorro de US$ ${(lead.annual_savings_usd || 0).toLocaleString()} al año. ¿Tienes 30 minutos para conversar cómo lograrlo?`;
+    } else {
+      msg = `Hola ${lead.name || ""}! Vi tu consulta sobre ${lead.interest || "automatización IA"}. ¿Tienes 15 minutos esta semana para conversar?`;
+    }
+    return `https://wa.me/56965863160?text=${encodeURIComponent(msg)}`;
+  }
+
+  // ── Auth ──────────────────────────────────────────────────────────────────
+  const authScreen = document.getElementById("auth-screen");
+  const dashScreen = document.getElementById("dashboard-screen");
+  const loginBtn = document.getElementById("login-btn");
+  const logoutBtn = document.getElementById("logout-btn");
+  const authError = document.getElementById("auth-error");
+
+  loginBtn.addEventListener("click", async () => {
+    const email = document.getElementById("auth-email").value.trim();
+    const pw = document.getElementById("auth-password").value;
+    loginBtn.disabled = true;
+    loginBtn.textContent = "Ingresando…";
+    authError.style.display = "none";
+    try {
+      await signInWithEmailAndPassword(auth, email, pw);
+    } catch (e) {
+      authError.textContent = "Credenciales incorrectas. Intenta de nuevo.";
+      authError.style.display = "block";
+      loginBtn.disabled = false;
+      loginBtn.textContent = "Ingresar";
+    }
+  });
+
+  document.getElementById("auth-password").addEventListener("keydown", e => {
+    if (e.key === "Enter") loginBtn.click();
+  });
+
+  logoutBtn.addEventListener("click", () => signOut(auth));
+
+  // ── Data ──────────────────────────────────────────────────────────────────
+  let allLeads = [];
+  let activeFilter = "all";
+
+  async function loadLeads() {
+    const [leadsSnap, calcSnap] = await Promise.all([
+      getDocs(query(collection(db, "leads"), orderBy("timestamp", "desc"))),
+      getDocs(query(collection(db, "calculator_leads"), orderBy("timestamp", "desc"))),
+    ]);
+
+    const leads = leadsSnap.docs.map(d => ({ id: d.id, _col: "leads", ...d.data() }));
+    const calcs = calcSnap.docs.map(d => ({ id: d.id, _col: "calculator_leads", source: "roi_calculator", ...d.data() }));
+
+    allLeads = [...leads, ...calcs]
+      .map(l => ({ ...l, _score: scoreLead(l) }))
+      .sort((a, b) => b._score - a._score);
+
+    renderStats();
+    renderTable();
+    document.getElementById("loading-state").style.display = "none";
+  }
+
+  function renderStats() {
+    const hot = allLeads.filter(l => l._col === "leads" && !l.partial);
+    const partial = allLeads.filter(l => l._col === "leads" && l.partial);
+    const calc = allLeads.filter(l => l._col === "calculator_leads");
+    const totalRoi = calc.reduce((s, l) => s + (l.annual_savings_usd || 0), 0);
+
+    document.getElementById("stat-total").textContent = allLeads.length;
+    document.getElementById("stat-hot").textContent = hot.length;
+    document.getElementById("stat-partial").textContent = partial.length;
+    document.getElementById("stat-calc").textContent = calc.length;
+    document.getElementById("stat-roi").textContent = totalRoi > 0 ? `US$ ${Math.round(totalRoi / 1000)}K` : "—";
+    document.getElementById("total-badge").textContent = `${allLeads.length} leads`;
+  }
+
+  function filtered() {
+    const q = document.getElementById("search-input").value.toLowerCase();
+    return allLeads.filter(l => {
+      if (activeFilter === "hot" && !(l._col === "leads" && !l.partial)) return false;
+      if (activeFilter === "partial" && !(l._col === "leads" && l.partial)) return false;
+      if (activeFilter === "calc" && l._col !== "calculator_leads") return false;
+      if (q) {
+        const hay = [l.email, l.name, l.interest, l.utm_campaign, l.message].join(" ").toLowerCase();
+        if (!hay.includes(q)) return false;
+      }
+      return true;
+    });
+  }
+
+  function renderTable() {
+    const rows = filtered();
+    const table = document.getElementById("leads-table");
+    const empty = document.getElementById("empty-state");
+    const tbody = document.getElementById("leads-tbody");
+
+    if (rows.length === 0) { table.style.display = "none"; empty.style.display = "block"; return; }
+    empty.style.display = "none";
+    table.style.display = "table";
+
+    tbody.innerHTML = rows.map(l => {
+      const isCalc = l._col === "calculator_leads";
+      const isPartial = l._col === "leads" && l.partial;
+      const statusPill = isCalc
+        ? `<span class="status-pill pill-calc">🧮 Calc</span>`
+        : isPartial
+        ? `<span class="status-pill pill-partial">⚡ Parcial</span>`
+        : `<span class="status-pill pill-hot">🔥 Lead</span>`;
+
+      const nameOrEmail = l.name
+        ? `<div class="name-cell">${l.name}</div><div class="email-cell">${l.email || "—"}</div>`
+        : `<div class="email-cell" style="color:var(--text)">${l.email || "—"}</div>`;
+
+      const interestOrRoi = isCalc
+        ? `<span class="interest-cell" style="color:var(--accent)">US$ ${(l.annual_savings_usd || 0).toLocaleString()}/año · ${l.employees || "?"} pers.</span>`
+        : `<span class="interest-cell">${l.interest || "—"}</span>`;
+
+      const campaign = l.utm_campaign
+        ? `<div class="campaign-cell">${l.utm_campaign}</div>${l.utm_term ? `<div class="campaign-cell" style="font-size:10px;">${l.utm_term}</div>` : ""}`
+        : `<span style="color:var(--border);">—</span>`;
+
+      return `<tr>
+        <td>${scoreBadge(l._score)}</td>
+        <td>${statusPill}</td>
+        <td>${nameOrEmail}</td>
+        <td>${interestOrRoi}</td>
+        <td class="hide-mobile">${campaign}</td>
+        <td class="hide-mobile" style="color:var(--muted);font-size:12px;">${l.device || "—"}</td>
+        <td class="date-cell">${fmtDate(l.timestamp)}</td>
+        <td><a class="wa-btn" href="${waLink(l)}" target="_blank" rel="noopener">💬 WA</a></td>
+      </tr>`;
+    }).join("");
+  }
+
+  // Filters
+  document.querySelectorAll(".filter-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      activeFilter = btn.dataset.filter;
+      renderTable();
+    });
+  });
+
+  document.getElementById("search-input").addEventListener("input", renderTable);
+
+  // ── Auth state ────────────────────────────────────────────────────────────
+  onAuthStateChanged(auth, user => {
+    if (user) {
+      authScreen.style.display = "none";
+      dashScreen.style.display = "block";
+      loadLeads();
+    } else {
+      authScreen.style.display = "flex";
+      dashScreen.style.display = "none";
+      allLeads = [];
+    }
+  });
+</script>
+</body>
+</html>
