@@ -33,7 +33,7 @@
 
     <meta
       name="description"
-      content="Consultora especialista en Automatización de Procesos, Inteligencia Artificial y Legal Tech en Chile. Aumenta la rentabilidad de tu empresa eliminando tareas manuales. Agenda tu auditoría gratuita."
+      content="Eliminamos el trabajo manual de tu empresa con IA en 30 días. Especialistas en automatización para estudios jurídicos, corredoras de propiedades y empresas de servicios en Chile. Auditoría gratuita sin compromiso."
     />
 
     <meta
@@ -308,12 +308,12 @@
         <h1
           class="text-3xl md:text-5xl lg:text-7xl font-black tracking-tight font-display text-center leading-[1.1] mb-4 md:mb-6 max-w-6xl"
         >
-          <span class="text-white block">Consultoría Integral en</span>
-          <span class="animated-gradient-text block mt-2">IA, Automatización Inteligente y Legal Tech.</span>
+          <span class="text-white block">Automatización e IA para empresas chilenas.</span>
+          <span class="animated-gradient-text block mt-2">Primeros resultados en 30 días, adopción garantizada.</span>
         </h1>
         
         <p class="mt-3 md:mt-4 max-w-3xl mx-auto text-base md:text-lg lg:text-xl text-slate-300 font-light text-center leading-relaxed">
-          Garantizamos la adopción de la tecnología. Inteligencia Artificial, Automatización Inteligente y Gestión del Cambio para impulsar la rentabilidad real.
+          Eliminamos el trabajo manual de estudios jurídicos, corredoras de propiedades y empresas de servicios con IA. Tu equipo lo adopta. Tú ves el ROI.
         </p>
 
           <div class="mt-8 md:mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto unique-magnetic-container">
@@ -326,8 +326,8 @@
                 >
                   <span class="magnetic-area"></span>
                   <span class="relative z-10">
-                    <span class="hidden sm:inline">Agenda tu Auditoría de IA</span>
-                    <span class="sm:hidden">Agendar Auditoría IA</span>
+                    <span class="hidden sm:inline">Auditoría Gratuita — 30 min, sin compromiso</span>
+                    <span class="sm:hidden">Auditoría Gratis</span>
                   </span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="relative z-10 transition-transform group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                   <div class="absolute inset-0 bg-white/30 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
@@ -2073,9 +2073,8 @@
         observer.observe(hero);
       })();
 
-      // --- Exit-intent modal (desktop only) ---
+      // --- Exit-intent modal (desktop: mouseleave | mobile: scroll-up) ---
       (function() {
-        if (window.innerWidth <= 768) return;
         if (sessionStorage.getItem('exitShown')) return;
         var modal = document.getElementById('exit-modal');
         var card = document.getElementById('exit-modal-card');
@@ -2104,9 +2103,21 @@
             document.body.style.overflow = '';
           }, 300);
         }
-        document.addEventListener('mouseleave', function(e) {
-          if (e.clientY < 10) showModal();
-        });
+        if (window.innerWidth > 768) {
+          // Desktop: cursor leaves top of viewport
+          document.addEventListener('mouseleave', function(e) {
+            if (e.clientY < 10) showModal();
+          });
+        } else {
+          // Mobile: scroll up 150px+ after having scrolled down 400px+
+          var lastY = 0, maxY = 0;
+          window.addEventListener('scroll', function() {
+            var y = window.scrollY;
+            if (y > maxY) maxY = y;
+            if (maxY > 400 && lastY - y > 150) showModal();
+            lastY = y;
+          }, { passive: true });
+        }
         var closeBtn = document.getElementById('exit-modal-close');
         var dismissBtn = document.getElementById('exit-modal-dismiss');
         var backdrop = document.getElementById('exit-modal-backdrop');
