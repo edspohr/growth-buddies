@@ -8,10 +8,12 @@
       function gtag(){dataLayer.push(arguments);}
       gtag("js", new Date());
       gtag("config", "G-TJRCBKJKFX");
+      gtag("config", "AW-18025247905");
       document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll("a[href*='wa.me']").forEach(link => {
           link.addEventListener("click", () => {
             gtag("event", "contact", { method: "whatsapp", event_category: "lead", event_label: document.title });
+            gtag("event", "conversion", {"send_to": "AW-18025247905/Lv0ZCOWRk4scEKHpjZND"});
           });
         });
       });
