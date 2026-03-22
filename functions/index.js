@@ -142,6 +142,44 @@ exports.notifyNewLead = onDocumentCreated(
   }
 );
 
+// ─── 1b. Notify Edmundo on ROI calculator lead ───────────────────────────────
+
+exports.notifyCalcLead = onDocumentCreated(
+  { document: "calculator_leads/{leadId}", secrets: [resendApiKey] },
+  async (event) => {
+    const lead = event.data.data();
+    const leadId = event.params.leadId;
+
+    const waMsg = `Hola! Usé la calculadora de Growth Buddies y me interesaría saber más sobre la auditoría gratuita.`;
+    const whatsappLink = `https://wa.me/56965863160?text=${encodeURIComponent(waMsg)}`;
+
+    const body = `
+      <table style="width:100%;border-collapse:collapse;">
+        <tr><td style="padding:10px 0;border-bottom:1px solid #1e2035;color:#64748b;font-size:13px;width:130px;">Email</td>
+            <td style="padding:10px 0;border-bottom:1px solid #1e2035;"><a href="mailto:${lead.email}" style="color:#00f6ff;text-decoration:none;">${lead.email}</a></td></tr>
+        <tr><td style="padding:10px 0;border-bottom:1px solid #1e2035;color:#64748b;font-size:13px;">Equipo</td>
+            <td style="padding:10px 0;border-bottom:1px solid #1e2035;"><strong>${lead.employees || "?"} personas</strong></td></tr>
+        <tr><td style="padding:10px 0;border-bottom:1px solid #1e2035;color:#64748b;font-size:13px;">Horas/semana</td>
+            <td style="padding:10px 0;border-bottom:1px solid #1e2035;">${lead.hours_per_week || "?"} hrs por persona</td></tr>
+        <tr><td style="padding:10px 0;border-bottom:1px solid #1e2035;color:#64748b;font-size:13px;">Costo/hora</td>
+            <td style="padding:10px 0;border-bottom:1px solid #1e2035;">US$ ${lead.hourly_rate || "?"}</td></tr>
+        <tr><td style="padding:10px 0;color:#64748b;font-size:13px;">Ahorro estimado</td>
+            <td style="padding:10px 0;font-size:22px;font-weight:900;color:#00f6ff;">US$ ${(lead.annual_savings_usd || 0).toLocaleString()}/año</td></tr>
+      </table>
+      ${ctaButton(whatsappLink, "💬 Contactar ahora", "#25d366", "#fff")}
+      <p style="margin-top:16px;font-size:11px;color:#334155;text-align:center;">Lead ID: ${leadId} · Calculadora ROI</p>`;
+
+    await resend().emails.send({
+      from: "Growth Buddies CRM <crm@growthbuddies.cl>",
+      to: ["edmundo@spohr.cl"],
+      subject: `🧮 Calc lead — ${lead.email} · US$ ${(lead.annual_savings_usd || 0).toLocaleString()} ahorro estimado`,
+      html: emailWrapper("#0a2a1a", "#00f6ff", "ROI Calculator Lead", `Nuevo lead desde la calculadora`, body),
+    });
+
+    console.log(`[notifyCalcLead] sent for ${leadId}`);
+  }
+);
+
 // ─── 2. Day 0 — Confirmation email to lead when Step 2 completes ────────────
 
 exports.sendDay0Confirmation = onDocumentUpdated(

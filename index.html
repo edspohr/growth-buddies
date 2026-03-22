@@ -697,11 +697,24 @@
                     </p>
                 </div>
 
-                <!-- CTA -->
-                 <div class="mt-8">
-                    <a href="#contacto" class="block w-full text-center bg-[var(--color-accent)] text-black font-bold py-4 rounded-xl hover:shadow-[0_0_20px_rgba(0,246,255,0.4)] transition-all">
-                        Solicitar Auditoría Gratuita
-                    </a>
+                <!-- CTA: email capture -->
+                <div class="mt-8" id="roi-cta-section">
+                  <p class="text-sm text-slate-400 mb-3 text-center">Recibe un análisis personalizado con este estimado:</p>
+                  <form id="roi-email-form" class="flex gap-2" novalidate>
+                    <input type="email" id="roi-email" placeholder="tu@empresa.com" class="gemini-input flex-1 min-w-0" required />
+                    <button type="submit" id="roi-submit-btn" class="bg-[var(--color-accent)] hover:bg-[var(--color-accent)]/80 text-black font-bold px-5 py-3 rounded-xl whitespace-nowrap transition-all flex items-center gap-2">
+                      <svg id="roi-spinner" class="hidden animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path></svg>
+                      <span>Ver mi ROI →</span>
+                    </button>
+                  </form>
+                  <p id="roi-email-error" class="hidden text-xs text-red-400 mt-1 text-center">Ingresa un correo válido.</p>
+                  <p class="text-xs text-center text-slate-500 mt-2">Sin spam · Análisis en segundos</p>
+                </div>
+                <!-- Success state (hidden by default) -->
+                <div id="roi-success" class="hidden mt-8 text-center p-6 bg-green-500/10 border border-green-500/30 rounded-xl">
+                  <p class="text-green-400 font-bold text-lg mb-1">✓ ¡Listo! Revisa tu correo</p>
+                  <p class="text-slate-400 text-sm">Te enviamos el análisis. ¿Quieres conversar los resultados?</p>
+                  <a href="#contacto" class="inline-block mt-4 text-[var(--color-accent)] font-semibold text-sm hover:underline">Agendar llamada de 30 min →</a>
                 </div>
             </div>
         </div>
@@ -759,6 +772,9 @@
                     animateValue(totalSavings, previousSavings, annual, 800, formatCurrency);
                     previousSavings = annual;
                 }
+
+                // Store globally for Firebase capture
+                window.roiCalcValues = { employees, hoursPerWeek: hours, hourlyRate: rate, annualSavingsUSD: annual };
             }
 
             employeesInput.addEventListener('input', calculate);
@@ -1873,6 +1889,51 @@
         document.getElementById('step-label').textContent = 'Paso 2 de 2';
         document.getElementById('name').focus();
       });
+
+      // --- ROI Calculator Email Capture ---
+      const roiForm = document.getElementById('roi-email-form');
+      if (roiForm) {
+        roiForm.addEventListener('submit', async function (e) {
+          e.preventDefault();
+          const emailEl = document.getElementById('roi-email');
+          const email = emailEl.value.trim();
+          const errorEl = document.getElementById('roi-email-error');
+          const submitBtn = document.getElementById('roi-submit-btn');
+          const spinner = document.getElementById('roi-spinner');
+
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            errorEl.classList.remove('hidden');
+            return;
+          }
+          errorEl.classList.add('hidden');
+          submitBtn.disabled = true;
+          spinner.classList.remove('hidden');
+
+          const calc = window.roiCalcValues || {};
+          const isConfigured = firebaseConfig.apiKey !== "YOUR_API_KEY";
+          if (db && isConfigured) {
+            try {
+              await addDoc(collection(db, "calculator_leads"), {
+                email,
+                employees: calc.employees || null,
+                hours_per_week: calc.hoursPerWeek || null,
+                hourly_rate: calc.hourlyRate || null,
+                annual_savings_usd: calc.annualSavingsUSD || null,
+                timestamp: serverTimestamp(),
+                source: "roi_calculator",
+                ...getAttribution(),
+              });
+            } catch (err) {
+              console.error("ROI lead save failed (non-fatal):", err);
+            }
+          }
+
+          spinner.classList.add('hidden');
+          submitBtn.disabled = false;
+          document.getElementById('roi-cta-section').classList.add('hidden');
+          document.getElementById('roi-success').classList.remove('hidden');
+        });
+      }
 
       // Back button
       document.getElementById('step2-back-btn').addEventListener('click', function () {
