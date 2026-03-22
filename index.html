@@ -1414,38 +1414,54 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
           <!-- Left: Contact Form -->
           <div class="reveal glass-card p-5 md:p-8 rounded-2xl border border-zinc-800 bg-zinc-900/30">
-            <h3 class="text-2xl font-bold text-white mb-6">Consulta Rápida</h3>
-            <form id="contact-form" class="space-y-4" novalidate>
-              <div>
-                <label for="name" class="gemini-input-label">Nombre Completo</label>
-                <input type="text" id="name" name="name" class="gemini-input" placeholder="Ej. Juan Pérez" required />
-                <p id="name-error" class="hidden text-xs text-red-400 mt-1">Por favor ingresa tu nombre.</p>
+            <h3 class="text-2xl font-bold text-white mb-2">Consulta Rápida</h3>
+            <div class="flex items-center gap-2 mb-6">
+              <div id="step-dot-1" class="w-2 h-2 rounded-full bg-[var(--color-accent)] transition-colors duration-300"></div>
+              <div id="step-dot-2" class="w-2 h-2 rounded-full bg-zinc-600 transition-colors duration-300"></div>
+              <span id="step-label" class="text-xs text-slate-500 ml-1">Paso 1 de 2</span>
+            </div>
+            <form id="contact-form" novalidate>
+              <!-- Step 1: Email + Interest -->
+              <div id="form-step-1" class="space-y-4">
+                <div>
+                  <label for="email" class="gemini-input-label">Correo Corporativo</label>
+                  <input type="email" id="email" name="email" class="gemini-input" placeholder="juan@empresa.com" required />
+                  <p id="email-error" class="hidden text-xs text-red-400 mt-1">Ingresa un correo válido.</p>
+                </div>
+                <div>
+                  <label for="interest" class="gemini-input-label">¿Qué te interesa?</label>
+                  <select id="interest" name="interest" class="gemini-input">
+                    <option value="auditoria">Auditoría de Automatización</option>
+                    <option value="brokeria">BrokerIA — Programa Piloto</option>
+                    <option value="demo">Demo de Agente IA</option>
+                    <option value="general">Consulta General</option>
+                  </select>
+                </div>
+                <button type="button" id="step1-btn" class="group w-full bg-[var(--color-accent)] hover:bg-[var(--color-accent)]/80 text-black font-bold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2">
+                  <span id="step1-btn-label">Quiero mi auditoría gratuita</span>
+                  <svg id="step1-spinner" class="hidden animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path></svg>
+                  <svg id="step1-arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+                <p class="text-xs text-center text-slate-500">Sin compromiso · Sin tarjeta de crédito</p>
               </div>
-              <div>
-                <label for="email" class="gemini-input-label">Correo Corporativo</label>
-                <input type="email" id="email" name="email" class="gemini-input" placeholder="juan@empresa.com" required />
-                <p id="email-error" class="hidden text-xs text-red-400 mt-1">Ingresa un correo válido.</p>
+              <!-- Step 2: Name + Message -->
+              <div id="form-step-2" class="hidden space-y-4">
+                <div>
+                  <label for="name" class="gemini-input-label">Nombre Completo</label>
+                  <input type="text" id="name" name="name" class="gemini-input" placeholder="Ej. Juan Pérez" required />
+                  <p id="name-error" class="hidden text-xs text-red-400 mt-1">Por favor ingresa tu nombre.</p>
+                </div>
+                <div>
+                  <label for="message" class="gemini-input-label">¿En qué podemos ayudarte? <span class="text-slate-500 font-normal">(opcional)</span></label>
+                  <textarea id="message" name="message" rows="3" class="gemini-input resize-none" placeholder="Cuéntanos brevemente tu desafío..."></textarea>
+                </div>
+                <button type="submit" id="contact-submit-btn" class="group w-full bg-white/10 hover:bg-[var(--color-accent)] hover:text-black text-white font-bold py-3 px-6 rounded-lg border border-white/20 transition-all duration-300 flex items-center justify-center gap-2">
+                  <svg id="contact-spinner" class="hidden animate-spin h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path></svg>
+                  <span id="contact-btn-label">Enviar a WhatsApp</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform" id="contact-send-icon"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+                <button type="button" id="step2-back-btn" class="w-full text-xs text-slate-500 hover:text-slate-300 transition-colors py-1">← Volver al paso anterior</button>
               </div>
-              <div>
-                <label for="interest" class="gemini-input-label">¿Qué te interesa?</label>
-                <select id="interest" name="interest" class="gemini-input">
-                  <option value="auditoria">Auditoría de Automatización</option>
-                  <option value="brokeria">BrokerIA — Programa Piloto</option>
-                  <option value="demo">Demo de Agente IA</option>
-                  <option value="general">Consulta General</option>
-                </select>
-              </div>
-              <div>
-                <label for="message" class="gemini-input-label">¿En qué podemos ayudarte?</label>
-                <textarea id="message" name="message" rows="4" class="gemini-input resize-none" placeholder="Cuéntanos brevemente tu desafío..." required></textarea>
-                <p id="message-error" class="hidden text-xs text-red-400 mt-1">Por favor describe tu consulta.</p>
-              </div>
-              <button type="submit" id="contact-submit-btn" class="group w-full bg-white/10 hover:bg-[var(--color-accent)] hover:text-black text-white font-bold py-3 px-6 rounded-lg border border-white/20 transition-all duration-300 flex items-center justify-center gap-2">
-                <svg id="contact-spinner" class="hidden animate-spin h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path></svg>
-                <span id="contact-btn-label">Enviar a WhatsApp</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform" id="contact-send-icon"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-              </button>
-              <p class="text-xs text-center text-slate-500 mt-2">Tus datos serán enviados de forma segura vía WhatsApp.</p>
             </form>
           </div>
 
@@ -1748,6 +1764,7 @@
         getFirestore,
         collection,
         addDoc,
+        updateDoc,
         serverTimestamp,
       } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
@@ -1800,108 +1817,144 @@
         return attr;
       }
 
-      // --- Form inline validation helpers ---
-      (function() {
-        function showError(id, show) {
-          var el = document.getElementById(id);
-          if (el) el.classList.toggle('hidden', !show);
-        }
-        function validateField(fieldId, errorId, checkFn) {
-          var el = document.getElementById(fieldId);
-          if (!el) return;
-          el.addEventListener('blur', function() {
-            showError(errorId, !checkFn(el.value));
-          });
-          el.addEventListener('input', function() {
-            if (!el.classList.contains('border-red-500')) return;
-            showError(errorId, !checkFn(el.value));
-          });
-        }
-        validateField('name', 'name-error', function(v) { return v.trim().length > 0; });
-        validateField('email', 'email-error', function(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); });
-        validateField('message', 'message-error', function(v) { return v.trim().length > 0; });
+      // --- 2-Step Form Logic ---
+      let partialLeadRef = null;
+
+      // Step 1 email inline validation
+      (function () {
+        var el = document.getElementById('email');
+        if (!el) return;
+        el.addEventListener('blur', function () {
+          document.getElementById('email-error').classList.toggle('hidden', /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim()));
+        });
       })();
 
-      // --- Form to WhatsApp + FireStore Logic ---
-      document
-        .getElementById("contact-form")
-        .addEventListener("submit", async function (e) {
-          e.preventDefault();
+      // Step 1 submit: save email + interest, advance to Step 2
+      document.getElementById('step1-btn').addEventListener('click', async function () {
+        const email = document.getElementById('email').value.trim();
+        const interest = document.getElementById('interest');
+        const interestText = interest ? interest.options[interest.selectedIndex].text : '';
 
-          const name = document.getElementById("name").value.trim();
-          const email = document.getElementById("email").value.trim();
-          const interest = document.getElementById("interest");
-          const interestText = interest ? interest.options[interest.selectedIndex].text : '';
-          const message = document.getElementById("message").value.trim();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          document.getElementById('email-error').classList.remove('hidden');
+          return;
+        }
+        document.getElementById('email-error').classList.add('hidden');
 
-          // Validate before proceeding
-          let hasError = false;
-          function showError(id, show) {
-            var el = document.getElementById(id);
-            if (el) el.classList.toggle('hidden', !show);
+        const btn = document.getElementById('step1-btn');
+        const spinner = document.getElementById('step1-spinner');
+        const arrow = document.getElementById('step1-arrow');
+        btn.disabled = true;
+        spinner.classList.remove('hidden');
+        arrow.classList.add('hidden');
+
+        try {
+          const isConfigured = firebaseConfig.apiKey !== "YOUR_API_KEY";
+          if (db && isConfigured) {
+            partialLeadRef = await addDoc(collection(db, "leads"), {
+              email: email,
+              interest: interestText,
+              partial: true,
+              timestamp: serverTimestamp(),
+              source: "web_contact_form",
+              ...getAttribution(),
+            });
           }
-          if (!name) { showError('name-error', true); hasError = true; }
-          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('email-error', true); hasError = true; }
-          if (!message) { showError('message-error', true); hasError = true; }
-          if (hasError) return;
+        } catch (e) {
+          console.error("Partial lead save failed (non-fatal):", e);
+        }
 
-          const submitBtn = document.getElementById('contact-submit-btn');
-          const spinner = document.getElementById('contact-spinner');
-          const btnLabel = document.getElementById('contact-btn-label');
-          const sendIcon = document.getElementById('contact-send-icon');
+        btn.disabled = false;
+        spinner.classList.add('hidden');
+        arrow.classList.remove('hidden');
+        document.getElementById('form-step-1').classList.add('hidden');
+        document.getElementById('form-step-2').classList.remove('hidden');
+        document.getElementById('step-dot-2').classList.replace('bg-zinc-600', 'bg-[var(--color-accent)]');
+        document.getElementById('step-label').textContent = 'Paso 2 de 2';
+        document.getElementById('name').focus();
+      });
 
-          submitBtn.disabled = true;
-          spinner.classList.remove('hidden');
-          btnLabel.textContent = 'Procesando...';
-          if (sendIcon) sendIcon.classList.add('hidden');
+      // Back button
+      document.getElementById('step2-back-btn').addEventListener('click', function () {
+        document.getElementById('form-step-2').classList.add('hidden');
+        document.getElementById('form-step-1').classList.remove('hidden');
+        document.getElementById('step-dot-2').classList.replace('bg-[var(--color-accent)]', 'bg-zinc-600');
+        document.getElementById('step-label').textContent = 'Paso 1 de 2';
+      });
 
-          try {
-            // Save to Firestore (Only if configured)
-            const isConfigured = firebaseConfig.apiKey !== "YOUR_API_KEY";
+      // Step 2 name inline validation
+      (function () {
+        var el = document.getElementById('name');
+        if (!el) return;
+        el.addEventListener('blur', function () {
+          document.getElementById('name-error').classList.toggle('hidden', el.value.trim().length > 0);
+        });
+      })();
 
-            if (db && isConfigured) {
-              try {
+      // Step 2 submit: complete Firestore doc, redirect to WhatsApp
+      document.getElementById("contact-form").addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const email = document.getElementById('email').value.trim();
+        const name = document.getElementById('name').value.trim();
+        const message = document.getElementById('message').value.trim();
+        const interest = document.getElementById('interest');
+        const interestText = interest ? interest.options[interest.selectedIndex].text : '';
+
+        if (!name) {
+          document.getElementById('name-error').classList.remove('hidden');
+          return;
+        }
+        document.getElementById('name-error').classList.add('hidden');
+
+        const submitBtn = document.getElementById('contact-submit-btn');
+        const spinner = document.getElementById('contact-spinner');
+        const btnLabel = document.getElementById('contact-btn-label');
+        const sendIcon = document.getElementById('contact-send-icon');
+
+        submitBtn.disabled = true;
+        spinner.classList.remove('hidden');
+        btnLabel.textContent = 'Procesando...';
+        if (sendIcon) sendIcon.classList.add('hidden');
+
+        try {
+          const isConfigured = firebaseConfig.apiKey !== "YOUR_API_KEY";
+          if (db && isConfigured) {
+            try {
+              if (partialLeadRef) {
+                await updateDoc(partialLeadRef, { name: name, message: message, partial: false });
+              } else {
                 await addDoc(collection(db, "leads"), {
-                  name: name,
-                  email: email,
-                  interest: interestText,
-                  message: message,
-                  timestamp: serverTimestamp(),
-                  source: "web_contact_form",
+                  name: name, email: email, interest: interestText,
+                  message: message, partial: false,
+                  timestamp: serverTimestamp(), source: "web_contact_form",
                   ...getAttribution(),
                 });
-                console.log("Lead saved to Firestore");
-              } catch (dbError) {
-                console.error("Firestore save failed (non-fatal):", dbError);
               }
-            } else {
-              if (!db) console.warn("Firestore not initialized.");
-              if (!isConfigured)
-                console.warn(
-                  "Firebase not configured (using placeholders). Skipping DB save."
-                );
+            } catch (dbError) {
+              console.error("Firestore update failed (non-fatal):", dbError);
             }
-          } catch (error) {
-            console.error("Error in form processing:", error);
-          } finally {
-            // Build WhatsApp message including interest
-            const phoneNumber = "56965863160";
-            const text = `Hola Growth Buddies! 👋%0A%0AMi nombre es: *${encodeURIComponent(name)}*%0ACorreo: ${encodeURIComponent(email)}%0AInterés: ${encodeURIComponent(interestText)}%0A%0AMensaje:%0A${encodeURIComponent(message)}`;
-            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${text}`;
-
-            spinner.classList.add('hidden');
-            if (sendIcon) sendIcon.classList.remove('hidden');
-            btnLabel.textContent = '¡Todo listo! Redirigiendo…';
-            submitBtn.classList.add("border-green-500", "bg-green-500/10");
-
-            setTimeout(() => {
-                window.open(whatsappUrl, "_blank");
-                submitBtn.disabled = false;
-                btnLabel.textContent = 'Enviar a WhatsApp';
-                submitBtn.classList.remove("border-green-500", "bg-green-500/10");
-            }, 1200);
           }
-        });
+        } catch (error) {
+          console.error("Error in form processing:", error);
+        } finally {
+          const phoneNumber = "56965863160";
+          const text = `Hola Growth Buddies! 👋%0A%0AMi nombre es: *${encodeURIComponent(name)}*%0ACorreo: ${encodeURIComponent(email)}%0AInterés: ${encodeURIComponent(interestText)}%0A%0AMensaje:%0A${encodeURIComponent(message || '(sin mensaje)')}`;
+          const whatsappUrl = `https://wa.me/${phoneNumber}?text=${text}`;
+
+          spinner.classList.add('hidden');
+          if (sendIcon) sendIcon.classList.remove('hidden');
+          btnLabel.textContent = '¡Todo listo! Redirigiendo…';
+          submitBtn.classList.add("border-green-500", "bg-green-500/10");
+
+          setTimeout(() => {
+            window.open(whatsappUrl, "_blank");
+            submitBtn.disabled = false;
+            btnLabel.textContent = 'Enviar a WhatsApp';
+            submitBtn.classList.remove("border-green-500", "bg-green-500/10");
+          }, 1200);
+        }
+      });
     </script>
   
     <script>
