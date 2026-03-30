@@ -32,7 +32,7 @@
 
     <meta
       name="description"
-      content="Eliminamos el trabajo manual de tu empresa con IA en 30 días. Especialistas en automatización para estudios jurídicos, corredoras de propiedades y empresas de servicios en Latinoamérica. Auditoría gratuita sin compromiso."
+      content="Consultora de automatización con IA para empresas en Chile, Colombia, Perú y Ecuador. Implementamos en 30 días. Auditoría gratuita disponible."
     />
 
     <meta
@@ -101,13 +101,29 @@
     />
     <meta
       property="og:description"
-      content="Consultora especialista en Automatización de Procesos, Inteligencia Artificial y Legal Tech para Latinoamérica. Aumenta la rentabilidad de tu empresa eliminando tareas manuales."
+      content="Consultora de automatización con IA para empresas en Chile, Colombia, Perú y Ecuador. Implementamos en 30 días. Auditoría gratuita disponible."
     />
     <meta property="og:url" content="https://growthbuddies.cl/" />
-    <meta property="og:image" content="https://growthbuddies.cl/img/logo.webp" />
+    <meta property="og:image" content="https://growthbuddies.cl/img/og-default.webp" />
+    <meta property="og:site_name" content="Growth Buddies" />
+    <meta name="twitter:card" content="summary_large_image" />
 
-    <link rel="preload" as="image" href="img/hero-poster.webp" fetchpriority="high" />
     <link rel="preload" href="./dist/output.css" as="style" />
+
+    <style>
+      :root{--color-accent:#00f6ff;--color-dark:#0a0a0a}
+      *,::before,::after{box-sizing:border-box}
+      body{font-family:"Inter",sans-serif;background-color:#000;color:#f8fafc;overflow-x:hidden;margin:0}
+      .glass-nav{background:rgba(0,0,0,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}
+      .video-background-container{position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;z-index:-1}
+      #video-background{width:100%;height:100%;object-fit:cover;opacity:.3}
+      .video-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at center,rgba(0,0,0,.4) 0%,rgba(0,0,0,.8) 60%,rgba(0,0,0,1) 100%);z-index:-1}
+      .animated-gradient-text{background-image:linear-gradient(90deg,#e2e8f0,#f8fafc,#e2e8f0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;background-size:200% 100%;animation:gradient-animation 4s ease infinite}
+      @keyframes gradient-animation{0%{background-position:200% center}50%{background-position:0% center}100%{background-position:200% center}}
+      .animate-in{animation:fade-in-up 1s cubic-bezier(.2,.8,.2,1) forwards}
+      @keyframes fade-in-up{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}
+      .noise-overlay{position:fixed;top:-50%;left:-50%;width:200%;height:200%;z-index:40;pointer-events:none;opacity:.04}
+    </style>
 
     <link href="./dist/output.css" rel="stylesheet" />
 
@@ -130,13 +146,15 @@
       </style>
     </noscript>
       <link rel="canonical" href="https://growthbuddies.cl/" />
-      <!-- Microsoft Clarity -->
-    <script type="text/javascript">
+      <!-- Microsoft Clarity — deferred 3s to avoid blocking LCP -->
+    <script>
+      setTimeout(function(){
         (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "vkf6fbh8zc");
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window,document,"clarity","script","vkf6fbh8zc");
+      },3000);
     </script>
   </head>
   <body class="antialiased selection:bg-[#00f6ff] selection:text-black">
@@ -151,8 +169,8 @@
         <a href="#" class="flex items-center gap-2 group">
           <img
             src="img/logo.webp"
-            alt="Growth Buddies Consultora de Automatización e IA"
-            class="h-8 w-8 opacity-90 group-hover:opacity-100 transition-opacity"
+            alt="Logotipo de Growth Buddies"
+            class="h-8 w-8 opacity-90 group-hover:opacity-100 transition-opacity" height="32" width="32"
           />
           <span
             class="font-bold text-lg tracking-tight text-white group-hover:text-[var(--color-accent)] transition-colors"
@@ -203,16 +221,21 @@
 
     <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" style="display:none;" class="fixed inset-0 z-[200] flex-col" aria-hidden="true">
-      <div class="absolute inset-0 bg-[#050510]/96 backdrop-blur-xl"></div>
+      <div id="mobile-menu-backdrop" class="absolute inset-0 bg-[#050510]/96 backdrop-blur-xl"></div>
       <div class="relative flex flex-col h-full px-6 py-6 overflow-y-auto">
-        <div class="flex justify-between items-center mb-10">
+        <div class="flex justify-between items-center mb-6">
           <a href="/" class="flex items-center gap-2">
-            <img src="/img/logo.webp" alt="Growth Buddies - Consultora de Automatización e IA para Latinoamérica" class="h-8 w-8" />
+            <img src="/img/logo.webp" alt="Logotipo de Growth Buddies" class="h-8 w-8" height="32" width="32" />
             <span class="font-bold text-lg text-white">Growth Buddies</span>
           </a>
           <button id="mobile-menu-close" aria-label="Cerrar menú" class="flex items-center justify-center w-11 h-11 text-white hover:bg-white/10 rounded-lg transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
           </button>
+        </div>
+        <div class="mb-8">
+          <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[#00f6ff]/10 hover:bg-[#00f6ff]/20 text-[#00f6ff] border border-[#00f6ff]/30 hover:border-[#00f6ff] font-semibold text-base py-4 px-5 rounded-full transition-all duration-300">
+            Agendar Auditoría
+          </a>
         </div>
         <nav class="flex flex-col" role="navigation" aria-label="Menú móvil">
           <a href="/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Inicio</a>
@@ -222,11 +245,6 @@
           <a href="/#liderazgo" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Equipo</a>
           <a href="/#contacto" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Contacto</a>
         </nav>
-        <div class="mt-8">
-          <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[#00f6ff]/10 hover:bg-[#00f6ff]/20 text-[#00f6ff] border border-[#00f6ff]/30 hover:border-[#00f6ff] font-semibold text-base py-4 px-5 rounded-full transition-all duration-300">
-            Agendar Auditoría
-          </a>
-        </div>
       </div>
     </div>
 
@@ -270,6 +288,18 @@
       </div>
     </div>
 
+    <!-- WhatsApp FAB -->
+    <a id="whatsapp-btn"
+       href="https://wa.me/56957272191?text=Hola%20Growth%20Buddies%21%20Me%20interesa%20la%20auditor%C3%ADa%20gratuita.%20%C2%BFPodemos%20conversar%3F"
+       target="_blank" rel="noopener noreferrer"
+       style="position:fixed;bottom:calc(20px + env(safe-area-inset-bottom));right:16px;z-index:50"
+       class="flex items-center justify-center w-14 h-14 bg-[#25D366] rounded-full shadow-[0_4px_24px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform"
+       aria-label="Contactar por WhatsApp"
+       onclick="typeof gtag!=='undefined'&&gtag('event','whatsapp_click',{event_category:'fab'})"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+    </a>
+
     <!-- Exit Intent Modal -->
     <div id="exit-modal" class="fixed inset-0 z-[9999] hidden items-center justify-center" role="dialog" aria-modal="true" aria-labelledby="exit-modal-title">
       <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" id="exit-modal-backdrop"></div>
@@ -298,7 +328,8 @@
           muted
           playsinline
           id="video-background"
-          poster="img/hero-poster.webp"
+          poster="img/foto.webp"
+          preload="none"
         >
           <!-- Sources injected by JS only on desktop to avoid mobile video download -->
         </video>
@@ -449,9 +480,9 @@
               >
                 <img
                   src="img/spi.webp"
-                  alt="Logo de SPI Americas - Cliente de Growth Buddies"
+                  alt="Logo de SPI Americas — cliente de Growth Buddies"
                   loading="lazy" decoding="async"
-                  class="max-h-full max-w-full object-contain"
+                  class="max-h-full max-w-full object-contain" height="912" width="2154"
                 />
               </div>
             </div>
@@ -479,9 +510,9 @@
               >
                 <img
                   src="img/hits.webp"
-                  alt="Logo de Hits Corredora de Seguros - Cliente de Growth Buddies"
+                  alt="Logo de Hits Corredora de Seguros — cliente de Growth Buddies"
                   loading="lazy" decoding="async"
-                  class="max-h-full max-w-full object-contain"
+                  class="max-h-full max-w-full object-contain" height="318" width="800"
                 />
               </div>
             </div>
@@ -509,9 +540,9 @@
               >
                 <img
                   src="img/mlm.webp"
-                  alt="Logo de MLM Abogados - Cliente de Growth Buddies"
+                  alt="Logo de MLM Abogados — cliente de Growth Buddies"
                   loading="lazy" decoding="async"
-                  class="max-h-full max-w-full object-contain"
+                  class="max-h-full max-w-full object-contain" height="500" width="500"
                 />
               </div>
             </div>
@@ -539,9 +570,9 @@
               >
                 <img
                   src="img/summer.webp"
-                  alt="Logo de Fundación Katy Summer - Cliente de Growth Buddies"
+                  alt="Logo de Fundación Katy Summer — cliente de Growth Buddies"
                   loading="lazy" decoding="async"
-                  class="h-full w-full object-cover"
+                  class="h-full w-full object-cover" height="160" width="160"
                 />
               </div>
             </div>
@@ -569,9 +600,9 @@
               >
                 <img
                   src="img/potenciarte.webp"
-                  alt="Logo de Potenciarte Eventos - Cliente de Growth Buddies"
+                  alt="Logo de Potenciarte Eventos — cliente de Growth Buddies"
                   loading="lazy" decoding="async"
-                  class="max-h-full max-w-full object-contain"
+                  class="max-h-full max-w-full object-contain" height="315" width="354"
                 />
               </div>
             </div>
@@ -599,9 +630,9 @@
               >
                 <img
                   src="img/ingeglobal.webp"
-                  alt="Logo de Ingeglobal - Cliente de Growth Buddies"
+                  alt="Logo de Ingeglobal — cliente de Growth Buddies"
                   loading="lazy" decoding="async"
-                  class="max-h-full max-w-full object-contain"
+                  class="max-h-full max-w-full object-contain" height="62" width="137"
                 />
               </div>
             </div>
@@ -733,9 +764,9 @@
                 <!-- CTA: email capture -->
                 <div class="mt-8" id="roi-cta-section">
                   <p class="text-sm text-slate-400 mb-3 text-center">Recibe un análisis personalizado con este estimado:</p>
-                  <form id="roi-email-form" class="flex gap-2" novalidate>
+                  <form id="roi-email-form" class="flex flex-col sm:flex-row gap-2" novalidate>
                     <input type="email" id="roi-email" placeholder="tu@empresa.com" class="gemini-input flex-1 min-w-0" required />
-                    <button type="submit" id="roi-submit-btn" class="bg-[var(--color-accent)] hover:bg-[var(--color-accent)]/80 text-black font-bold px-5 py-3 rounded-xl whitespace-nowrap transition-all flex items-center gap-2">
+                    <button type="submit" id="roi-submit-btn" class="w-full sm:w-auto bg-[var(--color-accent)] hover:bg-[var(--color-accent)]/80 text-black font-bold px-5 py-3 rounded-xl whitespace-nowrap transition-all flex items-center justify-center gap-2">
                       <svg id="roi-spinner" class="hidden animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path></svg>
                       <span>Ver mi ROI →</span>
                     </button>
@@ -808,15 +839,39 @@
 
                 // Store globally for Firebase capture
                 window.roiCalcValues = { employees, hoursPerWeek: hours, hourlyRate: rate, annualSavingsUSD: annual };
+
+                // Update ROI sticky bar
+                var roiBar = document.getElementById('roi-sticky-bar');
+                var roiBarVal = document.getElementById('roi-bar-value');
+                if (roiBar && roiBarVal) roiBarVal.innerText = formatCurrency(annual);
             }
 
-            employeesInput.addEventListener('input', calculate);
-            hoursInput.addEventListener('input', calculate);
-            rateInput.addEventListener('input', calculate);
+            function showRoiBar() {
+                var roiBar = document.getElementById('roi-sticky-bar');
+                if (roiBar && window.innerWidth < 768) {
+                    roiBar.classList.remove('hidden');
+                    roiBar.classList.add('flex');
+                }
+            }
+
+            employeesInput.addEventListener('input', function() { calculate(); showRoiBar(); });
+            hoursInput.addEventListener('input', function() { calculate(); showRoiBar(); });
+            rateInput.addEventListener('input', function() { calculate(); showRoiBar(); });
 
             // Init
             calculate();
         </script>
+
+    <!-- ROI Calculator Sticky Bar (mobile only, shown when sliders are used) -->
+    <div id="roi-sticky-bar" class="hidden fixed bottom-0 left-0 right-0 z-30 bg-zinc-950/98 border-t border-zinc-800 py-3 px-4 items-center justify-between md:hidden" style="padding-bottom:calc(12px + env(safe-area-inset-bottom))">
+      <div>
+        <p class="text-xs text-slate-400 leading-none mb-0.5">Ahorro Potencial Anual</p>
+        <p class="text-lg font-black text-white font-mono" id="roi-bar-value">US$ 52.000</p>
+      </div>
+      <a href="#roi-cta-section" onclick="document.getElementById('roi-sticky-bar').classList.add('hidden');document.getElementById('roi-sticky-bar').classList.remove('flex');" class="flex items-center gap-1.5 bg-[var(--color-accent)] text-black font-bold text-sm py-2.5 px-4 rounded-xl min-h-[44px]">
+        Recibir análisis →
+      </a>
+    </div>
 
     <!-- Agentes IA Especializados Section -->
     <section id="productos" class="py-12 md:py-24 px-6 relative bg-zinc-900/30 border-y border-white/5">
@@ -1135,9 +1190,9 @@
                   ></div>
                   <img
                     src="img/foto.webp"
-                    alt="Edmundo Spohr - CEO Growth Buddies Expertos en Automatización"
+                    alt="Edmundo Spohr — CEO en Growth Buddies"
                     loading="lazy" decoding="async"
-                    class="relative h-24 w-24 md:h-32 md:w-32 lg:h-40 lg:w-40 rounded-full object-cover ring-2 ring-white/10 group-hover:ring-[var(--color-accent)] transition-all"
+                    class="relative h-24 w-24 md:h-32 md:w-32 lg:h-40 lg:w-40 rounded-full object-cover ring-2 ring-white/10 group-hover:ring-[var(--color-accent)] transition-all" height="96" width="96"
                   />
                 </div>
                 <div>
@@ -1188,9 +1243,9 @@
                   ></div>
                   <img
                     src="img/felipe-2026.webp"
-                    alt="Felipe Soto Santibañez - Consultor Senior Transformación Digital"
+                    alt="Felipe Soto Santibáñez — Consultor Senior en Growth Buddies"
                     loading="lazy" decoding="async"
-                    class="relative h-24 w-24 md:h-32 md:w-32 lg:h-40 lg:w-40 rounded-full object-cover ring-2 ring-white/10 group-hover:ring-blue-500 transition-all"
+                    class="relative h-24 w-24 md:h-32 md:w-32 lg:h-40 lg:w-40 rounded-full object-cover ring-2 ring-white/10 group-hover:ring-blue-500 transition-all" height="96" width="96"
                   />
                 </div>
                 <div>
@@ -1256,9 +1311,9 @@
               >
                 <img
                   src="img/kizeo-forms.webp"
-                  alt="Logo de Kizeo Forms - Partner de Growth Buddies"
+                  alt="Logo de Kizeo Forms — partner de Growth Buddies"
                   loading="lazy" decoding="async"
-                  class="max-h-full max-w-full object-contain"
+                  class="max-h-full max-w-full object-contain" height="225" width="225"
                 />
               </div>
             </div>
@@ -1281,9 +1336,9 @@
               >
                 <img
                   src="img/mage.svg"
-                  alt="Logo de Mage AI - Partner de Growth Buddies"
+                  alt="Logo de Mage AI — partner de Growth Buddies"
                   loading="lazy" decoding="async"
-                  class="max-h-full max-w-full object-contain"
+                  class="max-h-full max-w-full object-contain" height="260" width="260"
                 />
               </div>
             </div>
@@ -1306,9 +1361,9 @@
               >
                 <img
                   src="img/sumadots.svg"
-                  alt="Logo de Sumadots - Partner de Growth Buddies"
+                  alt="Logo de Sumadots — partner de Growth Buddies"
                   loading="lazy" decoding="async"
-                  class="max-h-full max-w-full object-contain"
+                  class="max-h-full max-w-full object-contain" height="810" width="1440"
                 />
               </div>
             </div>
@@ -1573,7 +1628,7 @@
             <!-- Brand -->
             <div class="space-y-6">
                 <a href="/" class="flex items-center gap-3 group">
-                    <img src="/img/logo.webp" alt="Logotipo de Growth Buddies, Consultora Legal Tech y Automatización" class="h-10 w-10 opacity-90 group-hover:opacity-100 transition-opacity" />
+                    <img src="/img/logo.webp" alt="Logotipo de Growth Buddies" class="h-10 w-10 opacity-90 group-hover:opacity-100 transition-opacity" loading="lazy" height="40" width="40" />
                     <span class="font-bold text-xl text-white tracking-widest font-display">GROWTH BUDDIES</span>
                 </a>
                 <p class="text-slate-400 leading-relaxed max-w-xs">
@@ -2102,8 +2157,10 @@
           document.body.style.overflow = '';
           btn.setAttribute('aria-expanded', 'false');
         }
+        var backdrop = document.getElementById('mobile-menu-backdrop');
         btn.addEventListener('click', openMenu);
         if (close) close.addEventListener('click', closeMenu);
+        if (backdrop) backdrop.addEventListener('click', closeMenu);
         menu.querySelectorAll('a').forEach(function(a) {
           a.addEventListener('click', closeMenu);
         });
@@ -2121,18 +2178,20 @@
         if (!stickyCta) return;
         var hero = document.querySelector('header') || document.querySelector('section');
         if (!hero) return;
+        var isMobile = window.innerWidth < 768;
         var observer = new IntersectionObserver(function(entries) {
           entries.forEach(function(entry) {
             if (!entry.isIntersecting) {
               stickyCta.classList.remove('hidden');
               stickyCta.classList.add('flex');
               stickyCta.setAttribute('aria-hidden', 'false');
-              if (whatsappBtn) whatsappBtn.style.bottom = '5rem';
+              // Hide FAB on mobile when sticky bar is visible to avoid overlap
+              if (whatsappBtn && isMobile) whatsappBtn.style.display = 'none';
             } else {
               stickyCta.classList.add('hidden');
               stickyCta.classList.remove('flex');
               stickyCta.setAttribute('aria-hidden', 'true');
-              if (whatsappBtn) whatsappBtn.style.bottom = '';
+              if (whatsappBtn && isMobile) whatsappBtn.style.display = '';
             }
           });
         }, { threshold: 0 });
@@ -2169,19 +2228,21 @@
             document.body.style.overflow = '';
           }, 300);
         }
-        if (window.innerWidth > 768) {
+        if (window.innerWidth >= 768) {
           // Desktop: cursor leaves top of viewport
           document.addEventListener('mouseleave', function(e) {
             if (e.clientY < 10) showModal();
           });
         } else {
-          // Mobile: scroll up 150px+ after having scrolled down 400px+
-          var lastY = 0, maxY = 0;
+          // Mobile: scroll past 80% of page AND ≥45s on page
+          var pageStartTime = Date.now();
           window.addEventListener('scroll', function() {
-            var y = window.scrollY;
-            if (y > maxY) maxY = y;
-            if (maxY > 400 && lastY - y > 150) showModal();
-            lastY = y;
+            if (shown) return;
+            var scrolled = window.scrollY + window.innerHeight;
+            var total = document.documentElement.scrollHeight;
+            if (scrolled / total >= 0.80 && (Date.now() - pageStartTime) >= 45000) {
+              showModal();
+            }
           }, { passive: true });
         }
         var closeBtn = document.getElementById('exit-modal-close');
@@ -2194,6 +2255,57 @@
           if (e.key === 'Escape' && !modal.classList.contains('hidden')) hideModal();
         });
       })();
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Growth Buddies",
+      "url": "https://growthbuddies.cl",
+      "logo": "https://growthbuddies.cl/img/logo.webp",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+56957272191",
+        "contactType": "customer service",
+        "availableLanguage": "Spanish"
+      },
+      "areaServed": ["CL","CO","PE","EC"],
+      "sameAs": ["https://www.linkedin.com/company/growth-buddies"]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿La Inteligencia Artificial reemplazará a mi equipo actual?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, nuestro enfoque es potenciarlo. La IA elimina las tareas repetitivas de bajo valor (carga de datos, reportes manuales) para que tu equipo pueda dedicarse a tareas estratégicas, creativas y de atención al cliente que realmente requieren criterio humano."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto tiempo toma ver el retorno de inversión (ROI)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de la complejidad, pero nuestros clientes suelen ver resultados tangibles desde el primer mes de implementación. Muchos proyectos de automatización simple se pagan a sí mismos en menos de 90 días gracias al ahorro en horas-hombre y reducción de errores."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Es segura la implementación de IA con mis datos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutamente. Priorizamos la seguridad y la confidencialidad. Utilizamos entornos aislados y cumplimos con estrictos protocolos de protección de datos. No utilizamos tus datos privados para entrenar modelos públicos."
+          }
+        }
+      ]
+    }
     </script>
   </body>
 </html>
