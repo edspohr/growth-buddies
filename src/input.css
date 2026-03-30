@@ -341,3 +341,53 @@ details[open] summary ~ * {
         transform: translateY(0);
     }
 }
+
+/* =============================================
+   MOBILE HERO GRADIENT BACKGROUND
+   Provides visual depth on mobile where
+   the video is not loaded.
+============================================= */
+@media (max-width: 767px) {
+    header {
+        background:
+            radial-gradient(ellipse at 20% 30%, rgba(0, 246, 255, 0.10) 0%, transparent 55%),
+            radial-gradient(ellipse at 80% 70%, rgba(99, 102, 241, 0.07) 0%, transparent 55%),
+            #000;
+    }
+}
+
+/* =============================================
+   STICKY BAR — Slide-up entrance animation
+============================================= */
+@keyframes slideUpBar {
+    from { transform: translateY(100%); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+}
+.sticky-cta-bar {
+    animation: slideUpBar 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* =============================================
+   MOBILE TOUCH TARGET IMPROVEMENTS
+============================================= */
+@media (max-width: 767px) {
+    /* Minimum 44px touch targets for all interactive elements */
+    a, button, [role="button"], summary {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+    /* Exceptions for inline elements */
+    p a, li a, span a, .inline-flex {
+        min-height: unset;
+        display: inline-flex;
+    }
+}
+
+/* =============================================
+   GOOGLE STARS UTILITY
+============================================= */
+.google-stars {
+    color: #FBBC05;
+    letter-spacing: 0.05em;
+}
