@@ -2,102 +2,196 @@
 @tailwind components;
 @tailwind utilities;
 
-/* --- Estilos Base --- */
+/* =============================================
+   CSS CUSTOM PROPERTIES
+============================================= */
+:root {
+    /* Brand accent — emerald green */
+    --color-accent: #10B981;
+    --color-accent-dark: #064E3B;
+    --color-accent-glow: rgba(16, 185, 129, 0.15);
+    /* CTA — amber/gold (primary action buttons) */
+    --color-cta: #F59E0B;
+    --color-cta-hover: #D97706;
+    --color-cta-glow: rgba(245, 158, 11, 0.25);
+    /* Backgrounds */
+    --color-dark: #0F172A;
+    --color-dark-card: #1E293B;
+    --color-surface: #FAFAF9;
+    /* Typography */
+    --color-body: #1a1a2e;
+    --color-text-secondary: #64748B;
+}
+
+/* =============================================
+   BASE STYLES
+============================================= */
 body {
     font-family: "Inter", sans-serif;
     background-color: #000000;
     color: #f8fafc;
     overflow-x: hidden;
+    font-size: 1.0625rem;
+    line-height: 1.7;
 }
 
-:root {
-    --color-accent: #00f6ff;
-    --color-dark: #0a0a0a;
+/* =============================================
+   TYPOGRAPHY — Instrument Serif headlines
+============================================= */
+.headline,
+.h1, .h2, .h3 {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
 }
 
-/* --- Fondo de Video --- */
-.video-background-container {
+/* Size scale */
+.headline-xl { font-size: clamp(2.25rem, 5vw, 3.5rem); }
+.headline-lg { font-size: clamp(1.75rem, 3.5vw, 2.5rem); }
+.headline-md { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+
+/* =============================================
+   NAVIGATION
+============================================= */
+.glass-nav {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+.glass-nav.scrolled {
+    background: rgba(0, 0, 0, 0.92);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+/* =============================================
+   HERO — Animated gradient mesh background
+============================================= */
+.hero-gradient-bg {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 15% 40%, rgba(16, 185, 129, 0.18) 0%, transparent 50%),
+        radial-gradient(ellipse at 85% 20%, rgba(30, 58, 95, 0.5) 0%, transparent 55%),
+        radial-gradient(ellipse at 55% 85%, rgba(15, 23, 42, 0.8) 0%, transparent 50%),
+        #000;
+    background-size: 200% 200%;
+    animation: mesh-drift 15s ease infinite;
 }
-#video-background {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.3;
+@keyframes mesh-drift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
-.video-overlay {
+
+/* Fine grain overlay for depth */
+.hero-grain {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(
-        ellipse at center,
-        rgba(0, 0, 0, 0.4) 0%,
-        rgba(0, 0, 0, 0.8) 60%,
-        rgba(0, 0, 0, 1) 100%
-    );
-    z-index: -1;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 256px 256px;
 }
 
-/* --- Animaciones y Efectos --- */
-.animated-gradient-text {
-    background-image: linear-gradient(90deg, #e2e8f0, #f8fafc, #e2e8f0);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 200% 100%;
-    animation: gradient-animation 4s ease infinite;
+/* =============================================
+   CTA BUTTONS — Amber/gold
+============================================= */
+.btn-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: var(--color-cta);
+    color: #000;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-size: 1rem;
+    box-shadow: 0 4px 20px var(--color-cta-glow);
+    transition: all 0.15s ease;
+    text-decoration: none;
 }
-@keyframes gradient-animation {
-    0% {
-        background-position: 200% center;
-    }
-    50% {
-        background-position: 0% center;
-    }
-    100% {
-        background-position: 200% center;
-    }
+.btn-cta:hover {
+    background-color: var(--color-cta-hover);
+    box-shadow: 0 6px 30px var(--color-cta-glow);
+    transform: scale(1.02);
 }
-
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1),
-        transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
+.btn-cta:active {
+    transform: scale(0.98);
 }
 
-/* SEO Friendly Hero Animation (No JS Required) */
-.animate-in {
-    animation: fade-in-up 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+/* Secondary outline button */
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: var(--color-accent);
+    font-weight: 600;
+    padding: 0.875rem 1.75rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    font-size: 0.9375rem;
+    transition: all 0.3s ease;
 }
-@keyframes fade-in-up {
-    0% { opacity: 0; transform: translateY(30px); }
-    100% { opacity: 1; transform: translateY(0); }
+.btn-outline:hover {
+    border-color: var(--color-accent);
+    background: rgba(16, 185, 129, 0.08);
+    color: #fff;
 }
 
-/* Botones y Cards */
+/* Legacy impact-button (now amber) */
 .impact-button {
-    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: all 0.15s ease;
 }
 .impact-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(0, 246, 255, 0.4);
+    transform: scale(1.02);
+    box-shadow: 0 6px 30px var(--color-cta-glow);
+}
+.impact-button:active {
+    transform: scale(0.98);
 }
 
-/* Glassmorphism */
-/* Glassmorphism 2.0 */
+/* =============================================
+   CARD DESIGN SYSTEM
+============================================= */
+
+/* Light mode card */
+.card-light {
+    background: #ffffff;
+    border: 1px solid #E2E8F0;
+    border-radius: 0.75rem;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+}
+.card-light:hover {
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    transform: translateY(-4px);
+}
+
+/* Dark section card (glassmorphism) */
+.card-dark {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+.card-dark:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(16, 185, 129, 0.35);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}
+
+/* Legacy glass-card (updated accent color) */
 .glass-card {
     background: rgba(20, 20, 23, 0.4);
     backdrop-filter: blur(16px);
@@ -119,9 +213,9 @@ body {
     pointer-events: none;
 }
 .glass-card:hover {
-    border-color: rgba(0, 246, 255, 0.4);
-    box-shadow: 0 10px 40px -10px rgba(0, 246, 255, 0.15);
-    transform: translateY(-5px);
+    border-color: rgba(16, 185, 129, 0.35);
+    box-shadow: 0 10px 40px -10px rgba(16, 185, 129, 0.15);
+    transform: translateY(-4px);
     background: rgba(20, 20, 23, 0.6);
 }
 .glass-card-premium {
@@ -130,105 +224,111 @@ body {
     border-left: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Glow Effect for Cards */
-.glow-card {
-  --mouse-x: 50%;
-  --mouse-y: 50%;
-  transition: border-color 0.3s ease;
+/* =============================================
+   SECTION DARK VARIANT
+============================================= */
+.section-dark {
+    background-color: var(--color-dark);
+    color: #F1F5F9;
+}
+.section-dark-subtle {
+    background-color: #0a1628;
 }
 
+/* =============================================
+   SCROLL REVEAL
+============================================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+        opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Stagger children */
+.reveal-stagger > *:nth-child(1) { transition-delay: 0ms; }
+.reveal-stagger > *:nth-child(2) { transition-delay: 100ms; }
+.reveal-stagger > *:nth-child(3) { transition-delay: 200ms; }
+.reveal-stagger > *:nth-child(4) { transition-delay: 300ms; }
+
+/* SEO Friendly Hero Animation */
+.animate-in {
+    animation: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes fade-in-up {
+    0%   { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* =============================================
+   GLOW EFFECTS
+============================================= */
+.glow-card {
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+    transition: border-color 0.3s ease;
+}
 .glow-card:hover {
     border-color: var(--glow-color, rgba(255,255,255,0.2));
 }
-
 .glow-blob {
-  position: absolute;
-  top: var(--mouse-y);
-  left: var(--mouse-x);
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle closest-side, var(--glow-color, rgba(0, 246, 255, 0.15)), transparent);
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  pointer-events: none;
-  z-index: 1;
-  transition: opacity 0.3s ease;
+    position: absolute;
+    top: var(--mouse-y);
+    left: var(--mouse-x);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle closest-side, var(--glow-color, rgba(16, 185, 129, 0.12)), transparent);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.3s ease;
 }
-
 .glow-card:hover .glow-blob {
-  opacity: 1;
+    opacity: 1;
 }
 
-/* Scroll Indicator */
-.scroll-indicator {
-    animation: bounce 2s infinite;
-}
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-10px);
-    }
-    60% {
-        transform: translateY(-5px);
-    }
+/* Step number glow (methodology) */
+.step-glow:hover {
+    box-shadow: 0 0 24px rgba(16, 185, 129, 0.35);
 }
 
-/* Botones Flotantes */
-.pulse-whatsapp {
-    animation: pulse-animation 2s infinite;
-}
-@keyframes pulse-animation {
-    0% {
-        box-shadow: 0 0 0 0 rgba(0, 246, 255, 0.7);
-    }
-    70% {
-        box-shadow: 0 0 0 20px rgba(0, 246, 255, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(0, 246, 255, 0);
-    }
-}
-
-
-/* Inputs */
+/* =============================================
+   FORM INPUTS
+============================================= */
 .gemini-input-label {
-    display: block; text-align: left; margin-bottom: 0.5rem;
-    font-size: 0.875rem; color: #94a3b8;
+    display: block;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    color: #94a3b8;
 }
-.gemini-input, .gemini-select {
-        width: 100%; background-color: rgba(30, 41, 59, 0.5);
-        border: 1px solid #334155; border-radius: 0.5rem;
-        padding: 0.75rem 1rem; color: #f1f5f9;
-        font-size: 1rem;
-        transition: all 0.2s ease-in-out;
+.gemini-input,
+.gemini-select {
+    width: 100%;
+    background-color: rgba(30, 41, 59, 0.5);
+    border: 1px solid #334155;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    color: #f1f5f9;
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
 }
-.gemini-input:focus, .gemini-select:focus {
-    outline: none; border-color: var(--color-accent);
-    box-shadow: 0 0 0 2px rgba(0, 246, 255, 0.5);
+.gemini-input:focus,
+.gemini-select:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3);
     background-color: rgba(30, 41, 59, 0.8);
 }
 
-/* --- Lenis Smooth Scroll --- */
-html.lenis {
-    height: auto;
-}
-.lenis.lenis-smooth {
-    scroll-behavior: auto !important;
-}
-.lenis.lenis-smooth [data-lenis-prevent] {
-    overscroll-behavior: contain;
-}
-.lenis.lenis-stopped {
-    overflow: hidden;
-}
-.lenis.lenis-scrolling iframe {
-    pointer-events: none;
-}
-
-/* --- Noise Overlay --- */
-/* --- Animated Noise Overlay --- */
+/* =============================================
+   NOISE OVERLAY (site-wide grain)
+============================================= */
 .noise-overlay {
     position: fixed;
     top: -50%;
@@ -239,39 +339,41 @@ html.lenis {
     pointer-events: none;
     opacity: 0.04;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    animation: noise-animation 0.2s infinite;
+    animation: noise-anim 0.2s infinite;
 }
-@keyframes noise-animation {
-    0% { transform: translate(0, 0); }
-    10% { transform: translate(-5%, -5%); }
-    20% { transform: translate(-10%, 5%); }
-    30% { transform: translate(5%, -10%); }
-    40% { transform: translate(-5%, 15%); }
-    50% { transform: translate(-10%, 5%); }
-    60% { transform: translate(15%, 0); }
-    70% { transform: translate(0, 10%); }
-    80% { transform: translate(-15%, 0); }
-    90% { transform: translate(10%, 5%); }
+@keyframes noise-anim {
+    0%   { transform: translate(0, 0); }
+    10%  { transform: translate(-5%, -5%); }
+    20%  { transform: translate(-10%, 5%); }
+    30%  { transform: translate(5%, -10%); }
+    40%  { transform: translate(-5%, 15%); }
+    50%  { transform: translate(-10%, 5%); }
+    60%  { transform: translate(15%, 0); }
+    70%  { transform: translate(0, 10%); }
+    80%  { transform: translate(-15%, 0); }
+    90%  { transform: translate(10%, 5%); }
     100% { transform: translate(5%, 0); }
 }
 
-/* --- Magnetic Button Utility --- */
-.magnetic-wrap {
-    display: inline-block;
-    position: relative;
-    z-index: 10;
+/* =============================================
+   FAQ ACCORDION
+============================================= */
+details > summary {
+    list-style: none;
+    cursor: pointer;
 }
-.magnetic-area {
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    z-index: -1;
-    border-radius: 50%;
+details > summary::-webkit-details-marker { display: none; }
+details[open] summary ~ * {
+    animation: slideDown 0.3s ease-in-out;
+}
+@keyframes slideDown {
+    0%   { opacity: 0; transform: translateY(-8px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
-/* --- Scrollytelling Line --- */
+/* =============================================
+   SCROLLYTELLING PATH
+============================================= */
 .path-line {
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
@@ -279,18 +381,84 @@ html.lenis {
 }
 .step-active {
     border-color: var(--color-accent) !important;
-    box-shadow: 0 0 30px rgba(0, 246, 255, 0.2);
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.2);
 }
 
-/* --- Navigation --- */
-.glass-nav {
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+/* =============================================
+   STICKY CTA BAR
+============================================= */
+@keyframes slideUpBar {
+    from { transform: translateY(100%); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+}
+.sticky-cta-bar {
+    animation: slideUpBar 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-/* --- Cards Spotlight Effect --- */
+/* =============================================
+   MOBILE TOUCH TARGETS
+============================================= */
+@media (max-width: 767px) {
+    a, button, [role="button"], summary {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+    p a, li a, span a, .inline-flex {
+        min-height: unset;
+        display: inline-flex;
+    }
+}
+
+/* =============================================
+   MOBILE HERO GRADIENT FALLBACK
+   (shown when video is not loaded on mobile)
+============================================= */
+@media (max-width: 767px) {
+    .hero-section {
+        background:
+            radial-gradient(ellipse at 20% 30%, rgba(16, 185, 129, 0.12) 0%, transparent 55%),
+            radial-gradient(ellipse at 80% 70%, rgba(15, 23, 42, 0.9) 0%, transparent 55%),
+            #000;
+    }
+}
+
+/* =============================================
+   VIDEO BACKGROUND
+============================================= */
+.video-background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+#video-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.2;
+}
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(0, 0, 0, 0.35) 0%,
+        rgba(0, 0, 0, 0.75) 60%,
+        rgba(0, 0, 0, 1) 100%
+    );
+    z-index: 1;
+}
+
+/* =============================================
+   SPOTLIGHT CARD
+============================================= */
 .spotlight-card {
     position: relative;
     background-color: rgba(24, 24, 27, 0.6);
@@ -306,7 +474,7 @@ html.lenis {
     left: 0;
     background: radial-gradient(
         800px circle at var(--mouse-x) var(--mouse-y),
-        rgba(255, 255, 255, 0.06),
+        rgba(255, 255, 255, 0.05),
         transparent 40%
     );
     opacity: 0;
@@ -314,80 +482,104 @@ html.lenis {
     pointer-events: none;
     z-index: 1;
 }
-.spotlight-card:hover::before {
-    opacity: 1;
-}
-
-
-
-/* --- FAQ Accordion --- */
-details > summary {
-    list-style: none;
-    cursor: pointer;
-}
-details > summary::-webkit-details-marker {
-    display: none;
-}
-details[open] summary ~ * {
-    animation: slideDown 0.3s ease-in-out;
-}
-@keyframes slideDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+.spotlight-card:hover::before { opacity: 1; }
 
 /* =============================================
-   MOBILE HERO GRADIENT BACKGROUND
-   Provides visual depth on mobile where
-   the video is not loaded.
+   ANIMATED GRADIENT TEXT
 ============================================= */
-@media (max-width: 767px) {
-    header {
-        background:
-            radial-gradient(ellipse at 20% 30%, rgba(0, 246, 255, 0.10) 0%, transparent 55%),
-            radial-gradient(ellipse at 80% 70%, rgba(99, 102, 241, 0.07) 0%, transparent 55%),
-            #000;
-    }
+.animated-gradient-text {
+    background-image: linear-gradient(90deg, #e2e8f0, #f8fafc, #e2e8f0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    animation: gradient-animation 4s ease infinite;
+}
+@keyframes gradient-animation {
+    0%   { background-position: 200% center; }
+    50%  { background-position: 0% center; }
+    100% { background-position: 200% center; }
 }
 
 /* =============================================
-   STICKY BAR — Slide-up entrance animation
+   SCROLL INDICATOR
 ============================================= */
-@keyframes slideUpBar {
-    from { transform: translateY(100%); opacity: 0; }
-    to   { transform: translateY(0);    opacity: 1; }
+.scroll-indicator {
+    animation: bounce 2s infinite;
 }
-.sticky-cta-bar {
-    animation: slideUpBar 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40%  { transform: translateY(-10px); }
+    60%  { transform: translateY(-5px); }
 }
 
 /* =============================================
-   MOBILE TOUCH TARGET IMPROVEMENTS
+   MAGNETIC BUTTON UTILITY
 ============================================= */
-@media (max-width: 767px) {
-    /* Minimum 44px touch targets for all interactive elements */
-    a, button, [role="button"], summary {
-        min-height: 44px;
-        display: flex;
-        align-items: center;
-    }
-    /* Exceptions for inline elements */
-    p a, li a, span a, .inline-flex {
-        min-height: unset;
-        display: inline-flex;
-    }
+.magnetic-wrap {
+    display: inline-block;
+    position: relative;
+    z-index: 10;
+}
+.magnetic-area {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    z-index: -1;
+    border-radius: 50%;
 }
 
 /* =============================================
-   GOOGLE STARS UTILITY
+   GOOGLE STARS
 ============================================= */
 .google-stars {
     color: #FBBC05;
     letter-spacing: 0.05em;
 }
+
+/* =============================================
+   FOCUS VISIBLE — WCAG 2.1 AA
+============================================= */
+:focus-visible {
+    outline: 2px solid var(--color-cta);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+/* On dark amber buttons, use a dark ring for contrast */
+.btn-cta:focus-visible {
+    outline-color: #000;
+}
+/* Remove default focus ring on mouse clicks (only keyboard) */
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* =============================================
+   PREFERS REDUCED MOTION
+============================================= */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
+/* =============================================
+   LENIS SMOOTH SCROLL
+============================================= */
+html.lenis { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+.lenis.lenis-scrolling iframe { pointer-events: none; }

@@ -1,0 +1,17 @@
+{
+  "name": "Growth Buddies",
+  "short_name": "GB",
+  "description": "Automatización con IA para empresas en LATAM",
+  "start_url": "/",
+  "display": "browser",
+  "theme_color": "#10B981",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/img/logo.webp",
+      "sizes": "any",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ]
+}
