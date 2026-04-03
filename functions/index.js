@@ -38,7 +38,7 @@ function interestContent(interest = "") {
     return {
       tag: "Legal Tech",
       caseStudyTitle: "Cómo un estudio jurídico procesó 10.000+ documentos sin contratar más personal",
-      caseStudyBody: "MLM Abogados tardaba semanas en revisar contratos de forma manual. Con nuestro agente de triaje legal, el 90% de los documentos se clasifican y resumen en segundos, liberando a los abogados para el trabajo de alto valor.",
+      caseStudyBody: "Un estudio jurídico tardaba semanas en revisar contratos de forma manual. Con nuestro agente de triaje legal, el 90% de los documentos se clasifican y resumen en segundos, liberando a los abogados para el trabajo de alto valor.",
       caseStudyLink: "https://growthbuddies.cl/blog/automatizacion-contratos-legales-2026/",
       roiLine: "Estudios jurídicos reducen el tiempo de revisión de contratos en un 70%.",
     };
