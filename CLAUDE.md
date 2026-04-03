@@ -48,3 +48,30 @@ Static HTML5 site for a Chilean AI automation consulting firm. No JavaScript fra
 **Deployment:** Vercel auto-deploys on push to `main`. Config in `vercel.json` — clean URLs, no trailing slashes, long-cache headers for static assets, `www` → apex redirect.
 
 **JSON-LD schemas** (`Organization`, `WebSite`, `VideoObject`) are present in index.html for SEO — update them when brand info changes.
+
+## Firebase Backend
+
+The `functions/` directory contains Firebase Cloud Functions (Node.js 22, v2 API, `us-central1`). Email is sent via Resend using the secret `RESEND_API_KEY`.
+
+**Deploy commands:**
+```bash
+firebase deploy --only functions       # deploy Cloud Functions
+firebase deploy --only firestore:rules # deploy Firestore security rules
+firebase emulators:start --only functions  # local dev / testing
+```
+
+**Firestore collections and their triggers:**
+- `leads/{leadId}` — main contact form leads; triggers `sendDay0Confirmation` on update, `sendFollowupSequence` (scheduled daily) sends days 1/3/7 follow-ups
+- `guide_leads/{leadId}` — guide download leads; triggers `sendGuideDelivery` (instant guide email + CRM alert); scheduled follow-ups on days 2/5/10
+- `calculator_leads/{leadId}` — ROI calculator leads; triggers `notifyCalcLead` (CRM alert only, no drip)
+
+**Cloud Functions summary:**
+| Export | Trigger | Purpose |
+|--------|---------|---------|
+| `sendGuideDelivery` | `guide_leads` created | Deliver guide PDF link + notify Edmundo |
+| `notifyNewLead` | `leads` created | CRM alert email to Edmundo |
+| `notifyCalcLead` | `calculator_leads` created | CRM alert for ROI calc submissions |
+| `sendDay0Confirmation` | `leads` updated | Confirmation email when lead qualifies (step 2) |
+| `sendFollowupSequence` | Scheduled (daily) | Drip sequence for both `leads` and `guide_leads` |
+
+Email sender addresses: `edmundo@growthbuddies.cl` (to leads), `crm@growthbuddies.cl` (CRM alerts to `edmundo@spohr.cl`).

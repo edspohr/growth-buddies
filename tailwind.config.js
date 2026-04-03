@@ -10,6 +10,10 @@ module.exports = {
     "./casos/**/*.{html,js}",
     "./gracias/**/*.{html,js}",
     "./recursos/**/*.{html,js}",
+    "./nosotros/**/*.{html,js}",
+    "./privacidad/**/*.{html,js}",
+    "./terminos/**/*.{html,js}",
+    "./404.html",
   ],
   theme: {
     extend: {
@@ -19,28 +23,32 @@ module.exports = {
         serif: ["Instrument Serif", "Georgia", "serif"],
       },
       colors: {
-        // Brand accent — emerald green (glow effects, borders, text highlights)
-        accent: "#10B981",
-        "accent-dark": "#064E3B",
-        // CTA — amber/gold (primary action buttons only)
-        cta: "#F59E0B",
-        "cta-hover": "#D97706",
+        // Brand accent — turquoise
+        accent: "#0097B2",
+        "accent-dark": "#005E70",
+        "accent-hover": "#007A91",
+        // CTA — same turquoise
+        cta: "#0097B2",
+        "cta-hover": "#007A91",
         // Backgrounds
-        dark: "#0F172A",       // deep navy (dark sections)
-        "dark-card": "#1E293B", // card on dark background
+        dark: "#0F172A",
+        "dark-card": "#1E293B",
         // Text
-        "body-dark": "#1a1a2e", // near-black body text on light
+        "body-dark": "#1A1A1A",
         // Surfaces (light sections)
-        surface: "#FAFAF9",    // stone-50 (not pure white)
+        surface: "#FAFAF9",
+        "bg-light": "#F5F5F5",
+        // Borders
+        border: "#E5E5E5",
         // Legacy / keep for backward compat
         primary: "#ffffff",
-        secondary: "#94a3b8",
+        secondary: "#666666",
         glass: "rgba(255, 255, 255, 0.05)",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "hero-gradient": "linear-gradient(135deg, #0F172A 0%, #064E3B 40%, #0F172A 70%, #1E3A5F 100%)",
-        "mesh-gradient": "radial-gradient(ellipse at 20% 50%, rgba(16,185,129,0.15) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(15,23,42,0.9) 0%, transparent 60%), radial-gradient(ellipse at 60% 80%, rgba(30,58,138,0.12) 0%, transparent 50%)",
+        "hero-gradient": "linear-gradient(135deg, #0F172A 0%, #005E70 40%, #0F172A 70%, #1E3A5F 100%)",
+        "mesh-gradient": "radial-gradient(ellipse at 20% 50%, rgba(0,151,178,0.15) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(15,23,42,0.9) 0%, transparent 60%), radial-gradient(ellipse at 60% 80%, rgba(30,58,138,0.12) 0%, transparent 50%)",
       },
       keyframes: {
         float: {

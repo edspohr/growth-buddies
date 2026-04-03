@@ -21,8 +21,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#050510" />
 
-    <title>Caso de Éxito SPI Americas — Automatización de Propiedad Intelectual | Growth Buddies</title>
-    <meta name="description" content="Cómo SPI Americas automatizó el 80% de sus registros de propiedad intelectual en 4 países con Growth Buddies. Caso de éxito real." />
+    <title>Caso SPI Americas — Automatización de Propiedad Intelectual | Growth Buddies</title>
+    <meta name="description" content="Cómo SPI Americas aumentó 17% su facturación y redujo 60% el tiempo de gestión documental con IA en 4 países." />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Growth Buddies" />
     <link rel="canonical" href="https://growthbuddies.cl/casos/spi-americas/" />
@@ -32,12 +32,14 @@
 
     <meta property="og:locale" content="es_CL" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Caso SPI Americas — Automatización de Propiedad Intelectual" />
-    <meta property="og:description" content="Cómo SPI Americas automatizó el 80% de sus registros de propiedad intelectual en 4 países con Growth Buddies." />
+    <meta property="og:title" content="Caso SPI Americas — Automatización de Propiedad Intelectual | Growth Buddies" />
+    <meta property="og:description" content="Cómo SPI Americas aumentó 17% su facturación y redujo 60% el tiempo de gestión documental con IA en 4 países." />
     <meta property="og:url" content="https://growthbuddies.cl/casos/spi-americas/" />
     <meta property="og:image" content="https://growthbuddies.cl/img/og-default.webp" />
     <meta property="og:site_name" content="Growth Buddies" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Caso SPI Americas | Growth Buddies" />
+    <meta name="twitter:description" content="+17% facturación, -60% tiempo de gestión documental. Automatización de PI en 4 países." />
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -66,7 +68,12 @@
     <link href="../../dist/output.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://calendly.com" />
+    <link rel="dns-prefetch" href="https://wa.me" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@600;700;900&display=swap" as="style" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@600;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@600;700;900&display=swap" rel="stylesheet" /></noscript>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js" defer></script>
     <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
     <!-- Microsoft Clarity -->
@@ -77,7 +84,7 @@
     </script>
 
     <style>
-      :root{--color-accent:#00f6ff;--color-dark:#0a0a0a}
+      :root{--color-accent:#0097B2;--color-dark:#0a0a0a}
       *,::before,::after{box-sizing:border-box}
       body{font-family:"Inter",sans-serif;background-color:#000;color:#f8fafc;overflow-x:hidden;margin:0}
       .glass-nav{background:rgba(0,0,0,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}
@@ -99,9 +106,10 @@
         </a>
         <div class="hidden md:flex items-center gap-8">
           <a href="/#servicios" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Servicios</a>
-          <a href="/soluciones/catalogo.html" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Soluciones</a>
+          <a href="/soluciones/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Soluciones</a>
           <a href="/casos/" class="text-sm font-medium text-[var(--color-accent)] hover:text-white transition-colors">Casos</a>
           <a href="/blog/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Blog</a>
+          <a href="/nosotros/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Nosotros</a>
           <a href="/#contacto" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Contacto</a>
         </div>
         <div class="hidden md:block">
@@ -134,9 +142,10 @@
         </div>
         <nav class="flex flex-col" role="navigation" aria-label="Menú móvil">
           <a href="/#servicios" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Servicios</a>
-          <a href="/soluciones/catalogo.html" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Soluciones</a>
+          <a href="/soluciones/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Soluciones</a>
           <a href="/casos/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Casos</a>
           <a href="/blog/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Blog</a>
+          <a href="/nosotros/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Nosotros</a>
           <a href="/#contacto" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Contacto</a>
         </nav>
         <div class="mt-auto pt-8">
@@ -169,7 +178,7 @@
           <!-- Client logo + industry tag -->
           <div class="flex items-center gap-4 mb-8">
             <div class="h-12 w-auto px-3 py-2 bg-white rounded-xl flex items-center justify-center">
-              <img src="/img/spi.webp" alt="Logo SPI Americas" class="h-8 w-auto object-contain grayscale" height="32" loading="eager" />
+              <img src="/img/spi.webp" alt="Logo de SPI Americas" class="h-8 w-auto object-contain grayscale" width="2154" height="912" loading="eager" />
             </div>
             <span class="text-xs font-semibold text-[var(--color-accent)] tracking-widest uppercase bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/20 px-3 py-1 rounded-full">Legal Tech · Propiedad Intelectual</span>
           </div>
@@ -187,23 +196,20 @@
       <section class="py-10 px-6 bg-zinc-950 border-b border-zinc-900">
         <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
           <div class="metric-card">
-            <!-- [PLACEHOLDER: Replace X with real % reduction in processing time] -->
-            <div class="text-4xl font-black text-white font-display mb-1">[X]%</div>
+            <div class="text-4xl font-black text-white font-display mb-1">60%</div>
             <div class="text-xs text-[var(--color-accent)] font-semibold uppercase tracking-wider">Reducción en tiempo de tramitación</div>
           </div>
           <div class="metric-card">
-            <!-- [PLACEHOLDER: Replace X with real number of documents processed] -->
-            <div class="text-4xl font-black text-white font-display mb-1">[X]</div>
-            <div class="text-xs text-[var(--color-accent)] font-semibold uppercase tracking-wider">Documentos procesados automáticamente</div>
+            <div class="text-4xl font-black text-white font-display mb-1">+17%</div>
+            <div class="text-xs text-[var(--color-accent)] font-semibold uppercase tracking-wider">Aumento en facturación</div>
           </div>
           <div class="metric-card">
             <div class="text-4xl font-black text-white font-display mb-1">4</div>
             <div class="text-xs text-[var(--color-accent)] font-semibold uppercase tracking-wider">Países en la plataforma</div>
           </div>
           <div class="metric-card">
-            <!-- [PLACEHOLDER: Replace X with real hours saved per professional per week] -->
-            <div class="text-4xl font-black text-white font-display mb-1">[X]h</div>
-            <div class="text-xs text-[var(--color-accent)] font-semibold uppercase tracking-wider">Horas/semana ahorradas por profesional</div>
+            <div class="text-4xl font-black text-white font-display mb-1">60%</div>
+            <div class="text-xs text-[var(--color-accent)] font-semibold uppercase tracking-wider">Menos tiempo en gestión documental</div>
           </div>
         </div>
       </section>
@@ -217,17 +223,10 @@
             <span class="w-1 h-8 bg-red-500 rounded-full"></span>
             <h2 class="text-2xl md:text-3xl font-black text-white font-display">El Desafío</h2>
           </div>
-          <!-- [PLACEHOLDER: Edmundo to provide 2-3 paragraphs describing SPI Americas' real pain points.
-               Suggested topics to cover:
-               - Volume of PI filings across 4 countries and manual data entry bottlenecks
-               - Coordination overhead between jurisdictions (Chile, Colombia, Peru, Ecuador or similar)
-               - Document generation (powers of attorney, etc.) done manually in multiple languages
-               - Risk of errors in deadlines or filing data due to manual processes
-          -->
           <div class="space-y-4 text-slate-400 leading-relaxed">
-            <p>[PLACEHOLDER — Descripción del problema 1: Contexto del volumen de trabajo y los procesos manuales que utilizaba SPI Americas antes de la automatización. ¿Cuántos expedientes gestionaban al mes? ¿Cuántas personas se dedicaban a tareas repetitivas?]</p>
-            <p>[PLACEHOLDER — Descripción del problema 2: El impacto real en el equipo. Errores, retrasos, horas extra. ¿Qué les impedía escalar? ¿Qué riesgo operacional existía con la coordinación multipaís?]</p>
-            <p>[PLACEHOLDER — Descripción del problema 3: Por qué las soluciones anteriores no funcionaron. ¿Intentaron otros sistemas? ¿Qué los llevó a buscar una solución de automatización a medida?]</p>
+            <p>SPI Americas es una firma especializada en propiedad intelectual que opera simultáneamente en Chile, Colombia, Perú y Ecuador. Cada expediente de registro —marcas, patentes, modelos de utilidad— requería la coordinación de documentos, poderes notariales bilingües y plazos legales distintos según la jurisdicción. Con un volumen creciente de solicitudes, el equipo destinaba horas diarias a tareas repetitivas: transcribir datos desde correos, generar documentos desde cero y hacer seguimiento manual de cada trámite en planillas de Excel.</p>
+            <p>El principal riesgo operacional no era solo la ineficiencia, sino el error humano. Un número de expediente mal copiado, un plazo mal calculado o un poder notarial con datos incorrectos podía comprometer la vigencia de un registro de PI y exponer al cliente a consecuencias legales. A medida que la cartera de clientes crecía, el modelo manual se volvió insostenible: escalar requería contratar más personal administrativo, no generar más valor para los clientes.</p>
+            <p>Growth Buddies fue convocado para diseñar una plataforma a medida que eliminara las tareas repetitivas, centralizara la información de todos los países en un único sistema y garantizara que el equipo legal pudiera enfocarse exclusivamente en el trabajo de alto valor: la estrategia de PI, la relación con clientes y las decisiones jurídicas críticas.</p>
           </div>
         </section>
 
@@ -263,23 +262,21 @@
             <h2 class="text-2xl md:text-3xl font-black text-white font-display">Resultados</h2>
           </div>
           <div class="space-y-4 text-slate-400 leading-relaxed mb-8">
-            <!-- [PLACEHOLDER: Edmundo to add 1-2 paragraphs describing the measurable outcomes. How did the team's daily work change? What can they do now that they couldn't before?] -->
-            <p>[PLACEHOLDER — Descripción narrativa de los resultados. ¿Cómo cambió el día a día del equipo de SPI Americas? ¿Qué lograron en los primeros 30 días? ¿Cómo evolucionó la plataforma en los meses siguientes?]</p>
+            <p>La implementación de SPI Smart Flow transformó el flujo de trabajo del equipo desde la raíz. Lo que antes requería horas de transcripción manual —ingresar datos de cada solicitud, generar el poder notarial en español y en inglés, hacer seguimiento del estado en el país correspondiente— pasó a ejecutarse en minutos de forma autónoma. El sistema extrae datos automáticamente desde los correos de ingreso usando OCR con Gemini, los valida contra la base de expedientes, genera el documento PDF bilingüe con firma lista, y actualiza el tablero Kanban del equipo en tiempo real.</p>
+            <p>La facturación de SPI Americas creció un 17% en los primeros meses de operación de la plataforma, no porque contrataran más clientes de golpe, sino porque el equipo pudo procesar más solicitudes con el mismo headcount y con menos errores. El tiempo dedicado a gestión documental se redujo en un 60%, liberando a los profesionales para enfocarse en el trabajo estratégico que realmente factura.</p>
           </div>
 
           <!-- Metric cards (detailed) -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div class="p-6 bg-green-500/5 border border-green-500/20 rounded-2xl">
-              <!-- [PLACEHOLDER: Replace X with real % reduction in processing time] -->
-              <div class="text-5xl font-black text-white font-display mb-2">[X]%</div>
-              <div class="font-semibold text-green-400 mb-1">Reducción en tiempo de tramitación</div>
-              <p class="text-sm text-slate-500">[PLACEHOLDER — breve contexto: de X horas a Y minutos por expediente, etc.]</p>
+              <div class="text-5xl font-black text-white font-display mb-2">60%</div>
+              <div class="font-semibold text-green-400 mb-1">Reducción en tiempo de gestión documental</div>
+              <p class="text-sm text-slate-500">Lo que tomaba horas ahora se procesa en minutos de forma autónoma.</p>
             </div>
             <div class="p-6 bg-green-500/5 border border-green-500/20 rounded-2xl">
-              <!-- [PLACEHOLDER: Replace X with real document count] -->
-              <div class="text-5xl font-black text-white font-display mb-2">[X]</div>
-              <div class="font-semibold text-green-400 mb-1">Documentos procesados automáticamente</div>
-              <p class="text-sm text-slate-500">[PLACEHOLDER — breve contexto: en los primeros X meses de operación]</p>
+              <div class="text-5xl font-black text-white font-display mb-2">+17%</div>
+              <div class="font-semibold text-green-400 mb-1">Aumento en facturación</div>
+              <p class="text-sm text-slate-500">Mayor capacidad de procesamiento sin aumentar el equipo administrativo.</p>
             </div>
             <div class="p-6 bg-[var(--color-accent)]/5 border border-[var(--color-accent)]/20 rounded-2xl">
               <div class="text-5xl font-black text-white font-display mb-2">4</div>
@@ -287,38 +284,28 @@
               <p class="text-sm text-slate-500">Chile, Colombia, Perú y Ecuador con un único sistema centralizado.</p>
             </div>
             <div class="p-6 bg-green-500/5 border border-green-500/20 rounded-2xl">
-              <!-- [PLACEHOLDER: Replace X with real hours saved per professional] -->
-              <div class="text-5xl font-black text-white font-display mb-2">[X]h</div>
-              <div class="font-semibold text-green-400 mb-1">Horas/semana ahorradas por profesional</div>
-              <p class="text-sm text-slate-500">[PLACEHOLDER — breve contexto: tiempo liberado para trabajo legal de mayor valor]</p>
+              <div class="text-5xl font-black text-white font-display mb-2">2024</div>
+              <div class="font-semibold text-green-400 mb-1">Cliente recurrente desde</div>
+              <p class="text-sm text-slate-500">Relación activa y en evolución continua de la plataforma.</p>
             </div>
           </div>
         </section>
 
-        <!-- Testimonio -->
+        <!-- Relación con el cliente -->
         <section>
           <div class="flex items-center gap-3 mb-6">
             <span class="w-1 h-8 bg-purple-500 rounded-full"></span>
-            <h2 class="text-2xl md:text-3xl font-black text-white font-display">Lo que Dijo el Cliente</h2>
+            <h2 class="text-2xl md:text-3xl font-black text-white font-display">Relación con el Cliente</h2>
           </div>
-          <!-- [PLACEHOLDER: Edmundo to provide real quote from SPI Americas contact. Suggested person: the person who managed the project on the client side.] -->
-          <blockquote class="relative pl-6 border-l-2 border-[var(--color-accent)]/50">
-            <svg class="absolute -top-2 -left-1 text-[var(--color-accent)]/20 w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-            <p class="text-xl text-slate-200 italic leading-relaxed mb-6">
-              "[PLACEHOLDER — cita real del contacto principal de SPI Americas sobre el impacto de la automatización en su operación diaria.]"
-            </p>
-            <footer class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center text-slate-400 text-sm font-bold">
-                <!-- [PLACEHOLDER: Client initials or photo] -->
-                ?
-              </div>
-              <div>
-                <!-- [PLACEHOLDER: Replace with real name and role] -->
-                <div class="font-semibold text-white">[PLACEHOLDER — Nombre del contacto]</div>
-                <div class="text-sm text-slate-400">[PLACEHOLDER — Cargo], SPI Americas</div>
-              </div>
-            </footer>
-          </blockquote>
+          <div class="flex items-start gap-4 p-6 bg-zinc-900/40 border border-zinc-800 rounded-2xl">
+            <div class="h-12 w-auto px-3 py-2 bg-white rounded-xl flex items-center justify-center flex-shrink-0">
+              <img src="/img/spi.webp" alt="Logo de SPI Americas" class="h-6 w-auto object-contain" loading="lazy" width="2154" height="912" />
+            </div>
+            <div>
+              <p class="text-slate-300 leading-relaxed">Cliente recurrente desde 2024. Operando en Chile, Colombia, Perú y Ecuador. La plataforma continúa evolucionando con nuevas integraciones y módulos a medida que crece la firma.</p>
+              <span class="inline-block mt-3 text-xs font-semibold text-[var(--color-accent)] bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/20 px-2.5 py-1 rounded-full">Legal Tech · Propiedad Intelectual · 4 países</span>
+            </div>
+          </div>
         </section>
 
       </div>
@@ -369,7 +356,7 @@
           <ul class="space-y-2 text-slate-400 text-xs">
             <li><a href="/soluciones/brokeria/" class="text-amber-400 hover:text-amber-300 transition-colors">BrokerIA ✦</a></li>
             <li><a href="/soluciones/automatizacion-legal-emails/" class="hover:text-[var(--color-accent)] transition-colors">Inbox IA Legal</a></li>
-            <li><a href="/soluciones/catalogo.html" class="hover:text-[var(--color-accent)] transition-colors">Ver catálogo</a></li>
+            <li><a href="/soluciones/" class="hover:text-[var(--color-accent)] transition-colors">Ver catálogo</a></li>
           </ul>
         </div>
         <div>
@@ -378,13 +365,15 @@
             <li><a href="/casos/" class="hover:text-[var(--color-accent)] transition-colors">Casos de Éxito</a></li>
             <li><a href="/blog/" class="hover:text-[var(--color-accent)] transition-colors">Blog</a></li>
             <li><a href="/recursos/guia-ia-legal/" class="hover:text-[var(--color-accent)] transition-colors">Guía Gratuita</a></li>
-            <li><a href="/metodologia/diagnostico/" class="hover:text-[var(--color-accent)] transition-colors">Metodología</a></li>
+            <li><a href="/nosotros/" class="hover:text-[var(--color-accent)] transition-colors">Nosotros</a></li>
           </ul>
         </div>
       </div>
       <div class="pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-slate-500">
-        <p>&copy; 2026 Growth Buddies SpA. Santiago, Chile.</p>
-        <div class="flex gap-4"><a href="/sitemap.xml" class="hover:text-slate-400 transition-colors">Sitemap</a></div>
+        <p>&copy; 2026 Growth Buddies SpA. Latinoamérica · 🇨🇱 🇨🇴 🇵🇪 🇪🇨</p>
+        <div class="flex gap-4"><a href="/privacidad/" class="hover:text-slate-300 transition-colors">Privacidad</a>
+                <a href="/terminos/" class="hover:text-slate-300 transition-colors">Términos</a>
+                <a href="/sitemap.xml" class="hover:text-slate-300 transition-colors">Sitemap</a></div>
       </div>
     </footer>
 

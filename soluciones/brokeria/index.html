@@ -28,11 +28,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#050510" />
 
-    <title>BrokerIA — Plataforma de Corretaje con IA | Growth Buddies</title>
+    <title>BrokerIA — Corretaje Inteligente con IA | Growth Buddies</title>
 
     <meta
       name="description"
-      content="Cruza perfil financiero del comprador + análisis de habitabilidad con IA. Pitch de cierre automático para corredores de propiedades en Chile y LATAM."
+      content="Property Score + Client Score + Pitch de Cierre automático. La primera plataforma PropTech en Chile que cruza perfil financiero con habitabilidad."
     />
     <meta
       name="keywords"
@@ -47,22 +47,26 @@
 
     <meta property="og:locale" content="es_CL" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="BrokerIA — Plataforma de Corretaje con IA | Growth Buddies" />
-    <meta property="og:description" content="Cruza perfil financiero del comprador + análisis de habitabilidad con IA. Pitch de cierre automático para corredores de propiedades en Chile y LATAM." />
+    <meta property="og:title" content="BrokerIA — Corretaje Inteligente con IA | Growth Buddies" />
+    <meta property="og:description" content="Property Score + Client Score + Pitch de Cierre automático. La primera plataforma PropTech en Chile que cruza perfil financiero con habitabilidad." />
     <meta property="og:url" content="https://growthbuddies.cl/soluciones/brokeria/" />
     <meta property="og:image" content="https://growthbuddies.cl/img/og-default.webp" />
     <meta property="og:site_name" content="Growth Buddies" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="BrokerIA — PropTech con IA | Growth Buddies" />
+    <meta name="twitter:description" content="Property Score + Client Score + Pitch automático. PropTech para corredores en Chile y LATAM." />
 
     <!-- Assets -->
     <link href="../../dist/output.css" rel="stylesheet" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://calendly.com" />
+    <link rel="dns-prefetch" href="https://wa.me" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@600;700;900&display=swap" as="style" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@600;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@600;700;900&display=swap" rel="stylesheet" /></noscript>
 
     <script type="application/ld+json">
     {
@@ -70,7 +74,7 @@
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://growthbuddies.cl/" },
-        { "@type": "ListItem", "position": 2, "name": "Soluciones", "item": "https://growthbuddies.cl/soluciones/catalogo.html" },
+        { "@type": "ListItem", "position": 2, "name": "Soluciones", "item": "https://growthbuddies.cl/soluciones/" },
         { "@type": "ListItem", "position": 3, "name": "BrokerIA", "item": "https://growthbuddies.cl/soluciones/brokeria/" }
       ]
     }
@@ -206,6 +210,12 @@
         margin-bottom: 10px;
       }
     </style>
+    <style>
+      :root{--color-accent:#0097B2;--color-cta:#0097B2;--color-cta-hover:#007A91;--color-dark:#0F172A}
+      *,::before,::after{box-sizing:border-box}
+      body{font-family:'Inter',sans-serif;background:#09090b;color:#cbd5e1;overflow-x:hidden;margin:0}
+      .glass-nav{background:rgba(0,0,0,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}
+    </style>
   </head>
   <body class="antialiased selection:bg-amber-400 selection:text-black">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-amber-400 focus:text-black focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
@@ -226,9 +236,10 @@
         </a>
         <div class="hidden md:flex items-center gap-8">
           <a href="/#servicios" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Servicios</a>
-          <a href="/soluciones/catalogo.html" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Soluciones</a>
+          <a href="/soluciones/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Soluciones</a>
           <a href="/casos/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Casos</a>
           <a href="/blog/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Blog</a>
+          <a href="/nosotros/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Nosotros</a>
           <a href="/#contacto" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Contacto</a>
         </div>
         <div class="hidden md:block">
@@ -265,9 +276,10 @@
         </div>
         <nav class="flex flex-col" role="navigation" aria-label="Menú móvil">
           <a href="/#servicios" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Servicios</a>
-          <a href="/soluciones/catalogo.html" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Soluciones</a>
+          <a href="/soluciones/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Soluciones</a>
           <a href="/casos/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Casos</a>
           <a href="/blog/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Blog</a>
+          <a href="/nosotros/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Nosotros</a>
           <a href="/#contacto" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Contacto</a>
         </nav>
         <div class="mt-auto pt-8">
@@ -295,7 +307,7 @@
           <ol class="flex items-center justify-center gap-2 text-xs text-slate-500">
             <li><a href="/" class="hover:text-amber-400 transition-colors">Inicio</a></li>
             <li><span aria-hidden="true">/</span></li>
-            <li><a href="/soluciones/catalogo.html" class="hover:text-amber-400 transition-colors">Soluciones</a></li>
+            <li><a href="/soluciones/" class="hover:text-amber-400 transition-colors">Soluciones</a></li>
             <li><span aria-hidden="true">/</span></li>
             <li class="text-amber-400" aria-current="page">BrokerIA</li>
           </ol>
@@ -956,7 +968,7 @@
                     <img src="/img/logo.webp" alt="Logotipo de Growth Buddies" class="h-10 w-10 opacity-90 group-hover:opacity-100 transition-opacity" loading="lazy" height="40" width="40" />
                     <span class="font-bold text-xl text-white tracking-widest font-display">GROWTH BUDDIES</span>
                 </a>
-                <p class="text-slate-400 leading-relaxed max-w-xs">Ingenieria de Transformacion. Automatizamos lo aburrido para que te enfoques en lo estrategico.</p>
+                <p class="text-slate-400 leading-relaxed max-w-xs">Ingeniería de Transformación. Automatizamos lo complejo para que te enfoques en lo estratégico.</p>
                 <div class="flex gap-4">
                     <a href="https://www.linkedin.com/company/growth-buddies" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Growth Buddies" class="text-slate-400 hover:text-[var(--color-accent)] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
                     <a href="mailto:edmundo@growthbuddies.cl" aria-label="Enviar correo electronico a Growth Buddies" class="text-slate-400 hover:text-[var(--color-accent)] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
@@ -976,22 +988,22 @@
                     <li><a href="/soluciones/automatizacion-legal-emails/" class="hover:text-[var(--color-accent)] transition-colors">Triaje Legal</a></li>
                     <li><a href="/soluciones/gestion-documental-ip/" class="hover:text-[var(--color-accent)] transition-colors">Validacion Documental</a></li>
                     <li><a href="/soluciones/rendicion-gastos-ia/" class="hover:text-[var(--color-accent)] transition-colors">Rendicion Gastos IA</a></li>
-                    <li><a href="/soluciones/catalogo.html#timesheet" class="hover:text-[var(--color-accent)] transition-colors">Auto Timesheet</a></li>
                     <li><a href="/soluciones/brokeria/" class="text-amber-400 hover:text-amber-300 transition-colors font-medium">BrokerIA ✦</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Explora</h4>
                 <ul class="space-y-3 text-slate-400">
-                    <li><a href="/metodologia/diagnostico/" class="hover:text-[var(--color-accent)] transition-colors">Metodologia</a></li>
-                    <li><a href="/equipo/edmundo-spohr/" class="hover:text-[var(--color-accent)] transition-colors">Equipo</a></li>
+                    <li><a href="/nosotros/" class="hover:text-[var(--color-accent)] transition-colors">Nosotros</a></li>
                     <li><a href="/blog/" class="hover:text-[var(--color-accent)] transition-colors">Blog</a></li>
                 </ul>
             </div>
         </div>
         <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
-            <div>&copy; 2026 Growth Buddies SpA. Santiago, Chile.</div>
-            <div class="flex gap-6"><a href="/sitemap.xml" class="hover:text-slate-400 transition-colors">Sitemap</a></div>
+            <div>&copy; 2026 Growth Buddies SpA. Latinoamérica · 🇨🇱 🇨🇴 🇵🇪 🇪🇨</div>
+            <div class="flex gap-6"><a href="/privacidad/" class="hover:text-slate-300 transition-colors">Privacidad</a>
+                <a href="/terminos/" class="hover:text-slate-300 transition-colors">Términos</a>
+                <a href="/sitemap.xml" class="hover:text-slate-300 transition-colors">Sitemap</a></div>
         </div>
     </footer>
 

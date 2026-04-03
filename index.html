@@ -32,7 +32,7 @@
 
     <meta
       name="description"
-      content="Implementamos IA en estudios jurídicos, corredoras y empresas de servicios en LATAM. Resultados en 30 días. Auditoría gratuita."
+      content="Implementamos automatización inteligente e IA en firmas legales, corredoras y empresas de servicios en Latinoamérica. Resultados en 30 días o no pagas."
     />
 
     <meta
@@ -48,8 +48,9 @@
         "url": "https://growthbuddies.cl",
         "logo": "https://growthbuddies.cl/img/logo.webp",
         "image": "https://growthbuddies.cl/img/og-default.webp",
-        "description": "Consultora de Automatización e IA para empresas en Latinoamérica",
-        "areaServed": ["CL", "CO", "PE", "EC"],
+        "description": "Consultora de Automatización, IA y Gestión del Cambio para Latinoamérica",
+        "serviceType": ["Technology Consulting", "Artificial Intelligence Implementation", "Change Management", "Legal Tech Automation"],
+        "areaServed": ["CL", "CO", "PE", "EC", "MX"],
         "address": {
           "@type": "PostalAddress",
           "addressCountry": "CL",
@@ -115,20 +116,20 @@
     <meta property="og:locale" content="es_CL" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Automatización con IA para Empresas | Growth Buddies" />
-    <meta property="og:description" content="Implementamos IA en estudios jurídicos, corredoras y empresas de servicios en LATAM. Resultados en 30 días. Auditoría gratuita." />
+    <meta property="og:description" content="Implementamos automatización inteligente e IA en firmas legales, corredoras y empresas de servicios en Latinoamérica. Resultados en 30 días o no pagas." />
     <meta property="og:url" content="https://growthbuddies.cl/" />
     <meta property="og:image" content="https://growthbuddies.cl/img/og-default.webp" />
     <meta property="og:site_name" content="Growth Buddies" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://growthbuddies.cl/img/og-default.webp" />
-    <meta name="twitter:title" content="Consultora de Growth con IA para LATAM | Growth Buddies" />
-    <meta name="twitter:description" content="Automatización inteligente y capacitación interna en growth. Auditoría gratuita para empresas en Chile, Colombia, Perú y Ecuador." />
+    <meta name="twitter:title" content="Automatización con IA para Empresas | Growth Buddies" />
+    <meta name="twitter:description" content="Implementamos automatización inteligente e IA en firmas legales, corredoras y empresas de servicios en Latinoamérica. Resultados en 30 días o no pagas." />
 
     <link rel="preload" href="./dist/output.css" as="style" />
     <link rel="preload" as="image" href="img/foto.webp" fetchpriority="high" />
 
     <style>
-      :root{--color-accent:#10B981;--color-cta:#F59E0B;--color-cta-hover:#D97706;--color-dark:#0F172A;}
+      :root{--color-accent:#0097B2;--color-cta:#0097B2;--color-cta-hover:#007A91;--color-dark:#0F172A;}
       *,::before,::after{box-sizing:border-box}
       body{font-family:"Inter",sans-serif;background-color:#000;color:#f8fafc;overflow-x:hidden;margin:0}
       .glass-nav{background:rgba(0,0,0,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}
@@ -146,9 +147,12 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@700;900&display=swap" as="style" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet" /></noscript>
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://calendly.com" />
+    <link rel="dns-prefetch" href="https://wa.me" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@600;700;900&display=swap" as="style" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@600;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@600;700;900&display=swap" rel="stylesheet" /></noscript>
 
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js" defer></script>
     <noscript>
@@ -197,9 +201,10 @@
 
         <div class="hidden md:flex items-center gap-8">
           <a href="/#servicios" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Servicios</a>
-          <a href="/soluciones/catalogo.html" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Soluciones</a>
+          <a href="/soluciones/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Soluciones</a>
           <a href="/casos/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Casos</a>
           <a href="/blog/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Blog</a>
+          <a href="/nosotros/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Nosotros</a>
           <a href="#contacto" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Contacto</a>
         </div>
 
@@ -240,9 +245,10 @@
         </div>
         <nav class="flex flex-col" role="navigation" aria-label="Menú móvil">
           <a href="/#servicios" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Servicios</a>
-          <a href="/soluciones/catalogo.html" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Soluciones</a>
+          <a href="/soluciones/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Soluciones</a>
           <a href="/casos/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Casos</a>
           <a href="/blog/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Blog</a>
+          <a href="/nosotros/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Nosotros</a>
           <a href="#contacto" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Contacto</a>
         </nav>
         <div class="mt-auto pt-8">
@@ -294,21 +300,11 @@
       </div>
     </div>
 
-    <header
-      class="relative min-h-[85vh] flex flex-col items-center justify-center text-center p-6 pt-24 md:pt-6 overflow-hidden"
-    >
+    <header class="relative min-h-[85vh] flex flex-col justify-center pt-28 pb-10 md:pb-14 overflow-hidden">
       <div class="hero-gradient-bg"></div>
       <div class="hero-grain"></div>
       <div class="video-background-container">
-        <video
-          autoplay
-          loop
-          muted
-          playsinline
-          id="video-background"
-          poster="img/foto.webp"
-          preload="none"
-        >
+        <video autoplay loop muted playsinline id="video-background" poster="img/foto.webp" preload="none">
           <!-- Sources injected by JS only on desktop to avoid mobile video download -->
         </video>
         <script>
@@ -321,72 +317,126 @@
         <div class="video-overlay"></div>
       </div>
 
-      <div class="z-10 flex flex-col items-center max-w-4xl px-4">
+      <div class="z-10 max-w-7xl mx-auto w-full px-6">
 
-        <h1 class="font-serif text-center mb-6 md:mb-8">
-          <span class="block text-[2.25rem] md:text-[3.5rem] lg:text-[3.75rem] text-white tracking-tight leading-[1.1]">
-            Tu equipo pierde 20 horas semanales en tareas que la IA resuelve en minutos.
-          </span>
-        </h1>
+        <!-- Two-column layout: text left, dashboard right -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-16 items-center">
 
-        <p class="max-w-2xl mx-auto text-base md:text-lg text-slate-400 font-light text-center leading-relaxed mb-8 md:mb-10">
-          Implementamos automatización inteligente en estudios jurídicos, corredoras y empresas de servicios. Primeros resultados en 30 días. Si tu equipo no adopta la herramienta, no pagas.
-        </p>
+          <!-- LEFT: Text content -->
+          <div class="flex flex-col items-start">
+            <h1 class="font-serif mb-5 md:mb-6 text-[2.1rem] md:text-[2.8rem] lg:text-[3.25rem] text-white tracking-tight leading-[1.08]">
+              Tu equipo pierde 20 horas semanales en tareas que la IA resuelve en minutos.
+            </h1>
+            <p class="text-base md:text-lg text-slate-400 font-light leading-relaxed mb-8 max-w-lg">
+              Implementamos automatización inteligente en firmas legales, corredoras y empresas de servicios en Latinoamérica. Resultados en 30 días. Si tu equipo no adopta la herramienta, no pagas.
+            </p>
+            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full sm:w-auto">
+              <a
+                href="https://calendly.com/espohr/conversemos"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-cta text-base md:text-lg w-full sm:w-auto py-3.5 px-8 md:py-4 md:px-10"
+                onclick="if(typeof gtag!=='undefined'){gtag('event','calendly_click',{event_category:'hero'});}"
+              >
+                Agendar auditoría gratuita →
+              </a>
+              <a
+                href="https://wa.me/56957272191?text=Hola%20Growth%20Buddies%21%20Me%20interesa%20la%20auditor%C3%ADa%20gratuita%20de%20automatizaci%C3%B3n%20con%20IA.%20%C2%BFPodemos%20coordinar%3F"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-sm text-slate-400 hover:text-[#25D366] transition-colors"
+                onclick="if(typeof gtag!=='undefined'){gtag('event','whatsapp_click',{event_category:'hero'});}"
+              >
+                o escríbenos por WhatsApp
+              </a>
+            </div>
+          </div>
 
-        <div class="flex flex-col items-center gap-4 w-full sm:w-auto">
-          <a
-            href="https://calendly.com/espohr/conversemos"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn-cta text-base md:text-lg w-full sm:w-auto py-3.5 px-8 md:py-4 md:px-10"
-            onclick="if(typeof gtag!=='undefined'){gtag('event','calendly_click',{event_category:'hero'});}"
-          >
-            Agendar auditoría gratuita →
-          </a>
-          <a
-            href="https://wa.me/56957272191?text=Hola%20Growth%20Buddies%21%20Me%20interesa%20la%20auditor%C3%ADa%20gratuita%20de%20automatizaci%C3%B3n%20con%20IA.%20%C2%BFPodemos%20coordinar%3F"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-sm text-slate-400 hover:text-[#25D366] transition-colors"
-            onclick="if(typeof gtag!=='undefined'){gtag('event','whatsapp_click',{event_category:'hero'});}"
-          >
-            o escríbenos por WhatsApp
-          </a>
+          <!-- RIGHT: Dashboard mockup (mobile: below text, desktop: right column) -->
+          <div class="mt-8 lg:mt-0 flex items-center justify-center lg:justify-end">
+            <div class="relative w-full max-w-md lg:max-w-none">
+              <!-- Turquoise ambient glow -->
+              <div class="absolute -inset-6 bg-[#0097B2]/15 blur-3xl rounded-3xl pointer-events-none" aria-hidden="true"></div>
+              <!-- Browser / app mockup frame -->
+              <div class="relative rounded-2xl overflow-hidden border border-[#0097B2]/30 shadow-2xl" style="box-shadow: 0 0 0 1px rgba(0,151,178,0.2), 0 24px 64px rgba(0,0,0,0.6), 0 0 40px rgba(0,151,178,0.08);">
+                <!-- Browser chrome bar -->
+                <div class="flex items-center gap-2.5 px-4 py-2.5 bg-zinc-800/90 border-b border-zinc-700/60">
+                  <div class="flex gap-1.5 flex-shrink-0">
+                    <div class="h-2.5 w-2.5 rounded-full bg-red-500/70"></div>
+                    <div class="h-2.5 w-2.5 rounded-full bg-yellow-400/70"></div>
+                    <div class="h-2.5 w-2.5 rounded-full bg-emerald-500/70"></div>
+                  </div>
+                  <div class="flex-1 mx-3 bg-zinc-700/50 rounded px-3 py-1 text-[10px] text-slate-400 text-center font-mono tracking-wide">
+                    app.growthbuddies.cl/dashboard
+                  </div>
+                </div>
+                <!-- Dashboard placeholder -->
+                <div class="bg-zinc-900 min-h-[200px] lg:min-h-[300px] flex items-center justify-center" aria-hidden="true">
+                  <div class="text-center px-6 py-8">
+                    <div class="grid grid-cols-3 gap-3 mb-4 max-w-xs mx-auto">
+                      <div class="bg-zinc-800 rounded-lg p-3 text-center"><div class="text-[#0097B2] font-bold text-lg">+17%</div><div class="text-zinc-500 text-[10px]">Revenue</div></div>
+                      <div class="bg-zinc-800 rounded-lg p-3 text-center"><div class="text-[#0097B2] font-bold text-lg">60%</div><div class="text-zinc-500 text-[10px]">Tiempo</div></div>
+                      <div class="bg-zinc-800 rounded-lg p-3 text-center"><div class="text-[#0097B2] font-bold text-lg">4sem</div><div class="text-zinc-500 text-[10px]">ROI</div></div>
+                    </div>
+                    <div class="h-2 bg-zinc-800 rounded-full mb-2 max-w-[200px] mx-auto overflow-hidden"><div class="h-full bg-[#0097B2] rounded-full" style="width:78%"></div></div>
+                    <div class="h-2 bg-zinc-800 rounded-full max-w-[140px] mx-auto overflow-hidden"><div class="h-full bg-zinc-600 rounded-full" style="width:45%"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
 
-        <!-- Social proof strip -->
-        <div class="mt-8 flex items-center justify-center gap-3">
-          <div class="flex -space-x-1.5">
-            <div class="w-7 h-7 rounded-full bg-white border-2 border-black overflow-hidden flex items-center justify-center p-0.5"><img src="/img/spi.webp" alt="SPI" class="w-full h-full object-contain" loading="lazy" /></div>
-            <div class="w-7 h-7 rounded-full bg-white border-2 border-black overflow-hidden flex items-center justify-center p-0.5"><img src="/img/hits.webp" alt="Hits" class="w-full h-full object-contain" loading="lazy" /></div>
-            <div class="w-7 h-7 rounded-full bg-zinc-900 border-2 border-black overflow-hidden flex items-center justify-center p-0.5"><img src="/img/webcarga.webp" alt="Webcarga" class="w-full h-full object-contain" loading="lazy" /></div>
+        <!-- Logo bar — full width below two-column grid -->
+        <div class="mt-10 md:mt-12 flex flex-col items-center gap-3">
+          <p class="text-xs text-slate-500 uppercase tracking-widest font-semibold mb-1">Con la confianza de</p>
+          <div class="flex flex-wrap items-center justify-center gap-2">
+            <div class="h-7 px-2 rounded-full bg-white border-2 border-black overflow-hidden flex items-center justify-center"><img src="/img/spi.webp" alt="SPI Americas" class="h-4 w-auto object-contain" loading="lazy" width="2154" height="912" /></div>
+            <div class="h-7 px-2 rounded-full bg-white border-2 border-black overflow-hidden flex items-center justify-center"><img src="/img/hits.webp" alt="Hits Corredora" class="h-4 w-auto object-contain" loading="lazy" width="800" height="318" /></div>
+            <div class="h-7 px-2 rounded-full bg-zinc-900 border-2 border-black overflow-hidden flex items-center justify-center"><img src="/img/webcarga.webp" alt="Webcarga" class="h-4 w-auto object-contain" loading="lazy" width="279" height="60" /></div>
+            <div class="h-7 px-2 rounded-full bg-white border-2 border-black overflow-hidden flex items-center justify-center"><img src="/img/potenciarte.webp" alt="Potenciarte Eventos" class="h-4 w-auto object-contain" loading="lazy" width="354" height="315" /></div>
+            <div class="h-7 px-2 rounded-full bg-white border-2 border-black overflow-hidden flex items-center justify-center"><img src="/img/ingeglobal.webp" alt="Logo de Ingeglobal" class="h-4 w-auto object-contain" loading="lazy" width="300" height="300" /></div>
+            <div class="h-7 px-2 rounded-full bg-white border-2 border-black overflow-hidden flex items-center justify-center"><img src="/img/mlm.webp" alt="MLM Abogados" class="h-4 w-auto object-contain" loading="lazy" width="500" height="500" /></div>
           </div>
-          <span class="text-xs text-slate-400">6+ empresas en Chile, Colombia, Perú y Ecuador</span>
+          <span class="text-xs text-slate-500">🇨🇱 Chile · 🇨🇴 Colombia · 🇵🇪 Perú · 🇪🇨 Ecuador</span>
         </div>
 
       </div>
 
-      <div
-        class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-indicator opacity-70 hidden md:block"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="32"
-          height="32"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="text-slate-400"
-        >
-          <path d="m7 13 5 5 5-5" />
-          <path d="m7 6 5 5 5-5" />
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 scroll-indicator opacity-70 hidden md:block" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400">
+          <path d="m7 13 5 5 5-5" /><path d="m7 6 5 5 5-5" />
         </svg>
       </div>
     </header>
 
+    <!-- Trust bar -->
+    <div class="border-b border-zinc-200" style="background: #F5F5F5;">
+      <div class="max-w-5xl mx-auto px-6 py-3.5">
+        <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
+          <span class="flex items-center gap-2 text-xs font-medium text-zinc-600 whitespace-nowrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0097B2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            15+ años de experiencia
+          </span>
+          <span class="text-zinc-300 hidden sm:inline" aria-hidden="true">·</span>
+          <span class="flex items-center gap-2 text-xs font-medium text-zinc-600 whitespace-nowrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0097B2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            Ex Microsoft, JLL, Bechtel
+          </span>
+          <span class="text-zinc-300 hidden sm:inline" aria-hidden="true">·</span>
+          <span class="flex items-center gap-2 text-xs font-medium text-zinc-600 whitespace-nowrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0097B2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Certificados Prosci &amp; Scrum
+          </span>
+          <span class="text-zinc-300 hidden sm:inline" aria-hidden="true">·</span>
+          <span class="flex items-center gap-2 text-xs font-medium text-zinc-600 whitespace-nowrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0097B2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            Proyectos en 5 países
+          </span>
+        </div>
+      </div>
+    </div>
 
 <main id="main-content">
     <section
@@ -405,441 +455,268 @@
           </h2>
         </div>
 
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          <!-- SPI Americas — has case study -->
-          <div class="group relative flex flex-col p-4 md:p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <!-- 1. SPI Americas — case study published -->
+          <a href="/casos/spi-americas/" class="group relative flex flex-col p-4 md:p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300 block">
             <div class="h-12 md:h-16 w-full flex items-center justify-start mb-4">
               <div class="h-12 w-auto p-2 bg-white rounded-lg flex items-center justify-center">
-                <img src="img/spi.webp" alt="Logo de SPI Americas — cliente de Growth Buddies" loading="lazy" decoding="async" class="max-h-full max-w-full object-contain" height="912" width="2154" />
+                <img src="img/spi.webp" alt="Logo de SPI Americas" loading="lazy" decoding="async" class="max-h-full max-w-full object-contain" height="912" width="2154" />
               </div>
             </div>
-            <h3 class="text-base md:text-lg font-bold text-slate-100 mb-1 group-hover:text-[var(--color-accent)] transition-colors">SPI Americas</h3>
-            <p class="text-xs text-slate-500 mb-3">Automatización de registros de propiedad intelectual en 4 países</p>
-            <!-- [PLACEHOLDER — quote from SPI Americas contact] -->
-            <blockquote class="text-sm text-slate-400 italic leading-relaxed mb-3 border-l-2 border-zinc-700 pl-3">
-              "[PLACEHOLDER — cita real del cliente sobre el impacto de la automatización.]"
-            </blockquote>
-            <!-- [PLACEHOLDER — Replace Name, Role, Company with real contact details] -->
-            <p class="text-xs text-slate-500 mb-4">— [PLACEHOLDER: Nombre], [PLACEHOLDER: Cargo] en SPI Americas</p>
+            <span class="text-xs font-semibold text-[var(--color-accent)] bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/20 px-2.5 py-1 rounded-full self-start mb-3">Legal Tech · Propiedad Intelectual</span>
+            <h3 class="text-base md:text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors">SPI Americas</h3>
+            <p class="text-sm text-slate-400 leading-relaxed mb-4">Dirección Tech y desarrollo de plataforma documental con IA para gestión de registros de PI en 4 países.</p>
             <div class="mt-auto pt-3 border-t border-zinc-800/60 flex items-center justify-between">
-              <a href="/casos/spi-americas/" class="text-xs font-semibold text-[var(--color-accent)] hover:underline">Ver caso completo →</a>
-              <a href="https://spiamericas.com/" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-600 hover:text-slate-400 transition-colors">sitio web ↗</a>
+              <span class="text-xs font-bold text-[#0097B2]">+17% facturación · 60% menos tiempo documental</span>
+              <span class="text-xs font-semibold text-[var(--color-accent)] group-hover:underline">Ver caso →</span>
             </div>
-          </div>
+          </a>
 
-          <!-- Hits Corredora de Seguros -->
-          <div class="group relative flex flex-col p-4 md:p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300">
-            <div class="h-12 md:h-16 w-full flex items-center justify-start mb-4">
-              <div class="h-12 w-auto p-2 bg-white rounded-lg flex items-center justify-center">
-                <img src="img/hits.webp" alt="Logo de Hits Corredora de Seguros — cliente de Growth Buddies" loading="lazy" decoding="async" class="max-h-full max-w-full object-contain" height="318" width="800" />
-              </div>
-            </div>
-            <h3 class="text-base md:text-lg font-bold text-slate-100 mb-1 group-hover:text-[var(--color-accent)] transition-colors">Hits Corredora de Seguros</h3>
-            <p class="text-xs text-slate-500 mb-3">Emisión de pólizas de responsabilidad civil médica optimizada</p>
-            <!-- [PLACEHOLDER — quote from Hits Corredora contact] -->
-            <blockquote class="text-sm text-slate-400 italic leading-relaxed mb-3 border-l-2 border-zinc-700 pl-3">
-              "[PLACEHOLDER — cita real del cliente sobre el impacto de la automatización.]"
-            </blockquote>
-            <!-- [PLACEHOLDER — Replace Name, Role with real contact details] -->
-            <p class="text-xs text-slate-500 mb-4">— [PLACEHOLDER: Nombre], [PLACEHOLDER: Cargo] en Hits Corredora</p>
-            <div class="mt-auto pt-3 border-t border-zinc-800/60 flex items-center justify-between">
-              <a href="#" class="text-xs font-semibold text-slate-500 cursor-default">Caso próximamente</a>
-              <a href="https://hitscorredoraseguros.cl/" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-600 hover:text-slate-400 transition-colors">sitio web ↗</a>
-            </div>
-          </div>
-
-          <!-- Webcarga -->
+          <!-- 2. MundoSocios (CChC) -->
           <div class="group relative flex flex-col p-4 md:p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300">
             <div class="h-12 md:h-16 w-full flex items-center justify-start mb-4">
               <div class="h-12 w-auto px-3 py-2 bg-zinc-800 rounded-lg flex items-center justify-center">
-                <img src="img/webcarga.webp" alt="Logo de Webcarga — cliente de Growth Buddies" loading="lazy" decoding="async" class="max-h-full max-w-full object-contain" height="60" width="279" />
+                <span class="text-white font-bold text-sm tracking-wide">MundoSocios</span>
               </div>
             </div>
-            <h3 class="text-base md:text-lg font-bold text-slate-100 mb-1 group-hover:text-[var(--color-accent)] transition-colors">Webcarga</h3>
-            <p class="text-xs text-slate-500 mb-3">Flujos de carga y reportes logísticos automatizados</p>
-            <!-- [PLACEHOLDER — quote from Webcarga contact] -->
-            <blockquote class="text-sm text-slate-400 italic leading-relaxed mb-3 border-l-2 border-zinc-700 pl-3">
-              "[PLACEHOLDER — cita real del cliente sobre el impacto de la automatización.]"
-            </blockquote>
-            <!-- [PLACEHOLDER — Replace Name, Role with real contact details] -->
-            <p class="text-xs text-slate-500 mb-4">— [PLACEHOLDER: Nombre], [PLACEHOLDER: Cargo] en Webcarga</p>
-            <div class="mt-auto pt-3 border-t border-zinc-800/60 flex items-center justify-between">
-              <a href="#" class="text-xs font-semibold text-slate-500 cursor-default">Caso próximamente</a>
-              <a href="https://app.webcarga.com/" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-600 hover:text-slate-400 transition-colors">sitio web ↗</a>
+            <span class="text-xs font-semibold text-slate-400 bg-zinc-800/60 border border-zinc-700 px-2.5 py-1 rounded-full self-start mb-3">Gremial · Construcción</span>
+            <h3 class="text-base md:text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors">MundoSocios (CChC)</h3>
+            <p class="text-sm text-slate-400 leading-relaxed mb-4">App para gestión de comunidad y disponibilización de beneficios para socios de la Cámara Chilena de la Construcción.</p>
+            <div class="mt-auto pt-3 border-t border-zinc-800/60">
+              <span class="text-xs font-bold text-[#0097B2]">80% reducción de horas manuales</span>
             </div>
           </div>
 
-          <!-- Fundación Katy Summer -->
+          <!-- 3. ETFA Ruido -->
           <div class="group relative flex flex-col p-4 md:p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300">
             <div class="h-12 md:h-16 w-full flex items-center justify-start mb-4">
-              <div class="h-12 w-auto overflow-hidden rounded-lg flex items-center justify-center bg-white">
-                <img src="img/summer.webp" alt="Logo de Fundación Katy Summer — cliente de Growth Buddies" loading="lazy" decoding="async" class="h-full w-full object-cover" height="160" width="160" />
+              <div class="h-12 w-auto px-3 py-2 bg-zinc-800 rounded-lg flex items-center justify-center">
+                <span class="text-white font-bold text-sm tracking-wide">ETFA Ruido</span>
               </div>
             </div>
-            <h3 class="text-base md:text-lg font-bold text-slate-100 mb-1 group-hover:text-[var(--color-accent)] transition-colors">Fundación Katy Summer</h3>
-            <p class="text-xs text-slate-500 mb-3">Gestión de inscripciones y comunicaciones sin intervención manual</p>
-            <!-- [PLACEHOLDER — quote from Fundación Katy Summer contact] -->
-            <blockquote class="text-sm text-slate-400 italic leading-relaxed mb-3 border-l-2 border-zinc-700 pl-3">
-              "[PLACEHOLDER — cita real del cliente sobre el impacto de la automatización.]"
-            </blockquote>
-            <!-- [PLACEHOLDER — Replace Name, Role with real contact details] -->
-            <p class="text-xs text-slate-500 mb-4">— [PLACEHOLDER: Nombre], [PLACEHOLDER: Cargo] en Fundación Katy Summer</p>
-            <div class="mt-auto pt-3 border-t border-zinc-800/60 flex items-center justify-between">
-              <a href="#" class="text-xs font-semibold text-slate-500 cursor-default">Caso próximamente</a>
-              <a href="https://fsummer.org/" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-600 hover:text-slate-400 transition-colors">sitio web ↗</a>
+            <span class="text-xs font-semibold text-slate-400 bg-zinc-800/60 border border-zinc-700 px-2.5 py-1 rounded-full self-start mb-3">Ingeniería Acústica</span>
+            <h3 class="text-base md:text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors">ETFA Ruido</h3>
+            <p class="text-sm text-slate-400 leading-relaxed mb-4">App para gestión de gastos, planificación y análisis financiero para empresa de ingeniería acústica.</p>
+            <div class="mt-auto pt-3 border-t border-zinc-800/60">
+              <span class="text-xs font-bold text-[#0097B2]">60% reducción de horas manuales</span>
             </div>
           </div>
 
-          <!-- Potenciarte Eventos -->
+          <!-- 4. Hits Corredora de Seguros -->
           <div class="group relative flex flex-col p-4 md:p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300">
             <div class="h-12 md:h-16 w-full flex items-center justify-start mb-4">
               <div class="h-12 w-auto p-2 bg-white rounded-lg flex items-center justify-center">
-                <img src="img/potenciarte.webp" alt="Logo de Potenciarte Eventos — cliente de Growth Buddies" loading="lazy" decoding="async" class="max-h-full max-w-full object-contain" height="315" width="354" />
+                <img src="img/hits.webp" alt="Logo de Hits Corredora de Seguros" loading="lazy" decoding="async" class="max-h-full max-w-full object-contain" height="318" width="800" />
               </div>
             </div>
-            <h3 class="text-base md:text-lg font-bold text-slate-100 mb-1 group-hover:text-[var(--color-accent)] transition-colors">Potenciarte Eventos</h3>
-            <p class="text-xs text-slate-500 mb-3">Cotizaciones y logística de eventos automatizada end-to-end</p>
-            <!-- [PLACEHOLDER — quote from Potenciarte Eventos contact] -->
-            <blockquote class="text-sm text-slate-400 italic leading-relaxed mb-3 border-l-2 border-zinc-700 pl-3">
-              "[PLACEHOLDER — cita real del cliente sobre el impacto de la automatización.]"
-            </blockquote>
-            <!-- [PLACEHOLDER — Replace Name, Role with real contact details] -->
-            <p class="text-xs text-slate-500 mb-4">— [PLACEHOLDER: Nombre], [PLACEHOLDER: Cargo] en Potenciarte Eventos</p>
-            <div class="mt-auto pt-3 border-t border-zinc-800/60 flex items-center justify-between">
-              <a href="#" class="text-xs font-semibold text-slate-500 cursor-default">Caso próximamente</a>
-              <a href="https://potenciarte.cl/" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-600 hover:text-slate-400 transition-colors">sitio web ↗</a>
+            <span class="text-xs font-semibold text-slate-400 bg-zinc-800/60 border border-zinc-700 px-2.5 py-1 rounded-full self-start mb-3">Seguros</span>
+            <h3 class="text-base md:text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors">Hits Corredora de Seguros</h3>
+            <p class="text-sm text-slate-400 leading-relaxed mb-4">Automatización de flujos de emails con IA para gestión de pólizas y atención al cliente.</p>
+            <div class="mt-auto pt-3 border-t border-zinc-800/60">
+              <span class="text-xs font-bold text-[#0097B2]">Tiempos de respuesta &lt; 15 minutos</span>
             </div>
           </div>
 
-          <!-- Ingeglobal -->
+          <!-- 5. Potenciarte Eventos -->
           <div class="group relative flex flex-col p-4 md:p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300">
             <div class="h-12 md:h-16 w-full flex items-center justify-start mb-4">
               <div class="h-12 w-auto p-2 bg-white rounded-lg flex items-center justify-center">
-                <img src="img/ingeglobal.webp" alt="Logo de Ingeglobal — cliente de Growth Buddies" loading="lazy" decoding="async" class="max-h-full max-w-full object-contain" height="62" width="137" />
+                <img src="img/potenciarte.webp" alt="Logo de Potenciarte Eventos" loading="lazy" decoding="async" class="max-h-full max-w-full object-contain" height="315" width="354" />
               </div>
             </div>
-            <h3 class="text-base md:text-lg font-bold text-slate-100 mb-1 group-hover:text-[var(--color-accent)] transition-colors">Ingeglobal</h3>
-            <p class="text-xs text-slate-500 mb-3">Reportes de calidad generados automáticamente desde sensores láser</p>
-            <!-- [PLACEHOLDER — quote from Ingeglobal contact] -->
-            <blockquote class="text-sm text-slate-400 italic leading-relaxed mb-3 border-l-2 border-zinc-700 pl-3">
-              "[PLACEHOLDER — cita real del cliente sobre el impacto de la automatización.]"
-            </blockquote>
-            <!-- [PLACEHOLDER — Replace Name, Role with real contact details] -->
-            <p class="text-xs text-slate-500 mb-4">— [PLACEHOLDER: Nombre], [PLACEHOLDER: Cargo] en Ingeglobal</p>
-            <div class="mt-auto pt-3 border-t border-zinc-800/60 flex items-center justify-between">
-              <a href="#" class="text-xs font-semibold text-slate-500 cursor-default">Caso próximamente</a>
-              <a href="https://www.ingeglobal.cl/" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-600 hover:text-slate-400 transition-colors">sitio web ↗</a>
+            <span class="text-xs font-semibold text-slate-400 bg-zinc-800/60 border border-zinc-700 px-2.5 py-1 rounded-full self-start mb-3">Eventos</span>
+            <h3 class="text-base md:text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors">Potenciarte Eventos</h3>
+            <p class="text-sm text-slate-400 leading-relaxed mb-4">Automatización de proceso de check-in en eventos para optimizar el flujo de asistentes.</p>
+            <div class="mt-auto pt-3 border-t border-zinc-800/60">
+              <span class="text-xs font-bold text-[#0097B2]">68% reducción de tiempo en check-in</span>
             </div>
           </div>
+
+          <!-- 6. Ingeglobal -->
+          <div class="group relative flex flex-col p-4 md:p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300">
+            <div class="h-12 md:h-16 w-full flex items-center justify-start mb-4">
+              <div class="h-12 w-auto p-2 bg-white rounded-lg flex items-center justify-center">
+                <img src="img/ingeglobal.webp" alt="Logo de Ingeglobal" loading="lazy" decoding="async" class="max-h-full max-w-full object-contain" width="300" height="300" />
+              </div>
+            </div>
+            <span class="text-xs font-semibold text-slate-400 bg-zinc-800/60 border border-zinc-700 px-2.5 py-1 rounded-full self-start mb-3">Minería</span>
+            <h3 class="text-base md:text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors">Ingeglobal</h3>
+            <p class="text-sm text-slate-400 leading-relaxed mb-4">App para monitoreo de mediciones en plantas procesadoras de áridos con alertas en tiempo real.</p>
+            <div class="mt-auto pt-3 border-t border-zinc-800/60">
+              <span class="text-xs font-bold text-[#0097B2]">Nuevo producto monetizable de monitoreo en vivo</span>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
     
     <!-- Google Reviews — supplementary social proof -->
-    <section id="resenas-google" class="py-12 md:py-16 px-6 bg-zinc-950/70 border-b border-zinc-900">
+    <section id="resenas-google" class="py-14 md:py-20 px-6 border-b border-zinc-100" style="background:#F5F5F5;">
       <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-8">
-          <p class="text-sm font-semibold text-slate-500 tracking-widest uppercase mb-2 font-display">Reseñas en Google</p>
-          <div class="flex items-center justify-center gap-2 mb-1">
-            <!-- [PLACEHOLDER: Replace 5.0 with real average rating when available] -->
-            <span class="text-3xl font-black text-white font-display">5.0</span>
-            <span class="text-yellow-400 text-xl tracking-tighter" aria-label="5 estrellas">★★★★★</span>
+        <div class="text-center mb-10">
+          <div class="flex items-center justify-center gap-3 mb-3">
+            <!-- Google "G" logo -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 48 48" aria-label="Google">
+              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+            </svg>
+            <p class="text-sm font-semibold tracking-widest uppercase font-display" style="color:#1A1A1A;">Reseñas en Google</p>
           </div>
-          <p class="text-sm text-slate-500">en Google Business Profile</p>
+          <div class="flex items-center justify-center gap-2 mb-1">
+            <span class="text-4xl font-black font-display" style="color:#1A1A1A;">5.0</span>
+            <div class="flex items-center gap-0.5" aria-label="5 estrellas">
+              <!-- 5 gold SVG stars -->
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="#FFC107" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.63 5.33L18.5 7.2l-4.25 4.14 1 5.83L10 14.27l-5.25 2.9 1-5.83L1.5 7.2l5.87-.87L10 1z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="#FFC107" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.63 5.33L18.5 7.2l-4.25 4.14 1 5.83L10 14.27l-5.25 2.9 1-5.83L1.5 7.2l5.87-.87L10 1z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="#FFC107" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.63 5.33L18.5 7.2l-4.25 4.14 1 5.83L10 14.27l-5.25 2.9 1-5.83L1.5 7.2l5.87-.87L10 1z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="#FFC107" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.63 5.33L18.5 7.2l-4.25 4.14 1 5.83L10 14.27l-5.25 2.9 1-5.83L1.5 7.2l5.87-.87L10 1z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="#FFC107" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.63 5.33L18.5 7.2l-4.25 4.14 1 5.83L10 14.27l-5.25 2.9 1-5.83L1.5 7.2l5.87-.87L10 1z"/></svg>
+            </div>
+          </div>
+          <p class="text-xs" style="color:#666666;">en Google Business Profile</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          <!-- Review 1 -->
-          <!-- [PLACEHOLDER: Replace with real Google review — copy text verbatim from Google] -->
-          <div class="p-5 bg-zinc-900/50 border border-zinc-800 rounded-xl">
-            <div class="flex items-center gap-1 text-yellow-400 text-sm mb-3" aria-label="5 estrellas">★★★★★</div>
-            <p class="text-sm text-slate-400 leading-relaxed italic mb-4">
-              "[PLACEHOLDER — texto de reseña real de Google. Copiar verbatim desde el perfil de Google Business de Growth Buddies.]"
-            </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
+          <!-- Review 1: Dra. Daniela Corral H. -->
+          <article class="bg-white rounded-2xl p-6 border" style="border-color:#E5E5E5; box-shadow:0 1px 3px rgba(0,0,0,0.08);">
+            <div class="flex items-center gap-0.5 mb-3" aria-label="5 estrellas">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="#FFC107" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.63 5.33L18.5 7.2l-4.25 4.14 1 5.83L10 14.27l-5.25 2.9 1-5.83L1.5 7.2l5.87-.87L10 1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="#FFC107" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.63 5.33L18.5 7.2l-4.25 4.14 1 5.83L10 14.27l-5.25 2.9 1-5.83L1.5 7.2l5.87-.87L10 1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="#FFC107" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.63 5.33L18.5 7.2l-4.25 4.14 1 5.83L10 14.27l-5.25 2.9 1-5.83L1.5 7.2l5.87-.87L10 1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="#FFC107" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.63 5.33L18.5 7.2l-4.25 4.14 1 5.83L10 14.27l-5.25 2.9 1-5.83L1.5 7.2l5.87-.87L10 1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="#FFC107" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.63 5.33L18.5 7.2l-4.25 4.14 1 5.83L10 14.27l-5.25 2.9 1-5.83L1.5 7.2l5.87-.87L10 1z"/></svg>
+            </div>
+            <blockquote class="text-sm leading-relaxed italic mb-4" style="color:#1A1A1A;">
+              "Estamos trabajando en un proyecto súper novedoso. Son realmente expertos en programación y utilizan la IA de una forma increíble."
+            </blockquote>
             <div class="flex items-center gap-2">
-              <div class="w-7 h-7 rounded-full bg-zinc-700 flex items-center justify-center text-xs font-bold text-slate-300">
-                <!-- [PLACEHOLDER: Reviewer initials] -->?
-              </div>
+              <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white flex-shrink-0" style="background:#0097B2;">DC</div>
               <div>
-                <!-- [PLACEHOLDER: Reviewer name and date] -->
-                <p class="text-xs font-semibold text-slate-300">[PLACEHOLDER — Nombre del reseñador]</p>
-                <p class="text-xs text-slate-600">[PLACEHOLDER — fecha, ej. "hace 2 meses"]</p>
+                <p class="text-xs font-semibold" style="color:#1A1A1A;">Dra. Daniela Corral H.</p>
+                <p class="text-xs" style="color:#666666;">Google Business Profile</p>
               </div>
             </div>
-          </div>
+          </article>
 
-          <!-- Review 2 -->
-          <!-- [PLACEHOLDER: Replace with real Google review] -->
-          <div class="p-5 bg-zinc-900/50 border border-zinc-800 rounded-xl">
-            <div class="flex items-center gap-1 text-yellow-400 text-sm mb-3" aria-label="5 estrellas">★★★★★</div>
-            <p class="text-sm text-slate-400 leading-relaxed italic mb-4">
-              "[PLACEHOLDER — texto de reseña real de Google. Copiar verbatim desde el perfil de Google Business de Growth Buddies.]"
-            </p>
+          <!-- Review 2: Jose Osorio -->
+          <article class="bg-white rounded-2xl p-6 border" style="border-color:#E5E5E5; box-shadow:0 1px 3px rgba(0,0,0,0.08);">
+            <div class="flex items-center gap-0.5 mb-3" aria-label="5 estrellas">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="#FFC107" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.63 5.33L18.5 7.2l-4.25 4.14 1 5.83L10 14.27l-5.25 2.9 1-5.83L1.5 7.2l5.87-.87L10 1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="#FFC107" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.63 5.33L18.5 7.2l-4.25 4.14 1 5.83L10 14.27l-5.25 2.9 1-5.83L1.5 7.2l5.87-.87L10 1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="#FFC107" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.63 5.33L18.5 7.2l-4.25 4.14 1 5.83L10 14.27l-5.25 2.9 1-5.83L1.5 7.2l5.87-.87L10 1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="#FFC107" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.63 5.33L18.5 7.2l-4.25 4.14 1 5.83L10 14.27l-5.25 2.9 1-5.83L1.5 7.2l5.87-.87L10 1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="#FFC107" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.63 5.33L18.5 7.2l-4.25 4.14 1 5.83L10 14.27l-5.25 2.9 1-5.83L1.5 7.2l5.87-.87L10 1z"/></svg>
+            </div>
+            <blockquote class="text-sm leading-relaxed italic mb-4" style="color:#1A1A1A;">
+              "Lo valioso de Growth Buddies es que entienden que automatizar sin estrategia es deuda futura."
+            </blockquote>
             <div class="flex items-center gap-2">
-              <div class="w-7 h-7 rounded-full bg-zinc-700 flex items-center justify-center text-xs font-bold text-slate-300">?</div>
+              <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white flex-shrink-0" style="background:#0097B2;">JO</div>
               <div>
-                <p class="text-xs font-semibold text-slate-300">[PLACEHOLDER — Nombre del reseñador]</p>
-                <p class="text-xs text-slate-600">[PLACEHOLDER — fecha]</p>
+                <p class="text-xs font-semibold" style="color:#1A1A1A;">Jose Osorio</p>
+                <p class="text-xs" style="color:#666666;">Google Business Profile</p>
               </div>
             </div>
-          </div>
+          </article>
 
-          <!-- Review 3 -->
-          <!-- [PLACEHOLDER: Replace with real Google review] -->
-          <div class="p-5 bg-zinc-900/50 border border-zinc-800 rounded-xl">
-            <div class="flex items-center gap-1 text-yellow-400 text-sm mb-3" aria-label="5 estrellas">★★★★★</div>
-            <p class="text-sm text-slate-400 leading-relaxed italic mb-4">
-              "[PLACEHOLDER — texto de reseña real de Google. Copiar verbatim desde el perfil de Google Business de Growth Buddies.]"
-            </p>
+          <!-- Review 3: Sebastián Marín -->
+          <article class="bg-white rounded-2xl p-6 border" style="border-color:#E5E5E5; box-shadow:0 1px 3px rgba(0,0,0,0.08);">
+            <div class="flex items-center gap-0.5 mb-3" aria-label="5 estrellas">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="#FFC107" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.63 5.33L18.5 7.2l-4.25 4.14 1 5.83L10 14.27l-5.25 2.9 1-5.83L1.5 7.2l5.87-.87L10 1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="#FFC107" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.63 5.33L18.5 7.2l-4.25 4.14 1 5.83L10 14.27l-5.25 2.9 1-5.83L1.5 7.2l5.87-.87L10 1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="#FFC107" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.63 5.33L18.5 7.2l-4.25 4.14 1 5.83L10 14.27l-5.25 2.9 1-5.83L1.5 7.2l5.87-.87L10 1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="#FFC107" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.63 5.33L18.5 7.2l-4.25 4.14 1 5.83L10 14.27l-5.25 2.9 1-5.83L1.5 7.2l5.87-.87L10 1z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="#FFC107" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.63 5.33L18.5 7.2l-4.25 4.14 1 5.83L10 14.27l-5.25 2.9 1-5.83L1.5 7.2l5.87-.87L10 1z"/></svg>
+            </div>
+            <blockquote class="text-sm leading-relaxed italic mb-4" style="color:#1A1A1A;">
+              "Me ayudaron justo con mi requerimiento. Edmundo sabía exactamente qué es lo que necesitaba mi negocio."
+            </blockquote>
             <div class="flex items-center gap-2">
-              <div class="w-7 h-7 rounded-full bg-zinc-700 flex items-center justify-center text-xs font-bold text-slate-300">?</div>
+              <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white flex-shrink-0" style="background:#0097B2;">SM</div>
               <div>
-                <p class="text-xs font-semibold text-slate-300">[PLACEHOLDER — Nombre del reseñador]</p>
-                <p class="text-xs text-slate-600">[PLACEHOLDER — fecha]</p>
+                <p class="text-xs font-semibold" style="color:#1A1A1A;">Sebastián Marín</p>
+                <p class="text-xs" style="color:#666666;">Google Business Profile</p>
               </div>
             </div>
-          </div>
+          </article>
         </div>
 
         <div class="text-center">
           <a href="https://search.google.com/local/writereview?placeid=ChIJc9LuJtfiJyoRxm89vU9LUSI"
              target="_blank" rel="noopener noreferrer"
-             class="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white border border-zinc-700 hover:border-zinc-500 px-5 py-2.5 rounded-full transition-all duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+             class="inline-flex items-center gap-2 text-sm font-medium px-6 py-2.5 rounded-full border-2 transition-all duration-300"
+             style="color:#0097B2; border-color:#0097B2;"
+             onmouseover="this.style.background='#0097B2';this.style.color='#fff';"
+             onmouseout="this.style.background='';this.style.color='#0097B2';">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 48 48" aria-hidden="true">
+              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+            </svg>
             Dejar una reseña en Google
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Resultados Reales — Social Proof Stats -->
-    <section id="resultados" class="py-16 md:py-24 px-6 bg-black border-b border-zinc-900">
-      <div class="max-w-6xl mx-auto">
-        <div class="text-center reveal mb-8 md:mb-12">
-          <span class="text-[var(--color-accent)] font-bold tracking-wider text-sm uppercase font-display">Impacto Comprobado</span>
-          <h2 class="text-3xl md:text-4xl text-white mt-3 font-serif">Impacto Medible en Nuestros Clientes</h2>
-          <p class="mt-4 max-w-xl mx-auto text-slate-400">Datos consolidados de proyectos activos, marzo 2026.</p>
+    <!-- Impacto Real — Social Proof Stats -->
+    <section id="resultados" class="py-16 md:py-24 px-6 border-b border-zinc-100" style="background: #F8FAFC;">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center reveal mb-10 md:mb-14">
+          <h2 class="text-3xl md:text-4xl font-black tracking-tight font-display" style="color: #111827;">Impacto Real en Nuestros Clientes</h2>
+          <p class="mt-3 text-sm font-medium" style="color: #6B7280;">Datos de proyectos activos, verificables.</p>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="reveal glass-card rounded-2xl p-5 md:p-8 text-center border border-[var(--color-accent)]/10 hover:border-[var(--color-accent)]/30 transition-colors">
-            <div class="text-5xl font-black text-white font-mono mb-2 stat-counter" data-target="30" data-prefix="+" data-suffix="%">+30%</div>
-            <div class="text-[var(--color-accent)] font-semibold text-sm mb-1">Eficiencia Operativa</div>
-            <p class="text-slate-500 text-xs leading-relaxed">Promedio de mejora en procesos automatizados</p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 md:gap-6">
+          <!-- Card 1 -->
+          <div class="reveal bg-white rounded-2xl p-6 md:p-8 text-center border border-zinc-200 shadow-sm hover:shadow-md transition-shadow">
+            <div class="text-5xl md:text-6xl font-black font-display mb-3 leading-none" style="color: #0097B2;">+17%</div>
+            <div class="text-sm font-bold text-zinc-900 mb-2">Aumento en facturación</div>
+            <p class="text-xs leading-relaxed text-zinc-500">SPI Americas — gestión documental con IA</p>
           </div>
-          <div class="reveal glass-card rounded-2xl p-8 text-center border border-[var(--color-accent)]/10 hover:border-[var(--color-accent)]/30 transition-colors" style="transition-delay:80ms">
-            <div class="text-5xl font-black text-white font-mono mb-2 stat-counter" data-target="10000" data-prefix="" data-suffix="+">10.000+</div>
-            <div class="text-[var(--color-accent)] font-semibold text-sm mb-1">Documentos Procesados</div>
-            <p class="text-slate-500 text-xs leading-relaxed">Con IA en producción, sin intervención manual</p>
+          <!-- Card 2 -->
+          <div class="reveal bg-white rounded-2xl p-6 md:p-8 text-center border border-zinc-200 shadow-sm hover:shadow-md transition-shadow" style="transition-delay:80ms">
+            <div class="text-5xl md:text-6xl font-black font-display mb-3 leading-none" style="color: #0097B2;">20+</div>
+            <div class="text-sm font-bold text-zinc-900 mb-2">Proyectos exitosos</div>
+            <p class="text-xs leading-relaxed text-zinc-500">Chile, Colombia, Perú y Ecuador</p>
           </div>
-          <div class="reveal glass-card rounded-2xl p-8 text-center border border-[var(--color-accent)]/10 hover:border-[var(--color-accent)]/30 transition-colors" style="transition-delay:160ms">
-            <div class="text-5xl font-black text-white font-mono mb-2">&lt;&nbsp;90</div>
-            <div class="text-[var(--color-accent)] font-semibold text-sm mb-1">Días para el ROI</div>
-            <p class="text-slate-500 text-xs leading-relaxed">Tiempo promedio hasta recuperar la inversión</p>
-          </div>
-          <div class="reveal glass-card rounded-2xl p-8 text-center border border-[var(--color-accent)]/10 hover:border-[var(--color-accent)]/30 transition-colors" style="transition-delay:240ms">
-            <div class="text-5xl font-black text-white font-mono mb-2 stat-counter" data-target="100" data-prefix="" data-suffix="%">100%</div>
-            <div class="text-[var(--color-accent)] font-semibold text-sm mb-1">Adopción Garantizada</div>
-            <p class="text-slate-500 text-xs leading-relaxed">Nuestro compromiso contractual con cada cliente</p>
+          <!-- Card 3 -->
+          <div class="reveal bg-white rounded-2xl p-6 md:p-8 text-center border border-zinc-200 shadow-sm hover:shadow-md transition-shadow" style="transition-delay:160ms">
+            <div class="text-5xl md:text-6xl font-black font-display mb-3 leading-none" style="color: #0097B2;">&lt;60 días</div>
+            <div class="text-sm font-bold text-zinc-900 mb-2">Para ver retorno</div>
+            <p class="text-xs leading-relaxed text-zinc-500">Visión de negocio desde el día 1</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="roi-calculator" class="py-20 md:py-32 px-6 relative bg-gradient-to-b from-zinc-950 to-zinc-900 border-y border-white/5">
-        <div class="absolute inset-0 bg-[var(--color-accent)]/5 blur-[100px] pointer-events-none"></div>
-        
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center relative z-10">
-            <!-- Left: Persuasion Text -->
-            <div class="reveal">
-                <span class="text-[var(--color-accent)] font-bold tracking-wider text-sm uppercase font-display">Descubre tu Potencial</span>
-                <h2 class="text-3xl md:text-4xl lg:text-5xl text-white mt-3 mb-6 font-serif leading-tight">
-                    ¿Cuánto dinero pierde tu empresa en <span class="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-accent)] to-white">procesos manuales?</span>
-                </h2>
-                <p class="text-lg text-slate-400 mb-8 leading-relaxed">
-                    Las tareas repetitivas no solo aburren a tu equipo, drenan tu rentabilidad. Usa nuestra calculadora interactiva para estimar, conservadoramente, cuánto podrías recuperar anualmente con Automatización Inteligente.
-                </p>
-                <ul class="space-y-4 text-slate-300 mb-8">
-                    <li class="flex items-center gap-3">
-                        <div class="h-6 w-6 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center">✓</div>
-                        <span>Reducción de Facturación "Fugada"</span>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <div class="h-6 w-6 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center">✓</div>
-                        <span>Eliminación de Multas por Atrasos</span>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <div class="h-6 w-6 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center">✓</div>
-                        <span>Liberación de Talento Senior</span>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Right: Interactive Calculator -->
-            <div class="reveal glass-card p-5 md:p-8 lg:p-10 rounded-3xl border border-zinc-700 bg-black/40 shadow-2xl relative">
-                <!-- Inputs -->
-                <div class="space-y-8">
-                    <!-- Input 1: Employees -->
-                    <div>
-                        <label class="text-white font-bold text-sm uppercase tracking-wide">Personas en el Equipo</label>
-                        <div class="relative mt-4 mb-1">
-                            <div id="tooltip-employees" class="absolute -top-7 text-xs bg-[var(--color-cta)] text-black font-bold px-2 py-0.5 rounded-md pointer-events-none whitespace-nowrap transition-none" style="left:50%;transform:translateX(-50%)">10</div>
-                            <input type="range" min="1" max="100" value="10" class="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-[var(--color-cta)]" id="input-employees">
-                        </div>
-                        <p class="text-xs text-slate-500 mt-2">Cantidad de administrativos/profesionales.</p>
-                    </div>
-
-                    <!-- Input 2: Hours/Week -->
-                    <div>
-                        <label class="text-white font-bold text-sm uppercase tracking-wide">Horas Manuales / Semana (pp)</label>
-                        <div class="relative mt-4 mb-1">
-                            <div id="tooltip-hours" class="absolute -top-7 text-xs bg-[var(--color-cta)] text-black font-bold px-2 py-0.5 rounded-md pointer-events-none whitespace-nowrap transition-none" style="left:25%;transform:translateX(-50%)">5 hrs</div>
-                            <input type="range" min="1" max="20" value="5" class="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-[var(--color-cta)]" id="input-hours">
-                        </div>
-                        <p class="text-xs text-slate-500 mt-2">Promedio de horas perdidas en Excel, data entry, reportes.</p>
-                    </div>
-
-                    <!-- Input 3: Rate -->
-                    <div>
-                        <label class="text-white font-bold text-sm uppercase tracking-wide">Costo Hora Promedio (USD)</label>
-                        <div class="relative mt-4 mb-1">
-                            <div id="tooltip-rate" class="absolute -top-7 text-xs bg-[var(--color-cta)] text-black font-bold px-2 py-0.5 rounded-md pointer-events-none whitespace-nowrap transition-none" style="left:16%;transform:translateX(-50%)">US$ 20</div>
-                            <input type="range" min="5" max="100" step="1" value="20" class="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-[var(--color-cta)]" id="input-rate">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Divider -->
-                <div class="h-px bg-zinc-700 my-8"></div>
-
-                <!-- Result -->
-                <div class="text-center">
-                    <p class="text-slate-400 text-sm uppercase tracking-widest mb-2 font-semibold">Ahorro Potencial Anual</p>
-                    <div class="text-4xl md:text-5xl lg:text-6xl font-black text-white font-mono tracking-tighter" id="total-savings">
-                        US$ 52.000
-                    </div>
-                    <p class="text-xs text-slate-500 mt-4 max-w-xs mx-auto">
-                        *Cálculo estimativo (52 semanas). No incluye costo de oportunidad ni ventas perdidas.
-                    </p>
-                    <div id="roi-comparison" class="mt-3 text-sm text-center text-slate-400">
-                        Con una inversión estimada de <span id="monthly-investment" class="text-[var(--color-cta)] font-bold">US$ 1.083/mes</span>,
-                        tu ROI sería de <span id="roi-multiple" class="text-white font-black">~4x</span> en el primer año.
-                    </div>
-                </div>
-
-                <!-- CTA: Calendly -->
-                <div class="mt-8 text-center" id="roi-cta-section">
-                    <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="btn-cta inline-flex items-center gap-2 text-base w-full justify-center">
-                        Recibir análisis personalizado →
-                    </a>
-                    <p class="text-xs text-slate-500 mt-2">Sin compromiso · Sesión de 30 min gratuita</p>
-                </div>
-            </div>
+    <!-- CTA Section — Proceso Manual -->
+    <section class="py-16 md:py-24 px-6 relative bg-gradient-to-b from-zinc-950 to-zinc-900 border-y border-white/5">
+      <div class="max-w-3xl mx-auto text-center reveal">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl text-white font-serif mb-4">
+          ¿Cuánto pierde tu empresa en procesos manuales?
+        </h2>
+        <p class="text-lg text-slate-400 mb-10 leading-relaxed">
+          En una sesión de 30 minutos analizamos tus procesos y te mostramos, con números concretos, cuánto podrías recuperar automatizando.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer"
+            class="btn-cta text-base py-3.5 px-8 w-full sm:w-auto"
+            onclick="if(typeof gtag!=='undefined'){gtag('event','calendly_click',{event_category:'roi_cta'});}">
+            Agendar auditoría gratuita →
+          </a>
+          <a href="https://wa.me/56957272191?text=Hola%20Growth%20Buddies%21%20Me%20interesa%20la%20auditor%C3%ADa%20gratuita." target="_blank" rel="noopener noreferrer"
+            class="text-sm text-slate-400 hover:text-[#25D366] transition-colors"
+            onclick="if(typeof gtag!=='undefined'){gtag('event','whatsapp_click',{event_category:'roi_cta'});}">
+            o escríbenos por WhatsApp
+          </a>
         </div>
-        
-        <!-- Logic Script -->
-        <script>
-            const employeesInput = document.getElementById('input-employees');
-            const hoursInput = document.getElementById('input-hours');
-            const rateInput = document.getElementById('input-rate');
-            const totalSavings = document.getElementById('total-savings');
-
-            function formatCurrency(num) {
-                return num.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
-            }
-
-            function animateValue(obj, start, end, duration, formatFn) {
-                let startTimestamp = null;
-                const step = (timestamp) => {
-                    if (!startTimestamp) startTimestamp = timestamp;
-                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                    const easeProgress = 1 - Math.pow(1 - progress, 4);
-                    const currentVal = Math.floor(easeProgress * (end - start) + start);
-                    obj.innerText = formatFn(currentVal);
-                    if (progress < 1) {
-                        window.requestAnimationFrame(step);
-                    } else {
-                        obj.innerText = formatFn(end);
-                    }
-                };
-                window.requestAnimationFrame(step);
-            }
-
-            function updateTooltip(input, tooltip, formatFn) {
-                const min = parseFloat(input.min);
-                const max = parseFloat(input.max);
-                const val = parseFloat(input.value);
-                const pct = (val - min) / (max - min);
-                // Account for browser thumb width (~14px) so tooltip tracks precisely
-                const thumbWidth = 14;
-                const trackWidth = input.offsetWidth;
-                const offset = (pct * (trackWidth - thumbWidth) + thumbWidth / 2) / trackWidth * 100;
-                tooltip.style.left = offset + '%';
-                tooltip.innerText = formatFn(val);
-            }
-
-            let previousSavings = 0;
-
-            function calculate() {
-                const employees = parseInt(employeesInput.value);
-                const hours = parseInt(hoursInput.value);
-                const rate = parseInt(rateInput.value);
-
-                // Update tooltips
-                updateTooltip(employeesInput, document.getElementById('tooltip-employees'), v => Math.round(v));
-                updateTooltip(hoursInput, document.getElementById('tooltip-hours'), v => Math.round(v) + ' hrs');
-                updateTooltip(rateInput, document.getElementById('tooltip-rate'), v => 'US$ ' + Math.round(v));
-
-                // Calculation: Employees * Hours * Rate * 52 weeks
-                const annual = employees * hours * rate * 52;
-
-                // Animate savings
-                if (previousSavings !== annual) {
-                    animateValue(totalSavings, previousSavings, annual, 800, formatCurrency);
-                    previousSavings = annual;
-                }
-
-                // ROI comparison row: monthly investment = annual / 12 / 4 (approx 4x ROI)
-                const monthlyInvestment = Math.round(annual / 48);
-                const monthlyEl = document.getElementById('monthly-investment');
-                if (monthlyEl) monthlyEl.innerText = formatCurrency(monthlyInvestment) + '/mes';
-
-                // Store globally
-                window.roiCalcValues = { employees, hoursPerWeek: hours, hourlyRate: rate, annualSavingsUSD: annual };
-
-                // Update ROI sticky bar
-                var roiBar = document.getElementById('roi-sticky-bar');
-                var roiBarVal = document.getElementById('roi-bar-value');
-                if (roiBar && roiBarVal) roiBarVal.innerText = formatCurrency(annual);
-            }
-
-            function showRoiBar() {
-                var roiBar = document.getElementById('roi-sticky-bar');
-                if (roiBar && window.innerWidth < 768) {
-                    roiBar.classList.remove('hidden');
-                    roiBar.classList.add('flex');
-                }
-            }
-
-            employeesInput.addEventListener('input', function() { calculate(); showRoiBar(); });
-            hoursInput.addEventListener('input', function() { calculate(); showRoiBar(); });
-            rateInput.addEventListener('input', function() { calculate(); showRoiBar(); });
-
-            // Init — defer one frame so offsetWidth is available
-            requestAnimationFrame(calculate);
-        </script>
-
-    <!-- ROI Calculator Sticky Bar (mobile only, shown when sliders are used) -->
-    <div id="roi-sticky-bar" class="hidden fixed bottom-0 left-0 right-0 z-30 bg-zinc-950/98 border-t border-zinc-800 py-3 px-4 items-center justify-between md:hidden" style="padding-bottom:calc(12px + env(safe-area-inset-bottom))">
-      <div>
-        <p class="text-xs text-slate-400 leading-none mb-0.5">Ahorro Potencial Anual</p>
-        <p class="text-lg font-black text-white font-mono" id="roi-bar-value">US$ 52.000</p>
       </div>
-      <a href="#roi-cta-section" onclick="document.getElementById('roi-sticky-bar').classList.add('hidden');document.getElementById('roi-sticky-bar').classList.remove('flex');" class="flex items-center gap-1.5 bg-[var(--color-cta)] hover:bg-[var(--color-cta-hover)] text-black font-bold text-sm py-2.5 px-4 rounded-xl min-h-[44px]">
-        Recibir análisis →
-      </a>
-    </div>
+    </section>
 
     <!-- Agentes IA Especializados Section -->
     <section id="productos" class="py-16 md:py-28 px-6 relative section-dark border-y border-white/5 text-slate-100">
@@ -942,7 +819,7 @@
           </a>
 
           <!-- 3. TimeKeeper IA -->
-          <a href="/soluciones/catalogo.html#timesheet" class="reveal group relative card-dark rounded-2xl p-5 md:p-8 hover:border-[var(--color-accent)] transition-all duration-300 block" style="transition-delay: 200ms">
+          <a href="/soluciones/" class="reveal group relative card-dark rounded-2xl p-5 md:p-8 hover:border-[var(--color-accent)] transition-all duration-300 block" style="transition-delay: 200ms">
             <!-- Status badge -->
             <div class="absolute top-3 right-3 z-20">
               <span class="bg-zinc-700/50 text-zinc-400 border border-zinc-600/40 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">Próximamente</span>
@@ -965,7 +842,7 @@
         </div>
 
         <div class="mt-12 text-center reveal">
-          <a href="/soluciones/catalogo.html" class="inline-flex items-center gap-2 text-[var(--color-accent)] font-bold uppercase tracking-wider hover:text-white transition-colors">
+          <a href="/soluciones/" class="inline-flex items-center gap-2 text-[var(--color-accent)] font-bold uppercase tracking-wider hover:text-white transition-colors">
             Ver todos los Agentes IA en el Catálogo
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
@@ -1047,17 +924,17 @@
           >
             <div class="bg-zinc-950/90 h-full w-full rounded-[1.3rem] p-5 md:p-8 flex flex-col relative z-10 transition-colors group-hover:bg-zinc-950/70">
                 <div class="glow-blob"></div>
-                <div class="h-14 w-14 bg-emerald-900/30 rounded-2xl flex items-center justify-center mb-6 border border-emerald-500/20 group-hover:border-emerald-400 transition-colors relative z-20">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <div class="h-14 w-14 rounded-2xl flex items-center justify-center mb-6 border transition-colors relative z-20" style="background:rgba(0,151,178,0.12); border-color:rgba(0,151,178,0.2);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#0097B2;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                 </div>
                 <h3 class="text-xl md:text-2xl font-bold text-white mb-4 font-display relative z-20">Gestión del Cambio</h3>
                 <p class="text-slate-400 leading-relaxed mb-6 flex-grow relative z-20">
                     El "Factor Humano". Aseguramos que su equipo quiera y sepa usar las nuevas herramientas. Reducimos la resistencia y aceleramos el ROI.
                 </p>
                  <ul class="space-y-2 text-sm text-slate-300 mb-6 relative z-20">
-                    <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-emerald-400"></div>Capacitación y Onboarding</li>
-                    <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-emerald-400"></div>Comunicación Interna</li>
-                    <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-emerald-400"></div>Medición de Adopción</li>
+                    <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full" style="background:#0097B2;"></div>Capacitación y Onboarding</li>
+                    <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full" style="background:#0097B2;"></div>Comunicación Interna</li>
+                    <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full" style="background:#0097B2;"></div>Medición de Adopción</li>
                 </ul>
             </div>
           </a>
@@ -1460,6 +1337,16 @@
             </div>
           </details>
 
+          <details class="group border border-zinc-800/60 rounded-xl overflow-hidden bg-zinc-900/20 hover:border-[var(--color-accent)]/50 transition-colors">
+            <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+              <span>¿Cuánto cuesta implementar una solución?</span>
+              <svg class="w-5 h-5 text-[var(--color-accent)] flex-shrink-0 transition-transform duration-300 group-open:rotate-45" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </summary>
+            <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed">
+              <p>Depende de la complejidad. Nuestros proyectos van desde automatizaciones puntuales hasta plataformas completas con CTO as a Service. Lo definimos juntos en la auditoría gratuita — ahí mapeamos tu operación y te entregamos una propuesta concreta con alcance, plazo y precio fijo.</p>
+            </div>
+          </details>
+
         </div>
       </div>
     </section>
@@ -1489,7 +1376,7 @@
                   <p id="name-error" class="hidden text-xs text-red-400 mt-1">Por favor ingresa tu nombre.</p>
                 </div>
                 <div>
-                  <label for="email" class="gemini-input-label">Correo Corporativo</label>
+                  <label for="email" class="gemini-input-label">Correo electrónico</label>
                   <input type="email" id="email" name="email" class="gemini-input" placeholder="juan@empresa.com" required />
                   <p id="email-error" class="hidden text-xs text-red-400 mt-1">Ingresa un correo válido.</p>
                 </div>
@@ -1596,10 +1483,9 @@
                  <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Agentes IA</h4>
                 <ul class="space-y-3 text-slate-400">
                     <li><a href="/soluciones/brokeria/" class="text-amber-400 hover:text-amber-300 transition-colors font-medium">BrokerIA ✦</a></li>
-                    <li><a href="/soluciones/automatizacion-legal-emails/" class="hover:text-[var(--color-accent)] transition-colors">Inbox IA Legal</a></li>
-                    <li><a href="/soluciones/gestion-documental-ip/" class="hover:text-[var(--color-accent)] transition-colors">DocuAgent IA</a></li>
-                    <li><a href="/soluciones/rendicion-gastos-ia/" class="hover:text-[var(--color-accent)] transition-colors">Rendición Gastos IA</a></li>
-                    <li><a href="/soluciones/catalogo.html#timesheet" class="hover:text-[var(--color-accent)] transition-colors">TimeKeeper IA</a></li>
+                    <li><a href="/soluciones/#triaje-legal" class="hover:text-[var(--color-accent)] transition-colors">Inbox IA Legal</a></li>
+                    <li><a href="/soluciones/#docuagent" class="hover:text-[var(--color-accent)] transition-colors">DocuAgent IA</a></li>
+                    <li><a href="/soluciones/#reembolso" class="hover:text-[var(--color-accent)] transition-colors">Rendición Gastos IA</a></li>
                 </ul>
             </div>
 
@@ -1607,8 +1493,7 @@
              <div>
                 <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Recursos</h4>
                 <ul class="space-y-3 text-slate-400">
-                    <li><a href="/metodologia/diagnostico/" class="hover:text-[var(--color-accent)] transition-colors">Metodología</a></li>
-                    <li><a href="/equipo/edmundo-spohr/" class="hover:text-[var(--color-accent)] transition-colors">Equipo</a></li>
+                    <li><a href="/nosotros/" class="hover:text-[var(--color-accent)] transition-colors">Nosotros</a></li>
                     <li><a href="/casos/" class="hover:text-[var(--color-accent)] transition-colors">Casos de Éxito</a></li>
                     <li><a href="/blog/" class="hover:text-[var(--color-accent)] transition-colors">Blog</a></li>
                     <li><a href="/recursos/guia-ia-legal/" class="hover:text-[var(--color-accent)] transition-colors">Guía Gratuita IA Legal</a></li>
@@ -1621,7 +1506,7 @@
           <p class="text-xs text-slate-500 uppercase tracking-widest font-semibold text-center mb-5">Partners</p>
           <div class="flex items-center justify-center gap-8 flex-wrap">
             <a href="https://www.kizeo-forms.com/lat/" target="_blank" rel="noopener noreferrer" class="opacity-50 hover:opacity-100 transition-opacity">
-              <img src="/img/kizeo-forms.webp" alt="Kizeo Forms" loading="lazy" class="h-16 max-w-[80px] object-contain grayscale hover:grayscale-0 transition-all" />
+              <img src="/img/kizeo-forms.webp" alt="Kizeo Forms" loading="lazy" width="225" height="225" class="h-16 max-w-[80px] object-contain grayscale hover:grayscale-0 transition-all" />
             </a>
             <a href="https://www.mage.ai/" target="_blank" rel="noopener noreferrer" class="opacity-50 hover:opacity-100 transition-opacity">
               <img src="/img/mage.svg" alt="Mage AI" loading="lazy" class="h-16 max-w-[80px] object-contain grayscale hover:grayscale-0 transition-all" />
@@ -1634,10 +1519,12 @@
 
         <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
             <div>
-                &copy; 2026 Growth Buddies SpA. Santiago, Chile.
+                &copy; 2026 Growth Buddies SpA. Latinoamérica · 🇨🇱 🇨🇴 🇵🇪 🇪🇨
             </div>
              <div class="flex gap-6">
-                 <a href="/sitemap.xml" class="hover:text-slate-400 transition-colors">Sitemap</a>
+                 <a href="/privacidad/" class="hover:text-slate-300 transition-colors">Privacidad</a>
+                <a href="/terminos/" class="hover:text-slate-300 transition-colors">Términos</a>
+                <a href="/sitemap.xml" class="hover:text-slate-300 transition-colors">Sitemap</a>
             </div>
         </div>
     </footer>
@@ -1850,51 +1737,15 @@
      </script>
 
     <script type="module">
-      // --- Firebase SDK ---
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-      import {
-        getFirestore,
-        collection,
-        addDoc,
-        serverTimestamp,
-      } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
-      const firebaseConfig = {
-        apiKey: "AIzaSyBDdOtg0-svyfoiVNoNBBGeQc1BP-SDNjk",
-        authDomain: "growth-buddies.firebaseapp.com",
-        projectId: "growth-buddies",
-        storageBucket: "growth-buddies.firebasestorage.app",
-        messagingSenderId: "1035797595823",
-        appId: "1:1035797595823:web:6e6b9225a6f1ee2047365a",
-        measurementId: "G-KYCY7NPHWJ",
-      };
-
-      // Initialize Firebase
-      let db;
-      try {
-        const app = initializeApp(firebaseConfig);
-        db = getFirestore(app);
-        console.log("Firebase initialized successfully");
-      } catch (error) {
-        console.error(
-          "Firebase initialization error. Did you add your keys?",
-          error
-        );
-      }
-
-      // --- UTM & Attribution Capture ---
+      // --- UTM & Attribution Capture (no Firebase dependency) ---
       (function () {
         const params = new URLSearchParams(window.location.search);
         const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid'];
         utmKeys.forEach(key => {
           if (params.get(key)) sessionStorage.setItem(key, params.get(key));
         });
-        if (!sessionStorage.getItem('landing_page')) {
-          sessionStorage.setItem('landing_page', window.location.href);
-        }
-        if (!sessionStorage.getItem('referrer')) {
-          sessionStorage.setItem('referrer', document.referrer || 'direct');
-        }
+        if (!sessionStorage.getItem('landing_page')) sessionStorage.setItem('landing_page', window.location.href);
+        if (!sessionStorage.getItem('referrer')) sessionStorage.setItem('referrer', document.referrer || 'direct');
       })();
 
       function getAttribution() {
@@ -1908,9 +1759,7 @@
         return attr;
       }
 
-      // --- Contact Form Logic ---
-
-      // Inline validation
+      // --- Inline validation (no Firebase dependency) ---
       (function () {
         var emailEl = document.getElementById('email');
         var nameEl = document.getElementById('name');
@@ -1922,7 +1771,49 @@
         });
       })();
 
-      // Form submit
+      // --- Firebase: lazy-loaded on demand ---
+      const firebaseConfig = {
+        apiKey: "AIzaSyBDdOtg0-svyfoiVNoNBBGeQc1BP-SDNjk",
+        authDomain: "growth-buddies.firebaseapp.com",
+        projectId: "growth-buddies",
+        storageBucket: "growth-buddies.firebasestorage.app",
+        messagingSenderId: "1035797595823",
+        appId: "1:1035797595823:web:6e6b9225a6f1ee2047365a",
+        measurementId: "G-KYCY7NPHWJ",
+      };
+
+      let db = null, addDoc, collection, serverTimestamp;
+      let firebasePromise = null;
+
+      function loadFirebase() {
+        if (firebasePromise) return firebasePromise;
+        firebasePromise = Promise.all([
+          import("https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"),
+          import("https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"),
+        ]).then(([{ initializeApp }, fs]) => {
+          ({ addDoc, collection, serverTimestamp } = fs);
+          const app = initializeApp(firebaseConfig);
+          db = fs.getFirestore(app);
+        }).catch(err => console.error("Firebase load error:", err));
+        return firebasePromise;
+      }
+
+      // Pre-warm Firebase when contact section enters viewport (300px margin)
+      const contactSection = document.getElementById('contacto');
+      if (contactSection && 'IntersectionObserver' in window) {
+        const io = new IntersectionObserver(entries => {
+          if (entries[0].isIntersecting) { loadFirebase(); io.disconnect(); }
+        }, { rootMargin: '300px' });
+        io.observe(contactSection);
+      }
+
+      // Also pre-warm on first focus inside either form
+      ['contact-form', 'roi-email-form'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener('focusin', loadFirebase, { once: true });
+      });
+
+      // --- Contact Form Submit ---
       document.getElementById("contact-form").addEventListener("submit", async function (e) {
         e.preventDefault();
 
@@ -1947,8 +1838,8 @@
         btnLabel.textContent = 'Procesando...';
 
         try {
-          const isConfigured = firebaseConfig.apiKey !== "YOUR_API_KEY";
-          if (db && isConfigured) {
+          await loadFirebase();
+          if (db && firebaseConfig.apiKey !== "YOUR_API_KEY") {
             try {
               await addDoc(collection(db, "leads"), {
                 name, email, interest: interestText, message,
@@ -1998,8 +1889,8 @@
           spinner.classList.remove('hidden');
 
           const calc = window.roiCalcValues || {};
-          const isConfigured = firebaseConfig.apiKey !== "YOUR_API_KEY";
-          if (db && isConfigured) {
+          await loadFirebase();
+          if (db && firebaseConfig.apiKey !== "YOUR_API_KEY") {
             try {
               await addDoc(collection(db, "calculator_leads"), {
                 email,
@@ -2022,7 +1913,6 @@
           document.getElementById('roi-success').classList.remove('hidden');
         });
       }
-
     </script>
   
     <script>
@@ -2093,57 +1983,6 @@
         observer.observe(hero);
       })();
 
-    </script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Growth Buddies",
-      "url": "https://growthbuddies.cl",
-      "logo": "https://growthbuddies.cl/img/logo.webp",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+56957272191",
-        "contactType": "customer service",
-        "availableLanguage": "Spanish"
-      },
-      "areaServed": ["CL","CO","PE","EC"],
-      "sameAs": ["https://www.linkedin.com/company/growth-buddies"]
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "¿La Inteligencia Artificial reemplazará a mi equipo actual?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. La IA se queda con la carga de datos y los reportes manuales — tu equipo se queda con las decisiones que requieren criterio. Nadie pierde su trabajo; todos dejan de hacer el trabajo que odian."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Cuánto tiempo toma ver el retorno de inversión (ROI)?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "La mayoría de nuestros proyectos generan ROI visible en los primeros 30 días. Los más complejos se pagan en menos de 90. Lo medimos contigo para que no sea un número de PowerPoint."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Es segura la implementación de IA con mis datos?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sí. Trabajamos con entornos aislados y tus datos nunca se usan para entrenar modelos de terceros. Firmamos un acuerdo de confidencialidad antes de ver cualquier documento."
-          }
-        }
-      ]
-    }
     </script>
   </body>
 </html>

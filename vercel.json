@@ -50,7 +50,18 @@
       ],
       "destination": "https://growthbuddies.cl/$1",
       "permanent": true
-    }
+    },
+    { "source": "/metodologia/diagnostico", "destination": "/nosotros/", "permanent": true },
+    { "source": "/metodologia/diseno", "destination": "/nosotros/", "permanent": true },
+    { "source": "/metodologia/build", "destination": "/nosotros/", "permanent": true },
+    { "source": "/metodologia/adopcion", "destination": "/nosotros/", "permanent": true },
+    { "source": "/equipo/edmundo-spohr", "destination": "/nosotros/", "permanent": true },
+    { "source": "/equipo/felipe-soto-santibanez", "destination": "/nosotros/", "permanent": true },
+    { "source": "/soluciones/automatizacion-legal-emails", "destination": "/soluciones/#triaje-legal", "permanent": true },
+    { "source": "/soluciones/gestion-documental-ip", "destination": "/soluciones/#docuagent", "permanent": true },
+    { "source": "/soluciones/rendicion-gastos-ia", "destination": "/soluciones/#reembolso", "permanent": true },
+    { "source": "/soluciones/catalogo.html", "destination": "/soluciones/", "permanent": true },
+    { "source": "/servicios/automatizacion-inteligente", "destination": "/servicios/legal-tech/", "permanent": true }
   ],
   "routes": [
     { "handle": "filesystem" },

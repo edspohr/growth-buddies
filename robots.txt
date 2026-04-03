@@ -1,3 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /dist/
+Disallow: /functions/
+Disallow: /node_modules/
 Sitemap: https://growthbuddies.cl/sitemap.xml
