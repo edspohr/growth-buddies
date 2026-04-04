@@ -439,112 +439,122 @@
     </div>
 
 <main id="main-content">
-    <section
-      id="clientes"
-      class="py-16 md:py-24 border-b border-zinc-900 bg-zinc-950/50 backdrop-blur-sm"
-    >
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-8 md:mb-12">
-          <p
-            class="text-sm font-semibold text-[var(--color-accent)] tracking-widest uppercase mb-2 font-display"
-          >
-            Nuestros Socios
-          </p>
-          <h2 class="text-3xl md:text-4xl text-slate-100 font-serif">
-            Empresas que Automatizaron con Nosotros
-          </h2>
+    <section id="clientes" class="py-16 md:py-24 border-b border-zinc-900 bg-zinc-950">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12">
+          <p class="text-xs font-bold text-[var(--color-accent)] tracking-widest uppercase mb-3 font-display">Casos de Éxito</p>
+          <h2 class="text-3xl md:text-4xl text-slate-100 font-serif">Empresas que Automatizaron con Nosotros</h2>
+          <p class="text-slate-400 text-sm mt-3 max-w-xl mx-auto">Resultados reales de empresas chilenas y latinoamericanas que transformaron sus operaciones con IA.</p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
-          <!-- 1. SPI Americas — case study published -->
-          <a href="/casos/spi-americas/" class="group relative flex flex-col p-4 md:p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300 block">
-            <div class="h-12 md:h-16 w-full flex items-center justify-start mb-4">
-              <div class="h-12 w-auto p-2 bg-white rounded-lg flex items-center justify-center">
-                <img src="img/spi.webp" alt="Logo de SPI Americas" loading="lazy" decoding="async" class="max-h-full max-w-full object-contain" height="912" width="2154" />
+          <!-- 1. SPI Americas — con link a caso -->
+          <a href="/casos/spi-americas/" class="group relative flex flex-col rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-950 overflow-hidden hover:border-[var(--color-accent)]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[var(--color-accent)]/5">
+            <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--color-accent)]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-start justify-between gap-3 mb-5">
+                <div class="bg-white rounded-lg px-3 py-2 flex items-center justify-center" style="min-height:40px">
+                  <img src="img/spi.webp" alt="Logo de SPI Americas" loading="lazy" decoding="async" class="h-7 w-auto object-contain" style="max-width:120px" height="912" width="2154" />
+                </div>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500 border border-zinc-700 rounded-md px-2 py-1 whitespace-nowrap flex-shrink-0">Legal Tech</span>
               </div>
-            </div>
-            <span class="text-xs font-semibold text-[var(--color-accent)] bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/20 px-2.5 py-1 rounded-full self-start mb-3">Legal Tech · Propiedad Intelectual</span>
-            <h3 class="text-base md:text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors">SPI Americas</h3>
-            <p class="text-sm text-slate-400 leading-relaxed mb-4">Dirección Tech y desarrollo de plataforma documental con IA para gestión de registros de PI en 4 países.</p>
-            <div class="mt-auto pt-3 border-t border-zinc-800/60 flex items-center justify-between">
-              <span class="text-xs font-bold text-[#0097B2]">+17% facturación · 60% menos tiempo documental</span>
-              <span class="text-xs font-semibold text-[var(--color-accent)] group-hover:underline">Ver caso →</span>
+              <h3 class="text-base font-bold text-white mb-2 group-hover:text-[var(--color-accent)] transition-colors leading-snug">SPI Americas</h3>
+              <p class="text-sm text-slate-400 leading-relaxed flex-1">Plataforma documental con IA para gestión de registros de propiedad intelectual en 4 países.</p>
+              <div class="mt-5 pt-4 border-t border-zinc-800 flex items-center justify-between">
+                <p class="text-sm font-bold text-[var(--color-accent)]">+17% facturación · 60% menos tiempo documental</p>
+                <span class="text-xs font-semibold text-slate-500 group-hover:text-[var(--color-accent)] transition-colors flex-shrink-0 ml-3">Ver caso →</span>
+              </div>
             </div>
           </a>
 
           <!-- 2. MundoSocios (CChC) -->
-          <div class="group relative flex flex-col p-4 md:p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300">
-            <div class="h-12 md:h-16 w-full flex items-center justify-start mb-4">
-              <div class="h-12 w-auto p-2 bg-black rounded-lg flex items-center justify-center">
-                <img src="img/mundosocios-logo.png" alt="Logo de MundoSocios" loading="lazy" decoding="async" class="max-h-full w-auto object-contain" width="150" height="163" />
+          <div class="group relative flex flex-col rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-950 overflow-hidden hover:border-[var(--color-accent)]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[var(--color-accent)]/5">
+            <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--color-accent)]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-start justify-between gap-3 mb-5">
+                <div class="bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 flex items-center justify-center" style="min-height:40px">
+                  <img src="img/mundosocios-logo.png" alt="Logo de MundoSocios" loading="lazy" decoding="async" class="h-7 w-auto object-contain" style="max-width:120px" width="150" height="163" />
+                </div>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500 border border-zinc-700 rounded-md px-2 py-1 whitespace-nowrap flex-shrink-0">Gremial</span>
               </div>
-            </div>
-            <span class="text-xs font-semibold text-slate-400 bg-zinc-800/60 border border-zinc-700 px-2.5 py-1 rounded-full self-start mb-3">Gremial · Construcción</span>
-            <h3 class="text-base md:text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors">MundoSocios (CChC)</h3>
-            <p class="text-sm text-slate-400 leading-relaxed mb-4">App para gestión de comunidad y disponibilización de beneficios para socios de la Cámara Chilena de la Construcción.</p>
-            <div class="mt-auto pt-3 border-t border-zinc-800/60">
-              <span class="text-xs font-bold text-[#0097B2]">80% reducción de horas manuales</span>
+              <h3 class="text-base font-bold text-white mb-2 group-hover:text-[var(--color-accent)] transition-colors leading-snug">MundoSocios (CChC)</h3>
+              <p class="text-sm text-slate-400 leading-relaxed flex-1">App para gestión de comunidad y beneficios de socios de la Cámara Chilena de la Construcción.</p>
+              <div class="mt-5 pt-4 border-t border-zinc-800">
+                <p class="text-sm font-bold text-[var(--color-accent)]">80% reducción de horas manuales</p>
+              </div>
             </div>
           </div>
 
           <!-- 3. Hits Corredora de Seguros -->
-          <div class="group relative flex flex-col p-4 md:p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300">
-            <div class="h-12 md:h-16 w-full flex items-center justify-start mb-4">
-              <div class="h-12 w-auto p-2 bg-white rounded-lg flex items-center justify-center">
-                <img src="img/hits.webp" alt="Logo de Hits Corredora de Seguros" loading="lazy" decoding="async" class="max-h-full max-w-full object-contain" height="318" width="800" />
+          <div class="group relative flex flex-col rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-950 overflow-hidden hover:border-[var(--color-accent)]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[var(--color-accent)]/5">
+            <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--color-accent)]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-start justify-between gap-3 mb-5">
+                <div class="bg-white rounded-lg px-3 py-2 flex items-center justify-center" style="min-height:40px">
+                  <img src="img/hits.webp" alt="Logo de Hits Corredora de Seguros" loading="lazy" decoding="async" class="h-7 w-auto object-contain" style="max-width:120px" height="318" width="800" />
+                </div>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500 border border-zinc-700 rounded-md px-2 py-1 whitespace-nowrap flex-shrink-0">Seguros</span>
               </div>
-            </div>
-            <span class="text-xs font-semibold text-slate-400 bg-zinc-800/60 border border-zinc-700 px-2.5 py-1 rounded-full self-start mb-3">Seguros</span>
-            <h3 class="text-base md:text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors">Hits Corredora de Seguros</h3>
-            <p class="text-sm text-slate-400 leading-relaxed mb-4">Automatización de flujos de emails con IA para gestión de pólizas y atención al cliente.</p>
-            <div class="mt-auto pt-3 border-t border-zinc-800/60">
-              <span class="text-xs font-bold text-[#0097B2]">Tiempos de respuesta &lt; 15 minutos</span>
+              <h3 class="text-base font-bold text-white mb-2 group-hover:text-[var(--color-accent)] transition-colors leading-snug">Hits Corredora de Seguros</h3>
+              <p class="text-sm text-slate-400 leading-relaxed flex-1">Automatización de flujos de emails con IA para gestión de pólizas y atención al cliente.</p>
+              <div class="mt-5 pt-4 border-t border-zinc-800">
+                <p class="text-sm font-bold text-[var(--color-accent)]">Tiempos de respuesta &lt; 15 minutos</p>
+              </div>
             </div>
           </div>
 
           <!-- 4. Potenciarte Eventos -->
-          <div class="group relative flex flex-col p-4 md:p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300">
-            <div class="h-12 md:h-16 w-full flex items-center justify-start mb-4">
-              <div class="h-12 w-auto p-2 bg-white rounded-lg flex items-center justify-center">
-                <img src="img/potenciarte.webp" alt="Logo de Potenciarte Eventos" loading="lazy" decoding="async" class="max-h-full max-w-full object-contain" height="315" width="354" />
+          <div class="group relative flex flex-col rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-950 overflow-hidden hover:border-[var(--color-accent)]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[var(--color-accent)]/5">
+            <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--color-accent)]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-start justify-between gap-3 mb-5">
+                <div class="bg-white rounded-lg px-3 py-2 flex items-center justify-center" style="min-height:40px">
+                  <img src="img/potenciarte.webp" alt="Logo de Potenciarte Eventos" loading="lazy" decoding="async" class="h-7 w-auto object-contain" style="max-width:120px" height="315" width="354" />
+                </div>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500 border border-zinc-700 rounded-md px-2 py-1 whitespace-nowrap flex-shrink-0">Eventos</span>
               </div>
-            </div>
-            <span class="text-xs font-semibold text-slate-400 bg-zinc-800/60 border border-zinc-700 px-2.5 py-1 rounded-full self-start mb-3">Eventos</span>
-            <h3 class="text-base md:text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors">Potenciarte Eventos</h3>
-            <p class="text-sm text-slate-400 leading-relaxed mb-4">Automatización de proceso de check-in en eventos para optimizar el flujo de asistentes.</p>
-            <div class="mt-auto pt-3 border-t border-zinc-800/60">
-              <span class="text-xs font-bold text-[#0097B2]">68% reducción de tiempo en check-in</span>
+              <h3 class="text-base font-bold text-white mb-2 group-hover:text-[var(--color-accent)] transition-colors leading-snug">Potenciarte Eventos</h3>
+              <p class="text-sm text-slate-400 leading-relaxed flex-1">Automatización de proceso de check-in en eventos para optimizar el flujo de asistentes.</p>
+              <div class="mt-5 pt-4 border-t border-zinc-800">
+                <p class="text-sm font-bold text-[var(--color-accent)]">68% reducción de tiempo en check-in</p>
+              </div>
             </div>
           </div>
 
           <!-- 5. Ingeglobal -->
-          <div class="group relative flex flex-col p-4 md:p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300">
-            <div class="h-12 md:h-16 w-full flex items-center justify-start mb-4">
-              <div class="h-12 w-auto p-2 bg-white rounded-lg flex items-center justify-center">
-                <img src="img/ingeglobal.webp" alt="Logo de Ingeglobal" loading="lazy" decoding="async" class="max-h-full max-w-full object-contain" width="300" height="300" />
+          <div class="group relative flex flex-col rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-950 overflow-hidden hover:border-[var(--color-accent)]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[var(--color-accent)]/5">
+            <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--color-accent)]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-start justify-between gap-3 mb-5">
+                <div class="bg-white rounded-lg px-3 py-2 flex items-center justify-center" style="min-height:40px">
+                  <img src="img/ingeglobal.webp" alt="Logo de Ingeglobal" loading="lazy" decoding="async" class="h-7 w-auto object-contain" style="max-width:120px" width="300" height="300" />
+                </div>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500 border border-zinc-700 rounded-md px-2 py-1 whitespace-nowrap flex-shrink-0">Minería</span>
               </div>
-            </div>
-            <span class="text-xs font-semibold text-slate-400 bg-zinc-800/60 border border-zinc-700 px-2.5 py-1 rounded-full self-start mb-3">Minería</span>
-            <h3 class="text-base md:text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors">Ingeglobal</h3>
-            <p class="text-sm text-slate-400 leading-relaxed mb-4">App para monitoreo de mediciones en plantas procesadoras de áridos con alertas en tiempo real.</p>
-            <div class="mt-auto pt-3 border-t border-zinc-800/60">
-              <span class="text-xs font-bold text-[#0097B2]">Nuevo producto monetizable de monitoreo en vivo</span>
+              <h3 class="text-base font-bold text-white mb-2 group-hover:text-[var(--color-accent)] transition-colors leading-snug">Ingeglobal</h3>
+              <p class="text-sm text-slate-400 leading-relaxed flex-1">App para monitoreo de mediciones en plantas procesadoras de áridos con alertas en tiempo real.</p>
+              <div class="mt-5 pt-4 border-t border-zinc-800">
+                <p class="text-sm font-bold text-[var(--color-accent)]">Nuevo producto monetizable de monitoreo en vivo</p>
+              </div>
             </div>
           </div>
 
           <!-- 6. Fundación Katy Summer -->
-          <div class="group relative flex flex-col p-4 md:p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-[var(--color-accent)] transition-all duration-300">
-            <div class="h-12 md:h-16 w-full flex items-center justify-start mb-4">
-              <div class="h-12 w-auto p-2 bg-white rounded-lg flex items-center justify-center">
-                <img src="img/summer.webp" alt="Logo de Fundación Katy Summer" loading="lazy" decoding="async" class="max-h-full w-auto object-contain" width="160" height="160" />
+          <div class="group relative flex flex-col rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-950 overflow-hidden hover:border-[var(--color-accent)]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[var(--color-accent)]/5">
+            <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--color-accent)]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-start justify-between gap-3 mb-5">
+                <div class="bg-white rounded-lg px-3 py-2 flex items-center justify-center" style="min-height:40px">
+                  <img src="img/summer.webp" alt="Logo de Fundación Katy Summer" loading="lazy" decoding="async" class="h-7 w-auto object-contain" style="max-width:120px" width="160" height="160" />
+                </div>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500 border border-zinc-700 rounded-md px-2 py-1 whitespace-nowrap flex-shrink-0">ONG · Educación</span>
               </div>
-            </div>
-            <span class="text-xs font-semibold text-slate-400 bg-zinc-800/60 border border-zinc-700 px-2.5 py-1 rounded-full self-start mb-3">ONG · Educación</span>
-            <h3 class="text-base md:text-lg font-bold text-slate-100 mb-2 group-hover:text-[var(--color-accent)] transition-colors">Fundación Katy Summer</h3>
-            <p class="text-sm text-slate-400 leading-relaxed mb-4">App Summer UP para engagement y gestión de talleres educativos.</p>
-            <div class="mt-auto pt-3 border-t border-zinc-800/60">
-              <span class="text-xs font-bold text-[#0097B2]">Métricas detalladas de impacto para optimizar la gestión de talleres</span>
+              <h3 class="text-base font-bold text-white mb-2 group-hover:text-[var(--color-accent)] transition-colors leading-snug">Fundación Katy Summer</h3>
+              <p class="text-sm text-slate-400 leading-relaxed flex-1">App Summer UP para engagement y gestión de talleres educativos con impacto social medible.</p>
+              <div class="mt-5 pt-4 border-t border-zinc-800">
+                <p class="text-sm font-bold text-[var(--color-accent)]">Métricas de impacto para optimizar la gestión de talleres</p>
+              </div>
             </div>
           </div>
 
