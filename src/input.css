@@ -10,11 +10,11 @@
     --color-accent: #0097B2;
     --color-accent-dark: #005E70;
     --color-accent-hover: #007A91;
-    --color-accent-glow: rgba(0, 151, 178, 0.15);
+    --color-accent-glow: rgba(0, 151, 178, 0.35);
     /* ── CTAs — same turquoise ── */
     --color-cta: #0097B2;
-    --color-cta-hover: #007A91;
-    --color-cta-glow: rgba(0, 151, 178, 0.25);
+    --color-cta-hover: #00B1D2;
+    --color-cta-glow: rgba(0, 151, 178, 0.45);
     /* ── Backgrounds ── */
     --color-dark: #0F172A;
     --color-dark-card: #1E293B;
