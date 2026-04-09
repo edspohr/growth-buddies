@@ -24,6 +24,8 @@ There are no linting or testing tools. This is a static site with CSS preprocess
 
 Static HTML5 site for a Chilean AI automation consulting firm. No JavaScript framework — pages are self-contained semantic HTML with vanilla JS for interactivity.
 
+**Positioning:** Growth Buddies is positioned as a **strategic diagnostic consultant**, not an implementation agency. The primary CTA everywhere is "Sesión de Calificación" (30-min qualification call) or "Evaluar si califica". The main paid product is the Diagnóstico de Automatización Estratégica (USD $3,000, 2-week engagement). Avoid language like "auditoría gratuita" or "Automatizamos lo aburrido" — these belong to the old positioning.
+
 **CSS pipeline:** `src/input.css` → Tailwind CLI → `dist/output.css`. Custom colors (`accent: #00f6ff`, `dark: #050510`), fonts (Inter/Space Grotesk), and animations are defined in `tailwind.config.js`.
 
 **URL structure (clean URLs via Vercel):**
@@ -35,9 +37,10 @@ Static HTML5 site for a Chilean AI automation consulting firm. No JavaScript fra
 
 **JavaScript patterns used across pages:**
 - All scripts are inline IIFEs at the bottom of `<body>` — no external JS files
-- Mobile menu toggle, exit-intent modal (sessionStorage), sticky CTA bar (IntersectionObserver), ROI calculator → WhatsApp link
+- Mobile menu toggle, sticky CTA bar (IntersectionObserver), UTM attribution capture (sessionStorage)
 - Calendly embed loads only on desktop via `matchMedia('(min-width: 768px)')`
 - All WhatsApp CTAs tracked with GA4 events; Microsoft Clarity also active
+- **index.html has no contact form** — the contacto section uses direct Calendly/WhatsApp CTAs only. No Firebase JS on the homepage.
 
 **Accessibility conventions every page must follow:**
 - Skip link: `<a href="#main-content" class="sr-only ...">Saltar al contenido</a>` as first element
@@ -47,7 +50,7 @@ Static HTML5 site for a Chilean AI automation consulting firm. No JavaScript fra
 
 **Deployment:** Vercel auto-deploys on push to `main`. Config in `vercel.json` — clean URLs, no trailing slashes, long-cache headers for static assets, `www` → apex redirect.
 
-**JSON-LD schemas** (`Organization`, `WebSite`, `VideoObject`) are present in index.html for SEO — update them when brand info changes.
+**JSON-LD schemas** (`Organization`, `WebSite`, `VideoObject`, `FAQPage`, `HowTo`) are present in index.html for SEO/GEO — update them when brand info changes. The Organization schema includes `hasOfferCatalog` for the diagnostic product and `knowsAbout` for LLM discoverability.
 
 ## Firebase Backend
 

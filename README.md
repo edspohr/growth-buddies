@@ -1,6 +1,8 @@
 # Growth Buddies — Sitio Web Corporativo
 
-Sitio web de [growthbuddies.cl](https://growthbuddies.cl), consultora chilena especializada en automatización inteligente, IA corporativa y gestión del cambio para estudios jurídicos, corredoras de propiedades y empresas en transformación digital.
+Sitio web de [growthbuddies.cl](https://growthbuddies.cl), consultora chilena de **diagnóstico y automatización con IA** para empresas de servicios profesionales en Latinoamérica. Diagnosticamos operaciones, identificamos dónde se pierde dinero, y entregamos un roadmap de automatización priorizado con ROI estimado.
+
+> **Posicionamiento:** Consultora de diagnóstico estratégico, no de implementación genérica. El CTA principal es "Evaluar si califica" / "Sesión de Calificación". El producto central es el Diagnóstico de Automatización Estratégica (USD $3.000, 2 semanas).
 
 ## Stack Tecnológico
 
@@ -165,21 +167,20 @@ Inicio | Servicios | Soluciones | Blog | Contacto
 
 ## Funcionalidades del Homepage
 
-- **Hero** con video de fondo (`vid/hero.mp4`) y CTA dual
-- **ROI Calculator** con sliders interactivos y resultado animado
-- **Tarjetas de clientes** con micro-testimoniales (6 clientes)
-- **Formulario de contacto** con:
-  - Dropdown "Tipo de consulta" (Auditoría / Demo / Consulta General / BrokerIA Piloto)
-  - Validación inline en blur + submit
-  - Spinner en botón durante envío
-  - Envío a WhatsApp con mensaje pre-formateado
-- **Calendly embed** (columna izquierda del contacto, solo desktop via `matchMedia`)
+- **Hero** con video de fondo (`vid/hero.mp4`) y CTA dual ("Evaluar si califica" + WhatsApp)
+- **Tarjetas de clientes** con micro-testimoniales y logos
+- **Sección "Cómo Trabajamos"** — proceso de 3 pasos (Calificación → Diagnóstico → Implementación) con Microdata HowTo
+- **Reseñas de Google** con calificación 5.0
+- **Sección de servicios** (diagnóstico, implementación, change management)
+- **Tabla comparativa de diferenciadores** vs. agencias genéricas
+- **FAQ** con 6 preguntas sobre el diagnóstico
+- **Sección de contacto** con Calendly embed (solo desktop) + WhatsApp CTA directo — sin formulario HTML
 - **Sticky CTA bar** móvil (aparece al salir del hero, via IntersectionObserver)
-- **Exit-intent popup** (mouseleave en `document`, guardado en `sessionStorage`)
+- **UTM attribution capture** en sessionStorage (sin Firebase en homepage)
 
 ## Contacto & Equipo
 
-- **Edmundo Spöhr** — CEO & Co-founder — [edmundo@growthbuddies.cl](mailto:edmundo@growthbuddies.cl)
-- **Felipe Soto Santibáñez** — Co-founder
-- WhatsApp: [+56 9 6586 3160](https://wa.me/56957272191)
+- **Edmundo Spohr** — Director & Fundador — [edmundo@growthbuddies.cl](mailto:edmundo@growthbuddies.cl)
+- **Felipe Soto Santibáñez** — Co-fundador (ex-Mercado Libre / Banco Falabella)
+- WhatsApp: [+56 9 5727 2191](https://wa.me/56957272191)
 - LinkedIn: [linkedin.com/company/growth-buddies](https://www.linkedin.com/company/growth-buddies)

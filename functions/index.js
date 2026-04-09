@@ -110,12 +110,12 @@ exports.sendGuideDelivery = onDocumentCreated(
           <li><strong style="color:#e2e8f0;">Proceso 5:</strong> Rendición de gastos e informes — cierra el mes en 1 día, no 2 semanas</li>
         </ul>
       </div>
-      <p style="font-size:14px;color:#94a3b8;margin:24px 0 8px;line-height:1.6;">Si quieres que revisemos juntos cuál de estos procesos tiene más impacto en tu empresa, agenda una sesión de 30 minutos gratuita:</p>
-      ${ctaButton(calendlyUrl, "📅 Agendar auditoría gratuita", "#1e2035", "#e2e8f0")}
+      <p style="font-size:14px;color:#94a3b8;margin:24px 0 8px;line-height:1.6;">Si quieres que revisemos juntos cuál de estos procesos tiene más impacto en tu empresa, agenda una sesión de calificación de 30 minutos:</p>
+      ${ctaButton(calendlyUrl, "📅 Agendar sesión de calificación", "#1e2035", "#e2e8f0")}
       <p style="font-size:13px;color:#64748b;margin-top:12px;text-align:center;">Sin compromiso · Sin tarjeta de crédito</p>`;
 
     await resend().emails.send({
-      from: "Edmundo — Growth Buddies <edmundo@growthbuddies.cl>",
+      from: "Edmundo Spohr — Growth Buddies <edmundo@growthbuddies.cl>",
       to: [lead.email],
       subject: "Tu guía de automatización IA está lista ✅",
       html: emailWrapper(
@@ -222,7 +222,7 @@ exports.notifyCalcLead = onDocumentCreated(
     const lead = event.data.data();
     const leadId = event.params.leadId;
 
-    const waMsg = `Hola! Usé la calculadora de Growth Buddies y me interesaría saber más sobre la auditoría gratuita.`;
+    const waMsg = `Hola! Usé la calculadora de Growth Buddies y me interesaría saber más sobre el diagnóstico de automatización.`;
     const whatsappLink = `https://wa.me/56957272191?text=${encodeURIComponent(waMsg)}`;
 
     const body = `
@@ -268,20 +268,21 @@ exports.sendDay0Confirmation = onDocumentUpdated(
     const { caseStudyTitle, caseStudyBody, caseStudyLink } = interestContent(after.interest);
 
     const body = `
-      <p style="font-size:16px;line-height:1.7;margin:0 0 16px;">Hola <strong>${after.name}</strong>, recibimos tu consulta sobre <strong>${after.interest}</strong>. 👋</p>
-      <p style="font-size:15px;line-height:1.7;color:#94a3b8;margin:0 0 24px;">Uno de nuestros especialistas te contactará <strong style="color:#e2e8f0;">en menos de 2 horas</strong>. Mientras tanto, si prefieres agendar directo:</p>
-      ${ctaButton("https://calendly.com/espohr/conversemos", "📅 Agendar 30 minutos ahora")}
+      <p style="font-size:16px;line-height:1.7;margin:0 0 16px;">Hola <strong>${after.name}</strong>, recibimos tu solicitud de diagnóstico. 👋</p>
+      <p style="font-size:15px;line-height:1.7;color:#94a3b8;margin:0 0 24px;">Edmundo te contactará <strong style="color:#e2e8f0;">en menos de 2 horas hábiles</strong> para confirmar si el diagnóstico es relevante para tu operación. Si prefieres agendar directamente:</p>
+      ${ctaButton("https://calendly.com/espohr/conversemos", "📅 Agendar sesión de calificación")}
       <div style="margin-top:32px;padding:24px;background:#0d0d1a;border-radius:12px;border-left:3px solid #00f6ff;">
         <p style="margin:0 0 8px;font-size:12px;color:#00f6ff;font-weight:700;text-transform:uppercase;letter-spacing:.06em;">Caso de éxito relevante</p>
         <p style="margin:0 0 12px;font-size:15px;font-weight:700;color:#e2e8f0;">${caseStudyTitle}</p>
         <p style="margin:0 0 16px;font-size:14px;color:#94a3b8;line-height:1.6;">${caseStudyBody}</p>
         <a href="${caseStudyLink}" style="font-size:13px;color:#00f6ff;text-decoration:none;font-weight:600;">Leer más →</a>
-      </div>`;
+      </div>
+      <p style="margin-top:28px;font-size:13px;color:#64748b;line-height:1.6;">— Edmundo Spohr<br><span style="color:#475569;">Director & Fundador, Growth Buddies</span></p>`;
 
     await resend().emails.send({
-      from: "Edmundo — Growth Buddies <edmundo@growthbuddies.cl>",
+      from: "Edmundo Spohr — Growth Buddies <edmundo@growthbuddies.cl>",
       to: [after.email],
-      subject: `${after.name}, recibimos tu consulta ✓`,
+      subject: `${after.name}, recibimos tu solicitud ✓`,
       html: emailWrapper("#050510", "#00f6ff", "Confirmación", `Hola ${after.name} 👋`, body),
     });
 
@@ -326,7 +327,7 @@ exports.sendFollowupSequence = onSchedule(
           ${ctaButton("https://calendly.com/espohr/conversemos", "📅 O agendar llamada de 30 min", "#1e2035", "#e2e8f0")}`;
 
         await resend().emails.send({
-          from: "Edmundo — Growth Buddies <edmundo@growthbuddies.cl>",
+          from: "Edmundo Spohr — Growth Buddies <edmundo@growthbuddies.cl>",
           replyTo: "edmundo@spohr.cl",
           to: [lead.email],
           subject: `El proceso que más horas te devuelve (Proceso 1 de la guía)`,
@@ -360,7 +361,7 @@ exports.sendFollowupSequence = onSchedule(
           <p style="margin-top:16px;font-size:13px;color:#64748b;text-align:center;">O agenda una llamada y lo calculamos juntos: <a href="https://calendly.com/espohr/conversemos" style="color:#00f6ff;text-decoration:none;">Agendar →</a></p>`;
 
         await resend().emails.send({
-          from: "Edmundo — Growth Buddies <edmundo@growthbuddies.cl>",
+          from: "Edmundo Spohr — Growth Buddies <edmundo@growthbuddies.cl>",
           replyTo: "edmundo@spohr.cl",
           to: [lead.email],
           subject: `Caso real: 47 horas recuperadas en el primer mes`,
@@ -390,11 +391,11 @@ exports.sendFollowupSequence = onSchedule(
           <p style="margin-top:16px;text-align:center;font-size:14px;color:#64748b;">¿Prefieres WhatsApp? <a href="https://wa.me/56957272191?text=${waText}" style="color:#25d366;text-decoration:none;">Escríbeme directo →</a></p>`;
 
         await resend().emails.send({
-          from: "Edmundo — Growth Buddies <edmundo@growthbuddies.cl>",
+          from: "Edmundo Spohr — Growth Buddies <edmundo@growthbuddies.cl>",
           replyTo: "edmundo@spohr.cl",
           to: [lead.email],
           subject: `${lead.name ? lead.name + ", ¿" : "¿"}cuál proceso aplicarías primero?`,
-          html: emailWrapper("#050510", "#00f6ff", "Seguimiento", "Tu diagnóstico gratuito sigue disponible", body),
+          html: emailWrapper("#050510", "#00f6ff", "Seguimiento", "Tu sesión de calificación sigue disponible", body),
         });
 
         await db.collection("guide_leads").doc(id).update({ followup_day10_sent: true });
@@ -425,7 +426,7 @@ exports.sendFollowupSequence = onSchedule(
           ${ctaButton("https://calendly.com/espohr/conversemos", "📅 Sí, agendemos")}`;
 
         await resend().emails.send({
-          from: "Edmundo — Growth Buddies <edmundo@growthbuddies.cl>",
+          from: "Edmundo Spohr — Growth Buddies <edmundo@growthbuddies.cl>",
           replyTo: "edmundo@spohr.cl",
           to: [lead.email],
           subject: content.caseStudyTitle,
@@ -452,7 +453,7 @@ exports.sendFollowupSequence = onSchedule(
           ${ctaButton("https://calendly.com/espohr/conversemos", "📅 Agendar llamada de ROI", "#1e2035", "#e2e8f0")}`;
 
         await resend().emails.send({
-          from: "Edmundo — Growth Buddies <edmundo@growthbuddies.cl>",
+          from: "Edmundo Spohr — Growth Buddies <edmundo@growthbuddies.cl>",
           replyTo: "edmundo@spohr.cl",
           to: [lead.email],
           subject: `${lead.name ? lead.name + ", ¿" : "¿"}cuánto cuesta el trabajo manual en tu empresa?`,
@@ -469,19 +470,19 @@ exports.sendFollowupSequence = onSchedule(
           <p style="font-size:15px;line-height:1.7;color:#94a3b8;margin:0 0 16px;">Hola <strong style="color:#e2e8f0;">${lead.name || ""}${lead.name ? "," : ""}</strong> este es mi último correo, lo prometo. 😊</p>
           <p style="font-size:15px;line-height:1.7;color:#94a3b8;margin:0 0 24px;">Sé que el tiempo es escaso. Por eso quiero ser directo:</p>
           <div style="background:#0d0d1a;border-radius:12px;padding:24px;margin-bottom:24px;border:1px solid #1e2035;">
-            <p style="margin:0 0 8px;font-size:13px;color:#00f6ff;font-weight:700;text-transform:uppercase;">Solo tomamos 3 nuevos proyectos por mes</p>
-            <p style="margin:0;font-size:15px;color:#94a3b8;line-height:1.6;">Para mantener la calidad de implementación y garantizar la adopción, limitamos los proyectos que iniciamos cada mes. <strong style="color:#e2e8f0;">Tu auditoría gratuita sigue reservada hasta el viernes.</strong></p>
+            <p style="margin:0 0 8px;font-size:13px;color:#00f6ff;font-weight:700;text-transform:uppercase;">Solo tomamos 3 nuevos diagnósticos por mes</p>
+            <p style="margin:0;font-size:15px;color:#94a3b8;line-height:1.6;">Para mantener la profundidad del análisis y garantizar la calidad del informe, limitamos los diagnósticos que iniciamos cada mes. <strong style="color:#e2e8f0;">Tu sesión de calificación sigue disponible hasta el viernes.</strong></p>
           </div>
           <p style="font-size:14px;color:#94a3b8;margin:0 0 24px;">30 minutos. Sin compromiso. Sin tarjeta de crédito. Solo una conversación honesta sobre si podemos ayudarte.</p>
           ${ctaButton("https://calendly.com/espohr/conversemos", "📅 Agendar antes del viernes")}
-          <p style="margin-top:16px;text-align:center;font-size:14px;color:#64748b;">¿Prefieres WhatsApp? <a href="https://wa.me/56957272191?text=${encodeURIComponent(`Hola Edmundo, soy ${lead.name || "un interesado"}, quiero coordinar la auditoría.`)}" style="color:#25d366;text-decoration:none;">Escríbeme directo →</a></p>`;
+          <p style="margin-top:16px;text-align:center;font-size:14px;color:#64748b;">¿Prefieres WhatsApp? <a href="https://wa.me/56957272191?text=${encodeURIComponent(`Hola Edmundo, soy ${lead.name || "un interesado"}, quiero coordinar la sesión de calificación.`)}" style="color:#25d366;text-decoration:none;">Escríbeme directo →</a></p>`;
 
         await resend().emails.send({
-          from: "Edmundo — Growth Buddies <edmundo@growthbuddies.cl>",
+          from: "Edmundo Spohr — Growth Buddies <edmundo@growthbuddies.cl>",
           replyTo: "edmundo@spohr.cl",
           to: [lead.email],
-          subject: `${lead.name ? lead.name + ", última" : "Última"} oportunidad — tu auditoría gratuita`,
-          html: emailWrapper("#050510", "#00f6ff", "Último aviso", "Tu auditoría gratuita sigue disponible", body),
+          subject: `${lead.name ? lead.name + ", última" : "Última"} oportunidad — tu sesión de calificación`,
+          html: emailWrapper("#050510", "#00f6ff", "Último aviso", "Tu sesión de calificación sigue disponible", body),
         });
 
         await db.collection("leads").doc(id).update({ followup_day7_sent: true });
