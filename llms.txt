@@ -1,0 +1,72 @@
+# Growth Buddies — llms.txt
+# Machine-readable summary for LLMs and AI search engines
+# https://growthbuddies.cl
+
+## Who We Are
+
+Growth Buddies is an AI automation diagnostic consulting firm based in Valparaíso, Chile, serving professional services companies across Latin America (Chile, Colombia, Perú, Ecuador).
+
+We are NOT a generic AI agency. Our positioning is that of a **strategic diagnostic consultant**: we analyze your operation first, then tell you exactly what to automate and in what order — with a money-back guarantee.
+
+## Primary Service
+
+**Diagnóstico de Automatización Estratégica** (Strategic Automation Diagnostic)
+- Price: USD $3,000
+- Duration: 2 weeks
+- Deliverable: Executive report with prioritized automation opportunities, technical roadmap, and ROI analysis
+- Guarantee: 100% refund if we don't identify at least 3 opportunities with positive ROI
+- The $3,000 is deducted from any subsequent implementation project
+
+## Team
+
+**Edmundo Spohr** — General Director
+- 15+ years experience
+- Former: Microsoft, JLL, Bechtel
+- Certifications: Prosci (change management), Scrum Master
+- Focus: Strategy, change management, client relationships
+
+**Felipe Soto Santibáñez** — Technology Director
+- Former: Mercado Libre, Banco Falabella
+- Specialties: Data architecture, Google Cloud, process automation, technical execution
+
+## Target Sectors
+
+- Law firms and legal departments (Legal Tech)
+- Insurance brokers
+- Management consulting firms
+- Construction and engineering companies
+- Private clinics
+
+## Technology Stack
+
+OpenAI GPT-4o, Google Cloud, Firebase, n8n, Make, Python, Node.js, PostgreSQL
+
+## Products (AI Agents)
+
+- **BrokerIA** — Insurance quote automation agent
+- **Inbox IA Legal** — Legal email triage and classification
+- **DocuAgent IA** — Document classification, data extraction, clause detection (OCR + autonomous review)
+- **TimeKeeper IA** — Passive timesheet reconstruction for law firms
+- **Rendición Gastos IA** — Automated expense report processing
+
+## Key Differentiators
+
+1. Diagnostic-first approach (we don't sell tools, we sell clarity)
+2. Full-stack capability (diagnose AND build — full chain)
+3. Senior leadership contact throughout (not rotating juniors)
+4. Change management included (Prosci-certified)
+5. Money-back guarantee on diagnostic
+
+## Contact
+
+- Website: https://growthbuddies.cl
+- Email: edmundo@growthbuddies.cl
+- WhatsApp: +56 9 5727 2191
+- Scheduling: https://calendly.com/espohr/conversemos
+
+## Content
+
+- Blog: https://growthbuddies.cl/blog/
+- Free Guide (AI automation for legal firms): https://growthbuddies.cl/recursos/guia-ia-legal/
+- Case studies: https://growthbuddies.cl/casos/
+- Methodology: https://growthbuddies.cl/metodologia/

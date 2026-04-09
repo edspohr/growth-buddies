@@ -121,7 +121,7 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-          {"@type":"Question","name":"¿Cuánto cuesta el diagnóstico?","acceptedAnswer":{"@type":"Answer","text":"El Diagnóstico de Automatización Estratégica tiene un valor de USD $3.000 + IVA. Incluye una inmersión de 2 semanas en su operación y un informe ejecutivo con oportunidades priorizadas, roadmap técnico y análisis de ROI. Si decide avanzar a implementación, los $3.000 se descuentan del proyecto."}},
+          {"@type":"Question","name":"¿Cuánto cuesta el diagnóstico?","acceptedAnswer":{"@type":"Answer","text":"El Diagnóstico de Automatización Estratégica tiene un valor de USD $3.000. Incluye una inmersión de 2 semanas en su operación y un informe ejecutivo con oportunidades priorizadas, roadmap técnico y análisis de ROI. Si decide avanzar a implementación, los $3.000 se descuentan del proyecto."}},
           {"@type":"Question","name":"¿Qué pasa si el diagnóstico no encuentra oportunidades?","acceptedAnswer":{"@type":"Answer","text":"Si no identificamos al menos 3 oportunidades con ROI positivo, le devolvemos el 100% del valor del diagnóstico. Es nuestro compromiso de calidad."}},
           {"@type":"Question","name":"¿Puedo implementar con otro proveedor?","acceptedAnswer":{"@type":"Answer","text":"Sí. El roadmap y el informe ejecutivo son suyos. Puede implementar con quien quiera. Muchos clientes eligen quedarse con nosotros porque ya conocemos su operación, pero no hay ninguna obligación."}},
           {"@type":"Question","name":"¿Es segura la implementación con mis datos?","acceptedAnswer":{"@type":"Answer","text":"Sí. Trabajamos con entornos aislados y sus datos nunca se usan para entrenar modelos de terceros. Firmamos un acuerdo de confidencialidad antes de acceder a cualquier información."}},
@@ -129,6 +129,26 @@
           {"@type":"Question","name":"¿Cuánto tiempo toma ver resultados?","acceptedAnswer":{"@type":"Answer","text":"El diagnóstico se entrega en 2 semanas. Si avanza a implementación, los primeros resultados son visibles entre 30 y 60 días según la complejidad. Los proyectos más completos se pagan solos en menos de 90 días."}}
         ]
       }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Growth Buddies — Diagnóstico de Automatización con IA",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", ".speakable"]
+      },
+      "about": {
+        "@type": "Organization",
+        "name": "Growth Buddies",
+        "description": "Consultora de diagnóstico y automatización con inteligencia artificial para empresas de servicios profesionales en Latinoamérica. Servicio principal: Diagnóstico de Automatización Estratégica (USD $3.000, 2 semanas, garantía de devolución).",
+        "url": "https://growthbuddies.cl",
+        "areaServed": ["Chile", "Colombia", "Perú", "Ecuador"],
+        "knowsAbout": ["automatización con IA", "inteligencia artificial empresarial", "diagnóstico operacional", "Legal Tech", "Google Cloud", "n8n", "Make", "OpenAI", "transformación digital"]
+      }
+    }
     </script>
 
     <meta name="author" content="Growth Buddies" />
@@ -225,7 +245,7 @@
         </a>
 
         <div class="hidden md:flex items-center gap-8">
-          <a href="/#servicios" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Servicios</a>
+          <a href="#como-trabajamos" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Servicios</a>
           <a href="/soluciones/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Soluciones</a>
           <a href="/casos/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Casos</a>
           <a href="/blog/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Blog</a>
@@ -269,7 +289,7 @@
           </a>
         </div>
         <nav class="flex flex-col" role="navigation" aria-label="Menú móvil">
-          <a href="/#servicios" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Servicios</a>
+          <a href="#como-trabajamos" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Servicios</a>
           <a href="/soluciones/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Soluciones</a>
           <a href="/casos/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Casos</a>
           <a href="/blog/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Blog</a>
@@ -354,13 +374,13 @@
           <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer"
             class="btn-cta text-base md:text-lg w-full sm:w-auto py-3.5 px-8 md:py-4 md:px-10"
             onclick="if(typeof gtag!=='undefined'){gtag('event','calendly_click',{event_category:'hero'});}">
-            Evaluar si satisface nuestros criterios →
+            Evaluar si su empresa califica →
           </a>
           <a href="https://wa.me/56957272191?text=Hola%20Growth%20Buddies%21%20Quiero%20evaluar%20si%20calificamos.%20%C2%BFPodemos%20conversar%3F"
             target="_blank" rel="noopener noreferrer"
             class="text-sm text-slate-400 hover:text-[#25D366] transition-colors"
             onclick="if(typeof gtag!=='undefined'){gtag('event','whatsapp_click',{event_category:'hero'});}">
-            o escríbenos por WhatsApp
+            o escríbanos por WhatsApp
           </a>
         </div>
 
@@ -416,8 +436,13 @@
 
 <main id="main-content">
     <div class="sr-only" role="doc-abstract">
-      <h2>Acerca de Growth Buddies</h2>
-      <p>Growth Buddies es una consultora de diagnóstico y automatización con IA basada en Valparaíso, Chile, que atiende empresas de servicios profesionales en Latinoamérica (Chile, Colombia, Perú, Ecuador). Su servicio principal es el Diagnóstico de Automatización Estratégica (USD $3.000), una inmersión de 2 semanas que identifica dónde pierde dinero la operación del cliente, qué automatizar, en qué orden, y con qué ROI estimado. Si el diagnóstico no identifica al menos 3 oportunidades con ROI positivo, se devuelve el 100%. La empresa es liderada por Edmundo Spohr (15+ años, ex-Microsoft/JLL/Bechtel, certificado Prosci y Scrum) y Felipe Soto (ex-Mercado Libre/Banco Falabella, especialista en datos y Google Cloud).</p>
+      <h2>Acerca de Growth Buddies — Consultora de Automatización con IA</h2>
+      <p itemscope itemtype="https://schema.org/Organization">
+        <span itemprop="name">Growth Buddies</span> es una <span itemprop="description">consultora especializada en diagnóstico y automatización con inteligencia artificial para empresas de servicios profesionales en Latinoamérica</span>. Con sede en <span itemprop="addressLocality">Valparaíso</span>, <span itemprop="addressCountry">Chile</span>, atiende clientes en Chile, Colombia, Perú y Ecuador.
+      </p>
+      <p>Su servicio principal es el <strong>Diagnóstico de Automatización Estratégica</strong> (USD $3.000, 2 semanas): un análisis profundo de la operación del cliente que identifica dónde pierde dinero, qué automatizar, en qué orden, y con qué ROI estimado. Garantía del 100% si no se identifican al menos 3 oportunidades con ROI positivo.</p>
+      <p>El equipo está liderado por <span itemscope itemtype="https://schema.org/Person"><span itemprop="name">Edmundo Spohr</span> (<span itemprop="jobTitle">Director General</span>, 15+ años de experiencia, ex-Microsoft, ex-JLL, ex-Bechtel, certificado Prosci y Scrum Master)</span> y <span itemscope itemtype="https://schema.org/Person"><span itemprop="name">Felipe Soto Santibáñez</span> (<span itemprop="jobTitle">Director de Tecnología</span>, ex-Mercado Libre, ex-Banco Falabella, especialista en arquitectura de datos y Google Cloud)</span>.</p>
+      <p>Sectores atendidos: estudios jurídicos, corredoras de seguros, consultoras de gestión, empresas constructoras, clínicas privadas. Tecnologías: OpenAI GPT-4o, Google Cloud, Firebase, n8n, Make, Python, Node.js.</p>
     </div>
     <section id="clientes" class="py-16 md:py-24 border-b border-zinc-900 bg-zinc-950">
       <div class="max-w-6xl mx-auto px-6">
@@ -543,13 +568,13 @@
     </section>
     
     <!-- Cómo Trabajamos — Process Flow -->
-    <section id="como-trabajamos" class="py-16 md:py-24 px-6 border-b border-zinc-900 bg-zinc-950/60" itemscope itemtype="https://schema.org/HowTo">
+    <section id="como-trabajamos" class="py-16 md:py-24 px-6 border-b border-zinc-900 bg-zinc-950/60" role="region" aria-labelledby="como-trabajamos-heading" itemscope itemtype="https://schema.org/HowTo">
       <meta itemprop="name" content="Cómo trabajamos en Growth Buddies" />
       <meta itemprop="description" content="Nuestro proceso de diagnóstico e implementación de automatización con IA para empresas de servicios profesionales." />
       <div class="max-w-6xl mx-auto">
         <div class="text-center reveal mb-12 md:mb-16">
           <p class="text-xs font-bold text-[var(--color-accent)] tracking-widest uppercase mb-3 font-display">Nuestro Proceso</p>
-          <h2 class="text-3xl md:text-4xl text-slate-100 font-serif">Cómo Trabajamos</h2>
+          <h2 id="como-trabajamos-heading" class="text-3xl md:text-4xl text-slate-100 font-serif">Cómo Trabajamos</h2>
           <p class="text-slate-400 text-sm mt-3 max-w-xl mx-auto">Un camino claro desde la conversación inicial hasta la implementación.</p>
         </div>
 
@@ -581,7 +606,7 @@
               <meta itemprop="position" content="2" />
               <div class="flex items-start justify-between mb-6">
                 <span class="text-5xl font-black text-[var(--color-accent)]/20 group-hover:text-[var(--color-accent)]/40 transition-colors font-display leading-none select-none">2</span>
-                <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--color-accent)] border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/5 rounded-full px-3 py-1 whitespace-nowrap">USD $3.000 + IVA · 2 sem.</span>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--color-accent)] border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/5 rounded-full px-3 py-1 whitespace-nowrap">USD $3.000 · 2 sem.</span>
               </div>
               <div class="mb-4">
                 <div class="w-10 h-10 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center justify-center text-[var(--color-accent)] group-hover:border-[var(--color-accent)]/50 transition-colors mb-4">
@@ -738,49 +763,6 @@
       </div>
     </section>
 
-    <!-- Impacto Real — Social Proof Stats -->
-    <section id="resultados" class="py-16 md:py-24 px-6 border-b border-white/5 relative bg-zinc-950 overflow-hidden">
-      <!-- Glow decorativo -->
-      <div class="absolute inset-0 max-w-full pointer-events-none">
-        <div class="absolute bottom-0 right-1/4 w-[600px] h-[300px] bg-[var(--color-accent)]/5 blur-[150px] rounded-full"></div>
-      </div>
-      <div class="max-w-5xl mx-auto relative z-10">
-        <div class="text-center reveal mb-10 md:mb-14">
-          <h2 class="text-3xl md:text-4xl font-black tracking-tight font-display text-white">Impacto Real en Nuestros Clientes</h2>
-          <p class="mt-3 text-sm font-medium text-slate-400">Datos de proyectos activos, verificables.</p>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 md:gap-6">
-          <!-- Card 1 -->
-          <div class="reveal bg-zinc-800/40 backdrop-blur-sm rounded-2xl p-6 md:p-8 text-center border border-zinc-700/50 shadow-xl group hover:border-[var(--color-accent)]/40 transition-colors relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-b from-[var(--color-accent)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="relative z-10">
-              <div class="text-5xl md:text-6xl font-black font-display mb-3 leading-none text-white drop-shadow-md group-hover:text-[var(--color-accent)] transition-colors">+17%</div>
-              <div class="text-sm font-bold text-slate-200 mb-2">Aumento en facturación</div>
-              <p class="text-xs leading-relaxed text-slate-400">SPI Americas — gestión documental con IA</p>
-            </div>
-          </div>
-          <!-- Card 2 -->
-          <div class="reveal bg-zinc-800/40 backdrop-blur-sm rounded-2xl p-6 md:p-8 text-center border border-zinc-700/50 shadow-xl group hover:border-[var(--color-accent)]/40 transition-colors relative overflow-hidden" style="transition-delay:80ms">
-            <div class="absolute inset-0 bg-gradient-to-b from-[var(--color-accent)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="relative z-10">
-              <div class="text-5xl md:text-6xl font-black font-display mb-3 leading-none text-white drop-shadow-md group-hover:text-[var(--color-accent)] transition-colors">20+</div>
-              <div class="text-sm font-bold text-slate-200 mb-2">Proyectos exitosos</div>
-              <p class="text-xs leading-relaxed text-slate-400">Chile, Colombia, Perú y Ecuador</p>
-            </div>
-          </div>
-          <!-- Card 3 -->
-          <div class="reveal bg-zinc-800/40 backdrop-blur-sm rounded-2xl p-6 md:p-8 text-center border border-zinc-700/50 shadow-xl group hover:border-[var(--color-accent)]/40 transition-colors relative overflow-hidden" style="transition-delay:160ms">
-            <div class="absolute inset-0 bg-gradient-to-b from-[var(--color-accent)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="relative z-10">
-              <div class="text-[3rem] md:text-6xl font-black font-display mb-3 leading-none text-white drop-shadow-md group-hover:text-[var(--color-accent)] transition-colors whitespace-nowrap">&lt;60 días</div>
-              <div class="text-sm font-bold text-slate-200 mb-2">Para ver retorno</div>
-              <p class="text-xs leading-relaxed text-slate-400">Visión de negocio desde el día 1</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- CTA Section — Mid-page -->
     <section class="py-16 md:py-24 px-6 relative bg-gradient-to-b from-zinc-950 to-zinc-900 border-y border-white/5">
       <div class="max-w-3xl mx-auto text-center reveal">
@@ -866,7 +848,7 @@
               </div>
               <p class="text-xs font-semibold text-blue-400 mb-3 bg-zinc-900/50 inline-block px-3 py-1 rounded-full border border-zinc-700">OCR + Revisión Autónoma</p>
               <p class="text-slate-400 leading-relaxed text-[0.9rem] mb-4">
-                Tu agente de gestión documental inteligente. Sube cualquier documento y la IA lo clasifica, extrae datos clave, detecta cláusulas faltantes y genera un reporte semáforo en 30 segundos. Sin intervención humana.
+                Su agente de gestión documental inteligente. Suba cualquier documento y la IA lo clasifica, extrae datos clave, detecta cláusulas faltantes y genera un reporte semáforo en 30 segundos. Sin intervención humana.
               </p>
             </div>
           </div>
@@ -989,7 +971,7 @@
                     </p>
                   </div>
                   <a
-                    href="https://linkedin.com/in/fssantibanez/"
+                    href="/equipo/felipe-soto-santibanez/"
                     target="_blank" rel="noopener noreferrer"
                     class="mt-4 inline-flex items-center gap-2 text-xs text-slate-500 hover:text-blue-400 transition-colors uppercase tracking-wider font-bold"
                   >
@@ -1017,10 +999,10 @@
     </section>
 
     <!-- Diferenciadores — Comparison Table -->
-    <section id="diferenciadores" class="py-16 md:py-24 px-6 border-b border-zinc-900 bg-zinc-950">
+    <section id="diferenciadores" class="py-16 md:py-24 px-6 border-b border-zinc-900 bg-zinc-950" role="region" aria-labelledby="diferenciadores-heading">
       <div class="max-w-4xl mx-auto">
         <div class="text-center reveal mb-10 md:mb-14">
-          <h2 class="text-3xl md:text-4xl text-slate-100 font-serif">¿Por qué Growth Buddies?</h2>
+          <h2 id="diferenciadores-heading" class="text-3xl md:text-4xl text-slate-100 font-serif">¿Por qué Growth Buddies?</h2>
           <p class="text-slate-400 text-sm mt-3 max-w-lg mx-auto">No somos otra consultora de IA. Esto es lo que nos diferencia.</p>
         </div>
 
@@ -1114,7 +1096,7 @@
       <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-6 md:gap-10">
         <div class="flex-1 text-center md:text-left">
           <p class="text-xs font-bold tracking-widest uppercase text-slate-500 mb-1">Recurso gratuito</p>
-          <h2 class="text-base md:text-lg font-semibold text-slate-300 font-display leading-tight mb-1">5 Procesos que Puedes Automatizar con IA Esta Semana</h2>
+          <h2 class="text-base md:text-lg font-semibold text-slate-300 font-display leading-tight mb-1">5 Procesos que Puede Automatizar con IA Esta Semana</h2>
           <p class="text-slate-500 text-sm">Para estudios jurídicos, corredoras y empresas de servicios en Latinoamérica.</p>
         </div>
         <a href="/recursos/guia-ia-legal/" class="flex-shrink-0 inline-flex items-center gap-2 border border-zinc-700 text-slate-400 hover:text-white hover:border-zinc-500 font-medium py-2.5 px-5 rounded-full transition-all whitespace-nowrap text-sm">
@@ -1127,16 +1109,18 @@
     <!-- FAQ Section -->
     <section
       class="py-16 md:py-24 px-6 border-b border-zinc-900 bg-zinc-950/30"
+      role="region" aria-labelledby="faq-heading"
     >
       <div class="max-w-4xl mx-auto">
         <div class="text-center reveal mb-10 md:mb-16">
           <h2
+            id="faq-heading"
             class="text-3xl md:text-4xl text-slate-100 font-serif"
           >
             Preguntas Frecuentes
           </h2>
           <p class="mt-4 text-slate-400">
-            Resolvemos tus dudas sobre automatización e IA.
+            Resolvemos sus dudas sobre automatización e IA.
           </p>
         </div>
 
@@ -1150,7 +1134,7 @@
               </span>
             </summary>
             <div class="px-4 pb-4 md:px-6 md:pb-6 text-slate-400 leading-relaxed">
-              <p>El Diagnóstico de Automatización Estratégica tiene un valor de USD $3.000 + IVA. Incluye una inmersión de 2 semanas en su operación y un informe ejecutivo con oportunidades priorizadas, roadmap técnico y análisis de ROI. Si decide avanzar a implementación, los $3.000 se descuentan del proyecto.</p>
+              <p>El Diagnóstico de Automatización Estratégica tiene un valor de USD $3.000. Incluye una inmersión de 2 semanas en su operación y un informe ejecutivo con oportunidades priorizadas, roadmap técnico y análisis de ROI. Si decide avanzar a implementación, los $3.000 se descuentan del proyecto.</p>
             </div>
           </details>
 
@@ -1254,7 +1238,7 @@
     </main>
 
     <footer class="bg-black py-10 px-5 md:py-16 md:px-6 border-t border-white/10 text-sm">
-        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 mb-8 md:gap-8 md:mb-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-6 mb-8 md:gap-8 md:mb-12">
             <!-- Brand -->
             <div class="space-y-6 col-span-2 md:col-span-1">
                 <a href="/" class="flex items-center gap-3 group">
@@ -1277,62 +1261,34 @@
                 </div>
             </div>
 
-            <!-- Servicios -->
+            <!-- Empresa -->
             <div>
-                <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Servicios</h4>
-                <ul class="space-y-3 text-slate-400">
-                    <li><a href="/servicios/automatizacion-inteligente/" class="hover:text-[var(--color-accent)] transition-colors">Legal Tech & Ops</a></li>
-                    <li><a href="/servicios/ia-corporativa/" class="hover:text-[var(--color-accent)] transition-colors">IA Corporativa</a></li>
-                    <li><a href="/servicios/gestion-del-cambio/" class="hover:text-[var(--color-accent)] transition-colors">Gestión del Cambio</a></li>
-                </ul>
-            </div>
-
-             <!-- Agentes IA -->
-            <div>
-                 <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Agentes IA</h4>
-                <ul class="space-y-3 text-slate-400">
-                    <li><a href="/soluciones/brokeria/" class="text-amber-400 hover:text-amber-300 transition-colors font-medium">BrokerIA ✦</a></li>
-                    <li><a href="/soluciones/#triaje-legal" class="hover:text-[var(--color-accent)] transition-colors">Inbox IA Legal</a></li>
-                    <li><a href="/soluciones/#docuagent" class="hover:text-[var(--color-accent)] transition-colors">DocuAgent IA</a></li>
-                    <li><a href="/soluciones/#reembolso" class="hover:text-[var(--color-accent)] transition-colors">Rendición Gastos IA</a></li>
-                </ul>
-            </div>
-
-            <!-- Metodología & Compañía -->
-             <div>
-                <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Recursos</h4>
+                <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Empresa</h4>
                 <ul class="space-y-3 text-slate-400">
                     <li><a href="/nosotros/" class="hover:text-[var(--color-accent)] transition-colors">Nosotros</a></li>
                     <li><a href="/casos/" class="hover:text-[var(--color-accent)] transition-colors">Casos de Éxito</a></li>
-                    <li><a href="/blog/" class="hover:text-[var(--color-accent)] transition-colors">Blog</a></li>
-                    <li><a href="/recursos/guia-ia-legal/" class="hover:text-[var(--color-accent)] transition-colors">Guía Gratuita IA Legal</a></li>
+                    <li><a href="#como-trabajamos" class="hover:text-[var(--color-accent)] transition-colors">Cómo Trabajamos</a></li>
+                    <li><a href="/soluciones/" class="hover:text-[var(--color-accent)] transition-colors">Soluciones IA</a></li>
                 </ul>
             </div>
-        </div>
 
-        <!-- Partners -->
-        <div class="py-8 border-t border-white/10">
-          <p class="text-xs text-slate-500 uppercase tracking-widest font-semibold text-center mb-5">Partners</p>
-          <div class="flex items-center justify-center gap-8 flex-wrap">
-            <a href="https://www.kizeo-forms.com/lat/" target="_blank" rel="noopener noreferrer" class="opacity-50 hover:opacity-100 transition-opacity">
-              <img src="/img/kizeo-forms.webp" alt="Kizeo Forms" loading="lazy" width="225" height="225" class="h-16 max-w-[80px] object-contain grayscale hover:grayscale-0 transition-all" />
-            </a>
-            <a href="https://www.mage.ai/" target="_blank" rel="noopener noreferrer" class="opacity-50 hover:opacity-100 transition-opacity">
-              <img src="/img/mage.svg" alt="Mage AI" loading="lazy" class="h-16 max-w-[80px] object-contain grayscale hover:grayscale-0 transition-all" />
-            </a>
-            <a href="https://www.sumadots.com/" target="_blank" rel="noopener noreferrer" class="opacity-50 hover:opacity-100 transition-opacity">
-              <img src="/img/sumadots.svg" alt="Sumadots" loading="lazy" class="h-16 max-w-[80px] object-contain grayscale hover:grayscale-0 transition-all" />
-            </a>
-          </div>
+            <!-- Recursos -->
+            <div>
+                <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Recursos</h4>
+                <ul class="space-y-3 text-slate-400">
+                    <li><a href="/blog/" class="hover:text-[var(--color-accent)] transition-colors">Blog</a></li>
+                    <li><a href="/recursos/guia-ia-legal/" class="hover:text-[var(--color-accent)] transition-colors">Guía Gratuita IA Legal</a></li>
+                    <li><a href="/privacidad/" class="hover:text-[var(--color-accent)] transition-colors">Privacidad</a></li>
+                    <li><a href="/terminos/" class="hover:text-[var(--color-accent)] transition-colors">Términos</a></li>
+                </ul>
+            </div>
         </div>
 
         <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
             <div>
                 &copy; 2026 Growth Buddies SpA. Latinoamérica · 🇨🇱 🇨🇴 🇵🇪 🇪🇨
             </div>
-             <div class="flex gap-6">
-                 <a href="/privacidad/" class="hover:text-slate-300 transition-colors">Privacidad</a>
-                <a href="/terminos/" class="hover:text-slate-300 transition-colors">Términos</a>
+            <div>
                 <a href="/sitemap.xml" class="hover:text-slate-300 transition-colors">Sitemap</a>
             </div>
         </div>
