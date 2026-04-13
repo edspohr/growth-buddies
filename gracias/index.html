@@ -5,15 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>¡Gracias! — Growth Buddies</title>
   <meta name="robots" content="noindex, nofollow" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TJRCBKJKFX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag("js", new Date());
-    gtag("config", "G-TJRCBKJKFX");
-    gtag("config", "AW-18025247905");
-    gtag("event", "conversion", {"send_to": "AW-18025247905/Lv0ZCOWRk4scEKHpjZND"});
-  </script>
+    <script>
+  // GA4 — deferred to avoid competing with critical resources
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  function loadGtag() {
+    var s = document.createElement('script');
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-TJRCBKJKFX';
+    s.async = true;
+    document.head.appendChild(s);
+    s.onload = function() {
+      gtag("js", new Date());
+      gtag("config", "G-TJRCBKJKFX");
+      gtag("config", "AW-18025247905");
+      gtag("event", "conversion", {"send_to": "AW-18025247905/Lv0ZCOWRk4scEKHpjZND"});
+    };
+  }
+  if (typeof requestIdleCallback !== 'undefined') {
+    requestIdleCallback(function() { loadGtag(); });
+  } else {
+    setTimeout(loadGtag, 2000);
+  }
+</script>
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     body{background:#050510;color:#e2e8f0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
@@ -24,7 +38,6 @@
     a.btn{display:inline-block;background:#00f6ff;color:#050510;font-weight:700;font-size:14px;padding:12px 28px;border-radius:50px;text-decoration:none}
     a.btn:hover{opacity:.88}
   </style>
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://calendly.com" />
     <link rel="dns-prefetch" href="https://wa.me" />
   </head>

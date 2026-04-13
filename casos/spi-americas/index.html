@@ -1,22 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TJRCBKJKFX"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+  // GA4 — deferred to avoid competing with critical resources
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  function loadGtag() {
+    var s = document.createElement('script');
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-TJRCBKJKFX';
+    s.async = true;
+    document.head.appendChild(s);
+    s.onload = function() {
       gtag("js", new Date());
       gtag("config", "G-TJRCBKJKFX");
       gtag("config", "AW-18025247905");
-      document.addEventListener("DOMContentLoaded", () => {
-        document.querySelectorAll("a[href*='wa.me']").forEach(link => {
-          link.addEventListener("click", () => {
-            gtag("event", "contact", { method: "whatsapp", event_category: "lead", event_label: document.title });
-          });
+    };
+  }
+  if (typeof requestIdleCallback !== 'undefined') {
+    requestIdleCallback(function() { loadGtag(); });
+  } else {
+    setTimeout(loadGtag, 2000);
+  }
+
+  // WhatsApp click tracking (events queue in dataLayer before gtag loads)
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll("a[href*='wa.me']").forEach(function(link) {
+      link.addEventListener("click", function() {
+        gtag("event", "contact", {
+          "method": "whatsapp",
+          "event_category": "lead",
+          "event_label": document.title
         });
+        gtag("event", "conversion", {"send_to": "AW-18025247905/Lv0ZCOWRk4scEKHpjZND"});
       });
-    </script>
+    });
+  });
+</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#050510" />
@@ -66,7 +86,6 @@
 
     <link rel="preload" href="../../dist/output.css" as="style" />
     <link href="../../dist/output.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://calendly.com" />
     <link rel="dns-prefetch" href="https://wa.me" />
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js" defer></script>
