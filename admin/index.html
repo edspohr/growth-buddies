@@ -217,9 +217,9 @@
   function waLink(lead) {
     let msg;
     if (lead.source === "roi_calculator") {
-      msg = `Hola${lead.email ? " " + lead.email : ""}! Vi que usaste nuestra calculadora de ROI y estimaste un ahorro de US$ ${(lead.annual_savings_usd || 0).toLocaleString()} al año. ¿Tienes 30 minutos para conversar cómo lograrlo?`;
+      msg = `Hola${lead.email ? " " + lead.email : ""}! Vi que usaste nuestra calculadora de ROI y estimaste un ahorro de US$ ${(lead.annual_savings_usd || 0).toLocaleString()} al año. ¿Tiene 30 minutos para conversar cómo lograrlo?`;
     } else {
-      msg = `Hola ${lead.name || ""}! Vi tu consulta sobre ${lead.interest || "automatización IA"}. ¿Tienes 15 minutos esta semana para conversar?`;
+      msg = `Hola ${lead.name || ""}! Vi su consulta sobre ${lead.interest || "automatización IA"}. ¿Tiene 15 minutos esta semana para conversar?`;
     }
     return `https://wa.me/56957272191?text=${encodeURIComponent(msg)}`;
   }
