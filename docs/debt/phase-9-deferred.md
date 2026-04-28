@@ -56,3 +56,12 @@ grep -rn "Mini Apps Plug\|Caja Negra\|Catálogo Mini" --include="*.html"
 ```
 Returns 21 hits across the 5 files above.
 
+
+## DEBT: Hero video .webm 404 (pre-existente, no causado por Phase 9)
+- **Síntoma:** Console 404 en `vid/hero.webm` en cada visita al home
+- **Causa:** El HTML referencia ambos formatos (.webm y .mp4) pero solo existe .mp4 en /vid/
+- **Impacto:** Bajo — fallback a .mp4 funciona, el video se ve. Solo afecta logs y ~50ms en LCP.
+- **Solución (cuando haya tiempo):** Generar `vid/hero.webm` desde `vid/hero.mp4` con:
+  `ffmpeg -i vid/hero.mp4 -c:v libvpx-vp9 -crf 30 -b:v 0 -c:a libopus vid/hero.webm`
+  O eliminar la línea `<source src="vid/hero.webm">` del index.html.
+- **Prioridad:** Low — no bloquea Phase 9.
