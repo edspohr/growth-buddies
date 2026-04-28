@@ -40,3 +40,19 @@ These remained uncommitted on the branch through Tasks 1-4. Task 5 adds a `pdfki
 - Recommend: `python3 -m http.server 8080` and visit http://localhost:8080/soluciones/ before merging
 - Spot-check: 5 example cards render, top + bottom CTA boxes look correct, footer matches homepage 3-column structure
 
+## /soluciones/<slug>/ subpages still use legacy "Mini Apps" framing — Phase 10
+Task 3 only rewrote `/soluciones/index.html`. The five subpages still contain legacy terminology:
+- `soluciones/automatizacion-legal-emails/index.html` — "Catálogo Mini Apps" eyebrow tag
+- `soluciones/rendicion-gastos-ia/index.html` — "Catálogo Mini Apps" eyebrow + "Caja Negra" section title
+- `soluciones/gestion-documental-ip/index.html` — "Catálogo Mini Apps" eyebrow tag
+- `soluciones/brokeria/index.html` — "Catálogo Mini Apps" eyebrow + 3× "Caja Negra" labels
+- `soluciones/catalogo.html` — entire page is the legacy Mini Apps catalog with full Caja Negra/Entrada/Resultado scaffolding (the canonical /soluciones/ replaces this — consider whether `catalogo.html` should be deleted, redirected, or rewritten)
+
+These pages are now linked only from breadcrumbs on the soluciones detail pages and from sitemap/SEO crawl, so they're lower-stakes than the homepage and /soluciones/. Recommended Phase 10 task: align eyebrows + remove the Caja Negra/Entrada/Resultado scaffolding to match the new "implementation example" frame.
+
+Verification grep remaining after Phase 9:
+```
+grep -rn "Mini Apps Plug\|Caja Negra\|Catálogo Mini" --include="*.html"
+```
+Returns 21 hits across the 5 files above.
+
