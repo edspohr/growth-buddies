@@ -1,39 +1,43 @@
-const { onSchedule } = require('firebase-functions/v2/scheduler');
-const { getFirestore, FieldValue } = require('firebase-admin/firestore');
-const { initializeApp, getApps } = require('firebase-admin/app');
-const { defineSecret } = require('firebase-functions/params');
-const { Resend } = require('resend');
+const { onSchedule } = require("firebase-functions/v2/scheduler");
+const { defineSecret } = require("firebase-functions/params");
+const admin = require("firebase-admin");
+const { Resend } = require("resend");
 
-if (!getApps().length) initializeApp();
-const resendKey = defineSecret('RESEND_API_KEY');
+const resendApiKey = defineSecret("RESEND_API_KEY");
 
 exports.sendQuizFollowup = onSchedule(
-  { schedule: 'every day 14:00', timeZone: 'America/Santiago', secrets: [resendKey], region: 'us-central1' },
+  { schedule: "0 14 * * *", timeZone: "America/Santiago", secrets: [resendApiKey] },
   async () => {
-    const db = getFirestore();
+    const db = admin.firestore();
+
     const sevenDaysAgo = new Date();
     sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
     const eightDaysAgo = new Date();
     eightDaysAgo.setDate(eightDaysAgo.getDate() - 8);
 
-    const snapshot = await db.collection('quiz_leads')
-      .where('timestamp', '<=', sevenDaysAgo)
-      .where('timestamp', '>=', eightDaysAgo)
-      .where('followup_sent', '==', false)
+    const snapshot = await db.collection("quiz_leads")
+      .where("timestamp", "<=", sevenDaysAgo)
+      .where("timestamp", ">=", eightDaysAgo)
+      .where("followup_sent", "==", false)
       .get();
 
-    if (snapshot.empty) return;
-    const resend = new Resend(resendKey.value());
+    if (snapshot.empty) {
+      console.log("[sendQuizFollowup] no leads to follow up today");
+      return;
+    }
+
+    const resend = new Resend(resendApiKey.value());
+
     const promises = snapshot.docs.map(async (doc) => {
       const data = doc.data();
       try {
         await resend.emails.send({
-          from: 'Edmundo Spohr <edmundo@growthbuddies.cl>',
+          from: "Edmundo Spohr <edmundo@growthbuddies.cl>",
           to: data.email,
-          subject: '¿Algo del reporte le hizo sentido?',
+          subject: "¿Algo del reporte le hizo sentido?",
           html: `
             <div style="font-family: -apple-system, sans-serif; max-width: 600px; margin: 0 auto; color: #333; line-height: 1.6;">
-              <p>Hola${data.company ? ', ' + data.company : ''},</p>
+              <p>Hola${data.company ? ", " + data.company : ""},</p>
               <p>Hace una semana le enviamos el reporte de oportunidades de automatización basado en sus respuestas.</p>
               <p>Le escribo para preguntar algo concreto:</p>
               <p><strong>¿Alguna de las 3 oportunidades del reporte le hizo sentido para su operación?</strong></p>
@@ -46,11 +50,16 @@ exports.sendQuizFollowup = onSchedule(
             </div>
           `
         });
-        await doc.ref.update({ followup_sent: true, followup_sent_at: FieldValue.serverTimestamp() });
+        await doc.ref.update({
+          followup_sent: true,
+          followup_sent_at: admin.firestore.FieldValue.serverTimestamp()
+        });
+        console.log(`[sendQuizFollowup] sent to ${data.email}`);
       } catch (err) {
-        console.error(`Failed to send followup to ${data.email}:`, err);
+        console.error(`[sendQuizFollowup] failed to send to ${data.email}:`, err);
       }
     });
+
     await Promise.all(promises);
   }
 );
