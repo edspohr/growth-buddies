@@ -687,8 +687,9 @@
                 <input type="email" id="quiz-email" required placeholder="suemail@empresa.com" class="w-full bg-zinc-950 border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:border-[var(--color-accent)] focus:outline-none transition-colors" />
               </div>
               <div>
-                <label for="quiz-company" class="text-sm text-slate-300 block mb-2">Empresa <span class="text-slate-500 font-normal">(opcional)</span></label>
-                <input type="text" id="quiz-company" placeholder="Nombre de su empresa" class="w-full bg-zinc-950 border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:border-[var(--color-accent)] focus:outline-none transition-colors" />
+                <label for="quiz-company" class="text-sm text-slate-300 block mb-2">Empresa</label>
+                <input type="text" id="quiz-company" required minlength="3" placeholder="Nombre de su empresa" class="w-full bg-zinc-950 border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:border-[var(--color-accent)] focus:outline-none transition-colors" />
+                <p id="quiz-company-error" class="hidden text-xs text-red-400 mt-1">Por favor ingrese el nombre de su empresa.</p>
               </div>
               <button type="submit" id="quiz-submit-btn" class="w-full bg-[var(--color-cta)] hover:bg-[var(--color-cta-hover)] text-black font-bold py-3 px-6 rounded-full transition-all flex items-center justify-center gap-2">
                 <svg id="quiz-spinner" class="hidden animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path></svg>
@@ -1804,7 +1805,21 @@
           e.preventDefault();
           const email = document.getElementById('quiz-email').value.trim();
           const company = document.getElementById('quiz-company').value.trim();
-          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
+          // Email validation
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            return;
+          }
+
+          // Company validation — block trash values
+          const companyTrimmed = company.trim().toLowerCase();
+          const trashValues = ['test', 'asdf', 'n/a', 'na', 'no', '.', '-', 'xxx', 'aaa', 'qwerty'];
+          const errorEl = document.getElementById('quiz-company-error');
+          if (companyTrimmed.length < 3 || trashValues.includes(companyTrimmed)) {
+            errorEl.classList.remove('hidden');
+            document.getElementById('quiz-company').focus();
+            return;
+          }
+          errorEl.classList.add('hidden');
 
           const submitBtn = document.getElementById('quiz-submit-btn');
           const spinner = document.getElementById('quiz-spinner');
