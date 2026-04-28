@@ -491,3 +491,9 @@ exports.sendFollowupSequence = onSchedule(
     }
   }
 );
+
+// ─── 4. Quiz lead — instant PDF report + CRM alert ──────────────────────────
+exports.sendQuizReport = require('./sendQuizReport').sendQuizReport;
+
+// ─── 5. Quiz lead — single day-7 follow-up ──────────────────────────────────
+exports.sendQuizFollowup = require('./sendQuizFollowup').sendQuizFollowup;

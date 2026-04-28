@@ -649,6 +649,63 @@
       </div>
     </section>
 
+    <!-- Diagnostic Quiz Section -->
+    <section id="diagnostico-rapido" class="py-16 md:py-24 px-6 border-b border-zinc-900 bg-gradient-to-b from-zinc-950 via-zinc-900/40 to-zinc-950">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-10">
+          <p class="text-xs font-bold text-[var(--color-accent)] tracking-widest uppercase mb-3 font-display">Diagnóstico rápido</p>
+          <h2 class="text-3xl md:text-4xl text-slate-100 font-serif mb-4">Identifique 3 oportunidades de automatización en su empresa — en 2 minutos</h2>
+          <p class="text-slate-400 max-w-xl mx-auto">7 preguntas, una respuesta personalizada. Reciba un reporte en PDF con las 3 oportunidades más probables para su caso.</p>
+        </div>
+
+        <div id="quiz-container" class="bg-zinc-900/60 border border-zinc-800 rounded-2xl p-6 md:p-10">
+          <div id="quiz-progress" class="mb-8">
+            <div class="flex justify-between text-xs text-slate-500 mb-2">
+              <span>Pregunta <span id="quiz-current">1</span> de 7</span>
+              <span><span id="quiz-percent">14</span>%</span>
+            </div>
+            <div class="h-1 bg-zinc-800 rounded-full overflow-hidden">
+              <div id="quiz-bar" class="h-full bg-[var(--color-accent)] transition-all duration-300" style="width: 14%"></div>
+            </div>
+          </div>
+
+          <div id="quiz-question-container"></div>
+
+          <div id="quiz-email-capture" class="hidden">
+            <h3 class="text-2xl font-bold text-white font-display mb-3">Su reporte está listo</h3>
+            <p class="text-slate-400 mb-6">Identificamos <strong class="text-white"><span id="quiz-result-count">3</span> oportunidades probables</strong> de automatización en su operación. Le enviamos el reporte personalizado al correo.</p>
+            <form id="quiz-email-form" class="space-y-4">
+              <div>
+                <label for="quiz-email" class="text-sm text-slate-300 block mb-2">Correo electrónico empresarial</label>
+                <input type="email" id="quiz-email" required placeholder="suemail@empresa.com" class="w-full bg-zinc-950 border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:border-[var(--color-accent)] focus:outline-none transition-colors" />
+              </div>
+              <div>
+                <label for="quiz-company" class="text-sm text-slate-300 block mb-2">Empresa <span class="text-slate-500 font-normal">(opcional)</span></label>
+                <input type="text" id="quiz-company" placeholder="Nombre de su empresa" class="w-full bg-zinc-950 border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:border-[var(--color-accent)] focus:outline-none transition-colors" />
+              </div>
+              <button type="submit" id="quiz-submit-btn" class="w-full bg-[var(--color-cta)] hover:bg-[var(--color-cta-hover)] text-black font-bold py-3 px-6 rounded-full transition-all flex items-center justify-center gap-2">
+                <svg id="quiz-spinner" class="hidden animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path></svg>
+                <span id="quiz-btn-label">Enviarme el reporte</span>
+              </button>
+              <p class="text-xs text-slate-500 text-center">Sin spam. Su correo solo se usa para enviarle el reporte y un seguimiento opcional en 7 días.</p>
+            </form>
+          </div>
+
+          <div id="quiz-success" class="hidden text-center">
+            <div class="w-16 h-16 rounded-full bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/30 flex items-center justify-center mx-auto mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[var(--color-accent)]"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-white font-display mb-3">Su reporte está en camino</h3>
+            <p class="text-slate-400 mb-8">Lo enviamos a <strong class="text-white" id="quiz-success-email">su correo</strong>. Debería llegar en menos de 2 minutos.</p>
+            <p class="text-slate-300 mb-6">¿Quiere conversar antes de leerlo?</p>
+            <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[var(--color-cta)] hover:bg-[var(--color-cta-hover)] text-black font-bold py-3 px-8 rounded-full transition-all" onclick="if(typeof gtag!=='undefined'){gtag('event','calendly_click',{event_category:'quiz_success'});}">
+              Agendar conversación con el director →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Google Reviews — supplementary social proof -->
     <section id="resenas-google" class="py-14 md:py-20 px-6 border-b border-white/5 relative bg-zinc-950 overflow-hidden">
       <!-- Glow decorativo -->
@@ -1590,6 +1647,209 @@
         observer.observe(hero);
       })();
 
+    </script>
+
+    <!-- Diagnostic Quiz JS -->
+    <script>
+      (function() {
+        const questions = [
+          {
+            id: 'sector', text: '¿En qué sector opera su empresa?',
+            options: [
+              { value: 'legal', label: 'Estudio jurídico', tags: ['legal'] },
+              { value: 'seguros', label: 'Corredora de seguros', tags: ['email', 'compliance'] },
+              { value: 'consultoria', label: 'Consultora / asesoría', tags: ['docs', 'time'] },
+              { value: 'otros', label: 'Otra empresa de servicios profesionales', tags: ['ops'] }
+            ]
+          },
+          {
+            id: 'size', text: '¿Cuántos colaboradores tiene su empresa?',
+            options: [
+              { value: '<15', label: 'Menos de 15', tags: ['small'] },
+              { value: '15-30', label: 'Entre 15 y 30', tags: ['mid'] },
+              { value: '30-80', label: 'Entre 30 y 80', tags: ['target'] },
+              { value: '>80', label: 'Más de 80', tags: ['large'] }
+            ]
+          },
+          {
+            id: 'pain1', text: '¿Cuál de estas situaciones describe mejor su mayor dolor operativo hoy?',
+            options: [
+              { value: 'docs', label: 'Mucho tiempo perdido revisando o gestionando documentos', tags: ['docs', 'compliance'] },
+              { value: 'leads', label: 'Llegan muchas consultas o leads no calificados al equipo senior', tags: ['email', 'triage'] },
+              { value: 'reports', label: 'Reportes manuales que consumen horas cada semana', tags: ['ops', 'data'] },
+              { value: 'time', label: 'Profesionales sin registrar bien sus horas o gastos', tags: ['time'] }
+            ]
+          },
+          {
+            id: 'pain2', text: '¿Cuántas horas semanales estima que su equipo pierde en tareas que podrían automatizarse?',
+            options: [
+              { value: '<5', label: 'Menos de 5 horas', tags: ['low'] },
+              { value: '5-15', label: 'Entre 5 y 15 horas', tags: ['mid'] },
+              { value: '15-40', label: 'Entre 15 y 40 horas', tags: ['high'] },
+              { value: '>40', label: 'Más de 40 horas', tags: ['critical'] }
+            ]
+          },
+          {
+            id: 'tools', text: '¿Qué herramientas digitales usa actualmente su empresa?',
+            options: [
+              { value: 'office', label: 'Email, Excel y carpetas compartidas', tags: ['basic'] },
+              { value: 'crm', label: 'CRM básico + herramientas de oficina', tags: ['mid'] },
+              { value: 'specialized', label: 'Software especializado del sector (ERP, gestor legal, etc.)', tags: ['mature'] },
+              { value: 'mixed', label: 'Mezcla de todo, sin integración entre sistemas', tags: ['integration'] }
+            ]
+          },
+          {
+            id: 'previous', text: '¿Ha intentado implementar IA o automatización antes?',
+            options: [
+              { value: 'no', label: 'No, esto sería un primer paso', tags: ['greenfield'] },
+              { value: 'failed', label: 'Sí, pero no funcionó como esperábamos', tags: ['rescue'] },
+              { value: 'partial', label: 'Sí, en algunos procesos puntuales', tags: ['extend'] },
+              { value: 'mature', label: 'Sí, tenemos varios procesos automatizados', tags: ['advanced'] }
+            ]
+          },
+          {
+            id: 'urgency', text: '¿Qué tan urgente es resolver esto para su empresa?',
+            options: [
+              { value: 'now', label: 'Necesitamos resolverlo este trimestre', tags: ['hot'] },
+              { value: 'quarter', label: 'En los próximos 3-6 meses', tags: ['warm'] },
+              { value: 'year', label: 'Este año, sin presión específica', tags: ['cold'] },
+              { value: 'exploring', label: 'Solo estoy explorando opciones', tags: ['exploring'] }
+            ]
+          }
+        ];
+
+        const opportunityMap = {
+          legal_docs: { title: 'Validación documental con IA', description: 'Análisis automático de contratos contra el playbook del estudio. Reduce errores pre-firma y acelera revisiones.' },
+          legal_email: { title: 'Triaje legal automático', description: 'IA que filtra consultas entrantes y entrega solo leads calificados a los socios.' },
+          legal_kb: { title: 'Base de conocimientos pasiva', description: 'Sistema que clasifica y archiva documentos automáticamente, con búsqueda por lenguaje natural.' },
+          seguros_email: { title: 'Automatización de correos de pólizas', description: 'IA que clasifica, prioriza y responde correos de pólizas con tiempos de respuesta menores a 15 minutos.' },
+          ops_reports: { title: 'Reportería automatizada', description: 'Automatización de la generación de reportes operativos que hoy se hacen manualmente.' },
+          time_tracking: { title: 'Registro pasivo de tiempos y gastos', description: 'Captura automática de horas trabajadas y rendición de gastos por imagen.' },
+          integration: { title: 'Integración entre sistemas', description: 'Conexión de sus herramientas existentes (CRM, ERP, email) para eliminar trabajo duplicado.' },
+          rescue: { title: 'Rescate de implementación previa', description: 'Diagnóstico de por qué su intento previo no funcionó y plan correctivo.' }
+        };
+
+        let currentQuestion = 0;
+        const answers = {};
+        const allTags = [];
+
+        function escapeHtml(s) {
+          return String(s).replace(/[&<>"']/g, function(c) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+          });
+        }
+
+        function renderQuestion(idx) {
+          const q = questions[idx];
+          const container = document.getElementById('quiz-question-container');
+          let html = '<h3 class="text-xl md:text-2xl font-bold text-white font-display mb-6">' + escapeHtml(q.text) + '</h3><div class="space-y-3">';
+          q.options.forEach(function(opt) {
+            html += '<button type="button" data-value="' + escapeHtml(opt.value) + '" data-tags=\'' + JSON.stringify(opt.tags) + '\' class="quiz-option w-full text-left bg-zinc-950 hover:bg-zinc-900 border border-zinc-700 hover:border-[var(--color-accent)]/50 rounded-lg px-5 py-4 text-slate-200 hover:text-white transition-all">' + escapeHtml(opt.label) + '</button>';
+          });
+          html += '</div>';
+          container.innerHTML = html;
+          const percent = Math.round(((idx + 1) / questions.length) * 100);
+          document.getElementById('quiz-current').textContent = idx + 1;
+          document.getElementById('quiz-percent').textContent = percent;
+          document.getElementById('quiz-bar').style.width = percent + '%';
+          container.querySelectorAll('.quiz-option').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+              answers[q.id] = this.getAttribute('data-value');
+              allTags.push.apply(allTags, JSON.parse(this.getAttribute('data-tags')));
+              if (idx < questions.length - 1) {
+                currentQuestion++;
+                renderQuestion(currentQuestion);
+              } else {
+                showEmailCapture();
+              }
+            });
+          });
+        }
+
+        function showEmailCapture() {
+          const opportunities = calculateOpportunities();
+          document.getElementById('quiz-result-count').textContent = opportunities.length;
+          document.getElementById('quiz-question-container').classList.add('hidden');
+          document.getElementById('quiz-progress').classList.add('hidden');
+          document.getElementById('quiz-email-capture').classList.remove('hidden');
+          if (typeof gtag !== 'undefined') gtag('event', 'quiz_complete', { event_category: 'quiz' });
+        }
+
+        function calculateOpportunities() {
+          const opportunities = [];
+          const sector = answers.sector;
+          if (sector === 'legal') {
+            if (allTags.indexOf('docs') >= 0 || allTags.indexOf('compliance') >= 0) opportunities.push(opportunityMap.legal_docs);
+            if (allTags.indexOf('email') >= 0 || allTags.indexOf('triage') >= 0) opportunities.push(opportunityMap.legal_email);
+            if (opportunities.length < 3) opportunities.push(opportunityMap.legal_kb);
+          } else if (sector === 'seguros') {
+            opportunities.push(opportunityMap.seguros_email);
+            if (allTags.indexOf('docs') >= 0) opportunities.push(opportunityMap.legal_docs);
+          }
+          if (allTags.indexOf('time') >= 0) opportunities.push(opportunityMap.time_tracking);
+          if (allTags.indexOf('ops') >= 0 || allTags.indexOf('data') >= 0) opportunities.push(opportunityMap.ops_reports);
+          if (allTags.indexOf('integration') >= 0) opportunities.push(opportunityMap.integration);
+          if (allTags.indexOf('rescue') >= 0) opportunities.push(opportunityMap.rescue);
+          while (opportunities.length < 3) opportunities.push(opportunityMap.ops_reports);
+          return opportunities.slice(0, 3);
+        }
+
+        document.getElementById('quiz-email-form').addEventListener('submit', async function(e) {
+          e.preventDefault();
+          const email = document.getElementById('quiz-email').value.trim();
+          const company = document.getElementById('quiz-company').value.trim();
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
+
+          const submitBtn = document.getElementById('quiz-submit-btn');
+          const spinner = document.getElementById('quiz-spinner');
+          const btnLabel = document.getElementById('quiz-btn-label');
+          submitBtn.disabled = true;
+          spinner.classList.remove('hidden');
+          btnLabel.textContent = 'Enviando...';
+
+          try {
+            const fbApp = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js');
+            const fs = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js');
+            const firebaseConfig = {
+              apiKey: "AIzaSyBDdOtg0-svyfoiVNoNBBGeQc1BP-SDNjk",
+              authDomain: "growth-buddies.firebaseapp.com",
+              projectId: "growth-buddies",
+              storageBucket: "growth-buddies.firebasestorage.app",
+              messagingSenderId: "1035797595823",
+              appId: "1:1035797595823:web:6e6b9225a6f1ee2047365a"
+            };
+            const app = fbApp.initializeApp(firebaseConfig);
+            const db = fs.getFirestore(app);
+            const opportunities = calculateOpportunities();
+            await fs.addDoc(fs.collection(db, 'quiz_leads'), {
+              email: email,
+              company: company || null,
+              answers: answers,
+              tags: allTags,
+              opportunities: opportunities.map(function(o) { return o.title; }),
+              timestamp: fs.serverTimestamp(),
+              source: 'homepage_quiz',
+              followup_sent: false,
+              landing_page: sessionStorage.getItem('landing_page') || window.location.href,
+              referrer: sessionStorage.getItem('referrer') || 'direct',
+              utm_source: sessionStorage.getItem('utm_source') || null,
+              utm_medium: sessionStorage.getItem('utm_medium') || null,
+              utm_campaign: sessionStorage.getItem('utm_campaign') || null
+            });
+            if (typeof gtag !== 'undefined') gtag('event', 'quiz_lead', { event_category: 'conversion' });
+            document.getElementById('quiz-success-email').textContent = email;
+            document.getElementById('quiz-email-capture').classList.add('hidden');
+            document.getElementById('quiz-success').classList.remove('hidden');
+          } catch (err) {
+            console.error('Quiz lead save failed:', err);
+            spinner.classList.add('hidden');
+            btnLabel.textContent = 'Reintentar';
+            submitBtn.disabled = false;
+          }
+        });
+
+        renderQuestion(0);
+      })();
     </script>
   </body>
 </html>
