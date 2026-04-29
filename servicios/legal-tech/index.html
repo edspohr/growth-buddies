@@ -1,23 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TJRCBKJKFX"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+  // GA4 — deferred to avoid competing with critical resources
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  function loadGtag() {
+    var s = document.createElement('script');
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-TJRCBKJKFX';
+    s.async = true;
+    document.head.appendChild(s);
+    s.onload = function() {
       gtag("js", new Date());
       gtag("config", "G-TJRCBKJKFX");
       gtag("config", "AW-18025247905");
-      document.addEventListener("DOMContentLoaded", () => {
-        document.querySelectorAll("a[href*='wa.me']").forEach(link => {
-          link.addEventListener("click", () => {
-            gtag("event", "contact", { method: "whatsapp", event_category: "lead", event_label: document.title });
-            gtag("event", "conversion", {"send_to": "AW-18025247905/Lv0ZCOWRk4scEKHpjZND"});
-          });
+    };
+  }
+  if (typeof requestIdleCallback !== 'undefined') {
+    requestIdleCallback(function() { loadGtag(); });
+  } else {
+    setTimeout(loadGtag, 2000);
+  }
+
+  // WhatsApp click tracking (events queue in dataLayer before gtag loads)
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll("a[href*='wa.me']").forEach(function(link) {
+      link.addEventListener("click", function() {
+        gtag("event", "contact", {
+          "method": "whatsapp",
+          "event_category": "lead",
+          "event_label": document.title
         });
+        gtag("event", "conversion", {"send_to": "AW-18025247905/Lv0ZCOWRk4scEKHpjZND"});
       });
-    </script>
+    });
+  });
+</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#050510" />
@@ -82,7 +101,7 @@
         {
           "@type": "Question",
           "name": "¿Necesita mi firma tener un equipo de tecnología interno?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No. Gestionamos el proyecto de principio a fin: arquitectura, desarrollo, despliegue en nube y soporte post-implementación. Nuestro programa de Gestión del Cambio garantiza que el equipo legal adopte las herramientas sin necesidad de conocimientos técnicos. Si tu firma no adopta la herramienta, no pagas." }
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Gestionamos el proyecto de principio a fin: arquitectura, desarrollo, despliegue en nube y soporte post-implementación. Nuestro programa de Gestión del Cambio garantiza que el equipo legal adopte las herramientas sin necesidad de conocimientos técnicos. Si su firma no adopta la herramienta, no paga." }
         },
         {
           "@type": "Question",
@@ -95,16 +114,9 @@
 
     <link rel="preload" href="../../dist/output.css" as="style" />
     <link href="../../dist/output.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://calendly.com" />
-    <link rel="dns-prefetch" href="https://wa.me" />
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@600;700;900&display=swap" as="style" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@600;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@600;700;900&display=swap" rel="stylesheet" /></noscript>
-    <style>:root{--color-accent:#0097B2;--color-cta:#0097B2;--color-cta-hover:#007A91;--color-dark:#0F172A;}*,::before,::after{box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#09090b;color:#cbd5e1;overflow-x:hidden;margin:0}.glass-nav{background:rgba(0,0,0,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}</style>
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js" defer></script>
+    <style>:root{--color-accent:#0097B2;--color-cta:#0097B2;--color-cta-hover:#007A91;--color-dark:#0F172A;}*,::before,::after{box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#09090b;color:#cbd5e1;overflow-x:hidden;margin:0}.glass-nav{background:rgba(0,0,0,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}.font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Space Grotesk",system-ui,sans-serif}</style>
+    <script src="/js/lenis.min.js" defer></script>
     <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
     <!-- Microsoft Clarity — deferred 3s to avoid blocking LCP -->
     <script>setTimeout(function(){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","vkf6fbh8zc");},3000);</script>
@@ -122,7 +134,6 @@
         </a>
         <div class="hidden md:flex items-center gap-8">
           <a href="/#como-trabajamos" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Servicios</a>
-          <a href="/soluciones/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Soluciones</a>
           <a href="/casos/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Casos</a>
           <a href="/blog/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Blog</a>
           <a href="/nosotros/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Nosotros</a>
@@ -130,7 +141,7 @@
         </div>
         <div class="hidden md:block">
           <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="bg-[var(--color-accent)]/10 hover:bg-[var(--color-accent)]/20 text-[var(--color-accent)] hover:text-white border border-[var(--color-accent)]/30 hover:border-[var(--color-accent)] font-semibold text-sm py-2 px-5 rounded-full transition-all duration-300">
-                Evaluar si califica
+                Agendar conversación
           </a>
         </div>
         <button id="mobile-menu-btn" aria-expanded="false" aria-label="Abrir menú" class="md:hidden flex flex-col justify-center items-center w-11 h-11 gap-[6px] rounded-lg hover:bg-white/10 transition-colors">
@@ -153,12 +164,11 @@
         </div>
         <div class="mb-8">
           <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[#00f6ff]/10 hover:bg-[#00f6ff]/20 text-[#00f6ff] border border-[#00f6ff]/30 hover:border-[#00f6ff] font-semibold text-base py-4 px-5 rounded-full transition-all duration-300">
-            Evaluar si califica
+            Agendar conversación
           </a>
         </div>
         <nav class="flex flex-col" role="navigation" aria-label="Menú móvil">
           <a href="/#como-trabajamos" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Servicios</a>
-          <a href="/soluciones/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Soluciones</a>
           <a href="/casos/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Casos</a>
           <a href="/blog/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Blog</a>
           <a href="/nosotros/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Nosotros</a>
@@ -193,11 +203,11 @@
             Legal Tech &amp; Automatización<br />para Firmas Legales
           </h1>
           <p class="mt-6 text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            Tu equipo legal pasa más tiempo procesando documentos que ejerciendo derecho. Implementamos automatización legal en Chile —contratos, triaje y reportería— con resultados en 30 a 60 días. Si el equipo no adopta la herramienta, no pagas.
+            Su equipo legal pasa más tiempo procesando documentos que ejerciendo derecho. Implementamos automatización legal en Chile —contratos, triaje y reportería— con resultados en 30 a 60 días. Si el equipo no adopta la herramienta, no paga.
           </p>
           <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="btn-cta inline-flex items-center justify-center gap-2">
-              Agenda tu auditoría legal gratuita
+              Agende su auditoría legal gratuita
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
             <a href="#que-hacemos" class="inline-flex items-center justify-center gap-2 bg-white/5 border border-white/10 text-white font-medium py-4 px-8 rounded-full hover:bg-white/10 transition-colors">
@@ -224,7 +234,7 @@
               Triaje de correos, generación de contratos desde plantillas, actualización de bases de datos de causas, preparación de reportes para el Directorio: son tareas que cualquier sistema bien configurado puede ejecutar con mayor velocidad y cero errores. El <strong class="text-white">legal tech en Chile</strong> ya no es una promesa del futuro —es una ventaja competitiva que los estudios más eficientes ya están usando.
             </p>
             <p>
-              En Growth Buddies combinamos <strong class="text-white">RPA (Robotic Process Automation)</strong> con modelos de lenguaje de última generación para atacar exactamente ese cuello de botella. Nos integramos con las plataformas que tu firma ya usa —LemonTech, CaseTracking, Clio— y entregamos flujos que el equipo legal puede entender, validar y controlar sin depender de tecnología.
+              En Growth Buddies combinamos <strong class="text-white">RPA (Robotic Process Automation)</strong> con modelos de lenguaje de última generación para atacar exactamente ese cuello de botella. Nos integramos con las plataformas que su firma ya usa —LemonTech, CaseTracking, Clio— y entregamos flujos que el equipo legal puede entender, validar y controlar sin depender de tecnología.
             </p>
           </div>
         </div>
@@ -247,7 +257,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" class="text-[var(--color-accent)]"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
             </div>
             <h3 class="text-xl font-bold text-white mb-3">Automatización Contractual (CLM)</h3>
-            <p class="text-slate-400 leading-relaxed mb-4">Generamos contratos desde plantillas inteligentes que se autocompletan con datos de tu CRM o ERP. Configuramos alertas automáticas de vencimiento y routing de aprobaciones para que ningún contrato quede perdido en una bandeja de entrada.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">Generamos contratos desde plantillas inteligentes que se autocompletan con datos de su CRM o ERP. Configuramos alertas automáticas de vencimiento y routing de aprobaciones para que ningún contrato quede perdido en una bandeja de entrada.</p>
             <ul class="space-y-2 text-sm text-slate-400">
               <li class="flex items-start gap-2"><span class="text-[var(--color-accent)] mt-0.5 flex-shrink-0">✓</span> Generación automática de NDA, contratos de servicio y adendas</li>
               <li class="flex items-start gap-2"><span class="text-[var(--color-accent)] mt-0.5 flex-shrink-0">✓</span> Alertas de vencimiento 90, 60 y 30 días antes</li>
@@ -261,7 +271,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" class="text-[var(--color-accent)]"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             </div>
             <h3 class="text-xl font-bold text-white mb-3">Triaje Legal Inteligente</h3>
-            <p class="text-slate-400 leading-relaxed mb-4">Clasificamos y priorizamos automáticamente los correos entrantes de tu firma: urgente vs. rutina, tipo de materia, cliente, plazo implícito. El abogado correcto recibe la tarea correcta, sin pasar por una reunión de coordinación.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">Clasificamos y priorizamos automáticamente los correos entrantes de su firma: urgente vs. rutina, tipo de materia, cliente, plazo implícito. El abogado correcto recibe la tarea correcta, sin pasar por una reunión de coordinación.</p>
             <ul class="space-y-2 text-sm text-slate-400">
               <li class="flex items-start gap-2"><span class="text-[var(--color-accent)] mt-0.5 flex-shrink-0">✓</span> Clasificación automática por materia y urgencia</li>
               <li class="flex items-start gap-2"><span class="text-[var(--color-accent)] mt-0.5 flex-shrink-0">✓</span> Asignación de causas según carga y especialidad</li>
@@ -289,7 +299,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" class="text-[var(--color-accent)]"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg>
             </div>
             <h3 class="text-xl font-bold text-white mb-3">Gestión Documental con IA</h3>
-            <p class="text-slate-400 leading-relaxed mb-4">Indexamos y hacemos buscable semánticamente toda tu base documental: contratos, sentencias, minutas, informes. El abogado pregunta en lenguaje natural y el sistema encuentra el documento correcto —con el párrafo relevante destacado— en segundos.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">Indexamos y hacemos buscable semánticamente toda su base documental: contratos, sentencias, minutas, informes. El abogado pregunta en lenguaje natural y el sistema encuentra el documento correcto —con el párrafo relevante destacado— en segundos.</p>
             <ul class="space-y-2 text-sm text-slate-400">
               <li class="flex items-start gap-2"><span class="text-[var(--color-accent)] mt-0.5 flex-shrink-0">✓</span> Búsqueda semántica sobre PDFs y documentos Word</li>
               <li class="flex items-start gap-2"><span class="text-[var(--color-accent)] mt-0.5 flex-shrink-0">✓</span> Extracción automática de cláusulas clave</li>
@@ -371,7 +381,7 @@
               </div>
               <div class="text-[var(--color-accent)] text-xs font-bold uppercase tracking-widest mb-2 font-display">Capa 1</div>
               <h3 class="text-xl font-bold text-white mb-3">Procesos</h3>
-              <p class="text-slate-400 leading-relaxed text-sm">Mapeamos y rediseñamos tus flujos antes de automatizarlos. Automatizar un proceso malo solo lo hace más rápido. Comenzamos con un diagnóstico de dos semanas que identifica dónde está el valor real y qué se puede eliminar antes de construir.</p>
+              <p class="text-slate-400 leading-relaxed text-sm">Mapeamos y rediseñamos sus flujos antes de automatizarlos. Automatizar un proceso malo solo lo hace más rápido. Comenzamos con un diagnóstico de dos semanas que identifica dónde está el valor real y qué se puede eliminar antes de construir.</p>
             </div>
 
             <!-- Layer 2 -->
@@ -381,7 +391,7 @@
               </div>
               <div class="text-[var(--color-accent)] text-xs font-bold uppercase tracking-widest mb-2 font-display">Capa 2</div>
               <h3 class="text-xl font-bold text-white mb-3">Inteligencia</h3>
-              <p class="text-slate-400 leading-relaxed text-sm">Aplicamos modelos de IA entrenados sobre tu base documental. No es un chatbot genérico: es un sistema que conoce tu terminología legal, tu estructura de causas y tus precedentes. Aprende de los documentos que tu firma ya tiene.</p>
+              <p class="text-slate-400 leading-relaxed text-sm">Aplicamos modelos de IA entrenados sobre su base documental. No es un chatbot genérico: es un sistema que conoce su terminología legal, su estructura de causas y sus precedentes. Aprende de los documentos que su firma ya tiene.</p>
             </div>
 
             <!-- Layer 3 -->
@@ -391,7 +401,7 @@
               </div>
               <div class="text-[var(--color-accent)] text-xs font-bold uppercase tracking-widest mb-2 font-display">Capa 3</div>
               <h3 class="text-xl font-bold text-white mb-3">Personas</h3>
-              <p class="text-slate-400 leading-relaxed text-sm">La tecnología no sirve si el equipo no la usa. Nuestro programa de Gestión del Cambio —certificado Prosci— acompaña al equipo legal durante todo el proceso de adopción. Es el motivo por el que podemos ofrecer una garantía: si no adoptan, no pagas.</p>
+              <p class="text-slate-400 leading-relaxed text-sm">La tecnología no sirve si el equipo no la usa. Nuestro programa de Gestión del Cambio —certificado Prosci— acompaña al equipo legal durante todo el proceso de adopción. Es el motivo por el que podemos ofrecer una garantía: si no adoptan, no paga.</p>
             </div>
 
           </div>
@@ -434,7 +444,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" class="flex-shrink-0 transition-transform duration-300 group-open:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
             <div class="px-6 pb-6 text-slate-400 leading-relaxed border-t border-zinc-800 pt-4">
-              No. Gestionamos el proyecto de principio a fin: arquitectura, desarrollo, despliegue en nube y soporte post-implementación. Nuestro programa de Gestión del Cambio garantiza que el equipo legal adopte las herramientas sin necesidad de conocimientos técnicos. Si tu firma no adopta la herramienta en producción, no pagas.
+              No. Gestionamos el proyecto de principio a fin: arquitectura, desarrollo, despliegue en nube y soporte post-implementación. Nuestro programa de Gestión del Cambio garantiza que el equipo legal adopte las herramientas sin necesidad de conocimientos técnicos. Si su firma no adopta la herramienta en producción, no paga.
             </div>
           </details>
 
@@ -463,7 +473,7 @@
           <a href="/servicios/ia-corporativa/" class="reveal group card-dark rounded-2xl p-6 hover:border-[var(--color-accent)]/40 transition-colors block">
             <div class="text-[var(--color-accent)] text-xs uppercase font-bold tracking-wider mb-3 font-display">IA Corporativa</div>
             <h3 class="text-white font-bold mb-2 group-hover:text-[var(--color-accent)] transition-colors">Agentes de IA a medida</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">Asistentes internos y RAG sobre tu base documental. El siguiente nivel natural después de la automatización.</p>
+            <p class="text-slate-400 text-sm leading-relaxed">Asistentes internos y RAG sobre su base documental. El siguiente nivel natural después de la automatización.</p>
             <span class="mt-3 inline-block text-xs text-[var(--color-accent)] font-semibold group-hover:underline">Ver servicio →</span>
           </a>
           <a href="/servicios/gestion-del-cambio/" class="reveal group card-dark rounded-2xl p-6 hover:border-[var(--color-accent)]/40 transition-colors block" style="transition-delay:80ms">
@@ -486,10 +496,10 @@
     <section class="py-24 px-6 relative overflow-hidden text-center">
       <div class="absolute inset-0 bg-gradient-to-b from-emerald-900/15 to-black pointer-events-none"></div>
       <div class="relative z-10 max-w-2xl mx-auto reveal">
-        <h2 class="text-4xl md:text-5xl font-serif text-white mb-6 leading-tight">¿Cuántas horas pierde tu equipo legal esta semana?</h2>
-        <p class="text-xl text-slate-400 mb-10">Agenda una auditoría legal gratuita de 30 minutos. Saldrás con un mapa de tus procesos automatizables y una estimación de ROI sin compromiso.</p>
+        <h2 class="text-4xl md:text-5xl font-serif text-white mb-6 leading-tight">¿Cuántas horas pierde su equipo legal esta semana?</h2>
+        <p class="text-xl text-slate-400 mb-10">Agende una auditoría legal gratuita de 30 minutos. Saldrás con un mapa de sus procesos automatizables y una estimación de ROI sin compromiso.</p>
         <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="btn-cta inline-flex items-center gap-3 text-lg">
-          Agenda tu auditoría legal gratuita
+          Agende su auditoría legal gratuita
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
         <p class="mt-6 text-sm text-slate-500">Sin compromiso · Sin tarjeta de crédito · Respuesta en menos de 24 horas</p>

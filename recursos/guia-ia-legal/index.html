@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Guía Gratuita: 5 Procesos para Automatizar con IA | Growth Buddies</title>
-  <meta name="description" content="Descarga gratis la guía práctica: 5 procesos que todo estudio jurídico, corredora o empresa de servicios puede automatizar con IA esta semana. Ahorra 15–47 horas al mes." />
+  <meta name="description" content="Descargue gratis la guía práctica: 5 procesos que todo estudio jurídico, corredora o empresa de servicios puede automatizar con IA esta semana. Ahorre 15–47 horas al mes." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://growthbuddies.cl/recursos/guia-ia-legal/" />
   <link rel="apple-touch-icon" href="/img/logo.png" />
@@ -14,30 +14,51 @@
   <meta property="og:locale" content="es_CL" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Guía Gratuita: 5 Procesos para Automatizar con IA | Growth Buddies" />
-  <meta property="og:description" content="Descarga gratis la guía práctica: 5 procesos que todo estudio jurídico, corredora o empresa de servicios puede automatizar con IA esta semana. Ahorra 15–47 horas al mes." />
+  <meta property="og:description" content="Descargue gratis la guía práctica: 5 procesos que todo estudio jurídico, corredora o empresa de servicios puede automatizar con IA esta semana. Ahorre 15–47 horas al mes." />
   <meta property="og:url" content="https://growthbuddies.cl/recursos/guia-ia-legal/" />
   <meta property="og:image" content="https://growthbuddies.cl/img/og-default.webp" />
   <meta property="og:site_name" content="Growth Buddies" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- GA4 + Google Ads -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TJRCBKJKFX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag("js", new Date());
-    gtag("config", "G-TJRCBKJKFX");
-    gtag("config", "AW-18025247905");
-  </script>
+    <script>
+  // GA4 — deferred to avoid competing with critical resources
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
+  function loadGtag() {
+    var s = document.createElement('script');
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-TJRCBKJKFX';
+    s.async = true;
+    document.head.appendChild(s);
+    s.onload = function() {
+      gtag("js", new Date());
+      gtag("config", "G-TJRCBKJKFX");
+      gtag("config", "AW-18025247905");
+    };
+  }
+  if (typeof requestIdleCallback !== 'undefined') {
+    requestIdleCallback(function() { loadGtag(); });
+  } else {
+    setTimeout(loadGtag, 2000);
+  }
+
+  // WhatsApp click tracking (events queue in dataLayer before gtag loads)
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll("a[href*='wa.me']").forEach(function(link) {
+      link.addEventListener("click", function() {
+        gtag("event", "contact", {
+          "method": "whatsapp",
+          "event_category": "lead",
+          "event_label": document.title
+        });
+        gtag("event", "conversion", {"send_to": "AW-18025247905/Lv0ZCOWRk4scEKHpjZND"});
+      });
+    });
+  });
+</script>
+
     <link rel="dns-prefetch" href="https://calendly.com" />
-    <link rel="dns-prefetch" href="https://wa.me" />
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@600;700;900&display=swap" as="style" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@600;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@600;700;900&display=swap" rel="stylesheet" /></noscript>
   <link rel="stylesheet" href="/dist/output.css" />
 
   <style>
@@ -71,7 +92,7 @@
       *,::before,::after{box-sizing:border-box}
       body{font-family:'Inter',sans-serif;background:#09090b;color:#cbd5e1;overflow-x:hidden;margin:0}
       .glass-nav{background:rgba(0,0,0,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}
-    </style>
+    .font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Space Grotesk",system-ui,sans-serif}</style>
 </head>
 <body>
 
@@ -117,7 +138,7 @@
             5 Procesos que Puedes <span class="accent">Automatizar con IA</span> Esta Semana
           </h1>
           <p class="text-lg text-slate-300 leading-relaxed mb-8">
-            Para estudios jurídicos, corredoras de propiedades y empresas de servicios en Latinoamérica. Sin cambiar tus herramientas actuales.
+            Para estudios jurídicos, corredoras de propiedades y empresas de servicios en Latinoamérica. Sin cambiar sus herramientas actuales.
           </p>
 
           <!-- What's inside -->
@@ -128,11 +149,11 @@
             </li>
             <li class="flex items-start gap-3">
               <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-[#00f6ff]/20 border border-[#00f6ff]/40 flex items-center justify-center text-[#00f6ff] text-xs font-bold">✓</span>
-              <span class="text-slate-300 text-sm leading-relaxed"><strong class="text-white">Checklist de diagnóstico</strong> para saber cuál proceso aplicar primero según tu industria</span>
+              <span class="text-slate-300 text-sm leading-relaxed"><strong class="text-white">Checklist de diagnóstico</strong> para saber cuál proceso aplicar primero según su industria</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-[#00f6ff]/20 border border-[#00f6ff]/40 flex items-center justify-center text-[#00f6ff] text-xs font-bold">✓</span>
-              <span class="text-slate-300 text-sm leading-relaxed"><strong class="text-white">Calculadora de ROI</strong> integrada para estimar el ahorro en horas y dinero para tu equipo</span>
+              <span class="text-slate-300 text-sm leading-relaxed"><strong class="text-white">Calculadora de ROI</strong> integrada para estimar el ahorro en horas y dinero para su equipo</span>
             </li>
           </ul>
 
@@ -151,7 +172,7 @@
         <div>
           <div class="glass rounded-2xl p-8">
             <div id="form-container">
-              <h2 class="font-display text-xl font-bold text-white mb-2">Recibe la guía en tu correo</h2>
+              <h2 class="font-display text-xl font-bold text-white mb-2">Reciba la guía en su correo</h2>
               <p class="text-sm text-slate-400 mb-6">Acceso inmediato. Sin spam. Puedes darte de baja cuando quieras.</p>
 
               <form id="guide-form" novalidate class="space-y-4">
@@ -165,9 +186,9 @@
                   <input type="text" id="name" name="name" placeholder="Ej. Juan Pérez" autocomplete="name" />
                 </div>
                 <div>
-                  <label for="industry" class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">¿En qué industria trabajas?</label>
+                  <label for="industry" class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">¿En qué industria trabaja?</label>
                   <select id="industry" name="industry">
-                    <option value="">Selecciona tu industria</option>
+                    <option value="">Seleccione su industria</option>
                     <option value="legal">Estudio jurídico / Legal</option>
                     <option value="corredor">Corredora de propiedades</option>
                     <option value="finanzas">Finanzas / Contabilidad</option>
@@ -178,7 +199,7 @@
                 <div>
                   <label for="country" class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">País</label>
                   <select id="country" name="country">
-                    <option value="">Selecciona tu país</option>
+                    <option value="">Seleccione su país</option>
                     <option value="Chile">Chile</option>
                     <option value="Colombia">Colombia</option>
                     <option value="Peru">Perú</option>
@@ -201,8 +222,8 @@
             <!-- Success state -->
             <div id="success-state" class="hidden text-center py-4">
               <div class="text-4xl mb-4">✅</div>
-              <h3 class="font-display text-xl font-bold text-white mb-2">¡Listo! Revisa tu correo</h3>
-              <p class="text-slate-400 text-sm mb-6">Te enviamos el link a la guía. Debería llegar en menos de 2 minutos.</p>
+              <h3 class="font-display text-xl font-bold text-white mb-2">¡Listo! Revise su correo</h3>
+              <p class="text-slate-400 text-sm mb-6">Le enviamos el link a la guía. Debería llegar en menos de 2 minutos.</p>
               <a href="/recursos/guia-ia-legal/contenido/" class="inline-flex items-center gap-2 text-[#00f6ff] font-semibold text-sm hover:underline">
                 Acceder a la guía ahora →
               </a>
@@ -309,7 +330,7 @@
 
         <!-- CTA repeat -->
         <div class="mt-12 text-center">
-          <p class="text-slate-400 mb-4">Recibe la guía completa con el paso a paso de implementación:</p>
+          <p class="text-slate-400 mb-4">Reciba la guía completa con el paso a paso de implementación:</p>
           <a href="#" onclick="document.getElementById('email').focus();return false;" class="inline-flex items-center gap-2 bg-[#00f6ff] text-[#050510] font-bold py-4 px-8 rounded-full hover:opacity-90 transition-opacity">
             Descargar gratis ahora
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>

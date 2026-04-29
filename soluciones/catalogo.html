@@ -1,30 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TJRCBKJKFX"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag("js", new Date());
+  // GA4 — deferred to avoid competing with critical resources
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
 
+  function loadGtag() {
+    var s = document.createElement('script');
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-TJRCBKJKFX';
+    s.async = true;
+    document.head.appendChild(s);
+    s.onload = function() {
+      gtag("js", new Date());
       gtag("config", "G-TJRCBKJKFX");
       gtag("config", "AW-18025247905");
+    };
+  }
+  if (typeof requestIdleCallback !== 'undefined') {
+    requestIdleCallback(function() { loadGtag(); });
+  } else {
+    setTimeout(loadGtag, 2000);
+  }
 
-      document.addEventListener("DOMContentLoaded", () => {
-        const whatsappLinks = document.querySelectorAll("a[href*=\"wa.me\"]");
-        whatsappLinks.forEach(link => {
-          link.addEventListener("click", () => {
-            gtag("event", "contact", {
-              "method": "whatsapp",
-              "event_category": "lead",
-              "event_label": document.title
-            });
-            gtag("event", "conversion", {"send_to": "AW-18025247905/Lv0ZCOWRk4scEKHpjZND"});
-          });
+  // WhatsApp click tracking (events queue in dataLayer before gtag loads)
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll("a[href*='wa.me']").forEach(function(link) {
+      link.addEventListener("click", function() {
+        gtag("event", "contact", {
+          "method": "whatsapp",
+          "event_category": "lead",
+          "event_label": document.title
         });
+        gtag("event", "conversion", {"send_to": "AW-18025247905/Lv0ZCOWRk4scEKHpjZND"});
       });
-    </script>
+    });
+  });
+</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#050510" />
@@ -33,7 +45,7 @@
 
     <meta
       name="description"
-      content="Catálogo de soluciones de automatización e IA de implementación rápida (1 mes) y costo fijo. Incluye BrokerIA para corredoras de propiedades. Triaje legal, gestión documental, control de gastos y más. Potencia tu rentabilidad con IA y RPA en Chile."
+      content="Catálogo de soluciones de automatización e IA de implementación rápida (1 mes) y costo fijo. Incluye BrokerIA para corredoras de propiedades. Triaje legal, gestión documental, control de gastos y más. Potencia su rentabilidad con IA y RPA en Chile."
     />
     
     
@@ -54,16 +66,9 @@
     <link rel="preload" href="../../dist/output.css" as="style" />
     <link href="../../dist/output.css" rel="stylesheet" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://calendly.com" />
-    <link rel="dns-prefetch" href="https://wa.me" />
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@600;700;900&display=swap" as="style" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@600;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@600;700;900&display=swap" rel="stylesheet" /></noscript>
 
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js" defer></script>
+    <script src="/js/lenis.min.js" defer></script>
     <noscript>
       <style>
         .reveal { opacity: 1 !important; transform: none !important; }
@@ -94,7 +99,7 @@
       *,::before,::after{box-sizing:border-box}
       body{font-family:'Inter',sans-serif;background:#09090b;color:#cbd5e1;overflow-x:hidden;margin:0}
       .glass-nav{background:rgba(0,0,0,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}
-    </style>
+    .font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Space Grotesk",system-ui,sans-serif}</style>
   </head>
   <body class="antialiased selection:bg-[#00f6ff] selection:text-black bg-zinc-950">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--color-accent)] focus:text-black focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
@@ -121,7 +126,6 @@
                 <div class="hidden md:flex items-center gap-8">
           <a href="/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Inicio</a>
           <a href="/#como-trabajamos" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Servicios</a>
-          <a href="/soluciones/" class="text-sm font-medium text-white transition-colors">Soluciones</a>
           <a href="/casos/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Casos</a>
           <a href="/blog/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Blog</a>
           <a href="/nosotros/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Nosotros</a>
@@ -155,7 +159,6 @@
                 <nav class="flex flex-col" role="navigation" aria-label="Menú móvil">
           <a href="/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Inicio</a>
           <a href="/#como-trabajamos" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Servicios</a>
-          <a href="/soluciones/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Soluciones</a>
           <a href="/casos/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Casos</a>
           <a href="/blog/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Blog</a>
           <a href="/nosotros/" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Nosotros</a>
@@ -163,7 +166,7 @@
         </nav>
         <div class="mt-8">
           <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[#00f6ff]/10 hover:bg-[#00f6ff]/20 text-[#00f6ff] border border-[#00f6ff]/30 hover:border-[#00f6ff] font-semibold text-base py-4 px-5 rounded-full transition-all duration-300">
-            Evaluar si califica
+            Agendar conversación
           </a>
         </div>
       </div>
@@ -188,7 +191,7 @@
                 Mini Apps Plug & Play
             </h1>
             <p class="text-xl text-slate-300 max-w-3xl mx-auto font-light">
-                Soluciones pre-empaquetadas con tecnología de punta. <span class="text-white font-medium">Costo fijo, despliegue en 1 mes.</span> Ajustamos la experiencia para garantizar la adopción en tu equipo.
+                Soluciones pre-empaquetadas con tecnología de punta. <span class="text-white font-medium">Costo fijo, despliegue en 1 mes.</span> Ajustamos la experiencia para garantizar la adopción en su equipo.
             </p>
         </div>
     </header>
@@ -296,7 +299,7 @@
                          <h4 class="text-emerald-400 font-bold text-sm uppercase mb-3 flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Resultado
                         </h4>
-                        <p class="text-sm text-slate-300"><strong>Abogado:</strong> Recibe solo Leads Calificados con resumen.<br><strong>Cliente:</strong> Respuesta inmediata.</p>
+                        <p class="text-sm text-slate-300"><strong>Abogado:</strong> Reciba solo Leads Calificados con resumen.<br><strong>Cliente:</strong> Respuesta inmediata.</p>
                     </div>
                 </div>
             </div>
@@ -458,7 +461,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg> Caja Negra
                         </h4>
                         <p class="text-sm text-slate-300 mb-2">Sistema recolecta data via APIs (M365/Google).</p>
-                        <p class="text-xs text-slate-500 italic">Calcula tiempos (reuniones, redacción, edición) y genera narrativa de tarea con IA.</p>
+                        <p class="text-xs text-slate-500 italic">Calcule tiempos (reuniones, redacción, edición) y genera narrativa de tarea con IA.</p>
                     </div>
                     <div class="bg-black/40 p-6 rounded-xl border border-zinc-700/50">
                          <h4 class="text-emerald-400 font-bold text-sm uppercase mb-3 flex items-center gap-2">
