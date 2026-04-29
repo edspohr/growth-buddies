@@ -43,7 +43,7 @@ exports.sendQuizFollowup = onSchedule(
               <p><strong>¿Alguna de las 3 oportunidades del reporte le hizo sentido para su operación?</strong></p>
               <p>Si la respuesta es sí, podemos conversar 30 minutos sobre cómo abordarla en su caso específico. Sin pitch de ventas, sin presentación. Solo una conversación honesta sobre si tiene sentido avanzar a un diagnóstico.</p>
               <p style="margin: 24px 0;"><a href="https://calendly.com/espohr/conversemos" style="background: #0097B2; color: white; padding: 12px 24px; text-decoration: none; border-radius: 999px; font-weight: bold;">Agendar conversación →</a></p>
-              <p style="font-size: 13px; color: #666;">WhatsApp: <a href="https://wa.me/56957272191">+56 9 5727 2191</a></p>
+              <p style="font-size: 13px; color: #666;">WhatsApp: <a href="https://wa.me/56965863160">+56 9 6586 3160</a></p>
               <p>Si la respuesta es no, no hay problema. Este es el último correo automático que recibirá de Growth Buddies sobre este tema.</p>
               <p>Si quiere darme feedback sobre por qué el reporte no le hizo sentido, puede responder este correo directamente. Lo leo personalmente.</p>
               <p style="margin-top: 32px;">Edmundo Spohr<br/>Director<br/>Growth Buddies</p>

@@ -57,7 +57,7 @@ function generateEmailHTML({ company, opportunities }) {
       <ol>${opportunities.map(o => `<li>${o.title}</li>`).join("")}</ol>
       <p>Si quiere conversar sobre cómo abordar alguna de estas en su operación específica, puede agendar 30 minutos directamente con Edmundo Spohr (Director).</p>
       <p style="margin: 30px 0;"><a href="https://calendly.com/espohr/conversemos" style="background: #0097B2; color: white; padding: 12px 24px; text-decoration: none; border-radius: 999px; font-weight: bold;">Agendar conversación →</a></p>
-      <p style="font-size: 12px; color: #999;">Si prefiere WhatsApp: <a href="https://wa.me/56957272191">+56 9 5727 2191</a></p>
+      <p style="font-size: 12px; color: #999;">Si prefiere WhatsApp: <a href="https://wa.me/56965863160">+56 9 6586 3160</a></p>
       <hr style="margin: 40px 0; border: none; border-top: 1px solid #eee;" />
       <p style="font-size: 11px; color: #999;">Recibió este correo porque completó el diagnóstico rápido en growthbuddies.cl. En 7 días le enviaremos UN solo correo de seguimiento opcional. No tiene nurturing agresivo. Puede responder este correo si quiere conversar directamente.</p>
     </div>

@@ -141,7 +141,7 @@ exports.sendGuideDelivery = onDocumentCreated(
         <tr><td style="padding:10px 0;color:#64748b;font-size:13px;">Dispositivo</td>
             <td style="padding:10px 0;">${lead.device || "—"}</td></tr>
       </table>
-      ${ctaButton(`https://wa.me/56957272191?text=${encodeURIComponent(waMsg)}`, "💬 Responder por WhatsApp", "#25d366", "#fff")}
+      ${ctaButton(`https://wa.me/56965863160?text=${encodeURIComponent(waMsg)}`, "💬 Responder por WhatsApp", "#25d366", "#fff")}
       <p style="margin-top:12px;font-size:11px;color:#334155;text-align:center;">Lead ID: ${leadId} · Guía IA</p>`;
 
     await resend().emails.send({
@@ -165,7 +165,7 @@ exports.notifyNewLead = onDocumentCreated(
     const leadId = event.params.leadId;
 
     const waMsg = `Hola ${lead.name || ""}! Vi tu consulta sobre ${lead.interest || "automatización IA"}. ¿Tienes 15 minutos esta semana para conversar?`;
-    const whatsappLink = `https://wa.me/56957272191?text=${encodeURIComponent(waMsg)}`;
+    const whatsappLink = `https://wa.me/56965863160?text=${encodeURIComponent(waMsg)}`;
 
     const attribution = [
       lead.utm_source && `Fuente: ${lead.utm_source}`,
@@ -223,7 +223,7 @@ exports.notifyCalcLead = onDocumentCreated(
     const leadId = event.params.leadId;
 
     const waMsg = `Hola! Usé la calculadora de Growth Buddies y me interesaría saber más sobre el diagnóstico de automatización.`;
-    const whatsappLink = `https://wa.me/56957272191?text=${encodeURIComponent(waMsg)}`;
+    const whatsappLink = `https://wa.me/56965863160?text=${encodeURIComponent(waMsg)}`;
 
     const body = `
       <table style="width:100%;border-collapse:collapse;">
@@ -323,7 +323,7 @@ exports.sendFollowupSequence = onSchedule(
             <p style="margin:0;font-size:14px;color:#e2e8f0;font-weight:700;">Resultado típico: 10–15 horas semanales por profesional, recuperadas en las primeras 2 semanas.</p>
           </div>
           <p style="font-size:14px;color:#94a3b8;margin:0 0 24px;">¿Tu equipo maneja un volumen alto de emails o documentos? Cuéntame en qué industria trabajas y lo conversamos:</p>
-          ${ctaButton("https://wa.me/56957272191?text=" + encodeURIComponent("Hola Edmundo, leí la guía y me interesa el triaje inteligente de documentos."), "💬 Conversar por WhatsApp", "#25d366", "#fff")}
+          ${ctaButton("https://wa.me/56965863160?text=" + encodeURIComponent("Hola Edmundo, leí la guía y me interesa el triaje inteligente de documentos."), "💬 Conversar por WhatsApp", "#25d366", "#fff")}
           ${ctaButton("https://calendly.com/espohr/conversemos", "📅 O agendar llamada de 30 min", "#1e2035", "#e2e8f0")}`;
 
         await resend().emails.send({
@@ -388,7 +388,7 @@ exports.sendFollowupSequence = onSchedule(
           </div>
           <p style="font-size:14px;color:#64748b;margin:0 0 8px;">Sin presión. Sin pitch de ventas. Solo una conversación honesta.</p>
           ${ctaButton("https://calendly.com/espohr/conversemos", "📅 Agendar mi sesión de diagnóstico")}
-          <p style="margin-top:16px;text-align:center;font-size:14px;color:#64748b;">¿Prefieres WhatsApp? <a href="https://wa.me/56957272191?text=${waText}" style="color:#25d366;text-decoration:none;">Escríbeme directo →</a></p>`;
+          <p style="margin-top:16px;text-align:center;font-size:14px;color:#64748b;">¿Prefieres WhatsApp? <a href="https://wa.me/56965863160?text=${waText}" style="color:#25d366;text-decoration:none;">Escríbeme directo →</a></p>`;
 
         await resend().emails.send({
           from: "Edmundo Spohr — Growth Buddies <edmundo@growthbuddies.cl>",
@@ -475,7 +475,7 @@ exports.sendFollowupSequence = onSchedule(
           </div>
           <p style="font-size:14px;color:#94a3b8;margin:0 0 24px;">30 minutos. Sin compromiso. Sin tarjeta de crédito. Solo una conversación honesta sobre si podemos ayudarte.</p>
           ${ctaButton("https://calendly.com/espohr/conversemos", "📅 Agendar antes del viernes")}
-          <p style="margin-top:16px;text-align:center;font-size:14px;color:#64748b;">¿Prefieres WhatsApp? <a href="https://wa.me/56957272191?text=${encodeURIComponent(`Hola Edmundo, soy ${lead.name || "un interesado"}, quiero coordinar la sesión de calificación.`)}" style="color:#25d366;text-decoration:none;">Escríbeme directo →</a></p>`;
+          <p style="margin-top:16px;text-align:center;font-size:14px;color:#64748b;">¿Prefieres WhatsApp? <a href="https://wa.me/56965863160?text=${encodeURIComponent(`Hola Edmundo, soy ${lead.name || "un interesado"}, quiero coordinar la sesión de calificación.`)}" style="color:#25d366;text-decoration:none;">Escríbeme directo →</a></p>`;
 
         await resend().emails.send({
           from: "Edmundo Spohr — Growth Buddies <edmundo@growthbuddies.cl>",
