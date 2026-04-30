@@ -26,31 +26,31 @@
     {
       id: "legal",
       label: "Estudios jurídicos",
-      hourlyRate: 35,
+      hourlyRate: 30,
       pool: ["legal-validation", "legal-triage", "legal-contracts", "legal-knowledge", "legal-time-tracking"]
     },
     {
       id: "industrial",
       label: "Industrial / Manufactura",
-      hourlyRate: 22,
+      hourlyRate: 18,
       pool: ["ind-predictive", "ind-procurement", "ind-kpi-reports", "ind-maintenance-triage", "ind-traceability"]
     },
     {
       id: "engineering",
       label: "Ingeniería / Construcción",
-      hourlyRate: 28,
+      hourlyRate: 25,
       pool: ["eng-quotes", "eng-tech-docs", "eng-progress-reports", "eng-cross-validation", "eng-doc-management"]
     },
     {
       id: "consulting",
       label: "Consultoría profesional",
-      hourlyRate: 32,
+      hourlyRate: 28,
       pool: ["cons-proposals", "cons-rfp-triage", "cons-project-reports", "cons-knowledge-base", "cons-timesheet"]
     },
     {
       id: "logistics",
       label: "Logística / Distribución",
-      hourlyRate: 20,
+      hourlyRate: 15,
       pool: ["log-routing", "log-incident-triage", "log-demand-forecast", "log-reconciliation", "log-customer-comms"]
     }
   ];
@@ -467,8 +467,8 @@
     const teamSize = SIZE_TO_TEAM[answers.size] || 10;
     const weeklyHours = HOURS_TO_WEEKLY[answers.pain2] || 10;
 
-    // Conservative: assume automation recovers 60% of wasted hours
-    const recoveryFactor = 0.6;
+    // Conservative: assume automation recovers 40% of wasted hours
+    const recoveryFactor = 0.4;
     const monthlyHours = teamSize * weeklyHours * 4.3 * recoveryFactor;
     const monthly = Math.round(monthlyHours * hourlyRate);
     const annual = monthly * 12;
