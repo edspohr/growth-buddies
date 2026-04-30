@@ -680,7 +680,7 @@
 
           <div id="quiz-email-capture" class="hidden">
             <h3 class="text-2xl font-bold text-white font-display mb-3">Su reporte está listo</h3>
-            <p class="text-slate-400 mb-6">Identificamos <strong class="text-white"><span id="quiz-result-count">3</span> oportunidades probables</strong> de automatización en su operación. Le enviamos el reporte personalizado al correo.</p>
+            <p class="text-slate-400 mb-6">Identificamos <strong class="text-white">3 oportunidades concretas</strong> de automatización en su operación. Le enviamos el reporte personalizado al correo, junto con el análisis de ROI proyectado.</p>
             <form id="quiz-email-form" class="space-y-4">
               <div>
                 <label for="quiz-email" class="text-sm text-slate-300 block mb-2">Correo electrónico empresarial</label>
@@ -1673,81 +1673,75 @@
           {
             id: 'sector', text: '¿En qué sector opera su empresa?',
             options: [
-              { value: 'legal', label: 'Estudio jurídico', tags: ['legal'] },
-              { value: 'seguros', label: 'Corredora de seguros', tags: ['email', 'compliance'] },
-              { value: 'consultoria', label: 'Consultora / asesoría', tags: ['docs', 'time'] },
-              { value: 'otros', label: 'Otra empresa de servicios profesionales', tags: ['ops'] }
+              { value: 'legal', label: 'Estudios jurídicos' },
+              { value: 'industrial', label: 'Industrial / Manufactura' },
+              { value: 'engineering', label: 'Ingeniería / Construcción' },
+              { value: 'consulting', label: 'Consultoría profesional' },
+              { value: 'logistics', label: 'Logística / Distribución' }
             ]
           },
           {
             id: 'size', text: '¿Cuántos colaboradores tiene su empresa?',
             options: [
-              { value: '<15', label: 'Menos de 15', tags: ['small'] },
-              { value: '15-30', label: 'Entre 15 y 30', tags: ['mid'] },
-              { value: '30-80', label: 'Entre 30 y 80', tags: ['target'] },
-              { value: '>80', label: 'Más de 80', tags: ['large'] }
+              { value: '1-5', label: 'De 1 a 5 personas' },
+              { value: '6-15', label: 'De 6 a 15 personas' },
+              { value: '15-30', label: 'De 15 a 30 personas' },
+              { value: '30-80', label: 'De 30 a 80 personas' },
+              { value: '80+', label: 'Más de 80 personas' }
             ]
           },
           {
             id: 'pain1', text: '¿Cuál de estas situaciones describe mejor su mayor dolor operativo hoy?',
             options: [
-              { value: 'docs', label: 'Mucho tiempo perdido revisando o gestionando documentos', tags: ['docs', 'compliance'] },
-              { value: 'leads', label: 'Llegan muchas consultas o leads no calificados al equipo senior', tags: ['email', 'triage'] },
-              { value: 'reports', label: 'Reportes manuales que consumen horas cada semana', tags: ['ops', 'data'] },
-              { value: 'time', label: 'Profesionales sin registrar bien sus horas o gastos', tags: ['time'] }
+              { value: 'docs', label: 'Mucho tiempo perdido revisando o gestionando documentos y contratos' },
+              { value: 'emails', label: 'Saturación de correos y consultas entrantes' },
+              { value: 'reports', label: 'Reportes operativos que toman horas o días en preparar' },
+              { value: 'sales', label: 'Generación de propuestas o cotizaciones manualmente' },
+              { value: 'knowledge', label: 'Búsqueda lenta de información histórica o casos previos' },
+              { value: 'incidents', label: 'Gestión reactiva de incidencias y reclamos' }
             ]
           },
           {
             id: 'pain2', text: '¿Cuántas horas semanales estima que su equipo pierde en tareas que podrían automatizarse?',
             options: [
-              { value: '<5', label: 'Menos de 5 horas', tags: ['low'] },
-              { value: '5-15', label: 'Entre 5 y 15 horas', tags: ['mid'] },
-              { value: '15-40', label: 'Entre 15 y 40 horas', tags: ['high'] },
-              { value: '>40', label: 'Más de 40 horas', tags: ['critical'] }
+              { value: '0-5', label: 'Menos de 5 horas' },
+              { value: '5-15', label: 'Entre 5 y 15 horas' },
+              { value: '15-30', label: 'Entre 15 y 30 horas' },
+              { value: '30+', label: 'Más de 30 horas' }
             ]
           },
           {
             id: 'tools', text: '¿Qué herramientas digitales usa actualmente su empresa?',
             options: [
-              { value: 'office', label: 'Email, Excel y carpetas compartidas', tags: ['basic'] },
-              { value: 'crm', label: 'CRM básico + herramientas de oficina', tags: ['mid'] },
-              { value: 'specialized', label: 'Software especializado del sector (ERP, gestor legal, etc.)', tags: ['mature'] },
-              { value: 'mixed', label: 'Mezcla de todo, sin integración entre sistemas', tags: ['integration'] }
+              { value: 'office', label: 'Email, Excel y carpetas compartidas' },
+              { value: 'crm', label: 'CRM básico + herramientas de oficina' },
+              { value: 'sap', label: 'ERP empresarial (SAP, Oracle, Microsoft Dynamics)' },
+              { value: 'specialized', label: 'Software especializado del sector' },
+              { value: 'mixed', label: 'Mezcla de todo, sin integración entre sistemas' },
+              { value: 'custom', label: 'Sistemas internos desarrollados a medida' }
             ]
           },
           {
             id: 'previous', text: '¿Ha intentado implementar IA o automatización antes?',
             options: [
-              { value: 'no', label: 'No, esto sería un primer paso', tags: ['greenfield'] },
-              { value: 'failed', label: 'Sí, pero no funcionó como esperábamos', tags: ['rescue'] },
-              { value: 'partial', label: 'Sí, en algunos procesos puntuales', tags: ['extend'] },
-              { value: 'mature', label: 'Sí, tenemos varios procesos automatizados', tags: ['advanced'] }
+              { value: 'no', label: 'No, esto sería un primer paso' },
+              { value: 'failed', label: 'Sí, pero no funcionó como esperábamos' },
+              { value: 'partial', label: 'Sí, en algunos procesos puntuales' },
+              { value: 'mature', label: 'Sí, tenemos varios procesos automatizados' }
             ]
           },
           {
             id: 'urgency', text: '¿Qué tan urgente es resolver esto para su empresa?',
             options: [
-              { value: 'now', label: 'Necesitamos resolverlo este trimestre', tags: ['hot'] },
-              { value: 'quarter', label: 'En los próximos 3-6 meses', tags: ['warm'] },
-              { value: 'year', label: 'Este año, sin presión específica', tags: ['cold'] }
+              { value: 'now', label: 'Necesitamos resolverlo este trimestre' },
+              { value: 'quarter', label: 'En los próximos 3-6 meses' },
+              { value: 'year', label: 'Este año, sin presión específica' }
             ]
           }
         ];
 
-        const opportunityMap = {
-          legal_docs: { title: 'Validación documental con IA', description: 'Análisis automático de contratos contra el playbook del estudio. Reduce errores pre-firma y acelera revisiones.' },
-          legal_email: { title: 'Triaje legal automático', description: 'IA que filtra consultas entrantes y entrega solo leads calificados a los socios.' },
-          legal_kb: { title: 'Base de conocimientos pasiva', description: 'Sistema que clasifica y archiva documentos automáticamente, con búsqueda por lenguaje natural.' },
-          seguros_email: { title: 'Automatización de correos de pólizas', description: 'IA que clasifica, prioriza y responde correos de pólizas con tiempos de respuesta menores a 15 minutos.' },
-          ops_reports: { title: 'Reportería automatizada', description: 'Automatización de la generación de reportes operativos que hoy se hacen manualmente.' },
-          time_tracking: { title: 'Registro pasivo de tiempos y gastos', description: 'Captura automática de horas trabajadas y rendición de gastos por imagen.' },
-          integration: { title: 'Integración entre sistemas', description: 'Conexión de sus herramientas existentes (CRM, ERP, email) para eliminar trabajo duplicado.' },
-          rescue: { title: 'Rescate de implementación previa', description: 'Diagnóstico de por qué su intento previo no funcionó y plan correctivo.' }
-        };
-
         let currentQuestion = 0;
         const answers = {};
-        const allTags = [];
 
         function escapeHtml(s) {
           return String(s).replace(/[&<>"']/g, function(c) {
@@ -1760,7 +1754,7 @@
           const container = document.getElementById('quiz-question-container');
           let html = '<h3 class="text-xl md:text-2xl font-bold text-white font-display mb-6">' + escapeHtml(q.text) + '</h3><div class="space-y-3">';
           q.options.forEach(function(opt) {
-            html += '<button type="button" data-value="' + escapeHtml(opt.value) + '" data-tags=\'' + JSON.stringify(opt.tags) + '\' class="quiz-option w-full text-left bg-zinc-950 hover:bg-zinc-900 border border-zinc-700 hover:border-[var(--color-accent)]/50 rounded-lg px-5 py-4 text-slate-200 hover:text-white transition-all">' + escapeHtml(opt.label) + '</button>';
+            html += '<button type="button" data-value="' + escapeHtml(opt.value) + '" class="quiz-option w-full text-left bg-zinc-950 hover:bg-zinc-900 border border-zinc-700 hover:border-[var(--color-accent)]/50 rounded-lg px-5 py-4 text-slate-200 hover:text-white transition-all">' + escapeHtml(opt.label) + '</button>';
           });
           html += '</div>';
           container.innerHTML = html;
@@ -1771,7 +1765,6 @@
           container.querySelectorAll('.quiz-option').forEach(function(btn) {
             btn.addEventListener('click', function() {
               answers[q.id] = this.getAttribute('data-value');
-              allTags.push.apply(allTags, JSON.parse(this.getAttribute('data-tags')));
               if (idx < questions.length - 1) {
                 currentQuestion++;
                 renderQuestion(currentQuestion);
@@ -1783,31 +1776,10 @@
         }
 
         function showEmailCapture() {
-          const opportunities = calculateOpportunities();
-          document.getElementById('quiz-result-count').textContent = opportunities.length;
           document.getElementById('quiz-question-container').classList.add('hidden');
           document.getElementById('quiz-progress').classList.add('hidden');
           document.getElementById('quiz-email-capture').classList.remove('hidden');
           if (typeof gtag !== 'undefined') gtag('event', 'quiz_complete', { event_category: 'quiz' });
-        }
-
-        function calculateOpportunities() {
-          const opportunities = [];
-          const sector = answers.sector;
-          if (sector === 'legal') {
-            if (allTags.indexOf('docs') >= 0 || allTags.indexOf('compliance') >= 0) opportunities.push(opportunityMap.legal_docs);
-            if (allTags.indexOf('email') >= 0 || allTags.indexOf('triage') >= 0) opportunities.push(opportunityMap.legal_email);
-            if (opportunities.length < 3) opportunities.push(opportunityMap.legal_kb);
-          } else if (sector === 'seguros') {
-            opportunities.push(opportunityMap.seguros_email);
-            if (allTags.indexOf('docs') >= 0) opportunities.push(opportunityMap.legal_docs);
-          }
-          if (allTags.indexOf('time') >= 0) opportunities.push(opportunityMap.time_tracking);
-          if (allTags.indexOf('ops') >= 0 || allTags.indexOf('data') >= 0) opportunities.push(opportunityMap.ops_reports);
-          if (allTags.indexOf('integration') >= 0) opportunities.push(opportunityMap.integration);
-          if (allTags.indexOf('rescue') >= 0) opportunities.push(opportunityMap.rescue);
-          while (opportunities.length < 3) opportunities.push(opportunityMap.ops_reports);
-          return opportunities.slice(0, 3);
         }
 
         document.getElementById('quiz-email-form').addEventListener('submit', async function(e) {
@@ -1850,13 +1822,10 @@
             };
             const app = fbApp.initializeApp(firebaseConfig);
             const db = fs.getFirestore(app);
-            const opportunities = calculateOpportunities();
             await fs.addDoc(fs.collection(db, 'quiz_leads'), {
               email: email,
               company: company || null,
               answers: answers,
-              tags: allTags,
-              opportunities: opportunities.map(function(o) { return o.title; }),
               timestamp: fs.serverTimestamp(),
               source: 'homepage_quiz',
               followup_sent: false,
