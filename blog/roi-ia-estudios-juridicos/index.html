@@ -132,7 +132,8 @@
       *,::before,::after{box-sizing:border-box}
       body{font-family:'Inter',sans-serif;background:#09090b;color:#cbd5e1;overflow-x:hidden;margin:0}
       .glass-nav{background:rgba(0,0,0,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}
-    .font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Space Grotesk",system-ui,sans-serif}</style>
+    .font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Space Grotesk",system-ui,sans-serif}.font-heading{font-family:"Geist","system-ui",sans-serif}</style>
+    <link rel="preload" href="/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
   </head>
   <body class="antialiased selection:bg-[#00f6ff] selection:text-black bg-[#050510]">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--color-accent)] focus:text-black focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
@@ -242,7 +243,7 @@
                 <li class="text-purple-400" aria-current="page">Inteligencia Artificial</li>
               </ol>
             </nav>
-            <h1 class="text-4xl md:text-5xl font-black tracking-tight text-white mb-8 font-display leading-tight">
+            <h1 class="text-4xl md:text-5xl font-black tracking-tight text-white mb-8 font-heading leading-tight">
                 ROI de implementar IA en Estudios Jurídicos: Cifras, no promesas
             </h1>
             <div class="flex items-center justify-center gap-6 border-t border-zinc-800 pt-8 mt-8">
@@ -279,7 +280,7 @@
       <div class="lg:grid lg:grid-cols-[1fr_240px] lg:gap-16 lg:items-start">
 
         <div>
-          <article id="article-body" class="pb-12 prose prose-invert prose-lg prose-headings:font-display prose-headings:font-bold prose-a:text-[var(--color-accent)] prose-a:no-underline hover:prose-a:underline">
+          <article id="article-body" class="pb-12 prose prose-invert prose-lg prose-headings:font-heading prose-headings:font-bold prose-a:text-[var(--color-accent)] prose-a:no-underline hover:prose-a:underline">
 
               <p class="lead text-xl text-slate-300 mb-10">
                   La pregunta número uno que recibimos de socios directores es: "¿Cuánto me voy a ahorrar?". La respuesta corta es: Mucho. La respuesta larga requiere entender dónde se pierde dinero hoy.
@@ -315,7 +316,7 @@
               <div class="bg-zinc-900 border border-zinc-700 p-8 rounded-2xl my-12 not-prose">
                   <h4 class="text-white font-bold text-lg mb-2">Calculadora de ROI Personalizada</h4>
                   <p class="text-slate-400 text-sm mb-4">
-                      Tenemos una planilla Excel interna para calcular el ROI exacto según tu headcount y tarifas.
+                      Tenemos una planilla Excel interna para calcular el ROI exacto según su headcount y tarifas.
                   </p>
                   <a href="https://wa.me/56965863160" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-purple-400 font-bold text-sm hover:underline">
                       Solicitar Calculadora por WhatsApp
@@ -332,6 +333,21 @@
               </p>
 
           </article>
+
+          <!-- Related content -->
+          <div class="border-t border-zinc-800 pt-8 pb-8">
+            <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">Lectura relacionada</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/casos/spi-americas/" class="flex-1 group p-4 bg-zinc-900 border border-zinc-800 rounded-xl hover:border-[var(--color-accent)]/40 transition-colors">
+                <p class="text-xs text-[var(--color-accent)] font-bold uppercase tracking-wider mb-1">Caso de éxito</p>
+                <p class="text-sm font-semibold text-white group-hover:text-[var(--color-accent)] transition-colors">SPI Americas: +17% facturación en Legal Tech →</p>
+              </a>
+              <a href="/servicios/automatizacion-inteligente/" class="flex-1 group p-4 bg-zinc-900 border border-zinc-800 rounded-xl hover:border-[var(--color-accent)]/40 transition-colors">
+                <p class="text-xs text-[var(--color-accent)] font-bold uppercase tracking-wider mb-1">Servicio</p>
+                <p class="text-sm font-semibold text-white group-hover:text-[var(--color-accent)] transition-colors">Legal Tech & Automatización Inteligente →</p>
+              </a>
+            </div>
+          </div>
 
           <!-- Share Buttons -->
           <div class="border-t border-zinc-800 pt-8 pb-12">
@@ -354,7 +370,7 @@
 
           <!-- Artículos Relacionados -->
           <section class="pb-16">
-            <h3 class="text-lg font-bold text-white mb-6 font-display">Artículos Relacionados</h3>
+            <h3 class="text-lg font-bold text-white mb-6 font-heading">Artículos Relacionados</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
               <a href="/blog/automatizacion-contratos-legales-2026/" class="group block bg-zinc-900/50 border border-zinc-800 rounded-xl p-5 hover:border-[var(--color-accent)] transition-all">
                 <span class="text-xs font-bold text-[var(--color-accent)] uppercase tracking-wider">Legal Tech</span>
@@ -386,7 +402,7 @@
     <!-- Explorar Soluciones -->
     <section class="py-16 px-6 bg-zinc-950 border-t border-zinc-900">
         <div class="max-w-4xl mx-auto">
-            <h3 class="text-2xl font-bold text-white mb-8 font-display text-center">Explorar Soluciones de Automatización</h3>
+            <h3 class="text-2xl font-bold text-white mb-8 font-heading text-center">Explorar Soluciones de Automatización</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <a href="/soluciones/automatizacion-legal-emails/" class="group block p-6 border border-zinc-800 rounded-2xl bg-zinc-900/50 hover:border-[var(--color-accent)] transition-all">
                     <h4 class="text-lg font-bold text-white mb-2 group-hover:text-[var(--color-accent)] transition-colors">Triaje Legal (Email AI)</h4>

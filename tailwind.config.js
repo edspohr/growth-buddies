@@ -19,6 +19,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
+        heading: ["Geist", "system-ui", "sans-serif"],
         display: ["Space Grotesk", "sans-serif"],
         serif: ["Instrument Serif", "Georgia", "serif"],
       },

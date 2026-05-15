@@ -24,7 +24,7 @@ There are no linting or testing tools. This is a static site with CSS preprocess
 
 Static HTML5 site for a Chilean AI automation consulting firm. No JavaScript framework — pages are self-contained semantic HTML with vanilla JS for interactivity.
 
-**Positioning:** Growth Buddies is positioned as a **strategic diagnostic consultant**, not an implementation agency. The primary CTA everywhere is "Sesión de Calificación" (30-min qualification call) or "Evaluar si califica". The main paid product is the Diagnóstico de Automatización Estratégica (USD $3,000, 2-week engagement). Avoid language like "auditoría gratuita" or "Automatizamos lo aburrido" — these belong to the old positioning.
+**Positioning:** Growth Buddies is positioned as a **strategic diagnostic consultant**, not an implementation agency. The primary CTA everywhere is "Sesión de Calificación" (30-min qualification call) or "Evaluar si califica". The main paid product is the Diagnóstico de Automatización Estratégica (USD $3.000, 2-week engagement). Avoid language like "auditoría gratuita" or "Automatizamos lo aburrido" — these belong to the old positioning.
 
 **CSS pipeline:** `src/input.css` → Tailwind CLI → `dist/output.css`. Custom colors (`accent: #00f6ff`, `dark: #050510`), fonts (Inter/Space Grotesk), and animations are defined in `tailwind.config.js`.
 

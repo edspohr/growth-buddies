@@ -137,7 +137,8 @@
       *,::before,::after{box-sizing:border-box}
       body{font-family:'Inter',sans-serif;background:#09090b;color:#cbd5e1;overflow-x:hidden;margin:0}
       .glass-nav{background:rgba(0,0,0,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}
-    .font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Space Grotesk",system-ui,sans-serif}</style>
+    .font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Space Grotesk",system-ui,sans-serif}.font-heading{font-family:"Geist","system-ui",sans-serif}</style>
+    <link rel="preload" href="/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
   </head>
   <body class="antialiased selection:bg-[#00f6ff] selection:text-black bg-[#050510]">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--color-accent)] focus:text-black focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
@@ -235,7 +236,7 @@
                 <li class="text-[var(--color-accent)]" aria-current="page">Legal Tech</li>
               </ol>
             </nav>
-            <h1 class="text-4xl md:text-5xl font-black tracking-tight text-white mb-8 font-display leading-tight">
+            <h1 class="text-4xl md:text-5xl font-black tracking-tight text-white mb-8 font-heading leading-tight">
                 Cómo automatizar la revisión de contratos legales en 2026
             </h1>
             <div class="flex items-center justify-center gap-6 border-t border-zinc-800 pt-8 mt-8">
@@ -274,10 +275,10 @@
 
         <!-- Main content -->
         <div>
-          <article id="article-body" class="pb-12 prose prose-invert prose-lg prose-headings:font-display prose-headings:font-bold prose-a:text-[var(--color-accent)] prose-a:no-underline hover:prose-a:underline">
+          <article id="article-body" class="pb-12 prose prose-invert prose-lg prose-headings:font-heading prose-headings:font-bold prose-a:text-[var(--color-accent)] prose-a:no-underline hover:prose-a:underline">
 
               <p class="lead text-xl text-slate-300 mb-10">
-                  La revisión manual de contratos es historia. En 2026, las firmas que no utilicen modelos de lenguaje (LLMs) para pre-analizar riesgos, perderán competitividad por costos y velocidad. Aquí te explicamos el estado del arte.
+                  La revisión manual de contratos es historia. En 2026, las firmas que no utilicen modelos de lenguaje (LLMs) para pre-analizar riesgos, perderán competitividad por costos y velocidad. Aquí le explicamos el estado del arte.
               </p>
 
               <h3 id="ojo-experto">El fin del "Ojo Experto" para tareas rutinarias</h3>
@@ -306,17 +307,17 @@
               </p>
               <ul>
                   <li>Extrae fechas clave y montos.</li>
-                  <li>Compara la cláusula de responsabilidad contra tu "Playbook" interno.</li>
+                  <li>Compara la cláusula de responsabilidad contra su "Playbook" interno.</li>
                   <li>Sugiere redacción alternativa si detecta un riesgo alto.</li>
               </ul>
 
               <div class="bg-zinc-900 border border-zinc-700 p-8 rounded-2xl my-12 not-prose">
-                  <h4 class="text-white font-bold text-lg mb-2">¿Necesitas ayuda técnica?</h4>
+                  <h4 class="text-white font-bold text-lg mb-2">¿Necesita ayuda técnica?</h4>
                   <p class="text-slate-400 text-sm mb-4">
                       En Growth Buddies construimos flujos de revisión de contratos a medida para gerencias legales.
                   </p>
                   <a href="https://wa.me/56965863160" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[var(--color-accent)] font-bold text-sm hover:underline">
-                      Agendar Diagnóstico Gratuito
+                      Agendar sesión de calificación
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                   </a>
               </div>
@@ -330,6 +331,21 @@
               </p>
 
           </article>
+
+          <!-- Related content -->
+          <div class="border-t border-zinc-800 pt-8 pb-8">
+            <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">Lectura relacionada</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/casos/spi-americas/" class="flex-1 group p-4 bg-zinc-900 border border-zinc-800 rounded-xl hover:border-[var(--color-accent)]/40 transition-colors">
+                <p class="text-xs text-[var(--color-accent)] font-bold uppercase tracking-wider mb-1">Caso de éxito</p>
+                <p class="text-sm font-semibold text-white group-hover:text-[var(--color-accent)] transition-colors">SPI Americas: +17% facturación con automatización de PI →</p>
+              </a>
+              <a href="/servicios/automatizacion-inteligente/" class="flex-1 group p-4 bg-zinc-900 border border-zinc-800 rounded-xl hover:border-[var(--color-accent)]/40 transition-colors">
+                <p class="text-xs text-[var(--color-accent)] font-bold uppercase tracking-wider mb-1">Servicio</p>
+                <p class="text-sm font-semibold text-white group-hover:text-[var(--color-accent)] transition-colors">Legal Tech & Automatización Inteligente →</p>
+              </a>
+            </div>
+          </div>
 
           <!-- Share Buttons -->
           <div class="border-t border-zinc-800 pt-8 pb-12">
@@ -352,7 +368,7 @@
 
           <!-- Artículos Relacionados -->
           <section class="pb-16">
-            <h3 class="text-lg font-bold text-white mb-6 font-display">Artículos Relacionados</h3>
+            <h3 class="text-lg font-bold text-white mb-6 font-heading">Artículos Relacionados</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
               <a href="/blog/roi-ia-estudios-juridicos/" class="group block bg-zinc-900/50 border border-zinc-800 rounded-xl p-5 hover:border-purple-400 transition-all">
                 <span class="text-xs font-bold text-purple-400 uppercase tracking-wider">Inteligencia Artificial</span>
@@ -384,7 +400,7 @@
     <!-- Explorar Soluciones -->
     <section class="py-16 px-6 bg-zinc-950 border-t border-zinc-900">
         <div class="max-w-4xl mx-auto">
-            <h3 class="text-2xl font-bold text-white mb-8 font-display text-center">Explorar Soluciones de Automatización</h3>
+            <h3 class="text-2xl font-bold text-white mb-8 font-heading text-center">Explorar Soluciones de Automatización</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <a href="/soluciones/automatizacion-legal-emails/" class="group block p-6 border border-zinc-800 rounded-2xl bg-zinc-900/50 hover:border-[var(--color-accent)] transition-all">
                     <h4 class="text-lg font-bold text-white mb-2 group-hover:text-[var(--color-accent)] transition-colors">Triaje Legal (Email AI)</h4>

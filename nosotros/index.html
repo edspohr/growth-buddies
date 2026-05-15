@@ -93,7 +93,8 @@
       *,::before,::after{box-sizing:border-box}
       body{font-family:'Inter',sans-serif;background:#09090b;color:#cbd5e1;overflow-x:hidden;margin:0}
       .glass-nav{background:rgba(0,0,0,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}
-    .font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Space Grotesk",system-ui,sans-serif}</style>
+    .font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Space Grotesk",system-ui,sans-serif}.font-heading{font-family:"Geist","system-ui",sans-serif}</style>
+    <link rel="preload" href="/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
   </head>
   <body class="antialiased selection:bg-[#00f6ff] selection:text-black bg-zinc-950">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--color-accent)] focus:text-black focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
@@ -164,7 +165,7 @@
           </ol>
         </nav>
         <span class="text-[var(--color-accent)] font-bold tracking-wider text-sm uppercase font-display mb-4 block">Quiénes Somos</span>
-        <h1 class="text-3xl md:text-5xl font-black tracking-tight text-white font-display mb-6 leading-[1.15]">
+        <h1 class="text-3xl md:text-5xl font-black tracking-tight text-white font-heading mb-6 leading-[1.15]">
           Le decimos exactamente dónde pierde dinero su operación — y lo construimos.
         </h1>
         <p class="text-xl text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
@@ -178,7 +179,7 @@
       <div class="max-w-4xl mx-auto">
         <div class="reveal grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div>
-            <h2 class="text-3xl font-bold text-white font-display mb-6">Nuestra misión</h2>
+            <h2 class="text-3xl font-bold text-white font-heading mb-6">Nuestra misión</h2>
             <p class="text-slate-300 leading-relaxed mb-4">
               Growth Buddies es una consultora de automatización e inteligencia artificial con foco en el mercado legal, servicios profesionales y empresas de servicios en expansión por América Latina.
             </p>
@@ -212,7 +213,7 @@
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-16 reveal">
           <span class="text-[var(--color-accent)] font-bold tracking-wider text-sm uppercase font-display mb-4 block">Cómo trabajamos</span>
-          <h2 class="text-3xl md:text-4xl font-black text-white font-display">Metodología en 4 fases</h2>
+          <h2 class="text-3xl md:text-4xl font-black text-white font-heading">Metodología en 4 fases</h2>
           <p class="text-slate-400 mt-4 max-w-2xl mx-auto">Un proceso probado que garantiza resultados medibles en menos de 60 días, con adopción real por parte del equipo.</p>
         </div>
 
@@ -221,7 +222,7 @@
           <div class="reveal bg-zinc-900/60 border border-zinc-800 rounded-2xl p-8 hover:border-[var(--color-accent)]/40 transition-colors">
             <div class="flex items-center gap-4 mb-4">
               <div class="h-12 w-12 rounded-xl bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/30 flex items-center justify-center text-[var(--color-accent)] font-black text-lg font-display">1</div>
-              <h3 class="text-xl font-bold text-white font-display">Diagnóstico</h3>
+              <h3 class="text-xl font-bold text-white font-heading">Diagnóstico</h3>
             </div>
             <p class="text-slate-400 leading-relaxed mb-3">Auditamos sus procesos actuales para identificar los cuellos de botella con mayor impacto. Sin asumir — con datos.</p>
             <ul class="space-y-2 text-sm text-slate-300">
@@ -235,7 +236,7 @@
           <div class="reveal bg-zinc-900/60 border border-zinc-800 rounded-2xl p-8 hover:border-[var(--color-accent)]/40 transition-colors">
             <div class="flex items-center gap-4 mb-4">
               <div class="h-12 w-12 rounded-xl bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/30 flex items-center justify-center text-[var(--color-accent)] font-black text-lg font-display">2</div>
-              <h3 class="text-xl font-bold text-white font-display">Diseño</h3>
+              <h3 class="text-xl font-bold text-white font-heading">Diseño</h3>
             </div>
             <p class="text-slate-400 leading-relaxed mb-3">Diseñamos la arquitectura de la solución junto a su equipo. Elegimos herramientas, definimos integraciones y establecemos métricas de éxito.</p>
             <ul class="space-y-2 text-sm text-slate-300">
@@ -249,7 +250,7 @@
           <div class="reveal bg-zinc-900/60 border border-zinc-800 rounded-2xl p-8 hover:border-[var(--color-accent)]/40 transition-colors">
             <div class="flex items-center gap-4 mb-4">
               <div class="h-12 w-12 rounded-xl bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/30 flex items-center justify-center text-[var(--color-accent)] font-black text-lg font-display">3</div>
-              <h3 class="text-xl font-bold text-white font-display">Build</h3>
+              <h3 class="text-xl font-bold text-white font-heading">Build</h3>
             </div>
             <p class="text-slate-400 leading-relaxed mb-3">Construimos e implementamos en ciclos cortos de 2 semanas. Cada sprint entrega valor concreto — sin meses de espera.</p>
             <ul class="space-y-2 text-sm text-slate-300">
@@ -263,7 +264,7 @@
           <div class="reveal bg-zinc-900/60 border border-zinc-800 rounded-2xl p-8 hover:border-[var(--color-accent)]/40 transition-colors">
             <div class="flex items-center gap-4 mb-4">
               <div class="h-12 w-12 rounded-xl bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/30 flex items-center justify-center text-[var(--color-accent)] font-black text-lg font-display">4</div>
-              <h3 class="text-xl font-bold text-white font-display">Adopción</h3>
+              <h3 class="text-xl font-bold text-white font-heading">Adopción</h3>
             </div>
             <p class="text-slate-400 leading-relaxed mb-3">La tecnología sin adopción no cambia nada. Capacitamos al equipo y acompañamos el cambio hasta que el nuevo flujo se vuelve rutina.</p>
             <ul class="space-y-2 text-sm text-slate-300">
@@ -281,7 +282,7 @@
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-16 reveal">
           <span class="text-[var(--color-accent)] font-bold tracking-wider text-sm uppercase font-display mb-4 block">El equipo</span>
-          <h2 class="text-3xl md:text-4xl font-black text-white font-display">Liderazgo</h2>
+          <h2 class="text-3xl md:text-4xl font-black text-white font-heading">Liderazgo</h2>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -290,7 +291,7 @@
             <div class="flex items-start gap-5 mb-6">
               <img src="/img/foto.webp" alt="Foto de Edmundo Spohr" class="h-16 w-16 rounded-full object-cover border-2 border-[var(--color-accent)]/40" loading="lazy" width="320" height="320" />
               <div>
-                <h3 class="text-xl font-bold text-white font-display">Edmundo Spohr</h3>
+                <h3 class="text-xl font-bold text-white font-heading">Edmundo Spohr</h3>
                 <p class="text-[var(--color-accent)] text-sm font-semibold">Founder &amp; CEO</p>
               </div>
             </div>
@@ -309,7 +310,7 @@
             <div class="flex items-start gap-5 mb-6">
               <img src="/img/felipe-2026.webp" alt="Foto de Felipe Soto-Santibáñez" class="h-16 w-16 rounded-full object-cover border-2 border-[var(--color-accent)]/40" loading="lazy" width="1024" height="768" />
               <div>
-                <h3 class="text-xl font-bold text-white font-display">Felipe Soto-Santibáñez</h3>
+                <h3 class="text-xl font-bold text-white font-heading">Felipe Soto-Santibáñez</h3>
                 <p class="text-[var(--color-accent)] text-sm font-semibold">Co-Founder &amp; CTO</p>
               </div>
             </div>
@@ -349,7 +350,7 @@
     <!-- CTA -->
     <section class="py-24 px-6 border-t border-white/5 bg-zinc-950">
       <div class="max-w-3xl mx-auto text-center reveal">
-        <h2 class="text-3xl md:text-4xl font-black text-white font-display mb-6">¿Conversamos?</h2>
+        <h2 class="text-3xl md:text-4xl font-black text-white font-heading mb-6">¿Conversamos?</h2>
         <p class="text-slate-400 mb-10 text-lg">Cuéntenos su operación y en 30 minutos le decimos si podemos ayudarte — sin compromiso.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer"

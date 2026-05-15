@@ -100,7 +100,8 @@
       *,::before,::after{box-sizing:border-box}
       body{font-family:'Inter',sans-serif;background:#09090b;color:#cbd5e1;overflow-x:hidden;margin:0}
       .glass-nav{background:rgba(0,0,0,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}
-    .font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Space Grotesk",system-ui,sans-serif}</style>
+    .font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Space Grotesk",system-ui,sans-serif}.font-heading{font-family:"Geist","system-ui",sans-serif}</style>
+    <link rel="preload" href="/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
   </head>
   <body class="antialiased selection:bg-[#00f6ff] selection:text-black bg-zinc-950">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--color-accent)] focus:text-black focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
@@ -185,7 +186,7 @@
             <li class="text-[var(--color-accent)]" aria-current="page">Ejemplos de Implementación</li>
           </ol>
         </nav>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white font-display mb-8">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white font-heading mb-8">
                 Ejemplos de Implementación
             </h1>
             <p class="text-lg text-slate-300 leading-relaxed mb-4 text-left md:text-center">
@@ -203,7 +204,7 @@
         <div class="my-8 p-6 md:p-8 rounded-2xl border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/5">
           <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
             <div class="flex-1">
-              <h2 class="text-xl md:text-2xl font-bold text-white font-display mb-2">¿Cuál es su caso?</h2>
+              <h2 class="text-xl md:text-2xl font-bold text-white font-heading mb-2">¿Cuál es su caso?</h2>
               <p class="text-slate-300 text-sm md:text-base">El primer paso siempre es el diagnóstico. En 2 semanas le decimos exactamente qué automatizar, en qué orden, y cuánto recupera.</p>
             </div>
             <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 bg-[var(--color-cta)] hover:bg-[var(--color-cta-hover)] text-black font-bold py-3 px-6 rounded-full transition-all whitespace-nowrap text-sm md:text-base" onclick="if(typeof gtag!=='undefined'){gtag('event','calendly_click',{event_category:'soluciones_top'});}">
@@ -222,7 +223,7 @@
           <div class="flex items-center gap-3 mb-4">
             <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--color-accent)] border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/5 rounded-full px-3 py-1">PropTech · Corretaje de Propiedades</span>
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-white font-display mb-3">BrokerIA</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-white font-heading mb-3">BrokerIA</h2>
           <p class="text-slate-300 leading-relaxed mb-4">
             <strong class="text-white">El hallazgo del diagnóstico:</strong> Una corredora estaba perdiendo cierres porque sus brokers no podían cruzar a tiempo el perfil financiero del comprador con la habitabilidad de la propiedad.
           </p>
@@ -238,7 +239,7 @@
           <div class="flex items-center gap-3 mb-4">
             <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--color-accent)] border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/5 rounded-full px-3 py-1">Legal Tech · Estudios Jurídicos</span>
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-white font-display mb-3">Inbox IA Legal</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-white font-heading mb-3">Inbox IA Legal</h2>
           <p class="text-slate-300 leading-relaxed mb-4">
             <strong class="text-white">El hallazgo del diagnóstico:</strong> Un estudio jurídico estaba perdiendo horas de socios revisando consultas que nunca debieron llegar a su escritorio — casos no viables, fuera de área, sin presupuesto.
           </p>
@@ -254,7 +255,7 @@
           <div class="flex items-center gap-3 mb-4">
             <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--color-accent)] border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/5 rounded-full px-3 py-1">Legal Tech · Gestión Documental</span>
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-white font-display mb-3">DocuAgent IA</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-white font-heading mb-3">DocuAgent IA</h2>
           <p class="text-slate-300 leading-relaxed mb-4">
             <strong class="text-white">El hallazgo del diagnóstico:</strong> El equipo guardaba contratos en carpetas con nombres inconsistentes y no podía encontrar precedentes cuando los necesitaba.
           </p>
@@ -270,7 +271,7 @@
           <div class="flex items-center gap-3 mb-4">
             <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--color-accent)] border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/5 rounded-full px-3 py-1">Legal Tech · Compliance</span>
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-white font-display mb-3">Portal de Validación de Contratos</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-white font-heading mb-3">Portal de Validación de Contratos</h2>
           <p class="text-slate-300 leading-relaxed mb-4">
             <strong class="text-white">El hallazgo del diagnóstico:</strong> Los borradores de contratos llegaban a firma con cláusulas faltantes, errores de RUT, o sin la ley aplicable correcta — generando costosas correcciones de último minuto.
           </p>
@@ -286,7 +287,7 @@
           <div class="flex items-center gap-3 mb-4">
             <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--color-accent)] border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/5 rounded-full px-3 py-1">Finance Ops · Servicios Profesionales</span>
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-white font-display mb-3">Rendición de Gastos IA</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-white font-heading mb-3">Rendición de Gastos IA</h2>
           <p class="text-slate-300 leading-relaxed mb-4">
             <strong class="text-white">El hallazgo del diagnóstico:</strong> Profesionales perdían reembolsos porque las boletas se acumulaban sin asignación a cliente/proyecto, o el proceso era tan engorroso que simplemente no se hacía.
           </p>
@@ -304,7 +305,7 @@
     <!-- Bottom CTA -->
     <section class="text-center py-12 md:py-16 px-6 mt-10 border-t border-white/5">
       <div class="max-w-3xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-white font-display mb-4">Ninguna de estas soluciones se vende sin un diagnóstico previo.</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-white font-heading mb-4">Ninguna de estas soluciones se vende sin un diagnóstico previo.</h2>
         <p class="text-slate-400 mb-8 max-w-xl mx-auto">El diagnóstico es lo que asegura que lo que construimos resuelve su problema real, no uno que se le parece.</p>
         <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[var(--color-cta)] hover:bg-[var(--color-cta-hover)] text-black font-bold py-4 px-8 rounded-full transition-all" onclick="if(typeof gtag!=='undefined'){gtag('event','calendly_click',{event_category:'soluciones_bottom'});}">
           Agendar conversación con el director →
