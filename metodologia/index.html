@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <script>
+  // GA4 — deferred to avoid competing with critical resources
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  function loadGtag() {
+    var s = document.createElement('script');
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-TJRCBKJKFX';
+    s.async = true;
+    document.head.appendChild(s);
+    s.onload = function() {
+      gtag("js", new Date());
+      gtag("config", "G-TJRCBKJKFX");
+      gtag("config", "AW-18025247905");
+    };
+  }
+  if (typeof requestIdleCallback !== 'undefined') {
+    requestIdleCallback(function() { loadGtag(); });
+  } else {
+    setTimeout(loadGtag, 2000);
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll("a[href*='wa.me']").forEach(function(link) {
+      link.addEventListener("click", function() {
+        gtag("event", "contact", {
+          "method": "whatsapp",
+          "event_category": "lead",
+          "event_label": document.title
+        });
+        gtag("event", "conversion", {"send_to": "AW-18025247905/Lv0ZCOWRk4scEKHpjZND"});
+      });
+    });
+  });
+</script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#050510" />
+
+    <title>Metodología — Diagnóstico, Diseño, Build y Adopción | Growth Buddies</title>
+    <meta name="description" content="Conoce las 4 fases del proceso de Growth Buddies: Diagnóstico estratégico, Diseño de solución, Build técnico y Adopción organizacional. Un proceso probado para automatizar con IA sin riesgos." />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="icon" type="image/png" href="/img/avatar.webp" />
+    <link rel="apple-touch-icon" href="/img/logo.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="canonical" href="https://growthbuddies.cl/metodologia" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "@id": "https://growthbuddies.cl/metodologia#howto",
+      "name": "Metodología Growth Buddies — 4 fases para automatizar con IA",
+      "description": "Proceso de diagnóstico y automatización con IA para empresas de servicios profesionales en Latinoamérica.",
+      "totalTime": "P2W",
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "currency": "USD",
+        "value": "3000"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Diagnóstico Estratégico",
+          "url": "https://growthbuddies.cl/metodologia#diagnostico",
+          "text": "Inmersión de 2 semanas en su operación. Identificamos exactamente dónde pierde dinero su empresa, priorizamos las oportunidades y calculamos el ROI esperado por proceso."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Diseño de la Solución",
+          "url": "https://growthbuddies.cl/metodologia#diseno",
+          "text": "Definimos la arquitectura técnica, seleccionamos las herramientas correctas y diseñamos el flujo de trabajo automatizado antes de escribir una sola línea de código."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Build Técnico",
+          "url": "https://growthbuddies.cl/metodologia#build",
+          "text": "Construimos e integramos la solución en su stack existente. Pruebas rigurosas en staging antes de producción. Sin dependencia externa de Growth Buddies una vez entregado."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Adopción Organizacional",
+          "url": "https://growthbuddies.cl/metodologia#adopcion",
+          "text": "Aplicamos el marco Prosci ADKAR para que su equipo use el sistema. Capacitación, métricas de adopción y acompañamiento post-lanzamiento incluidos."
+        }
+      ],
+      "author": {
+        "@type": "Person",
+        "@id": "https://growthbuddies.cl/equipo/edmundo-spohr#person",
+        "name": "Edmundo Spohr"
+      },
+      "provider": {
+        "@type": "Organization",
+        "@id": "https://growthbuddies.cl/#organization",
+        "name": "Growth Buddies SpA"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://growthbuddies.cl/" },
+        { "@type": "ListItem", "position": 2, "name": "Metodología", "item": "https://growthbuddies.cl/metodologia" }
+      ]
+    }
+    </script>
+
+    <meta property="og:locale" content="es_CL" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Metodología de 4 Fases — Diagnóstico, Diseño, Build, Adopción | Growth Buddies" />
+    <meta property="og:description" content="Un proceso probado para automatizar con IA sin riesgos: Diagnóstico estratégico, Diseño técnico, Build y Adopción organizacional Prosci." />
+    <meta property="og:url" content="https://growthbuddies.cl/metodologia" />
+    <meta property="og:image" content="https://growthbuddies.cl/img/og-default.webp" />
+    <meta property="og:site_name" content="Growth Buddies" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preload" href="/dist/output.css" as="style" />
+    <link href="/dist/output.css" rel="stylesheet" />
+
+    <link rel="dns-prefetch" href="https://calendly.com" />
+    <script src="/js/lenis.min.js" defer></script>
+    <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+    <!-- Microsoft Clarity — deferred 3s to avoid blocking LCP -->
+    <script>setTimeout(function(){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","vkf6fbh8zc");},3000);</script>
+    <style>:root{--color-accent:#0097B2;--color-cta:#0097B2;--color-cta-hover: #00B5D6;--color-dark: #0B0B0F;}*,::before,::after{box-sizing:border-box}body{font-family:'Inter',sans-serif;background-color: var(--bg, #0B0B0F);color: var(--fg, #ECECEF);overflow-x:hidden;margin:0}.glass-nav{background:rgba(11,11,15,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}.font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Space Grotesk",system-ui,sans-serif}.font-heading{font-family:"Geist","system-ui",sans-serif}</style>
+    <link rel="preload" href="/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
+  </head>
+  <body class="antialiased selection:bg-[var(--accent)] selection:text-white">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--accent)] focus:text-white focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
+    <div class="noise-overlay"></div>
+
+    <nav class="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-2 group">
+          <img src="/img/logo.webp" alt="Logotipo de Growth Buddies" class="h-8 w-8 opacity-90 group-hover:opacity-100 transition-opacity" height="32" width="32" />
+          <span class="font-bold text-lg tracking-tight text-white group-hover:text-[var(--accent)] transition-colors">Growth Buddies</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="/#como-trabajamos" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Servicios</a>
+          <a href="/casos" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Casos</a>
+          <a href="/blog" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Blog</a>
+          <a href="/nosotros" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Nosotros</a>
+          <a href="/#contacto" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Contacto</a>
+        </div>
+        <div class="hidden md:block">
+          <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="bg-[var(--accent)]/10 hover:bg-[var(--accent)]/20 text-[var(--accent)] hover:text-white border border-[var(--accent)]/30 hover:border-[var(--accent)] font-semibold text-sm py-2 px-5 rounded-full transition-all duration-300">
+            Agendar conversación
+          </a>
+        </div>
+        <button id="mobile-menu-btn" aria-expanded="false" aria-label="Abrir menú" class="md:hidden flex flex-col justify-center items-center w-11 h-11 gap-[6px] rounded-lg hover:bg-white/10 transition-colors">
+          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
+          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
+          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" style="display:none;" class="fixed inset-0 z-[200] flex-col" aria-hidden="true">
+      <div class="absolute inset-0/96 backdrop-blur-xl"></div>
+      <div class="relative flex flex-col h-full px-6 py-6 overflow-y-auto">
+        <div class="flex justify-between items-center mb-10">
+          <a href="/" class="flex items-center gap-2">
+            <img src="/img/logo.webp" alt="Logotipo de Growth Buddies" class="h-8 w-8" height="32" width="32" />
+            <span class="font-bold text-lg text-white">Growth Buddies</span>
+          </a>
+          <button id="mobile-menu-close" aria-label="Cerrar menú" class="flex items-center justify-center w-11 h-11 text-white hover:bg-white/10 rounded-lg transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+        <div class="mb-8">
+          <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[var(--accent)]/10 hover:bg-[var(--accent)]/20 text-[var(--accent)] border border-[var(--accent)]/30 hover:border-[var(--accent)] font-semibold text-base py-4 px-5 rounded-full transition-all duration-300">
+            Agendar conversación
+          </a>
+        </div>
+        <nav class="flex flex-col" role="navigation" aria-label="Menú móvil">
+          <a href="/#como-trabajamos" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Servicios</a>
+          <a href="/casos" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Casos</a>
+          <a href="/blog" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Blog</a>
+          <a href="/nosotros" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Nosotros</a>
+          <a href="/#contacto" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Contacto</a>
+        </nav>
+        <div class="mt-auto pt-8">
+          <a href="https://wa.me/56965863160" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 text-[#25D366] text-base font-medium hover:underline py-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            Hablar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <main id="main-content" class="pt-32 pb-20 px-6">
+      <div class="max-w-5xl mx-auto">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Migas de pan" class="mb-10 reveal">
+          <ol class="flex items-center gap-2 text-xs text-slate-500">
+            <li><a href="/" class="hover:text-[var(--accent)] transition-colors">Inicio</a></li>
+            <li><span aria-hidden="true">/</span></li>
+            <li class="text-[var(--accent)]" aria-current="page">Metodología</li>
+          </ol>
+        </nav>
+
+        <!-- Hero -->
+        <div class="mb-16 reveal">
+          <p class="eyebrow">Proceso de trabajo</p>
+          <h1 class="text-h1 font-heading text-white mb-6">Un diagnóstico antes de cualquier herramienta.</h1>
+          <p class="text-lg text-slate-400 max-w-prose-cap leading-relaxed">
+            La mayoría de los proyectos de automatización fallan porque empiezan con la tecnología. Nosotros empezamos por entender su operación. El resultado: implementaciones que su equipo usa, con ROI medible desde el primer trimestre.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="btn-cta inline-flex items-center gap-2">
+              Evaluar si califica
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="/nosotros" class="btn-outline inline-flex items-center gap-2">
+              Conocer al equipo
+            </a>
+          </div>
+        </div>
+
+        <!-- Phase nav anchors -->
+        <nav aria-label="Fases de la metodología" class="mb-16 flex flex-wrap gap-3 reveal">
+          <a href="#diagnostico" class="text-xs font-semibold uppercase tracking-wider bg-[var(--surface)] border border-[var(--line)] text-[var(--fg-muted)] hover:border-[var(--accent)] hover:text-[var(--accent)] px-4 py-2 rounded-full transition-colors">01 Diagnóstico</a>
+          <a href="#diseno" class="text-xs font-semibold uppercase tracking-wider bg-[var(--surface)] border border-[var(--line)] text-[var(--fg-muted)] hover:border-[var(--accent)] hover:text-[var(--accent)] px-4 py-2 rounded-full transition-colors">02 Diseño</a>
+          <a href="#build" class="text-xs font-semibold uppercase tracking-wider bg-[var(--surface)] border border-[var(--line)] text-[var(--fg-muted)] hover:border-[var(--accent)] hover:text-[var(--accent)] px-4 py-2 rounded-full transition-colors">03 Build</a>
+          <a href="#adopcion" class="text-xs font-semibold uppercase tracking-wider bg-[var(--surface)] border border-[var(--line)] text-[var(--fg-muted)] hover:border-[var(--accent)] hover:text-[var(--accent)] px-4 py-2 rounded-full transition-colors">04 Adopción</a>
+        </nav>
+
+        <!-- Phases -->
+        <div class="space-y-20">
+
+          <!-- Fase 1: Diagnóstico -->
+          <section id="diagnostico" class="reveal scroll-mt-28">
+            <div class="flex items-start gap-6 mb-8">
+              <div class="shrink-0 w-12 h-12 rounded-xl bg-[var(--accent)]/10 border border-[var(--accent)]/20 flex items-center justify-center" aria-hidden="true">
+                <span class="text-[var(--accent)] font-bold text-lg font-heading">01</span>
+              </div>
+              <div>
+                <p class="eyebrow">Primera fase</p>
+                <h2 class="text-h2 font-heading text-white">Diagnóstico Estratégico</h2>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="space-y-4 text-slate-400 leading-relaxed">
+                <p>
+                  La fase de diagnóstico es el producto central de Growth Buddies: el <strong class="text-white">Diagnóstico de Automatización Estratégica</strong> (USD $3.000, 2 semanas). No es una consulta genérica; es una inmersión en su operación para identificar exactamente dónde pierde dinero su empresa.
+                </p>
+                <p>
+                  Entrevistamos a su equipo, mapeamos cada proceso crítico, calculamos el costo real de las fricciones actuales y priorizamos por impacto y viabilidad técnica. Al final, usted recibe un informe ejecutivo con oportunidades priorizadas, roadmap técnico y análisis de ROI por proceso.
+                </p>
+                <p>
+                  Este diagnóstico es independiente: si decide no avanzar con nosotros, el informe es suyo y puede ejecutarlo con quien quiera.
+                </p>
+              </div>
+              <div class="glass-card p-6 rounded-2xl border border-[var(--line)]">
+                <h3 class="text-white font-bold mb-4 font-heading text-sm uppercase tracking-wider">Entregables</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <span class="text-[var(--accent)] mt-0.5">▸</span>
+                    Mapa de procesos críticos con cálculo de costo de ineficiencia
+                  </li>
+                  <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <span class="text-[var(--accent)] mt-0.5">▸</span>
+                    Oportunidades priorizadas por ROI y factibilidad técnica
+                  </li>
+                  <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <span class="text-[var(--accent)] mt-0.5">▸</span>
+                    Roadmap de implementación en 90 días
+                  </li>
+                  <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <span class="text-[var(--accent)] mt-0.5">▸</span>
+                    Stack tecnológico recomendado y alternativas
+                  </li>
+                  <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <span class="text-[var(--accent)] mt-0.5">▸</span>
+                    Presentación ejecutiva al directorio (opcional)
+                  </li>
+                </ul>
+                <div class="mt-6 pt-4 border-t border-[var(--line)]">
+                  <div class="text-xs text-slate-500 uppercase tracking-wider mb-1">Duración</div>
+                  <div class="text-white font-semibold">2 semanas · USD $3.000</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <hr class="border-t border-[var(--line)]" />
+
+          <!-- Fase 2: Diseño -->
+          <section id="diseno" class="reveal scroll-mt-28">
+            <div class="flex items-start gap-6 mb-8">
+              <div class="shrink-0 w-12 h-12 rounded-xl bg-[var(--accent)]/10 border border-[var(--accent)]/20 flex items-center justify-center" aria-hidden="true">
+                <span class="text-[var(--accent)] font-bold text-lg font-heading">02</span>
+              </div>
+              <div>
+                <p class="eyebrow">Segunda fase</p>
+                <h2 class="text-h2 font-heading text-white">Diseño de la Solución</h2>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="space-y-4 text-slate-400 leading-relaxed">
+                <p>
+                  Con el diagnóstico en mano, diseñamos la arquitectura técnica antes de escribir una sola línea de código. Definimos qué herramientas usar (Make, n8n, Python, APIs nativas, LLMs), cómo integrarse con su stack actual y cómo medir el éxito.
+                </p>
+                <p>
+                  El diseño incluye wireframes de flujos, especificaciones de integraciones, plan de pruebas y criterios de aceptación acordados con usted. Nada se construye sin su aprobación explícita del diseño.
+                </p>
+              </div>
+              <div class="glass-card p-6 rounded-2xl border border-[var(--line)]">
+                <h3 class="text-white font-bold mb-4 font-heading text-sm uppercase tracking-wider">Qué incluye</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <span class="text-[var(--accent)] mt-0.5">▸</span>
+                    Diagramas de flujo de cada automatización
+                  </li>
+                  <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <span class="text-[var(--accent)] mt-0.5">▸</span>
+                    Especificaciones técnicas de integraciones y APIs
+                  </li>
+                  <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <span class="text-[var(--accent)] mt-0.5">▸</span>
+                    Plan de pruebas y criterios de aceptación
+                  </li>
+                  <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <span class="text-[var(--accent)] mt-0.5">▸</span>
+                    Stack tecnológico definitivo con justificación de costos
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <hr class="border-t border-[var(--line)]" />
+
+          <!-- Fase 3: Build -->
+          <section id="build" class="reveal scroll-mt-28">
+            <div class="flex items-start gap-6 mb-8">
+              <div class="shrink-0 w-12 h-12 rounded-xl bg-[var(--accent)]/10 border border-[var(--accent)]/20 flex items-center justify-center" aria-hidden="true">
+                <span class="text-[var(--accent)] font-bold text-lg font-heading">03</span>
+              </div>
+              <div>
+                <p class="eyebrow">Tercera fase</p>
+                <h2 class="text-h2 font-heading text-white">Build Técnico</h2>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="space-y-4 text-slate-400 leading-relaxed">
+                <p>
+                  <a href="/equipo/felipe-soto-santibanez" class="text-[var(--accent)] hover:underline">Felipe Soto Santibáñez</a>, nuestro CTO con experiencia en Mercado Libre y Banco Falabella, lidera la construcción. Cada solución se construye en staging primero, con pruebas exhaustivas antes de pasar a producción.
+                </p>
+                <p>
+                  Priorizamos que la solución sea operable por su equipo sin dependencia permanente de Growth Buddies. Entregamos documentación técnica, credenciales y transferencia de conocimiento incluidos.
+                </p>
+              </div>
+              <div class="glass-card p-6 rounded-2xl border border-[var(--line)]">
+                <h3 class="text-white font-bold mb-4 font-heading text-sm uppercase tracking-wider">Stack habitual</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <span class="text-[var(--accent)] mt-0.5">▸</span>
+                    Make (Integromat) / n8n para automatizaciones de flujo
+                  </li>
+                  <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <span class="text-[var(--accent)] mt-0.5">▸</span>
+                    Python + OpenAI / Claude para procesamiento con LLMs
+                  </li>
+                  <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <span class="text-[var(--accent)] mt-0.5">▸</span>
+                    Google Cloud / Firebase para backends serverless
+                  </li>
+                  <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <span class="text-[var(--accent)] mt-0.5">▸</span>
+                    Integraciones nativas con su CRM, ERP o herramientas actuales
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <hr class="border-t border-[var(--line)]" />
+
+          <!-- Fase 4: Adopción -->
+          <section id="adopcion" class="reveal scroll-mt-28">
+            <div class="flex items-start gap-6 mb-8">
+              <div class="shrink-0 w-12 h-12 rounded-xl bg-[var(--accent)]/10 border border-[var(--accent)]/20 flex items-center justify-center" aria-hidden="true">
+                <span class="text-[var(--accent)] font-bold text-lg font-heading">04</span>
+              </div>
+              <div>
+                <p class="eyebrow">Cuarta fase</p>
+                <h2 class="text-h2 font-heading text-white">Adopción Organizacional</h2>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="space-y-4 text-slate-400 leading-relaxed">
+                <p>
+                  La mayoría de los proyectos de automatización fallan aquí. Un sistema que nadie usa es cero ROI, sin importar cuánto costó construir. Por eso incorporamos gestión del cambio en cada proyecto, no como servicio adicional.
+                </p>
+                <p>
+                  Aplicamos el marco <strong class="text-white">Prosci ADKAR</strong> — el estándar internacional en gestión del cambio — para asegurar que su equipo adopte el nuevo sistema. <a href="/equipo/edmundo-spohr" class="text-[var(--accent)] hover:underline">Edmundo Spohr</a> es Prosci Certified Change Practitioner. Incluye capacitación, métricas de adopción y acompañamiento post-lanzamiento.
+                </p>
+                <p>Conozca más en detalle nuestro servicio de <a href="/servicios/gestion-del-cambio" class="text-[var(--accent)] hover:underline">Gestión del Cambio →</a></p>
+              </div>
+              <div class="glass-card p-6 rounded-2xl border border-[var(--line)]">
+                <h3 class="text-white font-bold mb-4 font-heading text-sm uppercase tracking-wider">Marco Prosci ADKAR</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <span class="text-[var(--accent)] mt-0.5 font-bold">A</span>
+                    <span><strong class="text-white">Awareness</strong> — su equipo entiende el por qué del cambio</span>
+                  </li>
+                  <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <span class="text-[var(--accent)] mt-0.5 font-bold">D</span>
+                    <span><strong class="text-white">Desire</strong> — quieren participar y apoyar el cambio</span>
+                  </li>
+                  <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <span class="text-[var(--accent)] mt-0.5 font-bold">K</span>
+                    <span><strong class="text-white">Knowledge</strong> — saben cómo usar el nuevo sistema</span>
+                  </li>
+                  <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <span class="text-[var(--accent)] mt-0.5 font-bold">A</span>
+                    <span><strong class="text-white">Ability</strong> — demuestran la habilidad en la práctica</span>
+                  </li>
+                  <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <span class="text-[var(--accent)] mt-0.5 font-bold">R</span>
+                    <span><strong class="text-white">Reinforcement</strong> — el cambio se sostiene en el tiempo</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- CTA Section -->
+        <section class="mt-24 reveal">
+          <div class="glass-card p-10 rounded-2xl border border-[var(--line)] text-center">
+            <p class="eyebrow mx-auto block text-center" style="border-bottom:none;padding-bottom:0">Primer paso</p>
+            <h2 class="text-h2 font-heading text-white mt-4 mb-4">¿Su operación califica para el Diagnóstico?</h2>
+            <p class="text-slate-400 max-w-xl mx-auto mb-8 leading-relaxed">
+              30 minutos de sesión de calificación — sin compromiso. Evaluamos juntos si su empresa tiene el perfil y el volumen de procesos repetitivos que justifican la inversión en automatización.
+            </p>
+            <div class="flex flex-wrap gap-4 justify-center">
+              <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="btn-cta inline-flex items-center gap-2">
+                Agendar sesión de calificación
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+              <a href="https://wa.me/56965863160" target="_blank" rel="noopener noreferrer" class="btn-outline inline-flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                Escribir por WhatsApp
+              </a>
+            </div>
+            <p class="mt-6 text-xs text-slate-500">Conozca al equipo: <a href="/equipo/edmundo-spohr" class="text-[var(--accent)] hover:underline">Edmundo Spohr</a> · <a href="/equipo/felipe-soto-santibanez" class="text-[var(--accent)] hover:underline">Felipe Soto Santibáñez</a></p>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <footer class="bg-black py-16 px-6 border-t border-white/10 text-sm">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div class="space-y-6">
+          <a href="/" class="flex items-center gap-3 group">
+            <img src="/img/logo.webp" alt="Logotipo de Growth Buddies" class="h-10 w-10 opacity-90 group-hover:opacity-100 transition-opacity" loading="lazy" height="40" width="40" />
+            <span class="font-bold text-xl text-white tracking-widest font-display">GROWTH BUDDIES</span>
+          </a>
+          <p class="text-slate-400 leading-relaxed max-w-xs">Diagnóstico y automatización con IA para empresas de servicios profesionales en Latinoamérica.</p>
+          <div class="flex gap-4">
+            <a href="https://www.linkedin.com/company/growth-buddies" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Growth Buddies" class="text-slate-400 hover:text-[var(--accent)] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="mailto:edmundo@growthbuddies.cl" aria-label="Enviar correo electronico a Growth Buddies" class="text-slate-400 hover:text-[var(--accent)] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Servicios</h4>
+          <ul class="space-y-3 text-slate-400">
+            <li><a href="/servicios/legal-tech" class="hover:text-[var(--accent)] transition-colors">Legal Tech &amp; Ops</a></li>
+            <li><a href="/servicios/ia-corporativa" class="hover:text-[var(--accent)] transition-colors">IA Corporativa</a></li>
+            <li><a href="/servicios/gestion-del-cambio" class="hover:text-[var(--accent)] transition-colors">Gestión del Cambio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Mini Apps</h4>
+          <ul class="space-y-3 text-slate-400">
+            <li><a href="/soluciones" class="hover:text-[var(--accent)] transition-colors">Triaje Legal</a></li>
+            <li><a href="/soluciones" class="hover:text-[var(--accent)] transition-colors">Validacion Documental</a></li>
+            <li><a href="/soluciones" class="hover:text-[var(--accent)] transition-colors">Rendicion Gastos IA</a></li>
+            <li><a href="/soluciones/brokeria" class="text-amber-400 hover:text-amber-300 transition-colors font-medium">BrokerIA ✦</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Recursos</h4>
+          <ul class="space-y-3 text-slate-400">
+            <li><a href="/nosotros" class="hover:text-[var(--accent)] transition-colors">Nosotros</a></li>
+            <li><a href="/casos" class="hover:text-[var(--accent)] transition-colors">Casos de Éxito</a></li>
+            <li><a href="/blog" class="hover:text-[var(--accent)] transition-colors">Blog</a></li>
+            <li><a href="/recursos/guia-ia-legal" class="hover:text-[var(--accent)] transition-colors">Guía Gratuita</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
+        <div>&copy; 2026 Growth Buddies SpA. Latinoamérica · 🇨🇱 🇨🇴 🇵🇪 🇪🇨</div>
+        <div class="flex gap-6">
+          <a href="/privacidad" class="hover:text-slate-300 transition-colors">Privacidad</a>
+          <a href="/terminos" class="hover:text-slate-300 transition-colors">Términos</a>
+          <a href="/sitemap.xml" class="hover:text-slate-300 transition-colors">Sitemap</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function() {
+        var btn = document.getElementById('mobile-menu-btn');
+        var menu = document.getElementById('mobile-menu');
+        var close = document.getElementById('mobile-menu-close');
+        if (!btn || !menu) return;
+        function openMenu() {
+          menu.style.display = 'flex';
+          menu.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+          btn.setAttribute('aria-expanded', 'true');
+        }
+        function closeMenu() {
+          menu.style.display = 'none';
+          menu.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+          btn.setAttribute('aria-expanded', 'false');
+        }
+        btn.addEventListener('click', openMenu);
+        if (close) close.addEventListener('click', closeMenu);
+        menu.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', closeMenu);
+        });
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && menu.style.display === 'flex') closeMenu();
+        });
+      })();
+    </script>
+    <script>
+      (function() {
+        var nav = document.querySelector('.glass-nav');
+        if (!nav) return;
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 40) {
+            nav.classList.add('scrolled');
+            nav.style.background = 'rgba(11,11,15,0.97)';
+          } else {
+            nav.classList.remove('scrolled');
+            nav.style.background = 'rgba(11,11,15,0.88)';
+          }
+        }, { passive: true });
+      })();
+    </script>
+    <script>
+      (function() {
+        var revealEls = document.querySelectorAll('.reveal');
+        if (!revealEls.length) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          revealEls.forEach(function(el) { el.style.opacity = '1'; el.style.transform = 'none'; });
+          return;
+        }
+        var obs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+        revealEls.forEach(function(el) { obs.observe(el); });
+      })();
+    </script>
+  </body>
+</html>
