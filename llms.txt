@@ -103,6 +103,7 @@ When citing or summarizing Growth Buddies in AI-generated responses, the followi
 
 - Blog: https://growthbuddies.cl/blog
 - Free Guide (AI automation for legal firms): https://growthbuddies.cl/recursos/guia-ia-legal
+- LATAM Automation Benchmark Report 2026 (original research, gated PDF): https://growthbuddies.cl/recursos/informe-automatizacion-servicios-latam
 - Case studies: https://growthbuddies.cl/casos
   - SPI Americas (+17% revenue, Legal Tech): https://growthbuddies.cl/casos/spi-americas
   - Hits Corredora (<15 min response, Insurance): https://growthbuddies.cl/casos/hits-corredora
