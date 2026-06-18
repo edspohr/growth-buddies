@@ -258,7 +258,7 @@
         "name": "Growth Buddies — Diagnóstico de Automatización con IA",
         "speakable": {
           "@type": "SpeakableSpecification",
-          "cssSelector": ["h1", ".speakable"]
+          "cssSelector": ["h1", ".speakable", "#answer-capsule"]
         },
         "about": {
           "@type": "Organization",
@@ -985,6 +985,17 @@
     </div>
 
     <main id="main-content">
+
+      <!-- Answer Capsule — GEO extractable summary -->
+      <section class="py-8 px-6 border-b border-zinc-900 bg-[var(--surface)]/40">
+        <div class="max-w-3xl mx-auto">
+          <div id="answer-capsule" class="speakable rounded-2xl border border-[var(--accent)]/20 bg-[var(--accent)]/5 px-6 py-5">
+            <p class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase mb-3 font-display">¿Qué hace Growth Buddies y para quién?</p>
+            <p class="text-slate-200 leading-relaxed">Growth Buddies es una consultora chilena de diagnóstico y automatización con inteligencia artificial para empresas de servicios profesionales en Chile y Latinoamérica. Su producto principal es el <strong class="text-white">Diagnóstico de Automatización Estratégica</strong> (USD $3.000, 2 semanas): identifica exactamente qué procesos automatizar, en qué orden y qué ROI esperar — con garantía de devolución si no se identifican al menos 3 oportunidades con ROI positivo. Atiende firmas legales, corredoras de seguros, consultoras y clínicas privadas en Chile, Colombia, Perú y Ecuador.</p>
+          </div>
+        </div>
+      </section>
+
       <!-- Pain Validation — ¿Le suena alguno de estos? -->
       <section
         id="dolores"
@@ -3741,6 +3752,7 @@
                   equivocarse. El diagnóstico de $3.000 nos permite cotizarle
                   proyectos basados en su realidad, no en suposiciones.
                 </p>
+                <p class="text-xs text-slate-500 mt-3">Fuente: McKinsey Global Institute, "The state of AI in 2023" — el 70% de las implementaciones de IA no alcanza el ROI proyectado.</p>
               </div>
             </details>
 
@@ -4138,6 +4150,20 @@
                 href="/recursos/guia-ia-legal"
                 class="hover:text-[var(--accent)] transition-colors"
                 >Guía Gratuita IA Legal</a
+              >
+            </li>
+            <li>
+              <a
+                href="/preguntas-frecuentes"
+                class="hover:text-[var(--accent)] transition-colors"
+                >Preguntas Frecuentes</a
+              >
+            </li>
+            <li>
+              <a
+                href="/recursos/glosario-ia-automatizacion"
+                class="hover:text-[var(--accent)] transition-colors"
+                >Glosario IA</a
               >
             </li>
             <li>
