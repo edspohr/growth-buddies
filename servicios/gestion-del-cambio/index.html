@@ -117,15 +117,15 @@
     <link rel="preload" href="../../dist/output.css" as="style" />
     <link href="../../dist/output.css" rel="stylesheet" />
     <link rel="dns-prefetch" href="https://calendly.com" />
-    <style>:root{--color-accent:#0097B2;--color-cta:#0097B2;--color-cta-hover:#007A91;--color-dark:#0F172A;}*,::before,::after{box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#09090b;color:#cbd5e1;overflow-x:hidden;margin:0}.glass-nav{background:rgba(0,0,0,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}.font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Space Grotesk",system-ui,sans-serif}.font-heading{font-family:"Geist","system-ui",sans-serif}</style>
+    <style>:root{--color-accent:#0097B2;--color-cta:#0097B2;--color-cta-hover: #00B5D6;--color-dark: #0B0B0F;}*,::before,::after{box-sizing:border-box}body{font-family:'Inter',sans-serif;background-color: var(--bg, #0B0B0F);color: var(--fg, #ECECEF);overflow-x:hidden;margin:0}.glass-nav{background:rgba(11,11,15,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}.font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Space Grotesk",system-ui,sans-serif}.font-heading{font-family:"Geist","system-ui",sans-serif}</style>
     <script src="/js/lenis.min.js" defer></script>
     <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
     <!-- Microsoft Clarity — deferred 3s to avoid blocking LCP -->
     <script>setTimeout(function(){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","vkf6fbh8zc");},3000);</script>
     <link rel="preload" href="/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
   </head>
-  <body class="antialiased selection:bg-[#00f6ff] selection:text-black">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--color-accent)] focus:text-black focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
+  <body class="antialiased selection:bg-[var(--accent)] selection:text-white">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--accent)] focus:text-white focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
     <div class="noise-overlay"></div>
 
     <!-- Nav -->
@@ -133,7 +133,7 @@
       <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <a href="/" class="flex items-center gap-2 group">
           <img src="/img/logo.webp" alt="Logotipo de Growth Buddies" class="h-8 w-8 opacity-90 group-hover:opacity-100 transition-opacity" height="32" width="32" />
-          <span class="font-bold text-lg tracking-tight text-white group-hover:text-[var(--color-accent)] transition-colors">Growth Buddies</span>
+          <span class="font-bold text-lg tracking-tight text-white group-hover:text-[var(--accent)] transition-colors">Growth Buddies</span>
         </a>
         <div class="hidden md:flex items-center gap-8">
           <a href="/#como-trabajamos" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Servicios</a>
@@ -143,7 +143,7 @@
           <a href="/#contacto" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Contacto</a>
         </div>
         <div class="hidden md:block">
-          <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="bg-[var(--color-accent)]/10 hover:bg-[var(--color-accent)]/20 text-[var(--color-accent)] hover:text-white border border-[var(--color-accent)]/30 hover:border-[var(--color-accent)] font-semibold text-sm py-2 px-5 rounded-full transition-all duration-300">
+          <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="bg-[var(--accent)]/10 hover:bg-[var(--accent)]/20 text-[var(--accent)] hover:text-white border border-[var(--accent)]/30 hover:border-[var(--accent)] font-semibold text-sm py-2 px-5 rounded-full transition-all duration-300">
                 Agendar conversación
           </a>
         </div>
@@ -157,7 +157,7 @@
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" style="display:none;" class="fixed inset-0 z-[200] flex-col" aria-hidden="true">
-      <div class="absolute inset-0 bg-[#050510]/96 backdrop-blur-xl"></div>
+      <div class="absolute inset-0/96 backdrop-blur-xl"></div>
       <div class="relative flex flex-col h-full px-6 py-6 overflow-y-auto">
         <div class="flex justify-between items-center mb-10">
           <a href="/" class="flex items-center gap-2"><img src="/img/logo.webp" alt="Logotipo de Growth Buddies" class="h-8 w-8" height="32" width="32" /><span class="font-bold text-lg text-white">Growth Buddies</span></a>
@@ -166,7 +166,7 @@
           </button>
         </div>
         <div class="mb-8">
-          <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[#00f6ff]/10 hover:bg-[#00f6ff]/20 text-[#00f6ff] border border-[#00f6ff]/30 hover:border-[#00f6ff] font-semibold text-base py-4 px-5 rounded-full transition-all duration-300">
+          <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[var(--accent)]/10 hover:bg-[var(--accent)]/20 text-[var(--accent)] border border-[var(--accent)]/30 hover:border-[var(--accent)] font-semibold text-base py-4 px-5 rounded-full transition-all duration-300">
             Agendar conversación
           </a>
         </div>
@@ -188,20 +188,20 @@
 
     <!-- Hero -->
     <header class="relative pt-36 pb-16 px-6 overflow-hidden">
-      <div class="absolute inset-0 bg-emerald-900/10 blur-[100px] pointer-events-none"></div>
+      <div class="absolute inset-0 bg-[var(--surface)] blur-[100px] pointer-events-none"></div>
       <div class="max-w-5xl mx-auto relative z-10">
         <!-- Breadcrumb -->
         <nav aria-label="Migas de pan" class="mb-8">
           <ol class="flex items-center gap-2 text-xs text-slate-500">
-            <li><a href="/" class="hover:text-emerald-400 transition-colors">Inicio</a></li>
+            <li><a href="/" class="hover:text-[var(--accent)] transition-colors">Inicio</a></li>
             <li><span aria-hidden="true">/</span></li>
-            <li><a href="/#como-trabajamos" class="hover:text-emerald-400 transition-colors">Servicios</a></li>
+            <li><a href="/#como-trabajamos" class="hover:text-[var(--accent)] transition-colors">Servicios</a></li>
             <li><span aria-hidden="true">/</span></li>
-            <li class="text-emerald-400" aria-current="page">Gestión del Cambio</li>
+            <li class="text-[var(--accent)]" aria-current="page">Gestión del Cambio</li>
           </ol>
         </nav>
         <div class="text-center">
-          <span class="text-emerald-400 font-bold tracking-wider text-sm uppercase font-display">El Factor Humano</span>
+          <span class="text-[var(--accent)] font-bold tracking-wider text-sm uppercase font-display">El Factor Humano</span>
           <h1 class="text-4xl md:text-6xl font-heading text-white mt-4 leading-tight">
             Gestión del Cambio &mdash; Porque<br />la Mejor Tecnología Falla sin Adopción
           </h1>
@@ -228,7 +228,7 @@
       <div class="max-w-5xl mx-auto reveal">
         <div class="flex flex-col md:flex-row gap-10 items-center">
           <div class="text-center md:text-left md:w-1/3 shrink-0">
-            <div class="text-[10rem] font-black leading-none text-[var(--color-accent)] opacity-90">70%</div>
+            <div class="text-[clamp(3.5rem,8vw,6rem)] font-black leading-none text-[var(--accent)] opacity-80">70%</div>
             <div class="text-white font-bold text-xl mt-2">de los proyectos tecnológicos</div>
             <div class="text-slate-400 text-base mt-1">fracasan por resistencia al cambio, no por fallas técnicas.</div>
             <div class="text-slate-500 text-xs mt-3">— McKinsey &amp; Prosci Research</div>
@@ -242,10 +242,10 @@
     </section>
 
     <!-- Por qué importa (expanded) -->
-    <section class="py-20 px-6 bg-zinc-950/60 border-t border-zinc-900">
+    <section class="py-20 px-6/60 border-t border-zinc-900">
       <div class="max-w-4xl mx-auto">
         <div class="reveal">
-          <span class="text-[var(--color-accent)] font-bold tracking-wider text-xs uppercase font-display">El Problema del Mercado</span>
+          <span class="text-[var(--accent)] font-bold tracking-wider text-xs uppercase font-display">El Problema del Mercado</span>
           <h2 class="text-3xl md:text-4xl font-heading text-white mt-3 mb-6">¿Por qué fracasan las implementaciones tecnológicas?</h2>
           <div class="space-y-5 text-slate-300 leading-relaxed text-lg">
             <p>
@@ -255,7 +255,7 @@
               En Growth Buddies creemos que la tecnología es solo el 30% del éxito. El otro 70% es la <strong class="text-white">Gestión del Cambio</strong>: asegurarse de que cada persona afectada comprenda por qué cambia, crea que puede aprender a usar la nueva herramienta y tenga los incentivos correctos para hacerlo. Por eso, a diferencia de otras consultoras, incluimos Gestión del Cambio como parte integral de cada proyecto de automatización, no como un anexo opcional.
             </p>
             <p>
-              Nuestro fundador <a href="/nosotros" class="text-emerald-400 hover:underline">Edmundo Spohr</a> es <strong class="text-white">Prosci Certified Change Practitioner</strong>, la certificación internacional de referencia en gestión del cambio organizacional. Esto significa que aplicamos el modelo <strong class="text-white">ADKAR</strong> con rigor metodológico, no como un checklist de presentaciones PowerPoint. Lee sobre los <a href="/blog/casos-exito-transformacion-chile" class="text-emerald-400 hover:underline">casos de éxito de transformación en Chile</a> para ver resultados concretos.
+              Nuestro fundador <a href="/nosotros" class="text-[var(--accent)] hover:underline">Edmundo Spohr</a> es <strong class="text-white">Prosci Certified Change Practitioner</strong>, la certificación internacional de referencia en gestión del cambio organizacional. Esto significa que aplicamos el modelo <strong class="text-white">ADKAR</strong> con rigor metodológico, no como un checklist de presentaciones PowerPoint. Lee sobre los <a href="/blog/casos-exito-transformacion-chile" class="text-[var(--accent)] hover:underline">casos de éxito de transformación en Chile</a> para ver resultados concretos.
             </p>
           </div>
         </div>
@@ -266,35 +266,35 @@
     <section class="py-20 px-6 bg-black border-t border-zinc-900">
       <div class="max-w-5xl mx-auto">
         <div class="text-center reveal mb-14">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-4">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--surface)] border border-[var(--line)] text-[var(--accent)] text-xs font-bold uppercase tracking-wider mb-4">
             Prosci Certified · Metodología Oficial
           </div>
           <h2 class="text-3xl md:text-4xl font-bold text-white font-heading">El Modelo ADKAR</h2>
           <p class="mt-4 text-slate-400 max-w-xl mx-auto">ADKAR es el modelo de cambio individual desarrollado por Prosci, el líder mundial en investigación de gestión del cambio. Defina las 5 etapas que toda persona debe completar para adoptar un cambio de forma duradera.</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-5 gap-3">
-          <div class="reveal glass-card p-5 rounded-2xl border border-emerald-500/15 text-center">
-            <div class="text-3xl font-black text-emerald-400 mb-2">A</div>
+          <div class="reveal glass-card p-5 rounded-2xl border border-[var(--line)] text-center">
+            <div class="text-3xl font-black text-[var(--accent)] mb-2">A</div>
             <div class="text-sm font-bold text-white mb-2">Awareness</div>
             <p class="text-xs text-slate-400 leading-relaxed">Conciencia de la necesidad del cambio. ¿Por qué cambiamos? ¿Qué pasa si no cambiamos?</p>
           </div>
-          <div class="reveal glass-card p-5 rounded-2xl border border-emerald-500/15 text-center" style="transition-delay:60ms">
-            <div class="text-3xl font-black text-emerald-400 mb-2">D</div>
+          <div class="reveal glass-card p-5 rounded-2xl border border-[var(--line)] text-center" style="transition-delay:60ms">
+            <div class="text-3xl font-black text-[var(--accent)] mb-2">D</div>
             <div class="text-sm font-bold text-white mb-2">Desire</div>
             <p class="text-xs text-slate-400 leading-relaxed">Deseo personal de participar y apoyar el cambio. "¿Qué hay en esto para mí?"</p>
           </div>
-          <div class="reveal glass-card p-5 rounded-2xl border border-emerald-500/15 text-center" style="transition-delay:120ms">
-            <div class="text-3xl font-black text-emerald-400 mb-2">K</div>
+          <div class="reveal glass-card p-5 rounded-2xl border border-[var(--line)] text-center" style="transition-delay:120ms">
+            <div class="text-3xl font-black text-[var(--accent)] mb-2">K</div>
             <div class="text-sm font-bold text-white mb-2">Knowledge</div>
             <p class="text-xs text-slate-400 leading-relaxed">Conocimiento sobre cómo implementar el cambio: habilidades técnicas y nuevos comportamientos.</p>
           </div>
-          <div class="reveal glass-card p-5 rounded-2xl border border-emerald-500/15 text-center" style="transition-delay:180ms">
-            <div class="text-3xl font-black text-emerald-400 mb-2">A</div>
+          <div class="reveal glass-card p-5 rounded-2xl border border-[var(--line)] text-center" style="transition-delay:180ms">
+            <div class="text-3xl font-black text-[var(--accent)] mb-2">A</div>
             <div class="text-sm font-bold text-white mb-2">Ability</div>
             <p class="text-xs text-slate-400 leading-relaxed">Capacidad real para aplicar el cambio en el trabajo diario, no solo teoría.</p>
           </div>
-          <div class="reveal glass-card p-5 rounded-2xl border border-emerald-500/10 text-center" style="transition-delay:240ms">
-            <div class="text-3xl font-black text-emerald-400 mb-2">R</div>
+          <div class="reveal glass-card p-5 rounded-2xl border border-[var(--line)] text-center" style="transition-delay:240ms">
+            <div class="text-3xl font-black text-[var(--accent)] mb-2">R</div>
             <div class="text-sm font-bold text-white mb-2">Reinforcement</div>
             <p class="text-xs text-slate-400 leading-relaxed">Refuerzo para sostener el cambio en el tiempo y evitar la regresión a hábitos anteriores.</p>
           </div>
@@ -304,7 +304,7 @@
     </section>
 
     <!-- Qué incluye el servicio -->
-    <section class="py-20 px-6 bg-zinc-950/50 border-t border-zinc-900">
+    <section class="py-20 px-6/50 border-t border-zinc-900">
       <div class="max-w-5xl mx-auto">
         <div class="text-center reveal mb-14">
           <h2 class="text-3xl md:text-4xl font-bold text-white font-heading">Lo que Incluye el Servicio</h2>
@@ -312,9 +312,9 @@
         </div>
 
         <!-- Capacitación -->
-        <div class="reveal glass-card rounded-3xl p-8 mb-6 border border-zinc-800 hover:border-emerald-500/30 transition-colors">
+        <div class="reveal glass-card rounded-3xl p-8 mb-6 border border-zinc-800 hover:border-[var(--accent)]/25 transition-colors">
           <div class="flex flex-col md:flex-row gap-6 items-start">
-            <div class="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 shrink-0" aria-hidden="true">
+            <div class="p-3 rounded-xl bg-[var(--surface)] border border-[var(--line)] shrink-0" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
             </div>
             <div class="flex-1">
@@ -324,15 +324,15 @@
               </p>
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
-                  <span class="text-emerald-400 font-bold block mb-1">Formato</span>
+                  <span class="text-[var(--accent)] font-bold block mb-1">Formato</span>
                   Talleres presenciales · Sesiones Zoom · Videos asíncronos · Guías de referencia rápida
                 </div>
                 <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
-                  <span class="text-emerald-400 font-bold block mb-1">Personalización</span>
+                  <span class="text-[var(--accent)] font-bold block mb-1">Personalización</span>
                   Rutas de aprendizaje diferenciadas por rol y nivel de competencia digital
                 </div>
                 <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
-                  <span class="text-emerald-400 font-bold block mb-1">Seguimiento</span>
+                  <span class="text-[var(--accent)] font-bold block mb-1">Seguimiento</span>
                   Check-ins semanales durante las primeras 4 semanas post-lanzamiento
                 </div>
               </div>
@@ -341,9 +341,9 @@
         </div>
 
         <!-- Comunicación Interna -->
-        <div class="reveal glass-card rounded-3xl p-8 mb-6 border border-zinc-800 hover:border-emerald-500/30 transition-colors">
+        <div class="reveal glass-card rounded-3xl p-8 mb-6 border border-zinc-800 hover:border-[var(--accent)]/25 transition-colors">
           <div class="flex flex-col md:flex-row gap-6 items-start">
-            <div class="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 shrink-0" aria-hidden="true">
+            <div class="p-3 rounded-xl bg-[var(--surface)] border border-[var(--line)] shrink-0" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
             <div class="flex-1">
@@ -353,15 +353,15 @@
               </p>
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
-                  <span class="text-emerald-400 font-bold block mb-1">Herramientas</span>
+                  <span class="text-[var(--accent)] font-bold block mb-1">Herramientas</span>
                   Plan de comunicación · Mensajes clave por audiencia · Kit para líderes
                 </div>
                 <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
-                  <span class="text-emerald-400 font-bold block mb-1">Agentes de Cambio</span>
+                  <span class="text-[var(--accent)] font-bold block mb-1">Agentes de Cambio</span>
                   Identificación, formación y acompañamiento de embajadores internos
                 </div>
                 <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
-                  <span class="text-emerald-400 font-bold block mb-1">Canales</span>
+                  <span class="text-[var(--accent)] font-bold block mb-1">Canales</span>
                   Teams / Slack · Email corporativo · Reuniones one-on-one con líderes
                 </div>
               </div>
@@ -370,9 +370,9 @@
         </div>
 
         <!-- Medición de Adopción -->
-        <div class="reveal glass-card rounded-3xl p-8 border border-zinc-800 hover:border-emerald-500/30 transition-colors">
+        <div class="reveal glass-card rounded-3xl p-8 border border-zinc-800 hover:border-[var(--accent)]/25 transition-colors">
           <div class="flex flex-col md:flex-row gap-6 items-start">
-            <div class="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 shrink-0" aria-hidden="true">
+            <div class="p-3 rounded-xl bg-[var(--surface)] border border-[var(--line)] shrink-0" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
             </div>
             <div class="flex-1">
@@ -382,15 +382,15 @@
               </p>
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
-                  <span class="text-emerald-400 font-bold block mb-1">KPI principal</span>
+                  <span class="text-[var(--accent)] font-bold block mb-1">KPI principal</span>
                   Tasa de uso activo semanal (objetivo: &gt;80% a los 90 días)
                 </div>
                 <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
-                  <span class="text-emerald-400 font-bold block mb-1">Reporte</span>
+                  <span class="text-[var(--accent)] font-bold block mb-1">Reporte</span>
                   Dashboard de adopción actualizado quincenal con alertas de usuarios en riesgo
                 </div>
                 <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
-                  <span class="text-emerald-400 font-bold block mb-1">Garantía</span>
+                  <span class="text-[var(--accent)] font-bold block mb-1">Garantía</span>
                   Si no alcanzamos el KPI acordado, continuamos el acompañamiento sin costo
                 </div>
               </div>
@@ -404,28 +404,28 @@
     <section class="py-20 px-6 section-dark border-t border-white/5">
       <div class="max-w-5xl mx-auto">
         <div class="text-center reveal mb-12">
-          <span class="text-[var(--color-accent)] font-bold tracking-wider text-xs uppercase font-display">Metodología propia</span>
+          <span class="text-[var(--accent)] font-bold tracking-wider text-xs uppercase font-display">Metodología propia</span>
           <h2 class="text-3xl md:text-4xl font-heading text-white mt-3">Nuestro Framework de 4 Etapas</h2>
           <p class="mt-4 text-slate-400 max-w-xl mx-auto">Aplicado en paralelo con el proyecto técnico, no como un afterthought al final.</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           <div class="reveal card-dark rounded-2xl p-6">
-            <div class="h-10 w-10 rounded-xl bg-[var(--color-accent)]/10 flex items-center justify-center text-[var(--color-accent)] font-black text-base mb-4" aria-hidden="true">1</div>
+            <div class="h-10 w-10 rounded-xl bg-[var(--accent)]/10 flex items-center justify-center text-[var(--accent)] font-black text-base mb-4" aria-hidden="true">1</div>
             <h3 class="text-base font-bold text-white mb-2">Diagnóstico Cultural</h3>
             <p class="text-slate-400 text-sm leading-relaxed">Mapeamos la resistencia: quién se opone, por qué, y cuánta influencia tiene. Diagnóstico ADKAR por rol y nivel jerárquico.</p>
           </div>
           <div class="reveal card-dark rounded-2xl p-6" style="transition-delay:80ms">
-            <div class="h-10 w-10 rounded-xl bg-[var(--color-accent)]/10 flex items-center justify-center text-[var(--color-accent)] font-black text-base mb-4" aria-hidden="true">2</div>
+            <div class="h-10 w-10 rounded-xl bg-[var(--accent)]/10 flex items-center justify-center text-[var(--accent)] font-black text-base mb-4" aria-hidden="true">2</div>
             <h3 class="text-base font-bold text-white mb-2">Plan de Comunicación</h3>
             <p class="text-slate-400 text-sm leading-relaxed">Mensajes clave diferenciados por audiencia. Activación de embajadores internos. El equipo sabe qué viene antes de que llegue.</p>
           </div>
           <div class="reveal card-dark rounded-2xl p-6" style="transition-delay:160ms">
-            <div class="h-10 w-10 rounded-xl bg-[var(--color-accent)]/10 flex items-center justify-center text-[var(--color-accent)] font-black text-base mb-4" aria-hidden="true">3</div>
+            <div class="h-10 w-10 rounded-xl bg-[var(--accent)]/10 flex items-center justify-center text-[var(--accent)] font-black text-base mb-4" aria-hidden="true">3</div>
             <h3 class="text-base font-bold text-white mb-2">Capacitación Progresiva</h3>
             <p class="text-slate-400 text-sm leading-relaxed">Rutas de aprendizaje por rol, no cursos genéricos. Talleres, videos, guías de referencia rápida. Práctica supervisada antes del go-live.</p>
           </div>
           <div class="reveal card-dark rounded-2xl p-6" style="transition-delay:240ms">
-            <div class="h-10 w-10 rounded-xl bg-[var(--color-accent)]/10 flex items-center justify-center text-[var(--color-accent)] font-black text-base mb-4" aria-hidden="true">4</div>
+            <div class="h-10 w-10 rounded-xl bg-[var(--accent)]/10 flex items-center justify-center text-[var(--accent)] font-black text-base mb-4" aria-hidden="true">4</div>
             <h3 class="text-base font-bold text-white mb-2">Medición de Adopción</h3>
             <p class="text-slate-400 text-sm leading-relaxed">KPIs de uso activo definidos antes de iniciar. Dashboard quincenal. Si no alcanzamos el objetivo, continuamos sin costo.</p>
           </div>
@@ -434,10 +434,10 @@
     </section>
 
     <!-- Tabla comparativa -->
-    <section class="py-20 px-6 bg-zinc-950/60 border-t border-zinc-900">
+    <section class="py-20 px-6/60 border-t border-zinc-900">
       <div class="max-w-4xl mx-auto">
         <div class="text-center reveal mb-10">
-          <span class="text-[var(--color-accent)] font-bold tracking-wider text-xs uppercase font-display">Diferenciación</span>
+          <span class="text-[var(--accent)] font-bold tracking-wider text-xs uppercase font-display">Diferenciación</span>
           <h2 class="text-3xl font-heading text-white mt-3">Consultora Típica vs Growth Buddies</h2>
         </div>
         <div class="reveal overflow-x-auto">
@@ -446,41 +446,41 @@
               <tr>
                 <th class="text-left text-slate-400 font-medium pb-4 pr-6 w-1/3"></th>
                 <th class="text-center text-slate-400 font-medium pb-4 px-4">Consultora Típica</th>
-                <th class="text-center text-[var(--color-accent)] font-bold pb-4 px-4">Growth Buddies</th>
+                <th class="text-center text-[var(--accent)] font-bold pb-4 px-4">Growth Buddies</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-zinc-800">
               <tr>
                 <td class="py-4 pr-6 text-slate-300">Gestión del Cambio incluida</td>
                 <td class="py-4 px-4 text-center text-slate-500">Opcional, costo extra</td>
-                <td class="py-4 px-4 text-center text-[var(--color-accent)] font-semibold">Siempre incluida</td>
+                <td class="py-4 px-4 text-center text-[var(--accent)] font-semibold">Siempre incluida</td>
               </tr>
               <tr>
                 <td class="py-4 pr-6 text-slate-300">Entrega final</td>
                 <td class="py-4 px-4 text-center text-slate-500">El software configurado</td>
-                <td class="py-4 px-4 text-center text-[var(--color-accent)] font-semibold">El equipo adoptándolo</td>
+                <td class="py-4 px-4 text-center text-[var(--accent)] font-semibold">El equipo adoptándolo</td>
               </tr>
               <tr>
                 <td class="py-4 pr-6 text-slate-300">Medición post-lanzamiento</td>
                 <td class="py-4 px-4 text-center text-slate-500">No incluida</td>
-                <td class="py-4 px-4 text-center text-[var(--color-accent)] font-semibold">90 días con KPIs</td>
+                <td class="py-4 px-4 text-center text-[var(--accent)] font-semibold">90 días con KPIs</td>
               </tr>
               <tr>
                 <td class="py-4 pr-6 text-slate-300">Certificación metodológica</td>
                 <td class="py-4 px-4 text-center text-slate-500">Ninguna o interna</td>
-                <td class="py-4 px-4 text-center text-[var(--color-accent)] font-semibold">Prosci Certified</td>
+                <td class="py-4 px-4 text-center text-[var(--accent)] font-semibold">Prosci Certified</td>
               </tr>
               <tr>
                 <td class="py-4 pr-6 text-slate-300">Garantía de adopción</td>
                 <td class="py-4 px-4 text-center text-slate-500">No existe</td>
-                <td class="py-4 px-4 text-center text-[var(--color-accent)] font-semibold">100% o sin costo</td>
+                <td class="py-4 px-4 text-center text-[var(--accent)] font-semibold">100% o sin costo</td>
               </tr>
             </tbody>
           </table>
         </div>
         <!-- Guarantee callout -->
-        <div class="reveal mt-10 rounded-2xl border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/5 p-8 text-center">
-          <div class="text-[var(--color-accent)] text-xs uppercase font-bold tracking-wider mb-3 font-display">Nuestra Garantía</div>
+        <div class="reveal mt-10 rounded-2xl border border-[var(--accent)]/30 bg-[var(--accent)]/5 p-8 text-center">
+          <div class="text-[var(--accent)] text-xs uppercase font-bold tracking-wider mb-3 font-display">Nuestra Garantía</div>
           <div class="text-2xl md:text-3xl font-serif text-white mb-3">Adopción Garantizada.</div>
           <div class="text-lg text-slate-300 mb-2">Si su equipo no adopta la herramienta al nivel acordado,<br class="hidden md:block" /> seguimos trabajando contigo — sin costo adicional.</div>
           <div class="text-slate-500 text-sm mt-4">Sin letra chica. El KPI de adopción se define antes de iniciar el proyecto y es el único criterio de éxito.</div>
@@ -497,17 +497,17 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="reveal glass-card p-6 rounded-2xl border border-zinc-800">
-            <div class="text-emerald-400 font-bold text-xs uppercase tracking-wider mb-3">Caso 01 — Firma Legal</div>
+            <div class="text-[var(--accent)] font-bold text-xs uppercase tracking-wider mb-3">Caso 01 — Firma Legal</div>
             <h3 class="text-base font-bold text-white mb-3">De 40% a 95% de adopción en 60 días</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">Un estudio jurídico implementó LemonTech pero solo el 40% del equipo lo usaba activamente 3 meses después. Aplicamos el diagnóstico ADKAR y encontramos que el problema era "Desire": los abogados senior no entendían el beneficio personal. Rediseñamos la propuesta de valor por rol y en 60 días el uso activo llegó al 95%. Conoce el <a href="/blog/casos-exito-transformacion-chile" class="text-emerald-400 hover:underline">caso de éxito completo</a>.</p>
+            <p class="text-slate-400 text-sm leading-relaxed">Un estudio jurídico implementó LemonTech pero solo el 40% del equipo lo usaba activamente 3 meses después. Aplicamos el diagnóstico ADKAR y encontramos que el problema era "Desire": los abogados senior no entendían el beneficio personal. Rediseñamos la propuesta de valor por rol y en 60 días el uso activo llegó al 95%. Conoce el <a href="/blog/casos-exito-transformacion-chile" class="text-[var(--accent)] hover:underline">caso de éxito completo</a>.</p>
           </div>
           <div class="reveal glass-card p-6 rounded-2xl border border-zinc-800" style="transition-delay:80ms">
-            <div class="text-emerald-400 font-bold text-xs uppercase tracking-wider mb-3">Caso 02 — Empresa de Seguros</div>
+            <div class="text-[var(--accent)] font-bold text-xs uppercase tracking-wider mb-3">Caso 02 — Empresa de Seguros</div>
             <h3 class="text-base font-bold text-white mb-3">Onboarding de 80 personas en 3 semanas</h3>
             <p class="text-slate-400 text-sm leading-relaxed">Una corredora de seguros implementó un nuevo CRM para 80 ejecutivos de venta distribuidos en 4 ciudades de Chile. Diseñamos un programa de onboarding híbrido con rutas diferenciadas por rol y agentes de cambio en cada sucursal. Al día 21 post-lanzamiento, el 88% completó la certificación de uso básico.</p>
           </div>
           <div class="reveal glass-card p-6 rounded-2xl border border-zinc-800" style="transition-delay:160ms">
-            <div class="text-emerald-400 font-bold text-xs uppercase tracking-wider mb-3">Caso 03 — Organización Sin Fines de Lucro</div>
+            <div class="text-[var(--accent)] font-bold text-xs uppercase tracking-wider mb-3">Caso 03 — Organización Sin Fines de Lucro</div>
             <h3 class="text-base font-bold text-white mb-3">Digitalización de procesos con equipo voluntario</h3>
             <p class="text-slate-400 text-sm leading-relaxed">Una fundación chilena necesitaba digitalizar su gestión de proyectos con un equipo de voluntarios de distintas edades y niveles de competencia digital. La capacitación tradicional había fallado dos veces. Implementamos un plan ADKAR que empezaba por el "por qué" antes del "cómo". En 45 días, el equipo completo operaba de forma autónoma en la nueva plataforma.</p>
           </div>
@@ -516,22 +516,22 @@
     </section>
 
     <!-- El Equipo -->
-    <section class="py-16 px-6 bg-zinc-950/50 border-t border-zinc-900">
+    <section class="py-16 px-6/50 border-t border-zinc-900">
       <div class="max-w-5xl mx-auto">
         <div class="text-center reveal mb-10">
           <h2 class="text-2xl font-bold text-white font-heading">El Equipo detrás del Servicio</h2>
           <p class="mt-2 text-slate-400">Nuestros consultores combinan formación técnica con experiencia real en transformación cultural.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <a href="/nosotros" class="reveal group glass-card p-6 rounded-2xl border border-zinc-800 hover:border-emerald-500/40 transition-colors flex items-center gap-5">
+          <a href="/nosotros" class="reveal group glass-card p-6 rounded-2xl border border-zinc-800 hover:border-[var(--line)] transition-colors flex items-center gap-5">
             <img src="/img/foto.webp" alt="Edmundo Spohr — CEO en Growth Buddies" loading="lazy" decoding="async" class="h-16 w-16 rounded-full object-cover ring-2 ring-zinc-700 group-hover:ring-emerald-500 transition-all shrink-0" height="64" width="64" />
             <div>
-              <div class="text-base font-bold text-white group-hover:text-emerald-400 transition-colors">Edmundo Spohr</div>
-              <div class="text-xs text-emerald-400 font-semibold mb-1">CEO &amp; Prosci Certified Change Practitioner</div>
+              <div class="text-base font-bold text-white group-hover:text-[var(--accent)] transition-colors">Edmundo Spohr</div>
+              <div class="text-xs text-[var(--accent)] font-semibold mb-1">CEO &amp; Prosci Certified Change Practitioner</div>
               <p class="text-xs text-slate-500 leading-relaxed">Experto en integración de automatización y gestión del cambio. Lidera los proyectos donde la tecnología y la cultura organizacional deben alinearse.</p>
             </div>
           </a>
-          <a href="/nosotros" class="reveal group glass-card p-6 rounded-2xl border border-zinc-800 hover:border-emerald-500/40 transition-colors flex items-center gap-5" style="transition-delay:80ms">
+          <a href="/nosotros" class="reveal group glass-card p-6 rounded-2xl border border-zinc-800 hover:border-[var(--line)] transition-colors flex items-center gap-5" style="transition-delay:80ms">
             <img src="/img/felipe-2026.webp" alt="Felipe Soto Santibáñez — Consultor Senior en Growth Buddies" loading="lazy" decoding="async" class="h-16 w-16 rounded-full object-cover ring-2 ring-zinc-700 group-hover:ring-[#0097B2] transition-all shrink-0" height="64" width="64" />
             <div>
               <div class="text-base font-bold text-white group-hover:text-[#0097B2] transition-colors">Felipe Soto Santibañez</div>
@@ -544,10 +544,10 @@
     </section>
 
     <!-- Coaching Ejecutivo -->
-    <section class="py-20 px-6 bg-zinc-950/50 border-t border-zinc-900">
+    <section class="py-20 px-6/50 border-t border-zinc-900">
       <div class="max-w-5xl mx-auto">
         <div class="text-center reveal mb-12">
-          <span class="text-emerald-400 font-bold tracking-wider text-xs uppercase font-display">Servicio Adicional</span>
+          <span class="text-[var(--accent)] font-bold tracking-wider text-xs uppercase font-display">Servicio Adicional</span>
           <h2 class="text-3xl md:text-4xl font-bold text-white mt-3 font-heading">Coaching Ejecutivo para Líderes del Cambio</h2>
           <p class="mt-4 text-slate-400 max-w-xl mx-auto">El cambio organizacional lo lideran personas. Si el equipo directivo no está alineado, el proyecto fracasa independiente de la calidad técnica.</p>
         </div>
@@ -565,9 +565,9 @@
           </div>
           <div class="reveal" style="transition-delay:120ms">
             <div class="space-y-4">
-              <div class="glass-card rounded-xl p-5 border border-emerald-500/10">
+              <div class="glass-card rounded-xl p-5 border border-[var(--line)]">
                 <div class="flex items-start gap-4">
-                  <div class="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center shrink-0 mt-0.5" aria-hidden="true">
+                  <div class="w-9 h-9 rounded-lg bg-[var(--surface)] flex items-center justify-center shrink-0 mt-0.5" aria-hidden="true">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
                   </div>
                   <div>
@@ -576,9 +576,9 @@
                   </div>
                 </div>
               </div>
-              <div class="glass-card rounded-xl p-5 border border-emerald-500/10">
+              <div class="glass-card rounded-xl p-5 border border-[var(--line)]">
                 <div class="flex items-start gap-4">
-                  <div class="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center shrink-0 mt-0.5" aria-hidden="true">
+                  <div class="w-9 h-9 rounded-lg bg-[var(--surface)] flex items-center justify-center shrink-0 mt-0.5" aria-hidden="true">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
                   </div>
                   <div>
@@ -587,9 +587,9 @@
                   </div>
                 </div>
               </div>
-              <div class="glass-card rounded-xl p-5 border border-emerald-500/10">
+              <div class="glass-card rounded-xl p-5 border border-[var(--line)]">
                 <div class="flex items-start gap-4">
-                  <div class="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center shrink-0 mt-0.5" aria-hidden="true">
+                  <div class="w-9 h-9 rounded-lg bg-[var(--surface)] flex items-center justify-center shrink-0 mt-0.5" aria-hidden="true">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                   </div>
                   <div>
@@ -608,10 +608,10 @@
     <section class="py-20 px-6 bg-black border-t border-zinc-900">
       <div class="max-w-4xl mx-auto">
         <div class="reveal">
-          <div class="glass-card rounded-3xl p-10 md:p-14 border border-emerald-500/20 text-center relative overflow-hidden">
-            <div class="absolute inset-0 bg-emerald-900/5 pointer-events-none"></div>
+          <div class="glass-card rounded-3xl p-10 md:p-14 border border-[var(--line)] text-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-[var(--surface)] pointer-events-none"></div>
             <div class="relative z-10">
-              <span class="text-emerald-400 font-bold tracking-wider text-xs uppercase font-display">Sin letra chica</span>
+              <span class="text-[var(--accent)] font-bold tracking-wider text-xs uppercase font-display">Sin letra chica</span>
               <h2 class="text-3xl md:text-4xl font-bold text-white mt-4 mb-6 font-heading">Nuestra Garantía</h2>
               <p class="text-2xl md:text-3xl font-serif text-white mb-6 leading-tight">
                 "Si su equipo no adopta la herramienta, no paga."
@@ -649,28 +649,28 @@
         </div>
         <div class="space-y-3 reveal">
           <details class="group glass-card rounded-2xl overflow-hidden">
-            <summary class="flex items-center justify-between p-6 font-medium cursor-pointer text-slate-200 hover:text-emerald-400 transition-colors list-none">
+            <summary class="flex items-center justify-between p-6 font-medium cursor-pointer text-slate-200 hover:text-[var(--accent)] transition-colors list-none">
               <span>¿Cuánto tiempo toma un programa de gestión del cambio?</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="flex-shrink-0 transform group-open:rotate-180 transition-transform duration-300" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
             <div class="px-6 pb-6 text-slate-400 text-sm leading-relaxed">Para equipos de 10-50 personas, un programa completo dura entre 8 y 16 semanas. El acompañamiento post-lanzamiento continúa hasta alcanzar el KPI de adopción acordado, sin costo adicional si el equipo no llega al objetivo por causas atribuibles al proceso.</div>
           </details>
           <details class="group glass-card rounded-2xl overflow-hidden">
-            <summary class="flex items-center justify-between p-6 font-medium cursor-pointer text-slate-200 hover:text-emerald-400 transition-colors list-none">
+            <summary class="flex items-center justify-between p-6 font-medium cursor-pointer text-slate-200 hover:text-[var(--accent)] transition-colors list-none">
               <span>¿Qué pasa si el equipo se resiste al cambio?</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="flex-shrink-0 transform group-open:rotate-180 transition-transform duration-300" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
             <div class="px-6 pb-6 text-slate-400 text-sm leading-relaxed">La resistencia es predecible y abordable. Nuestro diagnóstico ADKAR identifica el tipo de resistencia de cada grupo (falta de conciencia, falta de habilidades, factores culturales) y diseña intervenciones específicas. La resistencia no tratada es la principal causa de fracaso en implementaciones tecnológicas.</div>
           </details>
           <details class="group glass-card rounded-2xl overflow-hidden">
-            <summary class="flex items-center justify-between p-6 font-medium cursor-pointer text-slate-200 hover:text-emerald-400 transition-colors list-none">
+            <summary class="flex items-center justify-between p-6 font-medium cursor-pointer text-slate-200 hover:text-[var(--accent)] transition-colors list-none">
               <span>¿Cómo se mide el éxito del cambio?</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="flex-shrink-0 transform group-open:rotate-180 transition-transform duration-300" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
             <div class="px-6 pb-6 text-slate-400 text-sm leading-relaxed">Con KPIs definidos antes de iniciar el proyecto: tasa de uso activo (logins semanales), reducción del tiempo de proceso clave, incidentes de soporte post-lanzamiento y NPS interno. Todos los indicadores se reportan en un dashboard quincenal compartido con el cliente.</div>
           </details>
           <details class="group glass-card rounded-2xl overflow-hidden">
-            <summary class="flex items-center justify-between p-6 font-medium cursor-pointer text-slate-200 hover:text-emerald-400 transition-colors list-none">
+            <summary class="flex items-center justify-between p-6 font-medium cursor-pointer text-slate-200 hover:text-[var(--accent)] transition-colors list-none">
               <span>¿En qué se diferencia de la capacitación tradicional?</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="flex-shrink-0 transform group-open:rotate-180 transition-transform duration-300" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
@@ -684,21 +684,21 @@
     <section class="py-16 px-6 bg-black border-t border-zinc-900">
       <div class="max-w-5xl mx-auto">
         <div class="reveal mb-8 text-center">
-          <span class="text-[var(--color-accent)] font-bold tracking-wider text-xs uppercase font-display">Complementa</span>
+          <span class="text-[var(--accent)] font-bold tracking-wider text-xs uppercase font-display">Complementa</span>
           <h2 class="text-2xl font-heading text-white mt-3">Servicios Relacionados</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-          <a href="/servicios/legal-tech" class="reveal group card-dark rounded-2xl p-6 hover:border-[var(--color-accent)]/40 transition-colors block">
-            <div class="text-[var(--color-accent)] text-xs uppercase font-bold tracking-wider mb-3 font-display">Legal Tech</div>
-            <h3 class="text-white font-bold mb-2 group-hover:text-[var(--color-accent)] transition-colors">Automatización Legal</h3>
+          <a href="/servicios/legal-tech" class="reveal group card-dark rounded-2xl p-6 hover:border-[var(--accent)]/40 transition-colors block">
+            <div class="text-[var(--accent)] text-xs uppercase font-bold tracking-wider mb-3 font-display">Legal Tech</div>
+            <h3 class="text-white font-bold mb-2 group-hover:text-[var(--accent)] transition-colors">Automatización Legal</h3>
             <p class="text-slate-400 text-sm leading-relaxed">La tecnología que su equipo va a adoptar gracias al cambio. RPA e IA para eliminar el trabajo manual.</p>
-            <span class="mt-3 inline-block text-xs text-[var(--color-accent)] font-semibold group-hover:underline">Ver servicio →</span>
+            <span class="mt-3 inline-block text-xs text-[var(--accent)] font-semibold group-hover:underline">Ver servicio →</span>
           </a>
-          <a href="/servicios/ia-corporativa" class="reveal group card-dark rounded-2xl p-6 hover:border-[var(--color-accent)]/40 transition-colors block" style="transition-delay:80ms">
-            <div class="text-[var(--color-accent)] text-xs uppercase font-bold tracking-wider mb-3 font-display">IA Corporativa</div>
-            <h3 class="text-white font-bold mb-2 group-hover:text-[var(--color-accent)] transition-colors">Agentes de IA a medida</h3>
+          <a href="/servicios/ia-corporativa" class="reveal group card-dark rounded-2xl p-6 hover:border-[var(--accent)]/40 transition-colors block" style="transition-delay:80ms">
+            <div class="text-[var(--accent)] text-xs uppercase font-bold tracking-wider mb-3 font-display">IA Corporativa</div>
+            <h3 class="text-white font-bold mb-2 group-hover:text-[var(--accent)] transition-colors">Agentes de IA a medida</h3>
             <p class="text-slate-400 text-sm leading-relaxed">Asistentes RAG y automatización de soporte. La adopción es clave para que funcionen.</p>
-            <span class="mt-3 inline-block text-xs text-[var(--color-accent)] font-semibold group-hover:underline">Ver servicio →</span>
+            <span class="mt-3 inline-block text-xs text-[var(--accent)] font-semibold group-hover:underline">Ver servicio →</span>
           </a>
           <a href="/soluciones" class="reveal group card-dark rounded-2xl p-6 hover:border-amber-400/40 transition-colors block" style="transition-delay:160ms">
             <div class="text-amber-400 text-xs uppercase font-bold tracking-wider mb-3 font-display">Mini Apps</div>
@@ -712,7 +712,7 @@
 
     <!-- CTA Final -->
     <section class="py-24 px-6 relative overflow-hidden text-center">
-      <div class="absolute inset-0 bg-gradient-to-b from-emerald-900/15 to-black pointer-events-none"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-[var(--surface)] to-black pointer-events-none"></div>
       <div class="relative z-10 max-w-2xl mx-auto reveal">
         <h2 class="text-4xl md:text-5xl font-heading text-white mb-6 leading-tight">¿Tiene un proyecto tecnológico que necesita que la gente lo use de verdad?</h2>
         <p class="text-xl text-slate-400 mb-10">Agende una sesión gratuita con nuestro equipo. En 30 minutos identificamos los principales riesgos de adopción de su proyecto y le entregamos un plan de acción.</p>
@@ -736,34 +736,34 @@
                 </a>
                 <p class="text-slate-400 leading-relaxed max-w-xs">Diagnóstico y automatización con IA para empresas de servicios profesionales en Latinoamérica.</p>
                 <div class="flex gap-4">
-                    <a href="https://www.linkedin.com/company/growth-buddies" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Growth Buddies" class="text-slate-400 hover:text-[var(--color-accent)] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
-                    <a href="mailto:edmundo@growthbuddies.cl" aria-label="Enviar correo electronico a Growth Buddies" class="text-slate-400 hover:text-[var(--color-accent)] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+                    <a href="https://www.linkedin.com/company/growth-buddies" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Growth Buddies" class="text-slate-400 hover:text-[var(--accent)] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+                    <a href="mailto:edmundo@growthbuddies.cl" aria-label="Enviar correo electronico a Growth Buddies" class="text-slate-400 hover:text-[var(--accent)] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
                 </div>
             </div>
             <div>
                 <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Servicios</h4>
                 <ul class="space-y-3 text-slate-400">
-                    <li><a href="/servicios/legal-tech" class="hover:text-[var(--color-accent)] transition-colors">Legal Tech &amp; Automatización</a></li>
-                    <li><a href="/servicios/ia-corporativa" class="hover:text-[var(--color-accent)] transition-colors">IA Corporativa</a></li>
-                    <li><a href="/servicios/gestion-del-cambio" class="hover:text-[var(--color-accent)] transition-colors">Gestion del Cambio</a></li>
+                    <li><a href="/servicios/legal-tech" class="hover:text-[var(--accent)] transition-colors">Legal Tech &amp; Automatización</a></li>
+                    <li><a href="/servicios/ia-corporativa" class="hover:text-[var(--accent)] transition-colors">IA Corporativa</a></li>
+                    <li><a href="/servicios/gestion-del-cambio" class="hover:text-[var(--accent)] transition-colors">Gestion del Cambio</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Mini Apps</h4>
                 <ul class="space-y-3 text-slate-400">
-                    <li><a href="/soluciones" class="hover:text-[var(--color-accent)] transition-colors">Triaje Legal</a></li>
-                    <li><a href="/soluciones" class="hover:text-[var(--color-accent)] transition-colors">Validacion Documental</a></li>
-                    <li><a href="/soluciones" class="hover:text-[var(--color-accent)] transition-colors">Rendicion Gastos IA</a></li>
+                    <li><a href="/soluciones" class="hover:text-[var(--accent)] transition-colors">Triaje Legal</a></li>
+                    <li><a href="/soluciones" class="hover:text-[var(--accent)] transition-colors">Validacion Documental</a></li>
+                    <li><a href="/soluciones" class="hover:text-[var(--accent)] transition-colors">Rendicion Gastos IA</a></li>
                     <li><a href="/soluciones/brokeria" class="text-amber-400 hover:text-amber-300 transition-colors font-medium">BrokerIA ✦</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Recursos</h4>
                 <ul class="space-y-3 text-slate-400">
-                    <li><a href="/nosotros" class="hover:text-[var(--color-accent)] transition-colors">Nosotros</a></li>
-                    <li><a href="/casos" class="hover:text-[var(--color-accent)] transition-colors">Casos de Éxito</a></li>
-                    <li><a href="/blog" class="hover:text-[var(--color-accent)] transition-colors">Blog</a></li>
-                    <li><a href="/recursos/guia-ia-legal" class="hover:text-[var(--color-accent)] transition-colors">Guía Gratuita</a></li>
+                    <li><a href="/nosotros" class="hover:text-[var(--accent)] transition-colors">Nosotros</a></li>
+                    <li><a href="/casos" class="hover:text-[var(--accent)] transition-colors">Casos de Éxito</a></li>
+                    <li><a href="/blog" class="hover:text-[var(--accent)] transition-colors">Blog</a></li>
+                    <li><a href="/recursos/guia-ia-legal" class="hover:text-[var(--accent)] transition-colors">Guía Gratuita</a></li>
                 </ul>
             </div>
         </div>

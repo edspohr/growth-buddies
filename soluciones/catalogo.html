@@ -95,15 +95,15 @@
   }
   </script>
     <style>
-      :root{--color-accent:#0097B2;--color-cta:#0097B2;--color-cta-hover:#007A91;--color-dark:#0F172A}
+      :root{--color-accent:#0097B2;--color-cta:#0097B2;--color-cta-hover: #00B5D6;--color-dark:#0F172A}
       *,::before,::after{box-sizing:border-box}
-      body{font-family:'Inter',sans-serif;background:#09090b;color:#cbd5e1;overflow-x:hidden;margin:0}
-      .glass-nav{background:rgba(0,0,0,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}
+      body{font-family:'Inter',sans-serif;background-color: var(--bg, #0B0B0F);color: var(--fg, #ECECEF);overflow-x:hidden;margin:0}
+      .glass-nav{background:rgba(11,11,15,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}
     .font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Space Grotesk",system-ui,sans-serif}.font-heading{font-family:"Geist","system-ui",sans-serif}</style>
     <link rel="preload" href="/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
   </head>
-  <body class="antialiased selection:bg-[#00f6ff] selection:text-black bg-zinc-950">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--color-accent)] focus:text-black focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
+  <body class="antialiased selection:bg-[var(--accent)] selection:text-white">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--accent)] focus:text-white focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
     <div class="noise-overlay"></div>
 
     <nav class="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
@@ -118,7 +118,7 @@
             class="h-8 w-8 opacity-90 group-hover:opacity-100 transition-opacity" height="32" width="32"
           />
           <span
-            class="font-bold text-lg tracking-tight text-white group-hover:text-[var(--color-accent)] transition-colors"
+            class="font-bold text-lg tracking-tight text-white group-hover:text-[var(--accent)] transition-colors"
             >Growth Buddies</span
           >
         </a>
@@ -146,7 +146,7 @@
 
     <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" style="display:none;" class="fixed inset-0 z-[200] flex-col" aria-hidden="true">
-      <div class="absolute inset-0 bg-[#050510]/96 backdrop-blur-xl"></div>
+      <div class="absolute inset-0/96 backdrop-blur-xl"></div>
       <div class="relative flex flex-col h-full px-6 py-6 overflow-y-auto">
         <div class="flex justify-between items-center mb-10">
           <a href="/" class="flex items-center gap-2">
@@ -166,7 +166,7 @@
           <a href="/#contacto" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Contacto</a>
         </nav>
         <div class="mt-8">
-          <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[#00f6ff]/10 hover:bg-[#00f6ff]/20 text-[#00f6ff] border border-[#00f6ff]/30 hover:border-[#00f6ff] font-semibold text-base py-4 px-5 rounded-full transition-all duration-300">
+          <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[var(--accent)]/10 hover:bg-[var(--accent)]/20 text-[var(--accent)] border border-[var(--accent)]/30 hover:border-[var(--accent)] font-semibold text-base py-4 px-5 rounded-full transition-all duration-300">
             Agendar conversación
           </a>
         </div>
@@ -176,18 +176,18 @@
 
     <!-- Header -->
     <header id="main-content" class="relative pt-40 pb-20 px-6 overflow-hidden">
-        <div class="absolute top-0 right-0 w-1/2 h-full bg-[var(--color-accent)]/5 blur-[100px] pointer-events-none"></div>
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-[var(--accent)]/5 blur-[100px] pointer-events-none"></div>
         <div class="max-w-7xl mx-auto text-center relative z-10">
         <nav aria-label="Migas de pan" class="mb-8">
           <ol class="flex items-center justify-center gap-2 text-xs text-slate-500">
-            <li><a href="/" class="hover:text-[var(--color-accent)] transition-colors">Inicio</a></li>
+            <li><a href="/" class="hover:text-[var(--accent)] transition-colors">Inicio</a></li>
             <li><span aria-hidden="true">/</span></li>
-            <li><a href="/soluciones" class="hover:text-[var(--color-accent)] transition-colors">Soluciones</a></li>
+            <li><a href="/soluciones" class="hover:text-[var(--accent)] transition-colors">Soluciones</a></li>
             <li><span aria-hidden="true">/</span></li>
-            <li class="text-[var(--color-accent)]" aria-current="page">Catálogo Mini Apps</li>
+            <li class="text-[var(--accent)]" aria-current="page">Catálogo Mini Apps</li>
           </ol>
         </nav>
-            <span class="text-[var(--color-accent)] font-bold tracking-wider text-sm uppercase font-display mb-4 block">Catálogo de Soluciones</span>
+            <span class="text-[var(--accent)] font-bold tracking-wider text-sm uppercase font-display mb-4 block">Catálogo de Soluciones</span>
             <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white font-heading mb-8">
                 Mini Apps Plug & Play
             </h1>
@@ -251,7 +251,7 @@
                         <p class="text-sm text-slate-300">HomeRisk analiza el entorno. OCR + Gemini extraen datos financieros. Aggregator genera Pitch de Cierre con alertas cruzadas.</p>
                     </div>
                     <div class="bg-black/40 p-6 rounded-xl border border-zinc-700/50">
-                        <h4 class="text-emerald-400 font-bold text-sm uppercase mb-3 flex items-center gap-2">
+                        <h4 class="text-[var(--accent)] font-bold text-sm uppercase mb-3 flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Resultado
                         </h4>
                         <p class="text-sm text-slate-300">Property Score + Client Score + Reporte ejecutivo de compatibilidad. Kanban actualizado automáticamente con semáforo de riesgo.</p>
@@ -260,11 +260,11 @@
             </div>
 
             <!-- 1. Triaje Legal -->
-            <div id="triaje" class="reveal relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-zinc-900/40 border border-zinc-800 rounded-3xl p-8 md:p-12 overflow-hidden group hover:border-[var(--color-accent)]/50 transition-all duration-500">
-                <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-accent)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div id="triaje" class="reveal relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-zinc-900/40 border border-zinc-800 rounded-3xl p-8 md:p-12 overflow-hidden group hover:border-[var(--accent)]/50 transition-all duration-500">
+                <div class="absolute inset-0 bg-gradient-to-br from-[var(--accent)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 
                 <div class="lg:col-span-4 relative z-10">
-                    <div class="h-16 w-16 bg-zinc-800 rounded-2xl flex items-center justify-center mb-6 text-[var(--color-accent)] border border-zinc-700 shadow-lg">
+                    <div class="h-16 w-16 bg-zinc-800 rounded-2xl flex items-center justify-center mb-6 text-[var(--accent)] border border-zinc-700 shadow-lg">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                     </div>
                     <h2 class="text-3xl font-bold text-white font-heading mb-4">Triaje Legal</h2>
@@ -276,7 +276,7 @@
                         <span class="text-xs font-semibold text-slate-300 bg-black/50 px-3 py-1 rounded-full border border-zinc-700">Clasificación IA</span>
                     </div>
                     <div>
-                        <a href="/soluciones" class="inline-flex items-center gap-2 text-[var(--color-accent)] font-bold hover:text-white transition-colors">
+                        <a href="/soluciones" class="inline-flex items-center gap-2 text-[var(--accent)] font-bold hover:text-white transition-colors">
                             Ver Detalle <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                         </a>
                     </div>
@@ -284,7 +284,7 @@
 
                 <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
                     <div class="bg-black/40 p-6 rounded-xl border border-zinc-700/50">
-                        <h4 class="text-[var(--color-accent)] font-bold text-sm uppercase mb-3 flex items-center gap-2">
+                        <h4 class="text-[var(--accent)] font-bold text-sm uppercase mb-3 flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Entrada
                         </h4>
                         <p class="text-sm text-slate-300">El cliente escribe un mail con preguntas clave sobre su caso.</p>
@@ -297,7 +297,7 @@
                         <p class="text-xs text-slate-500 italic">Si es viable: Clasifica urgencia.<br>Si NO es viable: Redacta correo declinando.</p>
                     </div>
                     <div class="bg-black/40 p-6 rounded-xl border border-zinc-700/50">
-                         <h4 class="text-emerald-400 font-bold text-sm uppercase mb-3 flex items-center gap-2">
+                         <h4 class="text-[var(--accent)] font-bold text-sm uppercase mb-3 flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Resultado
                         </h4>
                         <p class="text-sm text-slate-300"><strong>Abogado:</strong> Reciba solo Leads Calificados con resumen.<br><strong>Cliente:</strong> Respuesta inmediata.</p>
@@ -306,11 +306,11 @@
             </div>
 
             <!-- 2. Base de Conocimientos Pasiva -->
-            <div id="conocimiento" class="reveal relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-zinc-900/40 border border-zinc-800 rounded-3xl p-8 md:p-12 overflow-hidden group hover:border-[var(--color-accent)]/50 transition-all duration-500">
-                <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-accent)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div id="conocimiento" class="reveal relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-zinc-900/40 border border-zinc-800 rounded-3xl p-8 md:p-12 overflow-hidden group hover:border-[var(--accent)]/50 transition-all duration-500">
+                <div class="absolute inset-0 bg-gradient-to-br from-[var(--accent)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 
                 <div class="lg:col-span-4 relative z-10">
-                     <div class="h-16 w-16 bg-zinc-800 rounded-2xl flex items-center justify-center mb-6 text-[var(--color-accent)] border border-zinc-700 shadow-lg">
+                     <div class="h-16 w-16 bg-zinc-800 rounded-2xl flex items-center justify-center mb-6 text-[var(--accent)] border border-zinc-700 shadow-lg">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
                     </div>
                     <h2 class="text-3xl font-bold text-white font-heading mb-4">Base de Conocimientos Pasiva</h2>
@@ -325,7 +325,7 @@
 
                 <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
                     <div class="bg-black/40 p-6 rounded-xl border border-zinc-700/50">
-                        <h4 class="text-[var(--color-accent)] font-bold text-sm uppercase mb-3 flex items-center gap-2">
+                        <h4 class="text-[var(--accent)] font-bold text-sm uppercase mb-3 flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Entrada
                         </h4>
                         <p class="text-sm text-slate-300">El abogado guarda un documento (PDF/Word) en una carpeta general "Bandeja de Entrada".</p>
@@ -338,7 +338,7 @@
                         <p class="text-xs text-slate-500 italic">Renombra archivo (ej: 2026-01-13_Contrato_ClienteX.pdf) y lo mueve a carpeta final.</p>
                     </div>
                     <div class="bg-black/40 p-6 rounded-xl border border-zinc-700/50">
-                         <h4 class="text-emerald-400 font-bold text-sm uppercase mb-3 flex items-center gap-2">
+                         <h4 class="text-[var(--accent)] font-bold text-sm uppercase mb-3 flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Resultado
                         </h4>
                         <p class="text-sm text-slate-300">Base de datos buscable. Pregunta: "Muéstrame todos los contratos de arrendamiento de 2025".</p>
@@ -347,11 +347,11 @@
             </div>
 
             <!-- 3. Procurador 24/7 -->
-            <div id="procurador" class="reveal relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-zinc-900/40 border border-zinc-800 rounded-3xl p-8 md:p-12 overflow-hidden group hover:border-[var(--color-accent)]/50 transition-all duration-500">
-                <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-accent)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div id="procurador" class="reveal relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-zinc-900/40 border border-zinc-800 rounded-3xl p-8 md:p-12 overflow-hidden group hover:border-[var(--accent)]/50 transition-all duration-500">
+                <div class="absolute inset-0 bg-gradient-to-br from-[var(--accent)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 
                 <div class="lg:col-span-4 relative z-10">
-                     <div class="h-16 w-16 bg-zinc-800 rounded-2xl flex items-center justify-center mb-6 text-[var(--color-accent)] border border-zinc-700 shadow-lg">
+                     <div class="h-16 w-16 bg-zinc-800 rounded-2xl flex items-center justify-center mb-6 text-[var(--accent)] border border-zinc-700 shadow-lg">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                     </div>
                     <h2 class="text-3xl font-bold text-white font-heading mb-4">Procurador 24/7</h2>
@@ -366,7 +366,7 @@
 
                 <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
                     <div class="bg-black/40 p-6 rounded-xl border border-zinc-700/50">
-                        <h4 class="text-[var(--color-accent)] font-bold text-sm uppercase mb-3 flex items-center gap-2">
+                        <h4 class="text-[var(--accent)] font-bold text-sm uppercase mb-3 flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Entrada
                         </h4>
                         <p class="text-sm text-slate-300">El abogado ingresa una única vez el "ROL" o número de expediente en lista de seguimiento.</p>
@@ -378,7 +378,7 @@
                         <p class="text-sm text-slate-300">Redirección de notificaciones a casilla centralizada. Mantenimiento de historial con alertas inteligentes.</p>
                     </div>
                     <div class="bg-black/40 p-6 rounded-xl border border-zinc-700/50">
-                         <h4 class="text-emerald-400 font-bold text-sm uppercase mb-3 flex items-center gap-2">
+                         <h4 class="text-[var(--accent)] font-bold text-sm uppercase mb-3 flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Resultado
                         </h4>
                         <p class="text-sm text-slate-300">Alerta inmediata en Teams/Slack/Email: "Novedad en Causa ROL 123: Se ha proveído escrito."</p>
@@ -387,11 +387,11 @@
             </div>
 
             <!-- 4. Portal de Validación Documental -->
-            <div id="validacion" class="reveal relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-zinc-900/40 border border-zinc-800 rounded-3xl p-8 md:p-12 overflow-hidden group hover:border-[var(--color-accent)]/50 transition-all duration-500">
-                <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-accent)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div id="validacion" class="reveal relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-zinc-900/40 border border-zinc-800 rounded-3xl p-8 md:p-12 overflow-hidden group hover:border-[var(--accent)]/50 transition-all duration-500">
+                <div class="absolute inset-0 bg-gradient-to-br from-[var(--accent)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 
                 <div class="lg:col-span-4 relative z-10">
-                    <div class="h-16 w-16 bg-zinc-800 rounded-2xl flex items-center justify-center mb-6 text-[var(--color-accent)] border border-zinc-700 shadow-lg">
+                    <div class="h-16 w-16 bg-zinc-800 rounded-2xl flex items-center justify-center mb-6 text-[var(--accent)] border border-zinc-700 shadow-lg">
                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
                     </div>
                     <h2 class="text-3xl font-bold text-white font-heading mb-4">Portal de Validación</h2>
@@ -403,7 +403,7 @@
                         <span class="text-xs font-semibold text-slate-300 bg-black/50 px-3 py-1 rounded-full border border-zinc-700">Playbook Digital</span>
                     </div>
                     <div>
-                        <a href="/soluciones" class="inline-flex items-center gap-2 text-[var(--color-accent)] font-bold hover:text-white transition-colors">
+                        <a href="/soluciones" class="inline-flex items-center gap-2 text-[var(--accent)] font-bold hover:text-white transition-colors">
                             Ver Detalle <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                         </a>
                     </div>
@@ -411,7 +411,7 @@
 
                 <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
                     <div class="bg-black/40 p-6 rounded-xl border border-zinc-700/50">
-                        <h4 class="text-[var(--color-accent)] font-bold text-sm uppercase mb-3 flex items-center gap-2">
+                        <h4 class="text-[var(--accent)] font-bold text-sm uppercase mb-3 flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Entrada
                         </h4>
                         <p class="text-sm text-slate-300">Drag & drop de borrador en web. Selección de tipo (ej: "Revisión Contrato Servicios").</p>
@@ -424,7 +424,7 @@
                         <p class="text-xs text-slate-500 italic">Verifica: RUTs, Direcciones, Confidencialidad, Ley aplicable, Fechas.</p>
                     </div>
                     <div class="bg-black/40 p-6 rounded-xl border border-zinc-700/50">
-                         <h4 class="text-emerald-400 font-bold text-sm uppercase mb-3 flex items-center gap-2">
+                         <h4 class="text-[var(--accent)] font-bold text-sm uppercase mb-3 flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Resultado
                         </h4>
                         <p class="text-sm text-slate-300">Reporte semáforo en 30s:<br>Example: 🔴 Rechazado: Falta cláusula arbitraje.</p>
@@ -433,11 +433,11 @@
             </div>
 
              <!-- 5. Auto Timesheet -->
-            <div id="timesheet" class="reveal relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-zinc-900/40 border border-zinc-800 rounded-3xl p-8 md:p-12 overflow-hidden group hover:border-[var(--color-accent)]/50 transition-all duration-500">
-                <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-accent)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div id="timesheet" class="reveal relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-zinc-900/40 border border-zinc-800 rounded-3xl p-8 md:p-12 overflow-hidden group hover:border-[var(--accent)]/50 transition-all duration-500">
+                <div class="absolute inset-0 bg-gradient-to-br from-[var(--accent)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 
                 <div class="lg:col-span-4 relative z-10">
-                     <div class="h-16 w-16 bg-zinc-800 rounded-2xl flex items-center justify-center mb-6 text-[var(--color-accent)] border border-zinc-700 shadow-lg">
+                     <div class="h-16 w-16 bg-zinc-800 rounded-2xl flex items-center justify-center mb-6 text-[var(--accent)] border border-zinc-700 shadow-lg">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                     </div>
                     <h2 class="text-3xl font-bold text-white font-heading mb-4">Auto Timesheet</h2>
@@ -452,7 +452,7 @@
 
                 <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
                     <div class="bg-black/40 p-6 rounded-xl border border-zinc-700/50">
-                        <h4 class="text-[var(--color-accent)] font-bold text-sm uppercase mb-3 flex items-center gap-2">
+                        <h4 class="text-[var(--accent)] font-bold text-sm uppercase mb-3 flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Entrada
                         </h4>
                         <p class="text-sm text-slate-300">Pasiva. El abogado trabaja normalmente (Teams, Outlook, Word).</p>
@@ -465,7 +465,7 @@
                         <p class="text-xs text-slate-500 italic">Calcule tiempos (reuniones, redacción, edición) y genera narrativa de tarea con IA.</p>
                     </div>
                     <div class="bg-black/40 p-6 rounded-xl border border-zinc-700/50">
-                         <h4 class="text-emerald-400 font-bold text-sm uppercase mb-3 flex items-center gap-2">
+                         <h4 class="text-[var(--accent)] font-bold text-sm uppercase mb-3 flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Resultado
                         </h4>
                         <p class="text-sm text-slate-300">Borrador de Timesheet recibido a las 18:00 hrs. Solo confirmar o editar levemente.</p>
@@ -474,11 +474,11 @@
             </div>
 
             <!-- 6. Reembolso de Gastos -->
-            <div id="gastos" class="reveal relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-zinc-900/40 border border-zinc-800 rounded-3xl p-8 md:p-12 overflow-hidden group hover:border-[var(--color-accent)]/50 transition-all duration-500">
-                <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-accent)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div id="gastos" class="reveal relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-zinc-900/40 border border-zinc-800 rounded-3xl p-8 md:p-12 overflow-hidden group hover:border-[var(--accent)]/50 transition-all duration-500">
+                <div class="absolute inset-0 bg-gradient-to-br from-[var(--accent)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 
                 <div class="lg:col-span-4 relative z-10">
-                     <div class="h-16 w-16 bg-zinc-800 rounded-2xl flex items-center justify-center mb-6 text-[var(--color-accent)] border border-zinc-700 shadow-lg">
+                     <div class="h-16 w-16 bg-zinc-800 rounded-2xl flex items-center justify-center mb-6 text-[var(--accent)] border border-zinc-700 shadow-lg">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
                     </div>
                     <h2 class="text-3xl font-bold text-white font-heading mb-4">Reembolso Inteligente</h2>
@@ -490,7 +490,7 @@
                         <span class="text-xs font-semibold text-slate-300 bg-black/50 px-3 py-1 rounded-full border border-zinc-700">Asignación Cliente</span>
                     </div>
                     <div>
-                        <a href="/soluciones" class="inline-flex items-center gap-2 text-[var(--color-accent)] font-bold hover:text-white transition-colors">
+                        <a href="/soluciones" class="inline-flex items-center gap-2 text-[var(--accent)] font-bold hover:text-white transition-colors">
                             Ver Detalle <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                         </a>
                     </div>
@@ -498,7 +498,7 @@
 
                 <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
                     <div class="bg-black/40 p-6 rounded-xl border border-zinc-700/50">
-                        <h4 class="text-[var(--color-accent)] font-bold text-sm uppercase mb-3 flex items-center gap-2">
+                        <h4 class="text-[var(--accent)] font-bold text-sm uppercase mb-3 flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Entrada
                         </h4>
                         <p class="text-sm text-slate-300">El usuario toma una foto con su celular o sube una imagen web/móvil.</p>
@@ -511,7 +511,7 @@
                         <p class="text-xs text-slate-500 italic">Busca cliente/proyecto en contexto. Si duda, pregunta al usuario.</p>
                     </div>
                     <div class="bg-black/40 p-6 rounded-xl border border-zinc-700/50">
-                         <h4 class="text-emerald-400 font-bold text-sm uppercase mb-3 flex items-center gap-2">
+                         <h4 class="text-[var(--accent)] font-bold text-sm uppercase mb-3 flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Resultado
                         </h4>
                         <p class="text-sm text-slate-300">Reporte de gastos actualizado al instante, listo para adjuntar a factura.</p>
@@ -545,7 +545,7 @@
         </div>
      </section>
 
-    <section id="contacto" class="py-24 px-6 border-t border-white/5 bg-zinc-950">
+    <section id="contacto" class="py-24 px-6 border-t border-white/5">
       <div class="max-w-4xl mx-auto text-center reveal">
         <h2 class="text-3xl md:text-5xl font-black text-white font-heading mb-8">
             ¿Le interesa?
@@ -557,7 +557,7 @@
             href="https://calendly.com/espohr/conversemos"
             target="_blank"
             rel="noopener noreferrer"
-            class="impact-button inline-block bg-[var(--color-accent)] text-black font-bold py-4 px-12 rounded-full text-lg shadow-[0_0_40px_rgba(0,246,255,0.3)] hover:shadow-[0_0_60px_rgba(0,246,255,0.5)] transition-all"
+            class="impact-button inline-block bg-[var(--accent)] text-black font-bold py-4 px-12 rounded-full text-lg shadow-[0_0_40px_rgba(0,246,255,0.3)] hover:shadow-[0_0_60px_rgba(0,246,255,0.5)] transition-all"
         >
             Agendar Demo
         </a>
@@ -575,10 +575,10 @@
                     Diagnóstico y automatización con IA para empresas de servicios profesionales en Latinoamérica.
                 </p>
                 <div class="flex gap-4">
-                    <a href="https://www.linkedin.com/company/growth-buddies" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Growth Buddies" class="text-slate-400 hover:text-[var(--color-accent)] transition-colors">
+                    <a href="https://www.linkedin.com/company/growth-buddies" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Growth Buddies" class="text-slate-400 hover:text-[var(--accent)] transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
                     </a>
-                    <a href="mailto:edmundo@growthbuddies.cl" aria-label="Enviar correo electrónico a Growth Buddies" class="text-slate-400 hover:text-[var(--color-accent)] transition-colors">
+                    <a href="mailto:edmundo@growthbuddies.cl" aria-label="Enviar correo electrónico a Growth Buddies" class="text-slate-400 hover:text-[var(--accent)] transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                     </a>
                 </div>
@@ -586,25 +586,25 @@
             <div>
                 <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Servicios</h4>
                 <ul class="space-y-3 text-slate-400">
-                    <li><a href="/servicios/legal-tech" class="hover:text-[var(--color-accent)] transition-colors">Legal Tech &amp; Ops</a></li>
-                    <li><a href="/servicios/ia-corporativa" class="hover:text-[var(--color-accent)] transition-colors">IA Corporativa</a></li>
-                    <li><a href="/servicios/gestion-del-cambio" class="hover:text-[var(--color-accent)] transition-colors">Gestión del Cambio</a></li>
+                    <li><a href="/servicios/legal-tech" class="hover:text-[var(--accent)] transition-colors">Legal Tech &amp; Ops</a></li>
+                    <li><a href="/servicios/ia-corporativa" class="hover:text-[var(--accent)] transition-colors">IA Corporativa</a></li>
+                    <li><a href="/servicios/gestion-del-cambio" class="hover:text-[var(--accent)] transition-colors">Gestión del Cambio</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Mini Apps</h4>
                 <ul class="space-y-3 text-slate-400">
-                    <li><a href="/soluciones" class="hover:text-[var(--color-accent)] transition-colors">Triaje Legal</a></li>
-                    <li><a href="/soluciones" class="hover:text-[var(--color-accent)] transition-colors">Validación Documental</a></li>
-                    <li><a href="/soluciones" class="hover:text-[var(--color-accent)] transition-colors">Rendición Gastos IA</a></li>
+                    <li><a href="/soluciones" class="hover:text-[var(--accent)] transition-colors">Triaje Legal</a></li>
+                    <li><a href="/soluciones" class="hover:text-[var(--accent)] transition-colors">Validación Documental</a></li>
+                    <li><a href="/soluciones" class="hover:text-[var(--accent)] transition-colors">Rendición Gastos IA</a></li>
                     <li><a href="/soluciones/brokeria" class="text-amber-400 hover:text-amber-300 transition-colors font-medium">BrokerIA ✦</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Explora</h4>
                 <ul class="space-y-3 text-slate-400">
-                    <li><a href="/nosotros" class="hover:text-[var(--color-accent)] transition-colors">Nosotros</a></li>
-                    <li><a href="/blog" class="hover:text-[var(--color-accent)] transition-colors">Blog</a></li>
+                    <li><a href="/nosotros" class="hover:text-[var(--accent)] transition-colors">Nosotros</a></li>
+                    <li><a href="/blog" class="hover:text-[var(--accent)] transition-colors">Blog</a></li>
                 </ul>
             </div>
         </div>

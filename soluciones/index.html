@@ -96,15 +96,15 @@
   }
   </script>
     <style>
-      :root{--color-accent:#0097B2;--color-cta:#0097B2;--color-cta-hover:#007A91;--color-dark:#0F172A}
+      :root{--color-accent:#0097B2;--color-cta:#0097B2;--color-cta-hover: #00B5D6;--color-dark:#0F172A}
       *,::before,::after{box-sizing:border-box}
-      body{font-family:'Inter',sans-serif;background:#09090b;color:#cbd5e1;overflow-x:hidden;margin:0}
-      .glass-nav{background:rgba(0,0,0,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}
+      body{font-family:'Inter',sans-serif;background-color: var(--bg, #0B0B0F);color: var(--fg, #ECECEF);overflow-x:hidden;margin:0}
+      .glass-nav{background:rgba(11,11,15,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}
     .font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Space Grotesk",system-ui,sans-serif}.font-heading{font-family:"Geist","system-ui",sans-serif}</style>
     <link rel="preload" href="/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
   </head>
-  <body class="antialiased selection:bg-[#00f6ff] selection:text-black bg-zinc-950">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--color-accent)] focus:text-black focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
+  <body class="antialiased selection:bg-[var(--accent)] selection:text-white">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--accent)] focus:text-white focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
     <div class="noise-overlay"></div>
 
     <nav class="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
@@ -119,7 +119,7 @@
             class="h-8 w-8 opacity-90 group-hover:opacity-100 transition-opacity" height="32" width="32"
           />
           <span
-            class="font-bold text-lg tracking-tight text-white group-hover:text-[var(--color-accent)] transition-colors"
+            class="font-bold text-lg tracking-tight text-white group-hover:text-[var(--accent)] transition-colors"
             >Growth Buddies</span
           >
         </a>
@@ -147,7 +147,7 @@
 
     <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" style="display:none;" class="fixed inset-0 z-[200] flex-col" aria-hidden="true">
-      <div class="absolute inset-0 bg-[#050510]/96 backdrop-blur-xl"></div>
+      <div class="absolute inset-0/96 backdrop-blur-xl"></div>
       <div class="relative flex flex-col h-full px-6 py-6 overflow-y-auto">
         <div class="flex justify-between items-center mb-10">
           <a href="/" class="flex items-center gap-2">
@@ -167,7 +167,7 @@
           <a href="/#contacto" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Contacto</a>
         </nav>
         <div class="mt-8">
-          <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[#00f6ff]/10 hover:bg-[#00f6ff]/20 text-[#00f6ff] border border-[#00f6ff]/30 hover:border-[#00f6ff] font-semibold text-base py-4 px-5 rounded-full transition-all duration-300">
+          <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[var(--accent)]/10 hover:bg-[var(--accent)]/20 text-[var(--accent)] border border-[var(--accent)]/30 hover:border-[var(--accent)] font-semibold text-base py-4 px-5 rounded-full transition-all duration-300">
             Agendar conversación
           </a>
         </div>
@@ -177,13 +177,13 @@
 
     <!-- Header -->
     <header id="main-content" class="relative pt-40 pb-16 px-6 overflow-hidden">
-        <div class="absolute top-0 right-0 w-1/2 h-full bg-[var(--color-accent)]/5 blur-[100px] pointer-events-none"></div>
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-[var(--accent)]/5 blur-[100px] pointer-events-none"></div>
         <div class="max-w-3xl mx-auto text-center relative z-10">
         <nav aria-label="Migas de pan" class="mb-8">
           <ol class="flex items-center justify-center gap-2 text-xs text-slate-500">
-            <li><a href="/" class="hover:text-[var(--color-accent)] transition-colors">Inicio</a></li>
+            <li><a href="/" class="hover:text-[var(--accent)] transition-colors">Inicio</a></li>
             <li><span aria-hidden="true">/</span></li>
-            <li class="text-[var(--color-accent)]" aria-current="page">Ejemplos de Implementación</li>
+            <li class="text-[var(--accent)]" aria-current="page">Ejemplos de Implementación</li>
           </ol>
         </nav>
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white font-heading mb-8">
@@ -201,7 +201,7 @@
     <!-- Top CTA box -->
     <section class="px-6">
       <div class="max-w-3xl mx-auto">
-        <div class="my-8 p-6 md:p-8 rounded-2xl border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/5">
+        <div class="my-8 p-6 md:p-8 rounded-2xl border border-[var(--accent)]/30 bg-[var(--accent)]/5">
           <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
             <div class="flex-1">
               <h2 class="text-xl md:text-2xl font-bold text-white font-heading mb-2">¿Cuál es su caso?</h2>
@@ -221,7 +221,7 @@
 
         <article class="reveal mb-10 p-6 md:p-8 rounded-2xl border border-zinc-800 bg-zinc-900/40">
           <div class="flex items-center gap-3 mb-4">
-            <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--color-accent)] border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/5 rounded-full px-3 py-1">PropTech · Corretaje de Propiedades</span>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--accent)] border border-[var(--accent)]/30 bg-[var(--accent)]/5 rounded-full px-3 py-1">PropTech · Corretaje de Propiedades</span>
           </div>
           <h2 class="text-2xl md:text-3xl font-bold text-white font-heading mb-3">BrokerIA</h2>
           <p class="text-slate-300 leading-relaxed mb-4">
@@ -230,14 +230,14 @@
           <p class="text-slate-400 leading-relaxed mb-4">
             <strong class="text-white">La implementación:</strong> Diseñamos una plataforma que cruza ambas dimensiones automáticamente y genera un Pitch de Cierre con IA que le indica al corredor cómo abordar el cierre.
           </p>
-          <p class="text-[var(--color-accent)] font-semibold text-sm">
+          <p class="text-[var(--accent)] font-semibold text-sm">
             Resultado: Primera plataforma de su tipo en Chile · En piloto activo
           </p>
         </article>
 
         <article class="reveal mb-10 p-6 md:p-8 rounded-2xl border border-zinc-800 bg-zinc-900/40">
           <div class="flex items-center gap-3 mb-4">
-            <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--color-accent)] border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/5 rounded-full px-3 py-1">Legal Tech · Estudios Jurídicos</span>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--accent)] border border-[var(--accent)]/30 bg-[var(--accent)]/5 rounded-full px-3 py-1">Legal Tech · Estudios Jurídicos</span>
           </div>
           <h2 class="text-2xl md:text-3xl font-bold text-white font-heading mb-3">Inbox IA Legal</h2>
           <p class="text-slate-300 leading-relaxed mb-4">
@@ -246,14 +246,14 @@
           <p class="text-slate-400 leading-relaxed mb-4">
             <strong class="text-white">La implementación:</strong> Implementamos una IA que lee cada consulta entrante, evalúa viabilidad contra una matriz definida por el estudio, y entrega solo los leads calificados con un resumen ejecutivo. Las consultas no viables reciben respuesta automática inmediata.
           </p>
-          <p class="text-[var(--color-accent)] font-semibold text-sm">
+          <p class="text-[var(--accent)] font-semibold text-sm">
             Resultado: Tiempos de respuesta &lt; 15 minutos · 0% de leads no calificados llegando a socios
           </p>
         </article>
 
         <article class="reveal mb-10 p-6 md:p-8 rounded-2xl border border-zinc-800 bg-zinc-900/40">
           <div class="flex items-center gap-3 mb-4">
-            <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--color-accent)] border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/5 rounded-full px-3 py-1">Legal Tech · Gestión Documental</span>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--accent)] border border-[var(--accent)]/30 bg-[var(--accent)]/5 rounded-full px-3 py-1">Legal Tech · Gestión Documental</span>
           </div>
           <h2 class="text-2xl md:text-3xl font-bold text-white font-heading mb-3">DocuAgent IA</h2>
           <p class="text-slate-300 leading-relaxed mb-4">
@@ -262,14 +262,14 @@
           <p class="text-slate-400 leading-relaxed mb-4">
             <strong class="text-white">La implementación:</strong> La IA lee cada documento que se sube a una bandeja general, extrae datos clave (tipo, cliente, fecha, materia, cláusulas), lo renombra automáticamente y lo archiva en la carpeta correcta. La base resultante es buscable por consulta natural.
           </p>
-          <p class="text-[var(--color-accent)] font-semibold text-sm">
+          <p class="text-[var(--accent)] font-semibold text-sm">
             Resultado: Búsquedas en lenguaje natural sobre 100% del archivo
           </p>
         </article>
 
         <article class="reveal mb-10 p-6 md:p-8 rounded-2xl border border-zinc-800 bg-zinc-900/40">
           <div class="flex items-center gap-3 mb-4">
-            <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--color-accent)] border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/5 rounded-full px-3 py-1">Legal Tech · Compliance</span>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--accent)] border border-[var(--accent)]/30 bg-[var(--accent)]/5 rounded-full px-3 py-1">Legal Tech · Compliance</span>
           </div>
           <h2 class="text-2xl md:text-3xl font-bold text-white font-heading mb-3">Portal de Validación de Contratos</h2>
           <p class="text-slate-300 leading-relaxed mb-4">
@@ -278,14 +278,14 @@
           <p class="text-slate-400 leading-relaxed mb-4">
             <strong class="text-white">La implementación:</strong> Un portal donde el equipo sube el borrador, la IA lo analiza contra el playbook del estudio (RUTs, direcciones, confidencialidad, ley aplicable, fechas), y entrega un reporte semáforo en 30 segundos.
           </p>
-          <p class="text-[var(--color-accent)] font-semibold text-sm">
+          <p class="text-[var(--accent)] font-semibold text-sm">
             Resultado: Validación pre-firma en 30 segundos vs. 2-3 horas manuales
           </p>
         </article>
 
         <article class="reveal mb-10 p-6 md:p-8 rounded-2xl border border-zinc-800 bg-zinc-900/40">
           <div class="flex items-center gap-3 mb-4">
-            <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--color-accent)] border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/5 rounded-full px-3 py-1">Finance Ops · Servicios Profesionales</span>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--accent)] border border-[var(--accent)]/30 bg-[var(--accent)]/5 rounded-full px-3 py-1">Finance Ops · Servicios Profesionales</span>
           </div>
           <h2 class="text-2xl md:text-3xl font-bold text-white font-heading mb-3">Rendición de Gastos IA</h2>
           <p class="text-slate-300 leading-relaxed mb-4">
@@ -294,7 +294,7 @@
           <p class="text-slate-400 leading-relaxed mb-4">
             <strong class="text-white">La implementación:</strong> El usuario toma una foto de la boleta. La IA extrae fecha, monto, ítem, proveedor, identifica el cliente/proyecto en contexto, y actualiza el reporte de gastos al instante. Si tiene dudas, pregunta.
           </p>
-          <p class="text-[var(--color-accent)] font-semibold text-sm">
+          <p class="text-[var(--accent)] font-semibold text-sm">
             Resultado: 100% de gastos reembolsables capturados · Reporte listo para facturación
           </p>
         </article>
@@ -325,13 +325,13 @@
                     Diagnóstico y automatización con IA para empresas de servicios profesionales en Latinoamérica.
                 </p>
                 <div class="flex gap-4">
-                     <a href="https://www.linkedin.com/company/growth-buddies" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Growth Buddies" class="text-slate-400 hover:text-[var(--color-accent)] transition-colors">
+                     <a href="https://www.linkedin.com/company/growth-buddies" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Growth Buddies" class="text-slate-400 hover:text-[var(--accent)] transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
                     </a>
-                    <a href="mailto:edmundo@growthbuddies.cl" aria-label="Enviar correo electrónico a Edmundo de Growth Buddies" class="text-slate-400 hover:text-[var(--color-accent)] transition-colors">
+                    <a href="mailto:edmundo@growthbuddies.cl" aria-label="Enviar correo electrónico a Edmundo de Growth Buddies" class="text-slate-400 hover:text-[var(--accent)] transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                     </a>
-                    <a href="tel:+56965863160" aria-label="Llamar a Growth Buddies" class="text-slate-400 hover:text-[var(--color-accent)] transition-colors">
+                    <a href="tel:+56965863160" aria-label="Llamar a Growth Buddies" class="text-slate-400 hover:text-[var(--accent)] transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
                     </a>
                 </div>
@@ -341,9 +341,9 @@
             <div>
                 <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Empresa</h4>
                 <ul class="space-y-3 text-slate-400">
-                    <li><a href="/nosotros" class="hover:text-[var(--color-accent)] transition-colors">Nosotros</a></li>
-                    <li><a href="/casos" class="hover:text-[var(--color-accent)] transition-colors">Casos de Éxito</a></li>
-                    <li><a href="/#como-trabajamos" class="hover:text-[var(--color-accent)] transition-colors">Cómo Trabajamos</a></li>
+                    <li><a href="/nosotros" class="hover:text-[var(--accent)] transition-colors">Nosotros</a></li>
+                    <li><a href="/casos" class="hover:text-[var(--accent)] transition-colors">Casos de Éxito</a></li>
+                    <li><a href="/#como-trabajamos" class="hover:text-[var(--accent)] transition-colors">Cómo Trabajamos</a></li>
                 </ul>
             </div>
 
@@ -351,11 +351,11 @@
             <div>
                 <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Recursos</h4>
                 <ul class="space-y-3 text-slate-400">
-                    <li><a href="/blog" class="hover:text-[var(--color-accent)] transition-colors">Blog</a></li>
-                    <li><a href="/recursos/guia-ia-legal" class="hover:text-[var(--color-accent)] transition-colors">Guía Gratuita IA Legal</a></li>
-                    <li><a href="/soluciones" class="hover:text-[var(--color-accent)] transition-colors">Ejemplos de Implementación</a></li>
-                    <li><a href="/privacidad" class="hover:text-[var(--color-accent)] transition-colors">Privacidad</a></li>
-                    <li><a href="/terminos" class="hover:text-[var(--color-accent)] transition-colors">Términos</a></li>
+                    <li><a href="/blog" class="hover:text-[var(--accent)] transition-colors">Blog</a></li>
+                    <li><a href="/recursos/guia-ia-legal" class="hover:text-[var(--accent)] transition-colors">Guía Gratuita IA Legal</a></li>
+                    <li><a href="/soluciones" class="hover:text-[var(--accent)] transition-colors">Ejemplos de Implementación</a></li>
+                    <li><a href="/privacidad" class="hover:text-[var(--accent)] transition-colors">Privacidad</a></li>
+                    <li><a href="/terminos" class="hover:text-[var(--accent)] transition-colors">Términos</a></li>
                 </ul>
             </div>
         </div>

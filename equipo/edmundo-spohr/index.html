@@ -90,15 +90,15 @@
     <link href="../../dist/output.css" rel="stylesheet" />
 
     <link rel="dns-prefetch" href="https://calendly.com" />
-    <style>:root{--color-accent:#0097B2;--color-cta:#0097B2;--color-cta-hover:#007A91;--color-dark:#0F172A;}*,::before,::after{box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#09090b;color:#cbd5e1;overflow-x:hidden;margin:0}.glass-nav{background:rgba(0,0,0,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}.font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Space Grotesk",system-ui,sans-serif}.font-heading{font-family:"Geist","system-ui",sans-serif}</style>
+    <style>:root{--color-accent:#0097B2;--color-cta:#0097B2;--color-cta-hover: #00B5D6;--color-dark: #0B0B0F;}*,::before,::after{box-sizing:border-box}body{font-family:'Inter',sans-serif;background-color: var(--bg, #0B0B0F);color: var(--fg, #ECECEF);overflow-x:hidden;margin:0}.glass-nav{background:rgba(11,11,15,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}.font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Space Grotesk",system-ui,sans-serif}.font-heading{font-family:"Geist","system-ui",sans-serif}</style>
 
     <script src="/js/lenis.min.js" defer></script>
       <!-- Microsoft Clarity — deferred 3s to avoid blocking LCP -->
     <script>setTimeout(function(){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","vkf6fbh8zc");},3000);</script>
     <link rel="preload" href="/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
   </head>
-  <body class="antialiased selection:bg-[#00f6ff] selection:text-black bg-zinc-950">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--color-accent)] focus:text-black focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
+  <body class="antialiased selection:bg-[var(--accent)] selection:text-white">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--accent)] focus:text-white focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
     <div class="noise-overlay"></div>
 
     <nav class="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
@@ -112,7 +112,7 @@
             class="h-8 w-8 opacity-90 group-hover:opacity-100 transition-opacity" height="32" width="32"
           />
           <span
-            class="font-bold text-lg tracking-tight text-white group-hover:text-[var(--color-accent)] transition-colors"
+            class="font-bold text-lg tracking-tight text-white group-hover:text-[var(--accent)] transition-colors"
             >Growth Buddies</span
           >
         </a>
@@ -124,7 +124,7 @@
           <a href="/#contacto" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Contacto</a>
         </div>
         <div class="hidden md:block">
-          <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="bg-[var(--color-accent)]/10 hover:bg-[var(--color-accent)]/20 text-[var(--color-accent)] hover:text-white border border-[var(--color-accent)]/30 hover:border-[var(--color-accent)] font-semibold text-sm py-2 px-5 rounded-full transition-all duration-300">
+          <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="bg-[var(--accent)]/10 hover:bg-[var(--accent)]/20 text-[var(--accent)] hover:text-white border border-[var(--accent)]/30 hover:border-[var(--accent)] font-semibold text-sm py-2 px-5 rounded-full transition-all duration-300">
                 Agendar conversación
           </a>
         </div>
@@ -139,7 +139,7 @@
 
     <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" style="display:none;" class="fixed inset-0 z-[200] flex-col" aria-hidden="true">
-      <div class="absolute inset-0 bg-[#050510]/96 backdrop-blur-xl"></div>
+      <div class="absolute inset-0/96 backdrop-blur-xl"></div>
       <div class="relative flex flex-col h-full px-6 py-6 overflow-y-auto">
         <div class="flex justify-between items-center mb-10">
           <a href="/" class="flex items-center gap-2">
@@ -151,7 +151,7 @@
           </button>
         </div>
         <div class="mb-8">
-          <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[#00f6ff]/10 hover:bg-[#00f6ff]/20 text-[#00f6ff] border border-[#00f6ff]/30 hover:border-[#00f6ff] font-semibold text-base py-4 px-5 rounded-full transition-all duration-300">
+          <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[var(--accent)]/10 hover:bg-[var(--accent)]/20 text-[var(--accent)] border border-[var(--accent)]/30 hover:border-[var(--accent)] font-semibold text-base py-4 px-5 rounded-full transition-all duration-300">
             Agendar conversación
           </a>
         </div>
@@ -176,22 +176,22 @@
         <!-- Breadcrumb -->
         <nav aria-label="Migas de pan" class="mb-10 reveal">
           <ol class="flex items-center gap-2 text-xs text-slate-500">
-            <li><a href="/" class="hover:text-[var(--color-accent)] transition-colors">Inicio</a></li>
+            <li><a href="/" class="hover:text-[var(--accent)] transition-colors">Inicio</a></li>
             <li><span aria-hidden="true">/</span></li>
-            <li><a href="/#liderazgo" class="hover:text-[var(--color-accent)] transition-colors">Equipo</a></li>
+            <li><a href="/#liderazgo" class="hover:text-[var(--accent)] transition-colors">Equipo</a></li>
             <li><span aria-hidden="true">/</span></li>
-            <li class="text-[var(--color-accent)]" aria-current="page">Edmundo Spohr</li>
+            <li class="text-[var(--accent)]" aria-current="page">Edmundo Spohr</li>
           </ol>
         </nav>
 
         <!-- Header Profile -->
         <div class="flex flex-col md:flex-row items-start gap-10 mb-16 reveal">
           <div class="relative shrink-0 mx-auto md:mx-0">
-            <div class="absolute -inset-4 bg-[var(--color-accent)] rounded-full blur-2xl opacity-20 animate-pulse"></div>
+            <div class="absolute -inset-4 bg-[var(--accent)] rounded-full blur-2xl opacity-20 animate-pulse"></div>
             <img src="../../img/foto.webp" alt="Edmundo Spohr — CEO en Growth Buddies" class="relative w-48 h-48 rounded-full object-cover border-4 border-zinc-900 shadow-2xl" loading="lazy" height="192" width="192" />
           </div>
           <div class="text-center md:text-left">
-            <span class="text-[var(--color-accent)] font-bold tracking-wider text-xs uppercase font-display">CEO &amp; Fundador</span>
+            <span class="text-[var(--accent)] font-bold tracking-wider text-xs uppercase font-display">CEO &amp; Fundador</span>
             <h1 class="text-4xl md:text-5xl font-heading text-white mt-2 mb-4">Edmundo Spohr</h1>
             <p class="text-xl text-slate-300 italic leading-relaxed max-w-2xl mb-6">
               "La tecnología no reemplaza a los abogados, pero los abogados que usan tecnología reemplazarán a los que no."
@@ -205,7 +205,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
                 LinkedIn
               </a>
-              <a href="mailto:edmundo@growthbuddies.cl" class="inline-flex items-center gap-2 text-slate-400 hover:text-[var(--color-accent)] text-sm transition-colors">
+              <a href="mailto:edmundo@growthbuddies.cl" class="inline-flex items-center gap-2 text-slate-400 hover:text-[var(--accent)] text-sm transition-colors">
                 edmundo@growthbuddies.cl
               </a>
             </div>
@@ -237,16 +237,16 @@
               <h2 class="text-2xl font-heading text-white mb-5">Logros destacados</h2>
               <div class="space-y-4">
                 <div class="flex items-start gap-4 glass-card rounded-xl p-4 border border-zinc-800">
-                  <div class="w-8 h-8 rounded-lg bg-[var(--color-accent)]/10 flex items-center justify-center shrink-0 mt-0.5" aria-hidden="true">
+                  <div class="w-8 h-8 rounded-lg bg-[var(--accent)]/10 flex items-center justify-center shrink-0 mt-0.5" aria-hidden="true">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="#10B981" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                   </div>
                   <div>
                     <div class="text-white font-semibold text-sm mb-1">SPI Americas — Automatización multi-país</div>
-                    <div class="text-slate-400 text-sm">Lideró la implementación de plataforma documental con IA para gestión de PI en 4 países. Resultado: +17% facturación, 60% menos tiempo en gestión documental. <a href="/casos/spi-americas" class="text-[var(--color-accent)] hover:underline text-xs">Ver caso de estudio →</a></div>
+                    <div class="text-slate-400 text-sm">Lideró la implementación de plataforma documental con IA para gestión de PI en 4 países. Resultado: +17% facturación, 60% menos tiempo en gestión documental. <a href="/casos/spi-americas" class="text-[var(--accent)] hover:underline text-xs">Ver caso de estudio →</a></div>
                   </div>
                 </div>
                 <div class="flex items-start gap-4 glass-card rounded-xl p-4 border border-zinc-800">
-                  <div class="w-8 h-8 rounded-lg bg-[var(--color-accent)]/10 flex items-center justify-center shrink-0 mt-0.5" aria-hidden="true">
+                  <div class="w-8 h-8 rounded-lg bg-[var(--accent)]/10 flex items-center justify-center shrink-0 mt-0.5" aria-hidden="true">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="#10B981" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                   </div>
                   <div>
@@ -255,7 +255,7 @@
                   </div>
                 </div>
                 <div class="flex items-start gap-4 glass-card rounded-xl p-4 border border-zinc-800">
-                  <div class="w-8 h-8 rounded-lg bg-[var(--color-accent)]/10 flex items-center justify-center shrink-0 mt-0.5" aria-hidden="true">
+                  <div class="w-8 h-8 rounded-lg bg-[var(--accent)]/10 flex items-center justify-center shrink-0 mt-0.5" aria-hidden="true">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="#10B981" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                   </div>
                   <div>
@@ -272,11 +272,11 @@
             <div class="glass-card p-6 rounded-2xl border border-zinc-800 reveal">
               <h3 class="text-white font-bold mb-4 font-heading text-sm uppercase tracking-wider">Especialidades</h3>
               <ul class="space-y-3">
-                <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-[var(--color-accent)]">▸</span> Legal Tech &amp; RPA</li>
-                <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-[var(--color-accent)]">▸</span> IA Generativa &amp; RAG</li>
-                <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-[var(--color-accent)]">▸</span> Gestión del Cambio (Prosci)</li>
-                <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-[var(--color-accent)]">▸</span> Estrategia Operacional B2B</li>
-                <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-[var(--color-accent)]">▸</span> Process Mining</li>
+                <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-[var(--accent)]">▸</span> Legal Tech &amp; RPA</li>
+                <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-[var(--accent)]">▸</span> IA Generativa &amp; RAG</li>
+                <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-[var(--accent)]">▸</span> Gestión del Cambio (Prosci)</li>
+                <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-[var(--accent)]">▸</span> Estrategia Operacional B2B</li>
+                <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-[var(--accent)]">▸</span> Process Mining</li>
               </ul>
             </div>
 
@@ -295,9 +295,9 @@
             <div class="glass-card p-6 rounded-2xl border border-zinc-800 reveal">
               <h3 class="text-white font-bold mb-4 font-heading text-sm uppercase tracking-wider">También en el equipo</h3>
               <a href="/nosotros" class="flex items-center gap-3 group">
-                <img src="/img/felipe-2026.webp" alt="Felipe Soto Santibáñez" class="w-10 h-10 rounded-full object-cover ring-2 ring-zinc-700 group-hover:ring-[var(--color-accent)] transition-all" loading="lazy" height="40" width="40" />
+                <img src="/img/felipe-2026.webp" alt="Felipe Soto Santibáñez" class="w-10 h-10 rounded-full object-cover ring-2 ring-zinc-700 group-hover:ring-[var(--accent)] transition-all" loading="lazy" height="40" width="40" />
                 <div>
-                  <div class="text-white text-sm font-semibold group-hover:text-[var(--color-accent)] transition-colors">Felipe Soto Santibáñez</div>
+                  <div class="text-white text-sm font-semibold group-hover:text-[var(--accent)] transition-colors">Felipe Soto Santibáñez</div>
                   <div class="text-slate-500 text-xs">Consultor Senior</div>
                 </div>
               </a>
@@ -316,34 +316,34 @@
                 </a>
                 <p class="text-slate-400 leading-relaxed max-w-xs">Diagnóstico y automatización con IA para empresas de servicios profesionales en Latinoamérica.</p>
                 <div class="flex gap-4">
-                    <a href="https://www.linkedin.com/company/growth-buddies" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Growth Buddies" class="text-slate-400 hover:text-[var(--color-accent)] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
-                    <a href="mailto:edmundo@growthbuddies.cl" aria-label="Enviar correo electronico a Growth Buddies" class="text-slate-400 hover:text-[var(--color-accent)] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+                    <a href="https://www.linkedin.com/company/growth-buddies" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Growth Buddies" class="text-slate-400 hover:text-[var(--accent)] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+                    <a href="mailto:edmundo@growthbuddies.cl" aria-label="Enviar correo electronico a Growth Buddies" class="text-slate-400 hover:text-[var(--accent)] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
                 </div>
             </div>
             <div>
                 <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Servicios</h4>
                 <ul class="space-y-3 text-slate-400">
-                    <li><a href="/servicios/legal-tech" class="hover:text-[var(--color-accent)] transition-colors">Legal Tech &amp; Ops</a></li>
-                    <li><a href="/servicios/ia-corporativa" class="hover:text-[var(--color-accent)] transition-colors">IA Corporativa</a></li>
-                    <li><a href="/servicios/gestion-del-cambio" class="hover:text-[var(--color-accent)] transition-colors">Gestion del Cambio</a></li>
+                    <li><a href="/servicios/legal-tech" class="hover:text-[var(--accent)] transition-colors">Legal Tech &amp; Ops</a></li>
+                    <li><a href="/servicios/ia-corporativa" class="hover:text-[var(--accent)] transition-colors">IA Corporativa</a></li>
+                    <li><a href="/servicios/gestion-del-cambio" class="hover:text-[var(--accent)] transition-colors">Gestion del Cambio</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Mini Apps</h4>
                 <ul class="space-y-3 text-slate-400">
-                    <li><a href="/soluciones" class="hover:text-[var(--color-accent)] transition-colors">Triaje Legal</a></li>
-                    <li><a href="/soluciones" class="hover:text-[var(--color-accent)] transition-colors">Validacion Documental</a></li>
-                    <li><a href="/soluciones" class="hover:text-[var(--color-accent)] transition-colors">Rendicion Gastos IA</a></li>
+                    <li><a href="/soluciones" class="hover:text-[var(--accent)] transition-colors">Triaje Legal</a></li>
+                    <li><a href="/soluciones" class="hover:text-[var(--accent)] transition-colors">Validacion Documental</a></li>
+                    <li><a href="/soluciones" class="hover:text-[var(--accent)] transition-colors">Rendicion Gastos IA</a></li>
                     <li><a href="/soluciones/brokeria" class="text-amber-400 hover:text-amber-300 transition-colors font-medium">BrokerIA ✦</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Recursos</h4>
                 <ul class="space-y-3 text-slate-400">
-                    <li><a href="/nosotros" class="hover:text-[var(--color-accent)] transition-colors">Nosotros</a></li>
-                    <li><a href="/casos" class="hover:text-[var(--color-accent)] transition-colors">Casos de Éxito</a></li>
-                    <li><a href="/blog" class="hover:text-[var(--color-accent)] transition-colors">Blog</a></li>
-                    <li><a href="/recursos/guia-ia-legal" class="hover:text-[var(--color-accent)] transition-colors">Guía Gratuita</a></li>
+                    <li><a href="/nosotros" class="hover:text-[var(--accent)] transition-colors">Nosotros</a></li>
+                    <li><a href="/casos" class="hover:text-[var(--accent)] transition-colors">Casos de Éxito</a></li>
+                    <li><a href="/blog" class="hover:text-[var(--accent)] transition-colors">Blog</a></li>
+                    <li><a href="/recursos/guia-ia-legal" class="hover:text-[var(--accent)] transition-colors">Guía Gratuita</a></li>
                 </ul>
             </div>
         </div>

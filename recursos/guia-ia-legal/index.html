@@ -62,8 +62,7 @@
   <link rel="stylesheet" href="/dist/output.css" />
 
   <style>
-    :root { --accent: #00f6ff; }
-    body { background: #050510; color: #e2e8f0; font-family: 'Inter', sans-serif; }
+    body { background-color: var(--bg, #0B0B0F); color: #e2e8f0; font-family: 'Inter', sans-serif; }
     .font-display { font-family: 'Space Grotesk', sans-serif; }
     .accent { color: var(--accent); }
     .glass { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); backdrop-filter: blur(12px); }
@@ -88,19 +87,19 @@
   }
   </script>
     <style>
-      :root{--color-accent:#0097B2;--color-cta:#0097B2;--color-cta-hover:#007A91;--color-dark:#0F172A}
+      :root{--color-accent:#0097B2;--color-cta:#0097B2;--color-cta-hover: #00B5D6;--color-dark:#0F172A}
       *,::before,::after{box-sizing:border-box}
-      body{font-family:'Inter',sans-serif;background:#09090b;color:#cbd5e1;overflow-x:hidden;margin:0}
-      .glass-nav{background:rgba(0,0,0,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}
+      body{font-family:'Inter',sans-serif;background-color: var(--bg, #0B0B0F);color: var(--fg, #ECECEF);overflow-x:hidden;margin:0}
+      .glass-nav{background:rgba(11,11,15,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}
     .font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Space Grotesk",system-ui,sans-serif}.font-heading{font-family:"Geist","system-ui",sans-serif}</style>
 </head>
 <body>
 
   <!-- Skip link -->
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-[#00f6ff] focus:text-black focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold">Saltar al contenido</a>
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-[var(--accent)] focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold">Saltar al contenido</a>
 
   <!-- Nav -->
-  <nav class="sticky top-0 z-50 border-b border-white/5 bg-[#050510]/90 backdrop-blur-md">
+  <nav class="sticky top-0 z-50 border-b border-white/5/90 backdrop-blur-md">
     <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="/" class="flex items-center gap-2">
         <img src="/img/logo.webp" alt="Logotipo de Growth Buddies" class="h-8 w-8" height="32" width="32" />
@@ -118,11 +117,11 @@
     <div class="max-w-5xl mx-auto px-6 pt-6">
       <nav aria-label="Migas de pan">
         <ol class="flex items-center gap-2 text-xs text-slate-500">
-          <li><a href="/" class="hover:text-[var(--color-accent)] transition-colors">Inicio</a></li>
+          <li><a href="/" class="hover:text-[var(--accent)] transition-colors">Inicio</a></li>
           <li><span aria-hidden="true">/</span></li>
-          <li><a href="/recursos/guia-ia-legal" class="hover:text-[var(--color-accent)] transition-colors">Recursos</a></li>
+          <li><a href="/recursos/guia-ia-legal" class="hover:text-[var(--accent)] transition-colors">Recursos</a></li>
           <li><span aria-hidden="true">/</span></li>
-          <li class="text-[var(--color-accent)]" aria-current="page">Guía Gratuita IA</li>
+          <li class="text-[var(--accent)]" aria-current="page">Guía Gratuita IA</li>
         </ol>
       </nav>
     </div>
@@ -144,15 +143,15 @@
           <!-- What's inside -->
           <ul class="space-y-4 mb-8">
             <li class="flex items-start gap-3">
-              <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-[#00f6ff]/20 border border-[#00f6ff]/40 flex items-center justify-center text-[#00f6ff] text-xs font-bold">✓</span>
+              <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-[var(--accent)]/20 border border-[var(--accent)]/40 flex items-center justify-center text-[var(--accent)] text-xs font-bold">✓</span>
               <span class="text-slate-300 text-sm leading-relaxed"><strong class="text-white">5 procesos detallados</strong> con tiempo de implementación, ROI estimado y ejemplos reales de LATAM</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-[#00f6ff]/20 border border-[#00f6ff]/40 flex items-center justify-center text-[#00f6ff] text-xs font-bold">✓</span>
+              <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-[var(--accent)]/20 border border-[var(--accent)]/40 flex items-center justify-center text-[var(--accent)] text-xs font-bold">✓</span>
               <span class="text-slate-300 text-sm leading-relaxed"><strong class="text-white">Checklist de diagnóstico</strong> para saber cuál proceso aplicar primero según su industria</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-[#00f6ff]/20 border border-[#00f6ff]/40 flex items-center justify-center text-[#00f6ff] text-xs font-bold">✓</span>
+              <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-[var(--accent)]/20 border border-[var(--accent)]/40 flex items-center justify-center text-[var(--accent)] text-xs font-bold">✓</span>
               <span class="text-slate-300 text-sm leading-relaxed"><strong class="text-white">Calculadora de ROI</strong> integrada para estimar el ahorro en horas y dinero para su equipo</span>
             </li>
           </ul>
@@ -224,7 +223,7 @@
               <div class="text-4xl mb-4">✅</div>
               <h3 class="font-heading text-xl font-bold text-white mb-2">¡Listo! Revise su correo</h3>
               <p class="text-slate-400 text-sm mb-6">Le enviamos el link a la guía. Debería llegar en menos de 2 minutos.</p>
-              <a href="/recursos/guia-ia-legal/contenido" class="inline-flex items-center gap-2 text-[#00f6ff] font-semibold text-sm hover:underline">
+              <a href="/recursos/guia-ia-legal/contenido" class="inline-flex items-center gap-2 text-[var(--accent)] font-semibold text-sm hover:underline">
                 Acceder a la guía ahora →
               </a>
             </div>
@@ -265,7 +264,7 @@
                 <p class="text-slate-400 text-sm">El agente lee, clasifica y prioriza todo lo que entra — sin que toques nada.</p>
               </div>
               <span class="flex-shrink-0 text-right">
-                <span class="block text-[#00f6ff] font-bold text-lg">10–15h</span>
+                <span class="block text-[var(--accent)] font-bold text-lg">10–15h</span>
                 <span class="text-xs text-slate-500">ahorradas/semana</span>
               </span>
             </div>
@@ -279,7 +278,7 @@
                 <p class="text-slate-400 text-sm">Llena plantillas con datos del cliente y genera borradores listos para revisar.</p>
               </div>
               <span class="flex-shrink-0 text-right">
-                <span class="block text-[#00f6ff] font-bold text-lg">60 min</span>
+                <span class="block text-[var(--accent)] font-bold text-lg">60 min</span>
                 <span class="text-xs text-slate-500">ahorrados/doc</span>
               </span>
             </div>
@@ -293,7 +292,7 @@
                 <p class="text-slate-400 text-sm">Responde el 60% de las consultas de clientes en segundos, 24/7.</p>
               </div>
               <span class="flex-shrink-0 text-right">
-                <span class="block text-[#00f6ff] font-bold text-lg">4h</span>
+                <span class="block text-[var(--accent)] font-bold text-lg">4h</span>
                 <span class="text-xs text-slate-500">ahorradas/día</span>
               </span>
             </div>
@@ -307,7 +306,7 @@
                 <p class="text-slate-400 text-sm">Secuencias de seguimiento inteligentes que convierten sin esfuerzo manual.</p>
               </div>
               <span class="flex-shrink-0 text-right">
-                <span class="block text-[#00f6ff] font-bold text-lg">+35%</span>
+                <span class="block text-[var(--accent)] font-bold text-lg">+35%</span>
                 <span class="text-xs text-slate-500">conversión</span>
               </span>
             </div>
@@ -321,7 +320,7 @@
                 <p class="text-slate-400 text-sm">Foto de boleta → categorización automática → informe listo. Cierra el mes en 1 día.</p>
               </div>
               <span class="flex-shrink-0 text-right">
-                <span class="block text-[#00f6ff] font-bold text-lg">2 sem</span>
+                <span class="block text-[var(--accent)] font-bold text-lg">2 sem</span>
                 <span class="text-xs text-slate-500">recuperadas/mes</span>
               </span>
             </div>
@@ -331,7 +330,7 @@
         <!-- CTA repeat -->
         <div class="mt-12 text-center">
           <p class="text-slate-400 mb-4">Reciba la guía completa con el paso a paso de implementación:</p>
-          <a href="#" onclick="document.getElementById('email').focus();return false;" class="inline-flex items-center gap-2 bg-[#00f6ff] text-[#050510] font-bold py-4 px-8 rounded-full hover:opacity-90 transition-opacity">
+          <a href="#" onclick="document.getElementById('email').focus();return false;" class="inline-flex items-center gap-2 bg-[var(--accent)] text-white font-bold py-4 px-8 rounded-full hover:opacity-90 transition-opacity">
             Descargar gratis ahora
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>

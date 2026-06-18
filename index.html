@@ -378,99 +378,11 @@
       ::after {
         box-sizing: border-box;
       }
-      body {
-        font-family: "Inter", sans-serif;
-        background-color: #000;
-        color: #f8fafc;
-        overflow-x: hidden;
-        margin: 0;
-      }
-      .glass-nav {
-        background: rgba(0, 0, 0, 0.7);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      }
-      .video-background-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        z-index: -1;
-      }
-      #video-background {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0.3;
-      }
-      .video-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(
-          ellipse at center,
-          rgba(0, 0, 0, 0.4) 0%,
-          rgba(0, 0, 0, 0.8) 60%,
-          rgba(0, 0, 0, 1) 100%
-        );
-        z-index: -1;
-      }
-      .animated-gradient-text {
-        background-image: linear-gradient(90deg, #e2e8f0, #f8fafc, #e2e8f0);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-size: 200% 100%;
-        animation: gradient-animation 4s ease infinite;
-      }
-      @keyframes gradient-animation {
-        0% {
-          background-position: 200% center;
-        }
-        50% {
-          background-position: 0% center;
-        }
-        100% {
-          background-position: 200% center;
-        }
-      }
-      .animate-in {
-        animation: fade-in-up 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-      }
-      @keyframes fade-in-up {
-        0% {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      .noise-overlay {
-        position: fixed;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        z-index: 40;
-        pointer-events: none;
-        opacity: 0.04;
-      }
-      .font-serif {
-        font-family: "Instrument Serif", Georgia, serif;
-      }
-      .font-display {
-        font-family: "Space Grotesk", system-ui, sans-serif;
-      }
-      .font-heading {
-        font-family: "Geist", "system-ui", sans-serif;
-      }
+      /* Critical inline — overrides resolved by dist/output.css */
+      body { font-family: "Inter", sans-serif; background-color: var(--bg, #0B0B0F); color: var(--fg, #ECECEF); overflow-x: hidden; margin: 0; }
+      .font-serif    { font-family: "Instrument Serif", Georgia, serif; }
+      .font-heading  { font-family: "Geist", system-ui, sans-serif; }
+      .font-display  { font-family: "Inter", system-ui, sans-serif; }
     </style>
 
     <link href="./dist/output.css" rel="stylesheet" />
@@ -515,10 +427,10 @@
       }, 3000);
     </script>
   </head>
-  <body class="antialiased selection:bg-[#00f6ff] selection:text-black">
+  <body class="antialiased selection:bg-[var(--accent)] selection:text-white">
     <a
       href="#main-content"
-      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--color-accent)] focus:text-black focus:px-4 focus:py-2 focus:rounded"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--accent)] focus:text-white focus:px-4 focus:py-2 focus:rounded"
       >Saltar al contenido</a
     >
     <div class="noise-overlay"></div>
@@ -537,7 +449,7 @@
             width="32"
           />
           <span
-            class="font-bold text-lg tracking-tight text-white group-hover:text-[var(--color-accent)] transition-colors"
+            class="font-bold text-lg tracking-tight text-white group-hover:text-[var(--accent)] transition-colors"
             >Growth Buddies</span
           >
         </a>
@@ -576,7 +488,7 @@
             href="https://calendly.com/espohr/conversemos"
             target="_blank"
             rel="noopener noreferrer"
-            class="bg-[var(--color-accent)]/10 hover:bg-[var(--color-accent)]/20 text-[var(--color-accent)] hover:text-white border border-[var(--color-accent)]/30 hover:border-[var(--color-accent)] font-semibold text-sm py-2 px-5 rounded-full transition-all duration-300"
+            class="bg-[var(--accent)]/10 hover:bg-[var(--accent)]/20 text-[var(--accent)] hover:text-white border border-[var(--accent)]/30 hover:border-[var(--accent)] font-semibold text-sm py-2 px-5 rounded-full transition-all duration-300"
           >
             Agendar conversación
           </a>
@@ -605,7 +517,7 @@
     >
       <div
         id="mobile-menu-backdrop"
-        class="absolute inset-0 bg-[#050510]/96 backdrop-blur-xl"
+        class="absolute inset-0/96 backdrop-blur-xl"
       ></div>
       <div class="relative flex flex-col h-full px-6 py-6 overflow-y-auto">
         <div class="flex justify-between items-center mb-6">
@@ -645,7 +557,7 @@
             href="https://calendly.com/espohr/conversemos"
             target="_blank"
             rel="noopener noreferrer"
-            class="block w-full text-center bg-[#00f6ff]/10 hover:bg-[#00f6ff]/20 text-[#00f6ff] border border-[#00f6ff]/30 hover:border-[#00f6ff] font-semibold text-base py-4 px-5 rounded-full transition-all duration-300"
+            class="block w-full text-center bg-[var(--accent)]/10 hover:bg-[var(--accent)]/20 text-[var(--accent)] border border-[var(--accent)]/30 hover:border-[var(--accent)] font-semibold text-base py-4 px-5 rounded-full transition-all duration-300"
           >
             Agendar conversación
           </a>
@@ -708,7 +620,7 @@
       aria-hidden="true"
     >
       <!-- Mobile layout: WA primary, calendar icon secondary -->
-      <div class="md:hidden bg-zinc-950/98 py-2.5 px-4 flex items-center gap-2">
+      <div class="md:hidden/98 py-2.5 px-4 flex items-center gap-2">
         <a
           href="https://wa.me/56965863160?text=Hola%20Growth%20Buddies%21%20Quisiera%20agendar%20una%20conversaci%C3%B3n%20con%20el%20director.%20%C2%BFPodemos%20coordinar%3F"
           target="_blank"
@@ -758,7 +670,7 @@
       </div>
       <!-- Desktop layout: slim bar, Calendly primary, WA text link -->
       <div
-        class="hidden md:flex bg-zinc-950/80 py-2 px-8 items-center justify-center gap-6"
+        class="hidden md:flex/80 py-2 px-8 items-center justify-center gap-6"
       >
         <p class="text-sm text-slate-400">
           30 minutos con el director.
@@ -844,7 +756,7 @@
           La mayoría de las empresas que implementan IA pierden dinero.<br
             class="hidden md:inline"
           />
-          <span class="text-[var(--color-accent)]"
+          <span class="text-[var(--accent)]"
             >Nosotros aseguramos que usted no sea una de ellas.</span
           >
         </h1>
@@ -1067,12 +979,12 @@
       <!-- Pain Validation — ¿Le suena alguno de estos? -->
       <section
         id="dolores"
-        class="py-16 md:py-24 px-6 bg-zinc-950 border-b border-zinc-900"
+        class="py-16 md:py-24 px-6 border-b border-zinc-900"
       >
         <div class="max-w-4xl mx-auto">
           <div class="text-center mb-10 md:mb-14 reveal">
             <p
-              class="text-xs font-bold text-[var(--color-accent)] tracking-widest uppercase mb-3 font-display"
+              class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase mb-3 font-display"
             >
               Reconocimiento del Problema
             </p>
@@ -1092,10 +1004,10 @@
           >
             <!-- Dolor 1 -->
             <div
-              class="flex items-start gap-4 bg-zinc-900/60 border border-zinc-800 rounded-xl p-5 hover:border-[var(--color-accent)]/40 transition-colors"
+              class="flex items-start gap-4 bg-zinc-900/60 border border-zinc-800 rounded-xl p-5 hover:border-[var(--accent)]/40 transition-colors"
             >
               <div
-                class="flex-shrink-0 w-9 h-9 rounded-lg bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/20 flex items-center justify-center mt-0.5"
+                class="flex-shrink-0 w-9 h-9 rounded-lg bg-[var(--accent)]/10 border border-[var(--accent)]/20 flex items-center justify-center mt-0.5"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1120,10 +1032,10 @@
 
             <!-- Dolor 2 -->
             <div
-              class="flex items-start gap-4 bg-zinc-900/60 border border-zinc-800 rounded-xl p-5 hover:border-[var(--color-accent)]/40 transition-colors"
+              class="flex items-start gap-4 bg-zinc-900/60 border border-zinc-800 rounded-xl p-5 hover:border-[var(--accent)]/40 transition-colors"
             >
               <div
-                class="flex-shrink-0 w-9 h-9 rounded-lg bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/20 flex items-center justify-center mt-0.5"
+                class="flex-shrink-0 w-9 h-9 rounded-lg bg-[var(--accent)]/10 border border-[var(--accent)]/20 flex items-center justify-center mt-0.5"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1149,10 +1061,10 @@
 
             <!-- Dolor 3 -->
             <div
-              class="flex items-start gap-4 bg-zinc-900/60 border border-zinc-800 rounded-xl p-5 hover:border-[var(--color-accent)]/40 transition-colors"
+              class="flex items-start gap-4 bg-zinc-900/60 border border-zinc-800 rounded-xl p-5 hover:border-[var(--accent)]/40 transition-colors"
             >
               <div
-                class="flex-shrink-0 w-9 h-9 rounded-lg bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/20 flex items-center justify-center mt-0.5"
+                class="flex-shrink-0 w-9 h-9 rounded-lg bg-[var(--accent)]/10 border border-[var(--accent)]/20 flex items-center justify-center mt-0.5"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1179,10 +1091,10 @@
 
             <!-- Dolor 4 -->
             <div
-              class="flex items-start gap-4 bg-zinc-900/60 border border-zinc-800 rounded-xl p-5 hover:border-[var(--color-accent)]/40 transition-colors"
+              class="flex items-start gap-4 bg-zinc-900/60 border border-zinc-800 rounded-xl p-5 hover:border-[var(--accent)]/40 transition-colors"
             >
               <div
-                class="flex-shrink-0 w-9 h-9 rounded-lg bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/20 flex items-center justify-center mt-0.5"
+                class="flex-shrink-0 w-9 h-9 rounded-lg bg-[var(--accent)]/10 border border-[var(--accent)]/20 flex items-center justify-center mt-0.5"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1208,10 +1120,10 @@
 
             <!-- Dolor 5 — full width -->
             <div
-              class="md:col-span-2 flex items-start gap-4 bg-zinc-900/60 border border-zinc-800 rounded-xl p-5 hover:border-[var(--color-accent)]/40 transition-colors"
+              class="md:col-span-2 flex items-start gap-4 bg-zinc-900/60 border border-zinc-800 rounded-xl p-5 hover:border-[var(--accent)]/40 transition-colors"
             >
               <div
-                class="flex-shrink-0 w-9 h-9 rounded-lg bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/20 flex items-center justify-center mt-0.5"
+                class="flex-shrink-0 w-9 h-9 rounded-lg bg-[var(--accent)]/10 border border-[var(--accent)]/20 flex items-center justify-center mt-0.5"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1245,7 +1157,7 @@
               href="https://calendly.com/espohr/conversemos"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 text-[var(--color-accent)] font-semibold hover:underline text-sm"
+              class="inline-flex items-center gap-2 text-[var(--accent)] font-semibold hover:underline text-sm"
               onclick="
                 if (typeof gtag !== 'undefined') {
                   gtag('event', 'calendly_click', {
@@ -1309,12 +1221,12 @@
       </div>
       <section
         id="clientes"
-        class="py-16 md:py-24 border-b border-zinc-900 bg-zinc-950"
+        class="py-16 md:py-24 border-b border-zinc-900"
       >
         <div class="max-w-6xl mx-auto px-6">
           <div class="text-center mb-12">
             <p
-              class="text-xs font-bold text-[var(--color-accent)] tracking-widest uppercase mb-3 font-display"
+              class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase mb-3 font-display"
             >
               Casos de Éxito
             </p>
@@ -1333,10 +1245,10 @@
             <!-- 1. SPI Americas — con link a caso -->
             <a
               href="/casos/spi-americas"
-              class="group relative flex flex-col rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-950 overflow-hidden hover:border-[var(--color-accent)]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[var(--color-accent)]/5"
+              class="group relative flex flex-col rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-950 overflow-hidden hover:border-[var(--accent)]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[var(--accent)]/5"
             >
               <div
-                class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--color-accent)]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--accent)]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               ></div>
               <div class="p-6 flex flex-col flex-1">
                 <div class="flex items-start justify-between gap-3 mb-5">
@@ -1361,7 +1273,7 @@
                   >
                 </div>
                 <h3
-                  class="text-base font-bold text-white mb-2 group-hover:text-[var(--color-accent)] transition-colors leading-snug"
+                  class="text-base font-bold text-white mb-2 group-hover:text-[var(--accent)] transition-colors leading-snug"
                 >
                   SPI Americas
                 </h3>
@@ -1374,11 +1286,11 @@
                 <div
                   class="mt-5 pt-4 border-t border-zinc-800 flex items-center justify-between"
                 >
-                  <p class="text-sm font-bold text-[var(--color-accent)]">
+                  <p class="text-sm font-bold text-[var(--accent)]">
                     +17% facturación · 60% menos tiempo documental
                   </p>
                   <span
-                    class="text-xs font-semibold text-slate-500 group-hover:text-[var(--color-accent)] transition-colors flex-shrink-0 ml-3"
+                    class="text-xs font-semibold text-slate-500 group-hover:text-[var(--accent)] transition-colors flex-shrink-0 ml-3"
                     >Ver caso →</span
                   >
                 </div>
@@ -1387,10 +1299,10 @@
 
             <!-- 2. MundoSocios (CChC) -->
             <div
-              class="group relative flex flex-col rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-950 overflow-hidden hover:border-[var(--color-accent)]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[var(--color-accent)]/5"
+              class="group relative flex flex-col rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-950 overflow-hidden hover:border-[var(--accent)]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[var(--accent)]/5"
             >
               <div
-                class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--color-accent)]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--accent)]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               ></div>
               <div class="p-6 flex flex-col flex-1">
                 <div class="flex items-start justify-between gap-3 mb-5">
@@ -1415,7 +1327,7 @@
                   >
                 </div>
                 <h3
-                  class="text-base font-bold text-white mb-2 group-hover:text-[var(--color-accent)] transition-colors leading-snug"
+                  class="text-base font-bold text-white mb-2 group-hover:text-[var(--accent)] transition-colors leading-snug"
                 >
                   MundoSocios (CChC)
                 </h3>
@@ -1425,7 +1337,7 @@
                   manuales de administración.
                 </p>
                 <div class="mt-5 pt-4 border-t border-zinc-800">
-                  <p class="text-sm font-bold text-[var(--color-accent)]">
+                  <p class="text-sm font-bold text-[var(--accent)]">
                     80% reducción de horas manuales
                   </p>
                 </div>
@@ -1434,10 +1346,10 @@
 
             <!-- 3. Hits Corredora de Seguros -->
             <div
-              class="group relative flex flex-col rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-950 overflow-hidden hover:border-[var(--color-accent)]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[var(--color-accent)]/5"
+              class="group relative flex flex-col rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-950 overflow-hidden hover:border-[var(--accent)]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[var(--accent)]/5"
             >
               <div
-                class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--color-accent)]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--accent)]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               ></div>
               <div class="p-6 flex flex-col flex-1">
                 <div class="flex items-start justify-between gap-3 mb-5">
@@ -1462,7 +1374,7 @@
                   >
                 </div>
                 <h3
-                  class="text-base font-bold text-white mb-2 group-hover:text-[var(--color-accent)] transition-colors leading-snug"
+                  class="text-base font-bold text-white mb-2 group-hover:text-[var(--accent)] transition-colors leading-snug"
                 >
                   Hits Corredora de Seguros
                 </h3>
@@ -1473,7 +1385,7 @@
                   automatización con IA.
                 </p>
                 <div class="mt-5 pt-4 border-t border-zinc-800">
-                  <p class="text-sm font-bold text-[var(--color-accent)]">
+                  <p class="text-sm font-bold text-[var(--accent)]">
                     Tiempos de respuesta &lt; 15 minutos
                   </p>
                 </div>
@@ -1482,10 +1394,10 @@
 
             <!-- 4. Potenciarte Eventos -->
             <div
-              class="group relative flex flex-col rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-950 overflow-hidden hover:border-[var(--color-accent)]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[var(--color-accent)]/5"
+              class="group relative flex flex-col rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-950 overflow-hidden hover:border-[var(--accent)]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[var(--accent)]/5"
             >
               <div
-                class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--color-accent)]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--accent)]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               ></div>
               <div class="p-6 flex flex-col flex-1">
                 <div class="flex items-start justify-between gap-3 mb-5">
@@ -1510,7 +1422,7 @@
                   >
                 </div>
                 <h3
-                  class="text-base font-bold text-white mb-2 group-hover:text-[var(--color-accent)] transition-colors leading-snug"
+                  class="text-base font-bold text-white mb-2 group-hover:text-[var(--accent)] transition-colors leading-snug"
                 >
                   Potenciarte Eventos
                 </h3>
@@ -1520,7 +1432,7 @@
                   eliminó cuellos de botella operativos.
                 </p>
                 <div class="mt-5 pt-4 border-t border-zinc-800">
-                  <p class="text-sm font-bold text-[var(--color-accent)]">
+                  <p class="text-sm font-bold text-[var(--accent)]">
                     68% reducción de tiempo en check-in
                   </p>
                 </div>
@@ -1529,10 +1441,10 @@
 
             <!-- 5. Ingeglobal -->
             <div
-              class="group relative flex flex-col rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-950 overflow-hidden hover:border-[var(--color-accent)]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[var(--color-accent)]/5"
+              class="group relative flex flex-col rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-950 overflow-hidden hover:border-[var(--accent)]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[var(--accent)]/5"
             >
               <div
-                class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--color-accent)]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--accent)]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               ></div>
               <div class="p-6 flex flex-col flex-1">
                 <div class="flex items-start justify-between gap-3 mb-5">
@@ -1551,7 +1463,7 @@
                   >
                 </div>
                 <h3
-                  class="text-base font-bold text-white mb-2 group-hover:text-[var(--color-accent)] transition-colors leading-snug"
+                  class="text-base font-bold text-white mb-2 group-hover:text-[var(--accent)] transition-colors leading-snug"
                 >
                   Ingeglobal
                 </h3>
@@ -1562,7 +1474,7 @@
                   nuevo producto monetizable.
                 </p>
                 <div class="mt-5 pt-4 border-t border-zinc-800">
-                  <p class="text-sm font-bold text-[var(--color-accent)]">
+                  <p class="text-sm font-bold text-[var(--accent)]">
                     Nuevo producto monetizable de monitoreo en vivo
                   </p>
                 </div>
@@ -1571,10 +1483,10 @@
 
             <!-- 6. Fundación Katy Summer -->
             <div
-              class="group relative flex flex-col rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-950 overflow-hidden hover:border-[var(--color-accent)]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[var(--color-accent)]/5"
+              class="group relative flex flex-col rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-950 overflow-hidden hover:border-[var(--accent)]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[var(--accent)]/5"
             >
               <div
-                class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--color-accent)]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--accent)]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               ></div>
               <div class="p-6 flex flex-col flex-1">
                 <div class="flex items-start justify-between gap-3 mb-5">
@@ -1599,7 +1511,7 @@
                   >
                 </div>
                 <h3
-                  class="text-base font-bold text-white mb-2 group-hover:text-[var(--color-accent)] transition-colors leading-snug"
+                  class="text-base font-bold text-white mb-2 group-hover:text-[var(--accent)] transition-colors leading-snug"
                 >
                   Fundación Katy Summer
                 </h3>
@@ -1609,7 +1521,7 @@
                   fundación optimizar sus programas con datos reales.
                 </p>
                 <div class="mt-5 pt-4 border-t border-zinc-800">
-                  <p class="text-sm font-bold text-[var(--color-accent)]">
+                  <p class="text-sm font-bold text-[var(--accent)]">
                     Métricas de impacto para optimizar la gestión de talleres
                   </p>
                 </div>
@@ -1625,7 +1537,7 @@
               href="https://calendly.com/espohr/conversemos"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 text-[var(--color-accent)] font-semibold hover:underline"
+              class="inline-flex items-center gap-2 text-[var(--accent)] font-semibold hover:underline"
               onclick="
                 if (typeof gtag !== 'undefined') {
                   gtag('event', 'calendly_click', {
@@ -1643,12 +1555,12 @@
       <!-- ICP Filter — Para quién es / Para quién no es -->
       <section
         id="para-quien"
-        class="py-16 md:py-24 px-6 bg-zinc-950 border-b border-zinc-900"
+        class="py-16 md:py-24 px-6 border-b border-zinc-900"
       >
         <div class="max-w-5xl mx-auto">
           <div class="text-center mb-10 md:mb-14 reveal">
             <p
-              class="text-xs font-bold text-[var(--color-accent)] tracking-widest uppercase mb-3 font-display"
+              class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase mb-3 font-display"
             >
               Perfil de Cliente
             </p>
@@ -1670,7 +1582,7 @@
             >
               <div class="flex items-center gap-2 mb-6">
                 <span
-                  class="w-5 h-5 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center flex-shrink-0"
+                  class="w-5 h-5 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/25 flex items-center justify-center flex-shrink-0"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -1688,7 +1600,7 @@
                   </svg>
                 </span>
                 <span
-                  class="text-sm font-semibold text-emerald-400 uppercase tracking-wider font-display"
+                  class="text-sm font-semibold text-[var(--accent)] uppercase tracking-wider font-display"
                   >Para quién es</span
                 >
               </div>
@@ -1904,7 +1816,7 @@
       <!-- Cómo Trabajamos — Process Flow -->
       <section
         id="como-trabajamos"
-        class="py-16 md:py-24 px-6 border-b border-zinc-900 bg-zinc-950/60"
+        class="py-16 md:py-24 px-6 border-b border-zinc-900/60"
         role="region"
         aria-labelledby="como-trabajamos-heading"
         itemscope
@@ -1918,7 +1830,7 @@
         <div class="max-w-6xl mx-auto">
           <div class="text-center reveal mb-12 md:mb-16">
             <p
-              class="text-xs font-bold text-[var(--color-accent)] tracking-widest uppercase mb-3 font-display"
+              class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase mb-3 font-display"
             >
               Nuestro Proceso
             </p>
@@ -1938,14 +1850,14 @@
           <div class="relative">
             <!-- Connecting line (desktop only) -->
             <div
-              class="hidden md:block absolute top-10 left-[calc(16.67%+1.5rem)] right-[calc(16.67%+1.5rem)] h-px bg-gradient-to-r from-transparent via-[var(--color-accent)]/30 to-transparent"
+              class="hidden md:block absolute top-10 left-[calc(16.67%+1.5rem)] right-[calc(16.67%+1.5rem)] h-px bg-gradient-to-r from-transparent via-[var(--accent)]/30 to-transparent"
               aria-hidden="true"
             ></div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
               <!-- Step 1 -->
               <div
-                class="reveal group relative bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 md:p-8 hover:border-[var(--color-accent)]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--color-accent)]/5"
+                class="reveal group relative bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 md:p-8 hover:border-[var(--accent)]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--accent)]/5"
                 itemprop="step"
                 itemscope
                 itemtype="https://schema.org/HowToStep"
@@ -1953,17 +1865,17 @@
                 <meta itemprop="position" content="1" />
                 <div class="flex items-start justify-between mb-6">
                   <span
-                    class="text-5xl font-black text-[var(--color-accent)]/20 group-hover:text-[var(--color-accent)]/40 transition-colors font-display leading-none select-none"
+                    class="text-5xl font-black text-[var(--accent)]/20 group-hover:text-[var(--accent)]/40 transition-colors font-display leading-none select-none"
                     >1</span
                   >
                   <span
-                    class="text-[10px] font-bold uppercase tracking-wider text-[var(--color-accent)] border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/5 rounded-full px-3 py-1 whitespace-nowrap"
+                    class="text-[10px] font-bold uppercase tracking-wider text-[var(--accent)] border border-[var(--accent)]/30 bg-[var(--accent)]/5 rounded-full px-3 py-1 whitespace-nowrap"
                     >Gratuita · 30 min</span
                   >
                 </div>
                 <div class="mb-4">
                   <div
-                    class="w-10 h-10 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center justify-center text-[var(--color-accent)] group-hover:border-[var(--color-accent)]/50 transition-colors mb-4"
+                    class="w-10 h-10 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center justify-center text-[var(--accent)] group-hover:border-[var(--accent)]/50 transition-colors mb-4"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -2002,7 +1914,7 @@
 
               <!-- Step 2 -->
               <div
-                class="reveal group relative bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 md:p-8 hover:border-[var(--color-accent)]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--color-accent)]/5"
+                class="reveal group relative bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 md:p-8 hover:border-[var(--accent)]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--accent)]/5"
                 style="transition-delay: 100ms"
                 itemprop="step"
                 itemscope
@@ -2011,7 +1923,7 @@
                 <meta itemprop="position" content="2" />
                 <div class="flex items-start justify-between mb-6">
                   <span
-                    class="text-5xl font-black text-[var(--color-accent)]/20 group-hover:text-[var(--color-accent)]/40 transition-colors font-display leading-none select-none"
+                    class="text-5xl font-black text-[var(--accent)]/20 group-hover:text-[var(--accent)]/40 transition-colors font-display leading-none select-none"
                     >2</span
                   >
                   <span
@@ -2021,7 +1933,7 @@
                 </div>
                 <div class="mb-5">
                   <div
-                    class="w-10 h-10 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center justify-center text-[var(--color-accent)] group-hover:border-[var(--color-accent)]/50 transition-colors mb-4"
+                    class="w-10 h-10 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center justify-center text-[var(--accent)] group-hover:border-[var(--accent)]/50 transition-colors mb-4"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -2129,13 +2041,13 @@
                 </div>
                 <!-- Price block — always surrounded by value above and risk-reversal below -->
                 <div
-                  class="rounded-xl border border-[var(--color-accent)]/25 bg-[var(--color-accent)]/5 px-4 py-4"
+                  class="rounded-xl border border-[var(--accent)]/25 bg-[var(--accent)]/5 px-4 py-4"
                 >
                   <p class="text-base font-bold text-white mb-3">
                     Inversión: USD $3.000
                   </p>
                   <p class="text-xs text-slate-400 leading-relaxed mb-2">
-                    <span class="text-emerald-400 font-semibold"
+                    <span class="text-[var(--accent)] font-semibold"
                       >Garantía 100%:</span
                     >
                     si no identificamos al menos 3 oportunidades con ROI
@@ -2150,7 +2062,7 @@
 
               <!-- Step 3 -->
               <div
-                class="reveal group relative bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 md:p-8 hover:border-[var(--color-accent)]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--color-accent)]/5"
+                class="reveal group relative bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 md:p-8 hover:border-[var(--accent)]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--accent)]/5"
                 style="transition-delay: 200ms"
                 itemprop="step"
                 itemscope
@@ -2159,7 +2071,7 @@
                 <meta itemprop="position" content="3" />
                 <div class="flex items-start justify-between mb-6">
                   <span
-                    class="text-5xl font-black text-[var(--color-accent)]/20 group-hover:text-[var(--color-accent)]/40 transition-colors font-display leading-none select-none"
+                    class="text-5xl font-black text-[var(--accent)]/20 group-hover:text-[var(--accent)]/40 transition-colors font-display leading-none select-none"
                     >3</span
                   >
                   <span
@@ -2169,7 +2081,7 @@
                 </div>
                 <div class="mb-4">
                   <div
-                    class="w-10 h-10 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center justify-center text-[var(--color-accent)] group-hover:border-[var(--color-accent)]/50 transition-colors mb-4"
+                    class="w-10 h-10 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center justify-center text-[var(--accent)] group-hover:border-[var(--accent)]/50 transition-colors mb-4"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -2217,7 +2129,7 @@
         <div class="max-w-3xl mx-auto">
           <div class="text-center mb-10">
             <p
-              class="text-xs font-bold text-[var(--color-accent)] tracking-widest uppercase mb-3 font-display"
+              class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase mb-3 font-display"
             >
               Diagnóstico rápido
             </p>
@@ -2245,7 +2157,7 @@
               <div class="h-1 bg-zinc-800 rounded-full overflow-hidden">
                 <div
                   id="quiz-bar"
-                  class="h-full bg-[var(--color-accent)] transition-all duration-300"
+                  class="h-full bg-[var(--accent)] transition-all duration-300"
                   style="width: 14%"
                 ></div>
               </div>
@@ -2276,7 +2188,7 @@
                     id="quiz-email"
                     required
                     placeholder="suemail@empresa.com"
-                    class="w-full bg-zinc-950 border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:border-[var(--color-accent)] focus:outline-none transition-colors"
+                    class="w-full border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:border-[var(--accent)] focus:outline-none transition-colors"
                   />
                 </div>
                 <div>
@@ -2291,7 +2203,7 @@
                     required
                     minlength="3"
                     placeholder="Nombre de su empresa"
-                    class="w-full bg-zinc-950 border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:border-[var(--color-accent)] focus:outline-none transition-colors"
+                    class="w-full border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:border-[var(--accent)] focus:outline-none transition-colors"
                   />
                   <p
                     id="quiz-company-error"
@@ -2337,7 +2249,7 @@
 
             <div id="quiz-success" class="hidden text-center">
               <div
-                class="w-16 h-16 rounded-full bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/30 flex items-center justify-center mx-auto mb-6"
+                class="w-16 h-16 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/30 flex items-center justify-center mx-auto mb-6"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -2349,7 +2261,7 @@
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="text-[var(--color-accent)]"
+                  class="text-[var(--accent)]"
                 >
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
@@ -2389,12 +2301,12 @@
       <!-- Google Reviews — supplementary social proof -->
       <section
         id="resenas-google"
-        class="py-14 md:py-20 px-6 border-b border-white/5 relative bg-zinc-950 overflow-hidden"
+        class="py-14 md:py-20 px-6 border-b border-white/5 relative overflow-hidden"
       >
         <!-- Glow decorativo -->
         <div class="absolute inset-0 max-w-full pointer-events-none">
           <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[var(--color-accent)]/5 blur-[120px] rounded-full"
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[var(--accent)]/5 blur-[120px] rounded-full"
           ></div>
         </div>
 
@@ -2501,7 +2413,7 @@
           TODO: Replace these 3 cards with new business-outcome reviews when received from Hits, SPI Americas, and Potenciarte.
           Drop-in structure for each new card:
 
-          <article class="bg-zinc-800/40 backdrop-blur-sm rounded-2xl p-6 border border-zinc-700/50 shadow-xl relative overflow-hidden group hover:border-[var(--color-accent)]/40 transition-colors">
+          <article class="bg-zinc-800/40 backdrop-blur-sm rounded-2xl p-6 border border-zinc-700/50 shadow-xl relative overflow-hidden group hover:border-[var(--accent)]/40 transition-colors">
             <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div class="relative z-10 flex flex-col h-full">
                Header: stars + Google badge
@@ -2514,14 +2426,14 @@
                 </svg>
               </div>
                Business metric (prominent, cyan)
-              <p class="text-sm font-bold text-[var(--color-accent)] mb-3">+17% facturación en 6 meses</p>
+              <p class="text-sm font-bold text-[var(--accent)] mb-3">+17% facturación en 6 meses</p>
                Full quote
               <blockquote class="text-sm leading-relaxed italic mb-5 text-slate-300 flex-1">
                 "[Full quote with concrete business outcome and timeline]"
               </blockquote>
                Person info
               <div class="flex items-center gap-3 pt-4 border-t border-zinc-700/50">
-                <div class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-white flex-shrink-0 bg-[var(--color-accent)] ring-2 ring-zinc-800">XX</div>
+                <div class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-white flex-shrink-0 bg-[var(--accent)] ring-2 ring-zinc-800">XX</div>
                 <div>
                   <p class="text-[0.8rem] font-semibold text-white leading-tight">Nombre Apellido</p>
                   <p class="text-[0.7rem] text-slate-400">Cargo · Empresa</p>
@@ -2539,7 +2451,7 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
             <!-- Review 1: Dra. Daniela Corral H. -->
             <article
-              class="bg-zinc-800/40 backdrop-blur-sm rounded-2xl p-6 border border-zinc-700/50 shadow-xl relative overflow-hidden group hover:border-[var(--color-accent)]/40 transition-colors"
+              class="bg-zinc-800/40 backdrop-blur-sm rounded-2xl p-6 border border-zinc-700/50 shadow-xl relative overflow-hidden group hover:border-[var(--accent)]/40 transition-colors"
             >
               <div
                 class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -2643,7 +2555,7 @@
                   class="flex items-center gap-3 pt-4 border-t border-zinc-700/50"
                 >
                   <div
-                    class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-white flex-shrink-0 bg-[var(--color-accent)] ring-2 ring-zinc-800"
+                    class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-white flex-shrink-0 bg-[var(--accent)] ring-2 ring-zinc-800"
                   >
                     DC
                   </div>
@@ -2663,7 +2575,7 @@
 
             <!-- Review 2: Jose Osorio -->
             <article
-              class="bg-zinc-800/40 backdrop-blur-sm rounded-2xl p-6 border border-zinc-700/50 shadow-xl relative overflow-hidden group hover:border-[var(--color-accent)]/40 transition-colors"
+              class="bg-zinc-800/40 backdrop-blur-sm rounded-2xl p-6 border border-zinc-700/50 shadow-xl relative overflow-hidden group hover:border-[var(--accent)]/40 transition-colors"
             >
               <div
                 class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -2766,7 +2678,7 @@
                   class="flex items-center gap-3 pt-4 border-t border-zinc-700/50"
                 >
                   <div
-                    class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-white flex-shrink-0 bg-[var(--color-accent)] ring-2 ring-zinc-800"
+                    class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-white flex-shrink-0 bg-[var(--accent)] ring-2 ring-zinc-800"
                   >
                     JO
                   </div>
@@ -2786,7 +2698,7 @@
 
             <!-- Review 3: Sebastián Marín -->
             <article
-              class="bg-zinc-800/40 backdrop-blur-sm rounded-2xl p-6 border border-zinc-700/50 shadow-xl relative overflow-hidden group hover:border-[var(--color-accent)]/40 transition-colors"
+              class="bg-zinc-800/40 backdrop-blur-sm rounded-2xl p-6 border border-zinc-700/50 shadow-xl relative overflow-hidden group hover:border-[var(--accent)]/40 transition-colors"
             >
               <div
                 class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -2889,7 +2801,7 @@
                   class="flex items-center gap-3 pt-4 border-t border-zinc-700/50"
                 >
                   <div
-                    class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-white flex-shrink-0 bg-[var(--color-accent)] ring-2 ring-zinc-800"
+                    class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-white flex-shrink-0 bg-[var(--accent)] ring-2 ring-zinc-800"
                   >
                     SM
                   </div>
@@ -2913,7 +2825,7 @@
               href="https://search.google.com/local/writereview?placeid=ChIJc9LuJtfiJyoRxm89vU9LUSI"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 text-sm font-medium px-6 py-2.5 rounded-full border border-[var(--color-accent)]/80 text-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white transition-all duration-300"
+              class="inline-flex items-center gap-2 text-sm font-medium px-6 py-2.5 rounded-full border border-[var(--accent)]/80 text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white transition-all duration-300"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -2960,7 +2872,7 @@
             vemos si nuestro
             <a
               href="/#como-trabajamos"
-              class="text-[var(--color-accent)] hover:underline"
+              class="text-[var(--accent)] hover:underline"
               >Diagnóstico de Automatización Estratégica</a
             >
             le hace sentido.
@@ -3010,7 +2922,7 @@
         <div class="max-w-7xl mx-auto">
           <div class="text-center reveal mb-10 md:mb-16">
             <span
-              class="text-[var(--color-accent)] font-bold tracking-wider text-sm uppercase font-display"
+              class="text-[var(--accent)] font-bold tracking-wider text-sm uppercase font-display"
               >Ejemplos de Implementación</span
             >
             <h2
@@ -3035,12 +2947,12 @@
             <!-- 0. BrokerIA -->
             <div class="reveal group relative card-dark rounded-2xl p-5 md:p-8">
               <div
-                class="absolute inset-0 bg-gradient-to-b from-[var(--color-accent)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"
+                class="absolute inset-0 bg-gradient-to-b from-[var(--accent)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"
               ></div>
               <div class="relative z-10">
                 <div class="flex items-center gap-3 mb-6">
                   <div
-                    class="p-3 bg-zinc-900 rounded-lg text-[var(--color-accent)] border border-zinc-700 group-hover:border-[var(--color-accent)] transition-colors"
+                    class="p-3 bg-zinc-900 rounded-lg text-[var(--accent)] border border-zinc-700 group-hover:border-[var(--accent)] transition-colors"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -3067,7 +2979,7 @@
                   Construido para una corredora de propiedades · Chile
                 </p>
                 <p
-                  class="text-xs font-semibold text-[var(--color-accent)] mb-3 bg-zinc-900/50 inline-block px-3 py-1 rounded-full border border-zinc-700"
+                  class="text-xs font-semibold text-[var(--accent)] mb-3 bg-zinc-900/50 inline-block px-3 py-1 rounded-full border border-zinc-700"
                 >
                   Plataforma PropTech + IA
                 </p>
@@ -3083,12 +2995,12 @@
             <!-- 1. Inbox IA Legal -->
             <div class="reveal group relative card-dark rounded-2xl p-5 md:p-8">
               <div
-                class="absolute inset-0 bg-gradient-to-b from-[var(--color-accent)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"
+                class="absolute inset-0 bg-gradient-to-b from-[var(--accent)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"
               ></div>
               <div class="relative z-10">
                 <div class="flex items-center gap-3 mb-6">
                   <div
-                    class="p-3 bg-zinc-900 rounded-lg text-[var(--color-accent)] border border-zinc-700 group-hover:border-[var(--color-accent)] transition-colors"
+                    class="p-3 bg-zinc-900 rounded-lg text-[var(--accent)] border border-zinc-700 group-hover:border-[var(--accent)] transition-colors"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -3114,7 +3026,7 @@
                   LATAM
                 </p>
                 <p
-                  class="text-xs font-semibold text-[var(--color-accent)] mb-3 bg-zinc-900/50 inline-block px-3 py-1 rounded-full border border-zinc-700"
+                  class="text-xs font-semibold text-[var(--accent)] mb-3 bg-zinc-900/50 inline-block px-3 py-1 rounded-full border border-zinc-700"
                 >
                   Email + IA Generativa
                 </p>
@@ -3184,12 +3096,12 @@
               style="transition-delay: 200ms"
             >
               <div
-                class="absolute inset-0 bg-gradient-to-b from-[var(--color-accent)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"
+                class="absolute inset-0 bg-gradient-to-b from-[var(--accent)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"
               ></div>
               <div class="relative z-10">
                 <div class="flex items-center gap-3 mb-6">
                   <div
-                    class="p-3 bg-zinc-900 rounded-lg text-[var(--color-accent)] border border-zinc-700 group-hover:border-[var(--color-accent)] transition-colors"
+                    class="p-3 bg-zinc-900 rounded-lg text-[var(--accent)] border border-zinc-700 group-hover:border-[var(--accent)] transition-colors"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -3214,7 +3126,7 @@
                   Construido para abogados litigantes · LATAM
                 </p>
                 <p
-                  class="text-xs font-semibold text-[var(--color-accent)] mb-3 bg-zinc-900/50 inline-block px-3 py-1 rounded-full border border-zinc-700"
+                  class="text-xs font-semibold text-[var(--accent)] mb-3 bg-zinc-900/50 inline-block px-3 py-1 rounded-full border border-zinc-700"
                 >
                   Registro 100% Pasivo
                 </p>
@@ -3254,18 +3166,18 @@
               ></div>
 
               <div
-                class="bg-black/80 backdrop-blur-xl h-full w-full rounded-[1.4rem] p-5 md:p-8 lg:p-10 flex flex-col items-center text-center md:flex-row md:text-left gap-5 md:gap-8 relative z-10 border border-white/5 group-hover:border-[var(--color-accent)]/30 transition-colors"
+                class="bg-black/80 backdrop-blur-xl h-full w-full rounded-[1.4rem] p-5 md:p-8 lg:p-10 flex flex-col items-center text-center md:flex-row md:text-left gap-5 md:gap-8 relative z-10 border border-white/5 group-hover:border-[var(--accent)]/30 transition-colors"
               >
                 <div class="relative shrink-0">
                   <div
-                    class="absolute -inset-4 bg-[var(--color-accent)] rounded-full blur-xl opacity-20 group-hover:opacity-40 transition duration-500"
+                    class="absolute -inset-4 bg-[var(--accent)] rounded-full blur-xl opacity-20 group-hover:opacity-40 transition duration-500"
                   ></div>
                   <img
                     src="img/foto.webp"
                     alt="Edmundo Spohr — CEO en Growth Buddies"
                     loading="lazy"
                     decoding="async"
-                    class="relative h-24 w-24 md:h-32 md:w-32 lg:h-40 lg:w-40 rounded-full object-cover ring-2 ring-white/10 group-hover:ring-[var(--color-accent)] transition-all"
+                    class="relative h-24 w-24 md:h-32 md:w-32 lg:h-40 lg:w-40 rounded-full object-cover ring-2 ring-white/10 group-hover:ring-[var(--accent)] transition-all"
                     height="96"
                     width="96"
                   />
@@ -3282,14 +3194,14 @@
                       Edmundo Spohr
                     </h3>
                     <p
-                      class="text-sm text-[var(--color-accent)] font-medium tracking-wide uppercase"
+                      class="text-sm text-[var(--accent)] font-medium tracking-wide uppercase"
                     >
                       Director & Fundador
                     </p>
                   </div>
                   <a
                     href="/nosotros"
-                    class="mt-4 inline-flex items-center gap-2 text-xs text-slate-500 hover:text-[var(--color-accent)] transition-colors uppercase tracking-wider font-bold"
+                    class="mt-4 inline-flex items-center gap-2 text-xs text-slate-500 hover:text-[var(--accent)] transition-colors uppercase tracking-wider font-bold"
                   >
                     Ver Perfil Completo
                     <svg
@@ -3386,7 +3298,7 @@
       <!-- Diferenciadores — Comparison Table -->
       <section
         id="diferenciadores"
-        class="py-16 md:py-24 px-6 border-b border-zinc-900 bg-zinc-950"
+        class="py-16 md:py-24 px-6 border-b border-zinc-900"
         role="region"
         aria-labelledby="diferenciadores-heading"
       >
@@ -3416,9 +3328,9 @@
                   Consultor Típico de IA
                 </p>
               </div>
-              <div class="px-5 py-4 bg-[var(--color-accent)]/5">
+              <div class="px-5 py-4 bg-[var(--accent)]/5">
                 <p
-                  class="text-xs font-bold uppercase tracking-widest text-[var(--color-accent)]"
+                  class="text-xs font-bold uppercase tracking-widest text-[var(--accent)]"
                 >
                   Growth Buddies
                 </p>
@@ -3440,10 +3352,10 @@
                 </p>
               </div>
               <div
-                class="px-5 py-4 bg-[var(--color-accent)]/[0.03] flex items-start gap-3 group-hover:bg-[var(--color-accent)]/[0.06] transition-colors"
+                class="px-5 py-4 bg-[var(--accent)]/[0.03] flex items-start gap-3 group-hover:bg-[var(--accent)]/[0.06] transition-colors"
               >
                 <span
-                  class="mt-0.5 shrink-0 text-[var(--color-accent)]"
+                  class="mt-0.5 shrink-0 text-[var(--accent)]"
                   aria-hidden="true"
                   >✓</span
                 >
@@ -3468,10 +3380,10 @@
                 </p>
               </div>
               <div
-                class="px-5 py-4 bg-[var(--color-accent)]/[0.03] flex items-start gap-3 group-hover:bg-[var(--color-accent)]/[0.06] transition-colors"
+                class="px-5 py-4 bg-[var(--accent)]/[0.03] flex items-start gap-3 group-hover:bg-[var(--accent)]/[0.06] transition-colors"
               >
                 <span
-                  class="mt-0.5 shrink-0 text-[var(--color-accent)]"
+                  class="mt-0.5 shrink-0 text-[var(--accent)]"
                   aria-hidden="true"
                   >✓</span
                 >
@@ -3496,10 +3408,10 @@
                 </p>
               </div>
               <div
-                class="px-5 py-4 bg-[var(--color-accent)]/[0.03] flex items-start gap-3 group-hover:bg-[var(--color-accent)]/[0.06] transition-colors"
+                class="px-5 py-4 bg-[var(--accent)]/[0.03] flex items-start gap-3 group-hover:bg-[var(--accent)]/[0.06] transition-colors"
               >
                 <span
-                  class="mt-0.5 shrink-0 text-[var(--color-accent)]"
+                  class="mt-0.5 shrink-0 text-[var(--accent)]"
                   aria-hidden="true"
                   >✓</span
                 >
@@ -3524,10 +3436,10 @@
                 </p>
               </div>
               <div
-                class="px-5 py-4 bg-[var(--color-accent)]/[0.03] flex items-start gap-3 group-hover:bg-[var(--color-accent)]/[0.06] transition-colors"
+                class="px-5 py-4 bg-[var(--accent)]/[0.03] flex items-start gap-3 group-hover:bg-[var(--accent)]/[0.06] transition-colors"
               >
                 <span
-                  class="mt-0.5 shrink-0 text-[var(--color-accent)]"
+                  class="mt-0.5 shrink-0 text-[var(--accent)]"
                   aria-hidden="true"
                   >✓</span
                 >
@@ -3552,10 +3464,10 @@
                 </p>
               </div>
               <div
-                class="px-5 py-4 bg-[var(--color-accent)]/[0.03] flex items-start gap-3 group-hover:bg-[var(--color-accent)]/[0.06] transition-colors"
+                class="px-5 py-4 bg-[var(--accent)]/[0.03] flex items-start gap-3 group-hover:bg-[var(--accent)]/[0.06] transition-colors"
               >
                 <span
-                  class="mt-0.5 shrink-0 text-[var(--color-accent)]"
+                  class="mt-0.5 shrink-0 text-[var(--accent)]"
                   aria-hidden="true"
                   >✓</span
                 >
@@ -3603,7 +3515,7 @@
       </section>
 
       <!-- Lead Magnet Banner — secondary resource -->
-      <section class="py-10 px-6 bg-zinc-950 border-y border-zinc-800">
+      <section class="py-10 px-6 border-y border-zinc-800">
         <div
           class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-6 md:gap-10"
         >
@@ -3648,7 +3560,7 @@
 
       <!-- FAQ Section -->
       <section
-        class="py-16 md:py-24 px-6 border-b border-zinc-900 bg-zinc-950/30"
+        class="py-16 md:py-24 px-6 border-b border-zinc-900/30"
         role="region"
         aria-labelledby="faq-heading"
       >
@@ -3669,7 +3581,7 @@
             <!-- FAQ 1 -->
             <details class="reveal group glass-card rounded-xl overflow-hidden">
               <summary
-                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-slate-200 hover:text-[var(--color-accent)] transition-colors"
+                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-slate-200 hover:text-[var(--accent)] transition-colors"
               >
                 <span>¿Cuánto cuesta el diagnóstico?</span>
                 <span
@@ -3706,7 +3618,7 @@
             <!-- FAQ 2 — Price justification -->
             <details class="reveal group glass-card rounded-xl overflow-hidden">
               <summary
-                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-slate-200 hover:text-[var(--color-accent)] transition-colors"
+                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-slate-200 hover:text-[var(--accent)] transition-colors"
               >
                 <span
                   >¿Por qué cuesta USD $3.000? Otras consultorías ofrecen
@@ -3748,7 +3660,7 @@
             <!-- FAQ 3 — Guarantee -->
             <details class="reveal group glass-card rounded-xl overflow-hidden">
               <summary
-                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-slate-200 hover:text-[var(--color-accent)] transition-colors"
+                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-slate-200 hover:text-[var(--accent)] transition-colors"
               >
                 <span
                   >¿Qué pasa si después del diagnóstico no encuentran nada
@@ -3788,7 +3700,7 @@
             <!-- FAQ 4 — Why not quote implementation directly -->
             <details class="reveal group glass-card rounded-xl overflow-hidden">
               <summary
-                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-slate-200 hover:text-[var(--color-accent)] transition-colors"
+                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-slate-200 hover:text-[var(--accent)] transition-colors"
               >
                 <span
                   >¿Por qué no me cotizan directamente el proyecto de
@@ -3828,7 +3740,7 @@
             <!-- FAQ 6 -->
             <details class="reveal group glass-card rounded-xl overflow-hidden">
               <summary
-                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-slate-200 hover:text-[var(--color-accent)] transition-colors"
+                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-slate-200 hover:text-[var(--accent)] transition-colors"
               >
                 <span>¿Puedo implementar con otro proveedor?</span>
                 <span
@@ -3864,7 +3776,7 @@
             <!-- FAQ 7 -->
             <details class="reveal group glass-card rounded-xl overflow-hidden">
               <summary
-                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-slate-200 hover:text-[var(--color-accent)] transition-colors"
+                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-slate-200 hover:text-[var(--accent)] transition-colors"
               >
                 <span>¿Es segura la implementación con mis datos?</span>
                 <span
@@ -3899,7 +3811,7 @@
             <!-- FAQ 8 -->
             <details class="reveal group glass-card rounded-xl overflow-hidden">
               <summary
-                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-slate-200 hover:text-[var(--color-accent)] transition-colors"
+                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-slate-200 hover:text-[var(--accent)] transition-colors"
               >
                 <span>¿Trabajan con empresas de Colombia, Perú o Ecuador?</span>
                 <span
@@ -3934,7 +3846,7 @@
             <!-- FAQ 9 -->
             <details class="reveal group glass-card rounded-xl overflow-hidden">
               <summary
-                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-slate-200 hover:text-[var(--color-accent)] transition-colors"
+                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-slate-200 hover:text-[var(--accent)] transition-colors"
               >
                 <span>¿Cuánto tiempo toma ver resultados?</span>
                 <span
@@ -3981,12 +3893,12 @@
           <div class="flex flex-col items-center mb-6">
             <div class="relative mb-3">
               <div
-                class="absolute -inset-2 bg-[var(--color-accent)] rounded-full blur-xl opacity-25"
+                class="absolute -inset-2 bg-[var(--accent)] rounded-full blur-xl opacity-25"
               ></div>
               <img
                 src="/img/foto.webp"
                 alt="Edmundo Spohr — Director de Growth Buddies"
-                class="relative h-20 w-20 md:h-24 md:w-24 rounded-full object-cover ring-2 ring-[var(--color-accent)]/40"
+                class="relative h-20 w-20 md:h-24 md:w-24 rounded-full object-cover ring-2 ring-[var(--accent)]/40"
                 loading="lazy"
                 width="96"
                 height="96"
@@ -4107,7 +4019,7 @@
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Perfil de LinkedIn de Growth Buddies"
-              class="text-slate-400 hover:text-[var(--color-accent)] transition-colors"
+              class="text-slate-400 hover:text-[var(--accent)] transition-colors"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -4130,7 +4042,7 @@
             <a
               href="mailto:edmundo@growthbuddies.cl"
               aria-label="Enviar correo electrónico a Edmundo de Growth Buddies"
-              class="text-slate-400 hover:text-[var(--color-accent)] transition-colors"
+              class="text-slate-400 hover:text-[var(--accent)] transition-colors"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -4150,7 +4062,7 @@
             <a
               href="tel:+56965863160"
               aria-label="Llamar a Growth Buddies"
-              class="text-slate-400 hover:text-[var(--color-accent)] transition-colors"
+              class="text-slate-400 hover:text-[var(--accent)] transition-colors"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -4178,21 +4090,21 @@
             <li>
               <a
                 href="/nosotros"
-                class="hover:text-[var(--color-accent)] transition-colors"
+                class="hover:text-[var(--accent)] transition-colors"
                 >Nosotros</a
               >
             </li>
             <li>
               <a
                 href="/casos"
-                class="hover:text-[var(--color-accent)] transition-colors"
+                class="hover:text-[var(--accent)] transition-colors"
                 >Casos de Éxito</a
               >
             </li>
             <li>
               <a
                 href="#como-trabajamos"
-                class="hover:text-[var(--color-accent)] transition-colors"
+                class="hover:text-[var(--accent)] transition-colors"
                 >Cómo Trabajamos</a
               >
             </li>
@@ -4210,35 +4122,35 @@
             <li>
               <a
                 href="/blog"
-                class="hover:text-[var(--color-accent)] transition-colors"
+                class="hover:text-[var(--accent)] transition-colors"
                 >Blog</a
               >
             </li>
             <li>
               <a
                 href="/recursos/guia-ia-legal"
-                class="hover:text-[var(--color-accent)] transition-colors"
+                class="hover:text-[var(--accent)] transition-colors"
                 >Guía Gratuita IA Legal</a
               >
             </li>
             <li>
               <a
                 href="/soluciones"
-                class="hover:text-[var(--color-accent)] transition-colors"
+                class="hover:text-[var(--accent)] transition-colors"
                 >Ejemplos de Implementación</a
               >
             </li>
             <li>
               <a
                 href="/privacidad"
-                class="hover:text-[var(--color-accent)] transition-colors"
+                class="hover:text-[var(--accent)] transition-colors"
                 >Privacidad</a
               >
             </li>
             <li>
               <a
                 href="/terminos"
-                class="hover:text-[var(--color-accent)] transition-colors"
+                class="hover:text-[var(--accent)] transition-colors"
                 >Términos</a
               >
             </li>
@@ -4393,61 +4305,8 @@
         }, 1500);
       })();
 
-      // --- PREMIUM EFFECTS SCRIPT (The "Wow" Factor) ---
       document.addEventListener("DOMContentLoaded", () => {
-        // 1. Magnetic Button Effect
-        const magneticBtns = document.querySelectorAll(".magnetic-btn");
-        magneticBtns.forEach((btn) => {
-          btn.addEventListener("mousemove", (e) => {
-            const rect = btn.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-
-            // Move button slightly
-            btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-
-            // Move text/icon more (parallax)
-            const children = btn.children;
-            for (let i = 0; i < children.length; i++) {
-              if (children[i].classList.contains("magnetic-area")) continue;
-              children[i].style.transform =
-                `translate(${x * 0.15}px, ${y * 0.15}px)`;
-            }
-          });
-
-          btn.addEventListener("mouseleave", () => {
-            btn.style.transform = "translate(0px, 0px)";
-            const children = btn.children;
-            for (let i = 0; i < children.length; i++) {
-              if (children[i].classList.contains("magnetic-area")) continue;
-              children[i].style.transform = "translate(0px, 0px)";
-            }
-          });
-        });
-
-        // 2. 3D Tilt Effect for Premium Cards
-        const tiltCards = document.querySelectorAll(".type-tilt");
-        tiltCards.forEach((card) => {
-          card.addEventListener("mousemove", (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-
-            const rotateX = ((y - centerY) / centerY) * -5; // Max 5deg
-            const rotateY = ((x - centerX) / centerX) * 5;
-
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-          });
-
-          card.addEventListener("mouseleave", () => {
-            card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)`;
-          });
-        });
-
-        // 3. Scrollytelling Line Animation
+        // Scrollytelling Line Animation
         const methodSection = document.getElementById("methodology-container");
         const methodLineDraw = document.getElementById("methodology-line-draw");
 
@@ -4722,7 +4581,7 @@
             html +=
               '<button type="button" data-value="' +
               escapeHtml(opt.value) +
-              '" class="quiz-option w-full text-left bg-zinc-950 hover:bg-zinc-900 border border-zinc-700 hover:border-[var(--color-accent)]/50 rounded-lg px-5 py-4 text-slate-200 hover:text-white transition-all">' +
+              '" class="quiz-option w-full text-left hover:bg-zinc-900 border border-zinc-700 hover:border-[var(--accent)]/50 rounded-lg px-5 py-4 text-slate-200 hover:text-white transition-all">' +
               escapeHtml(opt.label) +
               "</button>";
           });

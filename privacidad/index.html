@@ -57,22 +57,22 @@
     <link href="/dist/output.css" rel="stylesheet" />
     <link rel="dns-prefetch" href="https://calendly.com" />
     <style>
-      :root{--color-accent:#0097B2;--color-cta:#0097B2;--color-cta-hover:#007A91;--color-dark:#0F172A}
+      :root{--color-accent:#0097B2;--color-cta:#0097B2;--color-cta-hover: #00B5D6;--color-dark:#0F172A}
       *,::before,::after{box-sizing:border-box}
-      body{font-family:'Inter',sans-serif;background:#09090b;color:#cbd5e1;overflow-x:hidden;margin:0}
-      .glass-nav{background:rgba(0,0,0,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}
+      body{font-family:'Inter',sans-serif;background-color: var(--bg, #0B0B0F);color: var(--fg, #ECECEF);overflow-x:hidden;margin:0}
+      .glass-nav{background:rgba(11,11,15,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}
     .font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Space Grotesk",system-ui,sans-serif}.font-heading{font-family:"Geist","system-ui",sans-serif}</style>
     <link rel="preload" href="/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
   </head>
-  <body class="antialiased bg-zinc-950 text-slate-300">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--color-accent)] focus:text-black focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
+  <body class="antialiased text-slate-300">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--accent)] focus:text-white focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
     <div class="noise-overlay"></div>
 
     <nav class="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
       <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <a href="/" class="flex items-center gap-2 group">
           <img src="/img/logo.webp" alt="Logotipo de Growth Buddies" class="h-8 w-8 opacity-90 group-hover:opacity-100 transition-opacity" height="32" width="32" />
-          <span class="font-bold text-lg tracking-tight text-white group-hover:text-[var(--color-accent)] transition-colors">Growth Buddies</span>
+          <span class="font-bold text-lg tracking-tight text-white group-hover:text-[var(--accent)] transition-colors">Growth Buddies</span>
         </a>
         <div class="hidden md:flex items-center gap-8">
           <a href="/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Inicio</a>
@@ -91,7 +91,7 @@
     </nav>
 
     <div id="mobile-menu" style="display:none;" class="fixed inset-0 z-[200] flex-col" aria-hidden="true">
-      <div class="absolute inset-0 bg-[#050510]/96 backdrop-blur-xl"></div>
+      <div class="absolute inset-0/96 backdrop-blur-xl"></div>
       <div class="relative flex flex-col h-full px-6 py-6 overflow-y-auto">
         <div class="flex justify-between items-center mb-10">
           <a href="/" class="flex items-center gap-2"><img src="/img/logo.webp" alt="Logotipo de Growth Buddies" class="h-8 w-8" height="32" width="32" /><span class="font-bold text-lg text-white">Growth Buddies</span></a>
@@ -113,9 +113,9 @@
     <main id="main-content" class="max-w-3xl mx-auto px-6 pt-36 pb-24">
       <nav aria-label="Migas de pan" class="mb-8">
         <ol class="flex items-center gap-2 text-xs text-slate-500">
-          <li><a href="/" class="hover:text-[var(--color-accent)] transition-colors">Inicio</a></li>
+          <li><a href="/" class="hover:text-[var(--accent)] transition-colors">Inicio</a></li>
           <li><span aria-hidden="true">/</span></li>
-          <li class="text-[var(--color-accent)]" aria-current="page">Privacidad</li>
+          <li class="text-[var(--accent)]" aria-current="page">Privacidad</li>
         </ol>
       </nav>
 
@@ -126,8 +126,8 @@
 
         <section>
           <h2 class="text-xl font-bold text-white mb-3">1. Responsable del tratamiento</h2>
-          <p><strong class="text-white">Growth Buddies SpA</strong>, RUT 77.000.000-0, con domicilio en Santiago, Chile (en adelante, "Growth Buddies" o "nosotros"), es el responsable del tratamiento de los datos personales recogidos a través del sitio web <a href="https://growthbuddies.cl" class="text-[var(--color-accent)] hover:underline">growthbuddies.cl</a>.</p>
-          <p>Contacto: <a href="mailto:edmundo@growthbuddies.cl" class="text-[var(--color-accent)] hover:underline">edmundo@growthbuddies.cl</a></p>
+          <p><strong class="text-white">Growth Buddies SpA</strong>, RUT 77.000.000-0, con domicilio en Santiago, Chile (en adelante, "Growth Buddies" o "nosotros"), es el responsable del tratamiento de los datos personales recogidos a través del sitio web <a href="https://growthbuddies.cl" class="text-[var(--accent)] hover:underline">growthbuddies.cl</a>.</p>
+          <p>Contacto: <a href="mailto:edmundo@growthbuddies.cl" class="text-[var(--accent)] hover:underline">edmundo@growthbuddies.cl</a></p>
         </section>
 
         <section>
@@ -162,15 +162,15 @@
           <div class="space-y-4">
             <div class="bg-zinc-900/60 border border-zinc-800 rounded-xl p-5">
               <h3 class="text-white font-semibold mb-2">Google Analytics 4</h3>
-              <p class="text-sm">Recopila métricas de visitas (páginas vistas, duración, fuentes) de forma agregada. Puede optar por no participar mediante la extensión <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent)] hover:underline">Google Analytics Opt-out</a>. Política de privacidad de Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent)] hover:underline">policies.google.com/privacy</a>.</p>
+              <p class="text-sm">Recopila métricas de visitas (páginas vistas, duración, fuentes) de forma agregada. Puede optar por no participar mediante la extensión <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] hover:underline">Google Analytics Opt-out</a>. Política de privacidad de Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] hover:underline">policies.google.com/privacy</a>.</p>
             </div>
             <div class="bg-zinc-900/60 border border-zinc-800 rounded-xl p-5">
               <h3 class="text-white font-semibold mb-2">Microsoft Clarity</h3>
-              <p class="text-sm">Registra mapas de calor y sesiones de usuario anonimizadas para mejorar la usabilidad. No recopila información de identificación personal. Política: <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent)] hover:underline">privacy.microsoft.com</a>.</p>
+              <p class="text-sm">Registra mapas de calor y sesiones de usuario anonimizadas para mejorar la usabilidad. No recopila información de identificación personal. Política: <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] hover:underline">privacy.microsoft.com</a>.</p>
             </div>
             <div class="bg-zinc-900/60 border border-zinc-800 rounded-xl p-5">
               <h3 class="text-white font-semibold mb-2">Calendly</h3>
-              <p class="text-sm">Plataforma de agendamiento de reuniones. Cuando agenda una sesión a través de nuestro enlace, sus datos son procesados por Calendly Inc. bajo sus propias políticas de privacidad: <a href="https://calendly.com/privacy" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent)] hover:underline">calendly.com/privacy</a>.</p>
+              <p class="text-sm">Plataforma de agendamiento de reuniones. Cuando agenda una sesión a través de nuestro enlace, sus datos son procesados por Calendly Inc. bajo sus propias políticas de privacidad: <a href="https://calendly.com/privacy" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] hover:underline">calendly.com/privacy</a>.</p>
             </div>
             <div class="bg-zinc-900/60 border border-zinc-800 rounded-xl p-5">
               <h3 class="text-white font-semibold mb-2">Resend (correo electrónico)</h3>
@@ -188,7 +188,7 @@
             <li><strong class="text-white">Cancelar</strong> el tratamiento y solicitar la eliminación de sus datos.</li>
             <li><strong class="text-white">Oponerse</strong> al tratamiento para finalidades de marketing.</li>
           </ul>
-          <p class="mt-3">Para ejercer estos derechos, envíe un correo a <a href="mailto:edmundo@growthbuddies.cl" class="text-[var(--color-accent)] hover:underline">edmundo@growthbuddies.cl</a> con asunto "Derechos ARCO". Responderemos en un plazo máximo de 15 días hábiles.</p>
+          <p class="mt-3">Para ejercer estos derechos, envíe un correo a <a href="mailto:edmundo@growthbuddies.cl" class="text-[var(--accent)] hover:underline">edmundo@growthbuddies.cl</a> con asunto "Derechos ARCO". Responderemos en un plazo máximo de 15 días hábiles.</p>
         </section>
 
         <section>
@@ -207,7 +207,7 @@
     <footer class="bg-black py-10 px-6 border-t border-white/10 text-sm text-center text-slate-500">
       <p>&copy; 2026 Growth Buddies SpA. Latinoamérica · 🇨🇱 🇨🇴 🇵🇪 🇪🇨</p>
       <div class="flex justify-center gap-6 mt-3">
-        <a href="/privacidad" class="text-[var(--color-accent)]">Privacidad</a>
+        <a href="/privacidad" class="text-[var(--accent)]">Privacidad</a>
         <a href="/terminos" class="hover:text-slate-300 transition-colors">Términos</a>
         <a href="/" class="hover:text-slate-300 transition-colors">Inicio</a>
       </div>

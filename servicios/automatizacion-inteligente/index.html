@@ -115,15 +115,15 @@
     <link rel="preload" href="../../dist/output.css" as="style" />
     <link href="../../dist/output.css" rel="stylesheet" />
     <link rel="dns-prefetch" href="https://calendly.com" />
-    <style>:root{--color-accent:#0097B2;--color-cta:#0097B2;--color-cta-hover:#007A91;--color-dark:#0F172A;}*,::before,::after{box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#09090b;color:#cbd5e1;overflow-x:hidden;margin:0}.glass-nav{background:rgba(0,0,0,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}.font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Space Grotesk",system-ui,sans-serif}.font-heading{font-family:"Geist","system-ui",sans-serif}</style>
+    <style>:root{--color-accent:#0097B2;--color-cta:#0097B2;--color-cta-hover: #00B5D6;--color-dark: #0B0B0F;}*,::before,::after{box-sizing:border-box}body{font-family:'Inter',sans-serif;background-color: var(--bg, #0B0B0F);color: var(--fg, #ECECEF);overflow-x:hidden;margin:0}.glass-nav{background:rgba(11,11,15,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}.font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Space Grotesk",system-ui,sans-serif}.font-heading{font-family:"Geist","system-ui",sans-serif}</style>
     <script src="/js/lenis.min.js" defer></script>
     <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
     <!-- Microsoft Clarity — deferred 3s to avoid blocking LCP -->
     <script>setTimeout(function(){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","vkf6fbh8zc");},3000);</script>
     <link rel="preload" href="/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
   </head>
-  <body class="antialiased selection:bg-[#00f6ff] selection:text-black">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--color-accent)] focus:text-black focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
+  <body class="antialiased selection:bg-[var(--accent)] selection:text-white">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--accent)] focus:text-white focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
     <div class="noise-overlay"></div>
 
     <!-- Nav -->
@@ -131,7 +131,7 @@
       <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <a href="/" class="flex items-center gap-2 group">
           <img src="/img/logo.webp" alt="Logotipo de Growth Buddies" class="h-8 w-8 opacity-90 group-hover:opacity-100 transition-opacity" height="32" width="32" />
-          <span class="font-bold text-lg tracking-tight text-white group-hover:text-[var(--color-accent)] transition-colors">Growth Buddies</span>
+          <span class="font-bold text-lg tracking-tight text-white group-hover:text-[var(--accent)] transition-colors">Growth Buddies</span>
         </a>
         <div class="hidden md:flex items-center gap-8">
           <a href="/#como-trabajamos" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Servicios</a>
@@ -141,7 +141,7 @@
           <a href="/#contacto" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Contacto</a>
         </div>
         <div class="hidden md:block">
-          <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="bg-[var(--color-accent)]/10 hover:bg-[var(--color-accent)]/20 text-[var(--color-accent)] hover:text-white border border-[var(--color-accent)]/30 hover:border-[var(--color-accent)] font-semibold text-sm py-2 px-5 rounded-full transition-all duration-300">
+          <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="bg-[var(--accent)]/10 hover:bg-[var(--accent)]/20 text-[var(--accent)] hover:text-white border border-[var(--accent)]/30 hover:border-[var(--accent)] font-semibold text-sm py-2 px-5 rounded-full transition-all duration-300">
                 Agendar conversación
           </a>
         </div>
@@ -155,7 +155,7 @@
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" style="display:none;" class="fixed inset-0 z-[200] flex-col" aria-hidden="true">
-      <div class="absolute inset-0 bg-[#050510]/96 backdrop-blur-xl"></div>
+      <div class="absolute inset-0/96 backdrop-blur-xl"></div>
       <div class="relative flex flex-col h-full px-6 py-6 overflow-y-auto">
         <div class="flex justify-between items-center mb-10">
           <a href="/" class="flex items-center gap-2"><img src="/img/logo.webp" alt="Logotipo de Growth Buddies" class="h-8 w-8" height="32" width="32" /><span class="font-bold text-lg text-white">Growth Buddies</span></a>
@@ -164,7 +164,7 @@
           </button>
         </div>
         <div class="mb-8">
-          <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[#00f6ff]/10 hover:bg-[#00f6ff]/20 text-[#00f6ff] border border-[#00f6ff]/30 hover:border-[#00f6ff] font-semibold text-base py-4 px-5 rounded-full transition-all duration-300">
+          <a href="https://calendly.com/espohr/conversemos" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[var(--accent)]/10 hover:bg-[var(--accent)]/20 text-[var(--accent)] border border-[var(--accent)]/30 hover:border-[var(--accent)] font-semibold text-base py-4 px-5 rounded-full transition-all duration-300">
             Agendar conversación
           </a>
         </div>
@@ -191,15 +191,15 @@
         <!-- Breadcrumb -->
         <nav aria-label="Migas de pan" class="mb-8">
           <ol class="flex items-center gap-2 text-xs text-slate-500">
-            <li><a href="/" class="hover:text-[var(--color-accent)] transition-colors">Inicio</a></li>
+            <li><a href="/" class="hover:text-[var(--accent)] transition-colors">Inicio</a></li>
             <li><span aria-hidden="true">/</span></li>
-            <li><a href="/#como-trabajamos" class="hover:text-[var(--color-accent)] transition-colors">Servicios</a></li>
+            <li><a href="/#como-trabajamos" class="hover:text-[var(--accent)] transition-colors">Servicios</a></li>
             <li><span aria-hidden="true">/</span></li>
-            <li class="text-[var(--color-accent)]" aria-current="page">Automatización Inteligente</li>
+            <li class="text-[var(--accent)]" aria-current="page">Automatización Inteligente</li>
           </ol>
         </nav>
         <div class="text-center">
-          <span class="text-[var(--color-accent)] font-bold tracking-wider text-sm uppercase font-display">Legal Tech &amp; Ops</span>
+          <span class="text-[var(--accent)] font-bold tracking-wider text-sm uppercase font-display">Legal Tech &amp; Ops</span>
           <h1 class="text-4xl md:text-6xl font-heading text-white mt-4 leading-tight">
             Automatización Inteligente<br />para Equipos Legales
           </h1>
@@ -222,10 +222,10 @@
     <main id="main-content">
 
     <!-- ¿Qué es la Automatización Inteligente? -->
-    <section id="que-es" class="py-20 px-6 bg-zinc-950/60">
+    <section id="que-es" class="py-20 px-6/60">
       <div class="max-w-4xl mx-auto">
         <div class="reveal">
-          <span class="text-[var(--color-accent)] font-bold tracking-wider text-xs uppercase font-display">Definición</span>
+          <span class="text-[var(--accent)] font-bold tracking-wider text-xs uppercase font-display">Definición</span>
           <h2 class="text-3xl md:text-4xl font-bold text-white mt-3 mb-6 font-heading">¿Qué es la Automatización Inteligente?</h2>
           <div class="space-y-5 text-slate-300 leading-relaxed text-lg">
             <p>
@@ -250,23 +250,23 @@
           <p class="mt-4 text-slate-400 max-w-xl mx-auto">Trabajamos con tres perfiles de cliente que enfrentan el mismo problema: demasiado tiempo en tareas operativas y poco en las estratégicas.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="reveal glass-card p-6 rounded-2xl border border-[var(--color-accent)]/10 hover:border-[var(--color-accent)]/30 transition-colors">
-            <div class="w-10 h-10 rounded-xl bg-[var(--color-accent)]/10 flex items-center justify-center mb-4" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#00f6ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
+          <div class="reveal glass-card p-6 rounded-2xl border border-[var(--accent)]/10 hover:border-[var(--accent)]/30 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-[var(--accent)]/10 flex items-center justify-center mb-4" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
             </div>
             <h3 class="text-lg font-bold text-white mb-2">Gerentes Legales</h3>
             <p class="text-slate-400 text-sm leading-relaxed">Responsables de la Gerencia Legal de empresas medianas y grandes que necesitan reducir el tiempo de revisión contractual y entregar reportes de KPIs al Directorio en tiempo real.</p>
           </div>
-          <div class="reveal glass-card p-6 rounded-2xl border border-[var(--color-accent)]/10 hover:border-[var(--color-accent)]/30 transition-colors" style="transition-delay:80ms">
-            <div class="w-10 h-10 rounded-xl bg-[var(--color-accent)]/10 flex items-center justify-center mb-4" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#00f6ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <div class="reveal glass-card p-6 rounded-2xl border border-[var(--accent)]/10 hover:border-[var(--accent)]/30 transition-colors" style="transition-delay:80ms">
+            <div class="w-10 h-10 rounded-xl bg-[var(--accent)]/10 flex items-center justify-center mb-4" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
             <h3 class="text-lg font-bold text-white mb-2">Socios Directores de Firmas</h3>
             <p class="text-slate-400 text-sm leading-relaxed">Socios de estudios jurídicos que buscan escalar su capacidad de atender causas sin contratar más abogados junior, mejorando el margen operacional del estudio.</p>
           </div>
-          <div class="reveal glass-card p-6 rounded-2xl border border-[var(--color-accent)]/10 hover:border-[var(--color-accent)]/30 transition-colors" style="transition-delay:160ms">
-            <div class="w-10 h-10 rounded-xl bg-[var(--color-accent)]/10 flex items-center justify-center mb-4" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#00f6ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          <div class="reveal glass-card p-6 rounded-2xl border border-[var(--accent)]/10 hover:border-[var(--accent)]/30 transition-colors" style="transition-delay:160ms">
+            <div class="w-10 h-10 rounded-xl bg-[var(--accent)]/10 flex items-center justify-center mb-4" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
             </div>
             <h3 class="text-lg font-bold text-white mb-2">COOs y Directores de Operaciones</h3>
             <p class="text-slate-400 text-sm leading-relaxed">Ejecutivos responsables de la eficiencia operativa que identificaron en el área legal un cuello de botella crítico para la velocidad de cierre de negocios y contratos.</p>
@@ -276,36 +276,36 @@
     </section>
 
     <!-- Nuestro Enfoque: 4 pasos -->
-    <section class="py-20 px-6 bg-zinc-950/50 border-t border-zinc-900">
+    <section class="py-20 px-6/50 border-t border-zinc-900">
       <div class="max-w-5xl mx-auto">
         <div class="text-center reveal mb-12">
           <h2 class="text-3xl md:text-4xl font-bold text-white font-heading">Nuestro Enfoque de Implementación</h2>
           <p class="mt-4 text-slate-400 max-w-xl mx-auto">Seguimos nuestra metodología probada de cuatro etapas. Cada etapa tiene entregables concretos, plazos definidos y criterios de éxito acordados.</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          <a href="/nosotros" class="reveal group glass-card p-6 rounded-2xl border border-zinc-800 hover:border-[var(--color-accent)] transition-colors block">
-            <div class="h-10 w-10 rounded-xl bg-zinc-800 flex items-center justify-center text-white font-black text-base mb-4 group-hover:bg-[var(--color-accent)] group-hover:text-black transition-all" aria-hidden="true">1</div>
+          <a href="/nosotros" class="reveal group glass-card p-6 rounded-2xl border border-zinc-800 hover:border-[var(--accent)] transition-colors block">
+            <div class="h-10 w-10 rounded-xl bg-zinc-800 flex items-center justify-center text-white font-black text-base mb-4 group-hover:bg-[var(--accent)] group-hover:text-black transition-all" aria-hidden="true">1</div>
             <h3 class="text-base font-bold text-white mb-2">Diagnóstico</h3>
             <p class="text-slate-400 text-sm leading-relaxed">Mapeamos sus procesos actuales e identificamos qué automatizar primero según ROI y complejidad técnica.</p>
-            <span class="mt-3 inline-block text-xs text-[var(--color-accent)] font-semibold group-hover:underline">Ver metodología →</span>
+            <span class="mt-3 inline-block text-xs text-[var(--accent)] font-semibold group-hover:underline">Ver metodología →</span>
           </a>
-          <a href="/nosotros" class="reveal group glass-card p-6 rounded-2xl border border-zinc-800 hover:border-[var(--color-accent)] transition-colors block" style="transition-delay:80ms">
-            <div class="h-10 w-10 rounded-xl bg-zinc-800 flex items-center justify-center text-white font-black text-base mb-4 group-hover:bg-[var(--color-accent)] group-hover:text-black transition-all" aria-hidden="true">2</div>
+          <a href="/nosotros" class="reveal group glass-card p-6 rounded-2xl border border-zinc-800 hover:border-[var(--accent)] transition-colors block" style="transition-delay:80ms">
+            <div class="h-10 w-10 rounded-xl bg-zinc-800 flex items-center justify-center text-white font-black text-base mb-4 group-hover:bg-[var(--accent)] group-hover:text-black transition-all" aria-hidden="true">2</div>
             <h3 class="text-base font-bold text-white mb-2">Diseño</h3>
             <p class="text-slate-400 text-sm leading-relaxed">Arquitectura de flujos, selección de herramientas y especificación técnica detallada. Cero improvisación.</p>
-            <span class="mt-3 inline-block text-xs text-[var(--color-accent)] font-semibold group-hover:underline">Ver metodología →</span>
+            <span class="mt-3 inline-block text-xs text-[var(--accent)] font-semibold group-hover:underline">Ver metodología →</span>
           </a>
-          <a href="/nosotros" class="reveal group glass-card p-6 rounded-2xl border border-zinc-800 hover:border-[var(--color-accent)] transition-colors block" style="transition-delay:160ms">
-            <div class="h-10 w-10 rounded-xl bg-zinc-800 flex items-center justify-center text-white font-black text-base mb-4 group-hover:bg-[var(--color-accent)] group-hover:text-black transition-all" aria-hidden="true">3</div>
+          <a href="/nosotros" class="reveal group glass-card p-6 rounded-2xl border border-zinc-800 hover:border-[var(--accent)] transition-colors block" style="transition-delay:160ms">
+            <div class="h-10 w-10 rounded-xl bg-zinc-800 flex items-center justify-center text-white font-black text-base mb-4 group-hover:bg-[var(--accent)] group-hover:text-black transition-all" aria-hidden="true">3</div>
             <h3 class="text-base font-bold text-white mb-2">Build</h3>
             <p class="text-slate-400 text-sm leading-relaxed">Desarrollo ágil en sprints de 1-2 semanas. El cliente valida cada entregable antes de avanzar.</p>
-            <span class="mt-3 inline-block text-xs text-[var(--color-accent)] font-semibold group-hover:underline">Ver metodología →</span>
+            <span class="mt-3 inline-block text-xs text-[var(--accent)] font-semibold group-hover:underline">Ver metodología →</span>
           </a>
-          <a href="/nosotros" class="reveal group glass-card p-6 rounded-2xl border border-[var(--color-accent)]/20 hover:border-[var(--color-accent)] transition-colors block" style="transition-delay:240ms">
-            <div class="h-10 w-10 rounded-xl bg-[var(--color-accent)]/10 flex items-center justify-center text-[var(--color-accent)] font-black text-base mb-4 group-hover:bg-[var(--color-accent)] group-hover:text-black transition-all" aria-hidden="true">4</div>
+          <a href="/nosotros" class="reveal group glass-card p-6 rounded-2xl border border-[var(--accent)]/20 hover:border-[var(--accent)] transition-colors block" style="transition-delay:240ms">
+            <div class="h-10 w-10 rounded-xl bg-[var(--accent)]/10 flex items-center justify-center text-[var(--accent)] font-black text-base mb-4 group-hover:bg-[var(--accent)] group-hover:text-black transition-all" aria-hidden="true">4</div>
             <h3 class="text-base font-bold text-white mb-2">Adopción</h3>
             <p class="text-slate-400 text-sm leading-relaxed">Nuestro diferenciador. Acompañamos al equipo hasta que la automatización sea parte de su rutina diaria.</p>
-            <span class="mt-3 inline-block text-xs text-[var(--color-accent)] font-semibold group-hover:underline">Ver metodología →</span>
+            <span class="mt-3 inline-block text-xs text-[var(--accent)] font-semibold group-hover:underline">Ver metodología →</span>
           </a>
         </div>
       </div>
@@ -315,23 +315,23 @@
     <section class="py-20 px-6 section-dark border-t border-white/5">
       <div class="max-w-5xl mx-auto">
         <div class="text-center reveal mb-12">
-          <span class="text-[var(--color-accent)] font-bold tracking-wider text-xs uppercase font-display">Lo que obtiene</span>
+          <span class="text-[var(--accent)] font-bold tracking-wider text-xs uppercase font-display">Lo que obtiene</span>
           <h2 class="text-3xl md:text-4xl font-heading text-white mt-3">Resultados Típicos</h2>
           <p class="mt-4 text-slate-400 max-w-xl mx-auto">Métricas reales de proyectos completados con clientes en Chile y LATAM.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
           <div class="reveal card-dark rounded-2xl p-8 text-center">
-            <div class="text-5xl font-black text-[var(--color-accent)] mb-3">80%</div>
+            <div class="text-5xl font-black text-[var(--accent)] mb-3">80%</div>
             <div class="text-white font-semibold mb-2">Menos tiempo en contratos</div>
             <div class="text-slate-400 text-sm leading-relaxed">Generación de contratos estándar desde plantillas, sin copiar y pegar.</div>
           </div>
           <div class="reveal card-dark rounded-2xl p-8 text-center" style="transition-delay:80ms">
-            <div class="text-5xl font-black text-[var(--color-accent)] mb-3">15h</div>
+            <div class="text-5xl font-black text-[var(--accent)] mb-3">15h</div>
             <div class="text-white font-semibold mb-2">Recuperadas por mes</div>
             <div class="text-slate-400 text-sm leading-relaxed">Solo en preparación de reportes legales y consolidación de datos.</div>
           </div>
           <div class="reveal card-dark rounded-2xl p-8 text-center" style="transition-delay:160ms">
-            <div class="text-5xl font-black text-[var(--color-accent)] mb-3">60%</div>
+            <div class="text-5xl font-black text-[var(--accent)] mb-3">60%</div>
             <div class="text-white font-semibold mb-2">Menos tiempo en gestión documental</div>
             <p class="text-slate-400 text-sm leading-relaxed">Resultado comprobado en SPI Americas tras implementar automatización con IA.</p>
           </div>
@@ -339,7 +339,7 @@
         <!-- SPI Americas case study reference -->
         <div class="reveal text-center">
           <p class="text-slate-400 text-sm mb-3">¿Cómo funciona esto en la práctica?</p>
-          <a href="/casos/spi-americas" class="inline-flex items-center gap-2 text-[var(--color-accent)] hover:text-white font-semibold transition-colors group">
+          <a href="/casos/spi-americas" class="inline-flex items-center gap-2 text-[var(--accent)] hover:text-white font-semibold transition-colors group">
             <span>Cómo lo hicimos para SPI Americas</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" class="group-hover:translate-x-1 transition-transform" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
@@ -356,10 +356,10 @@
         </div>
 
         <!-- CLM -->
-        <div class="reveal glass-card rounded-3xl p-8 mb-6 border border-zinc-800 hover:border-[var(--color-accent)]/30 transition-colors">
+        <div class="reveal glass-card rounded-3xl p-8 mb-6 border border-zinc-800 hover:border-[var(--accent)]/30 transition-colors">
           <div class="flex flex-col md:flex-row gap-6 items-start">
-            <div class="p-3 rounded-xl bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/20 shrink-0" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="#00f6ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M8 13h2"/><path d="M8 17h6"/></svg>
+            <div class="p-3 rounded-xl bg-[var(--accent)]/10 border border-[var(--accent)]/20 shrink-0" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M8 13h2"/><path d="M8 17h6"/></svg>
             </div>
             <div class="flex-1">
               <h3 class="text-xl font-bold text-white mb-3">Automatización Contractual y CLM</h3>
@@ -368,15 +368,15 @@
               </p>
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
-                  <span class="text-[var(--color-accent)] font-bold block mb-1">Resultado típico</span>
+                  <span class="text-[var(--accent)] font-bold block mb-1">Resultado típico</span>
                   Reducción del 80% en tiempo de generación de contratos estándar
                 </div>
                 <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
-                  <span class="text-[var(--color-accent)] font-bold block mb-1">Incluye</span>
+                  <span class="text-[var(--accent)] font-bold block mb-1">Incluye</span>
                   Alertas de vencimiento, flujo de aprobaciones y firma electrónica
                 </div>
                 <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
-                  <span class="text-[var(--color-accent)] font-bold block mb-1">Integración</span>
+                  <span class="text-[var(--accent)] font-bold block mb-1">Integración</span>
                   CRM, correo Outlook/Gmail, ERP y sistemas propietarios via API
                 </div>
               </div>
@@ -385,10 +385,10 @@
         </div>
 
         <!-- Reportería -->
-        <div class="reveal glass-card rounded-3xl p-8 mb-6 border border-zinc-800 hover:border-[var(--color-accent)]/30 transition-colors">
+        <div class="reveal glass-card rounded-3xl p-8 mb-6 border border-zinc-800 hover:border-[var(--accent)]/30 transition-colors">
           <div class="flex flex-col md:flex-row gap-6 items-start">
-            <div class="p-3 rounded-xl bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/20 shrink-0" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="#00f6ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+            <div class="p-3 rounded-xl bg-[var(--accent)]/10 border border-[var(--accent)]/20 shrink-0" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
             </div>
             <div class="flex-1">
               <h3 class="text-xl font-bold text-white mb-3">Reportería y KPIs Legales</h3>
@@ -397,15 +397,15 @@
               </p>
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
-                  <span class="text-[var(--color-accent)] font-bold block mb-1">Plataformas</span>
+                  <span class="text-[var(--accent)] font-bold block mb-1">Plataformas</span>
                   Power BI, Looker Studio, dashboards propios embebidos
                 </div>
                 <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
-                  <span class="text-[var(--color-accent)] font-bold block mb-1">Actualización</span>
+                  <span class="text-[var(--accent)] font-bold block mb-1">Actualización</span>
                   Tiempo real o frecuencia configurable (diaria, semanal)
                 </div>
                 <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
-                  <span class="text-[var(--color-accent)] font-bold block mb-1">Resultado típico</span>
+                  <span class="text-[var(--accent)] font-bold block mb-1">Resultado típico</span>
                   15 horas/mes recuperadas solo en preparación de reportes
                 </div>
               </div>
@@ -414,10 +414,10 @@
         </div>
 
         <!-- Implementación Software -->
-        <div class="reveal glass-card rounded-3xl p-8 border border-zinc-800 hover:border-[var(--color-accent)]/30 transition-colors">
+        <div class="reveal glass-card rounded-3xl p-8 border border-zinc-800 hover:border-[var(--accent)]/30 transition-colors">
           <div class="flex flex-col md:flex-row gap-6 items-start">
-            <div class="p-3 rounded-xl bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/20 shrink-0" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="#00f6ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <div class="p-3 rounded-xl bg-[var(--accent)]/10 border border-[var(--accent)]/20 shrink-0" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
             </div>
             <div class="flex-1">
               <h3 class="text-xl font-bold text-white mb-3">Implementación de Software Legal</h3>
@@ -426,15 +426,15 @@
               </p>
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
-                  <span class="text-[var(--color-accent)] font-bold block mb-1">Plataformas</span>
+                  <span class="text-[var(--accent)] font-bold block mb-1">Plataformas</span>
                   LemonTech · CaseTracking · Clio · Odoo · Software a medida
                 </div>
                 <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
-                  <span class="text-[var(--color-accent)] font-bold block mb-1">Migración</span>
+                  <span class="text-[var(--accent)] font-bold block mb-1">Migración</span>
                   Incluye limpieza, normalización y carga de datos históricos
                 </div>
                 <div class="bg-zinc-900/60 rounded-xl p-3 text-xs text-slate-400 border border-zinc-800">
-                  <span class="text-[var(--color-accent)] font-bold block mb-1">Garantía</span>
+                  <span class="text-[var(--accent)] font-bold block mb-1">Garantía</span>
                   100% de adopción o seguimos trabajando sin costo adicional
                 </div>
               </div>
@@ -445,7 +445,7 @@
     </section>
 
     <!-- Casos de Uso -->
-    <section class="py-20 px-6 bg-zinc-950/60 border-t border-zinc-900">
+    <section class="py-20 px-6/60 border-t border-zinc-900">
       <div class="max-w-5xl mx-auto">
         <div class="text-center reveal mb-12">
           <h2 class="text-3xl md:text-4xl font-bold text-white font-heading">Casos de Uso Comunes</h2>
@@ -453,17 +453,17 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="reveal glass-card p-6 rounded-2xl border border-zinc-800">
-            <div class="text-[var(--color-accent)] font-bold text-xs uppercase tracking-wider mb-3">Caso 01 — Firma Legal</div>
+            <div class="text-[var(--accent)] font-bold text-xs uppercase tracking-wider mb-3">Caso 01 — Firma Legal</div>
             <h3 class="text-base font-bold text-white mb-3">Triaje automático de correos de clientes</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">Una firma de 15 abogados recibía más de 300 correos diarios. Implementamos un agente de IA que clasifica cada email según tipo de causa, extrae el número de Rol, descarga los adjuntos y los sube a CaseTracking asignándolos al abogado correspondiente. El tiempo administrativo se redujo de 2 horas a 10 minutos diarios. Conoce nuestra <a href="/soluciones" class="text-[var(--color-accent)] hover:underline">Mini App de Triaje Legal</a>.</p>
+            <p class="text-slate-400 text-sm leading-relaxed">Una firma de 15 abogados recibía más de 300 correos diarios. Implementamos un agente de IA que clasifica cada email según tipo de causa, extrae el número de Rol, descarga los adjuntos y los sube a CaseTracking asignándolos al abogado correspondiente. El tiempo administrativo se redujo de 2 horas a 10 minutos diarios. Conoce nuestra <a href="/soluciones" class="text-[var(--accent)] hover:underline">Mini App de Triaje Legal</a>.</p>
           </div>
           <div class="reveal glass-card p-6 rounded-2xl border border-zinc-800" style="transition-delay:80ms">
-            <div class="text-[var(--color-accent)] font-bold text-xs uppercase tracking-wider mb-3">Caso 02 — Gerencia Legal Corporativa</div>
+            <div class="text-[var(--accent)] font-bold text-xs uppercase tracking-wider mb-3">Caso 02 — Gerencia Legal Corporativa</div>
             <h3 class="text-base font-bold text-white mb-3">Dashboard de vencimientos contractuales</h3>
             <p class="text-slate-400 text-sm leading-relaxed">La Gerencia Legal de una empresa de seguros gestionaba más de 400 contratos activos en archivos Excel descentralizados. Construimos un repositorio único con alertas automáticas 90, 30 y 7 días antes del vencimiento de cada contrato, con notificaciones al responsable por correo y WhatsApp. Las renovaciones tardías bajaron a cero.</p>
           </div>
           <div class="reveal glass-card p-6 rounded-2xl border border-zinc-800" style="transition-delay:160ms">
-            <div class="text-[var(--color-accent)] font-bold text-xs uppercase tracking-wider mb-3">Caso 03 — Estudio de Propiedad Intelectual</div>
+            <div class="text-[var(--accent)] font-bold text-xs uppercase tracking-wider mb-3">Caso 03 — Estudio de Propiedad Intelectual</div>
             <h3 class="text-base font-bold text-white mb-3">Generación masiva de reportes de portafolio</h3>
             <p class="text-slate-400 text-sm leading-relaxed">Un estudio de PI generaba informes de estado de cada marca y patente manualmente cada trimestre, proceso que tomaba una semana completa. Automatizamos la extracción de datos del INAPI y generamos los reportes PDF personalizados por cliente en menos de una hora. Esto derivó en que el equipo pudiera expandir su cartera de clientes un 40%.</p>
           </div>
@@ -479,32 +479,32 @@
           <p class="mt-2 text-slate-400 text-sm">Soluciones de implementación rápida (30 días, costo fijo) que complementan la Automatización Inteligente.</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <a href="/soluciones" class="reveal group glass-card p-5 rounded-xl border border-zinc-800 hover:border-[var(--color-accent)] transition-colors flex items-center gap-4">
-            <div class="p-2 rounded-lg bg-zinc-800 text-[var(--color-accent)]" aria-hidden="true">
+          <a href="/soluciones" class="reveal group glass-card p-5 rounded-xl border border-zinc-800 hover:border-[var(--accent)] transition-colors flex items-center gap-4">
+            <div class="p-2 rounded-lg bg-zinc-800 text-[var(--accent)]" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             </div>
             <div>
-              <div class="text-sm font-bold text-white group-hover:text-[var(--color-accent)] transition-colors">Triaje Legal</div>
+              <div class="text-sm font-bold text-white group-hover:text-[var(--accent)] transition-colors">Triaje Legal</div>
               <div class="text-xs text-slate-500">Clasificación automática de correos de causas</div>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="ml-auto text-slate-600 group-hover:text-[var(--color-accent)] transition-colors" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="ml-auto text-slate-600 group-hover:text-[var(--accent)] transition-colors" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
-          <a href="/soluciones" class="reveal group glass-card p-5 rounded-xl border border-zinc-800 hover:border-[var(--color-accent)] transition-colors flex items-center gap-4" style="transition-delay:80ms">
-            <div class="p-2 rounded-lg bg-zinc-800 text-[var(--color-accent)]" aria-hidden="true">
+          <a href="/soluciones" class="reveal group glass-card p-5 rounded-xl border border-zinc-800 hover:border-[var(--accent)] transition-colors flex items-center gap-4" style="transition-delay:80ms">
+            <div class="p-2 rounded-lg bg-zinc-800 text-[var(--accent)]" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             </div>
             <div>
-              <div class="text-sm font-bold text-white group-hover:text-[var(--color-accent)] transition-colors">Auto Timesheet</div>
+              <div class="text-sm font-bold text-white group-hover:text-[var(--accent)] transition-colors">Auto Timesheet</div>
               <div class="text-xs text-slate-500">Registro automático de horas facturables</div>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="ml-auto text-slate-600 group-hover:text-[var(--color-accent)] transition-colors" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="ml-auto text-slate-600 group-hover:text-[var(--accent)] transition-colors" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
         </div>
       </div>
     </section>
 
     <!-- Integraciones -->
-    <section class="py-16 px-6 bg-zinc-950/60 border-t border-zinc-900">
+    <section class="py-16 px-6/60 border-t border-zinc-900">
       <div class="max-w-5xl mx-auto">
         <div class="reveal mb-8">
           <h2 class="text-2xl font-heading text-white">Integraciones compatibles</h2>
@@ -525,7 +525,7 @@
     </section>
 
     <!-- FAQ -->
-    <section class="py-20 px-6 bg-zinc-950/60 border-t border-zinc-900">
+    <section class="py-20 px-6/60 border-t border-zinc-900">
       <div class="max-w-3xl mx-auto">
         <div class="text-center reveal mb-12">
           <h2 class="text-3xl font-bold text-white font-heading">Preguntas Frecuentes</h2>
@@ -533,32 +533,32 @@
         </div>
         <div class="space-y-3 reveal">
           <details class="group glass-card rounded-2xl overflow-hidden">
-            <summary class="flex items-center justify-between p-6 font-medium cursor-pointer text-slate-200 hover:text-[var(--color-accent)] transition-colors list-none">
+            <summary class="flex items-center justify-between p-6 font-medium cursor-pointer text-slate-200 hover:text-[var(--accent)] transition-colors list-none">
               <span>¿Cuánto tiempo tarda implementar una automatización legal?</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="flex-shrink-0 transform group-open:rotate-180 transition-transform duration-300" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
             <div class="px-6 pb-6 text-slate-400 text-sm leading-relaxed">Un proyecto básico (triaje de correos, generación de documentos) toma entre 3 y 6 semanas. Proyectos más complejos con CLM o integración de múltiples sistemas se extienden hasta 3 meses. Nuestras Mini Apps tienen plazo fijo de 30 días.</div>
           </details>
           <details class="group glass-card rounded-2xl overflow-hidden">
-            <summary class="flex items-center justify-between p-6 font-medium cursor-pointer text-slate-200 hover:text-[var(--color-accent)] transition-colors list-none">
+            <summary class="flex items-center justify-between p-6 font-medium cursor-pointer text-slate-200 hover:text-[var(--accent)] transition-colors list-none">
               <span>¿Cuál es el modelo de precios?</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="flex-shrink-0 transform group-open:rotate-180 transition-transform duration-300" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
             <div class="px-6 pb-6 text-slate-400 text-sm leading-relaxed">Trabajamos con costo fijo definido en el Diagnóstico, sin cobros por hora adicionales ni sorpresas. El precio refleja el alcance completo del proyecto, incluyendo implementación, capacitación y soporte post-lanzamiento.</div>
           </details>
           <details class="group glass-card rounded-2xl overflow-hidden">
-            <summary class="flex items-center justify-between p-6 font-medium cursor-pointer text-slate-200 hover:text-[var(--color-accent)] transition-colors list-none">
+            <summary class="flex items-center justify-between p-6 font-medium cursor-pointer text-slate-200 hover:text-[var(--accent)] transition-colors list-none">
               <span>¿Es compatible con LemonTech o CaseTracking?</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="flex-shrink-0 transform group-open:rotate-180 transition-transform duration-300" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
             <div class="px-6 pb-6 text-slate-400 text-sm leading-relaxed">Sí. Tenemos experiencia de integración con LemonTech, CaseTracking, Clio y sistemas propietarios mediante APIs REST y conectores RPA. En el Diagnóstico mapeamos todas las integraciones necesarias sin costo adicional.</div>
           </details>
           <details class="group glass-card rounded-2xl overflow-hidden">
-            <summary class="flex items-center justify-between p-6 font-medium cursor-pointer text-slate-200 hover:text-[var(--color-accent)] transition-colors list-none">
+            <summary class="flex items-center justify-between p-6 font-medium cursor-pointer text-slate-200 hover:text-[var(--accent)] transition-colors list-none">
               <span>¿Necesito un equipo técnico interno?</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="flex-shrink-0 transform group-open:rotate-180 transition-transform duration-300" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
-            <div class="px-6 pb-6 text-slate-400 text-sm leading-relaxed">No. Gestionamos el proyecto íntegramente, incluyendo el despliegue en nube y el soporte posterior. Nuestro servicio de <a href="/servicios/gestion-del-cambio" class="text-[var(--color-accent)] hover:underline">Gestión del Cambio</a> garantiza que el equipo legal adopte las herramientas sin necesidad de conocimientos técnicos.</div>
+            <div class="px-6 pb-6 text-slate-400 text-sm leading-relaxed">No. Gestionamos el proyecto íntegramente, incluyendo el despliegue en nube y el soporte posterior. Nuestro servicio de <a href="/servicios/gestion-del-cambio" class="text-[var(--accent)] hover:underline">Gestión del Cambio</a> garantiza que el equipo legal adopte las herramientas sin necesidad de conocimientos técnicos.</div>
           </details>
         </div>
       </div>
@@ -568,21 +568,21 @@
     <section class="py-16 px-6 bg-black border-t border-zinc-900">
       <div class="max-w-5xl mx-auto">
         <div class="reveal mb-8 text-center">
-          <span class="text-[var(--color-accent)] font-bold tracking-wider text-xs uppercase font-display">Complementa</span>
+          <span class="text-[var(--accent)] font-bold tracking-wider text-xs uppercase font-display">Complementa</span>
           <h2 class="text-2xl font-heading text-white mt-3">Servicios Relacionados</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-          <a href="/servicios/ia-corporativa" class="reveal group card-dark rounded-2xl p-6 hover:border-[var(--color-accent)]/40 transition-colors block">
-            <div class="text-[var(--color-accent)] text-xs uppercase font-bold tracking-wider mb-3 font-display">IA Corporativa</div>
-            <h3 class="text-white font-bold mb-2 group-hover:text-[var(--color-accent)] transition-colors">Agentes de IA a medida</h3>
+          <a href="/servicios/ia-corporativa" class="reveal group card-dark rounded-2xl p-6 hover:border-[var(--accent)]/40 transition-colors block">
+            <div class="text-[var(--accent)] text-xs uppercase font-bold tracking-wider mb-3 font-display">IA Corporativa</div>
+            <h3 class="text-white font-bold mb-2 group-hover:text-[var(--accent)] transition-colors">Agentes de IA a medida</h3>
             <p class="text-slate-400 text-sm leading-relaxed">Asistentes internos y RAG sobre su base documental. Complemento natural a la automatización.</p>
-            <span class="mt-3 inline-block text-xs text-[var(--color-accent)] font-semibold group-hover:underline">Ver servicio →</span>
+            <span class="mt-3 inline-block text-xs text-[var(--accent)] font-semibold group-hover:underline">Ver servicio →</span>
           </a>
-          <a href="/servicios/gestion-del-cambio" class="reveal group card-dark rounded-2xl p-6 hover:border-[var(--color-accent)]/40 transition-colors block" style="transition-delay:80ms">
-            <div class="text-[var(--color-accent)] text-xs uppercase font-bold tracking-wider mb-3 font-display">Gestión del Cambio</div>
-            <h3 class="text-white font-bold mb-2 group-hover:text-[var(--color-accent)] transition-colors">Adopción garantizada</h3>
+          <a href="/servicios/gestion-del-cambio" class="reveal group card-dark rounded-2xl p-6 hover:border-[var(--accent)]/40 transition-colors block" style="transition-delay:80ms">
+            <div class="text-[var(--accent)] text-xs uppercase font-bold tracking-wider mb-3 font-display">Gestión del Cambio</div>
+            <h3 class="text-white font-bold mb-2 group-hover:text-[var(--accent)] transition-colors">Adopción garantizada</h3>
             <p class="text-slate-400 text-sm leading-relaxed">Sin cambio de comportamiento, la automatización no sirve. Nosotros lo garantizamos.</p>
-            <span class="mt-3 inline-block text-xs text-[var(--color-accent)] font-semibold group-hover:underline">Ver servicio →</span>
+            <span class="mt-3 inline-block text-xs text-[var(--accent)] font-semibold group-hover:underline">Ver servicio →</span>
           </a>
           <a href="/soluciones" class="reveal group card-dark rounded-2xl p-6 hover:border-amber-400/40 transition-colors block" style="transition-delay:160ms">
             <div class="text-amber-400 text-xs uppercase font-bold tracking-wider mb-3 font-display">Mini Apps</div>
@@ -620,34 +620,34 @@
                 </a>
                 <p class="text-slate-400 leading-relaxed max-w-xs">Diagnóstico y automatización con IA para empresas de servicios profesionales en Latinoamérica.</p>
                 <div class="flex gap-4">
-                    <a href="https://www.linkedin.com/company/growth-buddies" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Growth Buddies" class="text-slate-400 hover:text-[var(--color-accent)] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
-                    <a href="mailto:edmundo@growthbuddies.cl" aria-label="Enviar correo electronico a Growth Buddies" class="text-slate-400 hover:text-[var(--color-accent)] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+                    <a href="https://www.linkedin.com/company/growth-buddies" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Growth Buddies" class="text-slate-400 hover:text-[var(--accent)] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+                    <a href="mailto:edmundo@growthbuddies.cl" aria-label="Enviar correo electronico a Growth Buddies" class="text-slate-400 hover:text-[var(--accent)] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
                 </div>
             </div>
             <div>
                 <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Servicios</h4>
                 <ul class="space-y-3 text-slate-400">
-                    <li><a href="/servicios/legal-tech" class="hover:text-[var(--color-accent)] transition-colors">Legal Tech &amp; Ops</a></li>
-                    <li><a href="/servicios/ia-corporativa" class="hover:text-[var(--color-accent)] transition-colors">IA Corporativa</a></li>
-                    <li><a href="/servicios/gestion-del-cambio" class="hover:text-[var(--color-accent)] transition-colors">Gestion del Cambio</a></li>
+                    <li><a href="/servicios/legal-tech" class="hover:text-[var(--accent)] transition-colors">Legal Tech &amp; Ops</a></li>
+                    <li><a href="/servicios/ia-corporativa" class="hover:text-[var(--accent)] transition-colors">IA Corporativa</a></li>
+                    <li><a href="/servicios/gestion-del-cambio" class="hover:text-[var(--accent)] transition-colors">Gestion del Cambio</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Mini Apps</h4>
                 <ul class="space-y-3 text-slate-400">
-                    <li><a href="/soluciones" class="hover:text-[var(--color-accent)] transition-colors">Triaje Legal</a></li>
-                    <li><a href="/soluciones" class="hover:text-[var(--color-accent)] transition-colors">Validacion Documental</a></li>
-                    <li><a href="/soluciones" class="hover:text-[var(--color-accent)] transition-colors">Rendicion Gastos IA</a></li>
+                    <li><a href="/soluciones" class="hover:text-[var(--accent)] transition-colors">Triaje Legal</a></li>
+                    <li><a href="/soluciones" class="hover:text-[var(--accent)] transition-colors">Validacion Documental</a></li>
+                    <li><a href="/soluciones" class="hover:text-[var(--accent)] transition-colors">Rendicion Gastos IA</a></li>
                     <li><a href="/soluciones/brokeria" class="text-amber-400 hover:text-amber-300 transition-colors font-medium">BrokerIA ✦</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Recursos</h4>
                 <ul class="space-y-3 text-slate-400">
-                    <li><a href="/nosotros" class="hover:text-[var(--color-accent)] transition-colors">Nosotros</a></li>
-                    <li><a href="/casos" class="hover:text-[var(--color-accent)] transition-colors">Casos de Éxito</a></li>
-                    <li><a href="/blog" class="hover:text-[var(--color-accent)] transition-colors">Blog</a></li>
-                    <li><a href="/recursos/guia-ia-legal" class="hover:text-[var(--color-accent)] transition-colors">Guía Gratuita</a></li>
+                    <li><a href="/nosotros" class="hover:text-[var(--accent)] transition-colors">Nosotros</a></li>
+                    <li><a href="/casos" class="hover:text-[var(--accent)] transition-colors">Casos de Éxito</a></li>
+                    <li><a href="/blog" class="hover:text-[var(--accent)] transition-colors">Blog</a></li>
+                    <li><a href="/recursos/guia-ia-legal" class="hover:text-[var(--accent)] transition-colors">Guía Gratuita</a></li>
                 </ul>
             </div>
         </div>
