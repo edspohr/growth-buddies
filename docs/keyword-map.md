@@ -135,6 +135,41 @@
 | **Intent** | I |
 | **Title target** | `IA en Corretaje de Propiedades en Chile: Guía 2026 | Growth Buddies` ✓ |
 
+## /sectores/automatizacion-ia-estudios-juridicos (Pillar)
+
+| Field | Value |
+|---|---|
+| **Primary query** | `automatización IA estudios jurídicos` |
+| **Secondary queries** | `legal tech para abogados Chile`, `IA para revisar contratos`, `automatización firmas legales Chile` |
+| **Intent** | C |
+| **Target countries** | CL, CO |
+| **Title target** | `Automatización IA en Estudios Jurídicos y Firmas Legales Chile \| Growth Buddies` |
+| **Cluster posts** | `/blog/legal-tech-para-abogados-chile`, `/blog/ia-para-revisar-contratos-legales`, `/blog/cuanto-cuesta-legal-tech-chile` |
+
+### /blog/legal-tech-para-abogados-chile
+| Field | Value |
+|---|---|
+| **Primary query** | `legal tech para abogados Chile` |
+| **Intent** | I/C |
+| **Title target** | `Legal Tech para Abogados en Chile: Guía Práctica 2026 \| Growth Buddies` ✓ |
+| **Pillar** | `/sectores/automatizacion-ia-estudios-juridicos` |
+
+### /blog/ia-para-revisar-contratos-legales
+| Field | Value |
+|---|---|
+| **Primary query** | `IA para revisar contratos` |
+| **Intent** | I/C |
+| **Title target** | `IA para Revisar Contratos: Cómo Funciona y Qué Riesgos Detecta \| Growth Buddies` ✓ |
+| **Pillar** | `/sectores/automatizacion-ia-estudios-juridicos` |
+
+### /blog/cuanto-cuesta-legal-tech-chile
+| Field | Value |
+|---|---|
+| **Primary query** | `cuánto cuesta legal tech Chile` |
+| **Intent** | C |
+| **Title target** | `¿Cuánto Cuesta Implementar Legal Tech en Chile? \| Growth Buddies` ✓ |
+| **Pillar** | `/sectores/automatizacion-ia-estudios-juridicos` |
+
 ---
 
 ## Cannibalization rules
