@@ -392,10 +392,10 @@ function drawNextStepsPage(doc, leadInfo) {
   doc.text("INVERSIÓN", MARGIN + 25, y + 18, { characterSpacing: 1.5 });
 
   doc.font(FONTS.serifBold).fontSize(22).fillColor(COLORS.white);
-  doc.text("$490.000 + IVA en Chile", MARGIN + 25, y + 33);
+  doc.text("$490.000 + IVA", MARGIN + 25, y + 33);
 
   doc.font(FONTS.sansMedium).fontSize(12).fillColor("#d4d4d4");
-  doc.text("USD 500 resto de Latinoamérica", MARGIN + 25, y + 62);
+  doc.text("USD 500 fuera de Chile", MARGIN + 25, y + 62);
 
   doc.font(FONTS.sansRegular).fontSize(10).fillColor("#a3a3a3");
   doc.text("Entrega en 10 a 15 días · El pago reserva su cupo", MARGIN + 25, y + 85);

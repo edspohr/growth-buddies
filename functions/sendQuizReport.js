@@ -28,7 +28,7 @@ function generateEmailHTML({ company, opportunities, roi }) {
 
       <div style="background: #f0f9fb; border: 1px solid #b3e0e8; padding: 16px 20px; margin: 24px 0; border-radius: 8px;">
         <p style="margin: 0 0 8px; font-size: 14px; font-weight: 600; color: #1a1a1a;">El siguiente paso: validar las hipótesis con su operación real</p>
-        <p style="margin: 0; font-size: 13px; color: #525252; line-height: 1.6;">El <strong>Diagnóstico de Automatización Estratégica</strong> transforma estas hipótesis en 3 oportunidades priorizadas con ROI estimado en pesos y una maqueta funcionando de la más rápida. Entrega en 10 a 15 días. Inversión: $490.000 + IVA en Chile · USD 500 resto de LATAM. El pago reserva su cupo (solo abrimos 2 cupos al mes). El 100% del valor es acreditable a cualquier proyecto contratado dentro de 90 días.</p>
+        <p style="margin: 0; font-size: 13px; color: #525252; line-height: 1.6;">El <strong>Diagnóstico de Automatización Estratégica</strong> transforma estas hipótesis en 3 oportunidades priorizadas con ROI estimado en pesos y una maqueta funcionando de la más rápida. Entrega en 10 a 15 días. Inversión: $490.000 + IVA (USD 500 fuera de Chile). El pago reserva su cupo (solo abrimos 2 cupos al mes). El 100% del valor es acreditable a su proyecto si avanza dentro de 90 días.</p>
       </div>
 
       <p style="margin: 24px 0 16px; font-size: 14px; color: #1a1a1a;">Puede reservar directamente su cupo, o agendar primero 30 minutos con Edmundo Spohr (Director) para ver si le hace sentido.</p>
