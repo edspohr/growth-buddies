@@ -12,27 +12,33 @@ function generateEmailHTML({ company, opportunities, roi }) {
   return `
     <div style="font-family: -apple-system, sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
       <h2 style="color: #0097B2; margin-bottom: 8px;">Su reporte está listo${company ? ", " + company : ""}</h2>
-      <p style="font-size: 15px; line-height: 1.6; color: #525252;">Adjunto encontrará el reporte personalizado de 6 páginas con las 3 oportunidades de automatización que identificamos en su operación, junto con el análisis de ROI proyectado.</p>
+      <p style="font-size: 15px; line-height: 1.6; color: #525252;">Adjunto encontrará el reporte personalizado de 6 páginas con 3 hipótesis iniciales de automatización según su perfil, junto con el análisis de ROI proyectado.</p>
 
       <div style="background: #f8fafc; border-left: 3px solid #0097B2; padding: 16px 20px; margin: 24px 0; border-radius: 4px;">
         <p style="margin: 0; font-size: 13px; color: #737373; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Ahorro estimado anual</p>
         <p style="margin: 4px 0 0; font-size: 26px; font-weight: 700; color: #0097B2;">${annualSavings}</p>
       </div>
 
-      <p style="font-size: 14px; color: #525252;"><strong style="color: #1a1a1a;">Las 3 oportunidades identificadas:</strong></p>
+      <p style="font-size: 14px; color: #525252;"><strong style="color: #1a1a1a;">3 hipótesis iniciales según su perfil:</strong></p>
       <ol style="padding-left: 20px; color: #525252;">
         ${opportunities.map(o => `<li style="margin-bottom: 6px;">${o.title}</li>`).join("")}
       </ol>
 
-      <p style="font-size: 14px; color: #525252; line-height: 1.6;">El reporte adjunto explica cada oportunidad en profundidad: por qué le aplica a su operación, cómo funcionaría técnicamente, tiempo estimado de implementación y riesgos de no hacerlo.</p>
+      <p style="font-size: 14px; color: #525252; line-height: 1.6;">El reporte adjunto explica cada hipótesis en profundidad: por qué le aplica a su operación, cómo funcionaría técnicamente, tiempo estimado de implementación y riesgos de no hacerlo. Son puntos de partida basados en su perfil, no verdades sobre su operación real.</p>
 
-      <p style="margin: 32px 0 16px; font-size: 14px; color: #1a1a1a;">Si quiere conversar sobre cómo abordar alguna de estas en su operación específica, puede agendar 30 minutos directamente con Edmundo Spohr (Director).</p>
+      <div style="background: #f0f9fb; border: 1px solid #b3e0e8; padding: 16px 20px; margin: 24px 0; border-radius: 8px;">
+        <p style="margin: 0 0 8px; font-size: 14px; font-weight: 600; color: #1a1a1a;">El siguiente paso: validar las hipótesis con su operación real</p>
+        <p style="margin: 0; font-size: 13px; color: #525252; line-height: 1.6;">El <strong>Diagnóstico de Automatización Estratégica</strong> transforma estas hipótesis en 3 oportunidades priorizadas con ROI estimado en pesos y una maqueta funcionando de la más rápida. Entrega en 10 a 15 días. Inversión: $490.000 + IVA en Chile · USD 500 resto de LATAM. El pago reserva su cupo (solo abrimos 2 cupos al mes). El 100% del valor es acreditable a cualquier proyecto contratado dentro de 90 días.</p>
+      </div>
+
+      <p style="margin: 24px 0 16px; font-size: 14px; color: #1a1a1a;">Puede reservar directamente su cupo, o agendar primero 30 minutos con Edmundo Spohr (Director) para ver si le hace sentido.</p>
 
       <p style="margin: 16px 0 8px;">
-        <a href="https://calendly.com/espohr/conversemos" style="background: #0097B2; color: white; padding: 14px 28px; text-decoration: none; border-radius: 999px; font-weight: bold; display: inline-block;">Agendar conversación →</a>
+        <a href="https://wa.me/56965863160?text=Hola%20Growth%20Buddies%21%20Vengo%20del%20quiz%20y%20quiero%20reservar%20mi%20cupo%20del%20Diagn%C3%B3stico%20de%20Automatizaci%C3%B3n%20Estrat%C3%A9gica.%20%C2%BFC%C3%B3mo%20coordinamos%20el%20pago%3F" style="background: #0097B2; color: white; padding: 14px 28px; text-decoration: none; border-radius: 999px; font-weight: bold; display: inline-block; margin-right: 8px;">Reservar mi cupo →</a>
+        <a href="https://calendly.com/espohr/conversemos" style="color: #0097B2; font-size: 14px; text-decoration: none; padding: 14px 0; display: inline-block;">o agendar conversación</a>
       </p>
 
-      <p style="font-size: 13px; color: #737373; margin-top: 16px;">Si prefiere WhatsApp: <a href="https://wa.me/56965863160" style="color: #0097B2;">+56 9 6586 3160</a></p>
+      <p style="font-size: 13px; color: #737373; margin-top: 16px;">También puede escribirnos por WhatsApp: <a href="https://wa.me/56965863160" style="color: #0097B2;">+56 9 6586 3160</a></p>
 
       <hr style="margin: 40px 0; border: none; border-top: 1px solid #e2e8f0;" />
 
@@ -66,7 +72,7 @@ function generateCRMHTML({ email, company, answers, opportunities, roi }) {
         <tr><td style="padding: 6px 12px; color: #737373;">3 años</td><td><strong>USD $${roi.threeYear.toLocaleString("en-US")}</strong></td></tr>
       </table>
 
-      <h3 style="color: #1a1a1a; margin-top: 24px; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">3 oportunidades identificadas</h3>
+      <h3 style="color: #1a1a1a; margin-top: 24px; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">3 hipótesis iniciales enviadas al lead</h3>
       <ol style="padding-left: 20px; color: #525252; font-size: 14px;">
         ${opportunities.map((o, i) => `
           <li style="margin-bottom: 12px;">

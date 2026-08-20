@@ -114,7 +114,7 @@ function generateContextualDiagnosis(answers, roi) {
   const pain = getPainLabel(answers.pain1);
   const annualSavings = formatCurrency(roi.annual);
 
-  return `Una empresa del sector ${sector.toLowerCase()} con un equipo de ${size.toLowerCase()} suele perder entre ${roi.weeklyHours - 3} y ${roi.weeklyHours + 5} horas semanales por persona en tareas como "${pain.toLowerCase()}". En su caso específico, considerando un costo hora promedio del sector de ${formatCurrency(roi.hourlyRate)}, esto representa una pérdida estimada de ${annualSavings} anuales.\n\nLas 3 oportunidades que identificamos a continuación apuntan a recuperar la mayor parte de esas horas perdidas. La priorización está basada en el dolor declarado, el tamaño del equipo y los patrones que observamos en empresas similares de Latinoamérica.`;
+  return `Una empresa del sector ${sector.toLowerCase()} con un equipo de ${size.toLowerCase()} suele perder entre ${roi.weeklyHours - 3} y ${roi.weeklyHours + 5} horas semanales por persona en tareas como "${pain.toLowerCase()}". En su caso específico, considerando un costo hora promedio del sector de ${formatCurrency(roi.hourlyRate)}, esto representa una pérdida estimada de ${annualSavings} anuales.\n\nLas 3 hipótesis iniciales que presentamos a continuación son puntos de partida basados en su perfil (sector, tamaño y dolor declarado) y en los patrones que observamos en empresas similares de Latinoamérica. Para transformarlas en oportunidades priorizadas con ROI real en pesos y una maqueta funcionando sobre su operación, el siguiente paso es el Diagnóstico de Automatización Estratégica.`;
 }
 
 // ─── DRAWING PRIMITIVES ────────────────────────────────────────────────────
@@ -357,7 +357,7 @@ function drawNextStepsPage(doc, leadInfo) {
   // Intro
   doc.font(FONTS.sansRegular).fontSize(11).fillColor(COLORS.textSecondary).lineGap(3);
   doc.text(
-    "Las 3 oportunidades identificadas en este reporte son una primera aproximación. El siguiente paso lógico es validarlas con datos específicos de su operación, priorizarlas por ROI real y diseñar la arquitectura técnica de cada una.",
+    "Las 3 hipótesis iniciales de este reporte son puntos de partida basados en su perfil. El siguiente paso lógico es validarlas con datos específicos de su operación, priorizarlas por ROI real en pesos y ver una maqueta funcionando de la oportunidad más rápida.",
     MARGIN, MARGIN + 110,
     { width: CONTENT_WIDTH, align: "justify" }
   );
@@ -369,11 +369,11 @@ function drawNextStepsPage(doc, leadInfo) {
   y += 22;
 
   const includes = [
-    "Entrevistas con 5-7 stakeholders clave de su operación",
-    "Mapeo de procesos críticos y puntos de fricción",
-    "Validación de cada oportunidad con datos reales de su empresa",
-    "Cálculo de ROI específico por oportunidad (no estimaciones)",
-    "Arquitectura técnica preliminar de las 3 oportunidades priorizadas"
+    "Cuestionario previo + sesión de trabajo de 2 a 3 horas sobre sus procesos reales",
+    "3 oportunidades priorizadas con ROI estimado en pesos",
+    "Maqueta funcionando de la oportunidad más rápida",
+    "Sesión de devolución de 60 a 90 minutos (con el decisor de la empresa presente)",
+    "100% del valor acreditable a cualquier proyecto contratado dentro de 90 días"
   ];
 
   doc.font(FONTS.sansRegular).fontSize(10.5).fillColor(COLORS.textSecondary);
@@ -385,17 +385,20 @@ function drawNextStepsPage(doc, leadInfo) {
 
   // Pricing card
   y += 15;
-  const priceCardHeight = 95;
+  const priceCardHeight = 110;
   drawCard(doc, MARGIN, y, CONTENT_WIDTH, priceCardHeight, COLORS.text);
 
   doc.font(FONTS.sansMedium).fontSize(9).fillColor(COLORS.accent);
   doc.text("INVERSIÓN", MARGIN + 25, y + 18, { characterSpacing: 1.5 });
 
-  doc.font(FONTS.serifBold).fontSize(28).fillColor(COLORS.white);
-  doc.text("USD $3.000", MARGIN + 25, y + 33);
+  doc.font(FONTS.serifBold).fontSize(22).fillColor(COLORS.white);
+  doc.text("$490.000 + IVA en Chile", MARGIN + 25, y + 33);
+
+  doc.font(FONTS.sansMedium).fontSize(12).fillColor("#d4d4d4");
+  doc.text("USD 500 resto de Latinoamérica", MARGIN + 25, y + 62);
 
   doc.font(FONTS.sansRegular).fontSize(10).fillColor("#a3a3a3");
-  doc.text("más impuestos · 2 semanas de duración", MARGIN + 25, y + 70);
+  doc.text("Entrega en 10 a 15 días · El pago reserva su cupo", MARGIN + 25, y + 85);
 
   y += priceCardHeight + 25;
 
@@ -406,7 +409,7 @@ function drawNextStepsPage(doc, leadInfo) {
 
   doc.font(FONTS.sansRegular).fontSize(10.5).fillColor(COLORS.textSecondary).lineGap(3);
   doc.text(
-    "Si en las dos semanas del diagnóstico no identificamos al menos 3 oportunidades de automatización con ROI positivo proyectado a 6 meses, le devolvemos el 100% de la inversión. Sin preguntas, sin condiciones.",
+    "Si no identificamos al menos 3 oportunidades de automatización con ROI positivo, le devolvemos el 100% de la inversión. Sin preguntas, sin condiciones. Además, el 100% del valor es acreditable a cualquier proyecto (implementación, desarrollo o capacitación) contratado dentro de 90 días; pasado el plazo, el crédito caduca.",
     MARGIN, y,
     { width: CONTENT_WIDTH, align: "justify" }
   );
