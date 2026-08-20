@@ -991,16 +991,6 @@
 
     <main id="main-content">
 
-      <!-- Answer Capsule — GEO extractable summary -->
-      <section class="py-8 px-6 border-b border-zinc-900 bg-[var(--surface)]/40">
-        <div class="max-w-3xl mx-auto">
-          <div id="answer-capsule" class="speakable rounded-2xl border border-[var(--accent)]/20 bg-[var(--accent)]/5 px-6 py-5">
-            <p class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase mb-3 font-display">¿Qué hace Growth Buddies y para quién?</p>
-            <p class="text-slate-200 leading-relaxed">Growth Buddies es una consultora chilena de diagnóstico y automatización con inteligencia artificial para empresas de servicios profesionales, industria y minería en Chile y Latinoamérica. Su producto principal es el <strong class="text-white">Diagnóstico de Automatización Estratégica</strong> ($490.000 + IVA en Chile · USD 500 resto de LATAM, entrega en 10 a 15 días): identifica exactamente qué procesos automatizar, en qué orden y qué ROI esperar, y entrega una maqueta funcionando de la oportunidad más rápida. El 100% del valor es acreditable a cualquier proyecto (implementación, desarrollo o capacitación) contratado dentro de 90 días; pasado el plazo, el crédito caduca. Con garantía de devolución si no se identifican al menos 3 oportunidades con ROI positivo. Atiende firmas legales, corredoras de seguros, consultoras, clínicas privadas, industria y minería en Chile, Colombia, Perú y Ecuador.</p>
-          </div>
-        </div>
-      </section>
-
       <!-- Pain Validation — ¿Le suena alguno de estos? -->
       <section
         id="dolores"
@@ -1879,10 +1869,10 @@
               aria-hidden="true"
             ></div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 items-stretch">
               <!-- Step 1 -->
               <div
-                class="reveal group relative bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 md:p-8 hover:border-[var(--accent)]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--accent)]/5"
+                class="reveal group relative flex flex-col h-full bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 md:p-8 hover:border-[var(--accent)]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--accent)]/5"
                 itemprop="step"
                 itemscope
                 itemtype="https://schema.org/HowToStep"
@@ -1939,7 +1929,7 @@
 
               <!-- Step 2 -->
               <div
-                class="reveal group relative bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 md:p-8 hover:border-[var(--accent)]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--accent)]/5"
+                class="reveal group relative flex flex-col h-full bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 md:p-8 hover:border-[var(--accent)]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--accent)]/5"
                 style="transition-delay: 100ms"
                 itemprop="step"
                 itemscope
@@ -1953,10 +1943,10 @@
                   >
                   <span
                     class="text-[10px] font-bold uppercase tracking-wider text-slate-400 border border-zinc-700 bg-zinc-800/50 rounded-full px-3 py-1 whitespace-nowrap"
-                    >Paso 2 · 10 a 15 días</span
+                    >10 a 15 días</span
                   >
                 </div>
-                <div class="mb-5">
+                <div class="mb-4">
                   <div
                     class="w-10 h-10 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center justify-center text-[var(--accent)] group-hover:border-[var(--accent)]/50 transition-colors mb-4"
                   >
@@ -1977,7 +1967,7 @@
                     </svg>
                   </div>
                   <h3
-                    class="text-lg font-bold text-white font-heading mb-2"
+                    class="text-lg font-bold text-white font-heading mb-3"
                     itemprop="name"
                   >
                     Diagnóstico Estratégico
@@ -1986,10 +1976,10 @@
                     class="text-sm text-slate-400 leading-relaxed mb-4"
                     itemprop="text"
                   >
-                    Cuestionario previo, sesión de trabajo de 2 a 3 horas sobre
-                    los procesos reales de su empresa y entrega en 10 a 15 días:
+                    Cuestionario previo y sesión de trabajo de 2 a 3 horas sobre
+                    sus procesos reales. En 10 a 15 días usted recibe:
                   </p>
-                  <ul class="space-y-2 mb-5">
+                  <ul class="space-y-2">
                     <li class="flex items-start gap-2 text-sm text-slate-300">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -2006,7 +1996,7 @@
                       >
                         <polyline points="20 6 9 17 4 12" />
                       </svg>
-                      3 oportunidades priorizadas con ROI estimado en pesos
+                      3 oportunidades priorizadas con ROI en pesos
                     </li>
                     <li class="flex items-start gap-2 text-sm text-slate-300">
                       <svg
@@ -2024,7 +2014,7 @@
                       >
                         <polyline points="20 6 9 17 4 12" />
                       </svg>
-                      Maqueta funcionando de la oportunidad más rápida
+                      Maqueta funcionando de la más rápida
                     </li>
                     <li class="flex items-start gap-2 text-sm text-slate-300">
                       <svg
@@ -2042,40 +2032,15 @@
                       >
                         <polyline points="20 6 9 17 4 12" />
                       </svg>
-                      Sesión de devolución de 60 a 90 minutos (el decisor de la
-                      empresa debe estar presente)
+                      Devolución de 60 a 90 minutos con el decisor presente
                     </li>
                   </ul>
-                </div>
-                <!-- Price block — always surrounded by value above and risk-reversal below -->
-                <div
-                  class="rounded-xl border border-[var(--accent)]/25 bg-[var(--accent)]/5 px-4 py-4"
-                >
-                  <p class="text-base font-bold text-white mb-1">
-                    Inversión: $490.000 + IVA en Chile
-                  </p>
-                  <p class="text-xs text-slate-300 mb-3">
-                    USD 500 para el resto de Latinoamérica
-                  </p>
-                  <p class="text-xs text-slate-400 leading-relaxed mb-2">
-                    <span class="text-[var(--accent)] font-semibold"
-                      >Garantía 100%:</span
-                    >
-                    si no identificamos al menos 3 oportunidades con ROI
-                    positivo, devolvemos todo lo invertido.
-                  </p>
-                  <p class="text-xs text-slate-400 leading-relaxed">
-                    <span class="text-[var(--accent)] font-semibold">Crédito:</span>
-                    100% del valor acreditable a cualquier proyecto
-                    (implementación, desarrollo o capacitación) contratado
-                    dentro de 90 días; pasado el plazo, el crédito caduca.
-                  </p>
                 </div>
               </div>
 
               <!-- Step 3 -->
               <div
-                class="reveal group relative bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 md:p-8 hover:border-[var(--accent)]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--accent)]/5"
+                class="reveal group relative flex flex-col h-full bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 md:p-8 hover:border-[var(--accent)]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--accent)]/5"
                 style="transition-delay: 200ms"
                 itemprop="step"
                 itemscope
@@ -2133,7 +2098,7 @@
 
               <!-- Step 4 -->
               <div
-                class="reveal group relative bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 md:p-8 hover:border-[var(--accent)]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--accent)]/5"
+                class="reveal group relative flex flex-col h-full bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 md:p-8 hover:border-[var(--accent)]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--accent)]/5"
                 style="transition-delay: 300ms"
                 itemprop="step"
                 itemscope
@@ -2190,39 +2155,75 @@
               </div>
             </div>
 
-            <!-- Reservar mi cupo — direct commitment CTA -->
-            <div class="reveal mt-12 md:mt-16 max-w-3xl mx-auto">
-              <div class="rounded-2xl border border-[var(--accent)]/30 bg-[var(--accent)]/5 p-6 md:p-8 text-center">
-                <p class="text-xs font-bold uppercase tracking-widest text-[var(--accent)] mb-3 font-display">
-                  Diagnóstico de Automatización Estratégica
-                </p>
-                <p class="text-slate-200 leading-relaxed mb-2">
-                  El pago reserva su cupo. Con el pago acreditado le enviamos el
-                  cuestionario y agendamos su sesión en firme.
-                </p>
-                <p id="slots-counter" class="text-sm text-[var(--accent)] font-semibold mb-6">
-                  Quedan <span data-monthly-slots>2</span> cupos este mes
-                </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <a
-                    href="https://wa.me/56965863160?text=Hola%20Growth%20Buddies%21%20Quiero%20reservar%20mi%20cupo%20del%20Diagn%C3%B3stico%20de%20Automatizaci%C3%B3n%20Estrat%C3%A9gica.%20%C2%BFC%C3%B3mo%20coordinamos%20el%20pago%3F"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn-cta text-base w-full sm:w-auto py-3.5 px-8"
-                    onclick="if (typeof gtag !== 'undefined') { gtag('event', 'reservar_cupo_click', { event_category: 'process_cta' }); }"
-                  >
-                    Reservar mi cupo →
-                  </a>
-                  <a
-                    href="https://calendly.com/espohr/conversemos"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-sm text-slate-400 hover:text-white transition-colors"
-                    onclick="if (typeof gtag !== 'undefined') { gtag('event', 'calendly_click', { event_category: 'process_cta_soft' }); }"
-                  >
-                    o primero, agendar conversación con el director
-                  </a>
+            <!-- Product card — canonical pricing module -->
+            <div class="reveal mt-12 md:mt-16">
+              <div class="rounded-2xl border border-[var(--accent)]/30 bg-[var(--accent)]/5 p-6 md:p-8">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                  <!-- Left: title + price -->
+                  <div class="text-center lg:text-left">
+                    <p class="text-xs font-bold uppercase tracking-widest text-[var(--accent)] mb-3 font-display">
+                      Diagnóstico de Automatización Estratégica
+                    </p>
+                    <p class="text-3xl md:text-4xl font-heading font-semibold text-white leading-none">
+                      $490.000 <span class="text-lg font-normal text-slate-300">+ IVA</span>
+                    </p>
+                    <p class="mt-2 text-sm text-slate-400">
+                      USD 500 fuera de Chile
+                    </p>
+                  </div>
+
+                  <!-- Middle: benefit chips -->
+                  <ul class="space-y-3 lg:col-span-1">
+                    <li class="flex items-start gap-3 text-sm text-slate-300 leading-snug">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0097B2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0" aria-hidden="true">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                      </svg>
+                      <span><strong class="text-white">Garantía 100%:</strong> si no hay al menos 3 oportunidades con ROI positivo, devolvemos todo.</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-slate-300 leading-snug">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0097B2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0" aria-hidden="true">
+                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
+                        <line x1="7" y1="7" x2="7.01" y2="7" />
+                      </svg>
+                      <span><strong class="text-white">Crédito:</strong> 100% acreditable a su proyecto dentro de 90 días.</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-slate-300 leading-snug">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0097B2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0" aria-hidden="true">
+                        <rect x="3" y="4" width="18" height="18" rx="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                        <line x1="3" y1="10" x2="21" y2="10" />
+                      </svg>
+                      <span><strong class="text-white">El pago reserva su cupo</strong> · Quedan <span data-monthly-slots>2</span> este mes</span>
+                    </li>
+                  </ul>
+
+                  <!-- Right: CTAs -->
+                  <div class="flex flex-col items-center lg:items-end gap-3">
+                    <a
+                      href="https://wa.me/56965863160?text=Hola%20Growth%20Buddies%21%20Quiero%20reservar%20mi%20cupo%20del%20Diagn%C3%B3stico%20de%20Automatizaci%C3%B3n%20Estrat%C3%A9gica.%20%C2%BFC%C3%B3mo%20coordinamos%20el%20pago%3F"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="btn-cta text-base w-full lg:w-auto py-3.5 px-8 text-center"
+                      onclick="if (typeof gtag !== 'undefined') { gtag('event', 'reservar_cupo_click', { event_category: 'process_cta' }); }"
+                    >
+                      Reservar mi cupo →
+                    </a>
+                    <a
+                      href="https://calendly.com/espohr/conversemos"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-sm text-slate-400 hover:text-white transition-colors text-center lg:text-right"
+                      onclick="if (typeof gtag !== 'undefined') { gtag('event', 'calendly_click', { event_category: 'process_cta_soft' }); }"
+                    >
+                      o primero, agendar conversación con el director
+                    </a>
+                  </div>
                 </div>
+
+                <p class="mt-6 pt-6 border-t border-[var(--accent)]/15 text-xs text-slate-400 text-center leading-relaxed">
+                  Con el pago acreditado le enviamos el cuestionario y agendamos su sesión en firme.
+                </p>
               </div>
             </div>
           </div>
@@ -4074,6 +4075,14 @@
               </div>
             </details>
           </div>
+        </div>
+      </section>
+
+      <!-- AEO summary — muted, crawlable, moved from top of page -->
+      <section class="py-10 px-6 border-b border-zinc-900/60">
+        <div id="answer-capsule" class="speakable max-w-3xl mx-auto">
+          <p class="text-xs font-bold text-slate-500 tracking-widest uppercase mb-3 font-display">¿Qué hace Growth Buddies y para quién?</p>
+          <p class="text-sm text-slate-400 leading-relaxed">Growth Buddies es una consultora chilena de diagnóstico y automatización con inteligencia artificial para empresas de servicios profesionales, industria y minería en Chile y Latinoamérica. Su producto principal es el Diagnóstico de Automatización Estratégica ($490.000 + IVA en Chile, USD 500 en el resto de LATAM): identifica qué procesos automatizar, en qué orden y con qué ROI esperado, y entrega una maqueta funcionando de la oportunidad más rápida, con garantía de devolución y valor 100% acreditable al proyecto. Atiende firmas legales, corredoras de seguros, consultoras, clínicas privadas, industria y minería en Chile, Colombia, Perú y Ecuador.</p>
         </div>
       </section>
 
