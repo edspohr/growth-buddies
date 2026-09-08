@@ -13,6 +13,11 @@ module.exports = {
     "./nosotros/**/*.{html,js}",
     "./privacidad/**/*.{html,js}",
     "./terminos/**/*.{html,js}",
+    "./sectores/**/*.{html,js}",
+    "./colombia/**/*.{html,js}",
+    "./peru/**/*.{html,js}",
+    "./ecuador/**/*.{html,js}",
+    "./preguntas-frecuentes/**/*.{html,js}",
     "./404.html",
   ],
   theme: {
