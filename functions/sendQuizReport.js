@@ -34,11 +34,11 @@ function generateEmailHTML({ company, opportunities, roi }) {
       <p style="margin: 24px 0 16px; font-size: 14px; color: #1a1a1a;">Puede reservar directamente su cupo, o agendar primero 30 minutos con Edmundo Spohr (Director) para ver si le hace sentido.</p>
 
       <p style="margin: 16px 0 8px;">
-        <a href="https://wa.me/56965863160?text=Hola%20Growth%20Buddies%21%20Vengo%20del%20quiz%20y%20quiero%20reservar%20mi%20cupo%20del%20Diagn%C3%B3stico%20de%20Automatizaci%C3%B3n%20Estrat%C3%A9gica.%20%C2%BFC%C3%B3mo%20coordinamos%20el%20pago%3F" style="background: #0097B2; color: white; padding: 14px 28px; text-decoration: none; border-radius: 999px; font-weight: bold; display: inline-block; margin-right: 8px;">Reservar mi cupo →</a>
+        <a href="https://wa.me/56975991366?text=Hola%20Growth%20Buddies%21%20Vengo%20del%20quiz%20y%20quiero%20reservar%20mi%20cupo%20del%20Diagn%C3%B3stico%20de%20Automatizaci%C3%B3n%20Estrat%C3%A9gica.%20%C2%BFC%C3%B3mo%20coordinamos%20el%20pago%3F" style="background: #0097B2; color: white; padding: 14px 28px; text-decoration: none; border-radius: 999px; font-weight: bold; display: inline-block; margin-right: 8px;">Reservar mi cupo →</a>
         <a href="https://calendly.com/espohr/conversemos" style="color: #0097B2; font-size: 14px; text-decoration: none; padding: 14px 0; display: inline-block;">o agendar conversación</a>
       </p>
 
-      <p style="font-size: 13px; color: #737373; margin-top: 16px;">También puede escribirnos por WhatsApp: <a href="https://wa.me/56965863160" style="color: #0097B2;">+56 9 6586 3160</a></p>
+      <p style="font-size: 13px; color: #737373; margin-top: 16px;">También puede escribirnos por WhatsApp: <a href="https://wa.me/56975991366" style="color: #0097B2;">+56 9 7599 1366</a></p>
 
       <hr style="margin: 40px 0; border: none; border-top: 1px solid #e2e8f0;" />
 

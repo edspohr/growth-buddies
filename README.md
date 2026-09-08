@@ -182,5 +182,5 @@ Inicio | Servicios | Soluciones | Blog | Contacto
 
 - **Edmundo Spohr** — Director & Fundador — [edmundo@growthbuddies.cl](mailto:edmundo@growthbuddies.cl)
 - **Felipe Soto Santibáñez** — Co-fundador (ex-Mercado Libre / Banco Falabella)
-- WhatsApp: [+56 9 5727 2191](https://wa.me/56957272191)
+- WhatsApp: [+56 9 7599 1366](https://wa.me/56975991366)
 - LinkedIn: [linkedin.com/company/growth-buddies](https://www.linkedin.com/company/growth-buddies)

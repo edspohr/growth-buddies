@@ -33,8 +33,8 @@ The design doc separately says **Lenis is kept** and **hero video is kept (opaci
 
 ### 2.2 A third stray phone number
 
-Aside from the current-deployed `+56 9 6586 3160` and the new `+56 9 7599 1366`:
-- [README.md:185](../README.md#L185) contains `+56 9 5727 2191`: a wrong number that matches neither deployed nor planned. Flag for correction in Phase 0.
+Aside from the current-deployed `+56 9 7599 1366` and the new `+56 9 7599 1366`:
+- [README.md:185](../README.md#L185) contains `+56 9 7599 1366`: a wrong number that matches neither deployed nor planned. Flag for correction in Phase 0.
 
 ### 2.3 SPI de-branding: 9 file surfaces, ~30 lines to rewrite
 
@@ -216,7 +216,7 @@ Every new page gets **≥3 inbound links** and carries the outbound links below.
    - "extrae datos automáticamente desde los correos de ingreso usando OCR con Gemini, los valida contra la base de expedientes, genera el documento PDF bilingüe con firma lista, y actualiza el tablero Kanban" → **"extrae y valida los datos de cada expediente, genera automáticamente la documentación necesaria y mantiene el tablero del equipo al día"**.
    - "poderes notariales bilingües" → **"documentación en varios idiomas"** (only if wording context requires it; otherwise omit "bilingüe").
    - Remove the badge chips "Pipefy (Webhooks)", "Google Gemini (OCR + IA)", "Generación PDF bilingüe" from `/casos/spi-americas` (lines 276–278). Replace with neutral chips like "Automatización a medida", "Integración con sistemas del cliente", "Operación en cuatro países".
-3. **Phone number replacement.** Sitewide grep-and-swap: `+56 9 6586 3160` → `+56 9 7599 1366`, `56965863160` → `56975991366`, `+56965863160` → `+56975991366`. Also fix [README.md:185](../README.md#L185) `+56 9 5727 2191` → same target. Update `functions/` reference strings identically (email templates), but do NOT deploy functions in this phase: the change is code-level and rides the next scheduled functions deploy. Flag this to Edmundo as a follow-up.
+3. **Phone number replacement.** Sitewide grep-and-swap: `+56 9 7599 1366` → `+56 9 7599 1366`, `56975991366` → `56975991366`, `+56975991366` → `+56975991366`. Also fix [README.md:185](../README.md#L185) `+56 9 7599 1366` → same target. Update `functions/` reference strings identically (email templates), but do NOT deploy functions in this phase: the change is code-level and rides the next scheduled functions deploy. Flag this to Edmundo as a follow-up.
 4. **Stale price/offer docs.** Update [llms.txt:15](../llms.txt#L15) and [:19](../llms.txt#L19) (USD $3,000 → CLP $490.000 + IVA / USD 500, 10–15 días, maqueta funcionando, 100% credit within 90 días, refund if <3 opportunities with positive ROI). Update [CLAUDE.md:27](../CLAUDE.md#L27) and [README.md:5](../README.md#L5) identically. In `llms.txt`, refresh the "Service lines" section so it lists **only what already exists on the site at this moment**: (a) Diagnóstico de Automatización Estratégica (entry product), (b) Legal Tech, (c) Asistente de IA Corporativo, (d) Gestión del Cambio (Prosci ADKAR). Do NOT list "planned" service lines. The agents/chatbots line is added to `llms.txt` in Phase 2, at the same time the new service page ships.
 5. **Tailwind content coverage.** Add to `content` array in [tailwind.config.js:3-17](../tailwind.config.js#L3-L17):
    ```
@@ -252,7 +252,7 @@ Every new page gets **≥3 inbound links** and carries the outbound links below.
 
 **Verification checklist.**
 - `grep -rniE "SPI Smart Flow|Pipefy|bilingüe" --include="*.html" .` returns 0 lines (allow Ingeglobal-unrelated "OCR"/"webhook" hits; verify manually).
-- `grep -rE "6586 ?3160|56965863160|5727 ?2191" .` returns 0 lines.
+- `grep -rE "6586 ?3160|56975991366|5727 ?2191" .` returns 0 lines.
 - `grep -rE "\+56 9 7599 1366|56975991366" .` returns the expected count (Edmundo confirms).
 - `grep -E "USD \\$?3[,.]000|3\\.000 USD" llms.txt CLAUDE.md README.md` returns 0 lines.
 - `npm run build` completes; `dist/output.css` byte-count reported.
@@ -290,11 +290,11 @@ chore(hygiene): add Sectores and Servicios footer columns
 > - Verify with `grep -rniE "SPI Smart Flow|Pipefy|bilingüe" --include="*.html" .`: must return zero lines. Allow "OCR" and "webhook" outside SPI files (e.g. `servicios/automatizacion-inteligente/index.html`, `soluciones/rendicion-gastos-ia/index.html`).
 >
 > **2. Phone number swap.** Replace across the entire repo (all `.html`, `.js`, `.md`, `functions/**/*.js`, `llms.txt`):
-> - `+56 9 6586 3160` → `+56 9 7599 1366`
-> - `56965863160` → `56975991366`
-> - `+56965863160` → `+56975991366`
-> - In `README.md` line 185, `+56 9 5727 2191` → `+56 9 7599 1366` and its `wa.me/56957272191` → `wa.me/56975991366`.
-> Verify: `grep -rE "6586 ?3160|56965863160|5727 ?2191" .` returns zero lines.
+> - `+56 9 7599 1366` → `+56 9 7599 1366`
+> - `56975991366` → `56975991366`
+> - `+56975991366` → `+56975991366`
+> - In `README.md` line 185, `+56 9 7599 1366` → `+56 9 7599 1366` and its `wa.me/56975991366` → `wa.me/56975991366`.
+> Verify: `grep -rE "6586 ?3160|56975991366|5727 ?2191" .` returns zero lines.
 >
 > **3. Docs alignment.**
 > - `llms.txt` lines 15 and 19: replace "USD $3,000" and "The $3,000 is fully deducted…" with the current offer: **CLP $490.000 + IVA in Chile, USD 500 for the rest of LATAM. Delivered in 10 to 15 days. Includes a working mockup ("maqueta funcionando"). 100% of the value is creditable to any project contracted within 90 days. Full refund if fewer than 3 opportunities with positive ROI are identified.**
@@ -759,7 +759,7 @@ chore(seo): drop video block from sitemap.xml homepage entry
 ## Surprising findings: what the audit turned up that changed how the plan reads
 
 1. **The design system already declared "Quiet Authority" done, but 6 of the 8 things it listed as removed are still in the code.** `.noise-overlay`, three `backdrop-blur-*` variants, `glass-nav` backdrop-filter, and (per the design doc's own "Kept" list) Lenis and hero video are supposed to persist: but the new brief overrides those two. So Phase 3 is partly finishing a job that was declared done, and partly extending it: and the design doc itself has to be updated to stop lying.
-2. **There are three phone numbers in the repo, not two.** `README.md:185` contains `+56 9 5727 2191`, a stray that matches neither the deployed number (`+56 9 6586 3160`) nor the target (`+56 9 7599 1366`). It never existed operationally; it looks like a stale copy-paste. The Phase 0 sweep fixes it.
+2. **There are three phone numbers in the repo, not two.** `README.md:185` contains `+56 9 7599 1366`, a stray that matches neither the deployed number (`+56 9 7599 1366`) nor the target (`+56 9 7599 1366`). It never existed operationally; it looks like a stale copy-paste. The Phase 0 sweep fixes it.
 3. **The homepage sitemap entry still declares a video.** `sitemap.xml:12-24` has a full `<video:video>` block pointing at `vid/hero.mp4`. Removing the video without also removing this block will produce a broken sitemap-video record in Search Console: a small but easy oversight.
 4. **Nav "Servicios" is an on-page anchor, and there is no `/servicios/` hub page.** Existing services live only as three siblings under `/servicios/`. Phase 2 builds a lightweight `/servicios/index.html` hub (four cards linking to the three existing service pages plus the new agents page) and repoints the nav to `/servicios`. The nav change ships in the same PR as the new service page, so users never land on a stale link.
 5. **The Ingeglobal case has no landing page at all.** It appears only as a card on the homepage's client-strip and one prose line. The new industrial pillar effectively **is** the Ingeglobal case study container until (or unless) a `/casos/ingeglobal/` page is spun up in a future batch. Anchoring the pillar's proof section to that Ingeglobal narrative: with `[EDMUNDO: dato]` placeholders where metrics belong: is the plan's key structural decision.
