@@ -104,6 +104,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://growthbuddies.cl/sectores/automatizacion-ia-industria-mineria</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
   <!-- ═══ Case studies (0.7–0.8) ═══ -->
   <url>
@@ -195,6 +201,12 @@
     <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://growthbuddies.cl/blog/automatizar-informes-tecnicos-ordenes-de-trabajo</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- ═══ Blog posts — legal cluster (0.6–0.7) ═══ -->
