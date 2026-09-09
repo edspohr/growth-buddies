@@ -44,10 +44,10 @@ exports.sendQuizFollowup = onSchedule(
               <p>Si la respuesta es sí, el siguiente paso natural es validarla con números reales y una maqueta funcionando sobre su operación. Eso es exactamente lo que hace el <strong>Diagnóstico de Automatización Estratégica</strong>: cuestionario previo, sesión de trabajo de 2 a 3 horas sobre sus procesos reales, y entrega en 10 a 15 días de 3 oportunidades priorizadas con ROI estimado en pesos más una maqueta funcionando de la más rápida.</p>
               <p style="font-size: 14px; color: #525252;">Inversión: <strong>$490.000 + IVA (USD 500 fuera de Chile)</strong>. El pago reserva su cupo (solo abrimos 2 cupos al mes). El 100% del valor es acreditable a su proyecto si avanza dentro de 90 días. Si no identificamos al menos 3 oportunidades con ROI positivo, devolvemos el 100%.</p>
               <p style="margin: 24px 0;">
-                <a href="https://wa.me/56965863160?text=Hola%20Edmundo%21%20Quiero%20reservar%20mi%20cupo%20del%20Diagn%C3%B3stico%20de%20Automatizaci%C3%B3n%20Estrat%C3%A9gica.%20%C2%BFC%C3%B3mo%20coordinamos%20el%20pago%3F" style="background: #0097B2; color: white; padding: 12px 24px; text-decoration: none; border-radius: 999px; font-weight: bold; margin-right: 8px;">Reservar mi cupo →</a>
+                <a href="https://wa.me/56975991366?text=Hola%20Edmundo%21%20Quiero%20reservar%20mi%20cupo%20del%20Diagn%C3%B3stico%20de%20Automatizaci%C3%B3n%20Estrat%C3%A9gica.%20%C2%BFC%C3%B3mo%20coordinamos%20el%20pago%3F" style="background: #0097B2; color: white; padding: 12px 24px; text-decoration: none; border-radius: 999px; font-weight: bold; margin-right: 8px;">Reservar mi cupo →</a>
                 <a href="https://calendly.com/espohr/conversemos" style="color: #0097B2; font-size: 14px; text-decoration: none;">o primero, agendar conversación</a>
               </p>
-              <p style="font-size: 13px; color: #666;">WhatsApp: <a href="https://wa.me/56965863160">+56 9 6586 3160</a></p>
+              <p style="font-size: 13px; color: #666;">WhatsApp: <a href="https://wa.me/56975991366">+56 9 7599 1366</a></p>
               <p>Si la respuesta es no, no hay problema. Este es el último correo automático que recibirá de Growth Buddies sobre este tema.</p>
               <p>Si quiere darme feedback sobre por qué las hipótesis no le hicieron sentido, puede responder este correo directamente. Lo leo personalmente.</p>
               <p style="margin-top: 32px;">Edmundo Spohr<br/>Director<br/>Growth Buddies</p>

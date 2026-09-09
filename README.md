@@ -2,7 +2,7 @@
 
 Sitio web de [growthbuddies.cl](https://growthbuddies.cl), consultora chilena de **diagnóstico y automatización con IA** para empresas de servicios profesionales en Latinoamérica. Diagnosticamos operaciones, identificamos dónde se pierde dinero, y entregamos un roadmap de automatización priorizado con ROI estimado.
 
-> **Posicionamiento:** Consultora de diagnóstico estratégico, no de implementación genérica. El CTA principal es "Evaluar si califica" / "Sesión de Calificación". El producto central es el Diagnóstico de Automatización Estratégica (USD $3.000, 2 semanas).
+> **Posicionamiento:** Consultora de diagnóstico estratégico, no de implementación genérica. El CTA principal es "Agendar conversación con el director" o "Evaluar si califica". El producto central es el Diagnóstico de Automatización Estratégica (CLP $490.000 + IVA en Chile, USD 500 en el resto de LATAM, entrega en 10 a 15 días). Incluye maqueta funcionando. 100% acreditable a cualquier proyecto contratado dentro de 90 días; garantía de devolución si no se identifican al menos 3 oportunidades con ROI positivo.
 
 ## Stack Tecnológico
 
@@ -182,5 +182,5 @@ Inicio | Servicios | Soluciones | Blog | Contacto
 
 - **Edmundo Spohr** — Director & Fundador — [edmundo@growthbuddies.cl](mailto:edmundo@growthbuddies.cl)
 - **Felipe Soto Santibáñez** — Co-fundador (ex-Mercado Libre / Banco Falabella)
-- WhatsApp: [+56 9 5727 2191](https://wa.me/56957272191)
+- WhatsApp: [+56 9 7599 1366](https://wa.me/56975991366)
 - LinkedIn: [linkedin.com/company/growth-buddies](https://www.linkedin.com/company/growth-buddies)

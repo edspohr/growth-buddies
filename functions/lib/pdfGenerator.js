@@ -454,10 +454,10 @@ function drawNextStepsPage(doc, leadInfo) {
   });
   y += 16;
 
-  doc.fillColor(COLORS.textMuted).text("o WhatsApp directo: +56 9 6586 3160", MARGIN, y, {
+  doc.fillColor(COLORS.textMuted).text("o WhatsApp directo: +56 9 7599 1366", MARGIN, y, {
     width: CONTENT_WIDTH,
     align: "center",
-    link: "https://wa.me/56965863160"
+    link: "https://wa.me/56975991366"
   });
 
   drawPageFooter(doc, 6, 6);
