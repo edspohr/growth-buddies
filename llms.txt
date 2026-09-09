@@ -62,6 +62,8 @@ Only services already live on the site are listed here.
 
 4. **Change Management (Gestión del Cambio)**: Prosci ADKAR-certified adoption programs for AI and automation tools. Guaranteed adoption KPIs. URL: https://growthbuddies.cl/servicios/gestion-del-cambio
 
+5. **Agentes de IA y asistentes conversacionales para empresas**: custom-built conversational agents and chatbots with integration to CRM, ERP, WhatsApp Business and internal systems. For companies with 15+ employees and documentary or administrative operations. Projects contracted after the strategic diagnostic; from USD 3,000. URL: https://growthbuddies.cl/servicios/agentes-ia-chatbots-empresas
+
 ## Products (AI Agents)
 
 - **BrokerIA** — Insurance quote automation agent. URL: https://growthbuddies.cl/soluciones/brokeria

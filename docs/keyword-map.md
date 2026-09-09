@@ -206,6 +206,36 @@
 
 ---
 
+## /servicios/agentes-ia-chatbots-empresas
+
+| Field | Value |
+|---|---|
+| **Primary query** | `chatbot empresarial a medida Chile` |
+| **Secondary queries** | `agente conversacional para empresas`, `chatbot IA con integración a sistemas`, `asistente conversacional empresarial LATAM` |
+| **Intent** | C/T |
+| **Target countries** | CL, CO, PE |
+| **Title target** | `Chatbot Empresarial a Medida y Agentes Conversacionales con IA \| Growth Buddies` |
+| **H1 target** | qualifies audience (empresas 15+ personas con operaciones documentales/administrativas), avoids "compre un bot de WhatsApp" framing |
+| **Cannibalization** | Does NOT target "asistente de IA para empresas" (owned by /servicios/ia-corporativa) or "agentes de IA para empresas Chile" (owned by /blog/agentes-ia-para-empresas-chile). Must link to both. |
+
+### /blog/cuanto-cuesta-un-chatbot-con-ia-empresa-chile
+| Field | Value |
+|---|---|
+| **Primary query** | `cuánto cuesta un chatbot con IA` |
+| **Secondary queries** | `precio chatbot empresarial Chile`, `costos ocultos chatbot IA`, `cuánto cuesta agente conversacional empresa` |
+| **Intent** | C: high commercial value |
+| **Title target** | `¿Cuánto cuesta un chatbot con IA para una empresa en Chile? \| Growth Buddies` |
+| **Service** | `/servicios/agentes-ia-chatbots-empresas` |
+| **Cannibalization** | Complements (not replaces) /blog/cuanto-cuesta-automatizar-empresa-chile. Chatbot-specific vs. broader automation. Must link to it. |
+
+### /blog/diferencia-chatbot-y-agente-de-ia (planned, Batch 2)
+| Field | Value |
+|---|---|
+| **Primary query** | `diferencia entre chatbot y agente de IA` |
+| **Status** | reserved: do not target this query on any other page until published |
+
+---
+
 ## Cannibalization rules
 
 - Homepage owns "diagnóstico automatización": service pages MUST NOT use this exact phrase in their H1.
@@ -213,4 +243,5 @@
 - /ia-corporativa owns "asistente IA para empresas": blog agentes-ia owns "agentes de IA" (different intent).
 - /gestion-del-cambio owns "Prosci ADKAR": no other page should target this.
 - /sectores/automatizacion-ia-industria-mineria owns "automatización con IA empresas industriales Chile": no service or blog page should copy this H1 phrasing.
-- Reserved queries (planned Batch 2): "control de gestión por contrato minería IA", "IA para cotizaciones distribuidora industrial".
+- /servicios/agentes-ia-chatbots-empresas owns "chatbot empresarial a medida": separate from /servicios/ia-corporativa (asistente IA/RAG) and /blog/agentes-ia-para-empresas-chile (informational agents). Must cross-link.
+- Reserved queries (planned Batch 2): "control de gestión por contrato minería IA", "IA para cotizaciones distribuidora industrial", "diferencia entre chatbot y agente de IA".
