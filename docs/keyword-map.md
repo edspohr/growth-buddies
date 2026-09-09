@@ -172,9 +172,45 @@
 
 ---
 
+## /sectores/automatizacion-ia-industria-mineria (Pillar)
+
+| Field | Value |
+|---|---|
+| **Primary query** | `automatización con IA empresas industriales Chile` |
+| **Secondary queries** | `automatización IA minería servicios Chile`, `IA para consultoras de ingeniería minera`, `automatización mantenimiento industrial IA` |
+| **Intent** | C |
+| **Target countries** | CL, PE |
+| **Title target** | `Automatización con IA para Empresas Industriales en Chile \| Growth Buddies` |
+| **H1 target** | reflects operational reporting pain + monetizable output |
+| **Cluster posts** | `/blog/automatizar-informes-tecnicos-ordenes-de-trabajo` (+ planned) |
+
+### /blog/automatizar-informes-tecnicos-ordenes-de-trabajo
+| Field | Value |
+|---|---|
+| **Primary query** | `automatizar informes técnicos y órdenes de trabajo` |
+| **Intent** | I/C |
+| **Title target** | `Cómo automatizar informes técnicos y órdenes de trabajo con IA \| Growth Buddies` |
+| **Pillar** | `/sectores/automatizacion-ia-industria-mineria` |
+
+### /blog/control-gestion-por-contrato-mineria-ia (planned, Batch 2)
+| Field | Value |
+|---|---|
+| **Primary query** | `control de gestión por contrato minería IA` |
+| **Status** | reserved: do not target this query on any other page until published |
+
+### /blog/ia-para-cotizaciones-distribuidora-industrial (planned, Batch 2)
+| Field | Value |
+|---|---|
+| **Primary query** | `IA para cotizaciones distribuidora industrial` |
+| **Status** | reserved: do not target this query on any other page until published |
+
+---
+
 ## Cannibalization rules
 
-- Homepage owns "diagnóstico automatización" — service pages MUST NOT use this exact phrase in their H1.
-- /legal-tech owns "automatización legal Chile" — blog posts on contracts must angle to "cómo" (how-to) framing.
-- /ia-corporativa owns "asistente IA para empresas" — blog agentes-ia owns "agentes de IA" (different intent).
-- /gestion-del-cambio owns "Prosci ADKAR" — no other page should target this.
+- Homepage owns "diagnóstico automatización": service pages MUST NOT use this exact phrase in their H1.
+- /legal-tech owns "automatización legal Chile": blog posts on contracts must angle to "cómo" (how-to) framing.
+- /ia-corporativa owns "asistente IA para empresas": blog agentes-ia owns "agentes de IA" (different intent).
+- /gestion-del-cambio owns "Prosci ADKAR": no other page should target this.
+- /sectores/automatizacion-ia-industria-mineria owns "automatización con IA empresas industriales Chile": no service or blog page should copy this H1 phrasing.
+- Reserved queries (planned Batch 2): "control de gestión por contrato minería IA", "IA para cotizaciones distribuidora industrial".
