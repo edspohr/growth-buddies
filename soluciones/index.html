@@ -70,7 +70,6 @@
 
     <link rel="dns-prefetch" href="https://calendly.com" />
 
-    <script src="/js/lenis.min.js" defer></script>
     <noscript>
       <style>
         .reveal { opacity: 1 !important; transform: none !important; }
@@ -392,29 +391,7 @@
     </footer>
 
     <script>
-      // --- Safe Lenis Smooth Scroll ---
-      try {
-        if (typeof Lenis !== "undefined") {
-          const lenis = new Lenis({
-            duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            orientation: "vertical",
-            smoothWheel: true,
-          });
-
-          function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-          }
-          requestAnimationFrame(raf);
-        } else {
-          // console.warn("Lenis not loaded");
-          document.documentElement.style.scrollBehavior = "smooth";
-        }
-      } catch (e) {
-        // console.error("Lenis init failed", e);
-        document.documentElement.style.scrollBehavior = "smooth";
-      }
+      
 
        // --- Reveal Animation ---
       (function () {

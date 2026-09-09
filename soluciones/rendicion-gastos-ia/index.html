@@ -123,7 +123,6 @@
       }]
     }
     </script>
-    <script src="/js/lenis.min.js" defer></script>
     <noscript>
       <style>
         .reveal { opacity: 1 !important; transform: none !important; }
@@ -509,21 +508,7 @@
     </footer>
 
     <script>
-       try {
-        if (typeof Lenis !== "undefined") {
-          const lenis = new Lenis({
-            duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            orientation: "vertical",
-            smoothWheel: true,
-          });
-          function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-          }
-          requestAnimationFrame(raf);
-        }
-      } catch (e) {}
+       
     </script>
   
     <script>

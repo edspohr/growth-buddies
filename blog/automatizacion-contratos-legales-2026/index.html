@@ -117,7 +117,6 @@
 
     <link rel="dns-prefetch" href="https://calendly.com" />
 
-    <script src="/js/lenis.min.js" defer></script>
     <noscript>
       <style>
         .reveal { opacity: 1 !important; transform: none !important; }
@@ -539,15 +538,8 @@
         }
       })();
 
-      // Lenis Smooth Scroll
       document.addEventListener('DOMContentLoaded', function() {
-        if (typeof Lenis !== 'undefined') {
-          try {
-            var lenis = new Lenis({ duration: 1.2, easing: function(t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); }, orientation: 'vertical', smoothWheel: true });
-            function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-            requestAnimationFrame(raf);
-          } catch(e) {}
-        }
+        
       });
     </script>
 

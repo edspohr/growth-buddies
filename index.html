@@ -414,7 +414,6 @@
 
     <link rel="dns-prefetch" href="https://calendly.com" />
 
-    <script src="/js/lenis.min.js" defer></script>
     <noscript>
       <style>
         .reveal {
@@ -4393,43 +4392,6 @@
           statObserver.observe(el);
         });
       })();
-    </script>
-
-    <script>
-      // --- Safe Lenis Smooth Scroll ---
-      try {
-        if (typeof Lenis !== "undefined") {
-          const lenis = new Lenis({
-            duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            orientation: "vertical",
-            smoothWheel: true,
-          });
-
-          function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-          }
-          requestAnimationFrame(raf);
-
-          // Handle anchor links with Lenis
-          document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-            anchor.addEventListener("click", function (e) {
-              e.preventDefault();
-              const targetId = this.getAttribute("href");
-              if (targetId && targetId !== "#") {
-                lenis.scrollTo(targetId);
-              }
-            });
-          });
-        } else {
-          console.warn("Lenis not loaded");
-          document.documentElement.style.scrollBehavior = "smooth";
-        }
-      } catch (e) {
-        console.error("Lenis init failed", e);
-        document.documentElement.style.scrollBehavior = "smooth";
-      }
     </script>
 
     <script>
