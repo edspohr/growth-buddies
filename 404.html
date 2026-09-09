@@ -51,30 +51,20 @@
     <style>
       :root { --color-accent: #0097B2; --color-cta: #0097B2; --color-cta-hover: #00B5D6; }
       .glass-nav {
-        background: rgba(5, 5, 16, 0.7);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+        background: rgba(11, 11, 15, 0.95);
         border-bottom: 1px solid rgba(255,255,255,0.06);
-      }
-      .noise-overlay {
-        position: fixed;
-        inset: 0;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-        pointer-events: none;
-        z-index: 1;
       }
     </style>
     <style>
       :root{--color-accent:#0097B2;--color-cta:#0097B2;--color-cta-hover: #00B5D6;--color-dark:#0F172A}
       *,::before,::after{box-sizing:border-box}
       body{font-family:'Inter',sans-serif;background-color: var(--bg, #0B0B0F);color: var(--fg, #ECECEF);overflow-x:hidden;margin:0}
-      .glass-nav{background:rgba(11,11,15,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}
+      .glass-nav{background:rgba(11,11,15,0.95);border-bottom:1px solid rgba(255,255,255,.05)}
     .font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Space Grotesk",system-ui,sans-serif}.font-heading{font-family:"Geist","system-ui",sans-serif}</style>
     <link rel="preload" href="/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
   </head>
   <body class="antialiased selection:bg-[var(--color-cta)] selection:text-black min-h-screen flex flex-col">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--color-cta)] focus:text-white focus:px-4 focus:py-2 focus:rounded font-semibold">Saltar al contenido</a>
-    <div class="noise-overlay"></div>
 
     <nav class="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
       <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -111,7 +101,7 @@
 
     <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" style="display:none;" class="fixed inset-0 z-[200] flex-col" aria-hidden="true">
-      <div class="absolute inset-0/96 backdrop-blur-xl"></div>
+      <div class="absolute inset-0 bg-[var(--bg)]/95"></div>
       <div class="relative flex flex-col h-full px-6 py-6 overflow-y-auto">
         <div class="flex justify-between items-center mb-10">
           <a href="/" class="flex items-center gap-2">

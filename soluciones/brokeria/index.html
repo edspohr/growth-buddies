@@ -226,7 +226,6 @@
   </head>
   <body class="antialiased selection:bg-amber-400 selection:text-black">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-amber-400 focus:text-white focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
-    <div class="noise-overlay"></div>
 
     <!-- Nav -->
     <nav class="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
@@ -264,7 +263,7 @@
 
     <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" style="display:none;" class="fixed inset-0 z-[200] flex-col" aria-hidden="true">
-      <div class="absolute inset-0/96 backdrop-blur-xl"></div>
+      <div class="absolute inset-0 bg-[var(--bg)]/95"></div>
       <div class="relative flex flex-col h-full px-6 py-6 overflow-y-auto">
         <div class="flex justify-between items-center mb-10">
           <a href="/" class="flex items-center gap-2">
