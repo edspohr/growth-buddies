@@ -66,7 +66,6 @@
   </head>
   <body class="antialiased text-slate-300">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--accent)] focus:text-white focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
-    <div class="noise-overlay"></div>
 
     <nav class="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
       <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -91,7 +90,7 @@
     </nav>
 
     <div id="mobile-menu" style="display:none;" class="fixed inset-0 z-[200] flex-col" aria-hidden="true">
-      <div class="absolute inset-0/96 backdrop-blur-xl"></div>
+      <div class="absolute inset-0 bg-[var(--bg)]/95"></div>
       <div class="relative flex flex-col h-full px-6 py-6 overflow-y-auto">
         <div class="flex justify-between items-center mb-10">
           <a href="/" class="flex items-center gap-2"><img src="/img/logo.webp" alt="Logotipo de Growth Buddies" class="h-8 w-8" height="32" width="32" /><span class="font-bold text-lg text-white">Growth Buddies</span></a>
@@ -205,7 +204,7 @@
     </main>
 
     <footer class="bg-black py-10 px-6 border-t border-white/10 text-sm text-center text-slate-500">
-      <p>&copy; 2026 Growth Buddies SpA. Latinoamérica · 🇨🇱 🇨🇴 🇵🇪 🇪🇨</p>
+      <p>&copy; 2026 Growth Buddies SpA. Latinoamérica · <a href="/" class="hover:text-white transition-colors">CL</a> · <a href="/colombia" class="hover:text-white transition-colors">CO</a> · <a href="/peru" class="hover:text-white transition-colors">PE</a> · <a href="/ecuador" class="hover:text-white transition-colors">EC</a></p>
       <div class="flex justify-center gap-6 mt-3">
         <a href="/privacidad" class="text-[var(--accent)]">Privacidad</a>
         <a href="/terminos" class="hover:text-slate-300 transition-colors">Términos</a>

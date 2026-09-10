@@ -31,7 +31,7 @@
     <meta name="author" content="Growth Buddies" />
     <link rel="canonical" href="https://growthbuddies.cl/preguntas-frecuentes" />
     <link rel="icon" type="image/png" href="../img/avatar.webp" />
-    <link rel="apple-touch-icon" href="/img/logo.png" />
+    <link rel="apple-touch-icon" href="/img/logo.webp" />
     <link rel="manifest" href="/site.webmanifest" />
 
     <meta property="og:locale" content="es_CL" />
@@ -71,7 +71,7 @@
           "name": "¿Cuánto cuesta el diagnóstico de automatización?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "El Diagnóstico de Automatización Estratégica cuesta $490.000 + IVA en Chile o USD 500 para el resto de Latinoamérica, y se entrega en 10 a 15 días. Incluye cuestionario previo, sesión de trabajo de 2 a 3 horas sobre los procesos reales de la empresa, 3 oportunidades priorizadas con ROI estimado en pesos, una maqueta funcionando de la oportunidad más rápida y una sesión de devolución de 60 a 90 minutos con el decisor presente. El 100% del valor es acreditable a cualquier proyecto (implementación, desarrollo o capacitación) contratado dentro de 90 días; pasado el plazo, el crédito caduca. Garantía de devolución si no identificamos al menos 3 oportunidades con ROI positivo."
+            "text": "El Diagnóstico de Automatización Estratégica cuesta $490.000 + IVA en Chile o USD 500 para el resto de Latinoamérica, y se entrega en 10 a 15 días. Incluye cuestionario previo, sesión de trabajo de 2 a 3 horas sobre los procesos reales de la empresa, 3 oportunidades priorizadas con ROI estimado en su moneda, una maqueta funcionando de la oportunidad más rápida y una sesión de devolución de 60 a 90 minutos con el decisor presente. El 100% del valor es acreditable a cualquier proyecto (implementación, desarrollo o capacitación) contratado dentro de 90 días; pasado el plazo, el crédito caduca. Garantía de devolución si no identificamos al menos 3 oportunidades con ROI positivo."
           }
         },
         {
@@ -192,7 +192,6 @@
 
     <link rel="preload" href="../dist/output.css" as="style" />
     <link href="../dist/output.css" rel="stylesheet" />
-    <script src="/js/lenis.min.js" defer></script>
     <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
     <!-- Microsoft Clarity -->
     <script>
@@ -212,7 +211,6 @@
   </head>
   <body class="antialiased selection:bg-[var(--accent)] selection:text-white">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--accent)] focus:text-white focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
-    <div class="noise-overlay"></div>
 
     <!-- Nav -->
     <nav class="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
@@ -243,7 +241,7 @@
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" style="display:none;" class="fixed inset-0 z-[200] flex-col" aria-hidden="true">
-      <div class="absolute inset-0/96 backdrop-blur-xl"></div>
+      <div class="absolute inset-0 bg-[var(--bg)]/95"></div>
       <div class="relative flex flex-col h-full px-6 py-6 overflow-y-auto">
         <div class="flex justify-between items-center mb-10">
           <a href="/" class="flex items-center gap-2"><img src="/img/logo.webp" alt="Logotipo de Growth Buddies" class="h-8 w-8" height="32" width="32" /><span class="font-bold text-lg text-white">Growth Buddies</span></a>
@@ -340,7 +338,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" class="flex-shrink-0 transition-transform duration-300 group-open:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
                 </summary>
                 <div class="px-6 pb-6 text-slate-400 leading-relaxed border-t border-zinc-800 pt-4">
-                  El Diagnóstico de Automatización Estratégica cuesta <strong class="text-white">$490.000 + IVA en Chile</strong> o <strong class="text-white">USD 500 para el resto de Latinoamérica</strong>, y se entrega en 10 a 15 días. Incluye cuestionario previo, sesión de trabajo de 2 a 3 horas sobre los procesos reales de su empresa, 3 oportunidades priorizadas con ROI estimado en pesos, una maqueta funcionando de la oportunidad más rápida y una sesión de devolución de 60 a 90 minutos con el decisor de la empresa presente. El 100% del valor es acreditable a cualquier proyecto (implementación, desarrollo o capacitación) contratado dentro de 90 días; pasado el plazo, el crédito caduca.
+                  El Diagnóstico de Automatización Estratégica cuesta <strong class="text-white">$490.000 + IVA en Chile</strong> o <strong class="text-white">USD 500 para el resto de Latinoamérica</strong>, y se entrega en 10 a 15 días. Incluye cuestionario previo, sesión de trabajo de 2 a 3 horas sobre los procesos reales de su empresa, 3 oportunidades priorizadas con ROI estimado en su moneda, una maqueta funcionando de la oportunidad más rápida y una sesión de devolución de 60 a 90 minutos con el decisor de la empresa presente. El 100% del valor es acreditable a cualquier proyecto (implementación, desarrollo o capacitación) contratado dentro de 90 días; pasado el plazo, el crédito caduca.
                 </div>
               </details>
 
@@ -510,15 +508,60 @@
 
     </main>
 
-    <footer class="bg-black py-12 px-6 border-t border-white/10 text-sm">
-      <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8 mb-10">
-        <div class="col-span-2 md:col-span-1 space-y-4">
-          <a href="/" class="flex items-center gap-2">
-            <img src="/img/logo.webp" alt="Growth Buddies" class="h-8 w-8 opacity-90" height="32" width="32" />
-            <span class="font-bold text-white tracking-widest font-display text-xs">GROWTH BUDDIES</span>
+        <footer
+      class="bg-black py-10 px-5 md:py-16 md:px-6 border-t border-white/10 text-sm"
+    >
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-8 md:gap-8 md:mb-12"
+      >
+        <!-- Brand -->
+        <div class="space-y-6 col-span-2 md:col-span-3 lg:col-span-1">
+          <a href="/" class="flex items-center gap-3 group">
+            <img
+              src="/img/groddiesLogo.webp"
+              alt="Logotipo de Growth Buddies"
+              class="h-10 w-10 opacity-90 group-hover:opacity-100 transition-opacity"
+              loading="lazy"
+              height="40"
+              width="40"
+            />
+            <span
+              class="font-bold text-xl text-white tracking-widest font-display"
+              >GROWTH BUDDIES</span
+            >
           </a>
-          <p class="text-slate-400 text-xs leading-relaxed">Diagnóstico y automatización con IA para empresas de servicios profesionales en Latinoamérica.</p>
+          <p class="text-slate-400 leading-relaxed max-w-xs">
+            Diagnóstico y automatización con IA para empresas de servicios
+            profesionales en Latinoamérica.
+          </p>
+          <div class="flex gap-4">
+            <a
+              href="https://www.linkedin.com/company/growth-buddies"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Perfil de LinkedIn de Growth Buddies"
+              class="text-slate-400 hover:text-[var(--accent)] transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a
+              href="mailto:edmundo@growthbuddies.cl"
+              aria-label="Enviar correo electrónico a Growth Buddies"
+              class="text-slate-400 hover:text-[var(--accent)] transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+            <a
+              href="tel:+56975991366"
+              aria-label="Llamar a Growth Buddies"
+              class="text-slate-400 hover:text-[var(--accent)] transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            </a>
+          </div>
         </div>
+
+        <!-- Servicios -->
         <div>
           <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Servicios</h4>
           <ul class="space-y-3 text-slate-400">
@@ -526,40 +569,51 @@
             <li><a href="/servicios/ia-corporativa" class="hover:text-[var(--accent)] transition-colors">Asistente de IA Corporativo</a></li>
             <li><a href="/servicios/gestion-del-cambio" class="hover:text-[var(--accent)] transition-colors">Gestión del Cambio (Prosci)</a></li>
             <li><a href="/servicios/agentes-ia-chatbots-empresas" class="hover:text-[var(--accent)] transition-colors">Agentes de IA y Chatbots</a></li>
-            <!-- INSERTION POINT: new /servicios/ landings (agentes-ia-chatbots-empresas ships in Batch 1) -->
+            <!-- INSERTION POINT: new /servicios/ landings -->
           </ul>
         </div>
+
+        <!-- Sectores -->
         <div>
           <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Sectores</h4>
           <ul class="space-y-3 text-slate-400">
             <li><a href="/sectores/automatizacion-ia-estudios-juridicos" class="hover:text-[var(--accent)] transition-colors">Estudios Jurídicos</a></li>
             <li><a href="/sectores/automatizacion-ia-industria-mineria" class="hover:text-[var(--accent)] transition-colors">Empresas Industriales</a></li>
-            <!-- INSERTION POINT: new /sectores/ pillars (automatizacion-ia-industria-mineria ships in Batch 1) -->
+            <!-- INSERTION POINT: new /sectores/ pillars -->
           </ul>
         </div>
+
+        <!-- Recursos -->
         <div>
-          <h4 class="text-white font-bold mb-4 font-display uppercase tracking-wider text-xs">Recursos</h4>
-          <ul class="space-y-2 text-slate-400 text-xs">
-            <li><a href="/casos" class="hover:text-[var(--accent)] transition-colors">Casos de Éxito</a></li>
+          <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Recursos</h4>
+          <ul class="space-y-3 text-slate-400">
             <li><a href="/blog" class="hover:text-[var(--accent)] transition-colors">Blog</a></li>
+            <li><a href="/recursos/guia-ia-legal" class="hover:text-[var(--accent)] transition-colors">Guía Gratuita IA Legal</a></li>
+            <li><a href="/recursos/informe-automatizacion-servicios-latam" class="hover:text-[var(--accent)] transition-colors">Informe LATAM 2026</a></li>
+            <li><a href="/preguntas-frecuentes" class="hover:text-[var(--accent)] transition-colors">Preguntas Frecuentes</a></li>
             <li><a href="/recursos/glosario-ia-automatizacion" class="hover:text-[var(--accent)] transition-colors">Glosario IA</a></li>
-            <li><a href="/preguntas-frecuentes" class="text-[var(--accent)]">Preguntas Frecuentes</a></li>
+            <li><a href="/soluciones" class="hover:text-[var(--accent)] transition-colors">Ejemplos de Implementación</a></li>
           </ul>
         </div>
+
+        <!-- Empresa -->
         <div>
-          <h4 class="text-white font-bold mb-4 font-display uppercase tracking-wider text-xs">Empresa</h4>
-          <ul class="space-y-2 text-slate-400 text-xs">
+          <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Empresa</h4>
+          <ul class="space-y-3 text-slate-400">
             <li><a href="/nosotros" class="hover:text-[var(--accent)] transition-colors">Nosotros</a></li>
-            <li><a href="/metodologia" class="hover:text-[var(--accent)] transition-colors">Metodología</a></li>
-            <li><a href="/sitemap.xml" class="hover:text-[var(--accent)] transition-colors">Sitemap</a></li>
+            <li><a href="/casos" class="hover:text-[var(--accent)] transition-colors">Casos de Éxito</a></li>
+            <li><a href="/privacidad" class="hover:text-[var(--accent)] transition-colors">Privacidad</a></li>
+            <li><a href="/terminos" class="hover:text-[var(--accent)] transition-colors">Términos</a></li>
           </ul>
         </div>
       </div>
-      <div class="pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-slate-500">
-        <p>&copy; 2026 Growth Buddies SpA. Latinoamérica · 🇨🇱 🇨🇴 🇵🇪 🇪🇨</p>
-        <div class="flex gap-4">
-          <a href="/privacidad" class="hover:text-slate-300 transition-colors">Privacidad</a>
-          <a href="/terminos" class="hover:text-slate-300 transition-colors">Términos</a>
+
+      <div
+        class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400"
+      >
+        <div>&copy; 2026 Growth Buddies SpA. Latinoamérica · <a href="/" class="hover:text-white transition-colors">CL</a> · <a href="/colombia" class="hover:text-white transition-colors">CO</a> · <a href="/peru" class="hover:text-white transition-colors">PE</a> · <a href="/ecuador" class="hover:text-white transition-colors">EC</a></div>
+        <div>
+          <a href="/sitemap.xml" class="hover:text-slate-300 transition-colors">Sitemap</a>
         </div>
       </div>
     </footer>

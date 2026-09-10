@@ -138,9 +138,29 @@ Both classes now resolve identically:
 - **No** `backdrop-filter`, no `box-shadow` glow, no noise pseudo-element
 
 ### Navigation (`.glass-nav`)
-- Background: `rgba(11,11,15,0.88)` + `blur(8px)`
+- Background: solid `rgba(11,11,15,0.95)` (no `backdrop-filter`)
 - Border-bottom: 1px `--line`
-- On scroll (`.scrolled`): background → `rgba(11,11,15,0.97)`
+- On scroll (`.scrolled`): background → solid `rgba(11,11,15,0.98)`
+
+### Hero (`.hero-static`)
+- Full-bleed background image already defined in `tailwind.config.js:57`.
+- Applied to a single `<div class="hero-static absolute inset-0">`; there is no `<video>` element.
+
+### Homepage hero structure (canonical)
+1. Eyebrow (`text-[var(--accent)]` uppercase, `0.12em` tracking)
+2. Two-line H1 (`clamp(2.5rem,5vw,3.25rem)`, `<br>` between the lines)
+3. Subtitle paragraph (max-w-2xl, `text-slate-400`)
+4. Primary CTA (`.btn-cta`, Calendly) + secondary text link (`o escríbanos por WhatsApp`)
+5. Support line (`text-xs text-[var(--fg-muted)]`) with price + credit note
+6. Logo strip ("Con la confianza de" + 4 image logos + 2 wordmarks, all `h-6 md:h-7`, `grayscale brightness-0 invert opacity-60`)
+7. Credentials chips (external `.trust-bar` row directly below the hero)
+
+Country flags do NOT appear in the hero; they live only in the footer copyright chip row (`CL · CO · PE · EC`).
+
+### Google reviews module
+- 5.0 score at `text-5xl md:text-6xl`, leading over a muted eyebrow (`text-[var(--fg-muted)]`)
+- Review cards have no initials avatars; the Google G icon in the card header is the only visual metadata
+- Reviewer name text uses `text-[var(--fg-muted)]`; secondary line uses `text-[var(--fg-muted)]/70`
 
 ### Section Dividers
 ```html
@@ -153,29 +173,33 @@ Both classes now resolve identically:
 
 ## 6. Removed Effects
 
-| Effect | Removal |
-|---|---|
-| `.noise-overlay` grain animation | `display: none` in CSS |
-| `.hero-gradient-bg` mesh-drift animation | Static radial only, no `background-size` or `animation` |
-| `.hero-grain` | `display: none` |
-| `.glow-blob` mouse-tracking glow | `display: none` |
-| `.glow-card` box-shadow glow | Replaced with `border-color` hover only |
-| `.step-glow` box-shadow | Removed |
-| `.glass-card::before` noise texture | `display: none` |
-| `backdrop-filter` on cards | Removed |
-| `.animated-gradient-text` animation | Rendered as solid `--fg` |
-| `.magnetic-btn` JS (3D magnetic) | Script block removed from `index.html` |
-| `.type-tilt` JS (3D tilt) | Script block removed from `index.html` |
-| Decorative emerald/purple/amber classes | Replaced with `--accent` + neutral equivalents |
-| Oversized display stats (10rem) | Capped to `clamp(3.5rem,8vw,6rem)` |
-| `box-shadow` glow on `.btn-cta` | Removed; `--color-cta-glow: transparent` |
+| Effect | Removal | Date |
+|---|---|---|
+| `.noise-overlay` grain animation | `<div>` deleted from every page; CSS rule removed from `src/input.css` | 2026-09 |
+| `.hero-gradient-bg` mesh-drift animation | Static radial only, no `background-size` or `animation` | 2026-06 |
+| `.hero-grain` | `display: none` | 2026-06 |
+| `.glow-blob` mouse-tracking glow | `display: none` | 2026-06 |
+| `.glow-card` box-shadow glow | Replaced with `border-color` hover only | 2026-06 |
+| `.step-glow` box-shadow | Removed | 2026-06 |
+| `.glass-card::before` noise texture | `display: none` | 2026-06 |
+| `backdrop-filter` on cards | Removed | 2026-06 |
+| `.animated-gradient-text` animation | Rendered as solid `--fg` | 2026-06 |
+| `.magnetic-btn` JS (3D magnetic) | Script block removed from `index.html` | 2026-06 |
+| `.type-tilt` JS (3D tilt) | Script block removed from `index.html` | 2026-06 |
+| Decorative emerald/purple/amber classes | Replaced with `--accent` + neutral equivalents | 2026-06 |
+| Oversized display stats (10rem) | Capped to `clamp(3.5rem,8vw,6rem)` | 2026-06 |
+| `box-shadow` glow on `.btn-cta` | Removed; `--color-cta-glow: transparent` | 2026-06 |
+| `.glass-nav` `backdrop-filter` | Removed from `src/input.css`; nav background now solid `rgba(11,11,15,0.95)` (0.98 scrolled) | 2026-09 |
+| `backdrop-blur-*` utility classes | Stripped from every HTML page; mobile-menu-backdrop uses solid `bg-[var(--bg)]/95` | 2026-09 |
+| Lenis smooth scroll | Script tag + init IIFE + `js/lenis.min.js` deleted; native scroll only | 2026-09 |
+| Hero video | Replaced with `<div class="hero-static absolute inset-0"></div>`; `vid/hero.mp4`, `VideoObject` JSON-LD, and sitemap `<video:video>` block all removed | 2026-09 |
+| Google reviews decorative glow (`bg-[var(--accent)]/5 blur-[120px]`) | Container deleted; card init avatars removed; reviewer names muted | 2026-09 |
+| Emoji country flags (🇨🇱 🇨🇴 🇵🇪 🇪🇨) | Replaced sitewide with `CL · CO · PE · EC` text chips (linked in footer copyright) | 2026-09 |
 
 **Kept:**
-- Hero video (opacity reduced 0.3 → 0.12 for quieter presence)
 - Single calm scroll-reveal (`.reveal` fade + 14px translate, 0.5s)
 - FAQ accordion slide-down
 - Sticky CTA bar animation
-- Lenis smooth scroll
 - `prefers-reduced-motion` override
 
 ---
