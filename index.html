@@ -142,17 +142,6 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "VideoObject",
-        "name": "Growth Buddies Hero Video",
-        "description": "Video de presentación de Growth Buddies, consultora de automatización e IA.",
-        "thumbnailUrl": "https://growthbuddies.cl/img/groddiesLogo.png",
-        "uploadDate": "2024-01-01T08:00:00+08:00",
-        "contentUrl": "https://growthbuddies.cl/vid/hero.mp4"
-      }
-    </script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
         "@type": "HowTo",
         "name": "Cómo trabajamos en Growth Buddies",
         "description": "Nuestro proceso de diagnóstico e implementación de automatización con IA para empresas de servicios profesionales.",
@@ -671,27 +660,7 @@
     >
       <div class="hero-gradient-bg"></div>
       <div class="hero-grain"></div>
-      <div class="video-background-container">
-        <video
-          autoplay
-          loop
-          muted
-          playsinline
-          id="video-background"
-          poster="img/foto.webp"
-          preload="none"
-        >
-          <!-- Sources injected by JS only on desktop to avoid mobile video download -->
-        </video>
-        <script>
-          if (window.matchMedia("(min-width: 768px)").matches) {
-            var v = document.getElementById("video-background");
-            v.innerHTML = '<source src="vid/hero.mp4" type="video/mp4">';
-            v.load();
-          }
-        </script>
-        <div class="video-overlay"></div>
-      </div>
+      <div class="hero-static absolute inset-0"></div>
 
       <div class="z-10 max-w-4xl mx-auto w-full px-6 text-center">
         <p
