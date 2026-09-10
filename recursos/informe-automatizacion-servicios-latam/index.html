@@ -1028,58 +1028,115 @@
 
   </main>
 
-  <footer class="bg-black py-16 px-6 border-t border-white/10 text-sm">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
-      <div class="space-y-6">
-        <a href="/" class="flex items-center gap-3 group"><img src="/img/logo.webp" alt="Logotipo de Growth Buddies" class="h-10 w-10 opacity-90" loading="lazy" height="40" width="40" /><span class="font-bold text-xl text-white tracking-widest font-display">GROWTH BUDDIES</span></a>
-        <p class="text-slate-400 leading-relaxed max-w-xs">Diagnóstico y automatización con IA para empresas de servicios profesionales en Latinoamérica.</p>
-      </div>
-      <div>
+      <footer
+      class="bg-black py-10 px-5 md:py-16 md:px-6 border-t border-white/10 text-sm"
+    >
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-8 md:gap-8 md:mb-12"
+      >
+        <!-- Brand -->
+        <div class="space-y-6 col-span-2 md:col-span-3 lg:col-span-1">
+          <a href="/" class="flex items-center gap-3 group">
+            <img
+              src="/img/groddiesLogo.webp"
+              alt="Logotipo de Growth Buddies"
+              class="h-10 w-10 opacity-90 group-hover:opacity-100 transition-opacity"
+              loading="lazy"
+              height="40"
+              width="40"
+            />
+            <span
+              class="font-bold text-xl text-white tracking-widest font-display"
+              >GROWTH BUDDIES</span
+            >
+          </a>
+          <p class="text-slate-400 leading-relaxed max-w-xs">
+            Diagnóstico y automatización con IA para empresas de servicios
+            profesionales en Latinoamérica.
+          </p>
+          <div class="flex gap-4">
+            <a
+              href="https://www.linkedin.com/company/growth-buddies"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Perfil de LinkedIn de Growth Buddies"
+              class="text-slate-400 hover:text-[var(--accent)] transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a
+              href="mailto:edmundo@growthbuddies.cl"
+              aria-label="Enviar correo electrónico a Growth Buddies"
+              class="text-slate-400 hover:text-[var(--accent)] transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+            <a
+              href="tel:+56975991366"
+              aria-label="Llamar a Growth Buddies"
+              class="text-slate-400 hover:text-[var(--accent)] transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Servicios -->
+        <div>
           <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Servicios</h4>
           <ul class="space-y-3 text-slate-400">
             <li><a href="/servicios/legal-tech" class="hover:text-[var(--accent)] transition-colors">Legal Tech y Automatización</a></li>
             <li><a href="/servicios/ia-corporativa" class="hover:text-[var(--accent)] transition-colors">Asistente de IA Corporativo</a></li>
             <li><a href="/servicios/gestion-del-cambio" class="hover:text-[var(--accent)] transition-colors">Gestión del Cambio (Prosci)</a></li>
             <li><a href="/servicios/agentes-ia-chatbots-empresas" class="hover:text-[var(--accent)] transition-colors">Agentes de IA y Chatbots</a></li>
-            <!-- INSERTION POINT: new /servicios/ landings (agentes-ia-chatbots-empresas ships in Batch 1) -->
+            <!-- INSERTION POINT: new /servicios/ landings -->
           </ul>
         </div>
+
+        <!-- Sectores -->
         <div>
           <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Sectores</h4>
           <ul class="space-y-3 text-slate-400">
             <li><a href="/sectores/automatizacion-ia-estudios-juridicos" class="hover:text-[var(--accent)] transition-colors">Estudios Jurídicos</a></li>
             <li><a href="/sectores/automatizacion-ia-industria-mineria" class="hover:text-[var(--accent)] transition-colors">Empresas Industriales</a></li>
-            <!-- INSERTION POINT: new /sectores/ pillars (automatizacion-ia-industria-mineria ships in Batch 1) -->
+            <!-- INSERTION POINT: new /sectores/ pillars -->
           </ul>
         </div>
-      <div>
-        <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Recursos</h4>
-        <ul class="space-y-3 text-slate-400">
-          <li><a href="/casos" class="hover:text-[var(--accent)] transition-colors">Casos de Éxito</a></li>
-          <li><a href="/blog" class="hover:text-[var(--accent)] transition-colors">Blog</a></li>
-          <li><a href="/recursos/guia-ia-legal" class="hover:text-[var(--accent)] transition-colors">Guía IA Legal</a></li>
-          <li><a href="/recursos/informe-automatizacion-servicios-latam" class="text-[var(--accent)] font-medium">Informe LATAM 2026 ✦</a></li>
-        </ul>
+
+        <!-- Recursos -->
+        <div>
+          <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Recursos</h4>
+          <ul class="space-y-3 text-slate-400">
+            <li><a href="/blog" class="hover:text-[var(--accent)] transition-colors">Blog</a></li>
+            <li><a href="/recursos/guia-ia-legal" class="hover:text-[var(--accent)] transition-colors">Guía Gratuita IA Legal</a></li>
+            <li><a href="/recursos/informe-automatizacion-servicios-latam" class="hover:text-[var(--accent)] transition-colors">Informe LATAM 2026</a></li>
+            <li><a href="/preguntas-frecuentes" class="hover:text-[var(--accent)] transition-colors">Preguntas Frecuentes</a></li>
+            <li><a href="/recursos/glosario-ia-automatizacion" class="hover:text-[var(--accent)] transition-colors">Glosario IA</a></li>
+            <li><a href="/soluciones" class="hover:text-[var(--accent)] transition-colors">Ejemplos de Implementación</a></li>
+          </ul>
+        </div>
+
+        <!-- Empresa -->
+        <div>
+          <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Empresa</h4>
+          <ul class="space-y-3 text-slate-400">
+            <li><a href="/nosotros" class="hover:text-[var(--accent)] transition-colors">Nosotros</a></li>
+            <li><a href="/casos" class="hover:text-[var(--accent)] transition-colors">Casos de Éxito</a></li>
+            <li><a href="/privacidad" class="hover:text-[var(--accent)] transition-colors">Privacidad</a></li>
+            <li><a href="/terminos" class="hover:text-[var(--accent)] transition-colors">Términos</a></li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Países</h4>
-        <ul class="space-y-3 text-slate-400">
-          <li><a href="/" class="hover:text-[var(--accent)] transition-colors">Chile</a></li>
-          <li><a href="/colombia" class="hover:text-[var(--accent)] transition-colors">Colombia</a></li>
-          <li><a href="/peru" class="hover:text-[var(--accent)] transition-colors">Perú</a></li>
-          <li><a href="/ecuador" class="hover:text-[var(--accent)] transition-colors">Ecuador</a></li>
-        </ul>
+
+      <div
+        class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400"
+      >
+        <div>&copy; 2026 Growth Buddies SpA. Latinoamérica · <a href="/" class="hover:text-white transition-colors">CL</a> · <a href="/colombia" class="hover:text-white transition-colors">CO</a> · <a href="/peru" class="hover:text-white transition-colors">PE</a> · <a href="/ecuador" class="hover:text-white transition-colors">EC</a></div>
+        <div>
+          <a href="/sitemap.xml" class="hover:text-slate-300 transition-colors">Sitemap</a>
+        </div>
       </div>
-    </div>
-    <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
-      <div>&copy; 2026 Growth Buddies SpA. Latinoamérica · CL · CO · PE · EC</div>
-      <div class="flex gap-6">
-        <a href="/privacidad" class="hover:text-slate-300 transition-colors">Privacidad</a>
-        <a href="/terminos" class="hover:text-slate-300 transition-colors">Términos</a>
-        <a href="/sitemap.xml" class="hover:text-slate-300 transition-colors">Sitemap</a>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
   <!-- ═══════════════════════════════════════════════════════════
   ═══════════════════════════════════════════════════════════ -->
