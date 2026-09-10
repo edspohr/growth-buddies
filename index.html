@@ -2325,13 +2325,6 @@
         id="resenas-google"
         class="py-14 md:py-20 px-6 border-b border-white/5 relative overflow-hidden"
       >
-        <!-- Glow decorativo -->
-        <div class="absolute inset-0 max-w-full pointer-events-none">
-          <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[var(--accent)]/5 blur-[120px] rounded-full"
-          ></div>
-        </div>
-
         <div class="max-w-5xl mx-auto relative z-10">
           <div class="text-center mb-10">
             <div class="flex items-center justify-center gap-3 mb-3">
@@ -2361,13 +2354,13 @@
                 />
               </svg>
               <p
-                class="text-sm font-semibold tracking-widest uppercase font-display text-white"
+                class="text-xs font-semibold tracking-widest uppercase font-display text-[var(--fg-muted)]"
               >
                 Reseñas en Google
               </p>
             </div>
-            <div class="flex items-center justify-center gap-2 mb-1">
-              <span class="text-4xl font-black font-display text-white"
+            <div class="flex items-center justify-center gap-3 mb-1">
+              <span class="text-5xl md:text-6xl font-black font-display text-white leading-none"
                 >5.0</span
               >
               <div class="flex items-center gap-0.5" aria-label="5 estrellas">
@@ -2453,13 +2446,10 @@
               <blockquote class="text-sm leading-relaxed italic mb-5 text-slate-300 flex-1">
                 "[Full quote with concrete business outcome and timeline]"
               </blockquote>
-               Person info
-              <div class="flex items-center gap-3 pt-4 border-t border-zinc-700/50">
-                <div class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-white flex-shrink-0 bg-[var(--accent)] ring-2 ring-zinc-800">XX</div>
-                <div>
-                  <p class="text-[0.8rem] font-semibold text-white leading-tight">Nombre Apellido</p>
-                  <p class="text-[0.7rem] text-slate-400">Cargo · Empresa</p>
-                </div>
+               Person info (no avatar; muted reviewer name per design system)
+              <div class="pt-4 border-t border-zinc-700/50">
+                <p class="text-[0.8rem] font-semibold text-[var(--fg-muted)] leading-tight">Nombre Apellido</p>
+                <p class="text-[0.7rem] text-[var(--fg-muted)]/70">Cargo · Empresa</p>
               </div>
             </div>
           </article>
@@ -2573,24 +2563,13 @@
                   realmente expertos en programación y utilizan la IA de una
                   forma increíble."
                 </blockquote>
-                <div
-                  class="flex items-center gap-3 pt-4 border-t border-zinc-700/50"
-                >
-                  <div
-                    class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-white flex-shrink-0 bg-[var(--accent)] ring-2 ring-zinc-800"
-                  >
-                    DC
-                  </div>
-                  <div>
-                    <p
-                      class="text-[0.8rem] font-semibold text-white leading-tight"
-                    >
-                      Dra. Daniela Corral H.
-                    </p>
-                    <p class="text-[0.7rem] text-slate-400">
-                      Google Business Profile
-                    </p>
-                  </div>
+                <div class="pt-4 border-t border-zinc-700/50">
+                  <p class="text-[0.8rem] font-semibold text-[var(--fg-muted)] leading-tight">
+                    Dra. Daniela Corral H.
+                  </p>
+                  <p class="text-[0.7rem] text-[var(--fg-muted)]/70">
+                    Google Business Profile
+                  </p>
                 </div>
               </div>
             </article>
@@ -2696,24 +2675,13 @@
                   "Lo valioso de Growth Buddies es que entienden que automatizar
                   sin estrategia es deuda futura."
                 </blockquote>
-                <div
-                  class="flex items-center gap-3 pt-4 border-t border-zinc-700/50"
-                >
-                  <div
-                    class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-white flex-shrink-0 bg-[var(--accent)] ring-2 ring-zinc-800"
-                  >
-                    JO
-                  </div>
-                  <div>
-                    <p
-                      class="text-[0.8rem] font-semibold text-white leading-tight"
-                    >
-                      Jose Osorio
-                    </p>
-                    <p class="text-[0.7rem] text-slate-400">
-                      Google Business Profile
-                    </p>
-                  </div>
+                <div class="pt-4 border-t border-zinc-700/50">
+                  <p class="text-[0.8rem] font-semibold text-[var(--fg-muted)] leading-tight">
+                    Jose Osorio
+                  </p>
+                  <p class="text-[0.7rem] text-[var(--fg-muted)]/70">
+                    Google Business Profile
+                  </p>
                 </div>
               </div>
             </article>
@@ -2819,24 +2787,13 @@
                   "Me ayudaron justo con mi requerimiento. Edmundo sabía
                   exactamente qué es lo que necesitaba mi negocio."
                 </blockquote>
-                <div
-                  class="flex items-center gap-3 pt-4 border-t border-zinc-700/50"
-                >
-                  <div
-                    class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-white flex-shrink-0 bg-[var(--accent)] ring-2 ring-zinc-800"
-                  >
-                    SM
-                  </div>
-                  <div>
-                    <p
-                      class="text-[0.8rem] font-semibold text-white leading-tight"
-                    >
-                      Sebastián Marín
-                    </p>
-                    <p class="text-[0.7rem] text-slate-400">
-                      Google Business Profile
-                    </p>
-                  </div>
+                <div class="pt-4 border-t border-zinc-700/50">
+                  <p class="text-[0.8rem] font-semibold text-[var(--fg-muted)] leading-tight">
+                    Sebastián Marín
+                  </p>
+                  <p class="text-[0.7rem] text-[var(--fg-muted)]/70">
+                    Google Business Profile
+                  </p>
                 </div>
               </div>
             </article>
