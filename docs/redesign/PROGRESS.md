@@ -6,7 +6,7 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 | Etapa | Estado |
 |---|---|
 | 0 Setup | Completa |
-| 1 Hosting Firebase | Vista previa lista. Deploy live y merge a main detenidos: ver preguntas abiertas |
+| 1 Hosting Firebase | Deploy live hecho en growth-buddies.web.app. Falta DNS, secreto de GitHub y merge a main |
 | 2 a 8 | Pendientes |
 
 ## Decisiones
@@ -18,9 +18,14 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 - 2026-11-01. scripts/generate-sitemap.js no existe, aunque sitemap.xml lo cita. Crearlo antes de la Etapa 5.
 
 ## Preguntas abiertas
-1. El control de textos prohibidos falla por 49 archivos con textos ya presentes en producción. Etapa 1 prohíbe cambiar copy, y la regla exige pasar todos los controles antes del deploy live.
+1. Merge a main: después del cambio de DNS, porque cada merge despliega en Vercel.
+2. Quitar Quedan de colombia, ecuador y peru en la Etapa 4, y revisar Summer en index.html.
+
+## Autorizaciones
+- 2026-11-01. Edmundo autorizó el deploy live de Etapa 1 pese al control de textos prohibidos, que falla por contenido ya presente en producción. Vale solo para este deploy.
 
 ## Registro de deploys
 | Fecha | Destino | Referencia |
 |---|---|---|
 | 2026-11-01 | Canal stage-1 (expira 2026-12-01) | https://growth-buddies--stage-1-wpiwpcyy.web.app |
+| 2026-11-01 14:16 | Live growth-buddies.web.app | ded03de desde la rama. Release anterior: 2026-04-02 15:05. Rollback: firebase hosting:rollback |
