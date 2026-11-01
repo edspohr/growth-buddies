@@ -10,7 +10,8 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 | 2 Correcciones | Completa; ver preguntas abiertas |
 | 3 Sistema visual | Completa |
 | 4 Home y navegación | Completa |
-| 5 a 8 | Pendientes |
+| 5 Páginas de producto | Completa; capturas DocFlow esperan aprobación |
+| 6 a 8 | Pendientes |
 
 ## Decisiones
 - 2026-11-01. Git se colgaba porque iCloud evictó 2.344 archivos de .git, incluido el pack principal. Se clonó en ~/dev/growth-buddies. La carpeta original queda intacta porque conserva ramas locales que no están en GitHub.
@@ -39,6 +40,10 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 - 2026-11-01. H1 elegido: Herramientas con IA que su equipo realmente usa. Se creó /recursos porque la navegación lo exige.
 - 2026-11-01. Logo SPI fuera del home, porque el caso se presenta anónimo. Se quitó aggregateRating del JSON-LD al salir las reseñas del home. Se quitó HowTo.
 - 2026-11-01. Enlaces de producto apuntan a /soluciones, /servicios/agentes-ia-chatbots-empresas y /metodologia hasta la Etapa 5.
+
+- 2026-11-01. Etapa 5: Fundación Summer se permite como logo de cliente en el home por pedido de Edmundo; el control exime solo ese alt y esa imagen. Logo de La Charcutería en texto: el archivo del repo es una emulación provisoria. ETFA Ruido y Consultora Focus con sus archivos reales.
+- 2026-11-01. El contenido antiguo de rendición no se traspasó porque prometía ERP, WhatsApp y otras funciones prohibidas.
+- 2026-11-01. /expense-buddy invita a probar el demo en hero, sección propia y cierre, por pedido de Edmundo, con utm_content distinto.
 
 ## Registro de deploys
 | Fecha | Destino | Referencia |

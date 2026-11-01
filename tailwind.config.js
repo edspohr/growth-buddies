@@ -19,6 +19,10 @@ module.exports = {
     "./ecuador/**/*.{html,js}",
     "./preguntas-frecuentes/**/*.{html,js}",
     "./404.html",
+    "./expense-buddy/**/*.html",
+    "./docflow-buddy/**/*.html",
+    "./agent-buddy/**/*.html",
+    "./proyecto-a-medida/**/*.html",
   ],
   theme: {
     extend: {

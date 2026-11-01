@@ -5,11 +5,11 @@
 
 ## Products
 
-- **Expense Buddy**: expense reporting for companies with field teams, with offline capture. From 45 UF + VAT. Open demo: https://expense-buddy-demo.web.app
-- **DocFlow Buddy**: document and case management with AI for law firms and document-heavy service companies. From 60 UF + VAT.
-- **Agent Buddy Web**: AI assistant on the client's website, trained on their real processes, live in under a month. From 20 UF + VAT.
+- **Expense Buddy** (https://growthbuddies.cl/expense-buddy): expense reporting for companies with field teams, with offline capture. From 45 UF + VAT. Open demo: https://expense-buddy-demo.web.app
+- **DocFlow Buddy** (https://growthbuddies.cl/docflow-buddy): document and case management with AI for law firms and document-heavy service companies. From 60 UF + VAT.
+- **Agent Buddy Web** (https://growthbuddies.cl/agent-buddy): AI assistant on the client's website, trained on their real processes, live in under a month. From 20 UF + VAT.
 - **Agent Buddy a medida**: agents connected to the client's processes and systems, multichannel, with human handoff. From 50 UF + VAT.
-- **Proyecto a medida**: paid diagnostic, CLP 490,000 + VAT, 100% creditable within 90 days.
+- **Proyecto a medida** (https://growthbuddies.cl/proyecto-a-medida): paid diagnostic, CLP 490,000 + VAT, 100% creditable within 90 days.
 
 Contact: edmundo@spohr.cl, +56 9 7599 1366.
 
@@ -72,7 +72,7 @@ Only services already live on the site are listed here.
 
 4. **Change Management (Gestión del Cambio)**: Prosci ADKAR-certified adoption programs for AI and automation tools. Guaranteed adoption KPIs. URL: https://growthbuddies.cl/servicios/gestion-del-cambio
 
-5. **Agentes de IA y asistentes conversacionales para empresas**: custom-built conversational agents and chatbots with integration to CRM, ERP, WhatsApp Business and internal systems. For companies with 15+ employees and documentary or administrative operations. Projects contracted after the strategic diagnostic; from USD 3,000. URL: https://growthbuddies.cl/servicios/agentes-ia-chatbots-empresas
+5. **Agentes de IA y asistentes conversacionales para empresas**: custom-built conversational agents and chatbots with integration to CRM, ERP, WhatsApp Business and internal systems. For companies with 15+ employees and documentary or administrative operations. Projects contracted after the strategic diagnostic; from USD 3,000. URL: https://growthbuddies.cl/agent-buddy
 
 ## Products (AI Agents)
 

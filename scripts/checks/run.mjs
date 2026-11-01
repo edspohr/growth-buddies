@@ -118,7 +118,8 @@ function checkForbiddenStrings() {
   const failures = [];
   const files = [...htmlFiles(PUBLIC), path.join(PUBLIC, "llms.txt")];
   for (const file of files) {
-    const text = readFileSync(file, "utf8");
+    // The only allowed mention is Fundación Summer as a client logo on the home.
+    const text = readFileSync(file, "utf8").replace('alt="Fundación Summer"', "").replace("/img/fundacion-summer.webp", "");
     const found = [
       ...FORBIDDEN.filter((term) => text.includes(term)),
       ...SCARCITY.filter((term) => text.toLowerCase().includes(term)),

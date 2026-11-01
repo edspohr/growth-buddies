@@ -475,6 +475,56 @@ h1, h2, h3, h4 {
     border: 1px solid var(--line);
     border-radius: 16px;
 }
+.device-browser,
+.device-phone {
+    margin: 0;
+    text-align: center;
+}
+.device-browser img,
+.device-browser svg {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+}
+.device-phone img {
+    width: 220px;
+    border: 6px solid #0B0B0F;
+    border-radius: 28px;
+}
+.device-browser figcaption,
+.device-phone figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    color: var(--fg-muted);
+}
+.compare {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+.compare th,
+.compare td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.9375rem;
+}
+.compare thead th { color: var(--fg); }
+.compare td:nth-child(2) {
+    color: var(--fg);
+    font-weight: 600;
+}
+.compare td:nth-child(3) { color: var(--fg-muted); }
+.check-list li {
+    padding: 0.25rem 0 0.25rem 1.5rem;
+    color: var(--fg-soft);
+    position: relative;
+}
+.check-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent-text);
+}
 .faq { border-bottom: 1px solid var(--line); }
 .faq summary {
     padding: 1.25rem 0;

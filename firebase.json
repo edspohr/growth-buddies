@@ -92,7 +92,7 @@
       },
       {
         "source": "/soluciones/rendicion-gastos-ia",
-        "destination": "/soluciones",
+        "destination": "/expense-buddy",
         "type": 301
       },
       {
@@ -118,6 +118,11 @@
       {
         "source": "/blog/ia-corretaje-propiedades-chile",
         "destination": "/blog/automatizacion-ia-corredoras-propiedades-chile",
+        "type": 301
+      },
+      {
+        "source": "/servicios/agentes-ia-chatbots-empresas",
+        "destination": "/agent-buddy",
         "type": 301
       }
     ]
