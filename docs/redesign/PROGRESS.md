@@ -57,6 +57,8 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 
 - 2026-11-01. Bloques 1 y 2: llms.txt reescrito; Diagnóstico pasa a Proyecto a medida en todo el sitio; CTA antiguos van al formulario; se quitan reserva, cupos y afirmaciones de unicidad Prosci. Formulario en dos pasos, sin captura parcial.
 
+- 2026-11-01. Bloque 3: tres artículos publicados sin cuerpo (CONTENT PLACEHOLDER) quedan escritos. FAQ con JSON-LD en 11 artículos, recuadro de producto en los artículos, SoftwareApplication en tres productos, índice del blog con todos los artículos, guías enlazadas desde el footer, títulos hasta 62 caracteres y descripciones hasta 160.
+
 ## Registro de deploys
 | Fecha | Destino | Referencia |
 |---|---|---|
@@ -72,3 +74,4 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 | 2026-11-01 | Live + notifyNewLead + demo | Promesa de 24 horas sin "hábiles" |
 | 2026-11-01 | Live vía GitHub Actions | CSS versionado y logos de clientes |
 | 2026-11-01 | Live vía GitHub Actions | +500 personas y llms.txt sin garantía |
+| 2026-11-01 | Live vía GitHub Actions | Bloque 3 SEO |

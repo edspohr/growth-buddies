@@ -777,6 +777,21 @@ h1, h2, h3, h4 {
     color: var(--fg-muted);
 }
 
+/* Blog footer blocks */
+.post-box { margin-top: 2.5rem; }
+.post-box h2 { margin-bottom: 0.5rem; }
+.post-cta {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+}
+.post-cta p:not(.eyebrow) {
+    margin-bottom: 1rem;
+    color: var(--fg-soft);
+}
+
 /* Proposal form */
 .lead-step {
     margin-bottom: 1rem;
