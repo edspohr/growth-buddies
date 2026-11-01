@@ -25,11 +25,14 @@ const ROOT_FILES = [
 // admin stays public: it is the lead panel, gated by Firebase Auth and noindex.
 const DIRECTORIES = [
   "admin",
+  "agent-buddy",
   "blog",
   "casos",
   "colombia",
+  "docflow-buddy",
   "ecuador",
   "equipo",
+  "expense-buddy",
   "fonts",
   "gracias",
   "img",
@@ -38,6 +41,7 @@ const DIRECTORIES = [
   "peru",
   "preguntas-frecuentes",
   "privacidad",
+  "proyecto-a-medida",
   "recursos",
   "sectores",
   "servicios",

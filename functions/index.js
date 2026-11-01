@@ -39,7 +39,7 @@ function interestContent(interest = "") {
       tag: "Finanzas / Gastos",
       caseStudyTitle: "Cómo una empresa de 30 personas cerró sus rendiciones de gastos en 1 día en vez de 2 semanas",
       caseStudyBody: "Con nuestro agente de rendición de gastos, los colaboradores fotografían sus boletas y el sistema categoriza, valida y genera el informe automáticamente. El equipo de finanzas pasó de perseguir recibos a revisar un dashboard.",
-      caseStudyLink: "https://growthbuddies.cl/soluciones/rendicion-gastos-ia/",
+      caseStudyLink: "https://growthbuddies.cl/expense-buddy",
       roiLine: "Las empresas recuperan 2 semanas al mes en procesos de rendición.",
     };
   }
