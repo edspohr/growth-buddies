@@ -52,3 +52,4 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 | 2026-11-01 14:16 | Live growth-buddies.web.app | ded03de desde la rama. Release anterior: 2026-04-02 15:05. Rollback: Firebase Console, Hosting, historial de versiones, o redeploy del commit anterior |
 | 2026-11-01 | Live vía GitHub Actions + functions y rules | bddb96b, run 41337759100 |
 | 2026-11-01 | Live vía GitHub Actions + functions | Etapa 4 |
+| 2026-11-01 | Live vía GitHub Actions + functions | Etapa 5, d28fc76 |
