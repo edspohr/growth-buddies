@@ -44,8 +44,8 @@ module.exports = {
       },
       // ── Type scale ──────────────────────────────────────────────────────
       fontSize: {
-        "display": ["clamp(2.75rem, 5.5vw, 4rem)",   { lineHeight: "1.05", letterSpacing: "-0.025em" }],
-        "h1":      ["clamp(2rem, 4vw, 3rem)",          { lineHeight: "1.1",  letterSpacing: "-0.02em"  }],
+        "display": ["clamp(2.25rem, 5.5vw, 4rem)",   { lineHeight: "1.05", letterSpacing: "-0.025em" }],
+        "h1":      ["clamp(1.75rem, 4vw, 3rem)",          { lineHeight: "1.1",  letterSpacing: "-0.02em"  }],
         "h2":      ["clamp(1.5rem, 3vw, 2.25rem)",     { lineHeight: "1.15", letterSpacing: "-0.015em" }],
         "h3":      ["clamp(1.125rem, 2vw, 1.5rem)",    { lineHeight: "1.2",  letterSpacing: "-0.01em"  }],
         "body":    ["1.0625rem",                        { lineHeight: "1.6"  }],
