@@ -33,89 +33,88 @@
   <link rel="preload" href="/dist/output.css" as="style" />
   <link href="/dist/output.css" rel="stylesheet" />
   <style>
-    :root{--color-accent:#0097B2}
     *,::before,::after{box-sizing:border-box}
-    body{font-family:'Inter',sans-serif;background-color:#0B0B0F;color:#ECECEF;overflow-x:hidden;margin:0}
-    .glass-nav{background:rgba(11,11,15,0.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}
-    .font-display{font-family:"Space Grotesk",system-ui,sans-serif}
+    body{font-family:'Inter',sans-serif;background-color:var(--bg);color:var(--fg);overflow-x:hidden;margin:0}
+    .glass-nav{background:var(--bg, #FFFFFF);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .font-display{font-family:"Inter",system-ui,sans-serif}
     .font-heading{font-family:"Geist","system-ui",sans-serif}
   </style>
 </head>
 <body class="antialiased">
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--accent)] focus:text-white focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--accent)] focus:text-[var(--fg)] focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
 
   <nav class="glass-nav fixed top-0 w-full z-50">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       <a href="/" class="flex items-center gap-2">
         <img src="/img/logo.webp" alt="Logotipo de Growth Buddies" class="h-8 w-8" height="32" width="32" />
-        <span class="font-bold text-lg text-white">Growth Buddies</span>
+        <span class="font-bold text-lg text-[var(--fg)]">Growth Buddies</span>
       </a>
-      <a href="{{calendly}}" target="_blank" rel="noopener noreferrer" class="hidden md:inline-block bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/30 font-semibold text-sm py-2 px-5 rounded-full hover:bg-[var(--accent)]/20 transition-colors">Sesión de calificación</a>
+      <a href="{{calendly}}" target="_blank" rel="noopener noreferrer" class="hidden md:inline-block bg-[var(--accent-soft)] text-[var(--accent-text)] border border-[var(--accent)] font-semibold text-sm py-2 px-5 rounded-full hover:bg-[var(--accent-soft)] transition-colors">Sesión de calificación</a>
     </div>
   </nav>
 
   <main id="main-content" class="pt-32 pb-24 px-6">
     <div class="max-w-5xl mx-auto">
       <nav aria-label="Migas de pan" class="mb-8">
-        <ol class="flex items-center gap-2 text-xs text-slate-500">
-          <li><a href="/" class="hover:text-[var(--accent)] transition-colors">Inicio</a></li>
+        <ol class="flex items-center gap-2 text-xs text-[var(--fg-muted)]">
+          <li><a href="/" class="hover:text-[var(--accent-text)] transition-colors">Inicio</a></li>
           <li><span aria-hidden="true">/</span></li>
-          <li class="text-[var(--accent)]" aria-current="page">Sectores</li>
+          <li class="text-[var(--accent-text)]" aria-current="page">Sectores</li>
         </ol>
       </nav>
 
       <div class="mb-12">
-        <span class="text-[var(--accent)] font-bold tracking-wider text-xs uppercase font-display">Por sector</span>
-        <h1 class="text-4xl md:text-5xl font-heading font-bold text-white mt-3 mb-4">Automatización con IA por sector</h1>
-        <p class="text-lg text-slate-400 max-w-2xl">Guías especializadas para empresas de servicios profesionales en Chile y Latinoamérica. Cada sector tiene sus propios procesos, sistemas y oportunidades de automatización.</p>
+        <span class="text-[var(--accent-text)] font-bold tracking-wider text-xs uppercase font-display">Por sector</span>
+        <h1 class="text-4xl md:text-5xl font-heading font-semibold text-[var(--fg)] mt-3 mb-4">Automatización con IA por sector</h1>
+        <p class="text-lg text-[var(--fg-muted)] max-w-2xl">Guías especializadas para empresas de servicios profesionales en Chile y Latinoamérica. Cada sector tiene sus propios procesos, sistemas y oportunidades de automatización.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Live: Legal -->
-        <a href="/sectores/automatizacion-ia-estudios-juridicos" class="group rounded-2xl border border-[var(--accent)]/20 bg-[var(--accent)]/4 p-8 hover:border-[var(--accent)]/50 transition-colors block">
-          <div class="text-[var(--accent)] text-xs font-bold uppercase tracking-wider font-display mb-3">Legal &amp; Jurídico</div>
-          <h2 class="text-xl font-bold text-white mb-3 group-hover:text-[var(--accent)] transition-colors leading-snug">Automatización con IA en Estudios Jurídicos</h2>
-          <p class="text-slate-400 text-sm leading-relaxed mb-4">Triaje de correos, CLM, gestión documental semántica y reconstrucción automática de timesheets para firmas legales y notarías.</p>
-          <span class="text-xs font-semibold text-[var(--accent)]">Ver guía completa →</span>
+        <a href="/sectores/automatizacion-ia-estudios-juridicos" class="group rounded-2xl border border-[var(--accent)] bg-[var(--accent-soft)] p-8 hover:border-[var(--accent)] transition-colors block">
+          <div class="text-[var(--accent-text)] text-xs font-bold uppercase tracking-wider font-display mb-3">Legal &amp; Jurídico</div>
+          <h2 class="text-xl font-semibold text-[var(--fg)] mb-3 group-hover:text-[var(--accent-text)] transition-colors leading-snug">Automatización con IA en Estudios Jurídicos</h2>
+          <p class="text-[var(--fg-muted)] text-sm leading-relaxed mb-4">Triaje de correos, CLM, gestión documental semántica y reconstrucción automática de timesheets para firmas legales y notarías.</p>
+          <span class="text-xs font-semibold text-[var(--accent-text)]">Ver guía completa →</span>
         </a>
 
         <!-- Próximamente: Seguros -->
-        <div class="rounded-2xl border border-zinc-800 p-8 opacity-60">
-          <div class="text-slate-500 text-xs font-bold uppercase tracking-wider font-display mb-3">Seguros · Próximamente</div>
-          <h2 class="text-xl font-bold text-slate-400 mb-3 leading-snug">Automatización con IA en Corredoras de Seguros</h2>
-          <p class="text-slate-500 text-sm leading-relaxed mb-4">Triaje de pólizas, cotización automática, procesamiento de siniestros y comunicación con asegurados.</p>
-          <span class="text-xs font-semibold text-slate-600">En preparación</span>
+        <div class="rounded-2xl border border-[var(--line)] p-8 ">
+          <div class="text-[var(--fg-muted)] text-xs font-bold uppercase tracking-wider font-display mb-3">Seguros · Próximamente</div>
+          <h2 class="text-xl font-semibold text-[var(--fg-muted)] mb-3 leading-snug">Automatización con IA en Corredoras de Seguros</h2>
+          <p class="text-[var(--fg-muted)] text-sm leading-relaxed mb-4">Triaje de pólizas, cotización automática, procesamiento de siniestros y comunicación con asegurados.</p>
+          <span class="text-xs font-semibold text-[var(--fg-muted)]">En preparación</span>
         </div>
 
         <!-- Próximamente: Construcción -->
-        <div class="rounded-2xl border border-zinc-800 p-8 opacity-60">
-          <div class="text-slate-500 text-xs font-bold uppercase tracking-wider font-display mb-3">Construcción · Próximamente</div>
-          <h2 class="text-xl font-bold text-slate-400 mb-3 leading-snug">Automatización con IA en Construcción e Ingeniería</h2>
-          <p class="text-slate-500 text-sm leading-relaxed mb-4">Reportes de avance, gestión documental de proyectos, procesamiento de facturas de subcontratistas.</p>
-          <span class="text-xs font-semibold text-slate-600">En preparación</span>
+        <div class="rounded-2xl border border-[var(--line)] p-8 ">
+          <div class="text-[var(--fg-muted)] text-xs font-bold uppercase tracking-wider font-display mb-3">Construcción · Próximamente</div>
+          <h2 class="text-xl font-semibold text-[var(--fg-muted)] mb-3 leading-snug">Automatización con IA en Construcción e Ingeniería</h2>
+          <p class="text-[var(--fg-muted)] text-sm leading-relaxed mb-4">Reportes de avance, gestión documental de proyectos, procesamiento de facturas de subcontratistas.</p>
+          <span class="text-xs font-semibold text-[var(--fg-muted)]">En preparación</span>
         </div>
 
         <!-- Próximamente: Salud -->
-        <div class="rounded-2xl border border-zinc-800 p-8 opacity-60">
-          <div class="text-slate-500 text-xs font-bold uppercase tracking-wider font-display mb-3">Salud · Próximamente</div>
-          <h2 class="text-xl font-bold text-slate-400 mb-3 leading-snug">Automatización con IA en Clínicas Privadas</h2>
-          <p class="text-slate-500 text-sm leading-relaxed mb-4">Agendamiento inteligente, triaje de consultas, gestión de historiales y documentación clínica.</p>
-          <span class="text-xs font-semibold text-slate-600">En preparación</span>
+        <div class="rounded-2xl border border-[var(--line)] p-8 ">
+          <div class="text-[var(--fg-muted)] text-xs font-bold uppercase tracking-wider font-display mb-3">Salud · Próximamente</div>
+          <h2 class="text-xl font-semibold text-[var(--fg-muted)] mb-3 leading-snug">Automatización con IA en Clínicas Privadas</h2>
+          <p class="text-[var(--fg-muted)] text-sm leading-relaxed mb-4">Agendamiento inteligente, triaje de consultas, gestión de historiales y documentación clínica.</p>
+          <span class="text-xs font-semibold text-[var(--fg-muted)]">En preparación</span>
         </div>
       </div>
 
       <div class="mt-16 text-center">
-        <p class="text-slate-400 mb-4">¿Quiere saber qué aplica a su empresa específicamente?</p>
+        <p class="text-[var(--fg-muted)] mb-4">¿Quiere saber qué aplica a su empresa específicamente?</p>
         <a href="{{calendly}}" target="_blank" rel="noopener noreferrer" class="btn-cta inline-flex items-center gap-2">Agendar sesión de calificación</a>
       </div>
     </div>
   </main>
 
-  <footer class="bg-black py-8 px-6 border-t border-white/10 text-xs text-slate-500 text-center">
-    <a href="/" class="hover:text-white transition-colors">Growth Buddies</a> ·
-    <a href="/casos" class="hover:text-white transition-colors">Casos</a> ·
-    <a href="/blog" class="hover:text-white transition-colors">Blog</a>
-    <p class="mt-2">&copy; 2026 Growth Buddies SpA. Latinoamérica · <a href="/" class="hover:text-white transition-colors">CL</a> · <a href="/colombia" class="hover:text-white transition-colors">CO</a> · <a href="/peru" class="hover:text-white transition-colors">PE</a> · <a href="/ecuador" class="hover:text-white transition-colors">EC</a></p>
+  <footer class="bg-[var(--bg)] py-8 px-6 border-t border-[var(--line)] text-xs text-[var(--fg-muted)] text-center">
+    <a href="/" class="hover:text-[var(--fg)] transition-colors">Growth Buddies</a> ·
+    <a href="/casos" class="hover:text-[var(--fg)] transition-colors">Casos</a> ·
+    <a href="/blog" class="hover:text-[var(--fg)] transition-colors">Blog</a>
+    <p class="mt-2">&copy; 2026 Growth Buddies SpA. Latinoamérica · <a href="/" class="hover:text-[var(--fg)] transition-colors">CL</a> · <a href="/colombia" class="hover:text-[var(--fg)] transition-colors">CO</a> · <a href="/peru" class="hover:text-[var(--fg)] transition-colors">PE</a> · <a href="/ecuador" class="hover:text-[var(--fg)] transition-colors">EC</a></p>
   </footer>
 </body>
 </html>

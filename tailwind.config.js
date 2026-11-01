@@ -25,25 +25,17 @@ module.exports = {
       fontFamily: {
         sans:    ["Inter", "sans-serif"],
         heading: ["Geist", "system-ui", "sans-serif"],
-        // Space Grotesk kept in @font-face but not used as a utility class
         serif:   ["Instrument Serif", "Georgia", "serif"],
       },
       colors: {
-        // ── Design token aliases (consumed via CSS vars) ──────────────────
-        // These parallel the :root tokens so Tailwind utilities also work.
-        bg:            "#0B0B0F",
-        surface:       "#14141A",
-        line:          "#232330",
-        fg:            "#ECECEF",
-        "fg-muted":    "#A7A7B2",
-        accent:        "#0097B2",
-        "accent-strong": "#00B5D6",
-        // ── Legacy aliases kept for backward-compat class references ─────
-        dark:          "#0B0B0F",
-        "dark-card":   "#14141A",
-        primary:       "#ECECEF",
-        secondary:     "#A7A7B2",
-        border:        "#232330",
+        // Semantic tokens; values live in src/input.css and flip inside .band-dark.
+        bg:              "var(--bg)",
+        surface:         "var(--surface)",
+        line:            "var(--line)",
+        fg:              "var(--fg)",
+        "fg-muted":      "var(--fg-muted)",
+        accent:          "var(--accent)",
+        "accent-strong": "var(--accent-strong)",
       },
       // ── Type scale ──────────────────────────────────────────────────────
       fontSize: {
@@ -59,7 +51,7 @@ module.exports = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         // Subtle static hero — no animation
-        "hero-static": "radial-gradient(ellipse at 20% 40%, rgba(0,151,178,0.07) 0%, transparent 55%), #0B0B0F",
+        "hero-static": "radial-gradient(ellipse at 20% 40%, rgba(0,151,178,0.07) 0%, transparent 55%), var(--bg)",
       },
       keyframes: {
         "fade-up": {
@@ -91,7 +83,7 @@ module.exports = {
         "prose-cap": "70ch",
       },
       borderRadius: {
-        "card": "10px",
+        "card": "14px",
       },
     },
   },

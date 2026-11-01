@@ -381,19 +381,13 @@
     <link rel="preload" href="./dist/output.css" as="style" />
 
     <style>
-      :root {
-        --color-accent: #0097b2;
-        --color-cta: #0097b2;
-        --color-cta-hover: #007a91;
-        --color-dark: #0f172a;
-      }
       *,
       ::before,
       ::after {
         box-sizing: border-box;
       }
       /* Critical inline — overrides resolved by dist/output.css */
-      body { font-family: "Inter", sans-serif; background-color: var(--bg, #0B0B0F); color: var(--fg, #ECECEF); overflow-x: hidden; margin: 0; }
+      body { font-family: "Inter", sans-serif; background-color: var(--bg, #FFFFFF); color: var(--fg, #1A1A2E); overflow-x: hidden; margin: 0; }
       .font-serif    { font-family: "Instrument Serif", Georgia, serif; }
       .font-heading  { font-family: "Geist", system-ui, sans-serif; }
       .font-display  { font-family: "Inter", system-ui, sans-serif; }
@@ -436,10 +430,10 @@
       }, 3000);
     </script>
   </head>
-  <body class="antialiased selection:bg-[var(--accent)] selection:text-white">
+  <body class="antialiased selection:bg-[var(--accent)] selection:text-[var(--on-accent)]">
     <a
       href="#main-content"
-      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--accent)] focus:text-white focus:px-4 focus:py-2 focus:rounded"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--accent)] focus:text-[var(--fg)] focus:px-4 focus:py-2 focus:rounded"
       >Saltar al contenido</a
     >
 
@@ -457,7 +451,7 @@
             width="32"
           />
           <span
-            class="font-bold text-lg tracking-tight text-white group-hover:text-[var(--accent)] transition-colors"
+            class="font-bold text-lg tracking-tight text-[var(--fg)] group-hover:text-[var(--accent-text)] transition-colors"
             >Growth Buddies</span
           >
         </a>
@@ -465,27 +459,27 @@
         <div class="hidden md:flex items-center gap-8">
           <a
             href="/servicios"
-            class="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+            class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors"
             >Servicios</a
           >
           <a
             href="/casos"
-            class="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+            class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors"
             >Casos</a
           >
           <a
             href="/blog"
-            class="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+            class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors"
             >Blog</a
           >
           <a
             href="/nosotros"
-            class="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+            class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors"
             >Nosotros</a
           >
           <a
             href="#contacto"
-            class="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+            class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors"
             >Contacto</a
           >
         </div>
@@ -496,7 +490,7 @@
             href="{{calendly}}"
             target="_blank"
             rel="noopener noreferrer"
-            class="bg-[var(--accent)]/10 hover:bg-[var(--accent)]/20 text-[var(--accent)] hover:text-white border border-[var(--accent)]/30 hover:border-[var(--accent)] font-semibold text-sm py-2 px-5 rounded-full transition-all duration-300"
+            class="bg-[var(--accent-soft)] hover:bg-[var(--accent-soft)] text-[var(--accent-text)] hover:text-[var(--fg)] border border-[var(--accent)] hover:border-[var(--accent)] font-semibold text-sm py-2 px-5 rounded-full transition-all duration-300"
           >
             Agendar conversación
           </a>
@@ -507,11 +501,11 @@
           id="mobile-menu-btn"
           aria-expanded="false"
           aria-label="Abrir menú"
-          class="md:hidden flex flex-col justify-center items-center w-11 h-11 gap-[6px] rounded-lg hover:bg-white/10 transition-colors"
+          class="md:hidden flex flex-col justify-center items-center w-11 h-11 gap-[6px] rounded-lg hover:bg-[var(--hover)] transition-colors"
         >
-          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
-          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
-          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
+          <span class="block w-6 h-0.5 bg-[var(--fg)] rounded-full"></span>
+          <span class="block w-6 h-0.5 bg-[var(--fg)] rounded-full"></span>
+          <span class="block w-6 h-0.5 bg-[var(--fg)] rounded-full"></span>
         </button>
       </div>
     </nav>
@@ -525,7 +519,7 @@
     >
       <div
         id="mobile-menu-backdrop"
-        class="absolute inset-0 bg-[var(--bg)]/95"
+        class="absolute inset-0 bg-[var(--bg)]"
       ></div>
       <div class="relative flex flex-col h-full px-6 py-6 overflow-y-auto">
         <div class="flex justify-between items-center mb-6">
@@ -537,12 +531,12 @@
               height="32"
               width="32"
             />
-            <span class="font-bold text-lg text-white">Growth Buddies</span>
+            <span class="font-bold text-lg text-[var(--fg)]">Growth Buddies</span>
           </a>
           <button
             id="mobile-menu-close"
             aria-label="Cerrar menú"
-            class="flex items-center justify-center w-11 h-11 text-white hover:bg-white/10 rounded-lg transition-colors"
+            class="flex items-center justify-center w-11 h-11 text-[var(--fg)] hover:bg-[var(--hover)] rounded-lg transition-colors"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -565,7 +559,7 @@
             href="{{calendly}}"
             target="_blank"
             rel="noopener noreferrer"
-            class="block w-full text-center bg-[var(--accent)]/10 hover:bg-[var(--accent)]/20 text-[var(--accent)] border border-[var(--accent)]/30 hover:border-[var(--accent)] font-semibold text-base py-4 px-5 rounded-full transition-all duration-300"
+            class="block w-full text-center bg-[var(--accent-soft)] hover:bg-[var(--accent-soft)] text-[var(--accent-text)] border border-[var(--accent)] hover:border-[var(--accent)] font-semibold text-base py-4 px-5 rounded-full transition-all duration-300"
           >
             Agendar conversación
           </a>
@@ -573,27 +567,27 @@
         <nav class="flex flex-col" role="navigation" aria-label="Menú móvil">
           <a
             href="/servicios"
-            class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors"
+            class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors"
             >Servicios</a
           >
           <a
             href="/casos"
-            class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors"
+            class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors"
             >Casos</a
           >
           <a
             href="/blog"
-            class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors"
+            class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors"
             >Blog</a
           >
           <a
             href="/nosotros"
-            class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors"
+            class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors"
             >Nosotros</a
           >
           <a
             href="#contacto"
-            class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors"
+            class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors"
             >Contacto</a
           >
         </nav>
@@ -602,7 +596,7 @@
             href="{{whatsapp}}"
             target="_blank"
             rel="noopener noreferrer"
-            class="flex items-center justify-center gap-2 text-[#25D366] text-base font-medium hover:underline py-3"
+            class="flex items-center justify-center gap-2 text-[var(--whatsapp)] text-base font-medium hover:underline py-3"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -624,7 +618,7 @@
     <!-- Sticky CTA Bar -->
     <div
       id="mobile-sticky-cta"
-      class="hidden fixed bottom-0 left-0 right-0 z-40 bg-[var(--bg)]/95 border-t border-[var(--line)]"
+      class="hidden fixed bottom-0 left-0 right-0 z-40 bg-[var(--bg)] border-t border-[var(--line)]"
       aria-hidden="true"
     >
       <div class="py-2.5 px-4 md:py-2 md:px-8 flex items-center justify-center gap-4 md:gap-6">
@@ -632,7 +626,7 @@
           href="{{calendly}}"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex-1 md:flex-none inline-flex items-center justify-center gap-2 bg-[var(--accent)] hover:bg-[var(--accent-strong)] text-white font-semibold text-sm py-3 md:py-2 px-5 rounded-full transition-colors"
+          class="flex-1 md:flex-none inline-flex items-center justify-center gap-2 bg-[var(--accent)] hover:bg-[var(--accent-strong)] text-[var(--on-accent)] font-semibold text-sm py-3 md:py-2 px-5 rounded-full transition-colors"
           onclick="
             typeof gtag !== 'undefined' &&
               gtag('event', 'calendly_click', { event_category: 'sticky_bar' })
@@ -644,7 +638,7 @@
           href="{{whatsapp}}?text=Hola%20Growth%20Buddies%21%20Quisiera%20agendar%20una%20conversaci%C3%B3n%20con%20el%20director.%20%C2%BFPodemos%20coordinar%3F"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex-shrink-0 text-sm text-slate-400 hover:text-[#25D366] transition-colors"
+          class="flex-shrink-0 text-sm text-[var(--fg-muted)] hover:text-[var(--whatsapp)] transition-colors"
           onclick="
             typeof gtag !== 'undefined' &&
               gtag('event', 'whatsapp_click', { event_category: 'sticky_bar' })
@@ -656,7 +650,7 @@
     </div>
 
     <header
-      class="relative min-h-[85vh] flex flex-col justify-center pt-28 pb-10 md:pb-14 overflow-hidden"
+      class="band-dark relative min-h-[85vh] flex flex-col justify-center pt-28 pb-10 md:pb-14 overflow-hidden"
     >
       <div class="hero-gradient-bg"></div>
       <div class="hero-grain"></div>
@@ -664,17 +658,17 @@
 
       <div class="z-10 max-w-4xl mx-auto w-full px-6 text-center">
         <p
-          class="text-xs md:text-[0.6875rem] font-semibold uppercase tracking-[0.12em] text-[var(--accent)] mb-4"
+          class="text-xs md:text-[0.6875rem] font-semibold uppercase tracking-[0.12em] text-[var(--accent-text)] mb-4"
         >
           Consultora de automatización con IA · Chile y LATAM
         </p>
         <h1
-          class="font-heading mb-6 text-[clamp(2.5rem,5vw,3.25rem)] text-white tracking-[-0.02em] leading-[1.1] font-semibold"
+          class="font-heading mb-6 text-[clamp(2.5rem,5vw,3.25rem)] text-[var(--fg)] tracking-[-0.02em] leading-[1.1] font-semibold"
         >
           Diagnóstico de automatización con IA:<br />qué automatizar, en qué orden y cuánto rinde.
         </h1>
         <p
-          class="text-base md:text-lg text-slate-400 font-light leading-relaxed mb-8 max-w-2xl mx-auto"
+          class="text-base md:text-lg text-[var(--fg-muted)] font-light leading-relaxed mb-8 max-w-2xl mx-auto"
         >
           En 10 a 15 días recibe 3 oportunidades con ROI en su moneda y una maqueta funcionando de la primera. Antes de gastar un peso en tecnología.
         </p>
@@ -698,7 +692,7 @@
             href="{{whatsapp}}?text=Hola%20Growth%20Buddies%21%20Quisiera%20agendar%20una%20conversaci%C3%B3n%20con%20el%20director.%20%C2%BFPodemos%20coordinar%3F"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-sm text-slate-400 hover:text-[#25D366] transition-colors"
+            class="text-sm text-[var(--fg-muted)] hover:text-[var(--whatsapp)] transition-colors"
             onclick="
               if (typeof gtag !== 'undefined') {
                 gtag('event', 'whatsapp_click', { event_category: 'hero' });
@@ -715,7 +709,7 @@
         <!-- Logo bar — full width below CTAs -->
         <div class="mt-10 md:mt-14 flex flex-col items-center gap-5">
           <p
-            class="text-xs text-slate-500 uppercase tracking-widest font-semibold"
+            class="text-xs text-[var(--fg-muted)] uppercase tracking-widest font-semibold"
           >
             Con la confianza de
           </p>
@@ -747,11 +741,11 @@
               height="315"
             />
             <span
-              class="font-semibold uppercase tracking-[0.15em] text-white/60 hover:text-white transition-all duration-300 select-none cursor-default text-sm md:text-base"
+              class="font-semibold uppercase tracking-[0.15em] text-[var(--fg)] hover:text-[var(--fg)] transition-all duration-300 select-none cursor-default text-sm md:text-base"
               >INGEGLOBAL</span
             >
             <span
-              class="font-semibold uppercase tracking-[0.15em] text-white/60 hover:text-white transition-all duration-300 select-none cursor-default text-sm md:text-base"
+              class="font-semibold uppercase tracking-[0.15em] text-[var(--fg)] hover:text-[var(--fg)] transition-all duration-300 select-none cursor-default text-sm md:text-base"
               >Dra. Corral</span
             >
           </div>
@@ -772,7 +766,7 @@
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="text-slate-400"
+          class="text-[var(--fg-muted)]"
         >
           <path d="m7 13 5 5 5-5" />
           <path d="m7 6 5 5 5-5" />
@@ -781,11 +775,11 @@
     </header>
 
     <!-- Trust bar -->
-    <div class="border-b border-zinc-200" style="background: #f5f5f5">
+    <div class="border-b border-[var(--line)]" style="background: #f5f5f5">
       <div class="max-w-5xl mx-auto px-6 py-3.5">
         <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
           <span
-            class="flex items-center gap-2 text-xs font-medium text-zinc-600 whitespace-nowrap"
+            class="flex items-center gap-2 text-xs font-medium text-[var(--fg-muted)] whitespace-nowrap"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -803,11 +797,11 @@
             </svg>
             15+ años de experiencia
           </span>
-          <span class="text-zinc-300 hidden sm:inline" aria-hidden="true"
+          <span class="text-[var(--fg-soft)] hidden sm:inline" aria-hidden="true"
             >·</span
           >
           <span
-            class="flex items-center gap-2 text-xs font-medium text-zinc-600 whitespace-nowrap"
+            class="flex items-center gap-2 text-xs font-medium text-[var(--fg-muted)] whitespace-nowrap"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -827,11 +821,11 @@
             </svg>
             Ex Microsoft, JLL, Bechtel
           </span>
-          <span class="text-zinc-300 hidden sm:inline" aria-hidden="true"
+          <span class="text-[var(--fg-soft)] hidden sm:inline" aria-hidden="true"
             >·</span
           >
           <span
-            class="flex items-center gap-2 text-xs font-medium text-zinc-600 whitespace-nowrap"
+            class="flex items-center gap-2 text-xs font-medium text-[var(--fg-muted)] whitespace-nowrap"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -849,11 +843,11 @@
             </svg>
             Certificados Prosci &amp; Scrum
           </span>
-          <span class="text-zinc-300 hidden sm:inline" aria-hidden="true"
+          <span class="text-[var(--fg-soft)] hidden sm:inline" aria-hidden="true"
             >·</span
           >
           <span
-            class="flex items-center gap-2 text-xs font-medium text-zinc-600 whitespace-nowrap"
+            class="flex items-center gap-2 text-xs font-medium text-[var(--fg-muted)] whitespace-nowrap"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -883,21 +877,21 @@
       <!-- Pain Validation — ¿Le suena alguno de estos? -->
       <section
         id="dolores"
-        class="py-16 md:py-24 px-6 border-b border-zinc-900"
+        class="py-16 md:py-24 px-6 border-b border-[var(--line)]"
       >
         <div class="max-w-4xl mx-auto">
           <div class="text-center mb-10 md:mb-14 reveal">
             <p
-              class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase mb-3 font-display"
+              class="text-xs font-bold text-[var(--accent-text)] tracking-widest uppercase mb-3 font-display"
             >
               Reconocimiento del Problema
             </p>
             <h2
-              class="text-3xl md:text-4xl text-slate-100 font-heading font-semibold tracking-[-0.02em] leading-[1.1]"
+              class="text-3xl md:text-4xl text-[var(--fg-soft)] font-heading font-semibold tracking-[-0.02em] leading-[1.1]"
             >
               ¿Le suena alguno de estos?
             </h2>
-            <p class="text-slate-400 text-sm mt-3 max-w-lg mx-auto">
+            <p class="text-[var(--fg-muted)] text-sm mt-3 max-w-lg mx-auto">
               Estos son los dolores que escuchamos en cada primera conversación
               con directores de empresas de servicios.
             </p>
@@ -908,10 +902,10 @@
           >
             <!-- Dolor 1 -->
             <div
-              class="flex items-start gap-4 bg-zinc-900/60 border border-zinc-800 rounded-xl p-5 hover:border-[var(--accent)]/40 transition-colors"
+              class="flex items-start gap-4 bg-[var(--surface)] border border-[var(--line)] rounded-xl p-5 hover:border-[var(--accent)] transition-colors"
             >
               <div
-                class="flex-shrink-0 w-9 h-9 rounded-lg bg-[var(--accent)]/10 border border-[var(--accent)]/20 flex items-center justify-center mt-0.5"
+                class="flex-shrink-0 w-9 h-9 rounded-lg bg-[var(--accent-soft)] border border-[var(--accent)] flex items-center justify-center mt-0.5"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -929,17 +923,17 @@
                   <path d="M12 8v4l3 3" />
                 </svg>
               </div>
-              <p class="text-slate-300 text-sm leading-relaxed">
+              <p class="text-[var(--fg-soft)] text-sm leading-relaxed">
                 Su equipo operativo está saturado, pero la operación no escala.
               </p>
             </div>
 
             <!-- Dolor 2 -->
             <div
-              class="flex items-start gap-4 bg-zinc-900/60 border border-zinc-800 rounded-xl p-5 hover:border-[var(--accent)]/40 transition-colors"
+              class="flex items-start gap-4 bg-[var(--surface)] border border-[var(--line)] rounded-xl p-5 hover:border-[var(--accent)] transition-colors"
             >
               <div
-                class="flex-shrink-0 w-9 h-9 rounded-lg bg-[var(--accent)]/10 border border-[var(--accent)]/20 flex items-center justify-center mt-0.5"
+                class="flex-shrink-0 w-9 h-9 rounded-lg bg-[var(--accent-soft)] border border-[var(--accent)] flex items-center justify-center mt-0.5"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -957,7 +951,7 @@
                   <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
                 </svg>
               </div>
-              <p class="text-slate-300 text-sm leading-relaxed">
+              <p class="text-[var(--fg-soft)] text-sm leading-relaxed">
                 Sospecha que pierde dinero en procesos manuales, pero no tiene
                 cuantificado cuánto.
               </p>
@@ -965,10 +959,10 @@
 
             <!-- Dolor 3 -->
             <div
-              class="flex items-start gap-4 bg-zinc-900/60 border border-zinc-800 rounded-xl p-5 hover:border-[var(--accent)]/40 transition-colors"
+              class="flex items-start gap-4 bg-[var(--surface)] border border-[var(--line)] rounded-xl p-5 hover:border-[var(--accent)] transition-colors"
             >
               <div
-                class="flex-shrink-0 w-9 h-9 rounded-lg bg-[var(--accent)]/10 border border-[var(--accent)]/20 flex items-center justify-center mt-0.5"
+                class="flex-shrink-0 w-9 h-9 rounded-lg bg-[var(--accent-soft)] border border-[var(--accent)] flex items-center justify-center mt-0.5"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -988,17 +982,17 @@
                   <path d="M12 6v6" />
                 </svg>
               </div>
-              <p class="text-slate-300 text-sm leading-relaxed">
+              <p class="text-[var(--fg-soft)] text-sm leading-relaxed">
                 Implementó tecnología antes y nadie la adoptó.
               </p>
             </div>
 
             <!-- Dolor 4 -->
             <div
-              class="flex items-start gap-4 bg-zinc-900/60 border border-zinc-800 rounded-xl p-5 hover:border-[var(--accent)]/40 transition-colors"
+              class="flex items-start gap-4 bg-[var(--surface)] border border-[var(--line)] rounded-xl p-5 hover:border-[var(--accent)] transition-colors"
             >
               <div
-                class="flex-shrink-0 w-9 h-9 rounded-lg bg-[var(--accent)]/10 border border-[var(--accent)]/20 flex items-center justify-center mt-0.5"
+                class="flex-shrink-0 w-9 h-9 rounded-lg bg-[var(--accent-soft)] border border-[var(--accent)] flex items-center justify-center mt-0.5"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1017,17 +1011,17 @@
                   <path d="M11 8v6M8 11h6" />
                 </svg>
               </div>
-              <p class="text-slate-300 text-sm leading-relaxed">
+              <p class="text-[var(--fg-soft)] text-sm leading-relaxed">
                 Quiere automatizar con IA pero no sabe por dónde empezar.
               </p>
             </div>
 
             <!-- Dolor 5 — full width -->
             <div
-              class="md:col-span-2 flex items-start gap-4 bg-zinc-900/60 border border-zinc-800 rounded-xl p-5 hover:border-[var(--accent)]/40 transition-colors"
+              class="md:col-span-2 flex items-start gap-4 bg-[var(--surface)] border border-[var(--line)] rounded-xl p-5 hover:border-[var(--accent)] transition-colors"
             >
               <div
-                class="flex-shrink-0 w-9 h-9 rounded-lg bg-[var(--accent)]/10 border border-[var(--accent)]/20 flex items-center justify-center mt-0.5"
+                class="flex-shrink-0 w-9 h-9 rounded-lg bg-[var(--accent-soft)] border border-[var(--accent)] flex items-center justify-center mt-0.5"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1046,7 +1040,7 @@
                   />
                 </svg>
               </div>
-              <p class="text-slate-300 text-sm leading-relaxed">
+              <p class="text-[var(--fg-soft)] text-sm leading-relaxed">
                 Le ofrecen "implementar IA" pero nadie le ofrece pensar primero
                 qué automatizar y si tiene sentido hacerlo.
               </p>
@@ -1054,14 +1048,14 @@
           </div>
 
           <div class="text-center mt-10 reveal">
-            <p class="text-slate-400 text-sm mb-4">
+            <p class="text-[var(--fg-muted)] text-sm mb-4">
               Si reconoce dos o más de estos, conversemos 30 minutos.
             </p>
             <a
               href="{{calendly}}"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 text-[var(--accent)] font-semibold hover:underline text-sm"
+              class="inline-flex items-center gap-2 text-[var(--accent-text)] font-semibold hover:underline text-sm"
               onclick="
                 if (typeof gtag !== 'undefined') {
                   gtag('event', 'calendly_click', {
@@ -1125,21 +1119,21 @@
       </div>
       <section
         id="clientes"
-        class="py-16 md:py-24 border-b border-zinc-900"
+        class="py-16 md:py-24 border-b border-[var(--line)]"
       >
         <div class="max-w-6xl mx-auto px-6">
           <div class="text-center mb-12">
             <p
-              class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase mb-3 font-display"
+              class="text-xs font-bold text-[var(--accent-text)] tracking-widest uppercase mb-3 font-display"
             >
               Casos de Éxito
             </p>
             <h2
-              class="text-3xl md:text-4xl text-slate-100 font-heading font-semibold tracking-[-0.02em] leading-[1.1]"
+              class="text-3xl md:text-4xl text-[var(--fg-soft)] font-heading font-semibold tracking-[-0.02em] leading-[1.1]"
             >
               Empresas que automatizaron con nosotros
             </h2>
-            <p class="text-slate-400 text-sm mt-3 max-w-xl mx-auto">
+            <p class="text-[var(--fg-muted)] text-sm mt-3 max-w-xl mx-auto">
               Resultados reales de empresas chilenas y latinoamericanas que
               transformaron sus operaciones con IA.
             </p>
@@ -1149,15 +1143,15 @@
             <!-- 1. SPI Americas — con link a caso -->
             <a
               href="/casos/spi-americas"
-              class="group relative flex flex-col rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-950 overflow-hidden hover:border-[var(--accent)]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[var(--accent)]/5"
+              class="group relative flex flex-col rounded-2xl border border-[var(--line)] bg-gradient-to-br from-[var(--surface)] to-[var(--surface)] overflow-hidden hover:border-[var(--accent)] transition-all duration-300  "
             >
               <div
-                class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--accent)]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               ></div>
               <div class="p-6 flex flex-col flex-1">
                 <div class="flex items-start justify-between gap-3 mb-5">
                   <div
-                    class="bg-zinc-800/40 border border-zinc-700/50 rounded-xl p-3 flex items-center justify-center shadow-[inset_0_0_15px_rgba(255,255,255,0.02)]"
+                    class="bg-[var(--surface)] border border-[var(--line)] rounded-xl p-3 flex items-center justify-center "
                     style="min-height: 48px"
                   >
                     <img
@@ -1172,29 +1166,29 @@
                     />
                   </div>
                   <span
-                    class="text-[10px] font-bold uppercase tracking-wider text-slate-500 border border-zinc-700 rounded-md px-2 py-1 whitespace-nowrap flex-shrink-0"
+                    class="text-[10px] font-bold uppercase tracking-wider text-[var(--fg-muted)] border border-[var(--line)] rounded-md px-2 py-1 whitespace-nowrap flex-shrink-0"
                     >Legal Tech</span
                   >
                 </div>
                 <h3
-                  class="text-base font-bold text-white mb-2 group-hover:text-[var(--accent)] transition-colors leading-snug"
+                  class="text-base font-semibold text-[var(--fg)] mb-2 group-hover:text-[var(--accent-text)] transition-colors leading-snug"
                 >
                   SPI Americas
                 </h3>
-                <p class="text-sm text-slate-400 leading-relaxed flex-1">
+                <p class="text-sm text-[var(--fg-muted)] leading-relaxed flex-1">
                   Diagnosticamos la operación documental de una firma de
                   propiedad intelectual con presencia en 4 países. Identificamos
                   que el 60% del tiempo se iba en gestión manual de registros.
                   Diseñamos e implementamos una plataforma con IA.
                 </p>
                 <div
-                  class="mt-5 pt-4 border-t border-zinc-800 flex items-center justify-between"
+                  class="mt-5 pt-4 border-t border-[var(--line)] flex items-center justify-between"
                 >
-                  <p class="text-sm font-bold text-[var(--accent)]">
+                  <p class="text-sm font-bold text-[var(--accent-text)]">
                     +17% facturación · 60% menos tiempo documental
                   </p>
                   <span
-                    class="text-xs font-semibold text-slate-500 group-hover:text-[var(--accent)] transition-colors flex-shrink-0 ml-3"
+                    class="text-xs font-semibold text-[var(--fg-muted)] group-hover:text-[var(--accent-text)] transition-colors flex-shrink-0 ml-3"
                     >Ver caso →</span
                   >
                 </div>
@@ -1203,15 +1197,15 @@
 
             <!-- 2. MundoSocios (CChC) -->
             <div
-              class="group relative flex flex-col rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-950 overflow-hidden hover:border-[var(--accent)]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[var(--accent)]/5"
+              class="group relative flex flex-col rounded-2xl border border-[var(--line)] bg-gradient-to-br from-[var(--surface)] to-[var(--surface)] overflow-hidden hover:border-[var(--accent)] transition-all duration-300  "
             >
               <div
-                class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--accent)]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               ></div>
               <div class="p-6 flex flex-col flex-1">
                 <div class="flex items-start justify-between gap-3 mb-5">
                   <div
-                    class="bg-zinc-800/40 border border-zinc-700/50 rounded-xl p-3 flex items-center justify-center shadow-[inset_0_0_15px_rgba(255,255,255,0.02)]"
+                    class="bg-[var(--surface)] border border-[var(--line)] rounded-xl p-3 flex items-center justify-center "
                     style="min-height: 48px"
                   >
                     <img
@@ -1226,22 +1220,22 @@
                     />
                   </div>
                   <span
-                    class="text-[10px] font-bold uppercase tracking-wider text-slate-500 border border-zinc-700 rounded-md px-2 py-1 whitespace-nowrap flex-shrink-0"
+                    class="text-[10px] font-bold uppercase tracking-wider text-[var(--fg-muted)] border border-[var(--line)] rounded-md px-2 py-1 whitespace-nowrap flex-shrink-0"
                     >Gremial</span
                   >
                 </div>
                 <h3
-                  class="text-base font-bold text-white mb-2 group-hover:text-[var(--accent)] transition-colors leading-snug"
+                  class="text-base font-semibold text-[var(--fg)] mb-2 group-hover:text-[var(--accent-text)] transition-colors leading-snug"
                 >
                   MundoSocios (CChC)
                 </h3>
-                <p class="text-sm text-slate-400 leading-relaxed flex-1">
+                <p class="text-sm text-[var(--fg-muted)] leading-relaxed flex-1">
                   Diagnóstico y diseño de plataforma para gestión de comunidad y
                   beneficios de socios. Reducción proyectada del 80% en horas
                   manuales de administración.
                 </p>
-                <div class="mt-5 pt-4 border-t border-zinc-800">
-                  <p class="text-sm font-bold text-[var(--accent)]">
+                <div class="mt-5 pt-4 border-t border-[var(--line)]">
+                  <p class="text-sm font-bold text-[var(--accent-text)]">
                     80% reducción de horas manuales
                   </p>
                 </div>
@@ -1250,15 +1244,15 @@
 
             <!-- 3. Hits Corredora de Seguros -->
             <div
-              class="group relative flex flex-col rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-950 overflow-hidden hover:border-[var(--accent)]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[var(--accent)]/5"
+              class="group relative flex flex-col rounded-2xl border border-[var(--line)] bg-gradient-to-br from-[var(--surface)] to-[var(--surface)] overflow-hidden hover:border-[var(--accent)] transition-all duration-300  "
             >
               <div
-                class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--accent)]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               ></div>
               <div class="p-6 flex flex-col flex-1">
                 <div class="flex items-start justify-between gap-3 mb-5">
                   <div
-                    class="bg-zinc-800/40 border border-zinc-700/50 rounded-xl p-3 flex items-center justify-center shadow-[inset_0_0_15px_rgba(255,255,255,0.02)]"
+                    class="bg-[var(--surface)] border border-[var(--line)] rounded-xl p-3 flex items-center justify-center "
                     style="min-height: 48px"
                   >
                     <img
@@ -1273,23 +1267,23 @@
                     />
                   </div>
                   <span
-                    class="text-[10px] font-bold uppercase tracking-wider text-slate-500 border border-zinc-700 rounded-md px-2 py-1 whitespace-nowrap flex-shrink-0"
+                    class="text-[10px] font-bold uppercase tracking-wider text-[var(--fg-muted)] border border-[var(--line)] rounded-md px-2 py-1 whitespace-nowrap flex-shrink-0"
                     >Seguros</span
                   >
                 </div>
                 <h3
-                  class="text-base font-bold text-white mb-2 group-hover:text-[var(--accent)] transition-colors leading-snug"
+                  class="text-base font-semibold text-[var(--fg)] mb-2 group-hover:text-[var(--accent-text)] transition-colors leading-snug"
                 >
                   Hits Corredora de Seguros
                 </h3>
-                <p class="text-sm text-slate-400 leading-relaxed flex-1">
+                <p class="text-sm text-[var(--fg-muted)] leading-relaxed flex-1">
                   Analizamos el flujo de comunicación con clientes en una
                   corredora de seguros. El cuello de botella estaba en la
                   gestión manual de correos de pólizas. Implementamos
                   automatización con IA.
                 </p>
-                <div class="mt-5 pt-4 border-t border-zinc-800">
-                  <p class="text-sm font-bold text-[var(--accent)]">
+                <div class="mt-5 pt-4 border-t border-[var(--line)]">
+                  <p class="text-sm font-bold text-[var(--accent-text)]">
                     Tiempos de respuesta &lt; 15 minutos
                   </p>
                 </div>
@@ -1298,15 +1292,15 @@
 
             <!-- 4. Potenciarte Eventos -->
             <div
-              class="group relative flex flex-col rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-950 overflow-hidden hover:border-[var(--accent)]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[var(--accent)]/5"
+              class="group relative flex flex-col rounded-2xl border border-[var(--line)] bg-gradient-to-br from-[var(--surface)] to-[var(--surface)] overflow-hidden hover:border-[var(--accent)] transition-all duration-300  "
             >
               <div
-                class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--accent)]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               ></div>
               <div class="p-6 flex flex-col flex-1">
                 <div class="flex items-start justify-between gap-3 mb-5">
                   <div
-                    class="bg-zinc-800/40 border border-zinc-700/50 rounded-xl p-3 flex items-center justify-center shadow-[inset_0_0_15px_rgba(255,255,255,0.02)]"
+                    class="bg-[var(--surface)] border border-[var(--line)] rounded-xl p-3 flex items-center justify-center "
                     style="min-height: 48px"
                   >
                     <img
@@ -1321,22 +1315,22 @@
                     />
                   </div>
                   <span
-                    class="text-[10px] font-bold uppercase tracking-wider text-slate-500 border border-zinc-700 rounded-md px-2 py-1 whitespace-nowrap flex-shrink-0"
+                    class="text-[10px] font-bold uppercase tracking-wider text-[var(--fg-muted)] border border-[var(--line)] rounded-md px-2 py-1 whitespace-nowrap flex-shrink-0"
                     >Eventos</span
                   >
                 </div>
                 <h3
-                  class="text-base font-bold text-white mb-2 group-hover:text-[var(--accent)] transition-colors leading-snug"
+                  class="text-base font-semibold text-[var(--fg)] mb-2 group-hover:text-[var(--accent-text)] transition-colors leading-snug"
                 >
                   Potenciarte Eventos
                 </h3>
-                <p class="text-sm text-slate-400 leading-relaxed flex-1">
+                <p class="text-sm text-[var(--fg-muted)] leading-relaxed flex-1">
                   Evaluamos el proceso de registro en eventos corporativos.
                   Diseñamos e implementamos automatización de check-in que
                   eliminó cuellos de botella operativos.
                 </p>
-                <div class="mt-5 pt-4 border-t border-zinc-800">
-                  <p class="text-sm font-bold text-[var(--accent)]">
+                <div class="mt-5 pt-4 border-t border-[var(--line)]">
+                  <p class="text-sm font-bold text-[var(--accent-text)]">
                     68% reducción de tiempo en check-in
                   </p>
                 </div>
@@ -1345,43 +1339,43 @@
 
             <!-- 5. Ingeglobal -->
             <div
-              class="group relative flex flex-col rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-950 overflow-hidden hover:border-[var(--accent)]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[var(--accent)]/5"
+              class="group relative flex flex-col rounded-2xl border border-[var(--line)] bg-gradient-to-br from-[var(--surface)] to-[var(--surface)] overflow-hidden hover:border-[var(--accent)] transition-all duration-300  "
             >
               <div
-                class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--accent)]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               ></div>
               <div class="p-6 flex flex-col flex-1">
                 <div class="flex items-start justify-between gap-3 mb-5">
                   <div
-                    class="bg-zinc-800/40 border border-zinc-700/50 rounded-xl p-3 flex items-center justify-center shadow-[inset_0_0_15px_rgba(255,255,255,0.02)]"
+                    class="bg-[var(--surface)] border border-[var(--line)] rounded-xl p-3 flex items-center justify-center "
                     style="min-height: 48px"
                   >
                     <span
-                      class="text-[1.35rem] leading-[1] font-black uppercase tracking-widest text-[#E2E8F0] opacity-80 group-hover:opacity-100 transition-opacity select-none flex items-center h-7 font-sans"
+                      class="text-[1.35rem] leading-[1] font-black uppercase tracking-widest text-[var(--fg-soft)] opacity-80 group-hover:opacity-100 transition-opacity select-none flex items-center h-7 font-sans"
                       >INGEGLOBAL</span
                     >
                   </div>
                   <span
-                    class="text-[10px] font-bold uppercase tracking-wider text-slate-500 border border-zinc-700 rounded-md px-2 py-1 whitespace-nowrap flex-shrink-0"
+                    class="text-[10px] font-bold uppercase tracking-wider text-[var(--fg-muted)] border border-[var(--line)] rounded-md px-2 py-1 whitespace-nowrap flex-shrink-0"
                     >Minería</span
                   >
                 </div>
                 <h3
-                  class="text-base font-bold text-white mb-2 group-hover:text-[var(--accent)] transition-colors leading-snug"
+                  class="text-base font-semibold text-[var(--fg)] mb-2 group-hover:text-[var(--accent-text)] transition-colors leading-snug"
                 >
                   Ingeglobal
                 </h3>
-                <p class="text-sm text-slate-400 leading-relaxed flex-1">
+                <p class="text-sm text-[var(--fg-muted)] leading-relaxed flex-1">
                   Evaluamos la operación de monitoreo en una consultora de
                   ingeniería minera. Diseñamos e implementamos un sistema de
                   mediciones en tiempo real con alertas que se convirtió en un
                   nuevo producto monetizable.
                 </p>
-                <div class="mt-5 pt-4 border-t border-zinc-800">
-                  <p class="text-sm font-bold text-[var(--accent)]">
+                <div class="mt-5 pt-4 border-t border-[var(--line)]">
+                  <p class="text-sm font-bold text-[var(--accent-text)]">
                     Nuevo producto monetizable de monitoreo en vivo
                   </p>
-                  <a href="/sectores/automatizacion-ia-industria-mineria" class="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-[var(--accent)] hover:underline">
+                  <a href="/sectores/automatizacion-ia-industria-mineria" class="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-[var(--accent-text)] hover:underline">
                     Ver guía del sector industrial →
                   </a>
                 </div>
@@ -1390,14 +1384,14 @@
           </div>
 
           <div class="text-center mt-12">
-            <p class="text-slate-400 mb-4">
+            <p class="text-[var(--fg-muted)] mb-4">
               ¿Su empresa enfrenta un desafío operativo similar?
             </p>
             <a
               href="{{calendly}}"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 text-[var(--accent)] font-semibold hover:underline"
+              class="inline-flex items-center gap-2 text-[var(--accent-text)] font-semibold hover:underline"
               onclick="
                 if (typeof gtag !== 'undefined') {
                   gtag('event', 'calendly_click', {
@@ -1415,21 +1409,21 @@
       <!-- ICP Filter — Para quién es / Para quién no es -->
       <section
         id="para-quien"
-        class="py-16 md:py-24 px-6 border-b border-zinc-900"
+        class="py-16 md:py-24 px-6 border-b border-[var(--line)]"
       >
         <div class="max-w-5xl mx-auto">
           <div class="text-center mb-10 md:mb-14 reveal">
             <p
-              class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase mb-3 font-display"
+              class="text-xs font-bold text-[var(--accent-text)] tracking-widest uppercase mb-3 font-display"
             >
               Perfil de Cliente
             </p>
             <h2
-              class="text-3xl md:text-4xl text-slate-100 font-heading font-semibold tracking-[-0.02em] leading-[1.1]"
+              class="text-3xl md:text-4xl text-[var(--fg-soft)] font-heading font-semibold tracking-[-0.02em] leading-[1.1]"
             >
               ¿Es esto para usted?
             </h2>
-            <p class="text-slate-400 text-sm mt-3 max-w-xl mx-auto">
+            <p class="text-[var(--fg-muted)] text-sm mt-3 max-w-xl mx-auto">
               Trabajamos con un perfil específico de empresa. Le conviene
               saberlo antes de agendar.
             </p>
@@ -1438,11 +1432,11 @@
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal">
             <!-- Para quién SÍ es -->
             <div
-              class="bg-zinc-900/40 border border-zinc-800 rounded-2xl p-6 md:p-8"
+              class="bg-[var(--surface)] border border-[var(--line)] rounded-2xl p-6 md:p-8"
             >
               <div class="flex items-center gap-2 mb-6">
                 <span
-                  class="w-5 h-5 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/25 flex items-center justify-center flex-shrink-0"
+                  class="w-5 h-5 rounded-full bg-[var(--accent-soft)] border border-[var(--accent)] flex items-center justify-center flex-shrink-0"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -1450,7 +1444,7 @@
                     height="11"
                     viewBox="0 0 24 24"
                     fill="none"
-                    stroke="#10b981"
+                    stroke="var(--accent-text)"
                     stroke-width="3"
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -1460,7 +1454,7 @@
                   </svg>
                 </span>
                 <span
-                  class="text-sm font-semibold text-[var(--accent)] uppercase tracking-wider font-display"
+                  class="text-sm font-semibold text-[var(--accent-text)] uppercase tracking-wider font-display"
                   >Para quién es</span
                 >
               </div>
@@ -1472,7 +1466,7 @@
                     height="16"
                     viewBox="0 0 24 24"
                     fill="none"
-                    stroke="#10b981"
+                    stroke="var(--accent-text)"
                     stroke-width="2.5"
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -1481,9 +1475,9 @@
                   >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span class="text-slate-300 text-sm leading-relaxed"
+                  <span class="text-[var(--fg-soft)] text-sm leading-relaxed"
                     >Empresas de servicios profesionales con
-                    <strong class="text-white"
+                    <strong class="text-[var(--fg)]"
                       >15 o más colaboradores</strong
                     ></span
                   >
@@ -1495,7 +1489,7 @@
                     height="16"
                     viewBox="0 0 24 24"
                     fill="none"
-                    stroke="#10b981"
+                    stroke="var(--accent-text)"
                     stroke-width="2.5"
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -1504,7 +1498,7 @@
                   >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span class="text-slate-300 text-sm leading-relaxed"
+                  <span class="text-[var(--fg-soft)] text-sm leading-relaxed"
                     >Sectores legal, seguros, consultoría, construcción, salud
                     privada, industria y minería</span
                   >
@@ -1516,7 +1510,7 @@
                     height="16"
                     viewBox="0 0 24 24"
                     fill="none"
-                    stroke="#10b981"
+                    stroke="var(--accent-text)"
                     stroke-width="2.5"
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -1525,7 +1519,7 @@
                   >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span class="text-slate-300 text-sm leading-relaxed"
+                  <span class="text-[var(--fg-soft)] text-sm leading-relaxed"
                     >Empresas en Chile, Colombia, Perú o Ecuador</span
                   >
                 </li>
@@ -1536,7 +1530,7 @@
                     height="16"
                     viewBox="0 0 24 24"
                     fill="none"
-                    stroke="#10b981"
+                    stroke="var(--accent-text)"
                     stroke-width="2.5"
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -1545,7 +1539,7 @@
                   >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span class="text-slate-300 text-sm leading-relaxed"
+                  <span class="text-[var(--fg-soft)] text-sm leading-relaxed"
                     >Operación predominantemente documental o
                     administrativa</span
                   >
@@ -1555,11 +1549,11 @@
 
             <!-- Para quién NO es -->
             <div
-              class="bg-zinc-900/40 border border-zinc-800 rounded-2xl p-6 md:p-8"
+              class="bg-[var(--surface)] border border-[var(--line)] rounded-2xl p-6 md:p-8"
             >
               <div class="flex items-center gap-2 mb-6">
                 <span
-                  class="w-5 h-5 rounded-full bg-zinc-700/50 border border-zinc-600/50 flex items-center justify-center flex-shrink-0"
+                  class="w-5 h-5 rounded-full bg-[var(--surface)] border border-[var(--line)] flex items-center justify-center flex-shrink-0"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -1578,7 +1572,7 @@
                   </svg>
                 </span>
                 <span
-                  class="text-sm font-semibold text-zinc-400 uppercase tracking-wider font-display"
+                  class="text-sm font-semibold text-[var(--fg-muted)] uppercase tracking-wider font-display"
                   >Para quién no es</span
                 >
               </div>
@@ -1600,7 +1594,7 @@
                     <line x1="18" y1="6" x2="6" y2="18" />
                     <line x1="6" y1="6" x2="18" y2="18" />
                   </svg>
-                  <span class="text-zinc-500 text-sm leading-relaxed"
+                  <span class="text-[var(--fg-muted)] text-sm leading-relaxed"
                     >Retail o e-commerce puro</span
                   >
                 </li>
@@ -1621,7 +1615,7 @@
                     <line x1="18" y1="6" x2="6" y2="18" />
                     <line x1="6" y1="6" x2="18" y2="18" />
                   </svg>
-                  <span class="text-zinc-500 text-sm leading-relaxed"
+                  <span class="text-[var(--fg-muted)] text-sm leading-relaxed"
                     >Startups en validación pre-producto</span
                   >
                 </li>
@@ -1642,7 +1636,7 @@
                     <line x1="18" y1="6" x2="6" y2="18" />
                     <line x1="6" y1="6" x2="18" y2="18" />
                   </svg>
-                  <span class="text-zinc-500 text-sm leading-relaxed"
+                  <span class="text-[var(--fg-muted)] text-sm leading-relaxed"
                     >Empresas que ya tienen un equipo de IA interno</span
                   >
                 </li>
@@ -1663,7 +1657,7 @@
                     <line x1="18" y1="6" x2="6" y2="18" />
                     <line x1="6" y1="6" x2="18" y2="18" />
                   </svg>
-                  <span class="text-zinc-500 text-sm leading-relaxed"
+                  <span class="text-[var(--fg-muted)] text-sm leading-relaxed"
                     >Empresas con menos de 15 personas</span
                   >
                 </li>
@@ -1676,7 +1670,7 @@
       <!-- Cómo trabajamos — Process Flow -->
       <section
         id="como-trabajamos"
-        class="py-16 md:py-24 px-6 border-b border-zinc-900/60"
+        class="py-16 md:py-24 px-6 border-b border-[var(--line)]"
         role="region"
         aria-labelledby="como-trabajamos-heading"
         itemscope
@@ -1690,17 +1684,17 @@
         <div class="max-w-6xl mx-auto">
           <div class="text-center reveal mb-12 md:mb-16">
             <p
-              class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase mb-3 font-display"
+              class="text-xs font-bold text-[var(--accent-text)] tracking-widest uppercase mb-3 font-display"
             >
               Nuestro Proceso
             </p>
             <h2
               id="como-trabajamos-heading"
-              class="text-3xl md:text-4xl text-slate-100 font-heading font-semibold tracking-[-0.02em] leading-[1.1]"
+              class="text-3xl md:text-4xl text-[var(--fg-soft)] font-heading font-semibold tracking-[-0.02em] leading-[1.1]"
             >
               Cómo trabajamos
             </h2>
-            <p class="text-slate-400 text-sm mt-3 max-w-xl mx-auto">
+            <p class="text-[var(--fg-muted)] text-sm mt-3 max-w-xl mx-auto">
               Un camino claro desde la conversación inicial hasta la
               implementación.
             </p>
@@ -1710,14 +1704,14 @@
           <div class="relative">
             <!-- Connecting line (desktop only) -->
             <div
-              class="hidden md:block absolute top-10 left-[calc(16.67%+1.5rem)] right-[calc(16.67%+1.5rem)] h-px bg-gradient-to-r from-transparent via-[var(--accent)]/30 to-transparent"
+              class="hidden md:block absolute top-10 left-[calc(16.67%+1.5rem)] right-[calc(16.67%+1.5rem)] h-px bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent"
               aria-hidden="true"
             ></div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 items-stretch">
               <!-- Paso 1 -->
               <div
-                class="reveal group relative flex flex-col h-full bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 md:p-8 hover:border-[var(--accent)]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--accent)]/5"
+                class="reveal group relative flex flex-col h-full bg-[var(--surface)] border border-[var(--line)] rounded-2xl p-6 md:p-8 hover:border-[var(--accent)] transition-all duration-300  "
                 itemprop="step"
                 itemscope
                 itemtype="https://schema.org/HowToStep"
@@ -1725,17 +1719,17 @@
                 <meta itemprop="position" content="1" />
                 <div class="flex items-start justify-between mb-6">
                   <span
-                    class="text-5xl font-black text-[var(--accent)]/20 group-hover:text-[var(--accent)]/40 transition-colors font-display leading-none select-none"
+                    class="text-5xl font-black text-[var(--accent-text)] group-hover:text-[var(--accent-text)] transition-colors font-display leading-none select-none"
                     >1</span
                   >
                   <span
-                    class="text-[10px] font-bold uppercase tracking-wider text-[var(--accent)] border border-[var(--accent)]/30 bg-[var(--accent)]/5 rounded-full px-3 py-1 whitespace-nowrap"
+                    class="text-[10px] font-bold uppercase tracking-wider text-[var(--accent-text)] border border-[var(--accent)] bg-[var(--accent-soft)] rounded-full px-3 py-1 whitespace-nowrap"
                     >Gratuita · 30 min</span
                   >
                 </div>
                 <div class="mb-4">
                   <div
-                    class="w-10 h-10 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center justify-center text-[var(--accent)] group-hover:border-[var(--accent)]/50 transition-colors mb-4"
+                    class="w-10 h-10 rounded-xl bg-[var(--line)] border border-[var(--line)] flex items-center justify-center text-[var(--accent-text)] group-hover:border-[var(--accent)] transition-colors mb-4"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1756,13 +1750,13 @@
                     </svg>
                   </div>
                   <h3
-                    class="text-lg font-bold text-white font-heading mb-3"
+                    class="text-lg font-semibold text-[var(--fg)] font-heading mb-3"
                     itemprop="name"
                   >
                     Conversación con el director
                   </h3>
                   <p
-                    class="text-sm text-slate-400 leading-relaxed"
+                    class="text-sm text-[var(--fg-muted)] leading-relaxed"
                     itemprop="text"
                   >
                     Conversamos 30 minutos para entender su operación y ver si
@@ -1774,7 +1768,7 @@
 
               <!-- Paso 2 -->
               <div
-                class="reveal group relative flex flex-col h-full bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 md:p-8 hover:border-[var(--accent)]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--accent)]/5"
+                class="reveal group relative flex flex-col h-full bg-[var(--surface)] border border-[var(--line)] rounded-2xl p-6 md:p-8 hover:border-[var(--accent)] transition-all duration-300  "
                 style="transition-delay: 100ms"
                 itemprop="step"
                 itemscope
@@ -1783,17 +1777,17 @@
                 <meta itemprop="position" content="2" />
                 <div class="flex items-start justify-between mb-6">
                   <span
-                    class="text-5xl font-black text-[var(--accent)]/20 group-hover:text-[var(--accent)]/40 transition-colors font-display leading-none select-none"
+                    class="text-5xl font-black text-[var(--accent-text)] group-hover:text-[var(--accent-text)] transition-colors font-display leading-none select-none"
                     >2</span
                   >
                   <span
-                    class="text-[10px] font-bold uppercase tracking-wider text-slate-400 border border-zinc-700 bg-zinc-800/50 rounded-full px-3 py-1 whitespace-nowrap"
+                    class="text-[10px] font-bold uppercase tracking-wider text-[var(--fg-muted)] border border-[var(--line)] bg-[var(--surface)] rounded-full px-3 py-1 whitespace-nowrap"
                     >10 a 15 días</span
                   >
                 </div>
                 <div class="mb-4">
                   <div
-                    class="w-10 h-10 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center justify-center text-[var(--accent)] group-hover:border-[var(--accent)]/50 transition-colors mb-4"
+                    class="w-10 h-10 rounded-xl bg-[var(--line)] border border-[var(--line)] flex items-center justify-center text-[var(--accent-text)] group-hover:border-[var(--accent)] transition-colors mb-4"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1812,20 +1806,20 @@
                     </svg>
                   </div>
                   <h3
-                    class="text-lg font-bold text-white font-heading mb-3"
+                    class="text-lg font-semibold text-[var(--fg)] font-heading mb-3"
                     itemprop="name"
                   >
                     Diagnóstico Estratégico
                   </h3>
                   <p
-                    class="text-sm text-slate-400 leading-relaxed mb-4"
+                    class="text-sm text-[var(--fg-muted)] leading-relaxed mb-4"
                     itemprop="text"
                   >
                     Cuestionario previo y sesión de trabajo de 2 a 3 horas sobre
                     sus procesos reales. En 10 a 15 días usted recibe:
                   </p>
                   <ul class="space-y-2">
-                    <li class="flex items-start gap-2 text-sm text-slate-300">
+                    <li class="flex items-start gap-2 text-sm text-[var(--fg-soft)]">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="15"
@@ -1843,7 +1837,7 @@
                       </svg>
                       3 oportunidades priorizadas con ROI en su moneda
                     </li>
-                    <li class="flex items-start gap-2 text-sm text-slate-300">
+                    <li class="flex items-start gap-2 text-sm text-[var(--fg-soft)]">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="15"
@@ -1861,7 +1855,7 @@
                       </svg>
                       Maqueta funcionando de la más rápida
                     </li>
-                    <li class="flex items-start gap-2 text-sm text-slate-300">
+                    <li class="flex items-start gap-2 text-sm text-[var(--fg-soft)]">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="15"
@@ -1885,7 +1879,7 @@
 
               <!-- Paso 3 -->
               <div
-                class="reveal group relative flex flex-col h-full bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 md:p-8 hover:border-[var(--accent)]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--accent)]/5"
+                class="reveal group relative flex flex-col h-full bg-[var(--surface)] border border-[var(--line)] rounded-2xl p-6 md:p-8 hover:border-[var(--accent)] transition-all duration-300  "
                 style="transition-delay: 200ms"
                 itemprop="step"
                 itemscope
@@ -1894,17 +1888,17 @@
                 <meta itemprop="position" content="3" />
                 <div class="flex items-start justify-between mb-6">
                   <span
-                    class="text-5xl font-black text-[var(--accent)]/20 group-hover:text-[var(--accent)]/40 transition-colors font-display leading-none select-none"
+                    class="text-5xl font-black text-[var(--accent-text)] group-hover:text-[var(--accent-text)] transition-colors font-display leading-none select-none"
                     >3</span
                   >
                   <span
-                    class="text-[10px] font-bold uppercase tracking-wider text-slate-500 border border-zinc-700 bg-zinc-800/50 rounded-full px-3 py-1 whitespace-nowrap"
+                    class="text-[10px] font-bold uppercase tracking-wider text-[var(--fg-muted)] border border-[var(--line)] bg-[var(--surface)] rounded-full px-3 py-1 whitespace-nowrap"
                     >Si decide avanzar</span
                   >
                 </div>
                 <div class="mb-4">
                   <div
-                    class="w-10 h-10 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center justify-center text-[var(--accent)] group-hover:border-[var(--accent)]/50 transition-colors mb-4"
+                    class="w-10 h-10 rounded-xl bg-[var(--line)] border border-[var(--line)] flex items-center justify-center text-[var(--accent-text)] group-hover:border-[var(--accent)] transition-colors mb-4"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1924,13 +1918,13 @@
                     </svg>
                   </div>
                   <h3
-                    class="text-lg font-bold text-white font-heading mb-3"
+                    class="text-lg font-semibold text-[var(--fg)] font-heading mb-3"
                     itemprop="name"
                   >
                     Implementación
                   </h3>
                   <p
-                    class="text-sm text-slate-400 leading-relaxed"
+                    class="text-sm text-[var(--fg-muted)] leading-relaxed"
                     itemprop="text"
                   >
                     Construimos lo que el diagnóstico recomienda. Si avanza
@@ -1943,7 +1937,7 @@
 
               <!-- Paso 4 -->
               <div
-                class="reveal group relative flex flex-col h-full bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 md:p-8 hover:border-[var(--accent)]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--accent)]/5"
+                class="reveal group relative flex flex-col h-full bg-[var(--surface)] border border-[var(--line)] rounded-2xl p-6 md:p-8 hover:border-[var(--accent)] transition-all duration-300  "
                 style="transition-delay: 300ms"
                 itemprop="step"
                 itemscope
@@ -1952,17 +1946,17 @@
                 <meta itemprop="position" content="4" />
                 <div class="flex items-start justify-between mb-6">
                   <span
-                    class="text-5xl font-black text-[var(--accent)]/20 group-hover:text-[var(--accent)]/40 transition-colors font-display leading-none select-none"
+                    class="text-5xl font-black text-[var(--accent-text)] group-hover:text-[var(--accent-text)] transition-colors font-display leading-none select-none"
                     >4</span
                   >
                   <span
-                    class="text-[10px] font-bold uppercase tracking-wider text-slate-500 border border-zinc-700 bg-zinc-800/50 rounded-full px-3 py-1 whitespace-nowrap"
+                    class="text-[10px] font-bold uppercase tracking-wider text-[var(--fg-muted)] border border-[var(--line)] bg-[var(--surface)] rounded-full px-3 py-1 whitespace-nowrap"
                     >Acompañamiento mensual</span
                   >
                 </div>
                 <div class="mb-4">
                   <div
-                    class="w-10 h-10 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center justify-center text-[var(--accent)] group-hover:border-[var(--accent)]/50 transition-colors mb-4"
+                    class="w-10 h-10 rounded-xl bg-[var(--line)] border border-[var(--line)] flex items-center justify-center text-[var(--accent-text)] group-hover:border-[var(--accent)] transition-colors mb-4"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1983,13 +1977,13 @@
                     </svg>
                   </div>
                   <h3
-                    class="text-lg font-bold text-white font-heading mb-3"
+                    class="text-lg font-semibold text-[var(--fg)] font-heading mb-3"
                     itemprop="name"
                   >
                     Adopción
                   </h3>
                   <p
-                    class="text-sm text-slate-400 leading-relaxed"
+                    class="text-sm text-[var(--fg-muted)] leading-relaxed"
                     itemprop="text"
                   >
                     Acompañamiento mensual para asegurar que el equipo realmente
@@ -2002,35 +1996,35 @@
 
             <!-- Product card — canonical pricing module -->
             <div class="reveal my-16 md:my-20">
-              <div class="rounded-2xl border border-[var(--accent)]/30 bg-[var(--accent)]/5 p-6 md:p-8">
+              <div class="rounded-2xl border border-[var(--accent)] bg-[var(--accent-soft)] p-6 md:p-8">
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
                   <!-- Left: title + price -->
                   <div class="text-center lg:text-left">
-                    <p class="text-xs font-bold uppercase tracking-widest text-[var(--accent)] mb-3 font-display">
+                    <p class="text-xs font-bold uppercase tracking-widest text-[var(--accent-text)] mb-3 font-display">
                       Diagnóstico de Automatización Estratégica
                     </p>
-                    <p class="text-3xl md:text-4xl font-heading font-semibold text-white leading-none">
-                      $490.000 <span class="text-lg font-normal text-slate-300">+ IVA</span>
+                    <p class="text-3xl md:text-4xl font-heading font-semibold text-[var(--fg)] leading-none">
+                      $490.000 <span class="text-lg font-normal text-[var(--fg-soft)]">+ IVA</span>
                     </p>
-                    <p class="mt-2 text-sm text-slate-400">
+                    <p class="mt-2 text-sm text-[var(--fg-muted)]">
                       USD 500 fuera de Chile
                     </p>
                   </div>
 
                   <!-- Middle: benefit chips -->
                   <ul class="space-y-3 lg:col-span-1">
-                    <li class="flex items-start gap-3 text-sm text-slate-300 leading-snug">
+                    <li class="flex items-start gap-3 text-sm text-[var(--fg-soft)] leading-snug">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0097B2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0" aria-hidden="true">
                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                       </svg>
-                      <span><strong class="text-white">Garantía 100%:</strong> si no hay al menos 3 oportunidades con ROI positivo, devolvemos todo.</span>
+                      <span><strong class="text-[var(--fg)]">Garantía 100%:</strong> si no hay al menos 3 oportunidades con ROI positivo, devolvemos todo.</span>
                     </li>
-                    <li class="flex items-start gap-3 text-sm text-slate-300 leading-snug">
+                    <li class="flex items-start gap-3 text-sm text-[var(--fg-soft)] leading-snug">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0097B2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0" aria-hidden="true">
                         <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
                         <line x1="7" y1="7" x2="7.01" y2="7" />
                       </svg>
-                      <span><strong class="text-white">Crédito:</strong> 100% acreditable a su proyecto dentro de 90 días.</span>
+                      <span><strong class="text-[var(--fg)]">Crédito:</strong> 100% acreditable a su proyecto dentro de 90 días.</span>
                     </li>
                   </ul>
 
@@ -2049,7 +2043,7 @@
                       href="{{calendly}}"
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="text-sm text-slate-400 hover:text-white transition-colors text-center lg:text-right"
+                      class="text-sm text-[var(--fg-muted)] hover:text-[var(--fg)] transition-colors text-center lg:text-right"
                       onclick="if (typeof gtag !== 'undefined') { gtag('event', 'calendly_click', { event_category: 'process_cta_soft' }); }"
                     >
                       o primero, agendar conversación con el director
@@ -2057,7 +2051,7 @@
                   </div>
                 </div>
 
-                <p class="mt-6 pt-6 border-t border-[var(--accent)]/15 text-xs text-slate-400 text-center leading-relaxed">
+                <p class="mt-6 pt-6 border-t border-[var(--accent)] text-xs text-[var(--fg-muted)] text-center leading-relaxed">
                   Con el pago acreditado le enviamos el cuestionario y agendamos su sesión en firme.
                 </p>
               </div>
@@ -2069,22 +2063,22 @@
       <!-- Diagnostic Quiz Section -->
       <section
         id="diagnostico-rapido"
-        class="py-16 md:py-24 px-6 border-b border-zinc-900 bg-gradient-to-b from-zinc-950 via-zinc-900/40 to-zinc-950"
+        class="py-16 md:py-24 px-6 border-b border-[var(--line)] bg-gradient-to-b from-[var(--surface)] via-[var(--surface)] to-[var(--surface)]"
       >
         <div class="max-w-3xl mx-auto">
           <div class="text-center mb-10">
             <p
-              class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase mb-3 font-display"
+              class="text-xs font-bold text-[var(--accent-text)] tracking-widest uppercase mb-3 font-display"
             >
               Diagnóstico rápido
             </p>
             <h2
-              class="text-3xl md:text-4xl text-slate-100 font-heading font-semibold tracking-[-0.02em] leading-[1.1] mb-4"
+              class="text-3xl md:text-4xl text-[var(--fg-soft)] font-heading font-semibold tracking-[-0.02em] leading-[1.1] mb-4"
             >
               Identifique 3 hipótesis de automatización para su empresa (en 2
               minutos)
             </h2>
-            <p class="text-slate-400 max-w-xl mx-auto">
+            <p class="text-[var(--fg-muted)] max-w-xl mx-auto">
               7 preguntas, una respuesta personalizada. Reciba un reporte en PDF
               con 3 hipótesis iniciales según su perfil. Para validarlas con
               números reales y una maqueta funcionando, el siguiente paso es el
@@ -2094,14 +2088,14 @@
 
           <div
             id="quiz-container"
-            class="bg-zinc-900/60 border border-zinc-800 rounded-2xl p-6 md:p-10"
+            class="bg-[var(--surface)] border border-[var(--line)] rounded-2xl p-6 md:p-10"
           >
             <div id="quiz-progress" class="mb-8">
-              <div class="flex justify-between text-xs text-slate-500 mb-2">
+              <div class="flex justify-between text-xs text-[var(--fg-muted)] mb-2">
                 <span>Pregunta <span id="quiz-current">1</span> de 7</span>
                 <span><span id="quiz-percent">14</span>%</span>
               </div>
-              <div class="h-1 bg-zinc-800 rounded-full overflow-hidden">
+              <div class="h-1 bg-[var(--line)] rounded-full overflow-hidden">
                 <div
                   id="quiz-bar"
                   class="h-full bg-[var(--accent)] transition-all duration-300"
@@ -2113,12 +2107,12 @@
             <div id="quiz-question-container"></div>
 
             <div id="quiz-email-capture" class="hidden">
-              <h3 class="text-2xl font-bold text-white font-heading mb-3">
+              <h3 class="text-2xl font-semibold text-[var(--fg)] font-heading mb-3">
                 Su reporte está listo
               </h3>
-              <p class="text-slate-400 mb-6">
+              <p class="text-[var(--fg-muted)] mb-6">
                 Identificamos
-                <strong class="text-white">3 hipótesis iniciales</strong> de
+                <strong class="text-[var(--fg)]">3 hipótesis iniciales</strong> de
                 automatización según su perfil. Le enviamos el reporte
                 personalizado al correo. Para validarlas con números reales y
                 una maqueta funcionando sobre su operación, el siguiente paso es
@@ -2128,7 +2122,7 @@
                 <div>
                   <label
                     for="quiz-email"
-                    class="text-sm text-slate-300 block mb-2"
+                    class="text-sm text-[var(--fg-soft)] block mb-2"
                     >Correo electrónico empresarial</label
                   >
                   <input
@@ -2136,13 +2130,13 @@
                     id="quiz-email"
                     required
                     placeholder="suemail@empresa.com"
-                    class="w-full border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:border-[var(--accent)] focus:outline-none transition-colors"
+                    class="w-full border border-[var(--line)] rounded-lg px-4 py-3 text-[var(--fg)] placeholder-[var(--fg-muted)] focus:border-[var(--accent)] focus:outline-none transition-colors"
                   />
                 </div>
                 <div>
                   <label
                     for="quiz-company"
-                    class="text-sm text-slate-300 block mb-2"
+                    class="text-sm text-[var(--fg-soft)] block mb-2"
                     >Empresa</label
                   >
                   <input
@@ -2151,11 +2145,11 @@
                     required
                     minlength="3"
                     placeholder="Nombre de su empresa"
-                    class="w-full border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:border-[var(--accent)] focus:outline-none transition-colors"
+                    class="w-full border border-[var(--line)] rounded-lg px-4 py-3 text-[var(--fg)] placeholder-[var(--fg-muted)] focus:border-[var(--accent)] focus:outline-none transition-colors"
                   />
                   <p
                     id="quiz-company-error"
-                    class="hidden text-xs text-red-400 mt-1"
+                    class="hidden text-xs text-[var(--danger)] mt-1"
                   >
                     Por favor ingrese el nombre de su empresa.
                   </p>
@@ -2163,7 +2157,7 @@
                 <button
                   type="submit"
                   id="quiz-submit-btn"
-                  class="w-full bg-[var(--color-cta)] hover:bg-[var(--color-cta-hover)] text-black font-bold py-3 px-6 rounded-full transition-all flex items-center justify-center gap-2"
+                  class="w-full bg-[var(--color-cta)] hover:bg-[var(--color-cta-hover)] text-[var(--on-accent)] font-bold py-3 px-6 rounded-full transition-all flex items-center justify-center gap-2"
                 >
                   <svg
                     id="quiz-spinner"
@@ -2188,7 +2182,7 @@
                   </svg>
                   <span id="quiz-btn-label">Enviarme el reporte</span>
                 </button>
-                <p class="text-xs text-slate-500 text-center">
+                <p class="text-xs text-[var(--fg-muted)] text-center">
                   Sin spam. Su correo solo se usa para enviarle el reporte y un
                   seguimiento opcional en 7 días.
                 </p>
@@ -2197,7 +2191,7 @@
 
             <div id="quiz-success" class="hidden text-center">
               <div
-                class="w-16 h-16 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/30 flex items-center justify-center mx-auto mb-6"
+                class="w-16 h-16 rounded-full bg-[var(--accent-soft)] border border-[var(--accent)] flex items-center justify-center mx-auto mb-6"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -2209,25 +2203,25 @@
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="text-[var(--accent)]"
+                  class="text-[var(--accent-text)]"
                 >
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
               </div>
-              <h3 class="text-2xl font-bold text-white font-heading mb-3">
+              <h3 class="text-2xl font-semibold text-[var(--fg)] font-heading mb-3">
                 Su reporte está en camino
               </h3>
-              <p class="text-slate-400 mb-8">
+              <p class="text-[var(--fg-muted)] mb-8">
                 Lo enviamos a
-                <strong class="text-white" id="quiz-success-email"
+                <strong class="text-[var(--fg)]" id="quiz-success-email"
                   >su correo</strong
                 >. Debería llegar en menos de 2 minutos.
               </p>
-              <p class="text-slate-300 mb-2">
+              <p class="text-[var(--fg-soft)] mb-2">
                 El siguiente paso: validar esas hipótesis con números reales y
                 una maqueta funcionando sobre su operación.
               </p>
-              <p class="text-slate-400 text-sm mb-6">
+              <p class="text-[var(--fg-muted)] text-sm mb-6">
                 Diagnóstico de Automatización Estratégica · $490.000 + IVA (USD
                 500 fuera de Chile).
               </p>
@@ -2236,7 +2230,7 @@
                   href="{{whatsapp}}?text=Hola%20Growth%20Buddies%21%20Vengo%20del%20quiz%20y%20quiero%20reservar%20mi%20cupo%20del%20Diagn%C3%B3stico%20de%20Automatizaci%C3%B3n%20Estrat%C3%A9gica.%20%C2%BFC%C3%B3mo%20coordinamos%20el%20pago%3F"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 bg-[var(--color-cta)] hover:bg-[var(--color-cta-hover)] text-black font-bold py-3 px-8 rounded-full transition-all"
+                  class="inline-flex items-center gap-2 bg-[var(--color-cta)] hover:bg-[var(--color-cta-hover)] text-[var(--on-accent)] font-bold py-3 px-8 rounded-full transition-all"
                   onclick="if (typeof gtag !== 'undefined') { gtag('event', 'reservar_cupo_click', { event_category: 'quiz_success' }); }"
                 >
                   Reservar mi cupo →
@@ -2245,7 +2239,7 @@
                   href="{{calendly}}"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="text-sm text-slate-400 hover:text-white transition-colors"
+                  class="text-sm text-[var(--fg-muted)] hover:text-[var(--fg)] transition-colors"
                   onclick="if (typeof gtag !== 'undefined') { gtag('event', 'calendly_click', { event_category: 'quiz_success_soft' }); }"
                 >
                   o primero, agendar conversación con el director
@@ -2259,7 +2253,7 @@
       <!-- Google Reviews — supplementary social proof -->
       <section
         id="resenas-google"
-        class="py-14 md:py-20 px-6 border-b border-white/5 relative overflow-hidden"
+        class="py-14 md:py-20 px-6 border-b border-[var(--line)] relative overflow-hidden"
       >
         <div class="max-w-5xl mx-auto relative z-10">
           <div class="text-center mb-10">
@@ -2296,7 +2290,7 @@
               </p>
             </div>
             <div class="flex items-center justify-center gap-3 mb-1">
-              <span class="text-5xl md:text-6xl font-black font-display text-white leading-none"
+              <span class="text-5xl md:text-6xl font-black font-display text-[var(--fg)] leading-none"
                 >5.0</span
               >
               <div class="flex items-center gap-0.5" aria-label="5 estrellas">
@@ -2357,15 +2351,15 @@
                 </svg>
               </div>
             </div>
-            <p class="text-xs text-slate-400">en Google Business Profile</p>
+            <p class="text-xs text-[var(--fg-muted)]">en Google Business Profile</p>
           </div>
 
           <!--
           TODO: Replace these 3 cards with new business-outcome reviews when received from Hits, SPI Americas, and Potenciarte.
           Drop-in structure for each new card:
 
-          <article class="bg-zinc-800/40 rounded-2xl p-6 border border-zinc-700/50 shadow-xl relative overflow-hidden group hover:border-[var(--accent)]/40 transition-colors">
-            <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <article class="bg-[var(--surface)] rounded-2xl p-6 border border-[var(--line)]  relative overflow-hidden group hover:border-[var(--accent)] transition-colors">
+            <div class="absolute inset-0 bg-gradient-to-br from-[var(--hover)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div class="relative z-10 flex flex-col h-full">
                Header: stars + Google badge
               <div class="flex items-center justify-between mb-4">
@@ -2377,15 +2371,15 @@
                 </svg>
               </div>
                Business metric (prominent, cyan)
-              <p class="text-sm font-bold text-[var(--accent)] mb-3">+17% facturación en 6 meses</p>
+              <p class="text-sm font-bold text-[var(--accent-text)] mb-3">+17% facturación en 6 meses</p>
                Full quote
-              <blockquote class="text-sm leading-relaxed italic mb-5 text-slate-300 flex-1">
+              <blockquote class="text-sm leading-relaxed italic mb-5 text-[var(--fg-soft)] flex-1">
                 "[Full quote with concrete business outcome and timeline]"
               </blockquote>
                Person info (no avatar; muted reviewer name per design system)
-              <div class="pt-4 border-t border-zinc-700/50">
+              <div class="pt-4 border-t border-[var(--line)]">
                 <p class="text-[0.8rem] font-semibold text-[var(--fg-muted)] leading-tight">Nombre Apellido</p>
-                <p class="text-[0.7rem] text-[var(--fg-muted)]/70">Cargo · Empresa</p>
+                <p class="text-[0.7rem] text-[var(--fg-muted)]">Cargo · Empresa</p>
               </div>
             </div>
           </article>
@@ -2399,10 +2393,10 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
             <!-- Review 1: Dra. Daniela Corral H. -->
             <article
-              class="bg-zinc-800/40 rounded-2xl p-6 border border-zinc-700/50 shadow-xl relative overflow-hidden group hover:border-[var(--accent)]/40 transition-colors"
+              class="bg-[var(--surface)] rounded-2xl p-6 border border-[var(--line)]  relative overflow-hidden group hover:border-[var(--accent)] transition-colors"
             >
               <div
-                class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                class="absolute inset-0 bg-gradient-to-br from-[var(--hover)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
               ></div>
               <div class="relative z-10 flex flex-col h-full">
                 <div class="flex items-center justify-between mb-4">
@@ -2493,17 +2487,17 @@
                   </svg>
                 </div>
                 <blockquote
-                  class="text-sm leading-relaxed italic mb-5 text-slate-300 flex-1"
+                  class="text-sm leading-relaxed italic mb-5 text-[var(--fg-soft)] flex-1"
                 >
                   "Estamos trabajando en un proyecto súper novedoso. Son
                   realmente expertos en programación y utilizan la IA de una
                   forma increíble."
                 </blockquote>
-                <div class="pt-4 border-t border-zinc-700/50">
+                <div class="pt-4 border-t border-[var(--line)]">
                   <p class="text-[0.8rem] font-semibold text-[var(--fg-muted)] leading-tight">
                     Dra. Daniela Corral H.
                   </p>
-                  <p class="text-[0.7rem] text-[var(--fg-muted)]/70">
+                  <p class="text-[0.7rem] text-[var(--fg-muted)]">
                     Google Business Profile
                   </p>
                 </div>
@@ -2512,10 +2506,10 @@
 
             <!-- Review 2: Jose Osorio -->
             <article
-              class="bg-zinc-800/40 rounded-2xl p-6 border border-zinc-700/50 shadow-xl relative overflow-hidden group hover:border-[var(--accent)]/40 transition-colors"
+              class="bg-[var(--surface)] rounded-2xl p-6 border border-[var(--line)]  relative overflow-hidden group hover:border-[var(--accent)] transition-colors"
             >
               <div
-                class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                class="absolute inset-0 bg-gradient-to-br from-[var(--hover)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
               ></div>
               <div class="relative z-10 flex flex-col h-full">
                 <div class="flex items-center justify-between mb-4">
@@ -2606,16 +2600,16 @@
                   </svg>
                 </div>
                 <blockquote
-                  class="text-sm leading-relaxed italic mb-5 text-slate-300 flex-1"
+                  class="text-sm leading-relaxed italic mb-5 text-[var(--fg-soft)] flex-1"
                 >
                   "Lo valioso de Growth Buddies es que entienden que automatizar
                   sin estrategia es deuda futura."
                 </blockquote>
-                <div class="pt-4 border-t border-zinc-700/50">
+                <div class="pt-4 border-t border-[var(--line)]">
                   <p class="text-[0.8rem] font-semibold text-[var(--fg-muted)] leading-tight">
                     Jose Osorio
                   </p>
-                  <p class="text-[0.7rem] text-[var(--fg-muted)]/70">
+                  <p class="text-[0.7rem] text-[var(--fg-muted)]">
                     Google Business Profile
                   </p>
                 </div>
@@ -2624,10 +2618,10 @@
 
             <!-- Review 3: Sebastián Marín -->
             <article
-              class="bg-zinc-800/40 rounded-2xl p-6 border border-zinc-700/50 shadow-xl relative overflow-hidden group hover:border-[var(--accent)]/40 transition-colors"
+              class="bg-[var(--surface)] rounded-2xl p-6 border border-[var(--line)]  relative overflow-hidden group hover:border-[var(--accent)] transition-colors"
             >
               <div
-                class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                class="absolute inset-0 bg-gradient-to-br from-[var(--hover)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
               ></div>
               <div class="relative z-10 flex flex-col h-full">
                 <div class="flex items-center justify-between mb-4">
@@ -2718,16 +2712,16 @@
                   </svg>
                 </div>
                 <blockquote
-                  class="text-sm leading-relaxed italic mb-5 text-slate-300 flex-1"
+                  class="text-sm leading-relaxed italic mb-5 text-[var(--fg-soft)] flex-1"
                 >
                   "Me ayudaron justo con mi requerimiento. Edmundo sabía
                   exactamente qué es lo que necesitaba mi negocio."
                 </blockquote>
-                <div class="pt-4 border-t border-zinc-700/50">
+                <div class="pt-4 border-t border-[var(--line)]">
                   <p class="text-[0.8rem] font-semibold text-[var(--fg-muted)] leading-tight">
                     Sebastián Marín
                   </p>
-                  <p class="text-[0.7rem] text-[var(--fg-muted)]/70">
+                  <p class="text-[0.7rem] text-[var(--fg-muted)]">
                     Google Business Profile
                   </p>
                 </div>
@@ -2740,7 +2734,7 @@
               href="https://search.google.com/local/writereview?placeid=ChIJc9LuJtfiJyoRxm89vU9LUSI"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 text-sm font-medium px-6 py-2.5 rounded-full border border-[var(--accent)]/80 text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white transition-all duration-300"
+              class="inline-flex items-center gap-2 text-sm font-medium px-6 py-2.5 rounded-full border border-[var(--accent)] text-[var(--accent-text)] hover:bg-[var(--accent-strong)] hover:text-[var(--fg)] transition-all duration-300"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -2774,20 +2768,20 @@
 
       <!-- CTA Section — Mid-page -->
       <section
-        class="py-16 md:py-24 px-6 relative bg-gradient-to-b from-zinc-950 to-zinc-900 border-y border-white/5"
+        class="py-16 md:py-24 px-6 relative bg-gradient-to-b from-[var(--surface)] to-[var(--surface)] border-y border-[var(--line)]"
       >
         <div class="max-w-3xl mx-auto text-center reveal">
           <h2
-            class="text-3xl md:text-4xl lg:text-5xl text-white font-heading font-semibold tracking-[-0.02em] leading-[1.1] mb-4"
+            class="text-3xl md:text-4xl lg:text-5xl text-[var(--fg)] font-heading font-semibold tracking-[-0.02em] leading-[1.1] mb-4"
           >
             ¿Sabe exactamente dónde pierde dinero su operación?
           </h2>
-          <p class="text-lg text-slate-400 mb-10 leading-relaxed">
+          <p class="text-lg text-[var(--fg-muted)] mb-10 leading-relaxed">
             En 30 minutos con el director, conversamos sobre su operación y
             vemos si nuestro
             <a
               href="/#como-trabajamos"
-              class="text-[var(--accent)] hover:underline"
+              class="text-[var(--accent-text)] hover:underline"
               >Diagnóstico de Automatización Estratégica</a
             >
             le hace sentido.
@@ -2814,7 +2808,7 @@
               href="{{whatsapp}}?text=Hola%20Growth%20Buddies%21%20Quisiera%20agendar%20una%20conversaci%C3%B3n%20con%20el%20director.%20%C2%BFPodemos%20coordinar%3F"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-sm text-slate-400 hover:text-[#25D366] transition-colors"
+              class="text-sm text-[var(--fg-muted)] hover:text-[var(--whatsapp)] transition-colors"
               onclick="
                 if (typeof gtag !== 'undefined') {
                   gtag('event', 'whatsapp_click', {
@@ -2832,25 +2826,25 @@
       <!-- Agentes IA Especializados Section -->
       <section
         id="productos"
-        class="py-16 md:py-28 px-6 relative section-dark border-y border-white/5 text-slate-100"
+        class="py-16 md:py-28 px-6 relative border-y border-[var(--line)] text-[var(--fg-soft)]"
       >
         <div class="max-w-7xl mx-auto">
           <div class="text-center reveal mb-10 md:mb-16">
             <span
-              class="text-[var(--accent)] font-bold tracking-wider text-sm uppercase font-display"
+              class="text-[var(--accent-text)] font-bold tracking-wider text-sm uppercase font-display"
               >Ejemplos de Implementación</span
             >
             <h2
-              class="text-3xl md:text-4xl lg:text-5xl text-white mt-3 font-heading font-semibold tracking-[-0.02em] leading-[1.1]"
+              class="text-3xl md:text-4xl lg:text-5xl text-[var(--fg)] mt-3 font-heading font-semibold tracking-[-0.02em] leading-[1.1]"
             >
               Lo que hemos construido
             </h2>
-            <p class="mt-6 max-w-2xl mx-auto text-lg text-slate-400">
+            <p class="mt-6 max-w-2xl mx-auto text-lg text-[var(--fg-muted)]">
               Estos no son productos en venta. Son ejemplos de lo que
               construimos a partir de diagnósticos previos para clientes
               concretos. Cada implementación nació de un hallazgo específico en
               la operación de una empresa real.
-              <strong class="text-white"
+              <strong class="text-[var(--fg)]"
                 >Su caso, si decide avanzar con nosotros, será distinto</strong
               >, porque el diagnóstico se hace primero y no se compra una
               solución pre-empaquetada.
@@ -2861,12 +2855,12 @@
             <!-- 0. BrokerIA -->
             <div class="reveal group relative card-dark rounded-2xl p-5 md:p-8">
               <div
-                class="absolute inset-0 bg-gradient-to-b from-[var(--accent)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"
+                class="absolute inset-0 bg-gradient-to-b from-[var(--accent)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"
               ></div>
               <div class="relative z-10">
                 <div class="flex items-center gap-3 mb-6">
                   <div
-                    class="p-3 bg-zinc-900 rounded-lg text-[var(--accent)] border border-zinc-700 group-hover:border-[var(--accent)] transition-colors"
+                    class="p-3 bg-[var(--surface)] rounded-lg text-[var(--accent-text)] border border-[var(--line)] group-hover:border-[var(--accent)] transition-colors"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -2885,19 +2879,19 @@
                       <polyline points="9 22 9 12 15 12 15 22" />
                     </svg>
                   </div>
-                  <h3 class="text-xl font-bold text-white font-heading">
+                  <h3 class="text-xl font-semibold text-[var(--fg)] font-heading">
                     BrokerIA
                   </h3>
                 </div>
-                <p class="text-xs text-slate-500 italic mb-3">
+                <p class="text-xs text-[var(--fg-muted)] italic mb-3">
                   Construido para una corredora de propiedades · Chile
                 </p>
                 <p
-                  class="text-xs font-semibold text-[var(--accent)] mb-3 bg-zinc-900/50 inline-block px-3 py-1 rounded-full border border-zinc-700"
+                  class="text-xs font-semibold text-[var(--accent-text)] mb-3 bg-[var(--surface)] inline-block px-3 py-1 rounded-full border border-[var(--line)]"
                 >
                   Plataforma PropTech + IA
                 </p>
-                <p class="text-slate-400 leading-relaxed text-[0.9rem] mb-4">
+                <p class="text-[var(--fg-muted)] leading-relaxed text-[0.9rem] mb-4">
                   La primera plataforma en Chile que cruza el perfil financiero
                   del comprador con el análisis de habitabilidad de la
                   propiedad. Genera un Pitch de Cierre con IA que le dice al
@@ -2909,12 +2903,12 @@
             <!-- 1. Inbox IA Legal -->
             <div class="reveal group relative card-dark rounded-2xl p-5 md:p-8">
               <div
-                class="absolute inset-0 bg-gradient-to-b from-[var(--accent)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"
+                class="absolute inset-0 bg-gradient-to-b from-[var(--accent)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"
               ></div>
               <div class="relative z-10">
                 <div class="flex items-center gap-3 mb-6">
                   <div
-                    class="p-3 bg-zinc-900 rounded-lg text-[var(--accent)] border border-zinc-700 group-hover:border-[var(--accent)] transition-colors"
+                    class="p-3 bg-[var(--surface)] rounded-lg text-[var(--accent-text)] border border-[var(--line)] group-hover:border-[var(--accent)] transition-colors"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -2931,20 +2925,20 @@
                       <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                     </svg>
                   </div>
-                  <h3 class="text-xl font-bold text-white font-heading">
+                  <h3 class="text-xl font-semibold text-[var(--fg)] font-heading">
                     Inbox IA Legal
                   </h3>
                 </div>
-                <p class="text-xs text-slate-500 italic mb-3">
+                <p class="text-xs text-[var(--fg-muted)] italic mb-3">
                   Construido para un estudio jurídico de propiedad intelectual ·
                   LATAM
                 </p>
                 <p
-                  class="text-xs font-semibold text-[var(--accent)] mb-3 bg-zinc-900/50 inline-block px-3 py-1 rounded-full border border-zinc-700"
+                  class="text-xs font-semibold text-[var(--accent-text)] mb-3 bg-[var(--surface)] inline-block px-3 py-1 rounded-full border border-[var(--line)]"
                 >
                   Email + IA Generativa
                 </p>
-                <p class="text-slate-400 leading-relaxed text-[0.9rem] mb-4">
+                <p class="text-[var(--fg-muted)] leading-relaxed text-[0.9rem] mb-4">
                   Una casilla de correo mágica para abogados. La IA lee cada
                   consulta entrante, evalúa viabilidad del caso, y le entrega al
                   abogado solo los leads calificados con un resumen ejecutivo.
@@ -2959,12 +2953,12 @@
               style="transition-delay: 100ms"
             >
               <div
-                class="absolute inset-0 bg-gradient-to-b from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"
+                class="absolute inset-0 bg-gradient-to-b from-[var(--accent-soft)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"
               ></div>
               <div class="relative z-10">
                 <div class="flex items-center gap-3 mb-6">
                   <div
-                    class="p-3 bg-zinc-900 rounded-lg text-blue-400 border border-zinc-700 group-hover:border-blue-500 transition-colors"
+                    class="p-3 bg-[var(--surface)] rounded-lg text-[var(--accent-text)] border border-[var(--line)] group-hover:border-[var(--accent)] transition-colors"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -2983,19 +2977,19 @@
                       <polyline points="14 2 14 8 20 8" />
                     </svg>
                   </div>
-                  <h3 class="text-xl font-bold text-white font-heading">
+                  <h3 class="text-xl font-semibold text-[var(--fg)] font-heading">
                     DocuAgent IA
                   </h3>
                 </div>
-                <p class="text-xs text-slate-500 italic mb-3">
+                <p class="text-xs text-[var(--fg-muted)] italic mb-3">
                   Construido para una empresa de seguros · Chile
                 </p>
                 <p
-                  class="text-xs font-semibold text-blue-400 mb-3 bg-zinc-900/50 inline-block px-3 py-1 rounded-full border border-zinc-700"
+                  class="text-xs font-semibold text-[var(--accent-text)] mb-3 bg-[var(--surface)] inline-block px-3 py-1 rounded-full border border-[var(--line)]"
                 >
                   OCR + Revisión Autónoma
                 </p>
-                <p class="text-slate-400 leading-relaxed text-[0.9rem] mb-4">
+                <p class="text-[var(--fg-muted)] leading-relaxed text-[0.9rem] mb-4">
                   Su agente de gestión documental inteligente. Suba cualquier
                   documento y la IA lo clasifica, extrae datos clave, detecta
                   cláusulas faltantes y genera un reporte semáforo en 30
@@ -3010,12 +3004,12 @@
               style="transition-delay: 200ms"
             >
               <div
-                class="absolute inset-0 bg-gradient-to-b from-[var(--accent)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"
+                class="absolute inset-0 bg-gradient-to-b from-[var(--accent)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"
               ></div>
               <div class="relative z-10">
                 <div class="flex items-center gap-3 mb-6">
                   <div
-                    class="p-3 bg-zinc-900 rounded-lg text-[var(--accent)] border border-zinc-700 group-hover:border-[var(--accent)] transition-colors"
+                    class="p-3 bg-[var(--surface)] rounded-lg text-[var(--accent-text)] border border-[var(--line)] group-hover:border-[var(--accent)] transition-colors"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -3032,19 +3026,19 @@
                       <polyline points="12 6 12 12 16 14" />
                     </svg>
                   </div>
-                  <h3 class="text-xl font-bold text-white font-heading">
+                  <h3 class="text-xl font-semibold text-[var(--fg)] font-heading">
                     TimeKeeper IA
                   </h3>
                 </div>
-                <p class="text-xs text-slate-500 italic mb-3">
+                <p class="text-xs text-[var(--fg-muted)] italic mb-3">
                   Construido para abogados litigantes · LATAM
                 </p>
                 <p
-                  class="text-xs font-semibold text-[var(--accent)] mb-3 bg-zinc-900/50 inline-block px-3 py-1 rounded-full border border-zinc-700"
+                  class="text-xs font-semibold text-[var(--accent-text)] mb-3 bg-[var(--surface)] inline-block px-3 py-1 rounded-full border border-[var(--line)]"
                 >
                   Registro 100% Pasivo
                 </p>
-                <p class="text-slate-400 leading-relaxed text-[0.9rem] mb-4">
+                <p class="text-[var(--fg-muted)] leading-relaxed text-[0.9rem] mb-4">
                   El abogado trabaja normalmente. TimeKeeper IA reconstruye su
                   jornada completa analizando emails, reuniones y documentos
                   editados. A las 18:00, recibe un borrador de timesheet listo
@@ -3060,11 +3054,11 @@
         <div class="max-w-6xl mx-auto">
           <div class="text-center reveal mb-10 md:mb-16">
             <h2
-              class="text-3xl md:text-4xl lg:text-5xl text-slate-100 font-heading font-semibold tracking-[-0.02em] leading-[1.1]"
+              class="text-3xl md:text-4xl lg:text-5xl text-[var(--fg-soft)] font-heading font-semibold tracking-[-0.02em] leading-[1.1]"
             >
               Liderazgo en Gestión del Cambio Tecnológico.
             </h2>
-            <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-400">
+            <p class="mt-4 max-w-2xl mx-auto text-lg text-[var(--fg-muted)]">
               El equilibrio perfecto entre innovación tecnológica y pragmatismo
               de negocios.
             </p>
@@ -3080,7 +3074,7 @@
               ></div>
 
               <div
-                class="bg-black/80 h-full w-full rounded-[1.4rem] p-5 md:p-8 lg:p-10 flex flex-col items-center text-center md:flex-row md:text-left gap-5 md:gap-8 relative z-10 border border-white/5 group-hover:border-[var(--accent)]/30 transition-colors"
+                class="bg-[var(--surface)] h-full w-full rounded-[1.4rem] p-5 md:p-8 lg:p-10 flex flex-col items-center text-center md:flex-row md:text-left gap-5 md:gap-8 relative z-10 border border-[var(--line)] group-hover:border-[var(--accent)] transition-colors"
               >
                 <div class="relative shrink-0">
                   <div
@@ -3091,31 +3085,31 @@
                     alt="Edmundo Spohr — CEO en Growth Buddies"
                     loading="lazy"
                     decoding="async"
-                    class="relative h-24 w-24 md:h-32 md:w-32 lg:h-40 lg:w-40 rounded-full object-cover ring-2 ring-white/10 group-hover:ring-[var(--accent)] transition-all"
+                    class="relative h-24 w-24 md:h-32 md:w-32 lg:h-40 lg:w-40 rounded-full object-cover ring-2 ring-[var(--line)] group-hover:ring-[var(--accent)] transition-all"
                     height="96"
                     width="96"
                   />
                 </div>
                 <div>
                   <p
-                    class="text-base md:text-lg text-slate-200 italic leading-snug font-light"
+                    class="text-base md:text-lg text-[var(--fg-soft)] italic leading-snug font-light"
                   >
                     "Le decimos a su empresa exactamente dónde está perdiendo
                     dinero, en qué orden arreglarlo, y lo construimos."
                   </p>
                   <div class="mt-6">
-                    <h3 class="font-bold text-white text-xl font-heading">
+                    <h3 class="font-semibold text-[var(--fg)] text-xl font-heading">
                       Edmundo Spohr
                     </h3>
                     <p
-                      class="text-sm text-[var(--accent)] font-medium tracking-wide uppercase"
+                      class="text-sm text-[var(--accent-text)] font-medium tracking-wide uppercase"
                     >
                       Director & Fundador
                     </p>
                   </div>
                   <a
                     href="/equipo/edmundo-spohr"
-                    class="mt-4 inline-flex items-center gap-2 text-xs text-slate-500 hover:text-[var(--accent)] transition-colors uppercase tracking-wider font-bold"
+                    class="mt-4 inline-flex items-center gap-2 text-xs text-[var(--fg-muted)] hover:text-[var(--accent-text)] transition-colors uppercase tracking-wider font-bold"
                   >
                     Ver Perfil Completo
                     <svg
@@ -3143,46 +3137,46 @@
               style="transition-delay: 150ms"
             >
               <div
-                class="absolute inset-0 bg-gradient-to-br from-blue-600 via-transparent to-transparent opacity-30 group-hover:opacity-60 transition-opacity duration-500"
+                class="absolute inset-0 bg-gradient-to-br from-[var(--accent-soft)] via-transparent to-transparent opacity-30 group-hover:opacity-60 transition-opacity duration-500"
               ></div>
 
               <div
-                class="bg-black/80 h-full w-full rounded-[1.4rem] p-5 md:p-8 lg:p-10 flex flex-col items-center text-center md:flex-row md:text-left gap-5 md:gap-8 relative z-10 border border-white/5 group-hover:border-blue-500/30 transition-colors"
+                class="bg-[var(--surface)] h-full w-full rounded-[1.4rem] p-5 md:p-8 lg:p-10 flex flex-col items-center text-center md:flex-row md:text-left gap-5 md:gap-8 relative z-10 border border-[var(--line)] group-hover:border-[var(--accent)] transition-colors"
               >
                 <div class="relative shrink-0">
                   <div
-                    class="absolute -inset-4 bg-blue-500 rounded-full blur-xl opacity-20 group-hover:opacity-40 transition duration-500"
+                    class="absolute -inset-4 bg-[var(--accent-soft)] rounded-full blur-xl opacity-20 group-hover:opacity-40 transition duration-500"
                   ></div>
                   <img
                     src="img/felipe-2026.webp"
                     alt="Felipe Soto Santibáñez — Consultor Senior en Growth Buddies"
                     loading="lazy"
                     decoding="async"
-                    class="relative h-24 w-24 md:h-32 md:w-32 lg:h-40 lg:w-40 rounded-full object-cover ring-2 ring-white/10 group-hover:ring-blue-500 transition-all"
+                    class="relative h-24 w-24 md:h-32 md:w-32 lg:h-40 lg:w-40 rounded-full object-cover ring-2 ring-[var(--line)] group-hover:ring-[var(--accent)] transition-all"
                     height="96"
                     width="96"
                   />
                 </div>
                 <div>
                   <p
-                    class="text-base md:text-lg text-slate-200 italic leading-snug font-light"
+                    class="text-base md:text-lg text-[var(--fg-soft)] italic leading-snug font-light"
                   >
                     "Cada sistema que diseñamos se construye para producción
                     real, no para una demo de PowerPoint."
                   </p>
                   <div class="mt-6">
-                    <h3 class="font-bold text-white text-xl font-heading">
+                    <h3 class="font-semibold text-[var(--fg)] text-xl font-heading">
                       Felipe Soto Santibañez
                     </h3>
                     <p
-                      class="text-sm text-[var(--accent)] font-medium tracking-wide uppercase"
+                      class="text-sm text-[var(--accent-text)] font-medium tracking-wide uppercase"
                     >
                       Co-Founder &amp; CTO
                     </p>
                   </div>
                   <a
                     href="/equipo/felipe-soto-santibanez"
-                    class="mt-4 inline-flex items-center gap-2 text-xs text-slate-500 hover:text-[var(--accent)] transition-colors uppercase tracking-wider font-bold"
+                    class="mt-4 inline-flex items-center gap-2 text-xs text-[var(--fg-muted)] hover:text-[var(--accent-text)] transition-colors uppercase tracking-wider font-bold"
                   >
                     Ver Perfil Completo
                     <svg
@@ -3210,7 +3204,7 @@
       <!-- Diferenciadores — Comparison Table -->
       <section
         id="diferenciadores"
-        class="py-16 md:py-24 px-6 border-b border-zinc-900"
+        class="py-16 md:py-24 px-6 border-b border-[var(--line)]"
         role="region"
         aria-labelledby="diferenciadores-heading"
       >
@@ -3218,31 +3212,31 @@
           <div class="text-center reveal mb-10 md:mb-14">
             <h2
               id="diferenciadores-heading"
-              class="text-3xl md:text-4xl text-slate-100 font-heading font-semibold tracking-[-0.02em] leading-[1.1]"
+              class="text-3xl md:text-4xl text-[var(--fg-soft)] font-heading font-semibold tracking-[-0.02em] leading-[1.1]"
             >
               ¿Por qué Growth Buddies?
             </h2>
-            <p class="text-slate-400 text-sm mt-3 max-w-lg mx-auto">
+            <p class="text-[var(--fg-muted)] text-sm mt-3 max-w-lg mx-auto">
               No somos otra consultora de IA. Esto es lo que nos diferencia.
             </p>
           </div>
 
           <!-- Desktop table / Mobile card stack -->
           <div
-            class="reveal my-16 overflow-hidden rounded-2xl border border-zinc-800"
+            class="reveal my-16 overflow-hidden rounded-2xl border border-[var(--line)]"
           >
             <!-- Header row -->
-            <div class="grid grid-cols-2 bg-zinc-900/80">
-              <div class="px-6 py-5 border-r border-zinc-800">
+            <div class="grid grid-cols-2 bg-[var(--surface)]">
+              <div class="px-6 py-5 border-r border-[var(--line)]">
                 <p
-                  class="text-xs font-bold uppercase tracking-widest text-zinc-500"
+                  class="text-xs font-bold uppercase tracking-widest text-[var(--fg-muted)]"
                 >
                   Consultor Típico de IA
                 </p>
               </div>
-              <div class="px-6 py-5 bg-[var(--accent)]/5">
+              <div class="px-6 py-5 bg-[var(--accent-soft)]">
                 <p
-                  class="text-xs font-bold uppercase tracking-widest text-[var(--accent)]"
+                  class="text-xs font-bold uppercase tracking-widest text-[var(--accent-text)]"
                 >
                   Growth Buddies
                 </p>
@@ -3251,15 +3245,15 @@
 
             <!-- Row 1 -->
             <div
-              class="grid grid-cols-2 border-t border-zinc-800/60 group hover:bg-zinc-900/30 transition-colors"
+              class="grid grid-cols-2 border-t border-[var(--line)] group hover:bg-[var(--surface)] transition-colors"
             >
               <div
-                class="px-6 py-5 border-r border-zinc-800/60 flex items-start gap-3"
+                class="px-6 py-5 border-r border-[var(--line)] flex items-start gap-3"
               >
                 <span class="mt-0.5 shrink-0 text-[var(--fg-muted)]" aria-hidden="true"
                   >✕</span
                 >
-                <p class="text-sm text-zinc-500 leading-snug">
+                <p class="text-sm text-[var(--fg-muted)] leading-snug">
                   Diagnóstico genérico basado en templates
                 </p>
               </div>
@@ -3267,11 +3261,11 @@
                 class="px-6 py-5 bg-[var(--accent)]/[0.03] flex items-start gap-3 group-hover:bg-[var(--accent)]/[0.06] transition-colors"
               >
                 <span
-                  class="mt-0.5 shrink-0 text-[var(--accent)]"
+                  class="mt-0.5 shrink-0 text-[var(--accent-text)]"
                   aria-hidden="true"
                   >✓</span
                 >
-                <p class="text-sm text-white leading-snug">
+                <p class="text-sm text-[var(--fg)] leading-snug">
                   Inmersión personalizada en su operación real
                 </p>
               </div>
@@ -3279,15 +3273,15 @@
 
             <!-- Row 2 -->
             <div
-              class="grid grid-cols-2 border-t border-zinc-800/60 group hover:bg-zinc-900/30 transition-colors"
+              class="grid grid-cols-2 border-t border-[var(--line)] group hover:bg-[var(--surface)] transition-colors"
             >
               <div
-                class="px-6 py-5 border-r border-zinc-800/60 flex items-start gap-3"
+                class="px-6 py-5 border-r border-[var(--line)] flex items-start gap-3"
               >
                 <span class="mt-0.5 shrink-0 text-[var(--fg-muted)]" aria-hidden="true"
                   >✕</span
                 >
-                <p class="text-sm text-zinc-500 leading-snug">
+                <p class="text-sm text-[var(--fg-muted)] leading-snug">
                   No puede construir lo que recomienda
                 </p>
               </div>
@@ -3295,11 +3289,11 @@
                 class="px-6 py-5 bg-[var(--accent)]/[0.03] flex items-start gap-3 group-hover:bg-[var(--accent)]/[0.06] transition-colors"
               >
                 <span
-                  class="mt-0.5 shrink-0 text-[var(--accent)]"
+                  class="mt-0.5 shrink-0 text-[var(--accent-text)]"
                   aria-hidden="true"
                   >✓</span
                 >
-                <p class="text-sm text-white leading-snug">
+                <p class="text-sm text-[var(--fg)] leading-snug">
                   Diagnostica y construye (cadena completa)
                 </p>
               </div>
@@ -3307,15 +3301,15 @@
 
             <!-- Row 3 -->
             <div
-              class="grid grid-cols-2 border-t border-zinc-800/60 group hover:bg-zinc-900/30 transition-colors"
+              class="grid grid-cols-2 border-t border-[var(--line)] group hover:bg-[var(--surface)] transition-colors"
             >
               <div
-                class="px-6 py-5 border-r border-zinc-800/60 flex items-start gap-3"
+                class="px-6 py-5 border-r border-[var(--line)] flex items-start gap-3"
               >
                 <span class="mt-0.5 shrink-0 text-[var(--fg-muted)]" aria-hidden="true"
                   >✕</span
                 >
-                <p class="text-sm text-zinc-500 leading-snug">
+                <p class="text-sm text-[var(--fg-muted)] leading-snug">
                   Junior con plantilla
                 </p>
               </div>
@@ -3323,11 +3317,11 @@
                 class="px-6 py-5 bg-[var(--accent)]/[0.03] flex items-start gap-3 group-hover:bg-[var(--accent)]/[0.06] transition-colors"
               >
                 <span
-                  class="mt-0.5 shrink-0 text-[var(--accent)]"
+                  class="mt-0.5 shrink-0 text-[var(--accent-text)]"
                   aria-hidden="true"
                   >✓</span
                 >
-                <p class="text-sm text-white leading-snug">
+                <p class="text-sm text-[var(--fg)] leading-snug">
                   Director senior con 15+ años, ex-Microsoft / JLL / Bechtel
                 </p>
               </div>
@@ -3335,15 +3329,15 @@
 
             <!-- Row 4 -->
             <div
-              class="grid grid-cols-2 border-t border-zinc-800/60 group hover:bg-zinc-900/30 transition-colors"
+              class="grid grid-cols-2 border-t border-[var(--line)] group hover:bg-[var(--surface)] transition-colors"
             >
               <div
-                class="px-6 py-5 border-r border-zinc-800/60 flex items-start gap-3"
+                class="px-6 py-5 border-r border-[var(--line)] flex items-start gap-3"
               >
                 <span class="mt-0.5 shrink-0 text-[var(--fg-muted)]" aria-hidden="true"
                   >✕</span
                 >
-                <p class="text-sm text-zinc-500 leading-snug">
+                <p class="text-sm text-[var(--fg-muted)] leading-snug">
                   Ignora si el equipo adopta o no
                 </p>
               </div>
@@ -3351,11 +3345,11 @@
                 class="px-6 py-5 bg-[var(--accent)]/[0.03] flex items-start gap-3 group-hover:bg-[var(--accent)]/[0.06] transition-colors"
               >
                 <span
-                  class="mt-0.5 shrink-0 text-[var(--accent)]"
+                  class="mt-0.5 shrink-0 text-[var(--accent-text)]"
                   aria-hidden="true"
                   >✓</span
                 >
-                <p class="text-sm text-white leading-snug">
+                <p class="text-sm text-[var(--fg)] leading-snug">
                   Certificación Prosci en gestión del cambio
                 </p>
               </div>
@@ -3363,15 +3357,15 @@
 
             <!-- Row 5 -->
             <div
-              class="grid grid-cols-2 border-t border-zinc-800/60 group hover:bg-zinc-900/30 transition-colors"
+              class="grid grid-cols-2 border-t border-[var(--line)] group hover:bg-[var(--surface)] transition-colors"
             >
               <div
-                class="px-6 py-5 border-r border-zinc-800/60 flex items-start gap-3"
+                class="px-6 py-5 border-r border-[var(--line)] flex items-start gap-3"
               >
                 <span class="mt-0.5 shrink-0 text-[var(--fg-muted)]" aria-hidden="true"
                   >✕</span
                 >
-                <p class="text-sm text-zinc-500 leading-snug">
+                <p class="text-sm text-[var(--fg-muted)] leading-snug">
                   Roadmap que se archiva
                 </p>
               </div>
@@ -3379,11 +3373,11 @@
                 class="px-6 py-5 bg-[var(--accent)]/[0.03] flex items-start gap-3 group-hover:bg-[var(--accent)]/[0.06] transition-colors"
               >
                 <span
-                  class="mt-0.5 shrink-0 text-[var(--accent)]"
+                  class="mt-0.5 shrink-0 text-[var(--accent-text)]"
                   aria-hidden="true"
                   >✓</span
                 >
-                <p class="text-sm text-white leading-snug">
+                <p class="text-sm text-[var(--fg)] leading-snug">
                   Roadmap ejecutable con arquitectura técnica real
                 </p>
               </div>
@@ -3391,15 +3385,15 @@
 
             <!-- Row 6 -->
             <div
-              class="grid grid-cols-2 border-t border-zinc-800/60 group hover:bg-zinc-900/30 transition-colors"
+              class="grid grid-cols-2 border-t border-[var(--line)] group hover:bg-[var(--surface)] transition-colors"
             >
               <div
-                class="px-6 py-5 border-r border-zinc-800/60 flex items-start gap-3"
+                class="px-6 py-5 border-r border-[var(--line)] flex items-start gap-3"
               >
                 <span class="mt-0.5 shrink-0 text-[var(--fg-muted)]" aria-hidden="true"
                   >✕</span
                 >
-                <p class="text-sm text-zinc-500 leading-snug">
+                <p class="text-sm text-[var(--fg-muted)] leading-snug">
                   Le entrega un informe en PDF
                 </p>
               </div>
@@ -3407,11 +3401,11 @@
                 class="px-6 py-5 bg-[var(--accent)]/[0.03] flex items-start gap-3 group-hover:bg-[var(--accent)]/[0.06] transition-colors"
               >
                 <span
-                  class="mt-0.5 shrink-0 text-[var(--accent)]"
+                  class="mt-0.5 shrink-0 text-[var(--accent-text)]"
                   aria-hidden="true"
                   >✓</span
                 >
-                <p class="text-sm text-white leading-snug">
+                <p class="text-sm text-[var(--fg)] leading-snug">
                   Le entrega una maqueta funcionando sobre su operación
                 </p>
               </div>
@@ -3424,7 +3418,7 @@
               href="{{calendly}}"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 bg-[var(--color-cta)] hover:bg-[var(--color-cta-hover)] text-black font-bold py-3 px-8 rounded-full transition-all text-sm"
+              class="inline-flex items-center gap-2 bg-[var(--color-cta)] hover:bg-[var(--color-cta-hover)] text-[var(--on-accent)] font-bold py-3 px-8 rounded-full transition-all text-sm"
               onclick="
                 if (typeof gtag !== 'undefined') {
                   gtag('event', 'calendly_click', {
@@ -3440,29 +3434,29 @@
       </section>
 
       <!-- Lead Magnet Banner — secondary resource -->
-      <section class="py-10 px-6 border-y border-zinc-800">
+      <section class="py-10 px-6 border-y border-[var(--line)]">
         <div
           class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-6 md:gap-10"
         >
           <div class="flex-1 text-center md:text-left">
             <p
-              class="text-xs font-bold tracking-widest uppercase text-slate-500 mb-1"
+              class="text-xs font-bold tracking-widest uppercase text-[var(--fg-muted)] mb-1"
             >
               Recurso gratuito
             </p>
             <h2
-              class="text-base md:text-lg font-semibold text-slate-300 font-heading leading-tight mb-1"
+              class="text-base md:text-lg font-semibold text-[var(--fg-soft)] font-heading leading-tight mb-1"
             >
               5 Procesos que Puede Automatizar con IA Esta Semana
             </h2>
-            <p class="text-slate-500 text-sm">
+            <p class="text-[var(--fg-muted)] text-sm">
               Para estudios jurídicos, corredoras y empresas de servicios en
               Latinoamérica.
             </p>
           </div>
           <a
             href="/recursos/guia-ia-legal"
-            class="flex-shrink-0 inline-flex items-center gap-2 border border-zinc-700 text-slate-400 hover:text-white hover:border-zinc-500 font-medium py-2.5 px-5 rounded-full transition-all whitespace-nowrap text-sm"
+            class="flex-shrink-0 inline-flex items-center gap-2 border border-[var(--line)] text-[var(--fg-muted)] hover:text-[var(--fg)] hover:border-[var(--line)] font-medium py-2.5 px-5 rounded-full transition-all whitespace-nowrap text-sm"
           >
             Descargar gratis
             <svg
@@ -3485,7 +3479,7 @@
 
       <!-- FAQ Section -->
       <section
-        class="py-16 md:py-24 px-6 border-b border-zinc-900/30"
+        class="py-16 md:py-24 px-6 border-b border-[var(--line)]"
         role="region"
         aria-labelledby="faq-heading"
       >
@@ -3493,11 +3487,11 @@
           <div class="text-center reveal mb-10 md:mb-16">
             <h2
               id="faq-heading"
-              class="text-3xl md:text-4xl text-slate-100 font-heading font-semibold tracking-[-0.02em] leading-[1.1]"
+              class="text-3xl md:text-4xl text-[var(--fg-soft)] font-heading font-semibold tracking-[-0.02em] leading-[1.1]"
             >
               Preguntas frecuentes
             </h2>
-            <p class="mt-4 text-slate-400">
+            <p class="mt-4 text-[var(--fg-muted)]">
               Resolvemos sus dudas sobre automatización e IA.
             </p>
           </div>
@@ -3506,7 +3500,7 @@
             <!-- FAQ 1 -->
             <details class="reveal group glass-card rounded-xl overflow-hidden">
               <summary
-                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-slate-200 hover:text-[var(--accent)] transition-colors"
+                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-[var(--fg-soft)] hover:text-[var(--accent-text)] transition-colors"
               >
                 <span>¿Cuánto cuesta el diagnóstico?</span>
                 <span
@@ -3528,12 +3522,12 @@
                 </span>
               </summary>
               <div
-                class="px-4 pb-4 md:px-6 md:pb-6 text-slate-400 leading-relaxed"
+                class="px-4 pb-4 md:px-6 md:pb-6 text-[var(--fg-muted)] leading-relaxed"
               >
                 <p>
                   El Diagnóstico de Automatización Estratégica tiene un valor de
-                  <strong class="text-white">$490.000 + IVA en Chile</strong> o
-                  <strong class="text-white">USD 500 para el resto de
+                  <strong class="text-[var(--fg)]">$490.000 + IVA en Chile</strong> o
+                  <strong class="text-[var(--fg)]">USD 500 para el resto de
                   Latinoamérica</strong>. Incluye cuestionario previo, sesión
                   de trabajo de 2 a 3 horas sobre los procesos reales de su
                   empresa, entrega en 10 a 15 días de 3 oportunidades
@@ -3550,7 +3544,7 @@
             <!-- FAQ 2 — Price justification -->
             <details class="reveal group glass-card rounded-xl overflow-hidden">
               <summary
-                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-slate-200 hover:text-[var(--accent)] transition-colors"
+                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-[var(--fg-soft)] hover:text-[var(--accent-text)] transition-colors"
               >
                 <span
                   >¿Por qué cobran por el diagnóstico? Otras consultorías
@@ -3575,7 +3569,7 @@
                 </span>
               </summary>
               <div
-                class="px-4 pb-4 md:px-6 md:pb-6 text-slate-400 leading-relaxed"
+                class="px-4 pb-4 md:px-6 md:pb-6 text-[var(--fg-muted)] leading-relaxed"
               >
                 <p>
                   Las auditorías gratuitas son herramientas comerciales para
@@ -3593,7 +3587,7 @@
             <!-- FAQ 3 — Guarantee -->
             <details class="reveal group glass-card rounded-xl overflow-hidden">
               <summary
-                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-slate-200 hover:text-[var(--accent)] transition-colors"
+                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-[var(--fg-soft)] hover:text-[var(--accent-text)] transition-colors"
               >
                 <span
                   >¿Qué pasa si después del diagnóstico no encuentran nada
@@ -3618,7 +3612,7 @@
                 </span>
               </summary>
               <div
-                class="px-4 pb-4 md:px-6 md:pb-6 text-slate-400 leading-relaxed"
+                class="px-4 pb-4 md:px-6 md:pb-6 text-[var(--fg-muted)] leading-relaxed"
               >
                 <p>
                   Devolvemos el 100%. Por escrito. Si no identificamos al menos
@@ -3633,7 +3627,7 @@
             <!-- FAQ ¿Cómo se paga? -->
             <details class="reveal group glass-card rounded-xl overflow-hidden">
               <summary
-                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-slate-200 hover:text-[var(--accent)] transition-colors"
+                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-[var(--fg-soft)] hover:text-[var(--accent-text)] transition-colors"
               >
                 <span>¿Cómo se paga?</span>
                 <span
@@ -3655,10 +3649,10 @@
                 </span>
               </summary>
               <div
-                class="px-4 pb-4 md:px-6 md:pb-6 text-slate-400 leading-relaxed"
+                class="px-4 pb-4 md:px-6 md:pb-6 text-[var(--fg-muted)] leading-relaxed"
               >
                 <p>
-                  <strong class="text-white">100% al reservar.</strong> El pago
+                  <strong class="text-[var(--fg)]">100% al reservar.</strong> El pago
                   confirma el cupo del mes (solo abrimos 2 diagnósticos
                   mensuales para asegurar dedicación real de nuestro director).
                   Con el pago acreditado le enviamos el
@@ -3672,7 +3666,7 @@
             <!-- FAQ 4 — Why not quote implementation directly -->
             <details class="reveal group glass-card rounded-xl overflow-hidden">
               <summary
-                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-slate-200 hover:text-[var(--accent)] transition-colors"
+                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-[var(--fg-soft)] hover:text-[var(--accent-text)] transition-colors"
               >
                 <span
                   >¿Por qué no me cotizan directamente el proyecto de
@@ -3697,7 +3691,7 @@
                 </span>
               </summary>
               <div
-                class="px-4 pb-4 md:px-6 md:pb-6 text-slate-400 leading-relaxed"
+                class="px-4 pb-4 md:px-6 md:pb-6 text-[var(--fg-muted)] leading-relaxed"
               >
                 <p>
                   Porque cotizar implementación sin diagnóstico es lo que hace
@@ -3707,14 +3701,14 @@
                   basados en su realidad, no en suposiciones, y su valor íntegro
                   se acredita al proyecto si decide avanzar dentro de 90 días.
                 </p>
-                <p class="text-xs text-slate-500 mt-3">Fuente: McKinsey Global Institute, "The state of AI in 2023" (el 70% de las implementaciones de IA no alcanza el ROI proyectado).</p>
+                <p class="text-xs text-[var(--fg-muted)] mt-3">Fuente: McKinsey Global Institute, "The state of AI in 2023" (el 70% de las implementaciones de IA no alcanza el ROI proyectado).</p>
               </div>
             </details>
 
             <!-- FAQ 6 -->
             <details class="reveal group glass-card rounded-xl overflow-hidden">
               <summary
-                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-slate-200 hover:text-[var(--accent)] transition-colors"
+                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-[var(--fg-soft)] hover:text-[var(--accent-text)] transition-colors"
               >
                 <span>¿Puedo implementar con otro proveedor?</span>
                 <span
@@ -3736,7 +3730,7 @@
                 </span>
               </summary>
               <div
-                class="px-4 pb-4 md:px-6 md:pb-6 text-slate-400 leading-relaxed"
+                class="px-4 pb-4 md:px-6 md:pb-6 text-[var(--fg-muted)] leading-relaxed"
               >
                 <p>
                   Sí. El roadmap y el informe ejecutivo son suyos. Puede
@@ -3750,7 +3744,7 @@
             <!-- FAQ 7 -->
             <details class="reveal group glass-card rounded-xl overflow-hidden">
               <summary
-                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-slate-200 hover:text-[var(--accent)] transition-colors"
+                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-[var(--fg-soft)] hover:text-[var(--accent-text)] transition-colors"
               >
                 <span>¿Es segura la implementación con mis datos?</span>
                 <span
@@ -3772,7 +3766,7 @@
                 </span>
               </summary>
               <div
-                class="px-4 pb-4 md:px-6 md:pb-6 text-slate-400 leading-relaxed"
+                class="px-4 pb-4 md:px-6 md:pb-6 text-[var(--fg-muted)] leading-relaxed"
               >
                 <p>
                   Sí. Trabajamos con entornos aislados y sus datos nunca se usan
@@ -3785,7 +3779,7 @@
             <!-- FAQ 8 -->
             <details class="reveal group glass-card rounded-xl overflow-hidden">
               <summary
-                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-slate-200 hover:text-[var(--accent)] transition-colors"
+                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-[var(--fg-soft)] hover:text-[var(--accent-text)] transition-colors"
               >
                 <span>¿Trabajan con empresas de Colombia, Perú o Ecuador?</span>
                 <span
@@ -3807,7 +3801,7 @@
                 </span>
               </summary>
               <div
-                class="px-4 pb-4 md:px-6 md:pb-6 text-slate-400 leading-relaxed"
+                class="px-4 pb-4 md:px-6 md:pb-6 text-[var(--fg-muted)] leading-relaxed"
               >
                 <p>
                   Sí. Tenemos clientes activos en Chile, Colombia, Perú y
@@ -3820,7 +3814,7 @@
             <!-- FAQ 9 -->
             <details class="reveal group glass-card rounded-xl overflow-hidden">
               <summary
-                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-slate-200 hover:text-[var(--accent)] transition-colors"
+                class="flex items-center justify-between p-4 md:p-6 font-medium text-base md:text-lg cursor-pointer text-[var(--fg-soft)] hover:text-[var(--accent-text)] transition-colors"
               >
                 <span>¿Cuánto tiempo toma ver resultados?</span>
                 <span
@@ -3842,7 +3836,7 @@
                 </span>
               </summary>
               <div
-                class="px-4 pb-4 md:px-6 md:pb-6 text-slate-400 leading-relaxed"
+                class="px-4 pb-4 md:px-6 md:pb-6 text-[var(--fg-muted)] leading-relaxed"
               >
                 <p>
                   El diagnóstico se entrega en 10 a 15 días desde la sesión de
@@ -3857,19 +3851,19 @@
       </section>
 
       <!-- AEO summary — muted, crawlable, moved from top of page -->
-      <section class="py-10 px-6 border-b border-zinc-900/60">
+      <section class="py-10 px-6 border-b border-[var(--line)]">
         <div id="answer-capsule" class="speakable max-w-3xl mx-auto">
-          <p class="text-xs font-bold text-slate-500 tracking-widest uppercase mb-3 font-display">¿Qué hace Growth Buddies y para quién?</p>
-          <p class="text-sm text-slate-400 leading-relaxed">Growth Buddies es una consultora chilena de diagnóstico y automatización con inteligencia artificial para empresas de servicios profesionales, industria y minería en Chile y Latinoamérica. Su producto principal es el Diagnóstico de Automatización Estratégica ($490.000 + IVA en Chile, USD 500 en el resto de LATAM): identifica qué procesos automatizar, en qué orden y con qué ROI esperado, y entrega una maqueta funcionando de la oportunidad más rápida, con garantía de devolución y valor 100% acreditable al proyecto. Atiende firmas legales, corredoras de seguros, consultoras, clínicas privadas, industria y minería en Chile, Colombia, Perú y Ecuador.</p>
+          <p class="text-xs font-bold text-[var(--fg-muted)] tracking-widest uppercase mb-3 font-display">¿Qué hace Growth Buddies y para quién?</p>
+          <p class="text-sm text-[var(--fg-muted)] leading-relaxed">Growth Buddies es una consultora chilena de diagnóstico y automatización con inteligencia artificial para empresas de servicios profesionales, industria y minería en Chile y Latinoamérica. Su producto principal es el Diagnóstico de Automatización Estratégica ($490.000 + IVA en Chile, USD 500 en el resto de LATAM): identifica qué procesos automatizar, en qué orden y con qué ROI esperado, y entrega una maqueta funcionando de la oportunidad más rápida, con garantía de devolución y valor 100% acreditable al proyecto. Atiende firmas legales, corredoras de seguros, consultoras, clínicas privadas, industria y minería en Chile, Colombia, Perú y Ecuador.</p>
         </div>
       </section>
 
       <section
         id="contacto"
-        class="py-16 md:py-32 px-6 relative overflow-hidden bg-[var(--color-dark)]"
+        class="band-dark py-16 md:py-32 px-6 relative overflow-hidden"
       >
         <div
-          class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-zinc-900/50 via-black to-black -z-10"
+          class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[var(--surface)] via-[var(--bg)] to-[var(--bg)] -z-10"
         ></div>
         <div class="max-w-3xl mx-auto text-center">
           <div class="flex flex-col items-center mb-6">
@@ -3880,24 +3874,24 @@
               <img
                 src="/img/foto.webp"
                 alt="Edmundo Spohr — Director de Growth Buddies"
-                class="relative h-20 w-20 md:h-24 md:w-24 rounded-full object-cover ring-2 ring-[var(--accent)]/40"
+                class="relative h-20 w-20 md:h-24 md:w-24 rounded-full object-cover ring-2 ring-[var(--accent)]"
                 loading="lazy"
                 width="96"
                 height="96"
               />
             </div>
-            <p class="text-sm text-slate-400">
-              <span class="text-white font-semibold">Edmundo Spohr</span> ·
+            <p class="text-sm text-[var(--fg-muted)]">
+              <span class="text-[var(--fg)] font-semibold">Edmundo Spohr</span> ·
               Director
             </p>
           </div>
           <h2
-            class="text-3xl md:text-5xl text-white font-heading font-semibold tracking-[-0.02em] leading-[1.1] mb-6"
+            class="text-3xl md:text-5xl text-[var(--fg)] font-heading font-semibold tracking-[-0.02em] leading-[1.1] mb-6"
           >
             Reserve su cupo o converse primero
           </h2>
           <p
-            class="text-lg text-slate-300 max-w-2xl mx-auto font-light mb-4 leading-relaxed"
+            class="text-lg text-[var(--fg-soft)] max-w-2xl mx-auto font-light mb-4 leading-relaxed"
           >
             Dos caminos: reservar directamente su Diagnóstico de Automatización
             Estratégica o agendar antes 30 minutos con Edmundo Spohr, nuestro
@@ -3910,7 +3904,7 @@
               href="{{whatsapp}}?text=Hola%20Growth%20Buddies%21%20Quiero%20reservar%20mi%20cupo%20del%20Diagn%C3%B3stico%20de%20Automatizaci%C3%B3n%20Estrat%C3%A9gica.%20%C2%BFC%C3%B3mo%20coordinamos%20el%20pago%3F"
               target="_blank"
               rel="noopener noreferrer"
-              class="group inline-flex items-center justify-center gap-3 bg-[var(--color-cta)] hover:bg-[var(--color-cta-hover)] text-black font-bold py-4 px-10 rounded-full text-lg w-full sm:w-auto transition-all"
+              class="group inline-flex items-center justify-center gap-3 bg-[var(--color-cta)] hover:bg-[var(--color-cta-hover)] text-[var(--on-accent)] font-bold py-4 px-10 rounded-full text-lg w-full sm:w-auto transition-all"
               onclick="if (typeof gtag !== 'undefined') { gtag('event', 'reservar_cupo_click', { event_category: 'contact_cta' }); }"
             >
               Reservar mi cupo →
@@ -3919,7 +3913,7 @@
               href="{{calendly}}"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center gap-3 border border-zinc-700 hover:border-zinc-500 text-slate-200 hover:text-white font-medium py-4 px-8 rounded-full text-base w-full sm:w-auto transition-all"
+              class="inline-flex items-center justify-center gap-3 border border-[var(--line)] hover:border-[var(--line)] text-[var(--fg-soft)] hover:text-[var(--fg)] font-medium py-4 px-8 rounded-full text-base w-full sm:w-auto transition-all"
               onclick="if (typeof gtag !== 'undefined') { gtag('event', 'calendly_click', { event_category: 'contact_cta' }); }"
             >
               <svg
@@ -3945,7 +3939,7 @@
             href="{{whatsapp}}?text=Hola%20Growth%20Buddies%21%20Quisiera%20agendar%20una%20conversaci%C3%B3n%20con%20el%20director.%20%C2%BFPodemos%20coordinar%3F"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 text-[#25D366] text-sm font-medium hover:underline"
+            class="inline-flex items-center gap-2 text-[var(--whatsapp)] text-sm font-medium hover:underline"
             onclick="if (typeof gtag !== 'undefined') { gtag('event', 'whatsapp_click', { event_category: 'contact_cta_soft' }); }"
           >
             <svg
@@ -3966,7 +3960,7 @@
     </main>
 
         <footer
-      class="bg-black py-10 px-5 md:py-16 md:px-6 border-t border-white/10 text-sm"
+      class="bg-[var(--bg)] py-10 px-5 md:py-16 md:px-6 border-t border-[var(--line)] text-sm"
     >
       <div
         class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-8 md:gap-8 md:mb-12"
@@ -3983,11 +3977,11 @@
               width="40"
             />
             <span
-              class="font-bold text-xl text-white tracking-widest font-display"
+              class="font-bold text-xl text-[var(--fg)] tracking-widest font-display"
               >GROWTH BUDDIES</span
             >
           </a>
-          <p class="text-slate-400 leading-relaxed max-w-xs">
+          <p class="text-[var(--fg-muted)] leading-relaxed max-w-xs">
             Diagnóstico y automatización con IA para empresas de servicios
             profesionales en Latinoamérica.
           </p>
@@ -3997,21 +3991,21 @@
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Perfil de LinkedIn de Growth Buddies"
-              class="text-slate-400 hover:text-[var(--accent)] transition-colors"
+              class="text-[var(--fg-muted)] hover:text-[var(--accent-text)] transition-colors"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
             <a
               href="mailto:edmundo@spohr.cl"
               aria-label="Enviar correo electrónico a Growth Buddies"
-              class="text-slate-400 hover:text-[var(--accent)] transition-colors"
+              class="text-[var(--fg-muted)] hover:text-[var(--accent-text)] transition-colors"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             </a>
             <a
               href="tel:+56975991366"
               aria-label="Llamar a Growth Buddies"
-              class="text-slate-400 hover:text-[var(--accent)] transition-colors"
+              class="text-[var(--fg-muted)] hover:text-[var(--accent-text)] transition-colors"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
             </a>
@@ -4020,57 +4014,57 @@
 
         <!-- Servicios -->
         <div>
-          <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Servicios</h4>
-          <ul class="space-y-3 text-slate-400">
-            <li><a href="/servicios/legal-tech" class="hover:text-[var(--accent)] transition-colors">Legal Tech y Automatización</a></li>
-            <li><a href="/servicios/ia-corporativa" class="hover:text-[var(--accent)] transition-colors">Asistente de IA Corporativo</a></li>
-            <li><a href="/servicios/gestion-del-cambio" class="hover:text-[var(--accent)] transition-colors">Gestión del Cambio (Prosci)</a></li>
-            <li><a href="/servicios/agentes-ia-chatbots-empresas" class="hover:text-[var(--accent)] transition-colors">Agentes de IA y Chatbots</a></li>
+          <h4 class="text-[var(--fg)] font-semibold mb-6 font-display uppercase tracking-wider text-xs">Servicios</h4>
+          <ul class="space-y-3 text-[var(--fg-muted)]">
+            <li><a href="/servicios/legal-tech" class="hover:text-[var(--accent-text)] transition-colors">Legal Tech y Automatización</a></li>
+            <li><a href="/servicios/ia-corporativa" class="hover:text-[var(--accent-text)] transition-colors">Asistente de IA Corporativo</a></li>
+            <li><a href="/servicios/gestion-del-cambio" class="hover:text-[var(--accent-text)] transition-colors">Gestión del Cambio (Prosci)</a></li>
+            <li><a href="/servicios/agentes-ia-chatbots-empresas" class="hover:text-[var(--accent-text)] transition-colors">Agentes de IA y Chatbots</a></li>
             <!-- INSERTION POINT: new /servicios/ landings -->
           </ul>
         </div>
 
         <!-- Sectores -->
         <div>
-          <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Sectores</h4>
-          <ul class="space-y-3 text-slate-400">
-            <li><a href="/sectores/automatizacion-ia-estudios-juridicos" class="hover:text-[var(--accent)] transition-colors">Estudios Jurídicos</a></li>
-            <li><a href="/sectores/automatizacion-ia-industria-mineria" class="hover:text-[var(--accent)] transition-colors">Empresas Industriales</a></li>
+          <h4 class="text-[var(--fg)] font-semibold mb-6 font-display uppercase tracking-wider text-xs">Sectores</h4>
+          <ul class="space-y-3 text-[var(--fg-muted)]">
+            <li><a href="/sectores/automatizacion-ia-estudios-juridicos" class="hover:text-[var(--accent-text)] transition-colors">Estudios Jurídicos</a></li>
+            <li><a href="/sectores/automatizacion-ia-industria-mineria" class="hover:text-[var(--accent-text)] transition-colors">Empresas Industriales</a></li>
             <!-- INSERTION POINT: new /sectores/ pillars -->
           </ul>
         </div>
 
         <!-- Recursos -->
         <div>
-          <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Recursos</h4>
-          <ul class="space-y-3 text-slate-400">
-            <li><a href="/blog" class="hover:text-[var(--accent)] transition-colors">Blog</a></li>
-            <li><a href="/recursos/guia-ia-legal" class="hover:text-[var(--accent)] transition-colors">Guía Gratuita IA Legal</a></li>
-            <li><a href="/recursos/informe-automatizacion-servicios-latam" class="hover:text-[var(--accent)] transition-colors">Informe LATAM 2026</a></li>
-            <li><a href="/preguntas-frecuentes" class="hover:text-[var(--accent)] transition-colors">Preguntas Frecuentes</a></li>
-            <li><a href="/recursos/glosario-ia-automatizacion" class="hover:text-[var(--accent)] transition-colors">Glosario IA</a></li>
-            <li><a href="/soluciones" class="hover:text-[var(--accent)] transition-colors">Ejemplos de Implementación</a></li>
+          <h4 class="text-[var(--fg)] font-semibold mb-6 font-display uppercase tracking-wider text-xs">Recursos</h4>
+          <ul class="space-y-3 text-[var(--fg-muted)]">
+            <li><a href="/blog" class="hover:text-[var(--accent-text)] transition-colors">Blog</a></li>
+            <li><a href="/recursos/guia-ia-legal" class="hover:text-[var(--accent-text)] transition-colors">Guía Gratuita IA Legal</a></li>
+            <li><a href="/recursos/informe-automatizacion-servicios-latam" class="hover:text-[var(--accent-text)] transition-colors">Informe LATAM 2026</a></li>
+            <li><a href="/preguntas-frecuentes" class="hover:text-[var(--accent-text)] transition-colors">Preguntas Frecuentes</a></li>
+            <li><a href="/recursos/glosario-ia-automatizacion" class="hover:text-[var(--accent-text)] transition-colors">Glosario IA</a></li>
+            <li><a href="/soluciones" class="hover:text-[var(--accent-text)] transition-colors">Ejemplos de Implementación</a></li>
           </ul>
         </div>
 
         <!-- Empresa -->
         <div>
-          <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Empresa</h4>
-          <ul class="space-y-3 text-slate-400">
-            <li><a href="/nosotros" class="hover:text-[var(--accent)] transition-colors">Nosotros</a></li>
-            <li><a href="/casos" class="hover:text-[var(--accent)] transition-colors">Casos de Éxito</a></li>
-            <li><a href="/privacidad" class="hover:text-[var(--accent)] transition-colors">Privacidad</a></li>
-            <li><a href="/terminos" class="hover:text-[var(--accent)] transition-colors">Términos</a></li>
+          <h4 class="text-[var(--fg)] font-semibold mb-6 font-display uppercase tracking-wider text-xs">Empresa</h4>
+          <ul class="space-y-3 text-[var(--fg-muted)]">
+            <li><a href="/nosotros" class="hover:text-[var(--accent-text)] transition-colors">Nosotros</a></li>
+            <li><a href="/casos" class="hover:text-[var(--accent-text)] transition-colors">Casos de Éxito</a></li>
+            <li><a href="/privacidad" class="hover:text-[var(--accent-text)] transition-colors">Privacidad</a></li>
+            <li><a href="/terminos" class="hover:text-[var(--accent-text)] transition-colors">Términos</a></li>
           </ul>
         </div>
       </div>
 
       <div
-        class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400"
+        class="pt-8 border-t border-[var(--line)] flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[var(--fg-muted)]"
       >
-        <div>&copy; 2026 Growth Buddies SpA. Latinoamérica · <a href="/" class="hover:text-white transition-colors">CL</a> · <a href="/colombia" class="hover:text-white transition-colors">CO</a> · <a href="/peru" class="hover:text-white transition-colors">PE</a> · <a href="/ecuador" class="hover:text-white transition-colors">EC</a></div>
+        <div>&copy; 2026 Growth Buddies SpA. Latinoamérica · <a href="/" class="hover:text-[var(--fg)] transition-colors">CL</a> · <a href="/colombia" class="hover:text-[var(--fg)] transition-colors">CO</a> · <a href="/peru" class="hover:text-[var(--fg)] transition-colors">PE</a> · <a href="/ecuador" class="hover:text-[var(--fg)] transition-colors">EC</a></div>
         <div>
-          <a href="/sitemap.xml" class="hover:text-slate-300 transition-colors">Sitemap</a>
+          <a href="/sitemap.xml" class="hover:text-[var(--fg-soft)] transition-colors">Sitemap</a>
         </div>
       </div>
     </footer>
@@ -4442,14 +4436,14 @@
           const q = questions[idx];
           const container = document.getElementById("quiz-question-container");
           let html =
-            '<h3 class="text-xl md:text-2xl font-bold text-white font-heading mb-6">' +
+            '<h3 class="text-xl md:text-2xl font-semibold text-[var(--fg)] font-heading mb-6">' +
             escapeHtml(q.text) +
             '</h3><div class="space-y-3">';
           q.options.forEach(function (opt) {
             html +=
               '<button type="button" data-value="' +
               escapeHtml(opt.value) +
-              '" class="quiz-option w-full text-left hover:bg-zinc-900 border border-zinc-700 hover:border-[var(--accent)]/50 rounded-lg px-5 py-4 text-slate-200 hover:text-white transition-all">' +
+              '" class="quiz-option w-full text-left hover:bg-[var(--surface)] border border-[var(--line)] hover:border-[var(--accent)] rounded-lg px-5 py-4 text-[var(--fg-soft)] hover:text-[var(--fg)] transition-all">' +
               escapeHtml(opt.label) +
               "</button>";
           });

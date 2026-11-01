@@ -98,70 +98,69 @@
     </script>
 
     <style>
-      :root{--color-accent:#0097B2;--color-dark:#0a0a0a}
       *,::before,::after{box-sizing:border-box}
-      body{font-family:"Inter",sans-serif;background-color: var(--bg, #0B0B0F);color: var(--fg, #ECECEF);overflow-x:hidden;margin:0}
-      .glass-nav{background:rgba(11,11,15,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}
-      .metric-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:1rem;padding:2rem;text-align:center;transition:border-color .3s}
-      .metric-card:hover{border-color:rgba(0,246,255,.3)}
-      .font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Space Grotesk",system-ui,sans-serif}.font-heading{font-family:"Geist","system-ui",sans-serif}
+      body{font-family:"Inter",sans-serif;background-color: var(--bg, #FFFFFF);color: var(--fg, #1A1A2E);overflow-x:hidden;margin:0}
+      .glass-nav{background:var(--bg, #FFFFFF);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+      .metric-card{background:var(--hover);border:1px solid var(--hover);border-radius:1rem;padding:2rem;text-align:center;transition:border-color .3s}
+      .metric-card:hover{border-color:rgba(0,151,178,.3)}
+      .font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Inter",system-ui,sans-serif}.font-heading{font-family:"Geist","system-ui",sans-serif}
     </style>
     <link rel="preload" href="/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
   </head>
-  <body class="antialiased selection:bg-[var(--accent)] selection:text-white">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--accent)] focus:text-white focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
+  <body class="antialiased selection:bg-[var(--accent)] selection:text-[var(--on-accent)]">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--accent)] focus:text-[var(--fg)] focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
 
     <!-- Nav -->
     <nav class="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
       <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <a href="/" class="flex items-center gap-2 group">
           <img src="/img/logo.webp" alt="Logotipo de Growth Buddies" class="h-8 w-8 opacity-90 group-hover:opacity-100 transition-opacity" height="32" width="32" />
-          <span class="font-bold text-lg tracking-tight text-white group-hover:text-[var(--accent)] transition-colors">Growth Buddies</span>
+          <span class="font-bold text-lg tracking-tight text-[var(--fg)] group-hover:text-[var(--accent-text)] transition-colors">Growth Buddies</span>
         </a>
         <div class="hidden md:flex items-center gap-8">
-          <a href="/servicios" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Servicios</a>
-          <a href="/casos" class="text-sm font-medium text-[var(--accent)] hover:text-white transition-colors">Casos</a>
-          <a href="/blog" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Blog</a>
-          <a href="/nosotros" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Nosotros</a>
-          <a href="/#contacto" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Contacto</a>
+          <a href="/servicios" class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors">Servicios</a>
+          <a href="/casos" class="text-sm font-medium text-[var(--accent-text)] hover:text-[var(--fg)] transition-colors">Casos</a>
+          <a href="/blog" class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors">Blog</a>
+          <a href="/nosotros" class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors">Nosotros</a>
+          <a href="/#contacto" class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors">Contacto</a>
         </div>
         <div class="hidden md:block">
-          <a href="{{calendly}}" target="_blank" rel="noopener noreferrer" class="bg-[var(--accent)]/10 hover:bg-[var(--accent)]/20 text-[var(--accent)] hover:text-white border border-[var(--accent)]/30 hover:border-[var(--accent)] font-semibold text-sm py-2 px-5 rounded-full transition-all duration-300">
+          <a href="{{calendly}}" target="_blank" rel="noopener noreferrer" class="bg-[var(--accent-soft)] hover:bg-[var(--accent-soft)] text-[var(--accent-text)] hover:text-[var(--fg)] border border-[var(--accent)] hover:border-[var(--accent)] font-semibold text-sm py-2 px-5 rounded-full transition-all duration-300">
                 Agendar conversación
           </a>
         </div>
-        <button id="mobile-menu-btn" aria-expanded="false" aria-label="Abrir menú" class="md:hidden flex flex-col justify-center items-center w-11 h-11 gap-[6px] rounded-lg hover:bg-white/10 transition-colors">
-          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
-          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
-          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
+        <button id="mobile-menu-btn" aria-expanded="false" aria-label="Abrir menú" class="md:hidden flex flex-col justify-center items-center w-11 h-11 gap-[6px] rounded-lg hover:bg-[var(--hover)] transition-colors">
+          <span class="block w-6 h-0.5 bg-[var(--fg)] rounded-full"></span>
+          <span class="block w-6 h-0.5 bg-[var(--fg)] rounded-full"></span>
+          <span class="block w-6 h-0.5 bg-[var(--fg)] rounded-full"></span>
         </button>
       </div>
     </nav>
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" style="display:none;" class="fixed inset-0 z-[200] flex-col" aria-hidden="true">
-      <div class="absolute inset-0 bg-[var(--bg)]/95"></div>
+      <div class="absolute inset-0 bg-[var(--bg)]"></div>
       <div class="relative flex flex-col h-full px-6 py-6 overflow-y-auto">
         <div class="flex justify-between items-center mb-10">
-          <a href="/" class="flex items-center gap-2"><img src="/img/logo.webp" alt="Logotipo de Growth Buddies" class="h-8 w-8" height="32" width="32" /><span class="font-bold text-lg text-white">Growth Buddies</span></a>
-          <button id="mobile-menu-close" aria-label="Cerrar menú" class="flex items-center justify-center w-11 h-11 text-white hover:bg-white/10 rounded-lg transition-colors">
+          <a href="/" class="flex items-center gap-2"><img src="/img/logo.webp" alt="Logotipo de Growth Buddies" class="h-8 w-8" height="32" width="32" /><span class="font-bold text-lg text-[var(--fg)]">Growth Buddies</span></a>
+          <button id="mobile-menu-close" aria-label="Cerrar menú" class="flex items-center justify-center w-11 h-11 text-[var(--fg)] hover:bg-[var(--hover)] rounded-lg transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
           </button>
         </div>
         <div class="mb-8">
-          <a href="{{calendly}}" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[var(--accent)]/10 hover:bg-[var(--accent)]/20 text-[var(--accent)] border border-[var(--accent)]/30 hover:border-[var(--accent)] font-semibold text-base py-4 px-5 rounded-full transition-all duration-300">
+          <a href="{{calendly}}" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[var(--accent-soft)] hover:bg-[var(--accent-soft)] text-[var(--accent-text)] border border-[var(--accent)] hover:border-[var(--accent)] font-semibold text-base py-4 px-5 rounded-full transition-all duration-300">
             Agendar conversación
           </a>
         </div>
         <nav class="flex flex-col" role="navigation" aria-label="Menú móvil">
-          <a href="/servicios" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Servicios</a>
-          <a href="/casos" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Casos</a>
-          <a href="/blog" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Blog</a>
-          <a href="/nosotros" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Nosotros</a>
-          <a href="/#contacto" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Contacto</a>
+          <a href="/servicios" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Servicios</a>
+          <a href="/casos" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Casos</a>
+          <a href="/blog" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Blog</a>
+          <a href="/nosotros" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Nosotros</a>
+          <a href="/#contacto" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Contacto</a>
         </nav>
         <div class="mt-auto pt-8">
-          <a href="{{whatsapp}}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 text-[#25D366] text-base font-medium hover:underline py-3">
+          <a href="{{whatsapp}}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 text-[var(--whatsapp)] text-base font-medium hover:underline py-3">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
             Hablar por WhatsApp
           </a>
@@ -172,44 +171,44 @@
     <main id="main-content">
 
       <!-- Answer Capsule — GEO extractable summary -->
-      <section class="py-8 px-6 border-b border-zinc-900 bg-zinc-900/30">
+      <section class="py-8 px-6 border-b border-[var(--line)] bg-[var(--surface)]">
         <div class="max-w-3xl mx-auto">
-          <div id="answer-capsule" class="speakable rounded-2xl border border-[var(--accent)]/20 bg-[var(--accent)]/5 px-6 py-5">
-            <p class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase mb-3 font-display">Resumen del caso</p>
-            <p class="text-slate-200 leading-relaxed">Hits Corredora de Seguros tenía su principal cuello de botella en la gestión manual de correos de pólizas: cada consulta de asegurado requería trabajo manual repetitivo que consumía horas del equipo. Growth Buddies implementó un sistema de automatización con IA que clasifica correos, extrae datos y genera respuestas personalizadas de forma autónoma. Resultado: tiempos de respuesta menores a 15 minutos para la gran mayoría de las consultas.</p>
-            <p class="text-xs text-slate-500 mt-3">Fuente: datos de cliente Growth Buddies. Hits Corredora de Seguros, Chile.</p>
+          <div id="answer-capsule" class="speakable rounded-2xl border border-[var(--accent)] bg-[var(--accent-soft)] px-6 py-5">
+            <p class="text-xs font-bold text-[var(--accent-text)] tracking-widest uppercase mb-3 font-display">Resumen del caso</p>
+            <p class="text-[var(--fg-soft)] leading-relaxed">Hits Corredora de Seguros tenía su principal cuello de botella en la gestión manual de correos de pólizas: cada consulta de asegurado requería trabajo manual repetitivo que consumía horas del equipo. Growth Buddies implementó un sistema de automatización con IA que clasifica correos, extrae datos y genera respuestas personalizadas de forma autónoma. Resultado: tiempos de respuesta menores a 15 minutos para la gran mayoría de las consultas.</p>
+            <p class="text-xs text-[var(--fg-muted)] mt-3">Fuente: datos de cliente Growth Buddies. Hits Corredora de Seguros, Chile.</p>
           </div>
         </div>
       </section>
 
       <!-- Hero -->
-      <header class="relative pt-36 pb-16 px-6 overflow-hidden border-b border-zinc-900">
-        <div class="absolute inset-0 bg-gradient-to-br from-[var(--accent)]/5 via-transparent to-transparent pointer-events-none"></div>
+      <header class="band-dark relative pt-36 pb-16 px-6 overflow-hidden border-b border-[var(--line)]">
+        <div class="absolute inset-0 bg-gradient-to-br from-[var(--accent)] via-transparent to-transparent pointer-events-none"></div>
         <div class="max-w-4xl mx-auto relative z-10">
 
           <!-- Breadcrumb -->
           <nav aria-label="Migas de pan" class="mb-8">
-            <ol class="flex items-center gap-2 text-xs text-slate-500">
-              <li><a href="/" class="hover:text-[var(--accent)] transition-colors">Inicio</a></li>
+            <ol class="flex items-center gap-2 text-xs text-[var(--fg-muted)]">
+              <li><a href="/" class="hover:text-[var(--accent-text)] transition-colors">Inicio</a></li>
               <li><span aria-hidden="true">/</span></li>
-              <li><a href="/casos" class="hover:text-[var(--accent)] transition-colors">Casos de Éxito</a></li>
+              <li><a href="/casos" class="hover:text-[var(--accent-text)] transition-colors">Casos de Éxito</a></li>
               <li><span aria-hidden="true">/</span></li>
-              <li class="text-[var(--accent)]" aria-current="page">Hits Corredora</li>
+              <li class="text-[var(--accent-text)]" aria-current="page">Hits Corredora</li>
             </ol>
           </nav>
 
           <!-- Client logo + industry tag -->
           <div class="flex items-center gap-4 mb-8">
-            <div class="h-12 w-auto px-3 py-2 bg-white rounded-xl flex items-center justify-center">
+            <div class="h-12 w-auto px-3 py-2 bg-[#FFFFFF] rounded-xl flex items-center justify-center">
               <img src="/img/hits.webp" alt="Logo de Hits Corredora de Seguros" class="h-8 w-auto object-contain" width="800" height="318" loading="eager" />
             </div>
-            <span class="text-xs font-semibold text-[var(--accent)] tracking-widest uppercase bg-[var(--accent)]/10 border border-[var(--accent)]/20 px-3 py-1 rounded-full">Seguros · Corredora</span>
+            <span class="text-xs font-semibold text-[var(--accent-text)] tracking-widest uppercase bg-[var(--accent-soft)] border border-[var(--accent)] px-3 py-1 rounded-full">Seguros · Corredora</span>
           </div>
 
-          <h1 class="text-3xl md:text-5xl font-black text-white font-heading leading-tight mb-6">
+          <h1 class="text-3xl md:text-5xl font-semibold text-[var(--fg)] font-heading leading-tight mb-6">
             Hits Corredora de Seguros: de gestión manual de correos a respuesta en menos de 15 minutos
           </h1>
-          <p class="text-lg text-slate-400 max-w-2xl mb-8">
+          <p class="text-lg text-[var(--fg-muted)] max-w-2xl mb-8">
             Una corredora de seguros en Chile tenía su principal cuello de botella en la gestión manual de correos de pólizas. Automatizamos el flujo con IA y los tiempos de respuesta pasaron a menos de 15 minutos.
           </p>
           <a href="{{calendly}}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 btn-cta text-sm">
@@ -220,19 +219,19 @@
       </header>
 
       <!-- Metrics summary bar -->
-      <section class="py-10 px-6 border-b border-zinc-900">
+      <section class="py-10 px-6 border-b border-[var(--line)]">
         <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
           <div class="metric-card">
-            <div class="text-4xl font-black text-white font-display mb-1">&lt;15 min</div>
-            <div class="text-xs text-[var(--accent)] font-semibold uppercase tracking-wider">Tiempo de respuesta</div>
+            <div class="text-4xl font-black text-[var(--metric)] font-display mb-1">&lt;15 min</div>
+            <div class="text-xs text-[var(--accent-text)] font-semibold uppercase tracking-wider">Tiempo de respuesta</div>
           </div>
           <div class="metric-card">
-            <div class="text-3xl font-black text-white font-display mb-1">Seguros</div>
-            <div class="text-xs text-[var(--accent)] font-semibold uppercase tracking-wider">Sector automatizado</div>
+            <div class="text-3xl font-black text-[var(--fg)] font-display mb-1">Seguros</div>
+            <div class="text-xs text-[var(--accent-text)] font-semibold uppercase tracking-wider">Sector automatizado</div>
           </div>
           <div class="metric-card">
-            <div class="text-3xl font-black text-white font-display mb-1">Chile</div>
-            <div class="text-xs text-[var(--accent)] font-semibold uppercase tracking-wider">Mercado</div>
+            <div class="text-3xl font-black text-[var(--fg)] font-display mb-1">Chile</div>
+            <div class="text-xs text-[var(--accent-text)] font-semibold uppercase tracking-wider">Mercado</div>
           </div>
         </div>
       </section>
@@ -243,10 +242,10 @@
         <!-- El Desafío -->
         <section>
           <div class="flex items-center gap-3 mb-6">
-            <span class="w-1 h-8 bg-red-500 rounded-full"></span>
-            <h2 class="text-2xl md:text-3xl font-black text-white font-heading">El Desafío</h2>
+            <span class="w-1 h-8 bg-[var(--danger-soft)] rounded-full"></span>
+            <h2 class="text-2xl md:text-3xl font-semibold text-[var(--fg)] font-heading">El Desafío</h2>
           </div>
-          <div class="space-y-4 text-slate-400 leading-relaxed">
+          <div class="space-y-4 text-[var(--fg-muted)] leading-relaxed">
             <p>Hits Corredora de Seguros opera en un mercado donde la velocidad de respuesta al cliente es un diferenciador crítico. Cuando un asegurado consulta sobre el estado de una póliza, solicita un endoso o necesita confirmar cobertura ante un incidente, esperar horas —o días— puede significar perder la confianza del cliente o comprometer una renovación.</p>
             <p>El cuello de botella estaba en la gestión manual de correos de pólizas. El equipo procesaba cada solicitud entrante de forma manual: abrir el correo, identificar el tipo de consulta, buscar la póliza en el sistema, redactar la respuesta y enviarla. Un proceso repetitivo que consumía horas de trabajo de personas calificadas que deberían estar enfocadas en la relación con el cliente y el asesoramiento de seguros.</p>
             <p>A medida que el volumen de consultas crecía, el modelo no escalaba. Contratar más personal administrativo aumentaba los costos sin mejorar la calidad del servicio. El desafío era claro: automatizar el flujo de comunicación de pólizas sin perder la calidad ni la personalización en la atención al cliente.</p>
@@ -257,21 +256,21 @@
         <section>
           <div class="flex items-center gap-3 mb-6">
             <span class="w-1 h-8 bg-[var(--accent)] rounded-full"></span>
-            <h2 class="text-2xl md:text-3xl font-black text-white font-heading">La Solución</h2>
+            <h2 class="text-2xl md:text-3xl font-semibold text-[var(--fg)] font-heading">La Solución</h2>
           </div>
-          <div class="space-y-4 text-slate-400 leading-relaxed">
+          <div class="space-y-4 text-[var(--fg-muted)] leading-relaxed">
             <p>Implementamos un sistema de automatización con IA para el flujo completo de comunicación de pólizas. El sistema clasifica automáticamente los correos entrantes, extrae la información relevante, consulta los datos de póliza correspondientes y genera una respuesta personalizada —lista para envío o revisión del equipo, según la criticidad de la consulta.</p>
             <p>Las consultas de alta frecuencia y baja complejidad —confirmaciones de cobertura, estado de renovaciones, datos de contacto del corredor asignado— se resuelven de forma autónoma. Las consultas que requieren criterio profesional se enrutan al ejecutivo correcto con toda la información ya procesada, eliminando el trabajo de preparación manual.</p>
           </div>
 
           <!-- Tech stack -->
-          <div class="mt-8 p-6 rounded-2xl border border-zinc-800">
-            <h3 class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">Tecnologías Utilizadas</h3>
+          <div class="mt-8 p-6 rounded-2xl border border-[var(--line)]">
+            <h3 class="text-sm font-semibold text-[var(--fg-muted)] uppercase tracking-wider mb-4">Tecnologías Utilizadas</h3>
             <div class="flex flex-wrap gap-2">
-              <span class="text-xs font-medium text-slate-300 bg-zinc-800 border border-zinc-700 px-3 py-1.5 rounded-full">Clasificación automática de correos</span>
-              <span class="text-xs font-medium text-slate-300 bg-zinc-800 border border-zinc-700 px-3 py-1.5 rounded-full">IA Generativa (respuestas personalizadas)</span>
-              <span class="text-xs font-medium text-slate-300 bg-zinc-800 border border-zinc-700 px-3 py-1.5 rounded-full">Enrutamiento inteligente</span>
-              <span class="text-xs font-medium text-slate-300 bg-zinc-800 border border-zinc-700 px-3 py-1.5 rounded-full">Integración con sistema de pólizas</span>
+              <span class="text-xs font-medium text-[var(--fg-soft)] bg-[var(--line)] border border-[var(--line)] px-3 py-1.5 rounded-full">Clasificación automática de correos</span>
+              <span class="text-xs font-medium text-[var(--fg-soft)] bg-[var(--line)] border border-[var(--line)] px-3 py-1.5 rounded-full">IA Generativa (respuestas personalizadas)</span>
+              <span class="text-xs font-medium text-[var(--fg-soft)] bg-[var(--line)] border border-[var(--line)] px-3 py-1.5 rounded-full">Enrutamiento inteligente</span>
+              <span class="text-xs font-medium text-[var(--fg-soft)] bg-[var(--line)] border border-[var(--line)] px-3 py-1.5 rounded-full">Integración con sistema de pólizas</span>
             </div>
           </div>
         </section>
@@ -279,20 +278,20 @@
         <!-- Resultados -->
         <section>
           <div class="flex items-center gap-3 mb-6">
-            <span class="w-1 h-8 bg-green-500 rounded-full"></span>
-            <h2 class="text-2xl md:text-3xl font-black text-white font-heading">Resultados</h2>
+            <span class="w-1 h-8 bg-[var(--accent-soft)] rounded-full"></span>
+            <h2 class="text-2xl md:text-3xl font-semibold text-[var(--fg)] font-heading">Resultados</h2>
           </div>
-          <div class="space-y-4 text-slate-400 leading-relaxed mb-8">
+          <div class="space-y-4 text-[var(--fg-muted)] leading-relaxed mb-8">
             <p>El impacto más visible fue en los tiempos de respuesta: de horas a menos de 15 minutos para la gran mayoría de las consultas. Los clientes de Hits reciben ahora una respuesta precisa y personalizada en el mismo ciclo de trabajo en que enviaron su correo, independientemente de si hay un ejecutivo disponible en ese momento.</p>
             <p>El equipo de Hits pudo reasignar el tiempo que antes destinaba a gestión manual de correos hacia actividades de mayor valor: seguimiento proactivo de renovaciones, asesoría especializada y desarrollo de nuevos clientes. La automatización no reemplazó al equipo — lo liberó para hacer el trabajo que realmente importa en una corredora.</p>
           </div>
 
           <!-- Metric cards (detailed) -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div class="p-6 bg-green-500/5 border border-green-500/20 rounded-2xl sm:col-span-2">
-              <div class="text-5xl font-black text-white font-display mb-2">&lt;15 min</div>
-              <div class="font-semibold text-green-400 mb-1">Tiempo de respuesta a consultas de pólizas</div>
-              <p class="text-sm text-slate-500">De horas de gestión manual a respuesta automática en menos de 15 minutos.</p>
+            <div class="p-6 bg-[var(--accent-soft)] border border-[var(--line)] rounded-2xl sm:col-span-2">
+              <div class="text-5xl font-black text-[var(--metric)] font-display mb-2">&lt;15 min</div>
+              <div class="font-semibold text-[var(--accent-text)] mb-1">Tiempo de respuesta a consultas de pólizas</div>
+              <p class="text-sm text-[var(--fg-muted)]">De horas de gestión manual a respuesta automática en menos de 15 minutos.</p>
             </div>
           </div>
         </section>
@@ -300,16 +299,16 @@
         <!-- Relación con el cliente -->
         <section>
           <div class="flex items-center gap-3 mb-6">
-            <span class="w-1 h-8 bg-purple-500 rounded-full"></span>
-            <h2 class="text-2xl md:text-3xl font-black text-white font-heading">Relación con el Cliente</h2>
+            <span class="w-1 h-8 bg-[var(--accent-soft)] rounded-full"></span>
+            <h2 class="text-2xl md:text-3xl font-semibold text-[var(--fg)] font-heading">Relación con el Cliente</h2>
           </div>
-          <div class="flex items-start gap-4 p-6 bg-zinc-900/40 border border-zinc-800 rounded-2xl">
-            <div class="h-12 w-auto px-3 py-2 bg-white rounded-xl flex items-center justify-center flex-shrink-0">
+          <div class="flex items-start gap-4 p-6 bg-[var(--surface)] border border-[var(--line)] rounded-2xl">
+            <div class="h-12 w-auto px-3 py-2 bg-[#FFFFFF] rounded-xl flex items-center justify-center flex-shrink-0">
               <img src="/img/hits.webp" alt="Logo de Hits Corredora de Seguros" class="h-6 w-auto object-contain" loading="lazy" width="800" height="318" />
             </div>
             <div>
-              <p class="text-slate-300 leading-relaxed">Hits Corredora de Seguros es una corredora chilena especializada en la gestión integral de seguros para personas y empresas. La automatización del flujo de correos de pólizas les permitió mejorar la experiencia de sus asegurados sin aumentar su estructura operativa.</p>
-              <span class="inline-block mt-3 text-xs font-semibold text-[var(--accent)] bg-[var(--accent)]/10 border border-[var(--accent)]/20 px-2.5 py-1 rounded-full">Seguros · Corredora · Chile</span>
+              <p class="text-[var(--fg-soft)] leading-relaxed">Hits Corredora de Seguros es una corredora chilena especializada en la gestión integral de seguros para personas y empresas. La automatización del flujo de correos de pólizas les permitió mejorar la experiencia de sus asegurados sin aumentar su estructura operativa.</p>
+              <span class="inline-block mt-3 text-xs font-semibold text-[var(--accent-text)] bg-[var(--accent-soft)] border border-[var(--accent)] px-2.5 py-1 rounded-full">Seguros · Corredora · Chile</span>
             </div>
           </div>
         </section>
@@ -317,27 +316,27 @@
       </div>
 
       <!-- CTA -->
-      <section class="py-16 px-6 border-t border-zinc-900">
+      <section class="band-dark py-16 px-6 border-t border-[var(--line)]">
         <div class="max-w-2xl mx-auto text-center">
-          <h2 class="text-2xl md:text-3xl font-black text-white font-heading mb-4">
+          <h2 class="text-2xl md:text-3xl font-semibold text-[var(--fg)] font-heading mb-4">
             ¿Su empresa tiene cuellos de botella similares?
           </h2>
-          <p class="text-slate-400 mb-8 text-lg">
+          <p class="text-[var(--fg-muted)] mb-8 text-lg">
             Agendemos 30 minutos. Le decimos exactamente qué se puede automatizar en su operación y cuánto tiempo tomaría verlo funcionando.
           </p>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="{{calendly}}" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center justify-center gap-2 bg-[var(--accent)] text-black font-bold py-4 px-8 rounded-full text-base hover:bg-[var(--accent)]/80 transition-colors w-full sm:w-auto">
+               class="inline-flex items-center justify-center gap-2 bg-[var(--accent)] text-[var(--on-accent)] font-bold py-4 px-8 rounded-full text-base hover:bg-[var(--accent)] transition-colors w-full sm:w-auto">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
               Agendar sesión
             </a>
-            <a href="/casos" class="text-slate-400 hover:text-white transition-colors text-sm">
+            <a href="/casos" class="text-[var(--fg-muted)] hover:text-[var(--fg)] transition-colors text-sm">
               ← Ver todos los casos
             </a>
           </div>
-          <div class="mt-10 pt-8 border-t border-zinc-800 flex flex-col sm:flex-row gap-4 justify-center text-sm">
-            <a href="/servicios/ia-corporativa" class="text-[var(--accent)] hover:underline">→ Servicio: IA Corporativa para Empresas</a>
-            <a href="/soluciones/brokeria" class="text-slate-400 hover:text-white transition-colors">→ Solución: BrokerIA para corredoras</a>
+          <div class="mt-10 pt-8 border-t border-[var(--line)] flex flex-col sm:flex-row gap-4 justify-center text-sm">
+            <a href="/servicios/ia-corporativa" class="text-[var(--accent-text)] hover:underline">→ Servicio: IA Corporativa para Empresas</a>
+            <a href="/soluciones/brokeria" class="text-[var(--fg-muted)] hover:text-[var(--fg)] transition-colors">→ Solución: BrokerIA para corredoras</a>
           </div>
         </div>
       </section>
@@ -345,7 +344,7 @@
     </main>
 
         <footer
-      class="bg-black py-10 px-5 md:py-16 md:px-6 border-t border-white/10 text-sm"
+      class="bg-[var(--bg)] py-10 px-5 md:py-16 md:px-6 border-t border-[var(--line)] text-sm"
     >
       <div
         class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-8 md:gap-8 md:mb-12"
@@ -362,11 +361,11 @@
               width="40"
             />
             <span
-              class="font-bold text-xl text-white tracking-widest font-display"
+              class="font-bold text-xl text-[var(--fg)] tracking-widest font-display"
               >GROWTH BUDDIES</span
             >
           </a>
-          <p class="text-slate-400 leading-relaxed max-w-xs">
+          <p class="text-[var(--fg-muted)] leading-relaxed max-w-xs">
             Diagnóstico y automatización con IA para empresas de servicios
             profesionales en Latinoamérica.
           </p>
@@ -376,21 +375,21 @@
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Perfil de LinkedIn de Growth Buddies"
-              class="text-slate-400 hover:text-[var(--accent)] transition-colors"
+              class="text-[var(--fg-muted)] hover:text-[var(--accent-text)] transition-colors"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
             <a
               href="mailto:edmundo@spohr.cl"
               aria-label="Enviar correo electrónico a Growth Buddies"
-              class="text-slate-400 hover:text-[var(--accent)] transition-colors"
+              class="text-[var(--fg-muted)] hover:text-[var(--accent-text)] transition-colors"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             </a>
             <a
               href="tel:+56975991366"
               aria-label="Llamar a Growth Buddies"
-              class="text-slate-400 hover:text-[var(--accent)] transition-colors"
+              class="text-[var(--fg-muted)] hover:text-[var(--accent-text)] transition-colors"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
             </a>
@@ -399,57 +398,57 @@
 
         <!-- Servicios -->
         <div>
-          <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Servicios</h4>
-          <ul class="space-y-3 text-slate-400">
-            <li><a href="/servicios/legal-tech" class="hover:text-[var(--accent)] transition-colors">Legal Tech y Automatización</a></li>
-            <li><a href="/servicios/ia-corporativa" class="hover:text-[var(--accent)] transition-colors">Asistente de IA Corporativo</a></li>
-            <li><a href="/servicios/gestion-del-cambio" class="hover:text-[var(--accent)] transition-colors">Gestión del Cambio (Prosci)</a></li>
-            <li><a href="/servicios/agentes-ia-chatbots-empresas" class="hover:text-[var(--accent)] transition-colors">Agentes de IA y Chatbots</a></li>
+          <h4 class="text-[var(--fg)] font-semibold mb-6 font-display uppercase tracking-wider text-xs">Servicios</h4>
+          <ul class="space-y-3 text-[var(--fg-muted)]">
+            <li><a href="/servicios/legal-tech" class="hover:text-[var(--accent-text)] transition-colors">Legal Tech y Automatización</a></li>
+            <li><a href="/servicios/ia-corporativa" class="hover:text-[var(--accent-text)] transition-colors">Asistente de IA Corporativo</a></li>
+            <li><a href="/servicios/gestion-del-cambio" class="hover:text-[var(--accent-text)] transition-colors">Gestión del Cambio (Prosci)</a></li>
+            <li><a href="/servicios/agentes-ia-chatbots-empresas" class="hover:text-[var(--accent-text)] transition-colors">Agentes de IA y Chatbots</a></li>
             <!-- INSERTION POINT: new /servicios/ landings -->
           </ul>
         </div>
 
         <!-- Sectores -->
         <div>
-          <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Sectores</h4>
-          <ul class="space-y-3 text-slate-400">
-            <li><a href="/sectores/automatizacion-ia-estudios-juridicos" class="hover:text-[var(--accent)] transition-colors">Estudios Jurídicos</a></li>
-            <li><a href="/sectores/automatizacion-ia-industria-mineria" class="hover:text-[var(--accent)] transition-colors">Empresas Industriales</a></li>
+          <h4 class="text-[var(--fg)] font-semibold mb-6 font-display uppercase tracking-wider text-xs">Sectores</h4>
+          <ul class="space-y-3 text-[var(--fg-muted)]">
+            <li><a href="/sectores/automatizacion-ia-estudios-juridicos" class="hover:text-[var(--accent-text)] transition-colors">Estudios Jurídicos</a></li>
+            <li><a href="/sectores/automatizacion-ia-industria-mineria" class="hover:text-[var(--accent-text)] transition-colors">Empresas Industriales</a></li>
             <!-- INSERTION POINT: new /sectores/ pillars -->
           </ul>
         </div>
 
         <!-- Recursos -->
         <div>
-          <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Recursos</h4>
-          <ul class="space-y-3 text-slate-400">
-            <li><a href="/blog" class="hover:text-[var(--accent)] transition-colors">Blog</a></li>
-            <li><a href="/recursos/guia-ia-legal" class="hover:text-[var(--accent)] transition-colors">Guía Gratuita IA Legal</a></li>
-            <li><a href="/recursos/informe-automatizacion-servicios-latam" class="hover:text-[var(--accent)] transition-colors">Informe LATAM 2026</a></li>
-            <li><a href="/preguntas-frecuentes" class="hover:text-[var(--accent)] transition-colors">Preguntas Frecuentes</a></li>
-            <li><a href="/recursos/glosario-ia-automatizacion" class="hover:text-[var(--accent)] transition-colors">Glosario IA</a></li>
-            <li><a href="/soluciones" class="hover:text-[var(--accent)] transition-colors">Ejemplos de Implementación</a></li>
+          <h4 class="text-[var(--fg)] font-semibold mb-6 font-display uppercase tracking-wider text-xs">Recursos</h4>
+          <ul class="space-y-3 text-[var(--fg-muted)]">
+            <li><a href="/blog" class="hover:text-[var(--accent-text)] transition-colors">Blog</a></li>
+            <li><a href="/recursos/guia-ia-legal" class="hover:text-[var(--accent-text)] transition-colors">Guía Gratuita IA Legal</a></li>
+            <li><a href="/recursos/informe-automatizacion-servicios-latam" class="hover:text-[var(--accent-text)] transition-colors">Informe LATAM 2026</a></li>
+            <li><a href="/preguntas-frecuentes" class="hover:text-[var(--accent-text)] transition-colors">Preguntas Frecuentes</a></li>
+            <li><a href="/recursos/glosario-ia-automatizacion" class="hover:text-[var(--accent-text)] transition-colors">Glosario IA</a></li>
+            <li><a href="/soluciones" class="hover:text-[var(--accent-text)] transition-colors">Ejemplos de Implementación</a></li>
           </ul>
         </div>
 
         <!-- Empresa -->
         <div>
-          <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Empresa</h4>
-          <ul class="space-y-3 text-slate-400">
-            <li><a href="/nosotros" class="hover:text-[var(--accent)] transition-colors">Nosotros</a></li>
-            <li><a href="/casos" class="hover:text-[var(--accent)] transition-colors">Casos de Éxito</a></li>
-            <li><a href="/privacidad" class="hover:text-[var(--accent)] transition-colors">Privacidad</a></li>
-            <li><a href="/terminos" class="hover:text-[var(--accent)] transition-colors">Términos</a></li>
+          <h4 class="text-[var(--fg)] font-semibold mb-6 font-display uppercase tracking-wider text-xs">Empresa</h4>
+          <ul class="space-y-3 text-[var(--fg-muted)]">
+            <li><a href="/nosotros" class="hover:text-[var(--accent-text)] transition-colors">Nosotros</a></li>
+            <li><a href="/casos" class="hover:text-[var(--accent-text)] transition-colors">Casos de Éxito</a></li>
+            <li><a href="/privacidad" class="hover:text-[var(--accent-text)] transition-colors">Privacidad</a></li>
+            <li><a href="/terminos" class="hover:text-[var(--accent-text)] transition-colors">Términos</a></li>
           </ul>
         </div>
       </div>
 
       <div
-        class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400"
+        class="pt-8 border-t border-[var(--line)] flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[var(--fg-muted)]"
       >
-        <div>&copy; 2026 Growth Buddies SpA. Latinoamérica · <a href="/" class="hover:text-white transition-colors">CL</a> · <a href="/colombia" class="hover:text-white transition-colors">CO</a> · <a href="/peru" class="hover:text-white transition-colors">PE</a> · <a href="/ecuador" class="hover:text-white transition-colors">EC</a></div>
+        <div>&copy; 2026 Growth Buddies SpA. Latinoamérica · <a href="/" class="hover:text-[var(--fg)] transition-colors">CL</a> · <a href="/colombia" class="hover:text-[var(--fg)] transition-colors">CO</a> · <a href="/peru" class="hover:text-[var(--fg)] transition-colors">PE</a> · <a href="/ecuador" class="hover:text-[var(--fg)] transition-colors">EC</a></div>
         <div>
-          <a href="/sitemap.xml" class="hover:text-slate-300 transition-colors">Sitemap</a>
+          <a href="/sitemap.xml" class="hover:text-[var(--fg-soft)] transition-colors">Sitemap</a>
         </div>
       </div>
     </footer>

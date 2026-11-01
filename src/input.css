@@ -32,24 +32,6 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* Space Grotesk — kept for legacy inline-style fallback, not actively used */
-@font-face {
-  font-family: 'Space Grotesk';
-  font-style: normal;
-  font-weight: 600 700;
-  font-display: swap;
-  src: url('/fonts/space-grotesk-latin-ext.woff2') format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-@font-face {
-  font-family: 'Space Grotesk';
-  font-style: normal;
-  font-weight: 600 700;
-  font-display: swap;
-  src: url('/fonts/space-grotesk-latin.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
 /* Instrument Serif — signature pull-quotes only */
 @font-face {
   font-family: 'Instrument Serif';
@@ -74,46 +56,80 @@
 
 /* ==============================================
    DESIGN TOKENS — single source of truth
-   "Quiet authority" dark palette
+   Light by default. .band-dark flips them for the
+   hero, proof strip and final CTA bands.
 ============================================== */
 :root {
-  /* ── Surface ── */
-  --bg:             #0B0B0F;
-  --surface:        #14141A;
-  --line:           #232330;
+  --bg:             #FFFFFF;
+  --surface:        #F7F9FA;
+  --line:           #E3E7EB;
+  --hover:          rgba(26, 26, 46, 0.05);
+  --veil:           rgba(255, 255, 255, 0.92);
 
-  /* ── Typography ── */
-  --fg:             #ECECEF;
-  --fg-muted:       #A7A7B2;
+  --fg:             #1A1A2E;
+  --fg-soft:        #33364A;
+  --fg-muted:       #5B6170;
 
-  /* ── Accent (one disciplined turquoise) ── */
   --accent:         #0097B2;
-  --accent-strong:  #00B5D6;  /* hover only, no glow */
+  --accent-strong:  #00B5D6;
+  --accent-dark:    #005E70;
+  --accent-text:    #005E70;
+  --accent-soft:    rgba(0, 151, 178, 0.1);
+  --on-accent:      #0B0B0F;
 
-  /* ── Legacy aliases — consumed by existing inline Tailwind classes ── */
-  --color-accent:        #0097B2;
-  --color-accent-dark:   #005E70;
-  --color-accent-hover:  #00B5D6;
-  --color-cta:           #0097B2;
-  --color-cta-hover:     #00B5D6;
-  /* NOTE: glow vars intentionally not removed — set to transparent so any
-     surviving box-shadow references produce no visible glow */
-  --color-cta-glow:      transparent;
-  --color-accent-glow:   transparent;
+  --metric:         #FB3D03;
+  --danger:         #B42318;
+  --danger-soft:    rgba(180, 35, 24, 0.08);
+  --whatsapp:       #0B7A4B;
+}
 
-  /* ── Surface aliases ── */
-  --color-dark:       #0B0B0F;
-  --color-dark-card:  #14141A;
+.band-dark {
+  --bg:             #0B0B0F;
+  --surface:        #16161D;
+  --line:           #2B2B38;
+  --hover:          rgba(255, 255, 255, 0.08);
+  --veil:           rgba(11, 11, 15, 0.92);
 
-  /* ── Text aliases ── */
-  --color-primary:   #ECECEF;
-  --color-secondary: #A7A7B2;
-  --color-body:      #ECECEF;
-  --color-text-secondary: #A7A7B2;
+  --fg:             #FFFFFF;
+  --fg-soft:        #DADCE3;
+  --fg-muted:       #B3B7C2;
 
-  /* ── Border alias ── */
-  --color-border: #232330;
-  --color-white:  #FFFFFF;
+  --accent-text:    #00B5D6;
+  --accent-soft:    rgba(0, 181, 214, 0.14);
+
+  --danger:         #FF9C8F;
+  --danger-soft:    rgba(255, 156, 143, 0.12);
+  --whatsapp:       #25D366;
+
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+/* Aliases still referenced by page markup; declared on both scopes so they flip with the band. */
+:root,
+.band-dark {
+  --color-accent:         var(--accent);
+  --color-accent-dark:    var(--accent-dark);
+  --color-accent-hover:   var(--accent-strong);
+  --color-cta:            var(--accent);
+  --color-cta-hover:      var(--accent-strong);
+  --color-cta-glow:       transparent;
+  --color-accent-glow:    transparent;
+  --color-dark:           var(--bg);
+  --color-dark-card:      var(--surface);
+  --color-primary:        var(--fg);
+  --color-secondary:      var(--fg-muted);
+  --color-body:           var(--fg);
+  --color-text-secondary: var(--fg-muted);
+  --color-border:         var(--line);
+  --color-white:          var(--fg);
+}
+
+/* Result metrics only; large type keeps the contrast at AA for large text. */
+.metric {
+  color: var(--metric);
+  font-family: "Geist", system-ui, sans-serif;
+  font-weight: 600;
 }
 
 /* ==============================================
@@ -152,6 +168,10 @@ h1, h2, h3, h4,
 .font-heading {
     font-family: "Geist", system-ui, sans-serif;
 }
+h1, h2, h3, h4 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
 
 /* Legacy class — still referenced; now maps to Geist */
 .headline, .h1, .h2, .h3 {
@@ -172,7 +192,7 @@ h1, h2, h3, h4,
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--accent-text);
     /* 2px diagnostic marker underline — the signature accent flourish */
     border-bottom: 2px solid var(--accent);
     padding-bottom: 0.25rem;
@@ -199,12 +219,12 @@ h1, h2, h3, h4,
    NAVIGATION
 ============================================== */
 .glass-nav {
-    background: rgba(11, 11, 15, 0.95);
+    background: var(--bg);
     border-bottom: 1px solid var(--line);
     transition: background 0.3s ease, border-color 0.3s ease;
 }
 .glass-nav.scrolled {
-    background: rgba(11, 11, 15, 0.98);
+    background: var(--bg);
     border-bottom-color: var(--line);
 }
 
@@ -269,7 +289,7 @@ h1, h2, h3, h4,
     justify-content: center;
     gap: 0.5rem;
     background-color: var(--accent);
-    color: #fff;
+    color: var(--on-accent);
     font-family: "Inter", sans-serif;
     font-weight: 600;
     padding: 0.875rem 2rem;
@@ -294,7 +314,7 @@ h1, h2, h3, h4,
     align-items: center;
     gap: 0.5rem;
     background: transparent;
-    color: var(--fg-muted);
+    color: var(--fg);
     font-family: "Inter", sans-serif;
     font-weight: 500;
     padding: 0.8125rem 1.75rem;
@@ -329,7 +349,7 @@ h1, h2, h3, h4,
 .glass-card {
     background: var(--surface);
     border: 1px solid var(--line);
-    border-radius: 10px;
+    border-radius: 14px;
     transition: border-color 0.2s ease, transform 0.2s ease;
     /* no backdrop-filter, no box-shadow glow */
 }
@@ -354,7 +374,7 @@ h1, h2, h3, h4,
 .card-light {
     background: var(--surface);
     border: 1px solid var(--line);
-    border-radius: 10px;
+    border-radius: 14px;
     transition: border-color 0.2s ease, transform 0.2s ease;
 }
 .card-light:hover {
@@ -390,10 +410,6 @@ h1, h2, h3, h4,
 /* ==============================================
    SECTIONS
 ============================================== */
-.section-dark {
-    background-color: var(--bg);
-    color: var(--fg);
-}
 .section-dark-subtle {
     background-color: var(--surface);
 }
@@ -531,7 +547,7 @@ details[open] summary ~ * {
     border-radius: 2px;
 }
 .btn-cta:focus-visible {
-    outline-color: #fff;
+    outline-color: var(--fg);
 }
 :focus:not(:focus-visible) {
     outline: none;
