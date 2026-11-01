@@ -543,12 +543,6 @@
       </div>
     </div>
 
-    
-
-  <div id="mobile-sticky-cta" class="fixed bottom-0 left-0 right-0 z-40 hidden md:hidden sticky-cta-bar p-3 bg-[var(--bg)] border-t border-[var(--line)]" aria-hidden="true">
-      <a href="{{form}}" class="btn-cta w-full">Recibir propuesta <span aria-hidden="true">→</span></a>
-    </div>
-
     <header class="band-dark hero-home">
       <div class="hero-grid">
         <div class="hero-copy">
@@ -683,7 +677,18 @@
         </div>
       </section>
 
-      <section id="fundador" class="py-16 md:py-24 px-6 bg-[var(--surface)] border-y border-[var(--line)]">
+      <section id="resenas" class="py-16 md:py-24 px-6 bg-[var(--surface)] border-y border-[var(--line)]">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="eyebrow">Reseñas</p>
+            <h2 class="text-h1 mb-3">5,0 en Google</h2>
+            <p class="text-[var(--fg-soft)]">Lo que dicen quienes han trabajado con nosotros.</p>
+          </div>
+          <div class="grid md:grid-cols-3 gap-6"><figure class="product-card review"><p class="google-stars" aria-hidden="true">★★★★★</p><blockquote>“Lo valioso de Growth Buddies es que entienden que automatizar sin estrategia es deuda futura.”</blockquote><figcaption>Jose Osorio, reseña en Google</figcaption></figure><figure class="product-card review"><p class="google-stars" aria-hidden="true">★★★★★</p><blockquote>“Me ayudaron justo con mi requerimiento. Edmundo sabía exactamente qué es lo que necesitaba mi negocio.”</blockquote><figcaption>Sebastián Marín, reseña en Google</figcaption></figure><figure class="product-card review"><p class="google-stars" aria-hidden="true">★★★★★</p><blockquote>“Estamos trabajando en un proyecto súper novedoso. Son realmente expertos en programación y utilizan la IA de una forma increíble.”</blockquote><figcaption>Dra. Daniela Corral H., reseña en Google</figcaption></figure></div>
+        </div>
+      </section>
+
+      <section id="fundador" class="py-16 md:py-24 px-6">
         <div class="max-w-3xl mx-auto flex flex-col md:flex-row items-center gap-8">
           <img src="/img/foto.webp" alt="Edmundo Spohr, fundador de Growth Buddies" class="w-32 h-32 rounded-2xl object-cover" width="128" height="128" loading="lazy" />
           <div>
@@ -894,41 +899,6 @@
         document.addEventListener("keydown", function (e) {
           if (e.key === "Escape" && menu.style.display === "flex") closeMenu();
         });
-      })();
-    </script>
-
-    
-    <script>
-      // --- Mobile sticky CTA bar ---
-      (function () {
-        var stickyCta = document.getElementById("mobile-sticky-cta");
-        if (!stickyCta) return;
-        var hero =
-          document.querySelector("header") || document.querySelector("section");
-        if (!hero) return;
-        var observer = new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (entry) {
-              if (!entry.isIntersecting) {
-                stickyCta.classList.remove("hidden");
-                stickyCta.classList.add("flex");
-                stickyCta.setAttribute("aria-hidden", "false");
-              } else {
-                stickyCta.classList.add("hidden");
-                stickyCta.classList.remove("flex");
-                stickyCta.setAttribute("aria-hidden", "true");
-              }
-            });
-          },
-          { threshold: 0 },
-        );
-        observer.observe(hero);
-        var form = document.getElementById("contacto");
-        if (form) {
-          new IntersectionObserver(function (entries) {
-            stickyCta.style.visibility = entries[0].isIntersecting ? "hidden" : "";
-          }).observe(form);
-        }
       })();
     </script>
 

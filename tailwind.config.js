@@ -20,6 +20,7 @@ module.exports = {
     "./preguntas-frecuentes/**/*.{html,js}",
     "./404.html",
     "./src/lead-form.html",
+    "./src/products-strip.html",
     "./expense-buddy/**/*.html",
     "./docflow-buddy/**/*.html",
     "./agent-buddy/**/*.html",

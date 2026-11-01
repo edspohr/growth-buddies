@@ -1,5 +1,6 @@
 <form class="lead-form" data-lead-form novalidate>
-  <div class="grid sm:grid-cols-2 gap-4">
+  <p class="lead-step" data-lead-step aria-live="polite">Paso 1 de 2</p>
+  <div class="grid sm:grid-cols-2 gap-4" data-step="1">
     <div>
       <label class="gemini-input-label" for="lead-nombre">Nombre</label>
       <input class="gemini-input" id="lead-nombre" name="nombre" autocomplete="name" maxlength="120" required />
@@ -13,14 +14,6 @@
       <input class="gemini-input" id="lead-empresa" name="empresa" autocomplete="organization" maxlength="160" required />
     </div>
     <div>
-      <label class="gemini-input-label" for="lead-cargo">Cargo</label>
-      <input class="gemini-input" id="lead-cargo" name="cargo" autocomplete="organization-title" maxlength="120" required />
-    </div>
-    <div>
-      <label class="gemini-input-label" for="lead-telefono">Teléfono (opcional)</label>
-      <input class="gemini-input" id="lead-telefono" name="telefono" type="tel" autocomplete="tel" maxlength="40" />
-    </div>
-    <div>
       <label class="gemini-input-label" for="lead-producto">Producto</label>
       <select class="gemini-select" id="lead-producto" name="producto" required>
         <option value="">Seleccione</option>
@@ -29,6 +22,19 @@
         <option value="agent-buddy">Agent Buddy</option>
         <option value="proyecto-a-medida">Proyecto a medida</option>
       </select>
+    </div>
+    <button type="button" class="btn-cta w-full sm:col-span-2 mt-2" data-lead-next>Continuar <span aria-hidden="true">→</span></button>
+  </div>
+
+  <div data-step="2" hidden>
+  <div class="grid sm:grid-cols-2 gap-4">
+    <div>
+      <label class="gemini-input-label" for="lead-cargo">Cargo</label>
+      <input class="gemini-input" id="lead-cargo" name="cargo" autocomplete="organization-title" maxlength="120" required />
+    </div>
+    <div>
+      <label class="gemini-input-label" for="lead-telefono">Teléfono (opcional)</label>
+      <input class="gemini-input" id="lead-telefono" name="telefono" type="tel" autocomplete="tel" maxlength="40" />
     </div>
   </div>
 
@@ -90,17 +96,26 @@
     </div>
   </fieldset>
 
+  </div>
+
   <div class="lead-fax" aria-hidden="true">
     <label for="lead-fax">No completar</label>
     <input id="lead-fax" name="fax" tabindex="-1" autocomplete="off" />
   </div>
 
   <p class="lead-error" data-lead-error role="alert" hidden></p>
-  <button type="submit" class="btn-cta w-full mt-6">Recibir propuesta <span aria-hidden="true">→</span></button>
+  <div data-lead-submit hidden>
+    <button type="submit" class="btn-cta w-full mt-6">Recibir propuesta <span aria-hidden="true">→</span></button>
+    <button type="button" class="lead-back" data-lead-back>Volver</button>
+  </div>
 </form>
+<p class="lead-proof">+40 organizaciones · +500 personas · 5,0 en Google</p>
 <div class="lead-success" data-lead-success role="status" tabindex="-1" hidden>
   <h3 class="text-xl mb-2">Recibimos sus datos</h3>
   <p class="text-[var(--fg-soft)]">Le escribiremos en menos de 24 horas.</p>
+</div>
+<div class="lead-sticky" data-lead-sticky hidden>
+  <a href="#propuesta" class="btn-cta">Recibir propuesta <span aria-hidden="true">→</span></a>
 </div>
 <script>
   (function () {
@@ -129,10 +144,64 @@
     select.addEventListener("change", showGroup);
     showGroup();
 
+    var stepLabel = form.querySelector("[data-lead-step]");
+    var stepOne = form.querySelector('[data-step="1"]');
+    var stepTwo = form.querySelector('[data-step="2"]');
+    var submit = form.querySelector("[data-lead-submit]");
+
+    function setStep(second) {
+      stepOne.hidden = second;
+      stepTwo.hidden = !second;
+      submit.hidden = !second;
+      stepLabel.textContent = second ? "Paso 2 de 2" : "Paso 1 de 2";
+      (second ? stepTwo : stepOne).querySelector("input, select").focus();
+    }
+
+    function stepIsValid(step) {
+      return [].every.call(step.querySelectorAll("input, select, textarea"), function (field) {
+        return field.reportValidity();
+      });
+    }
+
+    form.querySelector("[data-lead-next]").addEventListener("click", function () {
+      if (!stepIsValid(stepOne)) return;
+      setStep(true);
+      if (typeof gtag !== "undefined") gtag("event", "form_step_2", { product: select.value });
+    });
+    form.querySelector("[data-lead-back]").addEventListener("click", function () {
+      setStep(false);
+    });
+
+    // Phone bar: visible past the hero, hidden once the form is on screen.
+    var sticky = document.querySelector("[data-lead-sticky]");
+    var demo = form.parentElement.getAttribute("data-demo");
+    if (demo) {
+      var link = document.createElement("a");
+      link.href = demo;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.className = "btn-outline";
+      link.textContent = "Probar el demo";
+      sticky.appendChild(link);
+    }
+    var pastHero = false;
+    var formOnScreen = false;
+    function updateSticky() {
+      sticky.hidden = !pastHero || formOnScreen;
+    }
+    new IntersectionObserver(function (entries) {
+      pastHero = !entries[0].isIntersecting;
+      updateSticky();
+    }).observe(document.querySelector("header"));
+    new IntersectionObserver(function (entries) {
+      formOnScreen = entries[0].isIntersecting;
+      updateSticky();
+    }).observe(form.parentElement);
+
     form.addEventListener("submit", function (event) {
       event.preventDefault();
       error.hidden = true;
-      if (!form.reportValidity()) return;
+      if (!stepIsValid(stepTwo)) return;
 
       var data = Object.fromEntries(new FormData(form).entries());
       data.landing_page = sessionStorage.getItem("landing_page") || location.href;
@@ -152,6 +221,7 @@
         .then(function (response) {
           if (!response.ok) throw new Error(response.status);
           form.hidden = true;
+          form.parentElement.querySelector(".lead-proof").hidden = true;
           success.hidden = false;
           success.focus();
           if (typeof gtag !== "undefined") {
