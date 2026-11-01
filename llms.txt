@@ -27,7 +27,6 @@ We are NOT a generic AI agency. Our positioning is that of a **strategic diagnos
 - **Price:** CLP $490.000 + IVA in Chile, USD 500 for the rest of LATAM (fixed, no hourly overruns)
 - **Duration:** 10 to 15 days
 - **Deliverable:** Executive report with prioritized automation opportunities, technical roadmap, ROI analysis by process, and a working mockup (maqueta funcionando)
-- **Guarantee:** Full refund if we don't identify at least 3 opportunities with positive ROI
 - **Credit:** 100% of the diagnostic value is creditable to any subsequent project (implementation, development, or training) contracted within 90 days; the credit expires after 90 days
 - **Sectors:** Law firms, insurance brokers, management consulting firms, construction/engineering, private clinics
 - **Countries served:** Chile, Colombia, Perú, Ecuador (100% remote delivery)
