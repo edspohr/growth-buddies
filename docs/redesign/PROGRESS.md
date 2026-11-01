@@ -55,6 +55,8 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 
 - 2026-11-01. El CSS lleva ?v=<hash> en el build: se cachea un día y, sin versión, un visitante recurrente recibía HTML nuevo con estilos viejos. Logos: se suma SPI, Potenciarte con nombre, La Charcutería con su logo provisorio; salen Ingeglobal y Dra. Corral.
 
+- 2026-11-01. Bloques 1 y 2: llms.txt reescrito; Diagnóstico pasa a Proyecto a medida en todo el sitio; CTA antiguos van al formulario; se quitan reserva, cupos y afirmaciones de unicidad Prosci. Formulario en dos pasos, sin captura parcial.
+
 ## Registro de deploys
 | Fecha | Destino | Referencia |
 |---|---|---|

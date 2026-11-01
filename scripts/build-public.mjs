@@ -80,11 +80,13 @@ const cta = JSON.parse(readFileSync(path.join(ROOT, "src/cta.config.json"), "utf
 const css = readFileSync(path.join(OUT, "dist/output.css"));
 const cssVersion = createHash("sha256").update(css).digest("hex").slice(0, 10);
 const leadForm = readFileSync(path.join(ROOT, "src/lead-form.html"), "utf8");
+const productsStrip = readFileSync(path.join(ROOT, "src/products-strip.html"), "utf8");
 const pages = readdirSync(OUT, { recursive: true }).filter((file) => file.endsWith(".html"));
 for (const page of pages) {
   const file = path.join(OUT, page);
   const html = readFileSync(file, "utf8")
     .replace(/<!-- lead-form -->/g, leadForm)
+    .replace(/<!-- products-strip -->/g, productsStrip)
     .replace(/(["'])[^"']*dist\/output\.css\1/g, `$1/dist/output.css?v=${cssVersion}$1`)
     .replace(/\{\{(\w+)\}\}/g, (match, key) => cta[key] ?? match);
   writeFileSync(file, html);

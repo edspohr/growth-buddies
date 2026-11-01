@@ -307,7 +307,7 @@
               7 preguntas, una respuesta personalizada. Reciba un reporte en PDF
               con 3 hipótesis iniciales según su perfil. Para validarlas con
               números reales y una maqueta funcionando, el siguiente paso es el
-              Diagnóstico de Automatización Estratégica.
+              diagnóstico del Proyecto a medida.
             </p>
           </div>
 
@@ -341,7 +341,7 @@
                 automatización según su perfil. Le enviamos el reporte
                 personalizado al correo. Para validarlas con números reales y
                 una maqueta funcionando sobre su operación, el siguiente paso es
-                el Diagnóstico de Automatización Estratégica.
+                el diagnóstico del Proyecto a medida.
               </p>
               <form id="quiz-email-form" class="space-y-4">
                 <div>
@@ -447,18 +447,16 @@
                 una maqueta funcionando sobre su operación.
               </p>
               <p class="text-[var(--fg-muted)] text-sm mb-6">
-                Diagnóstico de Automatización Estratégica · $490.000 + IVA (USD
+                Diagnóstico del Proyecto a medida · $490.000 + IVA (USD
                 500 fuera de Chile).
               </p>
               <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
                 <a
-                  href="{{whatsapp}}?text=Hola%20Growth%20Buddies%21%20Vengo%20del%20quiz%20y%20quiero%20reservar%20mi%20cupo%20del%20Diagn%C3%B3stico%20de%20Automatizaci%C3%B3n%20Estrat%C3%A9gica.%20%C2%BFC%C3%B3mo%20coordinamos%20el%20pago%3F"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/{{form}}"
                   class="inline-flex items-center gap-2 bg-[var(--color-cta)] hover:bg-[var(--color-cta-hover)] text-[var(--on-accent)] font-bold py-3 px-8 rounded-full transition-all"
-                  onclick="if (typeof gtag !== 'undefined') { gtag('event', 'reservar_cupo_click', { event_category: 'quiz_success' }); }"
+                  onclick="if (typeof gtag !== 'undefined') { gtag('event', 'quiz_cta_click', { event_category: 'quiz_success' }); }"
                 >
-                  Reservar mi cupo →
+                  Recibir propuesta en 24 horas →
                 </a>
                 <a
                   href="{{calendly}}"

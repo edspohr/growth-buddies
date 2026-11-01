@@ -56,7 +56,7 @@ Static HTML5 site for a Chilean AI automation consulting firm. No JavaScript fra
 - Mobile menu toggle, sticky CTA bar (IntersectionObserver), UTM attribution capture (sessionStorage)
 - Calendly embed loads only on desktop via `matchMedia('(min-width: 768px)')`
 - All WhatsApp CTAs tracked with GA4 events; Microsoft Clarity also active
-- **Lead form:** `src/lead-form.html` is injected by the build wherever a page has `<!-- lead-form -->` inside a `.lead-card[data-product]`. It posts to `/api/lead`.
+- **Lead form:** `src/lead-form.html` is injected by the build wherever a page has `<!-- lead-form -->` inside a `.lead-card[data-product]`. It has two steps and a phone sticky bar, and posts to `/api/lead`. `src/products-strip.html` is injected at `<!-- products-strip -->` on service, sector and country pages.
 
 **Accessibility conventions every page must follow:**
 
