@@ -26,6 +26,7 @@ npm run test:lead                                 # submitLead on the emulators
 npm run build && npm run sitemap && npm run build # regenerate sitemap.xml from the build
 npm run check -- <url>                            # sitemap, redirects, canonicals, links, forbidden text
 node scripts/checks/contrast.mjs <url>            # WCAG AA on every page
+node scripts/checks/mobile.mjs <url> 360          # no horizontal scroll on phones
 node scripts/checks/lighthouse.mjs <url> / /expense-buddy
 ```
 

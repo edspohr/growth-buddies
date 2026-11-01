@@ -545,26 +545,38 @@
 
     
 
-  </body><div id="mobile-sticky-cta" class="fixed bottom-0 left-0 right-0 z-40 hidden md:hidden sticky-cta-bar p-3 bg-[var(--bg)] border-t border-[var(--line)]" aria-hidden="true">
+  <div id="mobile-sticky-cta" class="fixed bottom-0 left-0 right-0 z-40 hidden md:hidden sticky-cta-bar p-3 bg-[var(--bg)] border-t border-[var(--line)]" aria-hidden="true">
       <a href="{{form}}" class="btn-cta w-full">Recibir propuesta <span aria-hidden="true">→</span></a>
     </div>
 
-    <header class="band-dark pt-36 md:pt-44 pb-16 md:pb-24 px-6">
-      <div class="max-w-4xl mx-auto text-center">
-        <p class="eyebrow">Herramientas operativas con IA · Chile</p>
-        <h1 class="text-display mb-6">Herramientas con IA que su equipo realmente usa</h1>
-        <p class="text-lg md:text-xl text-[var(--fg-soft)] max-w-2xl mx-auto mb-10">Productos listos para gastos, documentos y atención de clientes. Los implementamos, entrenamos a su equipo y acompañamos la adopción.</p>
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="{{form}}" class="btn-cta">Recibir propuesta en 24 horas hábiles <span aria-hidden="true">→</span></a>
-          <a href="{{calendly}}" target="_blank" rel="noopener noreferrer" class="btn-outline">Agendar conversación <span aria-hidden="true">→</span></a>
+    <header class="band-dark hero-home">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Herramientas operativas con IA · Chile</p>
+          <h1 class="hero-title">Herramientas con IA que su equipo realmente usa</h1>
+          <p class="hero-sub">Productos listos para gastos, documentos y atención de clientes. Los implementamos, entrenamos a su equipo y acompañamos la adopción.</p>
+          <div class="hero-actions">
+            <a href="{{form}}" class="btn-cta">Recibir propuesta en 24 horas hábiles <span aria-hidden="true">→</span></a>
+            <a href="{{calendly}}" target="_blank" rel="noopener noreferrer" class="btn-outline">Agendar conversación <span aria-hidden="true">→</span></a>
+          </div>
+          <nav class="hero-products" aria-label="Productos">
+            <a href="/expense-buddy"><strong>Expense Buddy</strong><span>Gastos</span></a>
+            <a href="/docflow-buddy"><strong>DocFlow Buddy</strong><span>Documentos</span></a>
+            <a href="/agent-buddy"><strong>Agent Buddy</strong><span>Asistentes</span></a>
+          </nav>
         </div>
+        <figure class="hero-stage">
+          <img class="hero-screen" src="/img/productos/hero-dashboard-800.webp" srcset="/img/productos/hero-dashboard-800.webp 800w, /img/productos/hero-dashboard.webp 1500w" sizes="(min-width: 1024px) 60vw, 100vw" alt="Panel de Expense Buddy con gastos rendidos, aprobados y tendencia mensual, con datos ficticios" width="1500" height="938" fetchpriority="high" />
+          <img class="hero-phone" src="/img/productos/hero-telefono.webp" alt="Expense Buddy en el teléfono, funcionando sin conexión, con datos ficticios" width="520" height="1125" />
+          <figcaption>Expense Buddy, pantallas reales con datos ficticios</figcaption>
+        </figure>
       </div>
     </header>
 
     <main id="main-content">
       <section class="band-dark border-t border-[var(--line)] py-10 px-6" aria-label="Clientes y resultados">
         <div class="max-w-5xl mx-auto">
-          <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-5 mb-8">
+          <div class="proof-logos">
             <img src="/img/hits.webp" alt="Hits Corredora" class="h-8 w-auto object-contain grayscale brightness-0 invert opacity-70" loading="lazy" width="120" height="32" />
             <img src="/img/potenciarte.webp" alt="Potenciarte Eventos" class="h-8 w-auto object-contain grayscale brightness-0 invert opacity-70" loading="lazy" width="120" height="32" />
             <img src="/img/fundacion-summer.webp" alt="Fundación Summer" class="h-8 w-auto object-contain grayscale brightness-0 invert opacity-70" loading="lazy" width="113" height="32" />
@@ -574,10 +586,10 @@
             <span class="font-semibold uppercase tracking-[0.15em] text-sm text-[var(--fg-muted)]">La Charcutería</span>
             <span class="font-semibold uppercase tracking-[0.15em] text-sm text-[var(--fg-muted)]">Dra. Corral</span>
           </div>
-          <dl class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
-            <div><dt class="sr-only">Organizaciones</dt><dd class="font-heading font-semibold text-3xl">+40</dd><dd class="text-sm text-[var(--fg-muted)]">organizaciones</dd></div>
-            <div><dt class="sr-only">Proyectos de IA</dt><dd class="font-heading font-semibold text-3xl">+20</dd><dd class="text-sm text-[var(--fg-muted)]">proyectos de IA</dd></div>
-            <div><dt class="sr-only">Personas entrenadas</dt><dd class="font-heading font-semibold text-3xl">+200</dd><dd class="text-sm text-[var(--fg-muted)]">personas entrenadas</dd></div>
+          <dl class="grid grid-cols-3 gap-3 sm:gap-6 text-center">
+            <div><dt class="sr-only">Organizaciones</dt><dd class="font-heading font-semibold text-2xl sm:text-3xl">+40</dd><dd class="text-xs sm:text-sm text-[var(--fg-muted)]">organizaciones</dd></div>
+            <div><dt class="sr-only">Proyectos de IA</dt><dd class="font-heading font-semibold text-2xl sm:text-3xl">+20</dd><dd class="text-xs sm:text-sm text-[var(--fg-muted)]">proyectos de IA</dd></div>
+            <div><dt class="sr-only">Personas entrenadas</dt><dd class="font-heading font-semibold text-2xl sm:text-3xl">+200</dd><dd class="text-xs sm:text-sm text-[var(--fg-muted)]">personas entrenadas</dd></div>
           </dl>
         </div>
       </section>
@@ -912,6 +924,12 @@
           { threshold: 0 },
         );
         observer.observe(hero);
+        var form = document.getElementById("contacto");
+        if (form) {
+          new IntersectionObserver(function (entries) {
+            stickyCta.style.visibility = entries[0].isIntersecting ? "hidden" : "";
+          }).observe(form);
+        }
       })();
     </script>
 
