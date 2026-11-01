@@ -271,7 +271,7 @@ chore(hygiene): add Sectores and Servicios footer columns
 **Edmundo's manual steps.**
 - Confirm the current effective offer wording once (CLP + IVA in Chile; USD 500 elsewhere; 10 to 15 días; 100% credit within 90 days; refund if <3 opportunities).
 - Decide the scarcity-counter refresh cadence (recommended: fortnightly on the 1st and 15th, updated by hand in `MONTHLY_SLOTS`).
-- Merge PR + push to `main` (Vercel auto-deploys).
+- Merge PR + push to `main` (Firebase Hosting deploys via GitHub Actions).
 - Redeploy Cloud Functions when convenient (`firebase deploy --only functions`) so email templates carry the new phone. Not blocking the site release.
 
 **Estimated effort.** 4–6 h of edits + 1 h verification.
@@ -691,7 +691,7 @@ chore(seo): drop video block from sitemap.xml homepage entry
 **How to verify.** Open GA4 DebugView, open each new page in an incognito tab with `?_dbg=1`, click the primary and secondary CTAs, confirm both events register with the expected `page_location`.
 
 **Search Console checklist for the Batch 1 release.**
-- After Phases 1 and 2 are merged to `main` and Vercel deploys, in Google Search Console:
+- After Phases 1 and 2 are merged to `main` and Firebase Hosting deploys, in Google Search Console:
   1. Resubmit `sitemap.xml`.
   2. For each of the 4 new URLs, open URL Inspection → Request Indexing. (Batch quota is 12/day; well within limits.)
   3. In Coverage → Excluded, look for any regression on existing pages within 48 h.

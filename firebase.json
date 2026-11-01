@@ -50,5 +50,9 @@
       { "source": "/soluciones/catalogo.html", "destination": "/soluciones", "type": 301 },
       { "source": "/servicios/automatizacion-inteligente", "destination": "/servicios/legal-tech", "type": 301 }
     ]
+  },
+  "emulators": {
+    "firestore": { "port": 18080 },
+    "ui": { "enabled": false }
   }
 }

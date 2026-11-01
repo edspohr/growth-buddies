@@ -33,6 +33,7 @@ exports.sendQuizFollowup = onSchedule(
       try {
         await resend.emails.send({
           from: "Edmundo Spohr <edmundo@growthbuddies.cl>",
+          replyTo: "edmundo@spohr.cl",
           to: data.email,
           subject: "¿Alguna de esas hipótesis le hizo sentido?",
           html: `

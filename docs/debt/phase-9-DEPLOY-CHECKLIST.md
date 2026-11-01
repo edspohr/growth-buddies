@@ -92,7 +92,7 @@ git merge phase-9-conversion-focus --no-ff
 git push origin main
 ```
 
-Vercel will auto-deploy the static site within 1-2 minutes.
+GitHub Actions will deploy the static site to Firebase Hosting within a few minutes.
 
 ### 3.6 — Production verification (within 10 min of deploy)
 
@@ -107,7 +107,7 @@ Vercel will auto-deploy the static site within 1-2 minutes.
 ### 3.7 — If anything fails
 
 ```bash
-# Roll back hosting (Vercel)
+# Roll back hosting (Firebase Hosting via GitHub Actions)
 git revert HEAD --no-edit
 git push origin main
 

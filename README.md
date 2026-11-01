@@ -14,7 +14,7 @@ Sitio web de [growthbuddies.cl](https://growthbuddies.cl), consultora chilena de
 | Animaciones | Lenis (smooth scroll) · GSAP ScrollTrigger · CSS keyframes |
 | Analytics | Microsoft Clarity |
 | Agendamiento | Calendly (embed inline, desktop only) |
-| Despliegue | Vercel (CDN, clean URLs, trailing-slash off) |
+| Despliegue | Firebase Hosting (CDN, clean URLs, trailing-slash off) |
 
 ## Estructura del Proyecto
 
@@ -62,7 +62,7 @@ growth-buddies/
 ├── img/                                # Imágenes en formato .webp
 ├── vid/                                # Videos hero en .mp4
 ├── tailwind.config.js
-├── vercel.json
+├── firebase.json
 └── package.json
 ```
 
@@ -103,14 +103,18 @@ O con la extensión Live Server de VS Code apuntando a `index.html`.
 
 ## Despliegue
 
-El sitio se despliega automáticamente en **Vercel** al hacer push a `main`.
+GitHub Actions despliega en **Firebase Hosting** al hacer push a `main` y crea un canal de vista previa por cada pull request (`.github/workflows/`).
 
-Configuración relevante (`vercel.json`):
-- **Clean URLs**: activo — `/servicios/ia-corporativa/` en lugar de `.html`
+`npm run build` genera `public/` desde una lista blanca (`scripts/build-public.mjs`) y reemplaza `{{calendly}}` y `{{whatsapp}}` con los valores de `src/cta.config.json`.
+
+Configuración relevante (`firebase.json`):
+- **Clean URLs**: activo
 - **Trailing slash**: desactivado
-- **Cache**: assets estáticos (webp, mp4, css, js) con `max-age=31536000, immutable`
-- **Redirect**: `www.growthbuddies.cl` → `growthbuddies.cl` (301 permanente)
-- **404**: ruta catch-all apunta a `404.html`
+- **Cache**: assets estáticos con `max-age=31536000, immutable`
+- **Redirect**: `www.growthbuddies.cl` → `growthbuddies.cl`, configurado en el dominio personalizado de Firebase
+- **404**: `404.html`
+
+Antes de publicar: `npm run build`, `npm run check -- <url>` y `node scripts/checks/lighthouse.mjs <url> /`. Reglas de Firestore: `npm run test:rules`.
 
 ## Diseño & Convenciones
 
@@ -135,7 +139,7 @@ Configuración relevante (`vercel.json`):
 - Scripts Lenis con `defer`
 - Imágenes en `.webp`, videos en `.mp4`
 - `will-change: transform` en `.noise-overlay`
-- Assets servidos con CDN + cache inmutable desde Vercel
+- Assets servidos con CDN + cache inmutable desde Firebase Hosting
 
 ### Navegación estándar (todas las páginas)
 ```
@@ -180,7 +184,7 @@ Inicio | Servicios | Soluciones | Blog | Contacto
 
 ## Contacto & Equipo
 
-- **Edmundo Spohr** — Director & Fundador — [edmundo@growthbuddies.cl](mailto:edmundo@growthbuddies.cl)
+- **Edmundo Spohr** — Director & Fundador — [edmundo@spohr.cl](mailto:edmundo@spohr.cl)
 - **Felipe Soto Santibáñez** — Co-fundador (ex-Mercado Libre / Banco Falabella)
 - WhatsApp: [+56 9 7599 1366](https://wa.me/56975991366)
 - LinkedIn: [linkedin.com/company/growth-buddies](https://www.linkedin.com/company/growth-buddies)
