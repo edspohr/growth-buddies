@@ -27,7 +27,7 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 4. Revisar en Etapa 5 las páginas que aún hablan de devolución o garantía, y el enfoque de diagnóstico en /servicios, /colombia, /peru y /ecuador.
 1. El PDF del informe no existe. El formulario envía la versión web. La página aún dice PDF en sus títulos.
 2. From de correos sigue en edmundo@growthbuddies.cl (dominio verificado en Resend), con Reply-To edmundo@spohr.cl.
-3. Desconectar Vercel cuando www esté verificado.
+3. Desconectar Vercel: www verificado el 2026-11-01.
 
 ## Autorizaciones
 - 2026-11-01. Edmundo autorizó el deploy live de Etapa 1 pese al control de textos prohibidos, que falla por contenido ya presente en producción. Vale solo para este deploy.
