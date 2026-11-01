@@ -11,7 +11,8 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 | 3 Sistema visual | Completa |
 | 4 Home y navegación | Completa |
 | 5 Páginas de producto | Completa; capturas DocFlow esperan aprobación |
-| 6 a 8 | Pendientes |
+| 6 Formulario | Completa |
+| 7 y 8 | Pendientes |
 
 ## Decisiones
 - 2026-11-01. Git se colgaba porque iCloud evictó 2.344 archivos de .git, incluido el pack principal. Se clonó en ~/dev/growth-buddies. La carpeta original queda intacta porque conserva ramas locales que no están en GitHub.
@@ -45,6 +46,8 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 - 2026-11-01. El contenido antiguo de rendición no se traspasó porque prometía ERP, WhatsApp y otras funciones prohibidas.
 - 2026-11-01. /expense-buddy invita a probar el demo en hero, sección propia y cierre, por pedido de Edmundo, con utm_content distinto.
 
+- 2026-11-01. Etapa 6: el formulario usa la función submitLead en /api/lead, no escribe directo en Firestore: las reglas no pueden limitar por IP. leads sigue cerrada al público. Límite 5 envíos por hora por IP. Destinatarios de alerta en LEAD_ALERT_TO, por defecto edmundo@spohr.cl.
+
 ## Registro de deploys
 | Fecha | Destino | Referencia |
 |---|---|---|
@@ -53,3 +56,4 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 | 2026-11-01 | Live vía GitHub Actions + functions y rules | bddb96b, run 41337759100 |
 | 2026-11-01 | Live vía GitHub Actions + functions | Etapa 4 |
 | 2026-11-01 | Live vía GitHub Actions + functions | Etapa 5, d28fc76 |
+| 2026-11-01 | Live vía GitHub Actions + functions | Etapa 6, 6225abb |
