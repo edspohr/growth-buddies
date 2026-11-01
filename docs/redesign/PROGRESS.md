@@ -53,6 +53,8 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 
 - 2026-11-01. Etapa 8: se quitó la promesa de devolución del diagnóstico en todo el sitio, incluido JSON-LD. Sesión de devolución (reunión de entrega) se mantiene. Quedó el texto de garantía de adopción para decisión de Edmundo.
 
+- 2026-11-01. El CSS lleva ?v=<hash> en el build: se cachea un día y, sin versión, un visitante recurrente recibía HTML nuevo con estilos viejos. Logos: se suma SPI, Potenciarte con nombre, La Charcutería con su logo provisorio; salen Ingeglobal y Dra. Corral.
+
 ## Registro de deploys
 | Fecha | Destino | Referencia |
 |---|---|---|
@@ -66,3 +68,4 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 | 2026-11-01 | Live vía GitHub Actions | Etapa 8, a907d51 |
 | 2026-11-01 | Live vía GitHub Actions | Hero y responsive, 6e1cd88 |
 | 2026-11-01 | Live + notifyNewLead + demo | Promesa de 24 horas sin "hábiles" |
+| 2026-11-01 | Live vía GitHub Actions | CSS versionado y logos de clientes |
