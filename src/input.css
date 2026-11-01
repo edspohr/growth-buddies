@@ -640,12 +640,50 @@ h1, h2, h3, h4 {
     color: var(--fg-muted);
 }
 .proof-logos {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem 1.5rem;
     align-items: center;
-    justify-content: center;
-    gap: 1.25rem 2.5rem;
-    margin-bottom: 2rem;
+    justify-items: center;
+    max-width: 62rem;
+    margin: 0 auto 2.5rem;
+}
+.proof-logos li:last-child { grid-column: 1 / -1; }
+.proof-logos img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 8.5rem;
+    max-height: 2rem;
+    object-fit: contain;
+    filter: grayscale(1) brightness(0) invert(1);
+    opacity: 0.8;
+}
+.proof-named {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.proof-named span {
+    color: var(--fg-soft);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1.15;
+}
+@media (min-width: 640px) {
+    .proof-logos { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .proof-logos li:last-child { grid-column: auto; }
+    .proof-logos li:nth-child(5) { grid-column-start: 1; }
+}
+@media (min-width: 1024px) {
+    .proof-logos {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 1.75rem;
+        max-width: 78rem;
+    }
+    .proof-logos img { max-height: 1.75rem; }
 }
 @media (min-width: 1024px) {
     .hero-home { padding: 9rem 2rem 0; }
@@ -874,9 +912,6 @@ details[open] summary ~ * {
     .page-hero .btn-cta { font-size: 0.9375rem; }
     .page-hero { text-align: left; }
     .page-hero .eyebrow { margin-bottom: 0.75rem; }
-    .proof-logos { gap: 1rem 1.75rem; }
-    .proof-logos img { height: 1.375rem; width: auto; max-width: 5.5rem; }
-    .proof-logos span { font-size: 0.75rem; }
     .product-card { padding: 1.5rem; }
     .tier { padding: 1rem; }
     .door { padding: 1.25rem 1.5rem; }

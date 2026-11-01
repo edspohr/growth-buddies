@@ -6,6 +6,7 @@
  * Usage: node scripts/build-public.mjs
  */
 import { execFileSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -66,22 +67,27 @@ for (const dir of DIRECTORIES) {
   });
 }
 
+execFileSync(
+  path.join(ROOT, "node_modules/.bin/tailwindcss"),
+  ["-i", "src/input.css", "-o", "public/dist/output.css", "--minify"],
+  { cwd: ROOT, stdio: "inherit" }
+);
+
 // CTA destinations live in one file; source pages use {{calendly}} and {{whatsapp}}.
 const cta = JSON.parse(readFileSync(path.join(ROOT, "src/cta.config.json"), "utf8"));
+// The CSS is cached for a day, so its URL changes with its content. Otherwise a
+// returning visitor gets new HTML with old styles.
+const css = readFileSync(path.join(OUT, "dist/output.css"));
+const cssVersion = createHash("sha256").update(css).digest("hex").slice(0, 10);
 const leadForm = readFileSync(path.join(ROOT, "src/lead-form.html"), "utf8");
 const pages = readdirSync(OUT, { recursive: true }).filter((file) => file.endsWith(".html"));
 for (const page of pages) {
   const file = path.join(OUT, page);
   const html = readFileSync(file, "utf8")
     .replace(/<!-- lead-form -->/g, leadForm)
+    .replace(/(["'])[^"']*dist\/output\.css\1/g, `$1/dist/output.css?v=${cssVersion}$1`)
     .replace(/\{\{(\w+)\}\}/g, (match, key) => cta[key] ?? match);
   writeFileSync(file, html);
 }
-
-execFileSync(
-  path.join(ROOT, "node_modules/.bin/tailwindcss"),
-  ["-i", "src/input.css", "-o", "public/dist/output.css", "--minify"],
-  { cwd: ROOT, stdio: "inherit" }
-);
 
 console.log(`Built ${path.relative(ROOT, OUT)}/`);
