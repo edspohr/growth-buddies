@@ -1,3 +1,0 @@
-RewriteEngine On
-RewriteCond %{HTTP_HOST} ^www\.growthbuddies\.cl$ [NC]
-RewriteRule ^(.*)$ https://growthbuddies.cl/$1 [L,R=301]

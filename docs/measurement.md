@@ -142,7 +142,7 @@ Record: **C** = cited with URL or name, **M** = mentioned without URL, **X** = n
 
 ## 4. Post-deploy checklist (one-time, after merging to main)
 
-Complete these steps immediately after Vercel deploys the `feat/quiet-authority-design` branch to production.
+Complete these steps immediately after Firebase Hosting deploys the `feat/quiet-authority-design` branch to production.
 
 ### 4.1 Submit sitemap in Google Search Console
 - [ ] Open [search.google.com/search-console](https://search.google.com/search-console) → property `growthbuddies.cl`

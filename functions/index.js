@@ -73,7 +73,7 @@ function emailWrapper(headerBg, headerColor, badge, title, body) {
   <div style="padding:32px;">${body}
     <p style="margin-top:36px;font-size:11px;color:#334155;text-align:center;border-top:1px solid #1e2035;padding-top:16px;">
       Growth Buddies · <a href="https://growthbuddies.cl" style="color:#00f6ff;text-decoration:none;">growthbuddies.cl</a><br>
-      Si no quieres recibir más correos, <a href="mailto:hola@growthbuddies.cl?subject=Unsubscribe" style="color:#334155;">haz clic aquí</a>.
+      Si no quieres recibir más correos, <a href="mailto:edmundo@spohr.cl?subject=Unsubscribe" style="color:#334155;">haz clic aquí</a>.
     </p>
   </div>
 </div>
@@ -116,6 +116,7 @@ exports.sendGuideDelivery = onDocumentCreated(
 
     await resend().emails.send({
       from: "Edmundo Spohr — Growth Buddies <edmundo@growthbuddies.cl>",
+      replyTo: "edmundo@spohr.cl",
       to: [lead.email],
       subject: "Tu guía de automatización IA está lista ✅",
       html: emailWrapper(
@@ -153,6 +154,61 @@ exports.sendGuideDelivery = onDocumentCreated(
 
     await db.collection("guide_leads").doc(leadId).update({ guide_sent: true });
     console.log(`[sendGuideDelivery] sent for ${leadId}`);
+  }
+);
+
+// ─── Report lead: web report link + notify Edmundo ───────────────────────────
+function escapeHtml(value = "") {
+  return String(value).replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
+}
+
+exports.sendReportDelivery = onDocumentCreated(
+  { document: "report_leads/{leadId}", secrets: [resendApiKey] },
+  async (event) => {
+    const lead = event.data.data();
+    const leadId = event.params.leadId;
+    if (!lead.email) return;
+
+    const reportUrl = "https://growthbuddies.cl/recursos/informe-automatizacion-servicios-latam";
+    const name = lead.name ? " " + escapeHtml(lead.name) : "";
+
+    const deliveryBody = `
+      <p style="font-size:16px;line-height:1.7;margin:0 0 16px;">Hola${name}, recibimos su solicitud. Aquí puede leer el informe sobre automatización de servicios en Latinoamérica.</p>
+      ${ctaButton(reportUrl, "Leer el informe")}`;
+
+    await resend().emails.send({
+      from: "Edmundo Spohr — Growth Buddies <edmundo@growthbuddies.cl>",
+      replyTo: "edmundo@spohr.cl",
+      to: [lead.email],
+      subject: "Su informe de automatización",
+      html: emailWrapper(
+        "linear-gradient(135deg,#050510,#0d1a2e)",
+        "#00f6ff",
+        "Informe",
+        "Automatización de servicios en Latinoamérica",
+        deliveryBody
+      ),
+    });
+
+    const rows = [
+      ["Email", lead.email],
+      ["Nombre", lead.name],
+      ["Empresa", lead.company],
+      ["Sector", lead.sector],
+      ["País", lead.country],
+    ]
+      .map(([label, value]) => `<tr><td style="padding:10px 0;color:#64748b;font-size:13px;width:130px;">${label}</td><td style="padding:10px 0;">${escapeHtml(value || "—")}</td></tr>`)
+      .join("");
+
+    await resend().emails.send({
+      from: "Growth Buddies CRM <crm@growthbuddies.cl>",
+      to: ["edmundo@spohr.cl"],
+      subject: `Solicitud de informe — ${lead.email}`,
+      html: emailWrapper("#0a0a2e", "#00f6ff", "Report Lead", "Nueva solicitud de informe", `<table style="width:100%;border-collapse:collapse;">${rows}</table><p style="margin-top:12px;font-size:11px;color:#334155;text-align:center;">Lead ID: ${leadId}</p>`),
+    });
+
+    await db.collection("report_leads").doc(leadId).update({ report_sent: true });
+    console.log(`[sendReportDelivery] sent for ${leadId}`);
   }
 );
 
@@ -281,6 +337,7 @@ exports.sendDay0Confirmation = onDocumentUpdated(
 
     await resend().emails.send({
       from: "Edmundo Spohr — Growth Buddies <edmundo@growthbuddies.cl>",
+      replyTo: "edmundo@spohr.cl",
       to: [after.email],
       subject: `${after.name}, recibimos tu solicitud ✓`,
       html: emailWrapper("#050510", "#00f6ff", "Confirmación", `Hola ${after.name} 👋`, body),

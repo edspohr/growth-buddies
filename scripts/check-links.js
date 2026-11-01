@@ -5,7 +5,7 @@
  * internal paths (starting with / but not http, mailto, tel, #),
  * and checks whether a matching file exists on disk.
  *
- * Vercel clean-URL rules applied:
+ * Firebase Hosting clean-URL rules applied:
  *   /foo        → foo/index.html  OR  foo.html
  *   /foo/       → foo/index.html
  *   /foo.html   → foo.html

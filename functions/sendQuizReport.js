@@ -127,6 +127,7 @@ exports.sendQuizReport = onDocumentCreated(
     try {
       await resend.emails.send({
         from: "Edmundo Spohr <edmundo@growthbuddies.cl>",
+        replyTo: "edmundo@spohr.cl",
         to: email,
         subject: "Su reporte de oportunidades de automatización",
         html: generateEmailHTML({ company, opportunities, roi }),

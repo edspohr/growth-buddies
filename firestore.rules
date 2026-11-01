@@ -2,24 +2,93 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    // Anyone can create leads (web form + calculator)
+    function isShortText(value, max) {
+      return value is string && value.size() <= max;
+    }
+
+    function isOptionalText(data, field, max) {
+      return !(field in data) || data[field] == null || isShortText(data[field], max);
+    }
+
+    function hasValidEmail(data) {
+      return isShortText(data.email, 254)
+        && data.email.matches('^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$');
+    }
+
+    function hasValidAttribution(data) {
+      return isOptionalText(data, 'landing_page', 2048)
+        && isOptionalText(data, 'referrer', 2048)
+        && isOptionalText(data, 'utm_source', 256)
+        && isOptionalText(data, 'utm_medium', 256)
+        && isOptionalText(data, 'utm_campaign', 256)
+        && isOptionalText(data, 'utm_term', 256)
+        && isOptionalText(data, 'utm_content', 256)
+        && isOptionalText(data, 'gclid', 256);
+    }
+
+    function hasValidDevice(data) {
+      return !('device' in data) || data.device in ['mobile', 'desktop'];
+    }
+
+    // No form writes these two today; Stage 6 reopens leads for the new form.
     match /leads/{id} {
-      allow create: if true;
+      allow create: if false;
       allow read, update, delete: if request.auth != null;
     }
 
     match /calculator_leads/{id} {
-      allow create: if true;
+      allow create: if false;
       allow read, update, delete: if request.auth != null;
     }
 
     match /guide_leads/{id} {
-      allow create: if true;
+      allow create: if request.resource.data.keys().hasOnly([
+          'email', 'name', 'industry', 'country', 'device', 'landing_page', 'referrer',
+          'timestamp', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid'
+        ])
+        && request.resource.data.keys().hasAll(['email', 'timestamp'])
+        && hasValidEmail(request.resource.data)
+        && request.resource.data.timestamp == request.time
+        && isOptionalText(request.resource.data, 'name', 120)
+        && isOptionalText(request.resource.data, 'industry', 120)
+        && isOptionalText(request.resource.data, 'country', 120)
+        && hasValidDevice(request.resource.data)
+        && hasValidAttribution(request.resource.data);
+      allow read, update, delete: if request.auth != null;
+    }
+
+    match /report_leads/{id} {
+      allow create: if request.resource.data.keys().hasOnly([
+          'email', 'name', 'company', 'sector', 'country', 'report', 'device', 'landing_page', 'referrer',
+          'timestamp', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid'
+        ])
+        && request.resource.data.keys().hasAll(['email', 'timestamp'])
+        && hasValidEmail(request.resource.data)
+        && request.resource.data.timestamp == request.time
+        && isOptionalText(request.resource.data, 'name', 120)
+        && isOptionalText(request.resource.data, 'company', 160)
+        && isOptionalText(request.resource.data, 'sector', 120)
+        && isOptionalText(request.resource.data, 'country', 120)
+        && isOptionalText(request.resource.data, 'report', 120)
+        && hasValidDevice(request.resource.data)
+        && hasValidAttribution(request.resource.data);
       allow read, update, delete: if request.auth != null;
     }
 
     match /quiz_leads/{id} {
-      allow create: if true;
+      allow create: if request.resource.data.keys().hasOnly([
+          'email', 'company', 'answers', 'timestamp', 'source', 'followup_sent', 'landing_page', 'referrer',
+          'utm_source', 'utm_medium', 'utm_campaign'
+        ])
+        && request.resource.data.keys().hasAll(['email', 'answers', 'timestamp'])
+        && hasValidEmail(request.resource.data)
+        && request.resource.data.timestamp == request.time
+        && request.resource.data.answers is map
+        && request.resource.data.answers.size() <= 20
+        && isOptionalText(request.resource.data, 'company', 160)
+        && isOptionalText(request.resource.data, 'source', 60)
+        && (!('followup_sent' in request.resource.data) || request.resource.data.followup_sent == false)
+        && hasValidAttribution(request.resource.data);
       allow read, update, delete: if request.auth != null;
     }
   }

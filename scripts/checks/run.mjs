@@ -24,6 +24,7 @@ const FORBIDDEN = [
   "tipo de cambio oficial",
   "Quedan",
   "cupos",
+  "{{",
 ];
 
 if (!BASE || !existsSync(PUBLIC)) {
