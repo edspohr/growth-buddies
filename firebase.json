@@ -6,11 +6,49 @@
     "rules": "firestore.rules"
   },
   "hosting": {
-    "public": ".",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
+    "public": "public",
+    "predeploy": ["npm run build"],
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "headers": [
+      {
+        "source": "**",
+        "headers": [
+          { "key": "X-Content-Type-Options", "value": "nosniff" },
+          { "key": "Cache-Control", "value": "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800" }
+        ]
+      },
+      {
+        "source": "**/*.@(css|js)",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }
+        ]
+      },
+      {
+        "source": "**/*.@(webp|mp4|webm|png|jpg|jpeg|svg)",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        ]
+      },
+      {
+        "source": "/fonts/**",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        ]
+      }
+    ],
+    "redirects": [
+      { "source": "/metodologia/diagnostico", "destination": "/metodologia#diagnostico", "type": 301 },
+      { "source": "/metodologia/diseno", "destination": "/metodologia#diseno", "type": 301 },
+      { "source": "/metodologia/build", "destination": "/metodologia#build", "type": 301 },
+      { "source": "/metodologia/adopcion", "destination": "/metodologia#adopcion", "type": 301 },
+      { "source": "/soluciones/automatizacion-legal-emails", "destination": "/soluciones#triaje-legal", "type": 301 },
+      { "source": "/soluciones/gestion-documental-ip", "destination": "/soluciones#docuagent", "type": 301 },
+      { "source": "/soluciones/rendicion-gastos-ia", "destination": "/soluciones#reembolso", "type": 301 },
+      { "source": "/soluciones/catalogo", "destination": "/soluciones", "type": 301 },
+      { "source": "/soluciones/catalogo.html", "destination": "/soluciones", "type": 301 },
+      { "source": "/servicios/automatizacion-inteligente", "destination": "/servicios/legal-tech", "type": 301 }
     ]
   }
 }
