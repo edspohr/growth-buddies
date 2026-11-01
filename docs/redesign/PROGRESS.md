@@ -9,7 +9,8 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 | 1 Hosting Firebase | Completa; falta certificado de www |
 | 2 Correcciones | Completa; ver preguntas abiertas |
 | 3 Sistema visual | Completa |
-| 4 a 8 | Pendientes |
+| 4 Home y navegación | Completa |
+| 5 a 8 | Pendientes |
 
 ## Decisiones
 - 2026-11-01. Git se colgaba porque iCloud evictó 2.344 archivos de .git, incluido el pack principal. Se clonó en ~/dev/growth-buddies. La carpeta original queda intacta porque conserva ramas locales que no están en GitHub.
@@ -20,7 +21,7 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 - 2026-11-01. scripts/generate-sitemap.js no existe, aunque sitemap.xml lo cita. Crearlo antes de la Etapa 5.
 
 ## Preguntas abiertas
-4. BrokerIA dice Cupos limitados con mayúscula: el control no lo detecta. Resolver en Etapa 4.
+4. Revisar en Etapa 5 las páginas que aún hablan de devolución o garantía, y el enfoque de diagnóstico en /servicios, /colombia, /peru y /ecuador.
 1. El PDF del informe no existe. El formulario envía la versión web. La página aún dice PDF en sus títulos.
 2. From de correos sigue en edmundo@growthbuddies.cl (dominio verificado en Resend), con Reply-To edmundo@spohr.cl.
 3. Desconectar Vercel cuando www esté verificado.
@@ -34,9 +35,15 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 
 - 2026-11-01. Etapa 3: /admin no se migró, es interno y no usa output.css. Instrument Serif se mantiene en citas. Terracota aplicada a cifras de 24px o más con porcentaje o tiempo.
 
+- 2026-11-01. Etapa 4: BrokerIA eliminado por pedido de Edmundo: página con 301 a /soluciones, artículo ia-corretaje con 301 a automatizacion-ia-corredoras-propiedades-chile.
+- 2026-11-01. H1 elegido: Herramientas con IA que su equipo realmente usa. Se creó /recursos porque la navegación lo exige.
+- 2026-11-01. Logo SPI fuera del home, porque el caso se presenta anónimo. Se quitó aggregateRating del JSON-LD al salir las reseñas del home. Se quitó HowTo.
+- 2026-11-01. Enlaces de producto apuntan a /soluciones, /servicios/agentes-ia-chatbots-empresas y /metodologia hasta la Etapa 5.
+
 ## Registro de deploys
 | Fecha | Destino | Referencia |
 |---|---|---|
 | 2026-11-01 | Canal stage-1 (expira 2026-12-01) | https://growth-buddies--stage-1-wpiwpcyy.web.app |
 | 2026-11-01 14:16 | Live growth-buddies.web.app | ded03de desde la rama. Release anterior: 2026-04-02 15:05. Rollback: Firebase Console, Hosting, historial de versiones, o redeploy del commit anterior |
 | 2026-11-01 | Live vía GitHub Actions + functions y rules | bddb96b, run 41337759100 |
+| 2026-11-01 | Live vía GitHub Actions + functions | Etapa 4 |
