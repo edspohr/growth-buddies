@@ -193,7 +193,6 @@
   function scoreLead(lead) {
     let s = 0;
     if (lead.gclid || lead.utm_source === "google") s += 20;
-    if (lead.landing_page && lead.landing_page.includes("brokeria")) s += 15;
     if (lead.source === "roi_calculator") s += 25;
     if (lead.source === "web_contact_form" && !lead.partial) s += 40;
     if (lead.message && lead.message.length > 50) s += 10;

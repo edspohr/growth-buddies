@@ -32,7 +32,6 @@ growth-buddies/
 │
 ├── soluciones/
 │   ├── catalogo.html                   # Catálogo completo de Mini Apps
-│   ├── brokeria/                       # BrokerIA — Corretaje Inteligente ✦
 │   ├── automatizacion-legal-emails/    # Triaje Legal (Email AI)
 │   ├── gestion-documental-ip/          # Validación Documental
 │   └── rendicion-gastos-ia/            # Rendición de Gastos IA
@@ -121,7 +120,6 @@ Antes de publicar: `npm run build`, `npm run check -- <url>` y `node scripts/che
 ### Tema visual
 - Fondo base: `#050510` (dark blueish)
 - Acento principal: `#00f6ff` (cyan) — `var(--color-accent)`
-- Acento PropTech/BrokerIA: `amber-400/500`
 - Fuente display: Space Grotesk (headings, badges, nav)
 - Glassmorphism en navbar: `backdrop-blur` + `bg-black/60`
 
@@ -151,7 +149,6 @@ Inicio | Servicios | Soluciones | Blog | Contacto
 ### Footer canónico (4 columnas)
 1. Marca + redes sociales
 2. Servicios
-3. Mini Apps (BrokerIA ✦ en amber como producto estrella)
 4. Explora (Metodología, Equipo, Blog)
 
 ### Links internos
@@ -163,7 +160,6 @@ Inicio | Servicios | Soluciones | Blog | Contacto
 
 | Mini App | Sector | Ruta |
 |----------|--------|------|
-| **BrokerIA** ✦ | PropTech | `/soluciones/brokeria/` |
 | Triaje Legal (Email AI) | Legal Tech | `/soluciones/automatizacion-legal-emails/` |
 | Validación Documental | Legal Tech | `/soluciones/gestion-documental-ip/` |
 | Rendición de Gastos IA | Finance Ops | `/soluciones/rendicion-gastos-ia/` |

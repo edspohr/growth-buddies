@@ -49,7 +49,16 @@
         <img src="/img/logo.webp" alt="Logotipo de Growth Buddies" class="h-8 w-8" height="32" width="32" />
         <span class="font-bold text-lg text-[var(--fg)]">Growth Buddies</span>
       </a>
-      <a href="{{calendly}}" target="_blank" rel="noopener noreferrer" class="hidden md:inline-block bg-[var(--accent-soft)] text-[var(--accent-text)] border border-[var(--accent)] font-semibold text-sm py-2 px-5 rounded-full hover:bg-[var(--accent-soft)] transition-colors">Sesión de calificación</a>
+      <div class="hidden md:flex items-center gap-8">
+          <details class="nav-drop">
+            <summary class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors">Productos</summary>
+            <div class="nav-menu"><a href="/soluciones" class="nav-menu-item"><span>Expense Buddy</span><small>Rendición de gastos para equipos en terreno</small></a><a href="/soluciones" class="nav-menu-item"><span>DocFlow Buddy</span><small>Documentos y casos con IA</small></a><a href="/servicios/agentes-ia-chatbots-empresas" class="nav-menu-item"><span>Agent Buddy</span><small>Asistentes de IA para su sitio y sus procesos</small></a><a href="/metodologia" class="nav-menu-item"><span>Proyecto a medida</span><small>Cuando ningún producto calza</small></a></div>
+          </details>
+          <a href="/casos" class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors">Casos</a>
+          <a href="/recursos" class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors">Recursos</a>
+          <a href="/nosotros" class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors">Nosotros</a>
+          <a href="/#contacto" class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors">Contacto</a>
+        </div><div class="hidden md:block"><a href="{{whatsapp}}?text=Hola%20Growth%20Buddies%2C%20quisiera%20recibir%20una%20propuesta." target="_blank" rel="noopener noreferrer" class="btn-cta btn-sm">Recibir propuesta <span aria-hidden="true">→</span></a></div>
     </div>
   </nav>
 
@@ -114,7 +123,19 @@
     <a href="/" class="hover:text-[var(--fg)] transition-colors">Growth Buddies</a> ·
     <a href="/casos" class="hover:text-[var(--fg)] transition-colors">Casos</a> ·
     <a href="/blog" class="hover:text-[var(--fg)] transition-colors">Blog</a>
-    <p class="mt-2">&copy; 2026 Growth Buddies SpA. Latinoamérica · <a href="/" class="hover:text-[var(--fg)] transition-colors">CL</a> · <a href="/colombia" class="hover:text-[var(--fg)] transition-colors">CO</a> · <a href="/peru" class="hover:text-[var(--fg)] transition-colors">PE</a> · <a href="/ecuador" class="hover:text-[var(--fg)] transition-colors">EC</a></p>
+    <p class="mb-2">También operamos en <a href="/colombia" class="hover:text-[var(--fg)]">Colombia</a>, <a href="/peru" class="hover:text-[var(--fg)]">Perú</a> y <a href="/ecuador" class="hover:text-[var(--fg)]">Ecuador</a>.</p><p class="mt-2">&copy; 2026 Growth Buddies SpA.</p>
   </footer>
-</body>
+<script>
+      (function () {
+        var drop = document.querySelector(".nav-drop");
+        if (!drop) return;
+        document.addEventListener("click", function (event) {
+          if (!drop.contains(event.target)) drop.removeAttribute("open");
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") drop.removeAttribute("open");
+        });
+      })();
+    </script>
+  </body>
 </html>

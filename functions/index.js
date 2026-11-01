@@ -25,15 +25,6 @@ function daysSince(timestamp) {
 
 function interestContent(interest = "") {
   const i = interest.toLowerCase();
-  if (i.includes("broker")) {
-    return {
-      tag: "PropTech / Corretaje",
-      caseStudyTitle: "Cómo una corredora con 15 agentes eliminó el 80% del papeleo con BrokerIA",
-      caseStudyBody: "Antes de BrokerIA, sus agentes pasaban 3 horas diarias actualizando fichas, respondiendo consultas repetitivas y preparando contratos a mano. Hoy ese trabajo lo hace la IA en minutos. El equipo cerró un 40% más de operaciones en el primer trimestre.",
-      caseStudyLink: "https://growthbuddies.cl/soluciones/brokeria/",
-      roiLine: "Agentes inmobiliarios recuperan en promedio 12 horas semanales con BrokerIA.",
-    };
-  }
   if (i.includes("legal") || i.includes("email")) {
     return {
       tag: "Legal Tech",

@@ -228,6 +228,42 @@ h1, h2, h3, h4 {
     border-bottom-color: var(--line);
 }
 
+.nav-drop { position: relative; }
+.nav-drop > summary {
+    cursor: pointer;
+    list-style: none;
+}
+.nav-drop > summary::-webkit-details-marker { display: none; }
+.nav-drop > summary::after {
+    content: " ▾";
+    font-size: 0.75em;
+}
+.nav-menu {
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    left: -1rem;
+    width: 19rem;
+    padding: 0.5rem;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+}
+.nav-menu-item {
+    display: block;
+    padding: 0.625rem 0.75rem;
+    border-radius: 10px;
+    color: var(--fg);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+.nav-menu-item:hover { background: var(--hover); }
+.nav-menu-item small {
+    display: block;
+    color: var(--fg-muted);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
 /* ==============================================
    HERO — clean static background, no animation
 ============================================== */
@@ -306,6 +342,12 @@ h1, h2, h3, h4 {
 }
 .btn-cta:active {
     transform: translateY(0) scale(0.98);
+}
+
+.btn-sm {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.875rem;
+    min-height: 40px;
 }
 
 /* Secondary — ghost outline */
@@ -406,6 +448,43 @@ h1, h2, h3, h4 {
 /* Magnetic button stubs — JS still selects these but no visual effect */
 .magnetic-wrap { display: inline-block; position: relative; z-index: 10; }
 .magnetic-area  { display: none; }
+
+/* Home building blocks */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+}
+.tier {
+    padding: 1.25rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+}
+.door {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+}
+.faq { border-bottom: 1px solid var(--line); }
+.faq summary {
+    padding: 1.25rem 0;
+    font-weight: 600;
+    color: var(--fg);
+}
+.faq p {
+    padding-bottom: 1.25rem;
+    color: var(--fg-soft);
+}
 
 /* ==============================================
    SECTIONS
