@@ -19,7 +19,7 @@ Contact: edmundo@spohr.cl, +56 9 7599 1366.
 
 Growth Buddies SpA is an AI automation diagnostic consulting firm headquartered in Valparaíso, Chile, serving professional services companies across Latin America (Chile, Colombia, Perú, Ecuador).
 
-We are NOT a generic AI agency. Our positioning is that of a **strategic diagnostic consultant**: we analyze your operation first, then tell you exactly what to automate and in what order — with a money-back guarantee.
+We are NOT a generic AI agency. Our positioning is that of a **strategic diagnostic consultant**: we analyze your operation first, then tell you exactly what to automate and in what order.
 
 ## Key Facts
 
@@ -65,7 +65,7 @@ We are NOT a generic AI agency. Our positioning is that of a **strategic diagnos
 
 Only services already live on the site are listed here.
 
-1. **Diagnóstico de Automatización Estratégica** (entry product): 10 to 15 days, working mockup included, 100% creditable to any project within 90 days, refund if fewer than 3 ROI-positive opportunities. See "Key Facts" above for price. URL: https://growthbuddies.cl/#diagnostico
+1. **Diagnóstico de Automatización Estratégica** (entry product): 10 to 15 days, working mockup included, 100% creditable to any project within 90 days. See "Key Facts" above for price. URL: https://growthbuddies.cl/#diagnostico
 
 2. **Legal Tech & Automation**: contract automation (CLM), intelligent email triage, AI document management, real-time reporting. Reference case: SPI Americas (+17% revenue, -60% document time). URL: https://growthbuddies.cl/servicios/legal-tech
 
