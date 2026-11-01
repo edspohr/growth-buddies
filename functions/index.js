@@ -205,11 +205,78 @@ exports.sendReportDelivery = onDocumentCreated(
 
 // ─── 1. Notify Edmundo on every new lead ────────────────────────────────────
 
+// ─── Proposal form: acknowledgment to the lead + internal alert ──────────────
+const LEAD_DETAIL_LABELS = {
+  personas: "Personas que rinden",
+  sin_senal: "Zonas sin señal",
+  herramienta: "Herramienta actual",
+  casos_mes: "Casos por mes",
+  recepcion_documentos: "Recepción de documentos",
+  sitio_web: "Sitio web",
+  canales: "Canales",
+  interes: "Interés",
+  problema: "Problema",
+};
+
+async function notifyProposalLead(lead, leadId) {
+  const isCustom = lead.product === "proyecto-a-medida";
+  const promise = isCustom
+    ? "Le responde el director en menos de 24 horas hábiles."
+    : "Le enviaremos una propuesta preliminar en menos de 24 horas hábiles.";
+  const ackBody = `
+    <p style="font-size:16px;line-height:1.7;margin:0 0 16px;">Hola ${escapeHtml(lead.name)}, recibimos su solicitud sobre ${escapeHtml(lead.interest)}.</p>
+    <p style="font-size:16px;line-height:1.7;margin:0;">${promise}</p>`;
+
+  const details = Object.entries(lead.details || {}).map(([key, value]) => [LEAD_DETAIL_LABELS[key] || key, value]);
+  const rows = [
+    ["Nombre", lead.name],
+    ["Correo", lead.email],
+    ["Empresa", lead.empresa],
+    ["Cargo", lead.cargo],
+    ["Teléfono", lead.telefono],
+    ["Producto", lead.interest],
+    ...details,
+    ["Página", lead.landing_page],
+    ["Referente", lead.referrer],
+    ["UTM", [lead.utm_source, lead.utm_medium, lead.utm_campaign, lead.utm_term, lead.utm_content].filter(Boolean).join(" / ")],
+    ["Google Click ID", lead.gclid],
+  ]
+    .filter(([, value]) => value)
+    .map(([label, value]) => `<tr><td style="padding:10px 0;color:#64748b;font-size:13px;width:150px;vertical-align:top;">${label}</td><td style="padding:10px 0;word-break:break-word;">${escapeHtml(value)}</td></tr>`)
+    .join("");
+
+  const client = resend();
+  const results = await Promise.all([
+    client.emails.send({
+      from: "Edmundo Spohr — Growth Buddies <edmundo@growthbuddies.cl>",
+      replyTo: "edmundo@spohr.cl",
+      to: [lead.email],
+      subject: "Recibimos su solicitud",
+      html: emailWrapper("linear-gradient(135deg,#050510,#0d1a2e)", "#00f6ff", lead.interest, "Recibimos su solicitud", ackBody),
+    }),
+    client.emails.send({
+      from: "Growth Buddies CRM <crm@growthbuddies.cl>",
+      to: (process.env.LEAD_ALERT_TO || "edmundo@spohr.cl").split(",").map((address) => address.trim()),
+      replyTo: lead.email,
+      subject: `Propuesta 24h: ${lead.interest} — ${lead.empresa}`,
+      html: emailWrapper("#00f6ff", "#050510", "Propuesta en 24 horas hábiles", `Nuevo lead de ${escapeHtml(lead.empresa)}`, `<table style="width:100%;border-collapse:collapse;">${rows}</table><p style="margin-top:12px;font-size:11px;color:#334155;text-align:center;">Lead ID: ${leadId}</p>`),
+    }),
+  ]);
+  const failed = results.find((result) => result.error);
+  if (failed) throw new Error(`[notifyProposalLead] ${JSON.stringify(failed.error)}`);
+  console.log(`[notifyProposalLead] sent for ${leadId}`);
+}
+
 exports.notifyNewLead = onDocumentCreated(
   { document: "leads/{leadId}", secrets: [resendApiKey] },
   async (event) => {
     const lead = event.data.data();
     const leadId = event.params.leadId;
+
+    if (lead.source === "proposal_form") {
+      await notifyProposalLead(lead, leadId);
+      return;
+    }
 
     const waMsg = `Hola ${lead.name || ""}! Vi tu consulta sobre ${lead.interest || "automatización IA"}. ¿Tienes 15 minutos esta semana para conversar?`;
     const whatsappLink = `https://wa.me/56975991366?text=${encodeURIComponent(waMsg)}`;
@@ -454,6 +521,7 @@ exports.sendFollowupSequence = onSchedule(
     // ── Contact leads nurturing ───────────────────────────────────────────────
     for (const doc of snapshot.docs) {
       const lead = doc.data();
+      if (lead.source === "proposal_form") continue;
       const id = doc.id;
       if (!lead.email) continue;
 
@@ -541,6 +609,7 @@ exports.sendFollowupSequence = onSchedule(
 );
 
 // ─── 4. Quiz lead — instant PDF report + CRM alert ──────────────────────────
+exports.submitLead = require('./submitLead').submitLead;
 exports.sendQuizReport = require('./sendQuizReport').sendQuizReport;
 
 // ─── 5. Quiz lead — single day-7 follow-up ──────────────────────────────────

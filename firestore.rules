@@ -30,7 +30,7 @@ service cloud.firestore {
       return !('device' in data) || data.device in ['mobile', 'desktop'];
     }
 
-    // No form writes these two today; Stage 6 reopens leads for the new form.
+    // Leads arrive through the submitLead function, never from the browser.
     match /leads/{id} {
       allow create: if false;
       allow read, update, delete: if request.auth != null;
