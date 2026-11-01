@@ -209,7 +209,7 @@
       </div>
     </div>
 
-    <!-- Featured Post: PropTech -->
+
     <section class="px-6 pb-12">
       <div class="max-w-7xl mx-auto">
         <div class="mb-6 flex items-center gap-3">
@@ -241,12 +241,6 @@
             aria-selected="false"
             class="blog-filter-btn text-sm font-medium px-4 py-2 rounded-full border transition-all duration-200 border-[var(--line)] text-[var(--fg-muted)] hover:border-[var(--accent)] hover:text-[var(--accent-text)]"
           >Inteligencia Artificial</button>
-          <button
-            role="tab"
-            data-filter="proptech"
-            aria-selected="false"
-            class="blog-filter-btn text-sm font-medium px-4 py-2 rounded-full border transition-all duration-200 border-[var(--line)] text-[var(--fg-muted)] hover:border-[var(--accent)] hover:text-[var(--accent-text)]"
-          >PropTech</button>
         </div>
       </div>
     </section>
@@ -256,6 +250,14 @@
       <div id="articles-grid" class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
 
         <!-- Article 1: Contracts — Legal Tech -->
+        <article data-category="ia" class="group relative bg-[var(--bg)] border border-[var(--line)] rounded-2xl overflow-hidden hover:border-[var(--accent)] transition-all duration-300">
+          <div class="p-6">
+            <p class="eyebrow">Guía práctica</p>
+            <h2 class="text-xl font-semibold mb-3"><a href="/blog/control-de-gastos-equipos-en-terreno" class="before:absolute before:inset-0">Control de gastos de equipos en terreno: guía práctica</a></h2>
+            <p class="text-[var(--fg-soft)] text-sm">Cinco decisiones que ordenan los gastos de quienes trabajan fuera de la oficina.</p>
+          </div>
+        </article>
+
         <article data-category="legal-tech" class="group relative bg-[var(--bg)] border border-[var(--line)] rounded-2xl overflow-hidden hover:border-[var(--accent)] transition-all duration-300">
             <div class="absolute inset-0 bg-gradient-to-b from-[var(--accent)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
 
@@ -413,7 +415,7 @@
           Suscríbete a nuestros Insights
         </h2>
         <p class="text-[var(--fg-muted)] text-sm mb-8">
-          Recibe artículos sobre IA, Legal Tech y PropTech directamente. Sin spam, solo contenido de valor.
+          Recibe artículos sobre IA y automatización directamente. Sin spam, solo contenido de valor.
         </p>
         <form id="subscribe-form" class="flex flex-col sm:flex-row gap-3 justify-center" novalidate>
           <label for="subscribe-email" class="sr-only">Tu correo electrónico</label>

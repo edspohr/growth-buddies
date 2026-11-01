@@ -13,7 +13,7 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 | 5 Páginas de producto | Completa; capturas DocFlow esperan aprobación |
 | 6 Formulario | Completa |
 | 7 Landing Expense Buddy | Completa |
-| 8 | Pendiente |
+| 8 Nicho y QA | Completa |
 
 ## Decisiones
 - 2026-11-01. Git se colgaba porque iCloud evictó 2.344 archivos de .git, incluido el pack principal. Se clonó en ~/dev/growth-buddies. La carpeta original queda intacta porque conserva ramas locales que no están en GitHub.
@@ -50,6 +50,8 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 - 2026-11-01. Etapa 6: el formulario usa la función submitLead en /api/lead, no escribe directo en Firestore: las reglas no pueden limitar por IP. leads sigue cerrada al público. Límite 5 envíos por hora por IP. Destinatarios de alerta en LEAD_ALERT_TO, por defecto edmundo@spohr.cl.
 
 - 2026-11-01. Etapa 7: en repo spi-smart-expense, COP y TRM pasaron a BASE_CURRENCY y FX_RATE_LABEL; el tenant SPI conserva COP y TRM. Se cambió también "RUT validado", la promesa de compartir foto y "miles de empresas".
+
+- 2026-11-01. Etapa 8: se quitó la promesa de devolución del diagnóstico en todo el sitio, incluido JSON-LD. Sesión de devolución (reunión de entrega) se mantiene. Quedó el texto de garantía de adopción para decisión de Edmundo.
 
 ## Registro de deploys
 | Fecha | Destino | Referencia |

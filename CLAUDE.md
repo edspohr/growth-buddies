@@ -14,24 +14,37 @@ npm run build
 # Watch mode — recompile CSS on file changes during development
 npm run watch
 
-# Local dev server (no build step required for HTML/JS)
-python3 -m http.server 8080
+# Local preview of the build (pages use {{calendly}}, {{whatsapp}} and {{form}} placeholders)
+npm run build && python3 -m http.server 8080 -d public
 ```
 
-There are no linting or testing tools. This is a static site with CSS preprocessing only.
+Tests and checks:
+
+```bash
+npm run test:rules                                # Firestore rules (needs openjdk@21 in PATH)
+npm run test:lead                                 # submitLead on the emulators
+npm run build && npm run sitemap && npm run build # regenerate sitemap.xml from the build
+npm run check -- <url>                            # sitemap, redirects, canonicals, links, forbidden text
+node scripts/checks/contrast.mjs <url>            # WCAG AA on every page
+node scripts/checks/lighthouse.mjs <url> / /expense-buddy
+```
+
+All of them must pass before a live deploy.
 
 ## Architecture
 
 Static HTML5 site for a Chilean AI automation consulting firm. No JavaScript framework — pages are self-contained semantic HTML with vanilla JS for interactivity.
 
-**Positioning:** Growth Buddies is positioned as a **strategic diagnostic consultant**, not an implementation agency. The primary CTA everywhere is "Agendar conversación con el director" or "Evaluar si califica". The main paid product is the Diagnóstico de Automatización Estratégica (CLP $490.000 + IVA in Chile, USD 500 for the rest of LATAM, delivered in 10 to 15 days). Includes a working mockup. 100% of the value is creditable to any project contracted within 90 days; full refund if fewer than 3 opportunities with positive ROI are identified. Avoid language like "auditoría gratuita" or "Automatizamos lo aburrido" (these belong to the old positioning).
+**Positioning:** Growth Buddies builds and implements operational tools with AI and leads with packaged products: Expense Buddy, DocFlow Buddy, Agent Buddy (Web and a medida). Custom work is the discreet fifth door: Proyecto a medida, a paid diagnostic of CLP 490.000 + IVA, 100% creditable within 90 days. The primary CTA is "Recibir propuesta en 24 horas hábiles", which goes to the form. Never promise a money-back guarantee, scarcity, payment through WhatsApp, SII validation, ERP integration, WhatsApp capture, electronic signature, "datos alojados en Chile" or "tipo de cambio oficial". Copy is Spanish (Chile), formal "usted", no em dashes. Never invent clients, numbers, logos or features.
 
 **CSS pipeline:** `src/input.css` → Tailwind CLI → `public/dist/output.css` (`npm run watch` writes `dist/output.css` for local work). Semantic color tokens live in `src/input.css` and flip inside `.band-dark`; see `docs/design-system.md`. Fonts are Geist and Inter. Never use raw colors in pages.
 
 **URL structure (clean URLs via Firebase Hosting):**
 
-- `/servicios/<slug>/` — 6 service landing pages
-- `/soluciones/<slug>/` — 5 product/Mini App pages (exception: `catalogo.html` uses `.html` with anchor navigation)
+- `/expense-buddy`, `/docflow-buddy`, `/agent-buddy`, `/proyecto-a-medida` — product pages, with sector pages under `/expense-buddy/<slug>` and `/docflow-buddy/<slug>`
+- `/servicios/<slug>/` — service pages
+- `/soluciones` — implementation examples
+- `/recursos/<slug>` — resources, including the quiz at `/recursos/diagnostico-rapido`
 - `/blog/<slug>/` — articles
 - `/metodologia/<slug>/` — 4-phase engagement process pages
 - `/equipo/<slug>/` — team bios
@@ -42,7 +55,7 @@ Static HTML5 site for a Chilean AI automation consulting firm. No JavaScript fra
 - Mobile menu toggle, sticky CTA bar (IntersectionObserver), UTM attribution capture (sessionStorage)
 - Calendly embed loads only on desktop via `matchMedia('(min-width: 768px)')`
 - All WhatsApp CTAs tracked with GA4 events; Microsoft Clarity also active
-- **index.html has no contact form** — the contacto section uses direct Calendly/WhatsApp CTAs only. No Firebase JS on the homepage.
+- **Lead form:** `src/lead-form.html` is injected by the build wherever a page has `<!-- lead-form -->` inside a `.lead-card[data-product]`. It posts to `/api/lead`.
 
 **Accessibility conventions every page must follow:**
 
@@ -69,7 +82,8 @@ firebase emulators:start --only functions  # local dev / testing
 
 **Firestore collections and their triggers:**
 
-- `leads/{leadId}` — main contact form leads; triggers `sendDay0Confirmation` on update, `sendFollowupSequence` (scheduled daily) sends days 1/3/7 follow-ups
+- `leads/{leadId}` — written only by `submitLead` (source `proposal_form`), never from the browser; triggers `notifyNewLead`. These leads stay out of `sendFollowupSequence`
+- `lead_limits/{hash}` — per-IP rate limit, server only
 - `guide_leads/{leadId}` — guide download leads; triggers `sendGuideDelivery` (instant guide email + CRM alert); scheduled follow-ups on days 2/5/10
 - `report_leads/{leadId}` — report requests; triggers `sendReportDelivery` (web report link + CRM alert)
 - `calculator_leads/{leadId}` — ROI calculator leads; triggers `notifyCalcLead` (CRM alert only, no drip)
@@ -79,9 +93,14 @@ firebase emulators:start --only functions  # local dev / testing
 |--------|---------|---------|
 | `sendGuideDelivery` | `guide_leads` created | Deliver guide PDF link + notify Edmundo |
 | `sendReportDelivery` | `report_leads` created | Send web report link + notify Edmundo |
-| `notifyNewLead` | `leads` created | CRM alert email to Edmundo |
+| `submitLead` | HTTP, `/api/lead` | Validate, honeypot, 5 per hour per IP, write to `leads` |
+| `notifyNewLead` | `leads` created | Acknowledgment to the lead and alert to `LEAD_ALERT_TO` (default edmundo@spohr.cl) |
 | `notifyCalcLead` | `calculator_leads` created | CRM alert for ROI calc submissions |
 | `sendDay0Confirmation` | `leads` updated | Confirmation email when lead qualifies (step 2) |
 | `sendFollowupSequence` | Scheduled (daily) | Drip sequence for both `leads` and `guide_leads` |
 
 Email sender addresses: `edmundo@growthbuddies.cl` (From on the verified Resend domain, Reply-To `edmundo@spohr.cl`), `crm@growthbuddies.cl` (CRM alerts to `edmundo@spohr.cl`).
+
+## Redesign records
+
+`docs/redesign/PROGRESS.md` holds decisions and the deploy log. `docs/redesign/pendientes.md` holds what Edmundo must do. Expense Buddy screenshots come from `scripts/screenshots/expense-buddy.mjs`; DocFlow screenshots use local emulators only and stay unpublished until approved.
