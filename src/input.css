@@ -536,6 +536,29 @@ h1, h2, h3, h4 {
     color: var(--fg-soft);
 }
 
+/* Proposal form */
+.lead-card {
+    max-width: 44rem;
+    margin: 2rem auto 0;
+    padding: 2rem;
+    text-align: left;
+    color: var(--fg);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+}
+.lead-fax {
+    position: absolute;
+    left: -9999px;
+}
+.lead-form fieldset { border: 0; padding: 0; }
+.lead-form fieldset[hidden] { display: none; }
+.lead-error {
+    margin-top: 1rem;
+    color: var(--danger);
+    font-size: 0.9375rem;
+}
+
 /* ==============================================
    SECTIONS
 ============================================== */

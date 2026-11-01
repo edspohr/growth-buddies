@@ -1,0 +1,171 @@
+<form class="lead-form" data-lead-form novalidate>
+  <div class="grid sm:grid-cols-2 gap-4">
+    <div>
+      <label class="gemini-input-label" for="lead-nombre">Nombre</label>
+      <input class="gemini-input" id="lead-nombre" name="nombre" autocomplete="name" maxlength="120" required />
+    </div>
+    <div>
+      <label class="gemini-input-label" for="lead-correo">Correo corporativo</label>
+      <input class="gemini-input" id="lead-correo" name="correo" type="email" autocomplete="email" maxlength="254" required />
+    </div>
+    <div>
+      <label class="gemini-input-label" for="lead-empresa">Empresa</label>
+      <input class="gemini-input" id="lead-empresa" name="empresa" autocomplete="organization" maxlength="160" required />
+    </div>
+    <div>
+      <label class="gemini-input-label" for="lead-cargo">Cargo</label>
+      <input class="gemini-input" id="lead-cargo" name="cargo" autocomplete="organization-title" maxlength="120" required />
+    </div>
+    <div>
+      <label class="gemini-input-label" for="lead-telefono">Teléfono (opcional)</label>
+      <input class="gemini-input" id="lead-telefono" name="telefono" type="tel" autocomplete="tel" maxlength="40" />
+    </div>
+    <div>
+      <label class="gemini-input-label" for="lead-producto">Producto</label>
+      <select class="gemini-select" id="lead-producto" name="producto" required>
+        <option value="">Seleccione</option>
+        <option value="expense-buddy">Expense Buddy</option>
+        <option value="docflow-buddy">DocFlow Buddy</option>
+        <option value="agent-buddy">Agent Buddy</option>
+        <option value="proyecto-a-medida">Proyecto a medida</option>
+      </select>
+    </div>
+  </div>
+
+  <fieldset class="grid sm:grid-cols-2 gap-4 mt-4" data-qualifiers="expense-buddy" hidden>
+    <div>
+      <label class="gemini-input-label" for="lead-personas">Personas que rinden gastos</label>
+      <select class="gemini-select" id="lead-personas" name="personas" required>
+        <option value="">Seleccione</option><option>1 a 10</option><option>11 a 50</option><option>51 a 200</option><option>Más de 200</option>
+      </select>
+    </div>
+    <div>
+      <label class="gemini-input-label" for="lead-sin-senal">¿Operan en zonas sin señal?</label>
+      <select class="gemini-select" id="lead-sin-senal" name="sin_senal" required>
+        <option value="">Seleccione</option><option>Sí</option><option>No</option><option>A veces</option>
+      </select>
+    </div>
+    <div>
+      <label class="gemini-input-label" for="lead-herramienta">Herramienta actual</label>
+      <select class="gemini-select" id="lead-herramienta" name="herramienta" required>
+        <option value="">Seleccione</option><option>Ninguna</option><option>Planilla</option><option>Otra plataforma</option>
+      </select>
+    </div>
+  </fieldset>
+
+  <fieldset class="grid gap-4 mt-4" data-qualifiers="docflow-buddy" hidden>
+    <div>
+      <label class="gemini-input-label" for="lead-casos">Casos o trámites activos por mes</label>
+      <select class="gemini-select" id="lead-casos" name="casos_mes" required>
+        <option value="">Seleccione</option><option>Menos de 20</option><option>20 a 100</option><option>101 a 500</option><option>Más de 500</option>
+      </select>
+    </div>
+    <div>
+      <label class="gemini-input-label" for="lead-recepcion">¿Cómo reciben hoy los documentos de sus clientes?</label>
+      <input class="gemini-input" id="lead-recepcion" name="recepcion_documentos" maxlength="500" required />
+    </div>
+  </fieldset>
+
+  <fieldset class="grid sm:grid-cols-2 gap-4 mt-4" data-qualifiers="agent-buddy" hidden>
+    <div>
+      <label class="gemini-input-label" for="lead-sitio">Sitio web</label>
+      <input class="gemini-input" id="lead-sitio" name="sitio_web" inputmode="url" maxlength="300" required />
+    </div>
+    <div>
+      <label class="gemini-input-label" for="lead-canales">Canales de atención actuales</label>
+      <input class="gemini-input" id="lead-canales" name="canales" maxlength="300" required />
+    </div>
+    <div>
+      <label class="gemini-input-label" for="lead-interes">Interés</label>
+      <select class="gemini-select" id="lead-interes" name="interes" required>
+        <option value="">Seleccione</option><option>Web</option><option>A medida</option>
+      </select>
+    </div>
+  </fieldset>
+
+  <fieldset class="grid gap-4 mt-4" data-qualifiers="proyecto-a-medida" hidden>
+    <div>
+      <label class="gemini-input-label" for="lead-problema">Describa el problema</label>
+      <textarea class="gemini-input" id="lead-problema" name="problema" rows="4" maxlength="2000" required></textarea>
+    </div>
+  </fieldset>
+
+  <div class="lead-fax" aria-hidden="true">
+    <label for="lead-fax">No completar</label>
+    <input id="lead-fax" name="fax" tabindex="-1" autocomplete="off" />
+  </div>
+
+  <p class="lead-error" data-lead-error role="alert" hidden></p>
+  <button type="submit" class="btn-cta w-full mt-6">Recibir propuesta <span aria-hidden="true">→</span></button>
+</form>
+<div class="lead-success" data-lead-success role="status" tabindex="-1" hidden>
+  <h3 class="text-xl mb-2">Recibimos sus datos</h3>
+  <p class="text-[var(--fg-soft)]">Le escribiremos en menos de 24 horas hábiles.</p>
+</div>
+<script>
+  (function () {
+    var form = document.querySelector("[data-lead-form]");
+    if (!form) return;
+    var preset = form.parentElement.getAttribute("data-product");
+    var select = form.elements.producto;
+    var groups = form.querySelectorAll("[data-qualifiers]");
+    var error = form.parentElement.querySelector("[data-lead-error]");
+    var success = form.parentElement.querySelector("[data-lead-success]");
+    var ATTRIBUTION = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid"];
+
+    var params = new URLSearchParams(location.search);
+    ATTRIBUTION.forEach(function (key) {
+      if (params.get(key)) sessionStorage.setItem(key, params.get(key));
+    });
+
+    function showGroup() {
+      groups.forEach(function (group) {
+        var active = group.getAttribute("data-qualifiers") === select.value;
+        group.hidden = !active;
+        group.disabled = !active;
+      });
+    }
+    select.value = preset || "";
+    select.addEventListener("change", showGroup);
+    showGroup();
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      error.hidden = true;
+      if (!form.reportValidity()) return;
+
+      var data = Object.fromEntries(new FormData(form).entries());
+      data.landing_page = sessionStorage.getItem("landing_page") || location.href;
+      data.referrer = sessionStorage.getItem("referrer") || document.referrer;
+      ATTRIBUTION.forEach(function (key) {
+        var value = sessionStorage.getItem(key);
+        if (value) data[key] = value;
+      });
+
+      var button = form.querySelector("[type=submit]");
+      button.disabled = true;
+      fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      })
+        .then(function (response) {
+          if (!response.ok) throw new Error(response.status);
+          form.hidden = true;
+          success.hidden = false;
+          success.focus();
+          if (typeof gtag !== "undefined") {
+            gtag("event", "generate_lead", { product: data.producto });
+            gtag("event", "conversion", { send_to: "AW-18025247905/Lv0ZCOWRk4scEKHpjZND" });
+          }
+        })
+        .catch(function (failure) {
+          error.textContent = failure.message === "429"
+            ? "Recibimos varios envíos desde su conexión. Intente más tarde o escríbanos a edmundo@spohr.cl."
+            : "No pudimos enviar sus datos. Revíselos o escríbanos a edmundo@spohr.cl.";
+          error.hidden = false;
+          button.disabled = false;
+        });
+    });
+  })();
+</script>

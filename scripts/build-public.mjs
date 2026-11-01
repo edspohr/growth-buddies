@@ -68,10 +68,13 @@ for (const dir of DIRECTORIES) {
 
 // CTA destinations live in one file; source pages use {{calendly}} and {{whatsapp}}.
 const cta = JSON.parse(readFileSync(path.join(ROOT, "src/cta.config.json"), "utf8"));
+const leadForm = readFileSync(path.join(ROOT, "src/lead-form.html"), "utf8");
 const pages = readdirSync(OUT, { recursive: true }).filter((file) => file.endsWith(".html"));
 for (const page of pages) {
   const file = path.join(OUT, page);
-  const html = readFileSync(file, "utf8").replace(/\{\{(\w+)\}\}/g, (match, key) => cta[key] ?? match);
+  const html = readFileSync(file, "utf8")
+    .replace(/<!-- lead-form -->/g, leadForm)
+    .replace(/\{\{(\w+)\}\}/g, (match, key) => cta[key] ?? match);
   writeFileSync(file, html);
 }
 

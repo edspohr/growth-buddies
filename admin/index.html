@@ -195,6 +195,7 @@
     if (lead.gclid || lead.utm_source === "google") s += 20;
     if (lead.source === "roi_calculator") s += 25;
     if (lead.source === "web_contact_form" && !lead.partial) s += 40;
+    if (lead.source === "proposal_form") s += 40;
     if (lead.message && lead.message.length > 50) s += 10;
     if (lead.email && !["gmail","hotmail","yahoo","outlook","icloud","live"].some(d => lead.email.includes(d))) s += 15;
     if (lead.source === "roi_calculator" && lead.annual_savings_usd > 50000) s += 15;

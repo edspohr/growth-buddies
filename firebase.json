@@ -125,6 +125,15 @@
         "destination": "/agent-buddy",
         "type": 301
       }
+    ],
+    "rewrites": [
+      {
+        "source": "/api/lead",
+        "function": {
+          "functionId": "submitLead",
+          "region": "us-central1"
+        }
+      }
     ]
   },
   "emulators": {
@@ -133,6 +142,9 @@
     },
     "ui": {
       "enabled": false
+    },
+    "functions": {
+      "port": 5001
     }
   }
 }

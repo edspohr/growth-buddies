@@ -19,6 +19,7 @@ module.exports = {
     "./ecuador/**/*.{html,js}",
     "./preguntas-frecuentes/**/*.{html,js}",
     "./404.html",
+    "./src/lead-form.html",
     "./expense-buddy/**/*.html",
     "./docflow-buddy/**/*.html",
     "./agent-buddy/**/*.html",
