@@ -536,6 +536,29 @@ h1, h2, h3, h4 {
     color: var(--fg-soft);
 }
 
+/* Long-form niche pages */
+.article-body {
+    max-width: 46rem;
+    margin: 0 auto;
+    color: var(--fg-soft);
+}
+.article-body h2 {
+    margin: 2.5rem 0 1rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.2;
+    color: var(--fg);
+}
+.article-body p { margin-bottom: 1.25rem; }
+.article-body ul { list-style: disc; padding-left: 1.25rem; }
+.article-body li { margin-bottom: 0.5rem; }
+.article-body p a,
+.article-body li a {
+    color: var(--accent-text);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
 /* Proposal form */
 .lead-card {
     max-width: 44rem;

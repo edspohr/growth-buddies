@@ -5,6 +5,8 @@
 
 ## Products
 
+Sector guides: https://growthbuddies.cl/expense-buddy/mineria-y-faena, https://growthbuddies.cl/expense-buddy/constructoras-epc, https://growthbuddies.cl/docflow-buddy/estudios-juridicos, https://growthbuddies.cl/blog/control-de-gastos-equipos-en-terreno
+
 - **Expense Buddy** (https://growthbuddies.cl/expense-buddy): expense reporting for companies with field teams, with offline capture. From 45 UF + VAT. Open demo: https://expense-buddy-demo.web.app
 - **DocFlow Buddy** (https://growthbuddies.cl/docflow-buddy): document and case management with AI for law firms and document-heavy service companies. From 60 UF + VAT.
 - **Agent Buddy Web** (https://growthbuddies.cl/agent-buddy): AI assistant on the client's website, trained on their real processes, live in under a month. From 20 UF + VAT.

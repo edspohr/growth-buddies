@@ -12,3 +12,6 @@ Solo cosas que dependen de usted. Lo resuelto se borra de esta lista.
 9. **Lead de prueba.** Confirmar que llegaron dos correos (acuse y alerta) del lead "Prueba Claude Etapa 6", y borrarlo del panel si no quiere verlo.
 10. **GA4.** En `G-TJRCBKJKFX`, marcar `generate_lead` como evento clave. También `demo_start` si lo quiere medir como conversión.
 11. **Alertas.** Avisar si las alertas de leads deben llegar a otras direcciones además de `edmundo@spohr.cl`.
+12. **Garantía de adopción.** `/servicios/gestion-del-cambio`, un artículo y otras páginas dicen "si su equipo no adopta, no paga". Quité la devolución del diagnóstico, pero esta promesa es distinta: confirmar si se mantiene.
+13. **Precio en USD.** Las páginas de país y otras siguen mostrando USD 500 para el resto de LATAM. Confirmar si sigue vigente.
+14. **Newsletter del blog.** Confirmar si el formulario de suscripción debe seguir; no se revisó en esta etapa.
