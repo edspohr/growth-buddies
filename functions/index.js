@@ -221,8 +221,8 @@ const LEAD_DETAIL_LABELS = {
 async function notifyProposalLead(lead, leadId) {
   const isCustom = lead.product === "proyecto-a-medida";
   const promise = isCustom
-    ? "Le responde el director en menos de 24 horas hábiles."
-    : "Le enviaremos una propuesta preliminar en menos de 24 horas hábiles.";
+    ? "Le responde el director en menos de 24 horas."
+    : "Le enviaremos una propuesta preliminar en menos de 24 horas.";
   const ackBody = `
     <p style="font-size:16px;line-height:1.7;margin:0 0 16px;">Hola ${escapeHtml(lead.name)}, recibimos su solicitud sobre ${escapeHtml(lead.interest)}.</p>
     <p style="font-size:16px;line-height:1.7;margin:0;">${promise}</p>`;
@@ -259,7 +259,7 @@ async function notifyProposalLead(lead, leadId) {
       to: (process.env.LEAD_ALERT_TO || "edmundo@spohr.cl").split(",").map((address) => address.trim()),
       replyTo: lead.email,
       subject: `Propuesta 24h: ${lead.interest} — ${lead.empresa}`,
-      html: emailWrapper("#00f6ff", "#050510", "Propuesta en 24 horas hábiles", `Nuevo lead de ${escapeHtml(lead.empresa)}`, `<table style="width:100%;border-collapse:collapse;">${rows}</table><p style="margin-top:12px;font-size:11px;color:#334155;text-align:center;">Lead ID: ${leadId}</p>`),
+      html: emailWrapper("#00f6ff", "#050510", "Propuesta en 24 horas", `Nuevo lead de ${escapeHtml(lead.empresa)}`, `<table style="width:100%;border-collapse:collapse;">${rows}</table><p style="margin-top:12px;font-size:11px;color:#334155;text-align:center;">Lead ID: ${leadId}</p>`),
     }),
   ]);
   const failed = results.find((result) => result.error);
