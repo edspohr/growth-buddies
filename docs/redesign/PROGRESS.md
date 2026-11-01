@@ -65,3 +65,4 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 | 2026-11-01 | Live expense-buddy-demo, solo hosting | Etapa 7; release anterior 2026-10-26 |
 | 2026-11-01 | Live vía GitHub Actions | Etapa 8, a907d51 |
 | 2026-11-01 | Live vía GitHub Actions | Hero y responsive, 6e1cd88 |
+| 2026-11-01 | Live + notifyNewLead + demo | Promesa de 24 horas sin "hábiles" |
