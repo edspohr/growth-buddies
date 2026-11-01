@@ -69,3 +69,4 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 | 2026-11-01 | Live vía GitHub Actions | Hero y responsive, 6e1cd88 |
 | 2026-11-01 | Live + notifyNewLead + demo | Promesa de 24 horas sin "hábiles" |
 | 2026-11-01 | Live vía GitHub Actions | CSS versionado y logos de clientes |
+| 2026-11-01 | Live vía GitHub Actions | +500 personas y llms.txt sin garantía |
