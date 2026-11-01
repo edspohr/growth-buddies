@@ -172,63 +172,62 @@
     </script>
 
     <style>
-      :root{--color-accent:#0097B2;--color-dark:#0a0a0a}
       *,::before,::after{box-sizing:border-box}
-      body{font-family:"Inter",sans-serif;background-color: var(--bg, #0B0B0F);color: var(--fg, #ECECEF);overflow-x:hidden;margin:0}
-      .glass-nav{background:rgba(11,11,15,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}
-      .font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Space Grotesk",system-ui,sans-serif}.font-heading{font-family:"Geist","system-ui",sans-serif}
-      .term-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.07);border-radius:1rem;padding:1.5rem;transition:border-color .3s}
+      body{font-family:"Inter",sans-serif;background-color: var(--bg, #FFFFFF);color: var(--fg, #1A1A2E);overflow-x:hidden;margin:0}
+      .glass-nav{background:var(--bg, #FFFFFF);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+      .font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Inter",system-ui,sans-serif}.font-heading{font-family:"Geist","system-ui",sans-serif}
+      .term-card{background:var(--hover);border:1px solid var(--hover);border-radius:1rem;padding:1.5rem;transition:border-color .3s}
       .term-card:hover{border-color:rgba(0,151,178,.4)}
       .term-card:target{border-color:rgba(0,151,178,.6);background:rgba(0,151,178,.06)}
     </style>
     <link rel="preload" href="/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
   </head>
-  <body class="antialiased selection:bg-[var(--accent)] selection:text-white">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--accent)] focus:text-white focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
+  <body class="antialiased selection:bg-[var(--accent)] selection:text-[var(--on-accent)]">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--accent)] focus:text-[var(--fg)] focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
 
     <!-- Nav -->
     <nav class="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
       <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <a href="/" class="flex items-center gap-2 group">
           <img src="/img/logo.webp" alt="Logotipo de Growth Buddies" class="h-8 w-8 opacity-90 group-hover:opacity-100 transition-opacity" height="32" width="32" />
-          <span class="font-bold text-lg tracking-tight text-white group-hover:text-[var(--accent)] transition-colors">Growth Buddies</span>
+          <span class="font-bold text-lg tracking-tight text-[var(--fg)] group-hover:text-[var(--accent-text)] transition-colors">Growth Buddies</span>
         </a>
         <div class="hidden md:flex items-center gap-8">
-          <a href="/servicios" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Servicios</a>
-          <a href="/casos" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Casos</a>
-          <a href="/blog" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Blog</a>
-          <a href="/nosotros" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Nosotros</a>
-          <a href="/#contacto" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Contacto</a>
+          <a href="/servicios" class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors">Servicios</a>
+          <a href="/casos" class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors">Casos</a>
+          <a href="/blog" class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors">Blog</a>
+          <a href="/nosotros" class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors">Nosotros</a>
+          <a href="/#contacto" class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors">Contacto</a>
         </div>
         <div class="hidden md:block">
-          <a href="{{calendly}}" target="_blank" rel="noopener noreferrer" class="bg-[var(--accent)]/10 hover:bg-[var(--accent)]/20 text-[var(--accent)] hover:text-white border border-[var(--accent)]/30 hover:border-[var(--accent)] font-semibold text-sm py-2 px-5 rounded-full transition-all duration-300">
+          <a href="{{calendly}}" target="_blank" rel="noopener noreferrer" class="bg-[var(--accent-soft)] hover:bg-[var(--accent-soft)] text-[var(--accent-text)] hover:text-[var(--fg)] border border-[var(--accent)] hover:border-[var(--accent)] font-semibold text-sm py-2 px-5 rounded-full transition-all duration-300">
             Agendar conversación
           </a>
         </div>
-        <button id="mobile-menu-btn" aria-expanded="false" aria-label="Abrir menú" class="md:hidden flex flex-col justify-center items-center w-11 h-11 gap-[6px] rounded-lg hover:bg-white/10 transition-colors">
-          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
-          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
-          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
+        <button id="mobile-menu-btn" aria-expanded="false" aria-label="Abrir menú" class="md:hidden flex flex-col justify-center items-center w-11 h-11 gap-[6px] rounded-lg hover:bg-[var(--hover)] transition-colors">
+          <span class="block w-6 h-0.5 bg-[var(--fg)] rounded-full"></span>
+          <span class="block w-6 h-0.5 bg-[var(--fg)] rounded-full"></span>
+          <span class="block w-6 h-0.5 bg-[var(--fg)] rounded-full"></span>
         </button>
       </div>
     </nav>
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" style="display:none;" class="fixed inset-0 z-[200] flex-col" aria-hidden="true">
-      <div class="absolute inset-0 bg-[var(--bg)]/95"></div>
+      <div class="absolute inset-0 bg-[var(--bg)]"></div>
       <div class="relative flex flex-col h-full px-6 py-6 overflow-y-auto">
         <div class="flex justify-between items-center mb-10">
-          <a href="/" class="flex items-center gap-2"><img src="/img/logo.webp" alt="Logotipo de Growth Buddies" class="h-8 w-8" height="32" width="32" /><span class="font-bold text-lg text-white">Growth Buddies</span></a>
-          <button id="mobile-menu-close" aria-label="Cerrar menú" class="flex items-center justify-center w-11 h-11 text-white hover:bg-white/10 rounded-lg transition-colors">
+          <a href="/" class="flex items-center gap-2"><img src="/img/logo.webp" alt="Logotipo de Growth Buddies" class="h-8 w-8" height="32" width="32" /><span class="font-bold text-lg text-[var(--fg)]">Growth Buddies</span></a>
+          <button id="mobile-menu-close" aria-label="Cerrar menú" class="flex items-center justify-center w-11 h-11 text-[var(--fg)] hover:bg-[var(--hover)] rounded-lg transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
           </button>
         </div>
         <nav class="flex flex-col" role="navigation" aria-label="Menú móvil">
-          <a href="/servicios" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Servicios</a>
-          <a href="/casos" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Casos</a>
-          <a href="/blog" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Blog</a>
-          <a href="/nosotros" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Nosotros</a>
-          <a href="/#contacto" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Contacto</a>
+          <a href="/servicios" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Servicios</a>
+          <a href="/casos" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Casos</a>
+          <a href="/blog" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Blog</a>
+          <a href="/nosotros" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Nosotros</a>
+          <a href="/#contacto" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Contacto</a>
         </nav>
       </div>
     </div>
@@ -236,51 +235,51 @@
     <main id="main-content">
 
       <!-- Hero -->
-      <header class="relative pt-36 pb-12 px-6 overflow-hidden border-b border-zinc-900">
-        <div class="absolute inset-0 bg-gradient-to-br from-[var(--accent)]/5 via-transparent to-transparent pointer-events-none"></div>
+      <header class="band-dark relative pt-36 pb-12 px-6 overflow-hidden border-b border-[var(--line)]">
+        <div class="absolute inset-0 bg-gradient-to-br from-[var(--accent)] via-transparent to-transparent pointer-events-none"></div>
         <div class="max-w-4xl mx-auto relative z-10">
 
           <!-- Breadcrumb -->
           <nav aria-label="Migas de pan" class="mb-8">
-            <ol class="flex items-center gap-2 text-xs text-slate-500">
-              <li><a href="/" class="hover:text-[var(--accent)] transition-colors">Inicio</a></li>
+            <ol class="flex items-center gap-2 text-xs text-[var(--fg-muted)]">
+              <li><a href="/" class="hover:text-[var(--accent-text)] transition-colors">Inicio</a></li>
               <li><span aria-hidden="true">/</span></li>
-              <li><a href="/recursos/guia-ia-legal" class="hover:text-[var(--accent)] transition-colors">Recursos</a></li>
+              <li><a href="/recursos/guia-ia-legal" class="hover:text-[var(--accent-text)] transition-colors">Recursos</a></li>
               <li><span aria-hidden="true">/</span></li>
-              <li class="text-[var(--accent)]" aria-current="page">Glosario IA y Automatización</li>
+              <li class="text-[var(--accent-text)]" aria-current="page">Glosario IA y Automatización</li>
             </ol>
           </nav>
 
-          <span class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase font-display">Recursos · Glosario</span>
-          <h1 class="text-3xl md:text-5xl font-black text-white font-heading leading-tight mt-4 mb-6">
+          <span class="text-xs font-bold text-[var(--accent-text)] tracking-widest uppercase font-display">Recursos · Glosario</span>
+          <h1 class="text-3xl md:text-5xl font-semibold text-[var(--fg)] font-heading leading-tight mt-4 mb-6">
             Glosario de IA y Automatización para Empresas
           </h1>
-          <p class="text-lg text-slate-400 max-w-2xl">
+          <p class="text-lg text-[var(--fg-muted)] max-w-2xl">
             15 términos esenciales que todo directivo debe conocer antes de evaluar un proyecto de automatización con inteligencia artificial. Definiciones prácticas, sin jerga técnica innecesaria.
           </p>
         </div>
       </header>
 
       <!-- Quick-jump index -->
-      <section class="py-8 px-6 border-b border-zinc-900 bg-zinc-900/30">
+      <section class="py-8 px-6 border-b border-[var(--line)] bg-[var(--surface)]">
         <div class="max-w-4xl mx-auto">
-          <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4">Ir a un término</p>
+          <p class="text-xs font-bold text-[var(--fg-muted)] uppercase tracking-wider mb-4">Ir a un término</p>
           <div class="flex flex-wrap gap-2">
-            <a href="#diagnostico-automatizacion" class="text-xs font-medium text-slate-300 bg-zinc-800 hover:bg-[var(--accent)]/20 hover:text-[var(--accent)] border border-zinc-700 hover:border-[var(--accent)]/40 px-3 py-1.5 rounded-full transition-all">Diagnóstico de Automatización</a>
-            <a href="#rag" class="text-xs font-medium text-slate-300 bg-zinc-800 hover:bg-[var(--accent)]/20 hover:text-[var(--accent)] border border-zinc-700 hover:border-[var(--accent)]/40 px-3 py-1.5 rounded-full transition-all">RAG</a>
-            <a href="#agente-ia" class="text-xs font-medium text-slate-300 bg-zinc-800 hover:bg-[var(--accent)]/20 hover:text-[var(--accent)] border border-zinc-700 hover:border-[var(--accent)]/40 px-3 py-1.5 rounded-full transition-all">Agente de IA</a>
-            <a href="#rpa" class="text-xs font-medium text-slate-300 bg-zinc-800 hover:bg-[var(--accent)]/20 hover:text-[var(--accent)] border border-zinc-700 hover:border-[var(--accent)]/40 px-3 py-1.5 rounded-full transition-all">RPA</a>
-            <a href="#ocr" class="text-xs font-medium text-slate-300 bg-zinc-800 hover:bg-[var(--accent)]/20 hover:text-[var(--accent)] border border-zinc-700 hover:border-[var(--accent)]/40 px-3 py-1.5 rounded-full transition-all">OCR</a>
-            <a href="#legal-tech" class="text-xs font-medium text-slate-300 bg-zinc-800 hover:bg-[var(--accent)]/20 hover:text-[var(--accent)] border border-zinc-700 hover:border-[var(--accent)]/40 px-3 py-1.5 rounded-full transition-all">Legal Tech</a>
-            <a href="#gestion-del-cambio" class="text-xs font-medium text-slate-300 bg-zinc-800 hover:bg-[var(--accent)]/20 hover:text-[var(--accent)] border border-zinc-700 hover:border-[var(--accent)]/40 px-3 py-1.5 rounded-full transition-all">Gestión del Cambio</a>
-            <a href="#adkar" class="text-xs font-medium text-slate-300 bg-zinc-800 hover:bg-[var(--accent)]/20 hover:text-[var(--accent)] border border-zinc-700 hover:border-[var(--accent)]/40 px-3 py-1.5 rounded-full transition-all">ADKAR</a>
-            <a href="#llm" class="text-xs font-medium text-slate-300 bg-zinc-800 hover:bg-[var(--accent)]/20 hover:text-[var(--accent)] border border-zinc-700 hover:border-[var(--accent)]/40 px-3 py-1.5 rounded-full transition-all">LLM</a>
-            <a href="#clm" class="text-xs font-medium text-slate-300 bg-zinc-800 hover:bg-[var(--accent)]/20 hover:text-[var(--accent)] border border-zinc-700 hover:border-[var(--accent)]/40 px-3 py-1.5 rounded-full transition-all">CLM</a>
-            <a href="#roi-automatizacion" class="text-xs font-medium text-slate-300 bg-zinc-800 hover:bg-[var(--accent)]/20 hover:text-[var(--accent)] border border-zinc-700 hover:border-[var(--accent)]/40 px-3 py-1.5 rounded-full transition-all">ROI</a>
-            <a href="#n8n-make" class="text-xs font-medium text-slate-300 bg-zinc-800 hover:bg-[var(--accent)]/20 hover:text-[var(--accent)] border border-zinc-700 hover:border-[var(--accent)]/40 px-3 py-1.5 rounded-full transition-all">n8n / Make</a>
-            <a href="#triaje-inteligente" class="text-xs font-medium text-slate-300 bg-zinc-800 hover:bg-[var(--accent)]/20 hover:text-[var(--accent)] border border-zinc-700 hover:border-[var(--accent)]/40 px-3 py-1.5 rounded-full transition-all">Triaje Inteligente</a>
-            <a href="#roadmap-tecnico" class="text-xs font-medium text-slate-300 bg-zinc-800 hover:bg-[var(--accent)]/20 hover:text-[var(--accent)] border border-zinc-700 hover:border-[var(--accent)]/40 px-3 py-1.5 rounded-full transition-all">Roadmap Técnico</a>
-            <a href="#ia-generativa" class="text-xs font-medium text-slate-300 bg-zinc-800 hover:bg-[var(--accent)]/20 hover:text-[var(--accent)] border border-zinc-700 hover:border-[var(--accent)]/40 px-3 py-1.5 rounded-full transition-all">IA Generativa</a>
+            <a href="#diagnostico-automatizacion" class="text-xs font-medium text-[var(--fg-soft)] bg-[var(--line)] hover:bg-[var(--accent-soft)] hover:text-[var(--accent-text)] border border-[var(--line)] hover:border-[var(--accent)] px-3 py-1.5 rounded-full transition-all">Diagnóstico de Automatización</a>
+            <a href="#rag" class="text-xs font-medium text-[var(--fg-soft)] bg-[var(--line)] hover:bg-[var(--accent-soft)] hover:text-[var(--accent-text)] border border-[var(--line)] hover:border-[var(--accent)] px-3 py-1.5 rounded-full transition-all">RAG</a>
+            <a href="#agente-ia" class="text-xs font-medium text-[var(--fg-soft)] bg-[var(--line)] hover:bg-[var(--accent-soft)] hover:text-[var(--accent-text)] border border-[var(--line)] hover:border-[var(--accent)] px-3 py-1.5 rounded-full transition-all">Agente de IA</a>
+            <a href="#rpa" class="text-xs font-medium text-[var(--fg-soft)] bg-[var(--line)] hover:bg-[var(--accent-soft)] hover:text-[var(--accent-text)] border border-[var(--line)] hover:border-[var(--accent)] px-3 py-1.5 rounded-full transition-all">RPA</a>
+            <a href="#ocr" class="text-xs font-medium text-[var(--fg-soft)] bg-[var(--line)] hover:bg-[var(--accent-soft)] hover:text-[var(--accent-text)] border border-[var(--line)] hover:border-[var(--accent)] px-3 py-1.5 rounded-full transition-all">OCR</a>
+            <a href="#legal-tech" class="text-xs font-medium text-[var(--fg-soft)] bg-[var(--line)] hover:bg-[var(--accent-soft)] hover:text-[var(--accent-text)] border border-[var(--line)] hover:border-[var(--accent)] px-3 py-1.5 rounded-full transition-all">Legal Tech</a>
+            <a href="#gestion-del-cambio" class="text-xs font-medium text-[var(--fg-soft)] bg-[var(--line)] hover:bg-[var(--accent-soft)] hover:text-[var(--accent-text)] border border-[var(--line)] hover:border-[var(--accent)] px-3 py-1.5 rounded-full transition-all">Gestión del Cambio</a>
+            <a href="#adkar" class="text-xs font-medium text-[var(--fg-soft)] bg-[var(--line)] hover:bg-[var(--accent-soft)] hover:text-[var(--accent-text)] border border-[var(--line)] hover:border-[var(--accent)] px-3 py-1.5 rounded-full transition-all">ADKAR</a>
+            <a href="#llm" class="text-xs font-medium text-[var(--fg-soft)] bg-[var(--line)] hover:bg-[var(--accent-soft)] hover:text-[var(--accent-text)] border border-[var(--line)] hover:border-[var(--accent)] px-3 py-1.5 rounded-full transition-all">LLM</a>
+            <a href="#clm" class="text-xs font-medium text-[var(--fg-soft)] bg-[var(--line)] hover:bg-[var(--accent-soft)] hover:text-[var(--accent-text)] border border-[var(--line)] hover:border-[var(--accent)] px-3 py-1.5 rounded-full transition-all">CLM</a>
+            <a href="#roi-automatizacion" class="text-xs font-medium text-[var(--fg-soft)] bg-[var(--line)] hover:bg-[var(--accent-soft)] hover:text-[var(--accent-text)] border border-[var(--line)] hover:border-[var(--accent)] px-3 py-1.5 rounded-full transition-all">ROI</a>
+            <a href="#n8n-make" class="text-xs font-medium text-[var(--fg-soft)] bg-[var(--line)] hover:bg-[var(--accent-soft)] hover:text-[var(--accent-text)] border border-[var(--line)] hover:border-[var(--accent)] px-3 py-1.5 rounded-full transition-all">n8n / Make</a>
+            <a href="#triaje-inteligente" class="text-xs font-medium text-[var(--fg-soft)] bg-[var(--line)] hover:bg-[var(--accent-soft)] hover:text-[var(--accent-text)] border border-[var(--line)] hover:border-[var(--accent)] px-3 py-1.5 rounded-full transition-all">Triaje Inteligente</a>
+            <a href="#roadmap-tecnico" class="text-xs font-medium text-[var(--fg-soft)] bg-[var(--line)] hover:bg-[var(--accent-soft)] hover:text-[var(--accent-text)] border border-[var(--line)] hover:border-[var(--accent)] px-3 py-1.5 rounded-full transition-all">Roadmap Técnico</a>
+            <a href="#ia-generativa" class="text-xs font-medium text-[var(--fg-soft)] bg-[var(--line)] hover:bg-[var(--accent-soft)] hover:text-[var(--accent-text)] border border-[var(--line)] hover:border-[var(--accent)] px-3 py-1.5 rounded-full transition-all">IA Generativa</a>
           </div>
         </div>
       </section>
@@ -290,120 +289,120 @@
         <div class="max-w-4xl mx-auto space-y-6">
 
           <div id="diagnostico-automatizacion" class="term-card scroll-mt-28">
-            <p class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase mb-2 font-display">Término 01</p>
-            <h2 class="text-xl font-bold text-white font-heading mb-3">Diagnóstico de Automatización</h2>
-            <p class="text-slate-400 leading-relaxed">Proceso de análisis de una operación empresarial con el objetivo de identificar qué procesos son automatizables con IA, en qué orden priorizarlos y qué ROI se puede esperar. Un buen diagnóstico mapea el costo real del trabajo manual (horas × tarifa), evalúa la factibilidad técnica de cada proceso y entrega un roadmap ordenado por impacto. En Growth Buddies, el <strong class="text-white">Diagnóstico de Automatización Estratégica</strong> se entrega en 10 a 15 días, cuesta $490.000 + IVA en Chile o USD 500 para el resto de Latinoamérica, y entrega 3 oportunidades priorizadas más una maqueta funcionando de la más rápida, con garantía de devolución si no se identifican al menos 3 oportunidades con ROI positivo. El 100% del valor es acreditable a cualquier proyecto contratado dentro de 90 días.</p>
-            <p class="text-xs text-slate-500 mt-3">→ <a href="/" class="text-[var(--accent)] hover:underline">Conocer el diagnóstico</a></p>
+            <p class="text-xs font-bold text-[var(--accent-text)] tracking-widest uppercase mb-2 font-display">Término 01</p>
+            <h2 class="text-xl font-semibold text-[var(--fg)] font-heading mb-3">Diagnóstico de Automatización</h2>
+            <p class="text-[var(--fg-muted)] leading-relaxed">Proceso de análisis de una operación empresarial con el objetivo de identificar qué procesos son automatizables con IA, en qué orden priorizarlos y qué ROI se puede esperar. Un buen diagnóstico mapea el costo real del trabajo manual (horas × tarifa), evalúa la factibilidad técnica de cada proceso y entrega un roadmap ordenado por impacto. En Growth Buddies, el <strong class="text-[var(--fg)]">Diagnóstico de Automatización Estratégica</strong> se entrega en 10 a 15 días, cuesta $490.000 + IVA en Chile o USD 500 para el resto de Latinoamérica, y entrega 3 oportunidades priorizadas más una maqueta funcionando de la más rápida, con garantía de devolución si no se identifican al menos 3 oportunidades con ROI positivo. El 100% del valor es acreditable a cualquier proyecto contratado dentro de 90 días.</p>
+            <p class="text-xs text-[var(--fg-muted)] mt-3">→ <a href="/" class="text-[var(--accent-text)] hover:underline">Conocer el diagnóstico</a></p>
           </div>
 
           <div id="rag" class="term-card scroll-mt-28">
-            <p class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase mb-2 font-display">Término 02</p>
-            <h2 class="text-xl font-bold text-white font-heading mb-3">RAG (Retrieval-Augmented Generation)</h2>
-            <p class="text-slate-400 leading-relaxed">Arquitectura de IA que combina un modelo de lenguaje (LLM) con una base de documentos privados de la empresa. Cuando un usuario hace una pregunta, el sistema primero recupera los fragmentos relevantes de los documentos internos y luego genera una respuesta basada en ellos, citando la fuente. Esto elimina casi por completo las "alucinaciones" (respuestas inventadas) y garantiza que el asistente solo responda con información verificada de la empresa. Es el núcleo de los <strong class="text-white">asistentes de IA corporativos privados</strong>.</p>
-            <p class="text-xs text-slate-500 mt-3">→ <a href="/servicios/ia-corporativa" class="text-[var(--accent)] hover:underline">Asistente de IA Corporativo con RAG</a></p>
+            <p class="text-xs font-bold text-[var(--accent-text)] tracking-widest uppercase mb-2 font-display">Término 02</p>
+            <h2 class="text-xl font-semibold text-[var(--fg)] font-heading mb-3">RAG (Retrieval-Augmented Generation)</h2>
+            <p class="text-[var(--fg-muted)] leading-relaxed">Arquitectura de IA que combina un modelo de lenguaje (LLM) con una base de documentos privados de la empresa. Cuando un usuario hace una pregunta, el sistema primero recupera los fragmentos relevantes de los documentos internos y luego genera una respuesta basada en ellos, citando la fuente. Esto elimina casi por completo las "alucinaciones" (respuestas inventadas) y garantiza que el asistente solo responda con información verificada de la empresa. Es el núcleo de los <strong class="text-[var(--fg)]">asistentes de IA corporativos privados</strong>.</p>
+            <p class="text-xs text-[var(--fg-muted)] mt-3">→ <a href="/servicios/ia-corporativa" class="text-[var(--accent-text)] hover:underline">Asistente de IA Corporativo con RAG</a></p>
           </div>
 
           <div id="agente-ia" class="term-card scroll-mt-28">
-            <p class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase mb-2 font-display">Término 03</p>
-            <h2 class="text-xl font-bold text-white font-heading mb-3">Agente de IA</h2>
-            <p class="text-slate-400 leading-relaxed">Sistema de inteligencia artificial capaz de ejecutar secuencias de acciones de forma autónoma para alcanzar un objetivo: buscar información, redactar respuestas, actualizar sistemas, tomar decisiones dentro de reglas predefinidas. A diferencia de un chatbot simple que solo responde preguntas, un agente puede operar sobre múltiples herramientas y sistemas encadenados sin intervención humana en cada paso. Ejemplos: BrokerIA (cotizaciones de seguros), Inbox IA Legal (triaje de correos jurídicos), TimeKeeper IA (reconstrucción de hojas de tiempo).</p>
-            <p class="text-xs text-slate-500 mt-3">→ <a href="/soluciones" class="text-[var(--accent)] hover:underline">Ver catálogo de agentes IA</a></p>
+            <p class="text-xs font-bold text-[var(--accent-text)] tracking-widest uppercase mb-2 font-display">Término 03</p>
+            <h2 class="text-xl font-semibold text-[var(--fg)] font-heading mb-3">Agente de IA</h2>
+            <p class="text-[var(--fg-muted)] leading-relaxed">Sistema de inteligencia artificial capaz de ejecutar secuencias de acciones de forma autónoma para alcanzar un objetivo: buscar información, redactar respuestas, actualizar sistemas, tomar decisiones dentro de reglas predefinidas. A diferencia de un chatbot simple que solo responde preguntas, un agente puede operar sobre múltiples herramientas y sistemas encadenados sin intervención humana en cada paso. Ejemplos: BrokerIA (cotizaciones de seguros), Inbox IA Legal (triaje de correos jurídicos), TimeKeeper IA (reconstrucción de hojas de tiempo).</p>
+            <p class="text-xs text-[var(--fg-muted)] mt-3">→ <a href="/soluciones" class="text-[var(--accent-text)] hover:underline">Ver catálogo de agentes IA</a></p>
           </div>
 
           <div id="rpa" class="term-card scroll-mt-28">
-            <p class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase mb-2 font-display">Término 04</p>
-            <h2 class="text-xl font-bold text-white font-heading mb-3">RPA (Robotic Process Automation)</h2>
-            <p class="text-slate-400 leading-relaxed">Tecnología de automatización que replica acciones repetitivas de un usuario en sistemas informáticos: copiar datos entre aplicaciones, completar formularios, enviar correos según reglas fijas. RPA no requiere modificar el sistema subyacente y es compatible con software antiguo. Se distingue de la IA en que sigue instrucciones fijas sin interpretar contenido. Combinado con LLMs, RPA puede manejar también variaciones en el input y clasificación de texto no estructurado (lo que se conoce como <strong class="text-white">IA + RPA</strong>).</p>
-            <p class="text-xs text-slate-500 mt-3">→ <a href="/servicios/legal-tech" class="text-[var(--accent)] hover:underline">Automatización Legal con RPA e IA</a></p>
+            <p class="text-xs font-bold text-[var(--accent-text)] tracking-widest uppercase mb-2 font-display">Término 04</p>
+            <h2 class="text-xl font-semibold text-[var(--fg)] font-heading mb-3">RPA (Robotic Process Automation)</h2>
+            <p class="text-[var(--fg-muted)] leading-relaxed">Tecnología de automatización que replica acciones repetitivas de un usuario en sistemas informáticos: copiar datos entre aplicaciones, completar formularios, enviar correos según reglas fijas. RPA no requiere modificar el sistema subyacente y es compatible con software antiguo. Se distingue de la IA en que sigue instrucciones fijas sin interpretar contenido. Combinado con LLMs, RPA puede manejar también variaciones en el input y clasificación de texto no estructurado (lo que se conoce como <strong class="text-[var(--fg)]">IA + RPA</strong>).</p>
+            <p class="text-xs text-[var(--fg-muted)] mt-3">→ <a href="/servicios/legal-tech" class="text-[var(--accent-text)] hover:underline">Automatización Legal con RPA e IA</a></p>
           </div>
 
           <div id="ocr" class="term-card scroll-mt-28">
-            <p class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase mb-2 font-display">Término 05</p>
-            <h2 class="text-xl font-bold text-white font-heading mb-3">OCR (Optical Character Recognition)</h2>
-            <p class="text-slate-400 leading-relaxed">Tecnología que convierte imágenes de texto (fotografías de documentos, PDFs escaneados, facturas en papel) en texto editable y procesable automáticamente. En combinación con modelos de IA como Gemini Vision o GPT-4 Vision, el OCR moderno puede además extraer campos estructurados de documentos complejos: contratos, poderes notariales, pólizas de seguro. En el caso SPI Americas, Growth Buddies implementó OCR con Gemini para procesar solicitudes de registro de propiedad intelectual en 4 países.</p>
-            <p class="text-xs text-slate-500 mt-3">→ <a href="/casos/spi-americas" class="text-[var(--accent)] hover:underline">Caso SPI Americas: OCR aplicado a PI</a></p>
+            <p class="text-xs font-bold text-[var(--accent-text)] tracking-widest uppercase mb-2 font-display">Término 05</p>
+            <h2 class="text-xl font-semibold text-[var(--fg)] font-heading mb-3">OCR (Optical Character Recognition)</h2>
+            <p class="text-[var(--fg-muted)] leading-relaxed">Tecnología que convierte imágenes de texto (fotografías de documentos, PDFs escaneados, facturas en papel) en texto editable y procesable automáticamente. En combinación con modelos de IA como Gemini Vision o GPT-4 Vision, el OCR moderno puede además extraer campos estructurados de documentos complejos: contratos, poderes notariales, pólizas de seguro. En el caso SPI Americas, Growth Buddies implementó OCR con Gemini para procesar solicitudes de registro de propiedad intelectual en 4 países.</p>
+            <p class="text-xs text-[var(--fg-muted)] mt-3">→ <a href="/casos/spi-americas" class="text-[var(--accent-text)] hover:underline">Caso SPI Americas: OCR aplicado a PI</a></p>
           </div>
 
           <div id="legal-tech" class="term-card scroll-mt-28">
-            <p class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase mb-2 font-display">Término 06</p>
-            <h2 class="text-xl font-bold text-white font-heading mb-3">Legal Tech</h2>
-            <p class="text-slate-400 leading-relaxed">Categoría de tecnología aplicada al sector legal: automatización de contratos (CLM), triaje de correos jurídicos, gestión documental con IA, reportería de causas y KPIs legales. En Chile y Latinoamérica, Legal Tech es la aplicación práctica de RPA e IA a estudios jurídicos y departamentos legales corporativos para reducir el trabajo manual de alto volumen y bajo valor. SPI Americas logró <strong class="text-white">+17% de facturación y 60% menos tiempo en gestión documental</strong> con Legal Tech.</p>
-            <p class="text-xs text-slate-500 mt-3">→ <a href="/servicios/legal-tech" class="text-[var(--accent)] hover:underline">Automatización Legal en Chile</a></p>
+            <p class="text-xs font-bold text-[var(--accent-text)] tracking-widest uppercase mb-2 font-display">Término 06</p>
+            <h2 class="text-xl font-semibold text-[var(--fg)] font-heading mb-3">Legal Tech</h2>
+            <p class="text-[var(--fg-muted)] leading-relaxed">Categoría de tecnología aplicada al sector legal: automatización de contratos (CLM), triaje de correos jurídicos, gestión documental con IA, reportería de causas y KPIs legales. En Chile y Latinoamérica, Legal Tech es la aplicación práctica de RPA e IA a estudios jurídicos y departamentos legales corporativos para reducir el trabajo manual de alto volumen y bajo valor. SPI Americas logró <strong class="text-[var(--fg)]">+17% de facturación y 60% menos tiempo en gestión documental</strong> con Legal Tech.</p>
+            <p class="text-xs text-[var(--fg-muted)] mt-3">→ <a href="/servicios/legal-tech" class="text-[var(--accent-text)] hover:underline">Automatización Legal en Chile</a></p>
           </div>
 
           <div id="gestion-del-cambio" class="term-card scroll-mt-28">
-            <p class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase mb-2 font-display">Término 07</p>
-            <h2 class="text-xl font-bold text-white font-heading mb-3">Gestión del Cambio (Change Management)</h2>
-            <p class="text-slate-400 leading-relaxed">Disciplina estructurada que gestiona la transición de personas y organizaciones hacia una nueva manera de trabajar. En proyectos de IA y automatización, la gestión del cambio aborda la resistencia del equipo, capacita a los usuarios en las nuevas herramientas y mide la adopción real con KPIs. Sin gestión del cambio, <strong class="text-white">el 70% de las implementaciones tecnológicas no alcanzan sus objetivos</strong>, y no por fallas técnicas sino por resistencia humana (McKinsey &amp; Prosci). Growth Buddies es el único consultora de automatización en Chile con certificación Prosci.</p>
-            <p class="text-xs text-slate-500 mt-3">→ <a href="/servicios/gestion-del-cambio" class="text-[var(--accent)] hover:underline">Gestión del Cambio con Prosci ADKAR</a></p>
+            <p class="text-xs font-bold text-[var(--accent-text)] tracking-widest uppercase mb-2 font-display">Término 07</p>
+            <h2 class="text-xl font-semibold text-[var(--fg)] font-heading mb-3">Gestión del Cambio (Change Management)</h2>
+            <p class="text-[var(--fg-muted)] leading-relaxed">Disciplina estructurada que gestiona la transición de personas y organizaciones hacia una nueva manera de trabajar. En proyectos de IA y automatización, la gestión del cambio aborda la resistencia del equipo, capacita a los usuarios en las nuevas herramientas y mide la adopción real con KPIs. Sin gestión del cambio, <strong class="text-[var(--fg)]">el 70% de las implementaciones tecnológicas no alcanzan sus objetivos</strong>, y no por fallas técnicas sino por resistencia humana (McKinsey &amp; Prosci). Growth Buddies es el único consultora de automatización en Chile con certificación Prosci.</p>
+            <p class="text-xs text-[var(--fg-muted)] mt-3">→ <a href="/servicios/gestion-del-cambio" class="text-[var(--accent-text)] hover:underline">Gestión del Cambio con Prosci ADKAR</a></p>
           </div>
 
           <div id="adkar" class="term-card scroll-mt-28">
-            <p class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase mb-2 font-display">Término 08</p>
-            <h2 class="text-xl font-bold text-white font-heading mb-3">ADKAR</h2>
-            <p class="text-slate-400 leading-relaxed">Modelo de gestión del cambio desarrollado por Prosci que describe las 5 condiciones que debe cumplir cada persona para adoptar un cambio organizacional: <strong class="text-white">A</strong>wareness (conciencia de por qué cambia), <strong class="text-white">D</strong>esire (deseo personal de participar), <strong class="text-white">K</strong>nowledge (conocimiento de cómo hacerlo), <strong class="text-white">A</strong>bility (habilidad práctica) y <strong class="text-white">R</strong>einforcement (refuerzo para que el cambio se mantenga). Es el marco de referencia internacional más utilizado en programas de cambio. Edmundo Spohr, fundador de Growth Buddies, es Prosci Certified Change Practitioner.</p>
-            <p class="text-xs text-slate-500 mt-3">→ <a href="/servicios/gestion-del-cambio" class="text-[var(--accent)] hover:underline">Cómo aplicamos ADKAR en proyectos de automatización</a></p>
+            <p class="text-xs font-bold text-[var(--accent-text)] tracking-widest uppercase mb-2 font-display">Término 08</p>
+            <h2 class="text-xl font-semibold text-[var(--fg)] font-heading mb-3">ADKAR</h2>
+            <p class="text-[var(--fg-muted)] leading-relaxed">Modelo de gestión del cambio desarrollado por Prosci que describe las 5 condiciones que debe cumplir cada persona para adoptar un cambio organizacional: <strong class="text-[var(--fg)]">A</strong>wareness (conciencia de por qué cambia), <strong class="text-[var(--fg)]">D</strong>esire (deseo personal de participar), <strong class="text-[var(--fg)]">K</strong>nowledge (conocimiento de cómo hacerlo), <strong class="text-[var(--fg)]">A</strong>bility (habilidad práctica) y <strong class="text-[var(--fg)]">R</strong>einforcement (refuerzo para que el cambio se mantenga). Es el marco de referencia internacional más utilizado en programas de cambio. Edmundo Spohr, fundador de Growth Buddies, es Prosci Certified Change Practitioner.</p>
+            <p class="text-xs text-[var(--fg-muted)] mt-3">→ <a href="/servicios/gestion-del-cambio" class="text-[var(--accent-text)] hover:underline">Cómo aplicamos ADKAR en proyectos de automatización</a></p>
           </div>
 
           <div id="llm" class="term-card scroll-mt-28">
-            <p class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase mb-2 font-display">Término 09</p>
-            <h2 class="text-xl font-bold text-white font-heading mb-3">LLM (Large Language Model)</h2>
-            <p class="text-slate-400 leading-relaxed">Modelo de lenguaje de gran escala entrenado sobre grandes volúmenes de texto para generar, clasificar, resumir y responder en lenguaje natural. Ejemplos: GPT-4o (OpenAI), Claude 3.5 Sonnet (Anthropic), Gemini 1.5 Pro (Google). En el contexto empresarial, los LLMs son el motor de los asistentes de IA corporativos, los sistemas de triaje, la generación de contratos y los resúmenes automáticos de documentos. Growth Buddies trabaja principalmente con GPT-4o (enterprise) y Claude en proyectos productivos.</p>
+            <p class="text-xs font-bold text-[var(--accent-text)] tracking-widest uppercase mb-2 font-display">Término 09</p>
+            <h2 class="text-xl font-semibold text-[var(--fg)] font-heading mb-3">LLM (Large Language Model)</h2>
+            <p class="text-[var(--fg-muted)] leading-relaxed">Modelo de lenguaje de gran escala entrenado sobre grandes volúmenes de texto para generar, clasificar, resumir y responder en lenguaje natural. Ejemplos: GPT-4o (OpenAI), Claude 3.5 Sonnet (Anthropic), Gemini 1.5 Pro (Google). En el contexto empresarial, los LLMs son el motor de los asistentes de IA corporativos, los sistemas de triaje, la generación de contratos y los resúmenes automáticos de documentos. Growth Buddies trabaja principalmente con GPT-4o (enterprise) y Claude en proyectos productivos.</p>
           </div>
 
           <div id="clm" class="term-card scroll-mt-28">
-            <p class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase mb-2 font-display">Término 10</p>
-            <h2 class="text-xl font-bold text-white font-heading mb-3">CLM (Contract Lifecycle Management)</h2>
-            <p class="text-slate-400 leading-relaxed">Gestión automatizada del ciclo de vida completo de contratos: creación desde plantillas inteligentes, negociación con flujos de aprobación, firma digital y alertas automáticas de vencimiento. La automatización CLM con IA genera contratos con datos de su CRM, detecta cláusulas de riesgo y programa alertas 90, 60 y 30 días antes del vencimiento. Es una de las aplicaciones de Legal Tech con mayor ROI medible para firmas con volumen contractual alto.</p>
-            <p class="text-xs text-slate-500 mt-3">→ <a href="/servicios/legal-tech" class="text-[var(--accent)] hover:underline">Automatización Contractual (CLM) en Chile</a></p>
+            <p class="text-xs font-bold text-[var(--accent-text)] tracking-widest uppercase mb-2 font-display">Término 10</p>
+            <h2 class="text-xl font-semibold text-[var(--fg)] font-heading mb-3">CLM (Contract Lifecycle Management)</h2>
+            <p class="text-[var(--fg-muted)] leading-relaxed">Gestión automatizada del ciclo de vida completo de contratos: creación desde plantillas inteligentes, negociación con flujos de aprobación, firma digital y alertas automáticas de vencimiento. La automatización CLM con IA genera contratos con datos de su CRM, detecta cláusulas de riesgo y programa alertas 90, 60 y 30 días antes del vencimiento. Es una de las aplicaciones de Legal Tech con mayor ROI medible para firmas con volumen contractual alto.</p>
+            <p class="text-xs text-[var(--fg-muted)] mt-3">→ <a href="/servicios/legal-tech" class="text-[var(--accent-text)] hover:underline">Automatización Contractual (CLM) en Chile</a></p>
           </div>
 
           <div id="roi-automatizacion" class="term-card scroll-mt-28">
-            <p class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase mb-2 font-display">Término 11</p>
-            <h2 class="text-xl font-bold text-white font-heading mb-3">ROI de Automatización</h2>
-            <p class="text-slate-400 leading-relaxed">El retorno sobre la inversión de un proyecto de automatización se calcula comparando el costo total (diagnóstico + implementación) con el valor recuperado: horas de trabajo manual eliminadas × costo hora, errores reducidos × costo de corrección, y capacidad adicional generada. En los proyectos de Growth Buddies, el análisis de ROI esperado por proceso es parte del entregable del Diagnóstico, antes de comprometer ninguna inversión de implementación. Proyectos bien dimensionados típicamente recuperan la inversión en menos de 90 días.</p>
+            <p class="text-xs font-bold text-[var(--accent-text)] tracking-widest uppercase mb-2 font-display">Término 11</p>
+            <h2 class="text-xl font-semibold text-[var(--fg)] font-heading mb-3">ROI de Automatización</h2>
+            <p class="text-[var(--fg-muted)] leading-relaxed">El retorno sobre la inversión de un proyecto de automatización se calcula comparando el costo total (diagnóstico + implementación) con el valor recuperado: horas de trabajo manual eliminadas × costo hora, errores reducidos × costo de corrección, y capacidad adicional generada. En los proyectos de Growth Buddies, el análisis de ROI esperado por proceso es parte del entregable del Diagnóstico, antes de comprometer ninguna inversión de implementación. Proyectos bien dimensionados típicamente recuperan la inversión en menos de 90 días.</p>
           </div>
 
           <div id="n8n-make" class="term-card scroll-mt-28">
-            <p class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase mb-2 font-display">Término 12</p>
-            <h2 class="text-xl font-bold text-white font-heading mb-3">n8n / Make (Automatización sin código)</h2>
-            <p class="text-slate-400 leading-relaxed">Plataformas de automatización visual que conectan aplicaciones y servicios mediante flujos lógicos sin necesidad de programar. <strong class="text-white">n8n</strong> es open source y se puede desplegar en infraestructura propia para máxima privacidad. <strong class="text-white">Make</strong> (antes Integromat) es una plataforma SaaS con interfaz visual. Ambas se usan para orquestar flujos entre CRMs, correos, bases de datos y APIs externas. En proyectos complejos, se combinan con Python y Firebase Cloud Functions para mayor flexibilidad.</p>
+            <p class="text-xs font-bold text-[var(--accent-text)] tracking-widest uppercase mb-2 font-display">Término 12</p>
+            <h2 class="text-xl font-semibold text-[var(--fg)] font-heading mb-3">n8n / Make (Automatización sin código)</h2>
+            <p class="text-[var(--fg-muted)] leading-relaxed">Plataformas de automatización visual que conectan aplicaciones y servicios mediante flujos lógicos sin necesidad de programar. <strong class="text-[var(--fg)]">n8n</strong> es open source y se puede desplegar en infraestructura propia para máxima privacidad. <strong class="text-[var(--fg)]">Make</strong> (antes Integromat) es una plataforma SaaS con interfaz visual. Ambas se usan para orquestar flujos entre CRMs, correos, bases de datos y APIs externas. En proyectos complejos, se combinan con Python y Firebase Cloud Functions para mayor flexibilidad.</p>
           </div>
 
           <div id="triaje-inteligente" class="term-card scroll-mt-28">
-            <p class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase mb-2 font-display">Término 13</p>
-            <h2 class="text-xl font-bold text-white font-heading mb-3">Triaje Inteligente</h2>
-            <p class="text-slate-400 leading-relaxed">Clasificación y priorización automática de correos, tickets o solicitudes entrantes usando IA. El sistema identifica el tipo de consulta, la urgencia, el cliente y la acción requerida, y enruta cada ítem al responsable correcto sin intervención humana. En corredoras de seguros, el triaje inteligente procesa correos de pólizas en menos de 15 minutos. En firmas legales, clasifica causas por materia y urgencia. Es el punto de entrada más frecuente de proyectos de automatización porque tiene alta visibilidad de impacto desde el primer día.</p>
-            <p class="text-xs text-slate-500 mt-3">→ <a href="/casos/hits-corredora" class="text-[var(--accent)] hover:underline">Caso Hits Corredora: triaje de pólizas en &lt;15 min</a></p>
+            <p class="text-xs font-bold text-[var(--accent-text)] tracking-widest uppercase mb-2 font-display">Término 13</p>
+            <h2 class="text-xl font-semibold text-[var(--fg)] font-heading mb-3">Triaje Inteligente</h2>
+            <p class="text-[var(--fg-muted)] leading-relaxed">Clasificación y priorización automática de correos, tickets o solicitudes entrantes usando IA. El sistema identifica el tipo de consulta, la urgencia, el cliente y la acción requerida, y enruta cada ítem al responsable correcto sin intervención humana. En corredoras de seguros, el triaje inteligente procesa correos de pólizas en menos de 15 minutos. En firmas legales, clasifica causas por materia y urgencia. Es el punto de entrada más frecuente de proyectos de automatización porque tiene alta visibilidad de impacto desde el primer día.</p>
+            <p class="text-xs text-[var(--fg-muted)] mt-3">→ <a href="/casos/hits-corredora" class="text-[var(--accent-text)] hover:underline">Caso Hits Corredora: triaje de pólizas en &lt;15 min</a></p>
           </div>
 
           <div id="roadmap-tecnico" class="term-card scroll-mt-28">
-            <p class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase mb-2 font-display">Término 14</p>
-            <h2 class="text-xl font-bold text-white font-heading mb-3">Roadmap Técnico</h2>
-            <p class="text-slate-400 leading-relaxed">Plan de implementación que ordena los proyectos de automatización por prioridad según ROI esperado, complejidad técnica y capacidad de adopción del equipo. Un buen roadmap no lista "todo lo que se puede automatizar": prioriza los 3-5 proyectos que mayor impacto generan en el menor tiempo, considerando dependencias técnicas y resistencia organizacional. En el Diagnóstico de Automatización Estratégica de Growth Buddies, el roadmap técnico es el entregable principal: una secuencia de proyectos con costos, plazos y métricas de éxito definidos.</p>
+            <p class="text-xs font-bold text-[var(--accent-text)] tracking-widest uppercase mb-2 font-display">Término 14</p>
+            <h2 class="text-xl font-semibold text-[var(--fg)] font-heading mb-3">Roadmap Técnico</h2>
+            <p class="text-[var(--fg-muted)] leading-relaxed">Plan de implementación que ordena los proyectos de automatización por prioridad según ROI esperado, complejidad técnica y capacidad de adopción del equipo. Un buen roadmap no lista "todo lo que se puede automatizar": prioriza los 3-5 proyectos que mayor impacto generan en el menor tiempo, considerando dependencias técnicas y resistencia organizacional. En el Diagnóstico de Automatización Estratégica de Growth Buddies, el roadmap técnico es el entregable principal: una secuencia de proyectos con costos, plazos y métricas de éxito definidos.</p>
           </div>
 
           <div id="ia-generativa" class="term-card scroll-mt-28">
-            <p class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase mb-2 font-display">Término 15</p>
-            <h2 class="text-xl font-bold text-white font-heading mb-3">IA Generativa</h2>
-            <p class="text-slate-400 leading-relaxed">Categoría de inteligencia artificial capaz de generar contenido nuevo: texto, imágenes, código o documentos a partir de una instrucción. En empresas, la IA generativa se aplica para redactar respuestas de soporte, generar contratos desde plantillas con datos de un CRM, resumir documentos extensos y producir reportes ejecutivos automáticamente. Los LLMs como GPT-4o y Claude son los modelos de IA generativa más usados en proyectos empresariales. Se distingue de la IA predictiva, que solo analiza patrones en datos históricos.</p>
-            <p class="text-xs text-slate-500 mt-3">→ <a href="/servicios/ia-corporativa" class="text-[var(--accent)] hover:underline">IA Generativa para empresas: asistentes RAG</a></p>
+            <p class="text-xs font-bold text-[var(--accent-text)] tracking-widest uppercase mb-2 font-display">Término 15</p>
+            <h2 class="text-xl font-semibold text-[var(--fg)] font-heading mb-3">IA Generativa</h2>
+            <p class="text-[var(--fg-muted)] leading-relaxed">Categoría de inteligencia artificial capaz de generar contenido nuevo: texto, imágenes, código o documentos a partir de una instrucción. En empresas, la IA generativa se aplica para redactar respuestas de soporte, generar contratos desde plantillas con datos de un CRM, resumir documentos extensos y producir reportes ejecutivos automáticamente. Los LLMs como GPT-4o y Claude son los modelos de IA generativa más usados en proyectos empresariales. Se distingue de la IA predictiva, que solo analiza patrones en datos históricos.</p>
+            <p class="text-xs text-[var(--fg-muted)] mt-3">→ <a href="/servicios/ia-corporativa" class="text-[var(--accent-text)] hover:underline">IA Generativa para empresas: asistentes RAG</a></p>
           </div>
 
         </div>
       </section>
 
       <!-- CTA -->
-      <section class="py-16 px-6 border-t border-zinc-900">
+      <section class="band-dark py-16 px-6 border-t border-[var(--line)]">
         <div class="max-w-2xl mx-auto text-center">
-          <h2 class="text-2xl md:text-3xl font-black text-white font-heading mb-4">¿Listo para evaluar qué automatizar en su empresa?</h2>
-          <p class="text-slate-400 mb-8">El Diagnóstico de Automatización Estratégica le dirá exactamente qué procesos automatizar, en qué orden y qué ROI esperar, en 2 semanas y con garantía de devolución.</p>
+          <h2 class="text-2xl md:text-3xl font-semibold text-[var(--fg)] font-heading mb-4">¿Listo para evaluar qué automatizar en su empresa?</h2>
+          <p class="text-[var(--fg-muted)] mb-8">El Diagnóstico de Automatización Estratégica le dirá exactamente qué procesos automatizar, en qué orden y qué ROI esperar, en 2 semanas y con garantía de devolución.</p>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="{{calendly}}" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center justify-center gap-2 bg-[var(--accent)] text-black font-bold py-4 px-8 rounded-full text-base hover:bg-[var(--accent)]/80 transition-colors w-full sm:w-auto">
+               class="inline-flex items-center justify-center gap-2 bg-[var(--accent)] text-[var(--on-accent)] font-bold py-4 px-8 rounded-full text-base hover:bg-[var(--accent)] transition-colors w-full sm:w-auto">
               Agendar sesión de calificación
             </a>
-            <a href="/preguntas-frecuentes" class="text-slate-400 hover:text-white transition-colors text-sm">
+            <a href="/preguntas-frecuentes" class="text-[var(--fg-muted)] hover:text-[var(--fg)] transition-colors text-sm">
               → Preguntas frecuentes
             </a>
           </div>
@@ -413,7 +412,7 @@
     </main>
 
         <footer
-      class="bg-black py-10 px-5 md:py-16 md:px-6 border-t border-white/10 text-sm"
+      class="bg-[var(--bg)] py-10 px-5 md:py-16 md:px-6 border-t border-[var(--line)] text-sm"
     >
       <div
         class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-8 md:gap-8 md:mb-12"
@@ -430,11 +429,11 @@
               width="40"
             />
             <span
-              class="font-bold text-xl text-white tracking-widest font-display"
+              class="font-bold text-xl text-[var(--fg)] tracking-widest font-display"
               >GROWTH BUDDIES</span
             >
           </a>
-          <p class="text-slate-400 leading-relaxed max-w-xs">
+          <p class="text-[var(--fg-muted)] leading-relaxed max-w-xs">
             Diagnóstico y automatización con IA para empresas de servicios
             profesionales en Latinoamérica.
           </p>
@@ -444,21 +443,21 @@
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Perfil de LinkedIn de Growth Buddies"
-              class="text-slate-400 hover:text-[var(--accent)] transition-colors"
+              class="text-[var(--fg-muted)] hover:text-[var(--accent-text)] transition-colors"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
             <a
               href="mailto:edmundo@spohr.cl"
               aria-label="Enviar correo electrónico a Growth Buddies"
-              class="text-slate-400 hover:text-[var(--accent)] transition-colors"
+              class="text-[var(--fg-muted)] hover:text-[var(--accent-text)] transition-colors"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             </a>
             <a
               href="tel:+56975991366"
               aria-label="Llamar a Growth Buddies"
-              class="text-slate-400 hover:text-[var(--accent)] transition-colors"
+              class="text-[var(--fg-muted)] hover:text-[var(--accent-text)] transition-colors"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
             </a>
@@ -467,57 +466,57 @@
 
         <!-- Servicios -->
         <div>
-          <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Servicios</h4>
-          <ul class="space-y-3 text-slate-400">
-            <li><a href="/servicios/legal-tech" class="hover:text-[var(--accent)] transition-colors">Legal Tech y Automatización</a></li>
-            <li><a href="/servicios/ia-corporativa" class="hover:text-[var(--accent)] transition-colors">Asistente de IA Corporativo</a></li>
-            <li><a href="/servicios/gestion-del-cambio" class="hover:text-[var(--accent)] transition-colors">Gestión del Cambio (Prosci)</a></li>
-            <li><a href="/servicios/agentes-ia-chatbots-empresas" class="hover:text-[var(--accent)] transition-colors">Agentes de IA y Chatbots</a></li>
+          <h4 class="text-[var(--fg)] font-semibold mb-6 font-display uppercase tracking-wider text-xs">Servicios</h4>
+          <ul class="space-y-3 text-[var(--fg-muted)]">
+            <li><a href="/servicios/legal-tech" class="hover:text-[var(--accent-text)] transition-colors">Legal Tech y Automatización</a></li>
+            <li><a href="/servicios/ia-corporativa" class="hover:text-[var(--accent-text)] transition-colors">Asistente de IA Corporativo</a></li>
+            <li><a href="/servicios/gestion-del-cambio" class="hover:text-[var(--accent-text)] transition-colors">Gestión del Cambio (Prosci)</a></li>
+            <li><a href="/servicios/agentes-ia-chatbots-empresas" class="hover:text-[var(--accent-text)] transition-colors">Agentes de IA y Chatbots</a></li>
             <!-- INSERTION POINT: new /servicios/ landings -->
           </ul>
         </div>
 
         <!-- Sectores -->
         <div>
-          <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Sectores</h4>
-          <ul class="space-y-3 text-slate-400">
-            <li><a href="/sectores/automatizacion-ia-estudios-juridicos" class="hover:text-[var(--accent)] transition-colors">Estudios Jurídicos</a></li>
-            <li><a href="/sectores/automatizacion-ia-industria-mineria" class="hover:text-[var(--accent)] transition-colors">Empresas Industriales</a></li>
+          <h4 class="text-[var(--fg)] font-semibold mb-6 font-display uppercase tracking-wider text-xs">Sectores</h4>
+          <ul class="space-y-3 text-[var(--fg-muted)]">
+            <li><a href="/sectores/automatizacion-ia-estudios-juridicos" class="hover:text-[var(--accent-text)] transition-colors">Estudios Jurídicos</a></li>
+            <li><a href="/sectores/automatizacion-ia-industria-mineria" class="hover:text-[var(--accent-text)] transition-colors">Empresas Industriales</a></li>
             <!-- INSERTION POINT: new /sectores/ pillars -->
           </ul>
         </div>
 
         <!-- Recursos -->
         <div>
-          <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Recursos</h4>
-          <ul class="space-y-3 text-slate-400">
-            <li><a href="/blog" class="hover:text-[var(--accent)] transition-colors">Blog</a></li>
-            <li><a href="/recursos/guia-ia-legal" class="hover:text-[var(--accent)] transition-colors">Guía Gratuita IA Legal</a></li>
-            <li><a href="/recursos/informe-automatizacion-servicios-latam" class="hover:text-[var(--accent)] transition-colors">Informe LATAM 2026</a></li>
-            <li><a href="/preguntas-frecuentes" class="hover:text-[var(--accent)] transition-colors">Preguntas Frecuentes</a></li>
-            <li><a href="/recursos/glosario-ia-automatizacion" class="hover:text-[var(--accent)] transition-colors">Glosario IA</a></li>
-            <li><a href="/soluciones" class="hover:text-[var(--accent)] transition-colors">Ejemplos de Implementación</a></li>
+          <h4 class="text-[var(--fg)] font-semibold mb-6 font-display uppercase tracking-wider text-xs">Recursos</h4>
+          <ul class="space-y-3 text-[var(--fg-muted)]">
+            <li><a href="/blog" class="hover:text-[var(--accent-text)] transition-colors">Blog</a></li>
+            <li><a href="/recursos/guia-ia-legal" class="hover:text-[var(--accent-text)] transition-colors">Guía Gratuita IA Legal</a></li>
+            <li><a href="/recursos/informe-automatizacion-servicios-latam" class="hover:text-[var(--accent-text)] transition-colors">Informe LATAM 2026</a></li>
+            <li><a href="/preguntas-frecuentes" class="hover:text-[var(--accent-text)] transition-colors">Preguntas Frecuentes</a></li>
+            <li><a href="/recursos/glosario-ia-automatizacion" class="hover:text-[var(--accent-text)] transition-colors">Glosario IA</a></li>
+            <li><a href="/soluciones" class="hover:text-[var(--accent-text)] transition-colors">Ejemplos de Implementación</a></li>
           </ul>
         </div>
 
         <!-- Empresa -->
         <div>
-          <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Empresa</h4>
-          <ul class="space-y-3 text-slate-400">
-            <li><a href="/nosotros" class="hover:text-[var(--accent)] transition-colors">Nosotros</a></li>
-            <li><a href="/casos" class="hover:text-[var(--accent)] transition-colors">Casos de Éxito</a></li>
-            <li><a href="/privacidad" class="hover:text-[var(--accent)] transition-colors">Privacidad</a></li>
-            <li><a href="/terminos" class="hover:text-[var(--accent)] transition-colors">Términos</a></li>
+          <h4 class="text-[var(--fg)] font-semibold mb-6 font-display uppercase tracking-wider text-xs">Empresa</h4>
+          <ul class="space-y-3 text-[var(--fg-muted)]">
+            <li><a href="/nosotros" class="hover:text-[var(--accent-text)] transition-colors">Nosotros</a></li>
+            <li><a href="/casos" class="hover:text-[var(--accent-text)] transition-colors">Casos de Éxito</a></li>
+            <li><a href="/privacidad" class="hover:text-[var(--accent-text)] transition-colors">Privacidad</a></li>
+            <li><a href="/terminos" class="hover:text-[var(--accent-text)] transition-colors">Términos</a></li>
           </ul>
         </div>
       </div>
 
       <div
-        class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400"
+        class="pt-8 border-t border-[var(--line)] flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[var(--fg-muted)]"
       >
-        <div>&copy; 2026 Growth Buddies SpA. Latinoamérica · <a href="/" class="hover:text-white transition-colors">CL</a> · <a href="/colombia" class="hover:text-white transition-colors">CO</a> · <a href="/peru" class="hover:text-white transition-colors">PE</a> · <a href="/ecuador" class="hover:text-white transition-colors">EC</a></div>
+        <div>&copy; 2026 Growth Buddies SpA. Latinoamérica · <a href="/" class="hover:text-[var(--fg)] transition-colors">CL</a> · <a href="/colombia" class="hover:text-[var(--fg)] transition-colors">CO</a> · <a href="/peru" class="hover:text-[var(--fg)] transition-colors">PE</a> · <a href="/ecuador" class="hover:text-[var(--fg)] transition-colors">EC</a></div>
         <div>
-          <a href="/sitemap.xml" class="hover:text-slate-300 transition-colors">Sitemap</a>
+          <a href="/sitemap.xml" class="hover:text-[var(--fg-soft)] transition-colors">Sitemap</a>
         </div>
       </div>
     </footer>

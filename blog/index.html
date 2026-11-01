@@ -94,15 +94,14 @@
     <!-- Microsoft Clarity — deferred 3s to avoid blocking LCP -->
     <script>setTimeout(function(){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","vkf6fbh8zc");},3000);</script>
     <style>
-      :root{--color-accent:#0097B2;--color-cta:#0097B2;--color-cta-hover: #00B5D6;--color-dark:#0F172A}
       *,::before,::after{box-sizing:border-box}
-      body{font-family:'Inter',sans-serif;background-color: var(--bg, #0B0B0F);color: var(--fg, #ECECEF);overflow-x:hidden;margin:0}
-      .glass-nav{background:rgba(11,11,15,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}
-    .font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Space Grotesk",system-ui,sans-serif}.font-heading{font-family:"Geist","system-ui",sans-serif}</style>
+      body{font-family:'Inter',sans-serif;background-color: var(--bg, #FFFFFF);color: var(--fg, #1A1A2E);overflow-x:hidden;margin:0}
+      .glass-nav{background:var(--bg, #FFFFFF);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Inter",system-ui,sans-serif}.font-heading{font-family:"Geist","system-ui",sans-serif}</style>
     <link rel="preload" href="/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
   </head>
-  <body class="antialiased selection:bg-[var(--accent)] selection:text-white">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--accent)] focus:text-white focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
+  <body class="antialiased selection:bg-[var(--accent)] selection:text-[var(--on-accent)]">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--accent)] focus:text-[var(--fg)] focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
 
     <nav class="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
       <div
@@ -116,61 +115,61 @@
             class="h-8 w-8 opacity-90 group-hover:opacity-100 transition-opacity" height="32" width="32"
           />
           <span
-            class="font-bold text-lg tracking-tight text-white group-hover:text-[var(--accent)] transition-colors"
+            class="font-bold text-lg tracking-tight text-[var(--fg)] group-hover:text-[var(--accent-text)] transition-colors"
             >Growth Buddies</span
           >
         </a>
 
         <div class="hidden md:flex items-center gap-8">
-          <a href="/servicios" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Servicios</a>
-          <a href="/casos" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Casos</a>
-          <a href="/blog" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Blog</a>
-          <a href="/nosotros" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Nosotros</a>
-          <a href="/#contacto" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Contacto</a>
+          <a href="/servicios" class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors">Servicios</a>
+          <a href="/casos" class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors">Casos</a>
+          <a href="/blog" class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors">Blog</a>
+          <a href="/nosotros" class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors">Nosotros</a>
+          <a href="/#contacto" class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors">Contacto</a>
         </div>
 
         <div class="hidden md:block">
-          <a href="{{calendly}}" target="_blank" rel="noopener noreferrer" class="bg-[var(--accent)]/10 hover:bg-[var(--accent)]/20 text-[var(--accent)] hover:text-white border border-[var(--accent)]/30 hover:border-[var(--accent)] font-semibold text-sm py-2 px-5 rounded-full transition-all duration-300">
+          <a href="{{calendly}}" target="_blank" rel="noopener noreferrer" class="bg-[var(--accent-soft)] hover:bg-[var(--accent-soft)] text-[var(--accent-text)] hover:text-[var(--fg)] border border-[var(--accent)] hover:border-[var(--accent)] font-semibold text-sm py-2 px-5 rounded-full transition-all duration-300">
                 Agendar conversación
           </a>
         </div>
 
         <!-- Hamburger Button (Mobile) -->
-        <button id="mobile-menu-btn" aria-expanded="false" aria-label="Abrir menú" class="md:hidden flex flex-col justify-center items-center w-11 h-11 gap-[6px] rounded-lg hover:bg-white/10 transition-colors">
-          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
-          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
-          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
+        <button id="mobile-menu-btn" aria-expanded="false" aria-label="Abrir menú" class="md:hidden flex flex-col justify-center items-center w-11 h-11 gap-[6px] rounded-lg hover:bg-[var(--hover)] transition-colors">
+          <span class="block w-6 h-0.5 bg-[var(--fg)] rounded-full"></span>
+          <span class="block w-6 h-0.5 bg-[var(--fg)] rounded-full"></span>
+          <span class="block w-6 h-0.5 bg-[var(--fg)] rounded-full"></span>
         </button>
       </div>
     </nav>
 
     <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" style="display:none;" class="fixed inset-0 z-[200] flex-col" aria-hidden="true">
-      <div class="absolute inset-0 bg-[var(--bg)]/95"></div>
+      <div class="absolute inset-0 bg-[var(--bg)]"></div>
       <div class="relative flex flex-col h-full px-6 py-6 overflow-y-auto">
         <div class="flex justify-between items-center mb-10">
           <a href="/" class="flex items-center gap-2">
             <img src="/img/logo.webp" alt="Logotipo de Growth Buddies" class="h-8 w-8" height="32" width="32" />
-            <span class="font-bold text-lg text-white">Growth Buddies</span>
+            <span class="font-bold text-lg text-[var(--fg)]">Growth Buddies</span>
           </a>
-          <button id="mobile-menu-close" aria-label="Cerrar menú" class="flex items-center justify-center w-11 h-11 text-white hover:bg-white/10 rounded-lg transition-colors">
+          <button id="mobile-menu-close" aria-label="Cerrar menú" class="flex items-center justify-center w-11 h-11 text-[var(--fg)] hover:bg-[var(--hover)] rounded-lg transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
           </button>
         </div>
         <div class="mb-8">
-          <a href="{{calendly}}" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[var(--accent)]/10 hover:bg-[var(--accent)]/20 text-[var(--accent)] border border-[var(--accent)]/30 hover:border-[var(--accent)] font-semibold text-base py-4 px-5 rounded-full transition-all duration-300">
+          <a href="{{calendly}}" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[var(--accent-soft)] hover:bg-[var(--accent-soft)] text-[var(--accent-text)] border border-[var(--accent)] hover:border-[var(--accent)] font-semibold text-base py-4 px-5 rounded-full transition-all duration-300">
             Agendar conversación
           </a>
         </div>
         <nav class="flex flex-col" role="navigation" aria-label="Menú móvil">
-          <a href="/servicios" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Servicios</a>
-          <a href="/casos" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Casos</a>
-          <a href="/blog" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Blog</a>
-          <a href="/nosotros" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Nosotros</a>
-          <a href="/#contacto" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Contacto</a>
+          <a href="/servicios" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Servicios</a>
+          <a href="/casos" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Casos</a>
+          <a href="/blog" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Blog</a>
+          <a href="/nosotros" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Nosotros</a>
+          <a href="/#contacto" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Contacto</a>
         </nav>
         <div class="mt-auto pt-8">
-          <a href="{{whatsapp}}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 text-[#25D366] text-base font-medium hover:underline py-3">
+          <a href="{{whatsapp}}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 text-[var(--whatsapp)] text-base font-medium hover:underline py-3">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
             Hablar por WhatsApp
           </a>
@@ -179,22 +178,22 @@
     </div>
 
     <!-- Page Header -->
-    <header class="relative pt-32 pb-20 px-6 overflow-hidden">
-       <div class="absolute inset-0 bg-indigo-900/10 blur-[100px] pointer-events-none"></div>
+    <header class="band-dark relative pt-32 pb-20 px-6 overflow-hidden">
+       <div class="absolute inset-0 bg-[var(--accent-soft)] blur-[100px] pointer-events-none"></div>
        <div class="max-w-4xl mx-auto text-center relative z-10">
           <!-- Breadcrumb -->
           <nav aria-label="Migas de pan" class="mb-6">
-            <ol class="flex items-center justify-center gap-2 text-xs text-slate-500">
-              <li><a href="/" class="hover:text-[var(--accent)] transition-colors">Inicio</a></li>
+            <ol class="flex items-center justify-center gap-2 text-xs text-[var(--fg-muted)]">
+              <li><a href="/" class="hover:text-[var(--accent-text)] transition-colors">Inicio</a></li>
               <li><span aria-hidden="true">/</span></li>
-              <li class="text-[var(--accent)]" aria-current="page">Blog</li>
+              <li class="text-[var(--accent-text)]" aria-current="page">Blog</li>
             </ol>
           </nav>
-          <span class="text-[var(--accent)] font-bold tracking-wider text-sm uppercase font-display">Blog + Recursos</span>
-          <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white mt-4 font-heading">
+          <span class="text-[var(--accent-text)] font-bold tracking-wider text-sm uppercase font-display">Blog + Recursos</span>
+          <h1 class="text-4xl md:text-6xl font-semibold tracking-tight text-[var(--fg)] mt-4 font-heading">
             Insights para la Transformación
           </h1>
-          <p class="mt-6 text-xl text-slate-400 max-w-2xl mx-auto">
+          <p class="mt-6 text-xl text-[var(--fg-muted)] max-w-2xl mx-auto">
              Análisis profundos, guías técnicas y estrategias de gestión del cambio para líderes que construyen el futuro.
           </p>
        </div>
@@ -205,14 +204,14 @@
     <!-- Lead Magnet Banner -->
     <div class="px-6 pt-8 pb-2">
       <div class="max-w-7xl mx-auto">
-        <a href="/recursos/guia-ia-legal" class="group flex flex-col sm:flex-row items-center gap-4 sm:gap-6 bg-gradient-to-r from-[var(--surface)] to-zinc-900/50 border border-[var(--line)] rounded-2xl p-5 hover:border-[var(--accent)]/50 transition-colors">
+        <a href="/recursos/guia-ia-legal" class="group flex flex-col sm:flex-row items-center gap-4 sm:gap-6 bg-gradient-to-r from-[var(--surface)] to-[var(--surface)] border border-[var(--line)] rounded-2xl p-5 hover:border-[var(--accent)] transition-colors">
           <span class="text-3xl flex-shrink-0">📘</span>
           <div class="flex-1 text-center sm:text-left">
-            <p class="text-xs font-bold tracking-widest uppercase text-[var(--accent)] mb-1">Guía gratuita — Descarga inmediata</p>
-            <p class="text-white font-bold text-base leading-snug">5 Procesos que Puedes Automatizar con IA Esta Semana</p>
-            <p class="text-slate-400 text-sm mt-0.5">Para empresas de servicios en Latinoamérica. Con ROI estimado y paso a paso de implementación.</p>
+            <p class="text-xs font-bold tracking-widest uppercase text-[var(--accent-text)] mb-1">Guía gratuita — Descarga inmediata</p>
+            <p class="text-[var(--fg)] font-bold text-base leading-snug">5 Procesos que Puedes Automatizar con IA Esta Semana</p>
+            <p class="text-[var(--fg-muted)] text-sm mt-0.5">Para empresas de servicios en Latinoamérica. Con ROI estimado y paso a paso de implementación.</p>
           </div>
-          <span class="flex-shrink-0 inline-flex items-center gap-2 bg-[var(--accent)] text-white font-bold py-2.5 px-5 rounded-full text-sm group-hover:opacity-90 transition-opacity">
+          <span class="flex-shrink-0 inline-flex items-center gap-2 bg-[var(--accent)] text-[var(--on-accent)] font-bold py-2.5 px-5 rounded-full text-sm group-hover:opacity-90 transition-opacity">
             Descargar gratis →
           </span>
         </a>
@@ -223,63 +222,63 @@
     <section class="px-6 pb-12">
       <div class="max-w-7xl mx-auto">
         <div class="mb-6 flex items-center gap-3">
-          <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">Artículo Destacado</span>
-          <div class="flex-1 h-px bg-amber-400/20"></div>
+          <span class="text-xs font-bold text-[var(--accent-text)] uppercase tracking-widest">Artículo Destacado</span>
+          <div class="flex-1 h-px bg-[var(--accent-soft)]"></div>
         </div>
-        <article class="group relative bg-black border border-amber-500/30 rounded-2xl overflow-hidden hover:border-amber-400 transition-all duration-300 md:grid md:grid-cols-2">
-          <div class="absolute inset-0 bg-gradient-to-r from-amber-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+        <article class="group relative bg-[var(--bg)] border border-[var(--line)] rounded-2xl overflow-hidden hover:border-[var(--accent)] transition-all duration-300 md:grid md:grid-cols-2">
+          <div class="absolute inset-0 bg-gradient-to-r from-[var(--accent-soft)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
 
           <!-- Featured image area -->
           <div class="h-64 md:h-auto relative overflow-hidden">
-            <div class="absolute inset-0" style="background: radial-gradient(ellipse at 20% 50%, rgba(245,158,11,0.25) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(217,119,6,0.15) 0%, transparent 50%), linear-gradient(135deg, #0c0a00 0%, #0a0800 50%, #050510 100%);"></div>
+            <div class="absolute inset-0" style="background: radial-gradient(ellipse at 20% 50%, rgba(245,158,11,0.25) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(217,119,6,0.15) 0%, transparent 50%), linear-gradient(135deg, #0c0a00 0%, #0a0800 50%, var(--bg) 100%);"></div>
             <!-- Building/city circuit pattern -->
             <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="40" y="120" width="30" height="160" fill="#f59e0b" rx="2"/>
-              <rect x="80" y="80" width="40" height="200" fill="#f59e0b" rx="2"/>
-              <rect x="130" y="100" width="25" height="180" fill="#f59e0b" rx="2"/>
-              <rect x="165" y="60" width="50" height="220" fill="#f59e0b" rx="2"/>
-              <rect x="225" y="90" width="35" height="190" fill="#f59e0b" rx="2"/>
-              <rect x="270" y="50" width="45" height="230" fill="#f59e0b" rx="2"/>
-              <rect x="325" y="110" width="30" height="170" fill="#f59e0b" rx="2"/>
+              <rect x="40" y="120" width="30" height="160" fill="var(--accent-text)" rx="2"/>
+              <rect x="80" y="80" width="40" height="200" fill="var(--accent-text)" rx="2"/>
+              <rect x="130" y="100" width="25" height="180" fill="var(--accent-text)" rx="2"/>
+              <rect x="165" y="60" width="50" height="220" fill="var(--accent-text)" rx="2"/>
+              <rect x="225" y="90" width="35" height="190" fill="var(--accent-text)" rx="2"/>
+              <rect x="270" y="50" width="45" height="230" fill="var(--accent-text)" rx="2"/>
+              <rect x="325" y="110" width="30" height="170" fill="var(--accent-text)" rx="2"/>
               <!-- Windows -->
-              <rect x="46" y="130" width="8" height="6" fill="#050510" rx="1"/><rect x="58" y="130" width="8" height="6" fill="#050510" rx="1"/>
-              <rect x="46" y="145" width="8" height="6" fill="#050510" rx="1"/><rect x="58" y="145" width="8" height="6" fill="#050510" rx="1"/>
-              <rect x="87" y="90" width="10" height="8" fill="#050510" rx="1"/><rect x="102" y="90" width="10" height="8" fill="#050510" rx="1"/>
-              <rect x="87" y="108" width="10" height="8" fill="#050510" rx="1"/><rect x="102" y="108" width="10" height="8" fill="#050510" rx="1"/>
+              <rect x="46" y="130" width="8" height="6" fill="var(--bg)" rx="1"/><rect x="58" y="130" width="8" height="6" fill="var(--bg)" rx="1"/>
+              <rect x="46" y="145" width="8" height="6" fill="var(--bg)" rx="1"/><rect x="58" y="145" width="8" height="6" fill="var(--bg)" rx="1"/>
+              <rect x="87" y="90" width="10" height="8" fill="var(--bg)" rx="1"/><rect x="102" y="90" width="10" height="8" fill="var(--bg)" rx="1"/>
+              <rect x="87" y="108" width="10" height="8" fill="var(--bg)" rx="1"/><rect x="102" y="108" width="10" height="8" fill="var(--bg)" rx="1"/>
               <!-- Data lines -->
-              <line x1="0" y1="280" x2="400" y2="280" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4 8"/>
-              <circle cx="120" cy="280" r="3" fill="#f59e0b"/>
-              <circle cx="200" cy="280" r="3" fill="#f59e0b"/>
-              <circle cx="300" cy="280" r="3" fill="#f59e0b"/>
-              <line x1="120" y1="280" x2="120" y2="200" stroke="#f59e0b" stroke-width="0.5" stroke-dasharray="3 6"/>
-              <line x1="200" y1="280" x2="200" y2="160" stroke="#f59e0b" stroke-width="0.5" stroke-dasharray="3 6"/>
-              <line x1="300" y1="280" x2="300" y2="190" stroke="#f59e0b" stroke-width="0.5" stroke-dasharray="3 6"/>
+              <line x1="0" y1="280" x2="400" y2="280" stroke="var(--accent-text)" stroke-width="1" stroke-dasharray="4 8"/>
+              <circle cx="120" cy="280" r="3" fill="var(--accent-text)"/>
+              <circle cx="200" cy="280" r="3" fill="var(--accent-text)"/>
+              <circle cx="300" cy="280" r="3" fill="var(--accent-text)"/>
+              <line x1="120" y1="280" x2="120" y2="200" stroke="var(--accent-text)" stroke-width="0.5" stroke-dasharray="3 6"/>
+              <line x1="200" y1="280" x2="200" y2="160" stroke="var(--accent-text)" stroke-width="0.5" stroke-dasharray="3 6"/>
+              <line x1="300" y1="280" x2="300" y2="190" stroke="var(--accent-text)" stroke-width="0.5" stroke-dasharray="3 6"/>
             </svg>
             <div class="absolute bottom-4 left-4">
-              <span class="text-xs font-bold text-amber-400 uppercase tracking-wider border border-amber-400/30 bg-black/60 px-2 py-1 rounded">PropTech</span>
+              <span class="text-xs font-bold text-[var(--accent-text)] uppercase tracking-wider border border-[var(--line)] bg-[var(--surface)] px-2 py-1 rounded">PropTech</span>
             </div>
           </div>
 
           <!-- Content -->
           <div class="p-8 md:p-10 flex flex-col justify-center relative z-10">
             <div class="flex items-center gap-2 mb-4">
-              <span class="text-xs text-slate-500">Marzo 2026</span>
-              <span class="text-slate-700">·</span>
-              <span class="text-xs text-slate-500">7 min lectura</span>
+              <span class="text-xs text-[var(--fg-muted)]">Marzo 2026</span>
+              <span class="text-[var(--fg-muted)]">·</span>
+              <span class="text-xs text-[var(--fg-muted)]">7 min lectura</span>
             </div>
-            <h2 class="text-2xl md:text-3xl font-bold text-white font-heading mb-4 group-hover:text-amber-400 transition-colors leading-tight">
+            <h2 class="text-2xl md:text-3xl font-semibold text-[var(--fg)] font-heading mb-4 group-hover:text-[var(--accent-text)] transition-colors leading-tight">
               <a href="/blog/ia-corretaje-propiedades-chile" class="before:absolute before:inset-0">
                 Cómo la IA está Transformando el Corretaje de Propiedades en Chile
               </a>
             </h2>
-            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            <p class="text-[var(--fg-muted)] text-sm leading-relaxed mb-6">
               OCR inteligente, evaluación automatizada de leads y pitch reports generados por IA: el nuevo estándar para corredoras de propiedades en Chile.
             </p>
             <div class="flex items-center gap-3">
-              <img src="../img/foto.webp" alt="Edmundo Spohr — CEO en Growth Buddies" loading="lazy" decoding="async" class="h-8 w-8 rounded-full object-cover ring-2 ring-amber-400/30" height="32" width="32">
+              <img src="../img/foto.webp" alt="Edmundo Spohr — CEO en Growth Buddies" loading="lazy" decoding="async" class="h-8 w-8 rounded-full object-cover ring-2 ring-[var(--line)]" height="32" width="32">
               <div>
-                <p class="text-sm font-bold text-white">Edmundo Spohr</p>
-                <p class="text-xs text-slate-500">CEO Growth Buddies</p>
+                <p class="text-sm font-bold text-[var(--fg)]">Edmundo Spohr</p>
+                <p class="text-xs text-[var(--fg-muted)]">CEO Growth Buddies</p>
               </div>
             </div>
           </div>
@@ -295,25 +294,25 @@
             role="tab"
             data-filter="all"
             aria-selected="true"
-            class="blog-filter-btn text-sm font-medium px-4 py-2 rounded-full border transition-all duration-200 border-[var(--accent)] text-[var(--accent)] bg-[var(--accent)]/10"
+            class="blog-filter-btn text-sm font-medium px-4 py-2 rounded-full border transition-all duration-200 border-[var(--accent)] text-[var(--accent-text)] bg-[var(--accent-soft)]"
           >Todos</button>
           <button
             role="tab"
             data-filter="legal-tech"
             aria-selected="false"
-            class="blog-filter-btn text-sm font-medium px-4 py-2 rounded-full border transition-all duration-200 border-zinc-700 text-slate-400 hover:border-[var(--accent)] hover:text-[var(--accent)]"
+            class="blog-filter-btn text-sm font-medium px-4 py-2 rounded-full border transition-all duration-200 border-[var(--line)] text-[var(--fg-muted)] hover:border-[var(--accent)] hover:text-[var(--accent-text)]"
           >Legal Tech</button>
           <button
             role="tab"
             data-filter="ia"
             aria-selected="false"
-            class="blog-filter-btn text-sm font-medium px-4 py-2 rounded-full border transition-all duration-200 border-zinc-700 text-slate-400 hover:border-purple-400 hover:text-purple-400"
+            class="blog-filter-btn text-sm font-medium px-4 py-2 rounded-full border transition-all duration-200 border-[var(--line)] text-[var(--fg-muted)] hover:border-[var(--accent)] hover:text-[var(--accent-text)]"
           >Inteligencia Artificial</button>
           <button
             role="tab"
             data-filter="proptech"
             aria-selected="false"
-            class="blog-filter-btn text-sm font-medium px-4 py-2 rounded-full border transition-all duration-200 border-zinc-700 text-slate-400 hover:border-amber-400 hover:text-amber-400"
+            class="blog-filter-btn text-sm font-medium px-4 py-2 rounded-full border transition-all duration-200 border-[var(--line)] text-[var(--fg-muted)] hover:border-[var(--accent)] hover:text-[var(--accent-text)]"
           >PropTech</button>
         </div>
       </div>
@@ -324,143 +323,143 @@
       <div id="articles-grid" class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
 
         <!-- Article 1: Contracts — Legal Tech -->
-        <article data-category="legal-tech" class="group relative bg-black border border-zinc-800 rounded-2xl overflow-hidden hover:border-[var(--accent)] transition-all duration-300">
-            <div class="absolute inset-0 bg-gradient-to-b from-[var(--accent)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+        <article data-category="legal-tech" class="group relative bg-[var(--bg)] border border-[var(--line)] rounded-2xl overflow-hidden hover:border-[var(--accent)] transition-all duration-300">
+            <div class="absolute inset-0 bg-gradient-to-b from-[var(--accent)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
 
             <div class="h-48 w-full relative overflow-hidden">
               <!-- Legal Tech: blue circuit gradient -->
-              <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, rgba(37,99,235,0.35) 0%, transparent 55%), radial-gradient(ellipse at 75% 70%, rgba(29,78,216,0.2) 0%, transparent 50%), linear-gradient(160deg, #030b1a 0%, #050510 100%);"></div>
+              <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, rgba(37,99,235,0.35) 0%, transparent 55%), radial-gradient(ellipse at 75% 70%, rgba(29,78,216,0.2) 0%, transparent 50%), linear-gradient(160deg, var(--bg) 0%, var(--bg) 100%);"></div>
               <svg class="absolute inset-0 w-full h-full opacity-15" viewBox="0 0 320 192" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <line x1="0" y1="48" x2="320" y2="48" stroke="#3b82f6" stroke-width="0.5" stroke-dasharray="6 10"/>
-                <line x1="0" y1="96" x2="320" y2="96" stroke="#3b82f6" stroke-width="0.5" stroke-dasharray="6 10"/>
-                <line x1="0" y1="144" x2="320" y2="144" stroke="#3b82f6" stroke-width="0.5" stroke-dasharray="6 10"/>
-                <line x1="64" y1="0" x2="64" y2="192" stroke="#3b82f6" stroke-width="0.5" stroke-dasharray="6 10"/>
-                <line x1="160" y1="0" x2="160" y2="192" stroke="#3b82f6" stroke-width="0.5" stroke-dasharray="6 10"/>
-                <line x1="256" y1="0" x2="256" y2="192" stroke="#3b82f6" stroke-width="0.5" stroke-dasharray="6 10"/>
-                <rect x="50" y="34" width="28" height="28" rx="4" stroke="#60a5fa" stroke-width="1" fill="none"/>
-                <rect x="146" y="82" width="28" height="28" rx="4" stroke="#60a5fa" stroke-width="1" fill="none"/>
-                <rect x="242" y="130" width="28" height="28" rx="4" stroke="#60a5fa" stroke-width="1" fill="none"/>
-                <line x1="78" y1="48" x2="146" y2="96" stroke="#60a5fa" stroke-width="0.8"/>
-                <line x1="174" y1="96" x2="242" y2="144" stroke="#60a5fa" stroke-width="0.8"/>
-                <circle cx="64" cy="48" r="3" fill="#3b82f6"/>
-                <circle cx="160" cy="96" r="3" fill="#3b82f6"/>
-                <circle cx="256" cy="144" r="3" fill="#3b82f6"/>
+                <line x1="0" y1="48" x2="320" y2="48" stroke="var(--accent-text)" stroke-width="0.5" stroke-dasharray="6 10"/>
+                <line x1="0" y1="96" x2="320" y2="96" stroke="var(--accent-text)" stroke-width="0.5" stroke-dasharray="6 10"/>
+                <line x1="0" y1="144" x2="320" y2="144" stroke="var(--accent-text)" stroke-width="0.5" stroke-dasharray="6 10"/>
+                <line x1="64" y1="0" x2="64" y2="192" stroke="var(--accent-text)" stroke-width="0.5" stroke-dasharray="6 10"/>
+                <line x1="160" y1="0" x2="160" y2="192" stroke="var(--accent-text)" stroke-width="0.5" stroke-dasharray="6 10"/>
+                <line x1="256" y1="0" x2="256" y2="192" stroke="var(--accent-text)" stroke-width="0.5" stroke-dasharray="6 10"/>
+                <rect x="50" y="34" width="28" height="28" rx="4" stroke="var(--accent-text)" stroke-width="1" fill="none"/>
+                <rect x="146" y="82" width="28" height="28" rx="4" stroke="var(--accent-text)" stroke-width="1" fill="none"/>
+                <rect x="242" y="130" width="28" height="28" rx="4" stroke="var(--accent-text)" stroke-width="1" fill="none"/>
+                <line x1="78" y1="48" x2="146" y2="96" stroke="var(--accent-text)" stroke-width="0.8"/>
+                <line x1="174" y1="96" x2="242" y2="144" stroke="var(--accent-text)" stroke-width="0.8"/>
+                <circle cx="64" cy="48" r="3" fill="var(--accent-text)"/>
+                <circle cx="160" cy="96" r="3" fill="var(--accent-text)"/>
+                <circle cx="256" cy="144" r="3" fill="var(--accent-text)"/>
               </svg>
             </div>
 
             <div class="p-8 relative z-10">
                 <div class="flex items-center gap-2 mb-4">
-                    <span class="text-xs font-bold text-[var(--accent)] uppercase tracking-wider border border-[var(--accent)]/20 px-2 py-1 rounded">Legal Tech</span>
-                    <span class="text-xs text-slate-500">Enero 2026</span>
+                    <span class="text-xs font-bold text-[var(--accent-text)] uppercase tracking-wider border border-[var(--accent)] px-2 py-1 rounded">Legal Tech</span>
+                    <span class="text-xs text-[var(--fg-muted)]">Enero 2026</span>
                 </div>
-                <h2 class="text-2xl font-bold text-white font-heading mb-3 group-hover:text-[var(--accent)] transition-colors">
+                <h2 class="text-2xl font-semibold text-[var(--fg)] font-heading mb-3 group-hover:text-[var(--accent-text)] transition-colors">
                     <a href="/blog/automatizacion-contratos-legales-2026" class="before:absolute before:inset-0">Cómo automatizar contratos legales en 2026</a>
                 </h2>
-                <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                <p class="text-[var(--fg-muted)] text-sm leading-relaxed mb-6">
                     La IA Generativa ha cambiado el juego. Descubre las herramientas y flujos de trabajo que están reduciendo el tiempo de revisión en un 70%.
                 </p>
-                <div class="flex items-center justify-between border-t border-zinc-800 pt-4">
+                <div class="flex items-center justify-between border-t border-[var(--line)] pt-4">
                     <div class="flex items-center gap-2">
                         <img src="../img/foto.webp" alt="Edmundo Spohr — CEO en Growth Buddies" loading="lazy" decoding="async" class="h-6 w-6 rounded-full object-cover grayscale opacity-70" height="24" width="24">
-                        <span class="text-xs text-slate-500">Por Edmundo Spohr</span>
+                        <span class="text-xs text-[var(--fg-muted)]">Por Edmundo Spohr</span>
                     </div>
-                    <span class="text-xs text-slate-500">5 min lectura</span>
+                    <span class="text-xs text-[var(--fg-muted)]">5 min lectura</span>
                 </div>
             </div>
         </article>
 
         <!-- Article 2: ROI AI — Inteligencia Artificial -->
-        <article data-category="ia" class="group relative bg-black border border-zinc-800 rounded-2xl overflow-hidden hover:border-purple-400 transition-all duration-300">
-            <div class="absolute inset-0 bg-gradient-to-b from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+        <article data-category="ia" class="group relative bg-[var(--bg)] border border-[var(--line)] rounded-2xl overflow-hidden hover:border-[var(--accent)] transition-all duration-300">
+            <div class="absolute inset-0 bg-gradient-to-b from-[var(--accent-soft)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
 
             <div class="h-48 w-full relative overflow-hidden">
               <!-- AI: purple neural network gradient -->
-              <div class="absolute inset-0" style="background: radial-gradient(ellipse at 50% 30%, rgba(139,92,246,0.35) 0%, transparent 55%), radial-gradient(ellipse at 20% 80%, rgba(109,40,217,0.2) 0%, transparent 50%), linear-gradient(160deg, #0d0617 0%, #050510 100%);"></div>
+              <div class="absolute inset-0" style="background: radial-gradient(ellipse at 50% 30%, rgba(139,92,246,0.35) 0%, transparent 55%), radial-gradient(ellipse at 20% 80%, rgba(109,40,217,0.2) 0%, transparent 50%), linear-gradient(160deg, #0d0617 0%, var(--bg) 100%);"></div>
               <svg class="absolute inset-0 w-full h-full opacity-15" viewBox="0 0 320 192" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <circle cx="80" cy="60" r="8" stroke="#a78bfa" stroke-width="1" fill="none"/>
-                <circle cx="160" cy="40" r="8" stroke="#a78bfa" stroke-width="1" fill="none"/>
-                <circle cx="240" cy="60" r="8" stroke="#a78bfa" stroke-width="1" fill="none"/>
-                <circle cx="60" cy="130" r="8" stroke="#a78bfa" stroke-width="1" fill="none"/>
+                <circle cx="80" cy="60" r="8" stroke="var(--accent-text)" stroke-width="1" fill="none"/>
+                <circle cx="160" cy="40" r="8" stroke="var(--accent-text)" stroke-width="1" fill="none"/>
+                <circle cx="240" cy="60" r="8" stroke="var(--accent-text)" stroke-width="1" fill="none"/>
+                <circle cx="60" cy="130" r="8" stroke="var(--accent-text)" stroke-width="1" fill="none"/>
                 <circle cx="140" cy="120" r="10" stroke="#c4b5fd" stroke-width="1.5" fill="rgba(139,92,246,0.1)"/>
-                <circle cx="220" cy="130" r="8" stroke="#a78bfa" stroke-width="1" fill="none"/>
-                <circle cx="100" cy="165" r="6" stroke="#a78bfa" stroke-width="1" fill="none"/>
-                <circle cx="200" cy="165" r="6" stroke="#a78bfa" stroke-width="1" fill="none"/>
-                <line x1="80" y1="60" x2="140" y2="120" stroke="#7c3aed" stroke-width="0.8"/>
-                <line x1="160" y1="40" x2="140" y2="120" stroke="#7c3aed" stroke-width="0.8"/>
-                <line x1="240" y1="60" x2="140" y2="120" stroke="#7c3aed" stroke-width="0.8"/>
-                <line x1="60" y1="130" x2="140" y2="120" stroke="#7c3aed" stroke-width="0.8"/>
-                <line x1="220" y1="130" x2="140" y2="120" stroke="#7c3aed" stroke-width="0.8"/>
-                <line x1="140" y1="120" x2="100" y2="165" stroke="#7c3aed" stroke-width="0.8"/>
-                <line x1="140" y1="120" x2="200" y2="165" stroke="#7c3aed" stroke-width="0.8"/>
+                <circle cx="220" cy="130" r="8" stroke="var(--accent-text)" stroke-width="1" fill="none"/>
+                <circle cx="100" cy="165" r="6" stroke="var(--accent-text)" stroke-width="1" fill="none"/>
+                <circle cx="200" cy="165" r="6" stroke="var(--accent-text)" stroke-width="1" fill="none"/>
+                <line x1="80" y1="60" x2="140" y2="120" stroke="var(--accent-text)" stroke-width="0.8"/>
+                <line x1="160" y1="40" x2="140" y2="120" stroke="var(--accent-text)" stroke-width="0.8"/>
+                <line x1="240" y1="60" x2="140" y2="120" stroke="var(--accent-text)" stroke-width="0.8"/>
+                <line x1="60" y1="130" x2="140" y2="120" stroke="var(--accent-text)" stroke-width="0.8"/>
+                <line x1="220" y1="130" x2="140" y2="120" stroke="var(--accent-text)" stroke-width="0.8"/>
+                <line x1="140" y1="120" x2="100" y2="165" stroke="var(--accent-text)" stroke-width="0.8"/>
+                <line x1="140" y1="120" x2="200" y2="165" stroke="var(--accent-text)" stroke-width="0.8"/>
                 <circle cx="140" cy="120" r="3" fill="#8b5cf6"/>
               </svg>
             </div>
 
             <div class="p-8 relative z-10">
                  <div class="flex items-center gap-2 mb-4">
-                    <span class="text-xs font-bold text-purple-400 uppercase tracking-wider border border-purple-400/20 px-2 py-1 rounded">Inteligencia Artificial</span>
-                     <span class="text-xs text-slate-500">Enero 2026</span>
+                    <span class="text-xs font-bold text-[var(--accent-text)] uppercase tracking-wider border border-[var(--line)] px-2 py-1 rounded">Inteligencia Artificial</span>
+                     <span class="text-xs text-[var(--fg-muted)]">Enero 2026</span>
                 </div>
-                <h2 class="text-2xl font-bold text-white font-heading mb-3 group-hover:text-purple-400 transition-colors">
+                <h2 class="text-2xl font-semibold text-[var(--fg)] font-heading mb-3 group-hover:text-[var(--accent-text)] transition-colors">
                     <a href="/blog/roi-ia-estudios-juridicos" class="before:absolute before:inset-0">ROI de implementar IA en Estudios Jurídicos</a>
                 </h2>
-                <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                <p class="text-[var(--fg-muted)] text-sm leading-relaxed mb-6">
                     Más allá del hype: métricas reales de ahorro de costos, facturación recuperada y eficiencia en horas no facturables.
                 </p>
-                <div class="flex items-center justify-between border-t border-zinc-800 pt-4">
+                <div class="flex items-center justify-between border-t border-[var(--line)] pt-4">
                     <div class="flex items-center gap-2">
                          <img src="../img/foto.webp" alt="Edmundo Spohr — CEO en Growth Buddies" loading="lazy" decoding="async" class="h-6 w-6 rounded-full object-cover grayscale opacity-70" height="24" width="24">
-                        <span class="text-xs text-slate-500">Por Edmundo Spohr</span>
+                        <span class="text-xs text-[var(--fg-muted)]">Por Edmundo Spohr</span>
                     </div>
-                    <span class="text-xs text-slate-500">8 min lectura</span>
+                    <span class="text-xs text-[var(--fg-muted)]">8 min lectura</span>
                 </div>
             </div>
         </article>
 
         <!-- Article 3: Success Cases — Casos de Éxito -->
-        <article data-category="casos" class="group relative bg-black border border-zinc-800 rounded-2xl overflow-hidden hover:border-[var(--line)] transition-all duration-300">
+        <article data-category="casos" class="group relative bg-[var(--bg)] border border-[var(--line)] rounded-2xl overflow-hidden hover:border-[var(--line)] transition-all duration-300">
             <div class="absolute inset-0 bg-gradient-to-b from-[var(--surface)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
 
             <div class="h-48 w-full relative overflow-hidden">
               <!-- Success: emerald chart gradient -->
-              <div class="absolute inset-0" style="background: radial-gradient(ellipse at 70% 30%, rgba(16,185,129,0.3) 0%, transparent 55%), radial-gradient(ellipse at 20% 70%, rgba(5,150,105,0.2) 0%, transparent 50%), linear-gradient(160deg, #020f09 0%, #050510 100%);"></div>
+              <div class="absolute inset-0" style="background: radial-gradient(ellipse at 70% 30%, rgba(16,185,129,0.3) 0%, transparent 55%), radial-gradient(ellipse at 20% 70%, rgba(5,150,105,0.2) 0%, transparent 50%), linear-gradient(160deg, #020f09 0%, var(--bg) 100%);"></div>
               <svg class="absolute inset-0 w-full h-full opacity-15" viewBox="0 0 320 192" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <!-- Chart bars -->
-                <rect x="30" y="130" width="24" height="50" rx="3" fill="#10b981" opacity="0.6"/>
-                <rect x="66" y="105" width="24" height="75" rx="3" fill="#10b981" opacity="0.7"/>
-                <rect x="102" y="80" width="24" height="100" rx="3" fill="#10b981" opacity="0.8"/>
-                <rect x="138" y="55" width="24" height="125" rx="3" fill="#34d399" opacity="0.9"/>
-                <rect x="174" y="40" width="24" height="140" rx="3" fill="#34d399"/>
-                <rect x="210" y="65" width="24" height="115" rx="3" fill="#34d399" opacity="0.8"/>
-                <rect x="246" y="30" width="24" height="150" rx="3" fill="#6ee7b7"/>
+                <rect x="30" y="130" width="24" height="50" rx="3" fill="var(--accent-text)" opacity="0.6"/>
+                <rect x="66" y="105" width="24" height="75" rx="3" fill="var(--accent-text)" opacity="0.7"/>
+                <rect x="102" y="80" width="24" height="100" rx="3" fill="var(--accent-text)" opacity="0.8"/>
+                <rect x="138" y="55" width="24" height="125" rx="3" fill="var(--accent-text)" opacity="0.9"/>
+                <rect x="174" y="40" width="24" height="140" rx="3" fill="var(--accent-text)"/>
+                <rect x="210" y="65" width="24" height="115" rx="3" fill="var(--accent-text)" opacity="0.8"/>
+                <rect x="246" y="30" width="24" height="150" rx="3" fill="var(--accent-text)"/>
                 <!-- Trend line -->
-                <polyline points="42,130 78,105 114,80 150,55 186,40 222,55 258,28" stroke="#6ee7b7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="42,130 78,105 114,80 150,55 186,40 222,55 258,28" stroke="var(--accent-text)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                 <!-- Dots on trend line -->
-                <circle cx="42" cy="130" r="3" fill="#10b981"/>
-                <circle cx="150" cy="55" r="3" fill="#10b981"/>
-                <circle cx="258" cy="28" r="4" fill="#6ee7b7"/>
+                <circle cx="42" cy="130" r="3" fill="var(--accent-text)"/>
+                <circle cx="150" cy="55" r="3" fill="var(--accent-text)"/>
+                <circle cx="258" cy="28" r="4" fill="var(--accent-text)"/>
                 <!-- Baseline -->
-                <line x1="20" y1="180" x2="300" y2="180" stroke="#10b981" stroke-width="0.5" opacity="0.4"/>
+                <line x1="20" y1="180" x2="300" y2="180" stroke="var(--accent-text)" stroke-width="0.5" opacity="0.4"/>
               </svg>
             </div>
 
             <div class="p-8 relative z-10">
                  <div class="flex items-center gap-2 mb-4">
-                    <span class="text-xs font-bold text-[var(--accent)] uppercase tracking-wider border border-[var(--line)] px-2 py-1 rounded">Casos de Éxito</span>
-                     <span class="text-xs text-slate-500">Diciembre 2025</span>
+                    <span class="text-xs font-bold text-[var(--accent-text)] uppercase tracking-wider border border-[var(--line)] px-2 py-1 rounded">Casos de Éxito</span>
+                     <span class="text-xs text-[var(--fg-muted)]">Diciembre 2025</span>
                 </div>
-                <h2 class="text-2xl font-bold text-white font-heading mb-3 group-hover:text-[var(--accent)] transition-colors">
+                <h2 class="text-2xl font-semibold text-[var(--fg)] font-heading mb-3 group-hover:text-[var(--accent-text)] transition-colors">
                     <a href="/blog/casos-exito-transformacion-chile" class="before:absolute before:inset-0">Casos de éxito: Transformación Digital en Chile</a>
                 </h2>
-                <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                <p class="text-[var(--fg-muted)] text-sm leading-relaxed mb-6">
                     Lecciones aprendidas de 5 empresas chilenas que superaron la resistencia al cambio y modernizaron su operación legal.
                 </p>
-                <div class="flex items-center justify-between border-t border-zinc-800 pt-4">
+                <div class="flex items-center justify-between border-t border-[var(--line)] pt-4">
                      <div class="flex items-center gap-2">
                         <img src="../img/felipe-2026.webp" alt="Felipe Soto Santibáñez — Consultor Senior en Growth Buddies" loading="lazy" decoding="async" class="h-6 w-6 rounded-full object-cover grayscale opacity-70" height="24" width="24">
-                        <span class="text-xs text-slate-500">Por Felipe Soto S.</span>
+                        <span class="text-xs text-[var(--fg-muted)]">Por Felipe Soto S.</span>
                     </div>
-                    <span class="text-xs text-slate-500">6 min lectura</span>
+                    <span class="text-xs text-[var(--fg-muted)]">6 min lectura</span>
                 </div>
             </div>
         </article>
@@ -469,18 +468,18 @@
 
       <!-- No results message (hidden by default) -->
       <div id="no-results" class="hidden max-w-7xl mx-auto text-center py-16">
-        <p class="text-slate-500 text-lg">No hay artículos en esta categoría aún. Vuelve pronto.</p>
+        <p class="text-[var(--fg-muted)] text-lg">No hay artículos en esta categoría aún. Vuelve pronto.</p>
       </div>
     </section>
 
     <!-- Suscríbete Section -->
-    <section class="py-16 px-6 border-t border-zinc-900">
+    <section class="py-16 px-6 border-t border-[var(--line)]">
       <div class="max-w-2xl mx-auto text-center">
-        <span class="text-[var(--accent)] font-bold tracking-wider text-xs uppercase font-display">Newsletter</span>
-        <h2 class="text-2xl md:text-3xl font-black text-white mt-3 mb-3 font-heading">
+        <span class="text-[var(--accent-text)] font-bold tracking-wider text-xs uppercase font-display">Newsletter</span>
+        <h2 class="text-2xl md:text-3xl font-semibold text-[var(--fg)] mt-3 mb-3 font-heading">
           Suscríbete a nuestros Insights
         </h2>
-        <p class="text-slate-400 text-sm mb-8">
+        <p class="text-[var(--fg-muted)] text-sm mb-8">
           Recibe artículos sobre IA, Legal Tech y PropTech directamente. Sin spam, solo contenido de valor.
         </p>
         <form id="subscribe-form" class="flex flex-col sm:flex-row gap-3 justify-center" novalidate>
@@ -492,23 +491,23 @@
             placeholder="tu@correo.cl"
             autocomplete="email"
             required
-            class="flex-1 max-w-xs bg-zinc-900 border border-zinc-700 text-white placeholder-slate-500 text-base px-4 py-3 rounded-full focus:outline-none focus:border-[var(--accent)] transition-colors"
+            class="flex-1 max-w-xs bg-[var(--surface)] border border-[var(--line)] text-[var(--fg)] placeholder-[var(--fg-muted)] text-base px-4 py-3 rounded-full focus:outline-none focus:border-[var(--accent)] transition-colors"
           />
           <button
             type="submit"
-            class="bg-[var(--accent)] text-black font-bold text-sm px-6 py-3 rounded-full hover:shadow-[0_0_20px_rgba(0,246,255,0.35)] hover:scale-105 transition-all duration-200 whitespace-nowrap"
+            class="bg-[var(--accent)] text-[var(--on-accent)] font-bold text-sm px-6 py-3 rounded-full  hover:scale-105 transition-all duration-200 whitespace-nowrap"
           >
             Suscribirme
           </button>
         </form>
-        <p class="text-xs text-slate-400 mt-4">Recibirás un correo de confirmación. Sin spam, solo contenido de valor.</p>
+        <p class="text-xs text-[var(--fg-muted)] mt-4">Recibirás un correo de confirmación. Sin spam, solo contenido de valor.</p>
       </div>
     </section>
 
     </main>
 
                 <footer
-      class="bg-black py-10 px-5 md:py-16 md:px-6 border-t border-white/10 text-sm"
+      class="bg-[var(--bg)] py-10 px-5 md:py-16 md:px-6 border-t border-[var(--line)] text-sm"
     >
       <div
         class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-8 md:gap-8 md:mb-12"
@@ -525,11 +524,11 @@
               width="40"
             />
             <span
-              class="font-bold text-xl text-white tracking-widest font-display"
+              class="font-bold text-xl text-[var(--fg)] tracking-widest font-display"
               >GROWTH BUDDIES</span
             >
           </a>
-          <p class="text-slate-400 leading-relaxed max-w-xs">
+          <p class="text-[var(--fg-muted)] leading-relaxed max-w-xs">
             Diagnóstico y automatización con IA para empresas de servicios
             profesionales en Latinoamérica.
           </p>
@@ -539,21 +538,21 @@
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Perfil de LinkedIn de Growth Buddies"
-              class="text-slate-400 hover:text-[var(--accent)] transition-colors"
+              class="text-[var(--fg-muted)] hover:text-[var(--accent-text)] transition-colors"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
             <a
               href="mailto:edmundo@spohr.cl"
               aria-label="Enviar correo electrónico a Growth Buddies"
-              class="text-slate-400 hover:text-[var(--accent)] transition-colors"
+              class="text-[var(--fg-muted)] hover:text-[var(--accent-text)] transition-colors"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             </a>
             <a
               href="tel:+56975991366"
               aria-label="Llamar a Growth Buddies"
-              class="text-slate-400 hover:text-[var(--accent)] transition-colors"
+              class="text-[var(--fg-muted)] hover:text-[var(--accent-text)] transition-colors"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
             </a>
@@ -562,57 +561,57 @@
 
         <!-- Servicios -->
         <div>
-          <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Servicios</h4>
-          <ul class="space-y-3 text-slate-400">
-            <li><a href="/servicios/legal-tech" class="hover:text-[var(--accent)] transition-colors">Legal Tech y Automatización</a></li>
-            <li><a href="/servicios/ia-corporativa" class="hover:text-[var(--accent)] transition-colors">Asistente de IA Corporativo</a></li>
-            <li><a href="/servicios/gestion-del-cambio" class="hover:text-[var(--accent)] transition-colors">Gestión del Cambio (Prosci)</a></li>
-            <li><a href="/servicios/agentes-ia-chatbots-empresas" class="hover:text-[var(--accent)] transition-colors">Agentes de IA y Chatbots</a></li>
+          <h4 class="text-[var(--fg)] font-semibold mb-6 font-display uppercase tracking-wider text-xs">Servicios</h4>
+          <ul class="space-y-3 text-[var(--fg-muted)]">
+            <li><a href="/servicios/legal-tech" class="hover:text-[var(--accent-text)] transition-colors">Legal Tech y Automatización</a></li>
+            <li><a href="/servicios/ia-corporativa" class="hover:text-[var(--accent-text)] transition-colors">Asistente de IA Corporativo</a></li>
+            <li><a href="/servicios/gestion-del-cambio" class="hover:text-[var(--accent-text)] transition-colors">Gestión del Cambio (Prosci)</a></li>
+            <li><a href="/servicios/agentes-ia-chatbots-empresas" class="hover:text-[var(--accent-text)] transition-colors">Agentes de IA y Chatbots</a></li>
             <!-- INSERTION POINT: new /servicios/ landings -->
           </ul>
         </div>
 
         <!-- Sectores -->
         <div>
-          <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Sectores</h4>
-          <ul class="space-y-3 text-slate-400">
-            <li><a href="/sectores/automatizacion-ia-estudios-juridicos" class="hover:text-[var(--accent)] transition-colors">Estudios Jurídicos</a></li>
-            <li><a href="/sectores/automatizacion-ia-industria-mineria" class="hover:text-[var(--accent)] transition-colors">Empresas Industriales</a></li>
+          <h4 class="text-[var(--fg)] font-semibold mb-6 font-display uppercase tracking-wider text-xs">Sectores</h4>
+          <ul class="space-y-3 text-[var(--fg-muted)]">
+            <li><a href="/sectores/automatizacion-ia-estudios-juridicos" class="hover:text-[var(--accent-text)] transition-colors">Estudios Jurídicos</a></li>
+            <li><a href="/sectores/automatizacion-ia-industria-mineria" class="hover:text-[var(--accent-text)] transition-colors">Empresas Industriales</a></li>
             <!-- INSERTION POINT: new /sectores/ pillars -->
           </ul>
         </div>
 
         <!-- Recursos -->
         <div>
-          <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Recursos</h4>
-          <ul class="space-y-3 text-slate-400">
-            <li><a href="/blog" class="hover:text-[var(--accent)] transition-colors">Blog</a></li>
-            <li><a href="/recursos/guia-ia-legal" class="hover:text-[var(--accent)] transition-colors">Guía Gratuita IA Legal</a></li>
-            <li><a href="/recursos/informe-automatizacion-servicios-latam" class="hover:text-[var(--accent)] transition-colors">Informe LATAM 2026</a></li>
-            <li><a href="/preguntas-frecuentes" class="hover:text-[var(--accent)] transition-colors">Preguntas Frecuentes</a></li>
-            <li><a href="/recursos/glosario-ia-automatizacion" class="hover:text-[var(--accent)] transition-colors">Glosario IA</a></li>
-            <li><a href="/soluciones" class="hover:text-[var(--accent)] transition-colors">Ejemplos de Implementación</a></li>
+          <h4 class="text-[var(--fg)] font-semibold mb-6 font-display uppercase tracking-wider text-xs">Recursos</h4>
+          <ul class="space-y-3 text-[var(--fg-muted)]">
+            <li><a href="/blog" class="hover:text-[var(--accent-text)] transition-colors">Blog</a></li>
+            <li><a href="/recursos/guia-ia-legal" class="hover:text-[var(--accent-text)] transition-colors">Guía Gratuita IA Legal</a></li>
+            <li><a href="/recursos/informe-automatizacion-servicios-latam" class="hover:text-[var(--accent-text)] transition-colors">Informe LATAM 2026</a></li>
+            <li><a href="/preguntas-frecuentes" class="hover:text-[var(--accent-text)] transition-colors">Preguntas Frecuentes</a></li>
+            <li><a href="/recursos/glosario-ia-automatizacion" class="hover:text-[var(--accent-text)] transition-colors">Glosario IA</a></li>
+            <li><a href="/soluciones" class="hover:text-[var(--accent-text)] transition-colors">Ejemplos de Implementación</a></li>
           </ul>
         </div>
 
         <!-- Empresa -->
         <div>
-          <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Empresa</h4>
-          <ul class="space-y-3 text-slate-400">
-            <li><a href="/nosotros" class="hover:text-[var(--accent)] transition-colors">Nosotros</a></li>
-            <li><a href="/casos" class="hover:text-[var(--accent)] transition-colors">Casos de Éxito</a></li>
-            <li><a href="/privacidad" class="hover:text-[var(--accent)] transition-colors">Privacidad</a></li>
-            <li><a href="/terminos" class="hover:text-[var(--accent)] transition-colors">Términos</a></li>
+          <h4 class="text-[var(--fg)] font-semibold mb-6 font-display uppercase tracking-wider text-xs">Empresa</h4>
+          <ul class="space-y-3 text-[var(--fg-muted)]">
+            <li><a href="/nosotros" class="hover:text-[var(--accent-text)] transition-colors">Nosotros</a></li>
+            <li><a href="/casos" class="hover:text-[var(--accent-text)] transition-colors">Casos de Éxito</a></li>
+            <li><a href="/privacidad" class="hover:text-[var(--accent-text)] transition-colors">Privacidad</a></li>
+            <li><a href="/terminos" class="hover:text-[var(--accent-text)] transition-colors">Términos</a></li>
           </ul>
         </div>
       </div>
 
       <div
-        class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400"
+        class="pt-8 border-t border-[var(--line)] flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[var(--fg-muted)]"
       >
-        <div>&copy; 2026 Growth Buddies SpA. Latinoamérica · <a href="/" class="hover:text-white transition-colors">CL</a> · <a href="/colombia" class="hover:text-white transition-colors">CO</a> · <a href="/peru" class="hover:text-white transition-colors">PE</a> · <a href="/ecuador" class="hover:text-white transition-colors">EC</a></div>
+        <div>&copy; 2026 Growth Buddies SpA. Latinoamérica · <a href="/" class="hover:text-[var(--fg)] transition-colors">CL</a> · <a href="/colombia" class="hover:text-[var(--fg)] transition-colors">CO</a> · <a href="/peru" class="hover:text-[var(--fg)] transition-colors">PE</a> · <a href="/ecuador" class="hover:text-[var(--fg)] transition-colors">EC</a></div>
         <div>
-          <a href="/sitemap.xml" class="hover:text-slate-300 transition-colors">Sitemap</a>
+          <a href="/sitemap.xml" class="hover:text-[var(--fg-soft)] transition-colors">Sitemap</a>
         </div>
       </div>
     </footer>
@@ -639,13 +638,13 @@
         var noResults = document.getElementById('no-results');
 
         var activeClasses = {
-          'all':        ['border-[var(--accent)]', 'text-[var(--accent)]', 'bg-[var(--accent)]/10'],
-          'legal-tech': ['border-[var(--accent)]', 'text-[var(--accent)]', 'bg-[var(--accent)]/10'],
-          'ia':         ['border-purple-400', 'text-purple-400', 'bg-purple-400/10'],
-          'casos':      ['border-[var(--line)]', 'text-[var(--accent)]', 'bg-[var(--surface)]'],
-          'proptech':   ['border-amber-400', 'text-amber-400', 'bg-amber-400/10'],
+          'all':        ['border-[var(--accent)]', 'text-[var(--accent-text)]', 'bg-[var(--accent-soft)]'],
+          'legal-tech': ['border-[var(--accent)]', 'text-[var(--accent-text)]', 'bg-[var(--accent-soft)]'],
+          'ia':         ['border-[var(--line)]', 'text-[var(--accent-text)]', 'bg-[var(--accent-soft)]'],
+          'casos':      ['border-[var(--line)]', 'text-[var(--accent-text)]', 'bg-[var(--surface)]'],
+          'proptech':   ['border-[var(--line)]', 'text-[var(--accent-text)]', 'bg-[var(--accent-soft)]'],
         };
-        var inactiveClasses = ['border-zinc-700', 'text-slate-400'];
+        var inactiveClasses = ['border-[var(--line)]', 'text-[var(--fg-muted)]'];
 
         function setActive(btn) {
           filterBtns.forEach(function(b) {

@@ -201,60 +201,59 @@
     </script>
 
     <style>
-      :root{--color-accent:#0097B2;--color-dark:#0a0a0a}
       *,::before,::after{box-sizing:border-box}
-      body{font-family:"Inter",sans-serif;background-color: var(--bg, #0B0B0F);color: var(--fg, #ECECEF);overflow-x:hidden;margin:0}
-      .glass-nav{background:rgba(11,11,15,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05)}
-      .font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Space Grotesk",system-ui,sans-serif}.font-heading{font-family:"Geist","system-ui",sans-serif}
+      body{font-family:"Inter",sans-serif;background-color: var(--bg, #FFFFFF);color: var(--fg, #1A1A2E);overflow-x:hidden;margin:0}
+      .glass-nav{background:var(--bg, #FFFFFF);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+      .font-serif{font-family:"Instrument Serif",Georgia,serif}.font-display{font-family:"Inter",system-ui,sans-serif}.font-heading{font-family:"Geist","system-ui",sans-serif}
     </style>
     <link rel="preload" href="/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
   </head>
-  <body class="antialiased selection:bg-[var(--accent)] selection:text-white">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--accent)] focus:text-white focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
+  <body class="antialiased selection:bg-[var(--accent)] selection:text-[var(--on-accent)]">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-[var(--accent)] focus:text-[var(--fg)] focus:px-4 focus:py-2 focus:rounded">Saltar al contenido</a>
 
     <!-- Nav -->
     <nav class="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
       <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <a href="/" class="flex items-center gap-2 group">
           <img src="/img/logo.webp" alt="Logotipo de Growth Buddies" class="h-8 w-8 opacity-90 group-hover:opacity-100 transition-opacity" height="32" width="32" />
-          <span class="font-bold text-lg tracking-tight text-white group-hover:text-[var(--accent)] transition-colors">Growth Buddies</span>
+          <span class="font-bold text-lg tracking-tight text-[var(--fg)] group-hover:text-[var(--accent-text)] transition-colors">Growth Buddies</span>
         </a>
         <div class="hidden md:flex items-center gap-8">
-          <a href="/servicios" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Servicios</a>
-          <a href="/casos" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Casos</a>
-          <a href="/blog" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Blog</a>
-          <a href="/nosotros" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Nosotros</a>
-          <a href="/#contacto" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Contacto</a>
+          <a href="/servicios" class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors">Servicios</a>
+          <a href="/casos" class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors">Casos</a>
+          <a href="/blog" class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors">Blog</a>
+          <a href="/nosotros" class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors">Nosotros</a>
+          <a href="/#contacto" class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors">Contacto</a>
         </div>
         <div class="hidden md:block">
-          <a href="{{calendly}}" target="_blank" rel="noopener noreferrer" class="bg-[var(--accent)]/10 hover:bg-[var(--accent)]/20 text-[var(--accent)] hover:text-white border border-[var(--accent)]/30 hover:border-[var(--accent)] font-semibold text-sm py-2 px-5 rounded-full transition-all duration-300">
+          <a href="{{calendly}}" target="_blank" rel="noopener noreferrer" class="bg-[var(--accent-soft)] hover:bg-[var(--accent-soft)] text-[var(--accent-text)] hover:text-[var(--fg)] border border-[var(--accent)] hover:border-[var(--accent)] font-semibold text-sm py-2 px-5 rounded-full transition-all duration-300">
             Agendar conversación
           </a>
         </div>
-        <button id="mobile-menu-btn" aria-expanded="false" aria-label="Abrir menú" class="md:hidden flex flex-col justify-center items-center w-11 h-11 gap-[6px] rounded-lg hover:bg-white/10 transition-colors">
-          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
-          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
-          <span class="block w-6 h-0.5 bg-white rounded-full"></span>
+        <button id="mobile-menu-btn" aria-expanded="false" aria-label="Abrir menú" class="md:hidden flex flex-col justify-center items-center w-11 h-11 gap-[6px] rounded-lg hover:bg-[var(--hover)] transition-colors">
+          <span class="block w-6 h-0.5 bg-[var(--fg)] rounded-full"></span>
+          <span class="block w-6 h-0.5 bg-[var(--fg)] rounded-full"></span>
+          <span class="block w-6 h-0.5 bg-[var(--fg)] rounded-full"></span>
         </button>
       </div>
     </nav>
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" style="display:none;" class="fixed inset-0 z-[200] flex-col" aria-hidden="true">
-      <div class="absolute inset-0 bg-[var(--bg)]/95"></div>
+      <div class="absolute inset-0 bg-[var(--bg)]"></div>
       <div class="relative flex flex-col h-full px-6 py-6 overflow-y-auto">
         <div class="flex justify-between items-center mb-10">
-          <a href="/" class="flex items-center gap-2"><img src="/img/logo.webp" alt="Logotipo de Growth Buddies" class="h-8 w-8" height="32" width="32" /><span class="font-bold text-lg text-white">Growth Buddies</span></a>
-          <button id="mobile-menu-close" aria-label="Cerrar menú" class="flex items-center justify-center w-11 h-11 text-white hover:bg-white/10 rounded-lg transition-colors">
+          <a href="/" class="flex items-center gap-2"><img src="/img/logo.webp" alt="Logotipo de Growth Buddies" class="h-8 w-8" height="32" width="32" /><span class="font-bold text-lg text-[var(--fg)]">Growth Buddies</span></a>
+          <button id="mobile-menu-close" aria-label="Cerrar menú" class="flex items-center justify-center w-11 h-11 text-[var(--fg)] hover:bg-[var(--hover)] rounded-lg transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
           </button>
         </div>
         <nav class="flex flex-col" role="navigation" aria-label="Menú móvil">
-          <a href="/servicios" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Servicios</a>
-          <a href="/casos" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Casos</a>
-          <a href="/blog" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Blog</a>
-          <a href="/nosotros" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Nosotros</a>
-          <a href="/#contacto" class="text-lg font-medium text-slate-300 hover:text-white py-4 border-b border-white/10 transition-colors">Contacto</a>
+          <a href="/servicios" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Servicios</a>
+          <a href="/casos" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Casos</a>
+          <a href="/blog" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Blog</a>
+          <a href="/nosotros" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Nosotros</a>
+          <a href="/#contacto" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Contacto</a>
         </nav>
       </div>
     </div>
@@ -262,24 +261,24 @@
     <main id="main-content">
 
       <!-- Hero -->
-      <header class="relative pt-36 pb-12 px-6 overflow-hidden border-b border-zinc-900">
-        <div class="absolute inset-0 bg-gradient-to-br from-[var(--accent)]/5 via-transparent to-transparent pointer-events-none"></div>
+      <header class="band-dark relative pt-36 pb-12 px-6 overflow-hidden border-b border-[var(--line)]">
+        <div class="absolute inset-0 bg-gradient-to-br from-[var(--accent)] via-transparent to-transparent pointer-events-none"></div>
         <div class="max-w-4xl mx-auto relative z-10">
 
           <!-- Breadcrumb -->
           <nav aria-label="Migas de pan" class="mb-8">
-            <ol class="flex items-center gap-2 text-xs text-slate-500">
-              <li><a href="/" class="hover:text-[var(--accent)] transition-colors">Inicio</a></li>
+            <ol class="flex items-center gap-2 text-xs text-[var(--fg-muted)]">
+              <li><a href="/" class="hover:text-[var(--accent-text)] transition-colors">Inicio</a></li>
               <li><span aria-hidden="true">/</span></li>
-              <li class="text-[var(--accent)]" aria-current="page">Preguntas Frecuentes</li>
+              <li class="text-[var(--accent-text)]" aria-current="page">Preguntas Frecuentes</li>
             </ol>
           </nav>
 
-          <span class="text-xs font-bold text-[var(--accent)] tracking-widest uppercase font-display">FAQ · Recursos</span>
-          <h1 class="text-3xl md:text-5xl font-black text-white font-heading leading-tight mt-4 mb-6">
+          <span class="text-xs font-bold text-[var(--accent-text)] tracking-widest uppercase font-display">FAQ · Recursos</span>
+          <h1 class="text-3xl md:text-5xl font-semibold text-[var(--fg)] font-heading leading-tight mt-4 mb-6">
             Preguntas Frecuentes sobre Automatización con IA
           </h1>
-          <p class="text-lg text-slate-400 max-w-2xl">
+          <p class="text-lg text-[var(--fg-muted)] max-w-2xl">
             Respuestas directas a las dudas más comunes antes de evaluar un proyecto de diagnóstico y automatización con Growth Buddies.
           </p>
         </div>
@@ -291,36 +290,36 @@
 
           <!-- Sobre Growth Buddies -->
           <div>
-            <h2 class="text-xl font-bold text-white font-heading mb-6 pb-3 border-b border-zinc-800">Sobre Growth Buddies</h2>
+            <h2 class="text-xl font-semibold text-[var(--fg)] font-heading mb-6 pb-3 border-b border-[var(--line)]">Sobre Growth Buddies</h2>
             <div class="space-y-3">
 
               <details class="group glass-card rounded-2xl overflow-hidden">
-                <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-white font-semibold hover:text-[var(--accent)] transition-colors">
+                <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-[var(--fg)] font-semibold hover:text-[var(--accent-text)] transition-colors">
                   ¿Qué hace Growth Buddies exactamente?
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" class="flex-shrink-0 transition-transform duration-300 group-open:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
                 </summary>
-                <div class="px-6 pb-6 text-slate-400 leading-relaxed border-t border-zinc-800 pt-4">
-                  Growth Buddies es una consultora de diagnóstico y automatización con IA para empresas de servicios profesionales, industria y minería en Chile y Latinoamérica. Nuestro producto principal es el <strong class="text-white">Diagnóstico de Automatización Estratégica</strong> ($490.000 + IVA en Chile · USD 500 resto de LATAM, entrega en 10 a 15 días): analizamos su operación y le decimos exactamente qué automatizar, en qué orden y qué ROI esperar, con una maqueta funcionando de la oportunidad más rápida. Si decide implementar, el 100% del valor es acreditable a cualquier proyecto contratado dentro de 90 días; pasado el plazo, el crédito caduca.
+                <div class="px-6 pb-6 text-[var(--fg-muted)] leading-relaxed border-t border-[var(--line)] pt-4">
+                  Growth Buddies es una consultora de diagnóstico y automatización con IA para empresas de servicios profesionales, industria y minería en Chile y Latinoamérica. Nuestro producto principal es el <strong class="text-[var(--fg)]">Diagnóstico de Automatización Estratégica</strong> ($490.000 + IVA en Chile · USD 500 resto de LATAM, entrega en 10 a 15 días): analizamos su operación y le decimos exactamente qué automatizar, en qué orden y qué ROI esperar, con una maqueta funcionando de la oportunidad más rápida. Si decide implementar, el 100% del valor es acreditable a cualquier proyecto contratado dentro de 90 días; pasado el plazo, el crédito caduca.
                 </div>
               </details>
 
               <details class="group glass-card rounded-2xl overflow-hidden">
-                <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-white font-semibold hover:text-[var(--accent)] transition-colors">
+                <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-[var(--fg)] font-semibold hover:text-[var(--accent-text)] transition-colors">
                   ¿Qué sectores atienden?
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" class="flex-shrink-0 transition-transform duration-300 group-open:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
                 </summary>
-                <div class="px-6 pb-6 text-slate-400 leading-relaxed border-t border-zinc-800 pt-4">
-                  Firmas y estudios jurídicos (<a href="/servicios/legal-tech" class="text-[var(--accent)] hover:underline">Legal Tech</a>), corredoras de seguros, consultoras de gestión, constructoras e ingeniería, clínicas privadas, industria y minería. Trabajamos con empresas con 15 o más colaboradores en Chile, Colombia, Perú y Ecuador.
+                <div class="px-6 pb-6 text-[var(--fg-muted)] leading-relaxed border-t border-[var(--line)] pt-4">
+                  Firmas y estudios jurídicos (<a href="/servicios/legal-tech" class="text-[var(--accent-text)] hover:underline">Legal Tech</a>), corredoras de seguros, consultoras de gestión, constructoras e ingeniería, clínicas privadas, industria y minería. Trabajamos con empresas con 15 o más colaboradores en Chile, Colombia, Perú y Ecuador.
                 </div>
               </details>
 
               <details class="group glass-card rounded-2xl overflow-hidden">
-                <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-white font-semibold hover:text-[var(--accent)] transition-colors">
+                <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-[var(--fg)] font-semibold hover:text-[var(--accent-text)] transition-colors">
                   ¿Trabajan con empresas fuera de Chile?
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" class="flex-shrink-0 transition-transform duration-300 group-open:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
                 </summary>
-                <div class="px-6 pb-6 text-slate-400 leading-relaxed border-t border-zinc-800 pt-4">
-                  Sí. Tenemos clientes activos en Chile, Colombia, Perú y Ecuador. <a href="/casos/spi-americas" class="text-[var(--accent)] hover:underline">SPI Americas</a> opera con nuestra plataforma en los 4 países simultáneamente. Trabajamos 100% remoto con check-ins semanales, documentación en español y entregables con plazos definidos.
+                <div class="px-6 pb-6 text-[var(--fg-muted)] leading-relaxed border-t border-[var(--line)] pt-4">
+                  Sí. Tenemos clientes activos en Chile, Colombia, Perú y Ecuador. <a href="/casos/spi-americas" class="text-[var(--accent-text)] hover:underline">SPI Americas</a> opera con nuestra plataforma en los 4 países simultáneamente. Trabajamos 100% remoto con check-ins semanales, documentación en español y entregables con plazos definidos.
                 </div>
               </details>
 
@@ -329,65 +328,65 @@
 
           <!-- Sobre el Diagnóstico -->
           <div>
-            <h2 class="text-xl font-bold text-white font-heading mb-6 pb-3 border-b border-zinc-800">Sobre el Diagnóstico de Automatización</h2>
+            <h2 class="text-xl font-semibold text-[var(--fg)] font-heading mb-6 pb-3 border-b border-[var(--line)]">Sobre el Diagnóstico de Automatización</h2>
             <div class="space-y-3">
 
               <details class="group glass-card rounded-2xl overflow-hidden">
-                <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-white font-semibold hover:text-[var(--accent)] transition-colors">
+                <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-[var(--fg)] font-semibold hover:text-[var(--accent-text)] transition-colors">
                   ¿Cuánto cuesta el diagnóstico?
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" class="flex-shrink-0 transition-transform duration-300 group-open:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
                 </summary>
-                <div class="px-6 pb-6 text-slate-400 leading-relaxed border-t border-zinc-800 pt-4">
-                  El Diagnóstico de Automatización Estratégica cuesta <strong class="text-white">$490.000 + IVA en Chile</strong> o <strong class="text-white">USD 500 para el resto de Latinoamérica</strong>, y se entrega en 10 a 15 días. Incluye cuestionario previo, sesión de trabajo de 2 a 3 horas sobre los procesos reales de su empresa, 3 oportunidades priorizadas con ROI estimado en su moneda, una maqueta funcionando de la oportunidad más rápida y una sesión de devolución de 60 a 90 minutos con el decisor de la empresa presente. El 100% del valor es acreditable a cualquier proyecto (implementación, desarrollo o capacitación) contratado dentro de 90 días; pasado el plazo, el crédito caduca.
+                <div class="px-6 pb-6 text-[var(--fg-muted)] leading-relaxed border-t border-[var(--line)] pt-4">
+                  El Diagnóstico de Automatización Estratégica cuesta <strong class="text-[var(--fg)]">$490.000 + IVA en Chile</strong> o <strong class="text-[var(--fg)]">USD 500 para el resto de Latinoamérica</strong>, y se entrega en 10 a 15 días. Incluye cuestionario previo, sesión de trabajo de 2 a 3 horas sobre los procesos reales de su empresa, 3 oportunidades priorizadas con ROI estimado en su moneda, una maqueta funcionando de la oportunidad más rápida y una sesión de devolución de 60 a 90 minutos con el decisor de la empresa presente. El 100% del valor es acreditable a cualquier proyecto (implementación, desarrollo o capacitación) contratado dentro de 90 días; pasado el plazo, el crédito caduca.
                 </div>
               </details>
 
               <details class="group glass-card rounded-2xl overflow-hidden">
-                <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-white font-semibold hover:text-[var(--accent)] transition-colors">
+                <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-[var(--fg)] font-semibold hover:text-[var(--accent-text)] transition-colors">
                   ¿Cuál es la garantía del diagnóstico?
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" class="flex-shrink-0 transition-transform duration-300 group-open:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
                 </summary>
-                <div class="px-6 pb-6 text-slate-400 leading-relaxed border-t border-zinc-800 pt-4">
-                  Si no identificamos al menos <strong class="text-white">3 oportunidades de automatización con ROI positivo</strong>, devolvemos el 100% del pago. Por escrito. Esta garantía existe porque somos una consultora diagnóstico-first: cobramos por el análisis, no por venderle herramientas.
+                <div class="px-6 pb-6 text-[var(--fg-muted)] leading-relaxed border-t border-[var(--line)] pt-4">
+                  Si no identificamos al menos <strong class="text-[var(--fg)]">3 oportunidades de automatización con ROI positivo</strong>, devolvemos el 100% del pago. Por escrito. Esta garantía existe porque somos una consultora diagnóstico-first: cobramos por el análisis, no por venderle herramientas.
                 </div>
               </details>
 
               <details class="group glass-card rounded-2xl overflow-hidden">
-                <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-white font-semibold hover:text-[var(--accent)] transition-colors">
+                <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-[var(--fg)] font-semibold hover:text-[var(--accent-text)] transition-colors">
                   ¿Cómo se paga el diagnóstico?
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" class="flex-shrink-0 transition-transform duration-300 group-open:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
                 </summary>
-                <div class="px-6 pb-6 text-slate-400 leading-relaxed border-t border-zinc-800 pt-4">
-                  <strong class="text-white">100% al reservar.</strong> El pago confirma el cupo del mes (solo abrimos 2 diagnósticos mensuales para asegurar dedicación real de nuestro director). Con el pago acreditado le enviamos el cuestionario y agendamos su sesión en firme. Factura emitida el mismo día. Respaldado por la garantía de devolución total si no identificamos al menos 3 oportunidades con ROI positivo.
+                <div class="px-6 pb-6 text-[var(--fg-muted)] leading-relaxed border-t border-[var(--line)] pt-4">
+                  <strong class="text-[var(--fg)]">100% al reservar.</strong> El pago confirma el cupo del mes (solo abrimos 2 diagnósticos mensuales para asegurar dedicación real de nuestro director). Con el pago acreditado le enviamos el cuestionario y agendamos su sesión en firme. Factura emitida el mismo día. Respaldado por la garantía de devolución total si no identificamos al menos 3 oportunidades con ROI positivo.
                 </div>
               </details>
 
               <details class="group glass-card rounded-2xl overflow-hidden">
-                <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-white font-semibold hover:text-[var(--accent)] transition-colors">
+                <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-[var(--fg)] font-semibold hover:text-[var(--accent-text)] transition-colors">
                   ¿Por qué cobran por el diagnóstico si otras consultoras lo ofrecen gratis?
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" class="flex-shrink-0 transition-transform duration-300 group-open:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
                 </summary>
-                <div class="px-6 pb-6 text-slate-400 leading-relaxed border-t border-zinc-800 pt-4">
+                <div class="px-6 pb-6 text-[var(--fg-muted)] leading-relaxed border-t border-[var(--line)] pt-4">
                   Las auditorías gratuitas son herramientas comerciales para vender implementación después. Nosotros cobramos por el diagnóstico porque es trabajo real (sesión de trabajo sobre los procesos reales de su empresa, análisis, una maqueta funcionando y sesión de devolución con el decisor). Cobrar filtra a quien busca asesoría gratis y compromete a quien va en serio. Y no es un gasto: es un abono. Si decide avanzar dentro de 90 días, el diagnóstico le costó cero.
                 </div>
               </details>
 
               <details class="group glass-card rounded-2xl overflow-hidden">
-                <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-white font-semibold hover:text-[var(--accent)] transition-colors">
+                <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-[var(--fg)] font-semibold hover:text-[var(--accent-text)] transition-colors">
                   ¿Puedo implementar con otro proveedor si solo contrato el diagnóstico?
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" class="flex-shrink-0 transition-transform duration-300 group-open:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
                 </summary>
-                <div class="px-6 pb-6 text-slate-400 leading-relaxed border-t border-zinc-800 pt-4">
+                <div class="px-6 pb-6 text-[var(--fg-muted)] leading-relaxed border-t border-[var(--line)] pt-4">
                   Sí. El roadmap técnico y el informe ejecutivo son suyos. Puede implementar con quien quiera. Muchos clientes eligen quedarse con nosotros porque ya conocemos su operación en profundidad, pero no hay ninguna obligación.
                 </div>
               </details>
 
               <details class="group glass-card rounded-2xl overflow-hidden">
-                <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-white font-semibold hover:text-[var(--accent)] transition-colors">
+                <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-[var(--fg)] font-semibold hover:text-[var(--accent-text)] transition-colors">
                   ¿Cuánto tiempo toma ver resultados?
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" class="flex-shrink-0 transition-transform duration-300 group-open:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
                 </summary>
-                <div class="px-6 pb-6 text-slate-400 leading-relaxed border-t border-zinc-800 pt-4">
+                <div class="px-6 pb-6 text-[var(--fg-muted)] leading-relaxed border-t border-[var(--line)] pt-4">
                   El diagnóstico se entrega en 10 a 15 días desde la sesión de trabajo. Si avanza a implementación, los primeros resultados medibles (reducción de tiempos, errores eliminados) son visibles entre 30 y 60 días desde que el sistema entra en producción. Los proyectos bien dimensionados típicamente recuperan la inversión en menos de 90 días.
                 </div>
               </details>
@@ -397,35 +396,35 @@
 
           <!-- Sobre la Tecnología -->
           <div>
-            <h2 class="text-xl font-bold text-white font-heading mb-6 pb-3 border-b border-zinc-800">Sobre la Tecnología y Seguridad</h2>
+            <h2 class="text-xl font-semibold text-[var(--fg)] font-heading mb-6 pb-3 border-b border-[var(--line)]">Sobre la Tecnología y Seguridad</h2>
             <div class="space-y-3">
 
               <details class="group glass-card rounded-2xl overflow-hidden">
-                <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-white font-semibold hover:text-[var(--accent)] transition-colors">
+                <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-[var(--fg)] font-semibold hover:text-[var(--accent-text)] transition-colors">
                   ¿Mis datos están seguros?
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" class="flex-shrink-0 transition-transform duration-300 group-open:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
                 </summary>
-                <div class="px-6 pb-6 text-slate-400 leading-relaxed border-t border-zinc-800 pt-4">
+                <div class="px-6 pb-6 text-[var(--fg-muted)] leading-relaxed border-t border-[var(--line)] pt-4">
                   Sí. Trabajamos con entornos aislados por cliente y sus datos nunca se usan para entrenar modelos de terceros. Firmamos un acuerdo de confidencialidad antes de acceder a cualquier información. Para empresas con requerimientos críticos de privacidad, ofrecemos despliegue completamente en su propia infraestructura.
                 </div>
               </details>
 
               <details class="group glass-card rounded-2xl overflow-hidden">
-                <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-white font-semibold hover:text-[var(--accent)] transition-colors">
+                <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-[var(--fg)] font-semibold hover:text-[var(--accent-text)] transition-colors">
                   ¿Qué es un asistente de IA con RAG?
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" class="flex-shrink-0 transition-transform duration-300 group-open:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
                 </summary>
-                <div class="px-6 pb-6 text-slate-400 leading-relaxed border-t border-zinc-800 pt-4">
-                  Un asistente con arquitectura <strong class="text-white">RAG (Retrieval-Augmented Generation)</strong> es un chatbot entrenado sobre los documentos y datos privados de su empresa. Cuando un empleado hace una pregunta, el sistema primero busca en su base documental y genera una respuesta citando la fuente (no inventa). Esto elimina las "alucinaciones" y garantiza que el asistente solo hable de lo que su empresa dice que es correcto. <a href="/servicios/ia-corporativa" class="text-[var(--accent)] hover:underline">Ver asistente de IA corporativo →</a>
+                <div class="px-6 pb-6 text-[var(--fg-muted)] leading-relaxed border-t border-[var(--line)] pt-4">
+                  Un asistente con arquitectura <strong class="text-[var(--fg)]">RAG (Retrieval-Augmented Generation)</strong> es un chatbot entrenado sobre los documentos y datos privados de su empresa. Cuando un empleado hace una pregunta, el sistema primero busca en su base documental y genera una respuesta citando la fuente (no inventa). Esto elimina las "alucinaciones" y garantiza que el asistente solo hable de lo que su empresa dice que es correcto. <a href="/servicios/ia-corporativa" class="text-[var(--accent-text)] hover:underline">Ver asistente de IA corporativo →</a>
                 </div>
               </details>
 
               <details class="group glass-card rounded-2xl overflow-hidden">
-                <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-white font-semibold hover:text-[var(--accent)] transition-colors">
+                <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-[var(--fg)] font-semibold hover:text-[var(--accent-text)] transition-colors">
                   ¿Necesito tener un equipo de tecnología interno?
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" class="flex-shrink-0 transition-transform duration-300 group-open:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
                 </summary>
-                <div class="px-6 pb-6 text-slate-400 leading-relaxed border-t border-zinc-800 pt-4">
+                <div class="px-6 pb-6 text-[var(--fg-muted)] leading-relaxed border-t border-[var(--line)] pt-4">
                   No. Gestionamos el proyecto de principio a fin: análisis, arquitectura, desarrollo, despliegue en nube y soporte post-implementación. Nuestro programa de Gestión del Cambio garantiza que su equipo adopte las herramientas sin necesidad de conocimientos técnicos.
                 </div>
               </details>
@@ -435,26 +434,26 @@
 
           <!-- Sobre Gestión del Cambio -->
           <div>
-            <h2 class="text-xl font-bold text-white font-heading mb-6 pb-3 border-b border-zinc-800">Sobre Gestión del Cambio</h2>
+            <h2 class="text-xl font-semibold text-[var(--fg)] font-heading mb-6 pb-3 border-b border-[var(--line)]">Sobre Gestión del Cambio</h2>
             <div class="space-y-3">
 
               <details class="group glass-card rounded-2xl overflow-hidden">
-                <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-white font-semibold hover:text-[var(--accent)] transition-colors">
+                <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-[var(--fg)] font-semibold hover:text-[var(--accent-text)] transition-colors">
                   ¿Por qué fracasan el 70% de los proyectos de IA?
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" class="flex-shrink-0 transition-transform duration-300 group-open:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
                 </summary>
-                <div class="px-6 pb-6 text-slate-400 leading-relaxed border-t border-zinc-800 pt-4">
-                  Según McKinsey &amp; Prosci, el 70% de los proyectos de transformación digital no alcanzan sus objetivos, y no por fallas técnicas sino por <strong class="text-white">resistencia humana al cambio</strong>. El equipo no usa la herramienta, los líderes intermedios bloquean pasivamente la adopción, nadie capacitó correctamente. Growth Buddies es la única consultora de automatización en Chile con <strong class="text-white">certificación Prosci ADKAR</strong> y garantiza la adopción o sigue trabajando sin costo adicional. <a href="/servicios/gestion-del-cambio" class="text-[var(--accent)] hover:underline">Ver gestión del cambio →</a>
-                  <p class="text-xs text-slate-500 mt-3">Fuente: McKinsey &amp; Prosci Research, "Changing Change Management" (2023).</p>
+                <div class="px-6 pb-6 text-[var(--fg-muted)] leading-relaxed border-t border-[var(--line)] pt-4">
+                  Según McKinsey &amp; Prosci, el 70% de los proyectos de transformación digital no alcanzan sus objetivos, y no por fallas técnicas sino por <strong class="text-[var(--fg)]">resistencia humana al cambio</strong>. El equipo no usa la herramienta, los líderes intermedios bloquean pasivamente la adopción, nadie capacitó correctamente. Growth Buddies es la única consultora de automatización en Chile con <strong class="text-[var(--fg)]">certificación Prosci ADKAR</strong> y garantiza la adopción o sigue trabajando sin costo adicional. <a href="/servicios/gestion-del-cambio" class="text-[var(--accent-text)] hover:underline">Ver gestión del cambio →</a>
+                  <p class="text-xs text-[var(--fg-muted)] mt-3">Fuente: McKinsey &amp; Prosci Research, "Changing Change Management" (2023).</p>
                 </div>
               </details>
 
               <details class="group glass-card rounded-2xl overflow-hidden">
-                <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-white font-semibold hover:text-[var(--accent)] transition-colors">
+                <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-[var(--fg)] font-semibold hover:text-[var(--accent-text)] transition-colors">
                   ¿Cuánto tiempo toma un programa de gestión del cambio?
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" class="flex-shrink-0 transition-transform duration-300 group-open:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
                 </summary>
-                <div class="px-6 pb-6 text-slate-400 leading-relaxed border-t border-zinc-800 pt-4">
+                <div class="px-6 pb-6 text-[var(--fg-muted)] leading-relaxed border-t border-[var(--line)] pt-4">
                   Para equipos de 10-50 personas, un programa completo dura entre 8 y 16 semanas. El acompañamiento post-lanzamiento continúa hasta alcanzar el KPI de adopción acordado, sin costo adicional si el equipo no llega al objetivo por causas atribuibles al proceso.
                 </div>
               </details>
@@ -463,24 +462,24 @@
           </div>
 
           <!-- Recursos adicionales -->
-          <div class="pt-8 border-t border-zinc-800">
-            <h2 class="text-lg font-bold text-white font-heading mb-4">Recursos relacionados</h2>
+          <div class="pt-8 border-t border-[var(--line)]">
+            <h2 class="text-lg font-semibold text-[var(--fg)] font-heading mb-4">Recursos relacionados</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <a href="/recursos/glosario-ia-automatizacion" class="group glass-card rounded-xl p-5 hover:border-[var(--accent)]/40 transition-colors block">
-                <p class="text-xs text-[var(--accent)] font-semibold uppercase tracking-wider mb-2">Glosario</p>
-                <p class="text-white text-sm font-semibold leading-snug group-hover:text-[var(--accent)] transition-colors">15 términos de IA y automatización explicados para directivos</p>
+              <a href="/recursos/glosario-ia-automatizacion" class="group glass-card rounded-xl p-5 hover:border-[var(--accent)] transition-colors block">
+                <p class="text-xs text-[var(--accent-text)] font-semibold uppercase tracking-wider mb-2">Glosario</p>
+                <p class="text-[var(--fg)] text-sm font-semibold leading-snug group-hover:text-[var(--accent-text)] transition-colors">15 términos de IA y automatización explicados para directivos</p>
               </a>
-              <a href="/casos" class="group glass-card rounded-xl p-5 hover:border-[var(--accent)]/40 transition-colors block">
-                <p class="text-xs text-[var(--accent)] font-semibold uppercase tracking-wider mb-2">Casos de Éxito</p>
-                <p class="text-white text-sm font-semibold leading-snug group-hover:text-[var(--accent)] transition-colors">SPI Americas y Hits Corredora: resultados reales con nombres y cifras</p>
+              <a href="/casos" class="group glass-card rounded-xl p-5 hover:border-[var(--accent)] transition-colors block">
+                <p class="text-xs text-[var(--accent-text)] font-semibold uppercase tracking-wider mb-2">Casos de Éxito</p>
+                <p class="text-[var(--fg)] text-sm font-semibold leading-snug group-hover:text-[var(--accent-text)] transition-colors">SPI Americas y Hits Corredora: resultados reales con nombres y cifras</p>
               </a>
-              <a href="/metodologia" class="group glass-card rounded-xl p-5 hover:border-[var(--accent)]/40 transition-colors block">
-                <p class="text-xs text-[var(--accent)] font-semibold uppercase tracking-wider mb-2">Metodología</p>
-                <p class="text-white text-sm font-semibold leading-snug group-hover:text-[var(--accent)] transition-colors">Las 4 fases del proceso: Diagnóstico, Diseño, Build y Adopción</p>
+              <a href="/metodologia" class="group glass-card rounded-xl p-5 hover:border-[var(--accent)] transition-colors block">
+                <p class="text-xs text-[var(--accent-text)] font-semibold uppercase tracking-wider mb-2">Metodología</p>
+                <p class="text-[var(--fg)] text-sm font-semibold leading-snug group-hover:text-[var(--accent-text)] transition-colors">Las 4 fases del proceso: Diagnóstico, Diseño, Build y Adopción</p>
               </a>
-              <a href="/recursos/guia-ia-legal" class="group glass-card rounded-xl p-5 hover:border-[var(--accent)]/40 transition-colors block">
-                <p class="text-xs text-[var(--accent)] font-semibold uppercase tracking-wider mb-2">Guía</p>
-                <p class="text-white text-sm font-semibold leading-snug group-hover:text-[var(--accent)] transition-colors">Guía de IA para firmas legales: descarga gratuita</p>
+              <a href="/recursos/guia-ia-legal" class="group glass-card rounded-xl p-5 hover:border-[var(--accent)] transition-colors block">
+                <p class="text-xs text-[var(--accent-text)] font-semibold uppercase tracking-wider mb-2">Guía</p>
+                <p class="text-[var(--fg)] text-sm font-semibold leading-snug group-hover:text-[var(--accent-text)] transition-colors">Guía de IA para firmas legales: descarga gratuita</p>
               </a>
             </div>
           </div>
@@ -489,16 +488,16 @@
       </section>
 
       <!-- CTA -->
-      <section class="py-16 px-6 border-t border-zinc-900">
+      <section class="band-dark py-16 px-6 border-t border-[var(--line)]">
         <div class="max-w-2xl mx-auto text-center">
-          <h2 class="text-2xl md:text-3xl font-black text-white font-heading mb-4">¿Tiene una pregunta que no está aquí?</h2>
-          <p class="text-slate-400 mb-8">Agendemos 30 minutos. Evaluamos juntos si su empresa califica para el diagnóstico y qué podría esperar del proceso.</p>
+          <h2 class="text-2xl md:text-3xl font-semibold text-[var(--fg)] font-heading mb-4">¿Tiene una pregunta que no está aquí?</h2>
+          <p class="text-[var(--fg-muted)] mb-8">Agendemos 30 minutos. Evaluamos juntos si su empresa califica para el diagnóstico y qué podría esperar del proceso.</p>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="{{calendly}}" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center justify-center gap-2 bg-[var(--accent)] text-black font-bold py-4 px-8 rounded-full text-base hover:bg-[var(--accent)]/80 transition-colors w-full sm:w-auto">
+               class="inline-flex items-center justify-center gap-2 bg-[var(--accent)] text-[var(--on-accent)] font-bold py-4 px-8 rounded-full text-base hover:bg-[var(--accent)] transition-colors w-full sm:w-auto">
               Agendar sesión de calificación
             </a>
-            <a href="{{whatsapp}}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 text-[#25D366] text-sm font-medium hover:underline">
+            <a href="{{whatsapp}}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 text-[var(--whatsapp)] text-sm font-medium hover:underline">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
               WhatsApp +56 9 7599 1366
             </a>
@@ -509,7 +508,7 @@
     </main>
 
         <footer
-      class="bg-black py-10 px-5 md:py-16 md:px-6 border-t border-white/10 text-sm"
+      class="bg-[var(--bg)] py-10 px-5 md:py-16 md:px-6 border-t border-[var(--line)] text-sm"
     >
       <div
         class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-8 md:gap-8 md:mb-12"
@@ -526,11 +525,11 @@
               width="40"
             />
             <span
-              class="font-bold text-xl text-white tracking-widest font-display"
+              class="font-bold text-xl text-[var(--fg)] tracking-widest font-display"
               >GROWTH BUDDIES</span
             >
           </a>
-          <p class="text-slate-400 leading-relaxed max-w-xs">
+          <p class="text-[var(--fg-muted)] leading-relaxed max-w-xs">
             Diagnóstico y automatización con IA para empresas de servicios
             profesionales en Latinoamérica.
           </p>
@@ -540,21 +539,21 @@
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Perfil de LinkedIn de Growth Buddies"
-              class="text-slate-400 hover:text-[var(--accent)] transition-colors"
+              class="text-[var(--fg-muted)] hover:text-[var(--accent-text)] transition-colors"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
             <a
               href="mailto:edmundo@spohr.cl"
               aria-label="Enviar correo electrónico a Growth Buddies"
-              class="text-slate-400 hover:text-[var(--accent)] transition-colors"
+              class="text-[var(--fg-muted)] hover:text-[var(--accent-text)] transition-colors"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             </a>
             <a
               href="tel:+56975991366"
               aria-label="Llamar a Growth Buddies"
-              class="text-slate-400 hover:text-[var(--accent)] transition-colors"
+              class="text-[var(--fg-muted)] hover:text-[var(--accent-text)] transition-colors"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
             </a>
@@ -563,57 +562,57 @@
 
         <!-- Servicios -->
         <div>
-          <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Servicios</h4>
-          <ul class="space-y-3 text-slate-400">
-            <li><a href="/servicios/legal-tech" class="hover:text-[var(--accent)] transition-colors">Legal Tech y Automatización</a></li>
-            <li><a href="/servicios/ia-corporativa" class="hover:text-[var(--accent)] transition-colors">Asistente de IA Corporativo</a></li>
-            <li><a href="/servicios/gestion-del-cambio" class="hover:text-[var(--accent)] transition-colors">Gestión del Cambio (Prosci)</a></li>
-            <li><a href="/servicios/agentes-ia-chatbots-empresas" class="hover:text-[var(--accent)] transition-colors">Agentes de IA y Chatbots</a></li>
+          <h4 class="text-[var(--fg)] font-semibold mb-6 font-display uppercase tracking-wider text-xs">Servicios</h4>
+          <ul class="space-y-3 text-[var(--fg-muted)]">
+            <li><a href="/servicios/legal-tech" class="hover:text-[var(--accent-text)] transition-colors">Legal Tech y Automatización</a></li>
+            <li><a href="/servicios/ia-corporativa" class="hover:text-[var(--accent-text)] transition-colors">Asistente de IA Corporativo</a></li>
+            <li><a href="/servicios/gestion-del-cambio" class="hover:text-[var(--accent-text)] transition-colors">Gestión del Cambio (Prosci)</a></li>
+            <li><a href="/servicios/agentes-ia-chatbots-empresas" class="hover:text-[var(--accent-text)] transition-colors">Agentes de IA y Chatbots</a></li>
             <!-- INSERTION POINT: new /servicios/ landings -->
           </ul>
         </div>
 
         <!-- Sectores -->
         <div>
-          <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Sectores</h4>
-          <ul class="space-y-3 text-slate-400">
-            <li><a href="/sectores/automatizacion-ia-estudios-juridicos" class="hover:text-[var(--accent)] transition-colors">Estudios Jurídicos</a></li>
-            <li><a href="/sectores/automatizacion-ia-industria-mineria" class="hover:text-[var(--accent)] transition-colors">Empresas Industriales</a></li>
+          <h4 class="text-[var(--fg)] font-semibold mb-6 font-display uppercase tracking-wider text-xs">Sectores</h4>
+          <ul class="space-y-3 text-[var(--fg-muted)]">
+            <li><a href="/sectores/automatizacion-ia-estudios-juridicos" class="hover:text-[var(--accent-text)] transition-colors">Estudios Jurídicos</a></li>
+            <li><a href="/sectores/automatizacion-ia-industria-mineria" class="hover:text-[var(--accent-text)] transition-colors">Empresas Industriales</a></li>
             <!-- INSERTION POINT: new /sectores/ pillars -->
           </ul>
         </div>
 
         <!-- Recursos -->
         <div>
-          <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Recursos</h4>
-          <ul class="space-y-3 text-slate-400">
-            <li><a href="/blog" class="hover:text-[var(--accent)] transition-colors">Blog</a></li>
-            <li><a href="/recursos/guia-ia-legal" class="hover:text-[var(--accent)] transition-colors">Guía Gratuita IA Legal</a></li>
-            <li><a href="/recursos/informe-automatizacion-servicios-latam" class="hover:text-[var(--accent)] transition-colors">Informe LATAM 2026</a></li>
-            <li><a href="/preguntas-frecuentes" class="hover:text-[var(--accent)] transition-colors">Preguntas Frecuentes</a></li>
-            <li><a href="/recursos/glosario-ia-automatizacion" class="hover:text-[var(--accent)] transition-colors">Glosario IA</a></li>
-            <li><a href="/soluciones" class="hover:text-[var(--accent)] transition-colors">Ejemplos de Implementación</a></li>
+          <h4 class="text-[var(--fg)] font-semibold mb-6 font-display uppercase tracking-wider text-xs">Recursos</h4>
+          <ul class="space-y-3 text-[var(--fg-muted)]">
+            <li><a href="/blog" class="hover:text-[var(--accent-text)] transition-colors">Blog</a></li>
+            <li><a href="/recursos/guia-ia-legal" class="hover:text-[var(--accent-text)] transition-colors">Guía Gratuita IA Legal</a></li>
+            <li><a href="/recursos/informe-automatizacion-servicios-latam" class="hover:text-[var(--accent-text)] transition-colors">Informe LATAM 2026</a></li>
+            <li><a href="/preguntas-frecuentes" class="hover:text-[var(--accent-text)] transition-colors">Preguntas Frecuentes</a></li>
+            <li><a href="/recursos/glosario-ia-automatizacion" class="hover:text-[var(--accent-text)] transition-colors">Glosario IA</a></li>
+            <li><a href="/soluciones" class="hover:text-[var(--accent-text)] transition-colors">Ejemplos de Implementación</a></li>
           </ul>
         </div>
 
         <!-- Empresa -->
         <div>
-          <h4 class="text-white font-bold mb-6 font-display uppercase tracking-wider text-xs">Empresa</h4>
-          <ul class="space-y-3 text-slate-400">
-            <li><a href="/nosotros" class="hover:text-[var(--accent)] transition-colors">Nosotros</a></li>
-            <li><a href="/casos" class="hover:text-[var(--accent)] transition-colors">Casos de Éxito</a></li>
-            <li><a href="/privacidad" class="hover:text-[var(--accent)] transition-colors">Privacidad</a></li>
-            <li><a href="/terminos" class="hover:text-[var(--accent)] transition-colors">Términos</a></li>
+          <h4 class="text-[var(--fg)] font-semibold mb-6 font-display uppercase tracking-wider text-xs">Empresa</h4>
+          <ul class="space-y-3 text-[var(--fg-muted)]">
+            <li><a href="/nosotros" class="hover:text-[var(--accent-text)] transition-colors">Nosotros</a></li>
+            <li><a href="/casos" class="hover:text-[var(--accent-text)] transition-colors">Casos de Éxito</a></li>
+            <li><a href="/privacidad" class="hover:text-[var(--accent-text)] transition-colors">Privacidad</a></li>
+            <li><a href="/terminos" class="hover:text-[var(--accent-text)] transition-colors">Términos</a></li>
           </ul>
         </div>
       </div>
 
       <div
-        class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400"
+        class="pt-8 border-t border-[var(--line)] flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[var(--fg-muted)]"
       >
-        <div>&copy; 2026 Growth Buddies SpA. Latinoamérica · <a href="/" class="hover:text-white transition-colors">CL</a> · <a href="/colombia" class="hover:text-white transition-colors">CO</a> · <a href="/peru" class="hover:text-white transition-colors">PE</a> · <a href="/ecuador" class="hover:text-white transition-colors">EC</a></div>
+        <div>&copy; 2026 Growth Buddies SpA. Latinoamérica · <a href="/" class="hover:text-[var(--fg)] transition-colors">CL</a> · <a href="/colombia" class="hover:text-[var(--fg)] transition-colors">CO</a> · <a href="/peru" class="hover:text-[var(--fg)] transition-colors">PE</a> · <a href="/ecuador" class="hover:text-[var(--fg)] transition-colors">EC</a></div>
         <div>
-          <a href="/sitemap.xml" class="hover:text-slate-300 transition-colors">Sitemap</a>
+          <a href="/sitemap.xml" class="hover:text-[var(--fg-soft)] transition-colors">Sitemap</a>
         </div>
       </div>
     </footer>

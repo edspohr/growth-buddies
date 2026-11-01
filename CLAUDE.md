@@ -26,7 +26,7 @@ Static HTML5 site for a Chilean AI automation consulting firm. No JavaScript fra
 
 **Positioning:** Growth Buddies is positioned as a **strategic diagnostic consultant**, not an implementation agency. The primary CTA everywhere is "Agendar conversación con el director" or "Evaluar si califica". The main paid product is the Diagnóstico de Automatización Estratégica (CLP $490.000 + IVA in Chile, USD 500 for the rest of LATAM, delivered in 10 to 15 days). Includes a working mockup. 100% of the value is creditable to any project contracted within 90 days; full refund if fewer than 3 opportunities with positive ROI are identified. Avoid language like "auditoría gratuita" or "Automatizamos lo aburrido" (these belong to the old positioning).
 
-**CSS pipeline:** `src/input.css` → Tailwind CLI → `public/dist/output.css` (`npm run watch` writes `dist/output.css` for local work). Custom colors (`accent: #00f6ff`, `dark: #050510`), fonts (Inter/Space Grotesk), and animations are defined in `tailwind.config.js`.
+**CSS pipeline:** `src/input.css` → Tailwind CLI → `public/dist/output.css` (`npm run watch` writes `dist/output.css` for local work). Semantic color tokens live in `src/input.css` and flip inside `.band-dark`; see `docs/design-system.md`. Fonts are Geist and Inter. Never use raw colors in pages.
 
 **URL structure (clean URLs via Firebase Hosting):**
 
@@ -48,7 +48,7 @@ Static HTML5 site for a Chilean AI automation consulting firm. No JavaScript fra
 
 - Skip link: `<a href="#main-content" class="sr-only ...">Saltar al contenido</a>` as first element
 - `aria-expanded` / `aria-label` on interactive controls
-- `:focus-visible` with cyan outline
+- `:focus-visible` with accent outline
 - `prefers-reduced-motion` respected in CSS animations
 
 **Deployment:** GitHub Actions deploys to Firebase Hosting on push to `main`, with a preview channel per pull request. `npm run build` assembles `public/` from an allowlist (`scripts/build-public.mjs`) and fills `{{calendly}}` and `{{whatsapp}}` from `src/cta.config.json`; open pages through the build, not the raw source. Config in `firebase.json`: clean URLs, no trailing slashes, cache headers. `www` → apex redirect lives in the Firebase custom domain.
