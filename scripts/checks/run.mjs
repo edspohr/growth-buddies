@@ -22,10 +22,12 @@ const FORBIDDEN = [
   "edmundo@growthbuddies.cl",
   "datos alojados en Chile",
   "tipo de cambio oficial",
-  "Quedan",
-  "cupos",
+  "BrokerIA",
+  "Estos no son productos en venta",
   "{{",
 ];
+
+const SCARCITY = ["quedan", "cupos"];
 
 if (!BASE || !existsSync(PUBLIC)) {
   console.error("Usage: node scripts/checks/run.mjs <url> (run npm run build first)");
@@ -117,7 +119,10 @@ function checkForbiddenStrings() {
   const files = [...htmlFiles(PUBLIC), path.join(PUBLIC, "llms.txt")];
   for (const file of files) {
     const text = readFileSync(file, "utf8");
-    const found = FORBIDDEN.filter((term) => text.includes(term));
+    const found = [
+      ...FORBIDDEN.filter((term) => text.includes(term)),
+      ...SCARCITY.filter((term) => text.toLowerCase().includes(term)),
+    ];
     if (found.length) failures.push(`${path.relative(PUBLIC, file)}: ${found.join(", ")}`);
   }
   return { name: "Sin textos prohibidos", total: files.length, failures };

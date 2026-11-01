@@ -3,6 +3,16 @@
 # https://growthbuddies.cl
 # Last updated: 2026-09-08
 
+## Products
+
+- **Expense Buddy**: expense reporting for companies with field teams, with offline capture. From 45 UF + VAT. Open demo: https://expense-buddy-demo.web.app
+- **DocFlow Buddy**: document and case management with AI for law firms and document-heavy service companies. From 60 UF + VAT.
+- **Agent Buddy Web**: AI assistant on the client's website, trained on their real processes, live in under a month. From 20 UF + VAT.
+- **Agent Buddy a medida**: agents connected to the client's processes and systems, multichannel, with human handoff. From 50 UF + VAT.
+- **Proyecto a medida**: paid diagnostic, CLP 490,000 + VAT, 100% creditable within 90 days.
+
+Contact: edmundo@spohr.cl, +56 9 7599 1366.
+
 ## Who We Are
 
 Growth Buddies SpA is an AI automation diagnostic consulting firm headquartered in Valparaíso, Chile, serving professional services companies across Latin America (Chile, Colombia, Perú, Ecuador).
@@ -66,7 +76,6 @@ Only services already live on the site are listed here.
 
 ## Products (AI Agents)
 
-- **BrokerIA** — Insurance quote automation agent. URL: https://growthbuddies.cl/soluciones/brokeria
 - **Inbox IA Legal** — Legal email triage and classification
 - **DocuAgent IA** — Document classification, data extraction, clause detection (OCR + autonomous review)
 - **TimeKeeper IA** — Passive timesheet reconstruction for law firms
