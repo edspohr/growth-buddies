@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
-    "watch": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+    "build": "node scripts/build-public.mjs",
+    "watch": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "check": "node scripts/checks/run.mjs"
   },
   "keywords": [],
   "author": "",
