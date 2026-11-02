@@ -101,8 +101,8 @@ exports.sendGuideDelivery = onDocumentCreated(
           <li><strong style="color:#e2e8f0;">Proceso 5:</strong> Rendición de gastos e informes — cierra el mes en 1 día, no 2 semanas</li>
         </ul>
       </div>
-      <p style="font-size:14px;color:#94a3b8;margin:24px 0 8px;line-height:1.6;">Si quieres que revisemos juntos cuál de estos procesos tiene más impacto en tu empresa, agenda una sesión de calificación de 30 minutos:</p>
-      ${ctaButton(calendlyUrl, "📅 Agendar sesión de calificación", "#1e2035", "#e2e8f0")}
+      <p style="font-size:14px;color:#94a3b8;margin:24px 0 8px;line-height:1.6;">Si quieres que revisemos juntos cuál de estos procesos tiene más impacto en tu empresa, agenda una conversación de 30 minutos:</p>
+      ${ctaButton(calendlyUrl, "📅 Agendar conversación", "#1e2035", "#e2e8f0")}
       <p style="font-size:13px;color:#64748b;margin-top:12px;text-align:center;">Sin compromiso · Sin tarjeta de crédito</p>`;
 
     await resend().emails.send({
@@ -384,7 +384,7 @@ exports.sendDay0Confirmation = onDocumentUpdated(
     const body = `
       <p style="font-size:16px;line-height:1.7;margin:0 0 16px;">Hola <strong>${after.name}</strong>, recibimos tu solicitud de diagnóstico. 👋</p>
       <p style="font-size:15px;line-height:1.7;color:#94a3b8;margin:0 0 24px;">Edmundo te contactará <strong style="color:#e2e8f0;">en menos de 2 horas hábiles</strong> para confirmar si el diagnóstico es relevante para tu operación. Si prefieres agendar directamente:</p>
-      ${ctaButton("https://calendly.com/espohr/conversemos", "📅 Agendar sesión de calificación")}
+      ${ctaButton("https://calendly.com/espohr/conversemos", "📅 Agendar conversación")}
       <div style="margin-top:32px;padding:24px;background:#0d0d1a;border-radius:12px;border-left:3px solid #00f6ff;">
         <p style="margin:0 0 8px;font-size:12px;color:#00f6ff;font-weight:700;text-transform:uppercase;letter-spacing:.06em;">Caso de éxito relevante</p>
         <p style="margin:0 0 12px;font-size:15px;font-weight:700;color:#e2e8f0;">${caseStudyTitle}</p>
@@ -510,7 +510,7 @@ exports.sendFollowupSequence = onSchedule(
           replyTo: "edmundo@spohr.cl",
           to: [lead.email],
           subject: `${lead.name ? lead.name + ", ¿" : "¿"}cuál proceso aplicarías primero?`,
-          html: emailWrapper("#050510", "#00f6ff", "Seguimiento", "Tu sesión de calificación sigue disponible", body),
+          html: emailWrapper("#050510", "#00f6ff", "Seguimiento", "Sigamos conversando", body),
         });
 
         await db.collection("guide_leads").doc(id).update({ followup_day10_sent: true });
@@ -585,20 +585,16 @@ exports.sendFollowupSequence = onSchedule(
         const body = `
           <p style="font-size:15px;line-height:1.7;color:#94a3b8;margin:0 0 16px;">Hola <strong style="color:#e2e8f0;">${lead.name || ""}${lead.name ? "," : ""}</strong> este es mi último correo, lo prometo. 😊</p>
           <p style="font-size:15px;line-height:1.7;color:#94a3b8;margin:0 0 24px;">Sé que el tiempo es escaso. Por eso quiero ser directo:</p>
-          <div style="background:#0d0d1a;border-radius:12px;padding:24px;margin-bottom:24px;border:1px solid #1e2035;">
-            <p style="margin:0 0 8px;font-size:13px;color:#00f6ff;font-weight:700;text-transform:uppercase;">Solo tomamos 3 nuevos diagnósticos por mes</p>
-            <p style="margin:0;font-size:15px;color:#94a3b8;line-height:1.6;">Para mantener la profundidad del análisis y garantizar la calidad del informe, limitamos los diagnósticos que iniciamos cada mes. <strong style="color:#e2e8f0;">Tu sesión de calificación sigue disponible hasta el viernes.</strong></p>
-          </div>
           <p style="font-size:14px;color:#94a3b8;margin:0 0 24px;">30 minutos. Sin compromiso. Sin tarjeta de crédito. Solo una conversación honesta sobre si podemos ayudarte.</p>
-          ${ctaButton("https://calendly.com/espohr/conversemos", "📅 Agendar antes del viernes")}
-          <p style="margin-top:16px;text-align:center;font-size:14px;color:#64748b;">¿Prefieres WhatsApp? <a href="https://wa.me/56975991366?text=${encodeURIComponent(`Hola Edmundo, soy ${lead.name || "un interesado"}, quiero coordinar la sesión de calificación.`)}" style="color:#25d366;text-decoration:none;">Escríbeme directo →</a></p>`;
+          ${ctaButton("https://calendly.com/espohr/conversemos", "📅 Agendar conversación")}
+          <p style="margin-top:16px;text-align:center;font-size:14px;color:#64748b;">¿Prefieres WhatsApp? <a href="https://wa.me/56975991366?text=${encodeURIComponent(`Hola Edmundo, soy ${lead.name || "un interesado"}, quiero coordinar la conversación.`)}" style="color:#25d366;text-decoration:none;">Escríbeme directo →</a></p>`;
 
         await resend().emails.send({
           from: "Edmundo Spohr — Growth Buddies <edmundo@growthbuddies.cl>",
           replyTo: "edmundo@spohr.cl",
           to: [lead.email],
-          subject: `${lead.name ? lead.name + ", última" : "Última"} oportunidad — tu sesión de calificación`,
-          html: emailWrapper("#050510", "#00f6ff", "Último aviso", "Tu sesión de calificación sigue disponible", body),
+          subject: `${lead.name ? lead.name + ", seguimos disponibles" : "Seguimos disponibles"}`,
+          html: emailWrapper("#050510", "#00f6ff", "Último aviso", "Sigamos conversando", body),
         });
 
         await db.collection("leads").doc(id).update({ followup_day7_sent: true });

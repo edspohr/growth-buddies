@@ -114,7 +114,7 @@ function generateContextualDiagnosis(answers, roi) {
   const pain = getPainLabel(answers.pain1);
   const annualSavings = formatCurrency(roi.annual);
 
-  return `Una empresa del sector ${sector.toLowerCase()} con un equipo de ${size.toLowerCase()} suele perder entre ${roi.weeklyHours - 3} y ${roi.weeklyHours + 5} horas semanales por persona en tareas como "${pain.toLowerCase()}". En su caso específico, considerando un costo hora promedio del sector de ${formatCurrency(roi.hourlyRate)}, esto representa una pérdida estimada de ${annualSavings} anuales.\n\nLas 3 hipótesis iniciales que presentamos a continuación son puntos de partida basados en su perfil (sector, tamaño y dolor declarado) y en los patrones que observamos en empresas similares de Latinoamérica. Para transformarlas en oportunidades priorizadas con ROI real en pesos y una maqueta funcionando sobre su operación, el siguiente paso es el Diagnóstico de Automatización Estratégica.`;
+  return `Una empresa del sector ${sector.toLowerCase()} con un equipo de ${size.toLowerCase()} suele perder entre ${roi.weeklyHours - 3} y ${roi.weeklyHours + 5} horas semanales por persona en tareas como "${pain.toLowerCase()}". En su caso específico, considerando un costo hora promedio del sector de ${formatCurrency(roi.hourlyRate)}, esto representa una pérdida estimada de ${annualSavings} anuales.\n\nLas 3 hipótesis iniciales que presentamos a continuación son puntos de partida basados en su perfil (sector, tamaño y dolor declarado) y en los patrones que observamos en empresas similares de Latinoamérica. Para transformarlas en oportunidades priorizadas con ROI real en pesos y una maqueta funcionando sobre su operación, el siguiente paso es el diagnóstico del Proyecto a medida.`;
 }
 
 // ─── DRAWING PRIMITIVES ────────────────────────────────────────────────────
@@ -392,24 +392,24 @@ function drawNextStepsPage(doc, leadInfo) {
   doc.text("INVERSIÓN", MARGIN + 25, y + 18, { characterSpacing: 1.5 });
 
   doc.font(FONTS.serifBold).fontSize(22).fillColor(COLORS.white);
-  doc.text("$490.000 + IVA", MARGIN + 25, y + 33);
+  doc.text("CLP 490.000 + IVA", MARGIN + 25, y + 33);
 
   doc.font(FONTS.sansMedium).fontSize(12).fillColor("#d4d4d4");
-  doc.text("USD 500 fuera de Chile", MARGIN + 25, y + 62);
+  doc.text("Proyecto a medida", MARGIN + 25, y + 62);
 
   doc.font(FONTS.sansRegular).fontSize(10).fillColor("#a3a3a3");
-  doc.text("Entrega en 10 a 15 días · El pago reserva su cupo", MARGIN + 25, y + 85);
+  doc.text("Entrega en 10 a 15 días", MARGIN + 25, y + 85);
 
   y += priceCardHeight + 25;
 
   // Guarantee
   doc.font(FONTS.sansBold).fontSize(11).fillColor(COLORS.accent);
-  doc.text("Garantía de devolución total", MARGIN, y);
+  doc.text("100% acreditable", MARGIN, y);
   y += 22;
 
   doc.font(FONTS.sansRegular).fontSize(10.5).fillColor(COLORS.textSecondary).lineGap(3);
   doc.text(
-    "Si no identificamos al menos 3 oportunidades de automatización con ROI positivo, le devolvemos el 100% de la inversión. Sin preguntas, sin condiciones. Además, el 100% del valor es acreditable a cualquier proyecto (implementación, desarrollo o capacitación) contratado dentro de 90 días; pasado el plazo, el crédito caduca.",
+    "El 100% del valor es acreditable a un proyecto contratado dentro de 90 días.",
     MARGIN, y,
     { width: CONTENT_WIDTH, align: "justify" }
   );
