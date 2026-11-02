@@ -14,6 +14,8 @@ const PUBLIC = path.join(ROOT, "public");
 const PROD = "https://growthbuddies.cl";
 const BASE = (process.argv[2] || "").replace(/\/$/, "");
 const FORBIDDEN = [
+  "se devuelve el 100%",
+  "horas hábiles",
   "SPI Smart Flow",
   "Smart Flow",
   "Martina",
