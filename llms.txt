@@ -22,8 +22,8 @@ Expense Buddy does not validate documents with Chile's tax authority (SII), does
 - Track record: more than 40 organizations, more than 20 AI projects, more than 500 people trained.
 - Results: an intellectual property firm with presence in 4 countries grew revenue 17% in 3 to 4 months. Ingeglobal, a mining engineering consultancy, turned a real-time measurement system with alerts into a new monetizable product.
 - Method: implementation, training and adoption. Value comes when people actually use the tool.
-- Founder: Edmundo Spohr, 15+ years of experience, ex Microsoft (via JLL) and Bechtel, with Prosci and Scrum certifications. https://growthbuddies.cl/equipo/edmundo-spohr
-- Co-founder: Felipe Soto Santibáñez. https://growthbuddies.cl/equipo/felipe-soto-santibanez
+- Founder and director: Edmundo Spohr, industrial civil engineer (Universidad Técnica Federico Santa María), 15+ years in operations and digital transformation, with Prosci and Scrum certifications. https://growthbuddies.cl/equipo/edmundo-spohr
+- Partner and CTO: Felipe Soto Santibáñez, commercial engineer (Universidad de Chile), ex Mercado Libre and Banco Falabella. https://growthbuddies.cl/equipo/felipe-soto-santibanez
 
 ## Guides
 
