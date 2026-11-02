@@ -708,9 +708,13 @@ h1, h2, h3, h4 {
     justify-items: center;
 }
 .device-grid .device-browser { grid-column: 1 / -1; }
+.device-grid:has(.docflow-second) .device-phone { grid-column: 1 / -1; max-width: 13rem; }
 @media (min-width: 768px) {
     .device-grid { grid-template-columns: 1fr auto auto; gap: 2rem; }
     .device-grid .device-browser { grid-column: auto; }
+    .device-grid .docflow-second { grid-column: 1 / -1; grid-row: 2; }
+    .device-grid:has(.docflow-second) { grid-template-columns: 1fr auto; }
+    .device-grid:has(.docflow-second) .device-phone { grid-column: auto; max-width: none; }
 }
 
 /* Long-form niche pages */
