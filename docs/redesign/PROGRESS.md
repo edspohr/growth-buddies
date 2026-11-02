@@ -59,6 +59,8 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 
 - 2026-11-01. Bloque 3: tres artículos publicados sin cuerpo (CONTENT PLACEHOLDER) quedan escritos. FAQ con JSON-LD en 11 artículos, recuadro de producto en los artículos, SoftwareApplication en tres productos, índice del blog con todos los artículos, guías enlazadas desde el footer, títulos hasta 62 caracteres y descripciones hasta 160.
 
+- 2026-11-01. Search Console: 8 ene a 30 oct 2026, 232 clics, 7.930 impresiones, posición 8,7. Redirects corregidos hacia DocFlow Buddy y Proyecto a medida. Título de Expense Buddy orientado a sistema de rendición de gastos.
+
 ## Registro de deploys
 | Fecha | Destino | Referencia |
 |---|---|---|
@@ -75,3 +77,4 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 | 2026-11-01 | Live vía GitHub Actions | CSS versionado y logos de clientes |
 | 2026-11-01 | Live vía GitHub Actions | +500 personas y llms.txt sin garantía |
 | 2026-11-01 | Live vía GitHub Actions | Bloque 3 SEO |
+| 2026-11-01 | Live vía GitHub Actions | Ajustes por Search Console |
