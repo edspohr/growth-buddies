@@ -61,6 +61,8 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 
 - 2026-11-01. Search Console: 8 ene a 30 oct 2026, 232 clics, 7.930 impresiones, posición 8,7. Redirects corregidos hacia DocFlow Buddy y Proyecto a medida. Título de Expense Buddy orientado a sistema de rendición de gastos.
 
+- 2026-11-01. Bloque 4: guía de compra de sistemas de rendición, planilla Excel sin registro y refuerzo de agentes. En Search Console se envió el sitemap, se quitó el de www y se pidió indexar 11 páginas. Vercel desconectado del repositorio.
+
 ## Registro de deploys
 | Fecha | Destino | Referencia |
 |---|---|---|
