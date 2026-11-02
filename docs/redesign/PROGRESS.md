@@ -63,6 +63,8 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 
 - 2026-11-01. Bloque 4: guía de compra de sistemas de rendición, planilla Excel sin registro y refuerzo de agentes. En Search Console se envió el sitemap, se quitó el de www y se pidió indexar 11 páginas. Vercel desconectado del repositorio.
 
+- 2026-11-01. GA4: conservación de eventos a 14 meses, flujo apuntando al apex, multidominio con expense-buddy-demo.web.app, dimensiones Producto, Tipo de CTA y Rol del demo; contact y calendly_click como eventos clave.
+
 ## Registro de deploys
 | Fecha | Destino | Referencia |
 |---|---|---|
@@ -80,3 +82,4 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 | 2026-11-01 | Live vía GitHub Actions | +500 personas y llms.txt sin garantía |
 | 2026-11-01 | Live vía GitHub Actions | Bloque 3 SEO |
 | 2026-11-01 | Live vía GitHub Actions | Ajustes por Search Console |
+| 2026-11-01 | Live vía GitHub Actions, PR 6 | Bloque 4 |
