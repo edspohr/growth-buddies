@@ -89,3 +89,4 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 | 2026-11-01 | Live + functions | Diagnóstico descontable de la implementación; 24 horas; sin devolución; README al día |
 | 2026-11-01 | Live + functions | Descuento incluye capacitación; informe web; sin newsletter; alertas con mejor contraste |
 | 2026-11-02 | Live | Reseñas: sin 5,0, botón a Google; ficha en vivo programada y apagada |
+| 2026-11-02 | Live | Revisión editorial: perfiles corregidos, 20 páginas retiradas con 301, países, metodología, nosotros y FAQ reescritos |

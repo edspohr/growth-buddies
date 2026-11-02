@@ -17,7 +17,7 @@ Lista priorizada por valor para Google y para las IA generativas. Consiga pocos 
 
 ## Prioridad 3: medios y opinión
 
-8. **Columnas de opinión.** Proponga una columna con datos propios del informe LATAM a DF, Forbes Chile, La Tercera Pulso, Emol, El Mostrador Mercados o medios sectoriales. El tema sugerido es por qué fallan los proyectos de IA en empresas: adopción, no tecnología.
+8. **Columnas de opinión.** Proponga una columna con experiencia propia a DF, Forbes Chile, La Tercera Pulso, Emol, El Mostrador Mercados o medios sectoriales. El tema sugerido es por qué fallan los proyectos de IA en empresas: adopción, no tecnología.
 9. **Medios legales y de negocios.** Ofrezca artículos sobre documentos y casos con IA a publicaciones del sector legal y a medios de negocios o PYME.
 10. **Medios de startups de Latinoamérica.** Proponga notas sobre Expense Buddy o DocFlow Buddy a medios como LatamList y similares.
 11. **Podcasts.** Busque programas de negocios, legaltech, operaciones y PYME en Chile. Suelen enlazar al invitado en la descripción.
@@ -32,10 +32,9 @@ Lista priorizada por valor para Google y para las IA generativas. Consiga pocos 
 
 ## Prioridad 5: activos que atraen enlaces
 
-17. **Informe LATAM anual.** Publique cifras citables, con metodología y una tabla simple de usar. Envíelo a periodistas y a gremios.
+17. **Informe LATAM.** Solo cuando tenga datos propios y verificables: el borrador vacío se retiró del sitio.
 18. **Planilla de rendición de gastos.** Pídales a blogs de contabilidad y RR. HH. que la agreguen en sus artículos de recursos gratuitos.
-19. **Glosario de IA y automatización.** Ofrézcalo como referencia a programas de formación y a sitios educativos.
-20. **Casos de éxito.** Con autorización del cliente, publique una nota conjunta y pida que el cliente la enlace.
+19. **Casos de éxito.** Con autorización del cliente, publique una nota conjunta y pida que el cliente la enlace.
 
 ## Cómo medir
 

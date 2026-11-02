@@ -43,11 +43,9 @@ Static HTML5 site for a Chilean AI automation consulting firm. No JavaScript fra
 **URL structure (clean URLs via Firebase Hosting):**
 
 - `/expense-buddy`, `/docflow-buddy`, `/agent-buddy`, `/diagnostico` — product pages, with sector pages under `/expense-buddy/<slug>` and `/docflow-buddy/<slug>`
-- `/servicios/<slug>/` — service pages
-- `/soluciones` — implementation examples
 - `/recursos/<slug>` — resources
 - `/blog/<slug>/` — articles
-- `/metodologia/<slug>/` — 4-phase engagement process pages
+- `/metodologia` — how we work (implementation, training, adoption)
 - `/equipo/<slug>/` — team bios
 
 **JavaScript patterns used across pages:**

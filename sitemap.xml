@@ -62,18 +62,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://growthbuddies.cl/sectores</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://growthbuddies.cl/servicios</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://growthbuddies.cl/soluciones</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://growthbuddies.cl/terminos</loc>
     <priority>0.8</priority>
   </url>
@@ -82,47 +70,11 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://growthbuddies.cl/blog/automatizacion-contratos-legales-2026</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://growthbuddies.cl/blog/automatizacion-ia-corredoras-propiedades-chile</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://growthbuddies.cl/blog/automatizar-informes-tecnicos-ordenes-de-trabajo</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://growthbuddies.cl/blog/casos-exito-transformacion-chile</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://growthbuddies.cl/blog/control-de-gastos-equipos-en-terreno</loc>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://growthbuddies.cl/blog/cuanto-cuesta-automatizar-empresa-chile</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://growthbuddies.cl/blog/cuanto-cuesta-legal-tech-chile</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://growthbuddies.cl/blog/cuanto-cuesta-un-chatbot-con-ia-empresa-chile</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://growthbuddies.cl/blog/ia-para-revisar-contratos-legales</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://growthbuddies.cl/blog/legal-tech-para-abogados-chile</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://growthbuddies.cl/blog/roi-ia-estudios-juridicos</loc>
     <priority>0.6</priority>
   </url>
   <url>
@@ -158,39 +110,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://growthbuddies.cl/recursos/glosario-ia-automatizacion</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://growthbuddies.cl/recursos/guia-ia-legal</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://growthbuddies.cl/recursos/informe-automatizacion-servicios-latam</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://growthbuddies.cl/recursos/planilla-rendicion-de-gastos</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://growthbuddies.cl/sectores/automatizacion-ia-estudios-juridicos</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://growthbuddies.cl/sectores/automatizacion-ia-industria-mineria</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://growthbuddies.cl/servicios/gestion-del-cambio</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://growthbuddies.cl/servicios/ia-corporativa</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://growthbuddies.cl/servicios/legal-tech</loc>
     <priority>0.6</priority>
   </url>
 </urlset>

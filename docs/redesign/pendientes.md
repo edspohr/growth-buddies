@@ -10,3 +10,6 @@ Solo cosas que dependen de usted. Lo resuelto se borra de esta lista.
 6. **Reseñas nuevas.** Pedir opiniones a clientes reales.
 7. **Ficha en vivo.** Está programada y apagada. Para activarla, cargue en `src/cta.config.json` el Place ID `ChIJc9LuJtfiJyoRxm89vU9LUSI` y la clave de Google, después de revisar qué reseñas muestra Google.
 8. **Imágenes del perfil.** Subir las de `docs/perfil-google/`, con la portada cuadrada como primera opción.
+9. **Confirmar cifras.** El sitio mantiene +40 organizaciones, +20 proyectos, +500 personas y los resultados de SPI e Ingeglobal. Avise si alguna no se puede respaldar.
+10. **LinkedIn.** Su perfil aún ofrece USD 3.000, garantía, el diagnóstico rápido y WhatsApp +56 9 6586 3160, distinto del sitio. Actualícelo.
+11. **Search Console.** Revise en unas semanas las páginas retiradas por si alguna tenía tráfico relevante.
