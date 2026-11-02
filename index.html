@@ -677,14 +677,16 @@
         </div>
       </section>
 
-      <section id="resenas" class="py-16 md:py-24 px-6 bg-[var(--surface)] border-y border-[var(--line)]">
+      <section id="resenas" class="py-16 md:py-24 px-6 bg-[var(--surface)] border-y border-[var(--line)]" data-maps-key="{{googleMapsKey}}" data-place-id="{{googlePlaceId}}">
         <div class="max-w-5xl mx-auto">
           <div class="text-center mb-12">
             <p class="eyebrow">Reseñas</p>
-            <h2 class="text-h1 mb-3">5,0 en Google</h2>
+            <h2 class="text-h1 mb-3">Reseñas en Google</h2>
             <p class="text-[var(--fg-soft)]">Lo que dicen quienes han trabajado con nosotros.</p>
           </div>
-          <div class="grid md:grid-cols-3 gap-6"><figure class="product-card review"><p class="google-stars" aria-hidden="true">★★★★★</p><blockquote>“Lo valioso de Growth Buddies es que entienden que automatizar sin estrategia es deuda futura.”</blockquote><figcaption>Jose Osorio, reseña en Google</figcaption></figure><figure class="product-card review"><p class="google-stars" aria-hidden="true">★★★★★</p><blockquote>“Me ayudaron justo con mi requerimiento. Edmundo sabía exactamente qué es lo que necesitaba mi negocio.”</blockquote><figcaption>Sebastián Marín, reseña en Google</figcaption></figure><figure class="product-card review"><p class="google-stars" aria-hidden="true">★★★★★</p><blockquote>“Estamos trabajando en un proyecto súper novedoso. Son realmente expertos en programación y utilizan la IA de una forma increíble.”</blockquote><figcaption>Dra. Daniela Corral H., reseña en Google</figcaption></figure></div>
+          <div id="resenas-google" class="reviews-live"></div>
+          <div id="resenas-citas" class="grid md:grid-cols-3 gap-6"><figure class="product-card review"><p class="google-stars" aria-hidden="true">★★★★★</p><blockquote>“Lo valioso de Growth Buddies es que entienden que automatizar sin estrategia es deuda futura.”</blockquote><figcaption>Jose Osorio, reseña en Google</figcaption></figure><figure class="product-card review"><p class="google-stars" aria-hidden="true">★★★★★</p><blockquote>“Me ayudaron justo con mi requerimiento. Edmundo sabía exactamente qué es lo que necesitaba mi negocio.”</blockquote><figcaption>Sebastián Marín, reseña en Google</figcaption></figure><figure class="product-card review"><p class="google-stars" aria-hidden="true">★★★★★</p><blockquote>“Estamos trabajando en un proyecto súper novedoso. Son realmente expertos en programación y utilizan la IA de una forma increíble.”</blockquote><figcaption>Dra. Daniela Corral H., reseña en Google</figcaption></figure></div>
+          <p id="resenas-perfil" class="text-center mt-10"><a href="{{googleProfile}}" class="btn-outline" target="_blank" rel="noopener noreferrer">Ver todas en Google <span aria-hidden="true">→</span></a></p>
         </div>
       </section>
 
@@ -919,6 +921,46 @@
         var link = event.target.closest && event.target.closest("a[href*='calendly.com']");
         if (link && typeof gtag !== "undefined") gtag("event", "calendly_click", { event_category: "home" });
       });
+    </script>
+    <script>
+      // Google reviews load only near the section; the quotes stay until they render.
+      (function () {
+        var section = document.getElementById("resenas");
+        var profile = document.getElementById("resenas-perfil");
+        if (!section) return;
+        if (profile && !profile.querySelector("a").getAttribute("href")) profile.remove();
+        var key = section.dataset.mapsKey;
+        var placeId = section.dataset.placeId;
+        if (!key || !placeId || !("IntersectionObserver" in window)) return;
+
+        function render() {
+          google.maps.importLibrary("places").then(function () {
+            var live = document.getElementById("resenas-google");
+            var details = document.createElement("gmp-place-details");
+            details.innerHTML =
+              '<gmp-place-details-place-request place="' + placeId + '"></gmp-place-details-place-request>' +
+              "<gmp-place-rating></gmp-place-rating><gmp-place-reviews></gmp-place-reviews>" +
+              '<gmp-place-attribution light-scheme-color="gray" dark-scheme-color="white"></gmp-place-attribution>';
+            details.addEventListener("gmp-load", function () {
+              live.classList.add("is-ready");
+              document.getElementById("resenas-citas").classList.add("hidden");
+            });
+            live.appendChild(details);
+          }).catch(function () {});
+        }
+
+        var observer = new IntersectionObserver(function (entries) {
+          if (!entries[0].isIntersecting) return;
+          observer.disconnect();
+          window.gbInitMaps = render;
+          var script = document.createElement("script");
+          script.async = true;
+          script.src = "https://maps.googleapis.com/maps/api/js?key=" + encodeURIComponent(key) +
+            "&loading=async&libraries=places&language=es&region=CL&callback=gbInitMaps";
+          document.head.appendChild(script);
+        }, { rootMargin: "300px" });
+        observer.observe(section);
+      })();
     </script>
   </body>
 </html>

@@ -780,6 +780,23 @@ h1, h2, h3, h4 {
     font-size: 0.875rem;
     color: var(--fg-muted);
 }
+/* Stays laid out while pending: Google's element does not load inside display: none. */
+.reviews-live {
+    position: absolute;
+    width: min(400px, 100%);
+    visibility: hidden;
+    color-scheme: light;
+}
+.reviews-live.is-ready {
+    position: static;
+    max-height: 640px;
+    margin-inline: auto;
+    overflow-y: auto;
+    visibility: visible;
+}
+.reviews-live gmp-place-details {
+    width: 100%;
+}
 
 /* Blog footer blocks */
 .post-box { margin-top: 2.5rem; }

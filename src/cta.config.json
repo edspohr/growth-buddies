@@ -1,5 +1,8 @@
 {
   "calendly": "https://calendly.com/espohr/conversemos",
   "whatsapp": "https://wa.me/56975991366",
-  "form": "#propuesta"
+  "form": "#propuesta",
+  "googleProfile": "https://share.google/CE9dihDLriCw5YKC8",
+  "googleMapsKey": "",
+  "googlePlaceId": ""
 }
