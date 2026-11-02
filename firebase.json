@@ -82,12 +82,12 @@
       },
       {
         "source": "/soluciones/automatizacion-legal-emails",
-        "destination": "/soluciones",
+        "destination": "/docflow-buddy",
         "type": 301
       },
       {
         "source": "/soluciones/gestion-documental-ip",
-        "destination": "/soluciones",
+        "destination": "/docflow-buddy",
         "type": 301
       },
       {
@@ -107,7 +107,7 @@
       },
       {
         "source": "/servicios/automatizacion-inteligente",
-        "destination": "/servicios/legal-tech",
+        "destination": "/proyecto-a-medida",
         "type": 301
       },
       {
@@ -123,6 +123,11 @@
       {
         "source": "/servicios/agentes-ia-chatbots-empresas",
         "destination": "/agent-buddy",
+        "type": 301
+      },
+      {
+        "source": "/blog/cuanto-cuesta-una-chatbot-con-ia-empresa-chile",
+        "destination": "/blog/cuanto-cuesta-un-chatbot-con-ia-empresa-chile",
         "type": 301
       }
     ],
