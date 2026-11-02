@@ -61,6 +61,111 @@
     ],
     "redirects": [
       {
+        "source": "/recursos/glosario-ia-automatizacion",
+        "destination": "/preguntas-frecuentes",
+        "type": 301
+      },
+      {
+        "source": "/servicios",
+        "destination": "/#productos",
+        "type": 301
+      },
+      {
+        "source": "/servicios/ia-corporativa",
+        "destination": "/agent-buddy",
+        "type": 301
+      },
+      {
+        "source": "/servicios/legal-tech",
+        "destination": "/docflow-buddy/estudios-juridicos",
+        "type": 301
+      },
+      {
+        "source": "/servicios/gestion-del-cambio",
+        "destination": "/metodologia",
+        "type": 301
+      },
+      {
+        "source": "/soluciones",
+        "destination": "/casos",
+        "type": 301
+      },
+      {
+        "source": "/sectores",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/sectores/automatizacion-ia-estudios-juridicos",
+        "destination": "/docflow-buddy/estudios-juridicos",
+        "type": 301
+      },
+      {
+        "source": "/sectores/automatizacion-ia-industria-mineria",
+        "destination": "/expense-buddy/mineria-y-faena",
+        "type": 301
+      },
+      {
+        "source": "/blog/automatizacion-contratos-legales-2026",
+        "destination": "/docflow-buddy/estudios-juridicos",
+        "type": 301
+      },
+      {
+        "source": "/blog/ia-para-revisar-contratos-legales",
+        "destination": "/docflow-buddy/estudios-juridicos",
+        "type": 301
+      },
+      {
+        "source": "/blog/legal-tech-para-abogados-chile",
+        "destination": "/docflow-buddy/estudios-juridicos",
+        "type": 301
+      },
+      {
+        "source": "/blog/roi-ia-estudios-juridicos",
+        "destination": "/docflow-buddy/estudios-juridicos",
+        "type": 301
+      },
+      {
+        "source": "/blog/cuanto-cuesta-legal-tech-chile",
+        "destination": "/blog/cuanto-cuesta-automatizar-empresa-chile",
+        "type": 301
+      },
+      {
+        "source": "/blog/cuanto-cuesta-un-chatbot-con-ia-empresa-chile",
+        "destination": "/blog/cuanto-cuesta-automatizar-empresa-chile",
+        "type": 301
+      },
+      {
+        "source": "/blog/automatizacion-ia-corredoras-propiedades-chile",
+        "destination": "/agent-buddy",
+        "type": 301
+      },
+      {
+        "source": "/blog/automatizar-informes-tecnicos-ordenes-de-trabajo",
+        "destination": "/diagnostico",
+        "type": 301
+      },
+      {
+        "source": "/blog/casos-exito-transformacion-chile",
+        "destination": "/casos",
+        "type": 301
+      },
+      {
+        "source": "/recursos/guia-ia-legal",
+        "destination": "/diagnostico",
+        "type": 301
+      },
+      {
+        "source": "/recursos/guia-ia-legal/contenido",
+        "destination": "/diagnostico",
+        "type": 301
+      },
+      {
+        "source": "/recursos/informe-automatizacion-servicios-latam",
+        "destination": "/diagnostico",
+        "type": 301
+      },
+      {
         "source": "/proyecto-a-medida",
         "destination": "/diagnostico",
         "type": 301
@@ -77,12 +182,12 @@
       },
       {
         "source": "/metodologia/diseno",
-        "destination": "/metodologia#diseno",
+        "destination": "/metodologia#implementacion",
         "type": 301
       },
       {
         "source": "/metodologia/build",
-        "destination": "/metodologia#build",
+        "destination": "/metodologia#implementacion",
         "type": 301
       },
       {
@@ -107,12 +212,12 @@
       },
       {
         "source": "/soluciones/catalogo",
-        "destination": "/soluciones",
+        "destination": "/casos",
         "type": 301
       },
       {
         "source": "/soluciones/catalogo.html",
-        "destination": "/soluciones",
+        "destination": "/casos",
         "type": 301
       },
       {
@@ -122,12 +227,12 @@
       },
       {
         "source": "/soluciones/brokeria",
-        "destination": "/soluciones",
+        "destination": "/casos",
         "type": 301
       },
       {
         "source": "/blog/ia-corretaje-propiedades-chile",
-        "destination": "/blog/automatizacion-ia-corredoras-propiedades-chile",
+        "destination": "/agent-buddy",
         "type": 301
       },
       {
@@ -137,7 +242,7 @@
       },
       {
         "source": "/blog/cuanto-cuesta-una-chatbot-con-ia-empresa-chile",
-        "destination": "/blog/cuanto-cuesta-un-chatbot-con-ia-empresa-chile",
+        "destination": "/blog/cuanto-cuesta-automatizar-empresa-chile",
         "type": 301
       }
     ],

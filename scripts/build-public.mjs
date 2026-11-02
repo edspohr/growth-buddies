@@ -44,9 +44,6 @@ const DIRECTORIES = [
   "privacidad",
   "diagnostico",
   "recursos",
-  "sectores",
-  "servicios",
-  "soluciones",
   "terminos",
 ];
 
