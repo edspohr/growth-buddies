@@ -351,8 +351,8 @@ function drawNextStepsPage(doc, leadInfo) {
 
   // Title
   doc.font(FONTS.serifBold).fontSize(26).fillColor(COLORS.text);
-  doc.text("Diagnóstico de", MARGIN, MARGIN + 35);
-  doc.fillColor(COLORS.accent).text("Automatización Estratégica", MARGIN, MARGIN + 65);
+  doc.text("Diagnóstico del", MARGIN, MARGIN + 35);
+  doc.fillColor(COLORS.accent).text("Proyecto a medida", MARGIN, MARGIN + 65);
 
   // Intro
   doc.font(FONTS.sansRegular).fontSize(11).fillColor(COLORS.textSecondary).lineGap(3);
