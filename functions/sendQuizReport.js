@@ -28,13 +28,13 @@ function generateEmailHTML({ company, opportunities, roi }) {
 
       <div style="background: #f0f9fb; border: 1px solid #b3e0e8; padding: 16px 20px; margin: 24px 0; border-radius: 8px;">
         <p style="margin: 0 0 8px; font-size: 14px; font-weight: 600; color: #1a1a1a;">El siguiente paso: validar las hipótesis con su operación real</p>
-        <p style="margin: 0; font-size: 13px; color: #525252; line-height: 1.6;">El <strong>Diagnóstico de Automatización Estratégica</strong> transforma estas hipótesis en 3 oportunidades priorizadas con ROI estimado en pesos y una maqueta funcionando de la más rápida. Entrega en 10 a 15 días. Inversión: $490.000 + IVA (USD 500 fuera de Chile). El pago reserva su cupo (solo abrimos 2 cupos al mes). El 100% del valor es acreditable a su proyecto si avanza dentro de 90 días.</p>
+        <p style="margin: 0; font-size: 13px; color: #525252; line-height: 1.6;">El <strong>diagnóstico del Proyecto a medida</strong> transforma estas hipótesis en 3 oportunidades priorizadas con ROI estimado en pesos y una maqueta funcionando de la más rápida. Entrega en 10 a 15 días. Inversión: CLP 490.000 + IVA. El 100% del valor es acreditable a su proyecto si avanza dentro de 90 días.</p>
       </div>
 
-      <p style="margin: 24px 0 16px; font-size: 14px; color: #1a1a1a;">Puede reservar directamente su cupo, o agendar primero 30 minutos con Edmundo Spohr (Director) para ver si le hace sentido.</p>
+      <p style="margin: 24px 0 16px; font-size: 14px; color: #1a1a1a;">Puede pedir una propuesta, o agendar primero 30 minutos con Edmundo Spohr (Director) para ver si le hace sentido.</p>
 
       <p style="margin: 16px 0 8px;">
-        <a href="https://wa.me/56975991366?text=Hola%20Growth%20Buddies%21%20Vengo%20del%20quiz%20y%20quiero%20reservar%20mi%20cupo%20del%20Diagn%C3%B3stico%20de%20Automatizaci%C3%B3n%20Estrat%C3%A9gica.%20%C2%BFC%C3%B3mo%20coordinamos%20el%20pago%3F" style="background: #0097B2; color: white; padding: 14px 28px; text-decoration: none; border-radius: 999px; font-weight: bold; display: inline-block; margin-right: 8px;">Reservar mi cupo →</a>
+        <a href="https://growthbuddies.cl/proyecto-a-medida#propuesta" style="background: #0097B2; color: white; padding: 14px 28px; text-decoration: none; border-radius: 999px; font-weight: bold; display: inline-block; margin-right: 8px;">Recibir propuesta en 24 horas →</a>
         <a href="https://calendly.com/espohr/conversemos" style="color: #0097B2; font-size: 14px; text-decoration: none; padding: 14px 0; display: inline-block;">o agendar conversación</a>
       </p>
 
