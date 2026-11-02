@@ -83,3 +83,4 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 | 2026-11-01 | Live vía GitHub Actions | Bloque 3 SEO |
 | 2026-11-01 | Live vía GitHub Actions | Ajustes por Search Console |
 | 2026-11-01 | Live vía GitHub Actions, PR 6 | Bloque 4 |
+| 2026-11-01 | Live + functions | Sin garantía de adopción ni USD 500 |
