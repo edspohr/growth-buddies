@@ -10,5 +10,4 @@ Solo cosas que dependen de usted. Lo resuelto se borra de esta lista.
 10. **GA4.** Falta marcar `generate_lead` como evento clave: aparecerá en Eventos recientes tras el primer lead real, hasta 48 horas después.
 11. **Alertas.** Avisar si las alertas de leads deben llegar a otras direcciones además de `edmundo@spohr.cl`.
 14. **Newsletter del blog.** Confirmar si el formulario de suscripción debe seguir; no se revisó en esta etapa.
-15. **"2 horas hábiles".** `/gracias` y un correo de seguimiento aún dicen "2 horas hábiles". Es otra promesa: confirmar si se ajusta o se elimina.
 17. **Dra. Corral.** Su reseña de Google quedó en el home, aunque su logo salió. Confirmar si se mantiene.

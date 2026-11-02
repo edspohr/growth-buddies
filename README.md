@@ -1,186 +1,96 @@
-# Growth Buddies — Sitio Web Corporativo
+# Growth Buddies
 
-Sitio web de [growthbuddies.cl](https://growthbuddies.cl), consultora chilena de **diagnóstico y automatización con IA** para empresas de servicios profesionales en Latinoamérica. Diagnosticamos operaciones, identificamos dónde se pierde dinero, y entregamos un roadmap de automatización priorizado con ROI estimado.
+Sitio web de [growthbuddies.cl](https://growthbuddies.cl). Growth Buddies SpA es una empresa chilena que construye e implementa herramientas operativas con IA.
 
-> **Posicionamiento:** Consultora de diagnóstico estratégico, no de implementación genérica. El CTA principal es "Agendar conversación con el director" o "Evaluar si califica". El producto central es el Diagnóstico de Automatización Estratégica (CLP $490.000 + IVA en Chile, USD 500 en el resto de LATAM, entrega en 10 a 15 días). Incluye maqueta funcionando. 100% acreditable a cualquier proyecto contratado dentro de 90 días; garantía de devolución si no se identifican al menos 3 oportunidades con ROI positivo.
+## Oferta
 
-## Stack Tecnológico
+| Oferta | Para quién | URL |
+|--------|-----------|-----|
+| Expense Buddy | Rendición de gastos para equipos en terreno | `/expense-buddy` |
+| DocFlow Buddy | Documentos y casos con IA | `/docflow-buddy` |
+| Agent Buddy (Web y a medida) | Asistentes de IA para el sitio y los procesos | `/agent-buddy` |
+| Diagnóstico de automatización | Empresas que no tienen claro por dónde empezar | `/diagnostico` |
+
+El CTA principal es "Recibir propuesta en 24 horas", que lleva al formulario. En `/diagnostico` el CTA es "Solicitar diagnóstico".
+
+El diagnóstico tiene un valor fijo de CLP 490.000 + IVA en Chile y se cotiza en moneda local en otros países. Se entrega en 10 a 15 días, con oportunidades priorizadas y una maqueta funcionando. El 100% se descuenta de la implementación contratada dentro de 90 días.
+
+## Stack
 
 | Capa | Tecnología |
 |------|------------|
-| Markup | HTML5 semántico (estático, sin framework) |
-| Estilos | Tailwind CSS v3.4 + PostCSS |
-| Tipografía | Inter (body) · Space Grotesk (display) via Google Fonts |
-| Animaciones | Lenis (smooth scroll) · GSAP ScrollTrigger · CSS keyframes |
-| Analytics | Microsoft Clarity |
-| Agendamiento | Calendly (embed inline, desktop only) |
-| Despliegue | Firebase Hosting (CDN, clean URLs, trailing-slash off) |
+| Sitio | HTML estático, sin framework |
+| Estilos | Tailwind CSS v3 |
+| Hosting | Firebase Hosting, publicado con GitHub Actions |
+| Backend | Cloud Functions (Node.js 22, `us-central1`) y Firestore |
+| Correo | Resend |
+| Medición | Google Analytics 4, Microsoft Clarity, Google Ads |
 
-## Estructura del Proyecto
+## Desarrollo
 
-```
-growth-buddies/
-├── index.html                          # Homepage
-├── sitemap.xml
-├── robots.txt
-├── 404.html
-│
-├── servicios/
-│   ├── automatizacion-inteligente/     # Legal Tech & Ops
-│   ├── ia-corporativa/                 # IA Corporativa
-│   └── gestion-del-cambio/             # Gestión del Cambio
-│
-├── soluciones/
-│   ├── catalogo.html                   # Catálogo completo de Mini Apps
-│   ├── automatizacion-legal-emails/    # Triaje Legal (Email AI)
-│   ├── gestion-documental-ip/          # Validación Documental
-│   └── rendicion-gastos-ia/            # Rendición de Gastos IA
-│
-├── blog/
-│   ├── index.html                      # Blog index
-│   ├── automatizacion-contratos-legales-2026/
-│   ├── roi-ia-estudios-juridicos/
-│   ├── casos-exito-transformacion-chile/
-│   └── ia-corretaje-propiedades-chile/
-│
-├── equipo/
-│   ├── edmundo-spohr/
-│   └── felipe-soto-santibanez/
-│
-├── metodologia/
-│   ├── diagnostico/
-│   ├── diseno/
-│   ├── build/
-│   └── adopcion/
-│
-├── src/
-│   └── input.css                       # Tailwind source (directivas + custom CSS)
-├── dist/
-│   └── output.css                      # CSS compilado (no editar directamente)
-│
-├── img/                                # Imágenes en formato .webp
-├── vid/                                # Videos hero en .mp4
-├── tailwind.config.js
-├── firebase.json
-└── package.json
-```
-
-## Desarrollo Local
-
-### Prerequisitos
-
-- Node.js ≥ 18
-- npm
-
-### Instalación
+Trabaje en `~/dev/growth-buddies`, no en una carpeta sincronizada con iCloud.
 
 ```bash
 npm install
 ```
 
-### Compilar CSS
-
 ```bash
-# Compilación única
 npm run build
-
-# Modo watch (recompila al guardar)
-npm run watch
 ```
 
-> **Importante:** `dist/output.css` es el CSS compilado. Toda modificación de estilos debe hacerse en `src/input.css` o en las clases Tailwind del HTML, y luego recompilar.
+`npm run build` genera `public/` desde una lista blanca (`scripts/build-public.mjs`). También reemplaza `{{calendly}}`, `{{whatsapp}}` y `{{form}}` con los valores de `src/cta.config.json`, e incluye `src/lead-form.html` y `src/products-strip.html`. Una carpeta nueva solo se publica si se agrega a esa lista.
 
-### Servidor local
-
-Cualquier servidor estático sirve el proyecto. Con Python:
+Si agrega o elimina páginas, regenere el sitemap:
 
 ```bash
-python3 -m http.server 8080
+npm run build && npm run sitemap && npm run build
 ```
 
-O con la extensión Live Server de VS Code apuntando a `index.html`.
+## Controles
+
+```bash
+npm run check -- <url>
+```
+
+```bash
+node scripts/checks/mobile.mjs <url>
+```
+
+```bash
+node scripts/checks/contrast.mjs <url>
+```
+
+```bash
+node scripts/checks/lighthouse.mjs <url> /
+```
+
+Las pruebas de reglas y del formulario usan emuladores y requieren Java:
+
+```bash
+PATH="$(brew --prefix openjdk@21)/bin:$PATH" npm run test:rules
+```
+
+```bash
+PATH="$(brew --prefix openjdk@21)/bin:$PATH" npm run test:lead
+```
 
 ## Despliegue
 
-GitHub Actions despliega en **Firebase Hosting** al hacer push a `main` y crea un canal de vista previa por cada pull request (`.github/workflows/`).
+- **Sitio:** un push a `main` publica en vivo con `hosting-live.yml`. Cada pull request crea una vista previa con `hosting-pr.yml`.
+- **Funciones:** `firebase deploy --only functions --project growth-buddies`
+- **Reglas:** `firebase deploy --only firestore:rules --project growth-buddies`
 
-`npm run build` genera `public/` desde una lista blanca (`scripts/build-public.mjs`) y reemplaza `{{calendly}}` y `{{whatsapp}}` con los valores de `src/cta.config.json`.
+Si un cambio toca el formulario y el backend, publique primero las funciones. El CSS se cachea 24 horas, por eso su URL lleva un hash.
 
-Configuración relevante (`firebase.json`):
-- **Clean URLs**: activo
-- **Trailing slash**: desactivado
-- **Cache**: assets estáticos con `max-age=31536000, immutable`
-- **Redirect**: `www.growthbuddies.cl` → `growthbuddies.cl`, configurado en el dominio personalizado de Firebase
-- **404**: `404.html`
+## Documentación
 
-Antes de publicar: `npm run build`, `npm run check -- <url>` y `node scripts/checks/lighthouse.mjs <url> /`. Reglas de Firestore: `npm run test:rules`.
+- `CLAUDE.md`: reglas del proyecto.
+- `docs/design-system.md`: tokens y componentes.
+- `docs/redesign/PROGRESS.md`: decisiones y despliegues.
+- `docs/redesign/pendientes.md`: pendientes de Edmundo.
 
-## Diseño & Convenciones
+## Contacto
 
-### Tema visual
-- Fondo base: `#050510` (dark blueish)
-- Acento principal: `#00f6ff` (cyan) — `var(--color-accent)`
-- Fuente display: Space Grotesk (headings, badges, nav)
-- Glassmorphism en navbar: `backdrop-blur` + `bg-black/60`
-
-### Accesibilidad (WCAG AA)
-- Skip-to-content link en todas las páginas
-- `id="main-content"` en `<main>` de todas las páginas
-- `aria-label` en todos los links de solo icono
-- `aria-expanded` en botón hamburger del nav móvil
-- `:focus-visible` con outline cyan para navegación por teclado
-- `prefers-reduced-motion`: animación de noise-overlay desactivada
-- Contraste mínimo: `text-slate-400` sobre fondo oscuro (~9.5:1)
-
-### Rendimiento
-- Google Fonts con `<link rel="preload" as="style" crossorigin>` + `<link rel="stylesheet">`
-- Scripts Lenis con `defer`
-- Imágenes en `.webp`, videos en `.mp4`
-- `will-change: transform` en `.noise-overlay`
-- Assets servidos con CDN + cache inmutable desde Firebase Hosting
-
-### Navegación estándar (todas las páginas)
-```
-Inicio | Servicios | Soluciones | Blog | Contacto
-```
-- Desktop: `hidden md:flex` con estado activo en `text-white`
-- Mobile: menú hamburger con `aria-expanded`
-
-### Footer canónico (4 columnas)
-1. Marca + redes sociales
-2. Servicios
-4. Explora (Metodología, Equipo, Blog)
-
-### Links internos
-- Siempre root-relative con trailing slash: `/servicios/ia-corporativa/`
-- Excepción: `catalogo.html` sin trailing slash (archivo `.html` explícito con anchors)
-- Links externos: siempre `target="_blank" rel="noopener noreferrer"`
-
-## Mini Apps — Catálogo
-
-| Mini App | Sector | Ruta |
-|----------|--------|------|
-| Triaje Legal (Email AI) | Legal Tech | `/soluciones/automatizacion-legal-emails/` |
-| Validación Documental | Legal Tech | `/soluciones/gestion-documental-ip/` |
-| Rendición de Gastos IA | Finance Ops | `/soluciones/rendicion-gastos-ia/` |
-| Auto Timesheet | Legal Tech | `/soluciones/catalogo.html#timesheet` |
-
-## Funcionalidades del Homepage
-
-- **Hero** con video de fondo (`vid/hero.mp4`) y CTA dual ("Evaluar si califica" + WhatsApp)
-- **Tarjetas de clientes** con micro-testimoniales y logos
-- **Sección "Cómo Trabajamos"** — proceso de 3 pasos (Calificación → Diagnóstico → Implementación) con Microdata HowTo
-- **Reseñas de Google** con calificación 5.0
-- **Sección de servicios** (diagnóstico, implementación, change management)
-- **Tabla comparativa de diferenciadores** vs. agencias genéricas
-- **FAQ** con 6 preguntas sobre el diagnóstico
-- **Sección de contacto** con Calendly embed (solo desktop) + WhatsApp CTA directo — sin formulario HTML
-- **Sticky CTA bar** móvil (aparece al salir del hero, via IntersectionObserver)
-- **UTM attribution capture** en sessionStorage (sin Firebase en homepage)
-
-## Contacto & Equipo
-
-- **Edmundo Spohr** — Director & Fundador — [edmundo@spohr.cl](mailto:edmundo@spohr.cl)
-- **Felipe Soto Santibáñez** — Co-fundador (ex-Mercado Libre / Banco Falabella)
+- Edmundo Spohr, director: [edmundo@spohr.cl](mailto:edmundo@spohr.cl)
 - WhatsApp: [+56 9 7599 1366](https://wa.me/56975991366)
 - LinkedIn: [linkedin.com/company/growth-buddies](https://www.linkedin.com/company/growth-buddies)

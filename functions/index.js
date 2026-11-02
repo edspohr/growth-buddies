@@ -383,7 +383,7 @@ exports.sendDay0Confirmation = onDocumentUpdated(
 
     const body = `
       <p style="font-size:16px;line-height:1.7;margin:0 0 16px;">Hola <strong>${after.name}</strong>, recibimos tu solicitud de diagnóstico. 👋</p>
-      <p style="font-size:15px;line-height:1.7;color:#94a3b8;margin:0 0 24px;">Edmundo te contactará <strong style="color:#e2e8f0;">en menos de 2 horas hábiles</strong> para confirmar si el diagnóstico es relevante para tu operación. Si prefieres agendar directamente:</p>
+      <p style="font-size:15px;line-height:1.7;color:#94a3b8;margin:0 0 24px;">Edmundo te contactará <strong style="color:#e2e8f0;">en menos de 24 horas</strong> para confirmar si el diagnóstico es relevante para tu operación. Si prefieres agendar directamente:</p>
       ${ctaButton("https://calendly.com/espohr/conversemos", "📅 Agendar conversación")}
       <div style="margin-top:32px;padding:24px;background:#0d0d1a;border-radius:12px;border-left:3px solid #00f6ff;">
         <p style="margin:0 0 8px;font-size:12px;color:#00f6ff;font-weight:700;text-transform:uppercase;letter-spacing:.06em;">Caso de éxito relevante</p>
