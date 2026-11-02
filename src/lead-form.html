@@ -20,7 +20,7 @@
         <option value="expense-buddy">Expense Buddy</option>
         <option value="docflow-buddy">DocFlow Buddy</option>
         <option value="agent-buddy">Agent Buddy</option>
-        <option value="proyecto-a-medida">Proyecto a medida</option>
+        <option value="diagnostico">Aún no sé por dónde empezar</option>
       </select>
     </div>
     <button type="button" class="btn-cta w-full sm:col-span-2 mt-2" data-lead-next>Continuar <span aria-hidden="true">→</span></button>
@@ -89,9 +89,9 @@
     </div>
   </fieldset>
 
-  <fieldset class="grid gap-4 mt-4" data-qualifiers="proyecto-a-medida" hidden>
+  <fieldset class="grid gap-4 mt-4" data-qualifiers="diagnostico" hidden>
     <div>
-      <label class="gemini-input-label" for="lead-problema">Describa el problema</label>
+      <label class="gemini-input-label" for="lead-problema">Cuéntenos qué quiere resolver</label>
       <textarea class="gemini-input" id="lead-problema" name="problema" rows="4" maxlength="2000" required></textarea>
     </div>
   </fieldset>
@@ -105,7 +105,7 @@
 
   <p class="lead-error" data-lead-error role="alert" hidden></p>
   <div data-lead-submit hidden>
-    <button type="submit" class="btn-cta w-full mt-6">Recibir propuesta <span aria-hidden="true">→</span></button>
+    <button type="submit" class="btn-cta w-full mt-6" data-lead-label>Recibir propuesta <span aria-hidden="true">→</span></button>
     <button type="button" class="lead-back" data-lead-back>Volver</button>
   </div>
 </form>
@@ -115,7 +115,7 @@
   <p class="text-[var(--fg-soft)]">Le escribiremos en menos de 24 horas.</p>
 </div>
 <div class="lead-sticky" data-lead-sticky hidden>
-  <a href="#propuesta" class="btn-cta">Recibir propuesta <span aria-hidden="true">→</span></a>
+  <a href="#propuesta" class="btn-cta" data-lead-label>Recibir propuesta <span aria-hidden="true">→</span></a>
 </div>
 <script>
   (function () {
@@ -123,6 +123,11 @@
     if (!form) return;
     var preset = form.parentElement.getAttribute("data-product");
     var select = form.elements.producto;
+    if (preset === "diagnostico") {
+      form.parentElement.querySelectorAll("[data-lead-label]").forEach(function (el) {
+        el.firstChild.textContent = "Solicitar diagnóstico ";
+      });
+    }
     var groups = form.querySelectorAll("[data-qualifiers]");
     var error = form.parentElement.querySelector("[data-lead-error]");
     var success = form.parentElement.querySelector("[data-lead-success]");
