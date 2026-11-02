@@ -10,15 +10,15 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://growthbuddies.cl/diagnostico</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://growthbuddies.cl/docflow-buddy</loc>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://growthbuddies.cl/expense-buddy</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://growthbuddies.cl/proyecto-a-medida</loc>
     <priority>0.9</priority>
   </url>
   <url>

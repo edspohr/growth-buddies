@@ -42,7 +42,7 @@ const DIRECTORIES = [
   "peru",
   "preguntas-frecuentes",
   "privacidad",
-  "proyecto-a-medida",
+  "diagnostico",
   "recursos",
   "sectores",
   "servicios",

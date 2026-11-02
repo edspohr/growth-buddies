@@ -166,8 +166,8 @@
       },
       {
         "@type": "Offer",
-        "name": "Proyecto a medida",
-        "description": "Diagnóstico pagado, 100% acreditable dentro de 90 días.",
+        "name": "Diagnóstico de automatización",
+        "description": "Diagnóstico a valor fijo, 100% descontable de la implementación contratada dentro de 90 días.",
         "priceSpecification": {
           "@type": "PriceSpecification",
           "minPrice": 490000,
@@ -239,10 +239,10 @@
     },
     {
       "@type": "Question",
-      "name": "¿Y si ningún producto calza con mi problema?",
+      "name": "¿Y si no sé por dónde empezar?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Hacemos un proyecto a medida. Parte con un diagnóstico pagado de CLP 490.000 + IVA, 100% acreditable al proyecto dentro de 90 días."
+        "text": "Parta con un diagnóstico a valor fijo de CLP 490.000 + IVA, con oportunidades priorizadas y una maqueta funcionando. El 100% se descuenta de la implementación contratada dentro de 90 días."
       }
     },
     {
@@ -447,7 +447,7 @@
         <div class="hidden md:flex items-center gap-8">
           <details class="nav-drop">
             <summary class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors">Productos</summary>
-            <div class="nav-menu"><a href="/expense-buddy" class="nav-menu-item"><span>Expense Buddy</span><small>Rendición de gastos para equipos en terreno</small></a><a href="/docflow-buddy" class="nav-menu-item"><span>DocFlow Buddy</span><small>Documentos y casos con IA</small></a><a href="/agent-buddy" class="nav-menu-item"><span>Agent Buddy</span><small>Asistentes de IA para su sitio y sus procesos</small></a><a href="/proyecto-a-medida" class="nav-menu-item"><span>Proyecto a medida</span><small>Cuando ningún producto calza</small></a></div>
+            <div class="nav-menu"><a href="/expense-buddy" class="nav-menu-item"><span>Expense Buddy</span><small>Rendición de gastos para equipos en terreno</small></a><a href="/docflow-buddy" class="nav-menu-item"><span>DocFlow Buddy</span><small>Documentos y casos con IA</small></a><a href="/agent-buddy" class="nav-menu-item"><span>Agent Buddy</span><small>Asistentes de IA para su sitio y sus procesos</small></a><a href="/diagnostico" class="nav-menu-item"><span>Diagnóstico</span><small>Si no sabe por dónde empezar</small></a></div>
           </details>
           <a href="/casos" class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors">Casos</a>
           <a href="/recursos" class="text-sm font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] transition-colors">Recursos</a>
@@ -518,7 +518,7 @@
         <div class="mb-8">
           <a href="{{form}}" class="btn-cta w-full">Recibir propuesta <span aria-hidden="true">→</span></a>
         </div>
-        <nav class="flex flex-col" role="navigation" aria-label="Menú móvil"><a href="/expense-buddy" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Expense Buddy</a><a href="/docflow-buddy" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">DocFlow Buddy</a><a href="/agent-buddy" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Agent Buddy</a><a href="/proyecto-a-medida" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Proyecto a medida</a><a href="/casos" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Casos</a><a href="/recursos" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Recursos</a><a href="/nosotros" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Nosotros</a><a href="/#contacto" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Contacto</a></nav>
+        <nav class="flex flex-col" role="navigation" aria-label="Menú móvil"><a href="/expense-buddy" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Expense Buddy</a><a href="/docflow-buddy" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">DocFlow Buddy</a><a href="/agent-buddy" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Agent Buddy</a><a href="/diagnostico" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Diagnóstico</a><a href="/casos" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Casos</a><a href="/recursos" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Recursos</a><a href="/nosotros" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Nosotros</a><a href="/#contacto" class="text-lg font-medium text-[var(--fg-soft)] hover:text-[var(--fg)] py-4 border-b border-[var(--line)] transition-colors">Contacto</a></nav>
         <div class="mt-auto pt-8">
           <a
             href="{{whatsapp}}"
@@ -634,10 +634,10 @@
           </div>
           <div class="door mt-6">
             <div>
-              <h3 class="text-lg mb-1">¿No calza en ninguno? Proyecto a medida</h3>
-              <p class="text-sm text-[var(--fg-soft)]">Diagnóstico pagado de CLP 490.000 + IVA, 100% acreditable dentro de 90 días.</p>
+              <h3 class="text-lg mb-1">¿No sabe por dónde empezar? Parta con un diagnóstico</h3>
+              <p class="text-sm text-[var(--fg-soft)]">Valor fijo de CLP 490.000 + IVA, 100% descontable de la implementación contratada dentro de 90 días.</p>
             </div>
-            <a href="/proyecto-a-medida" class="font-semibold text-[var(--accent-text)] hover:underline underline-offset-2 whitespace-nowrap">Ver cómo funciona <span aria-hidden="true">→</span></a>
+            <a href="/diagnostico" class="font-semibold text-[var(--accent-text)] hover:underline underline-offset-2 whitespace-nowrap">Ver cómo funciona <span aria-hidden="true">→</span></a>
           </div>
         </div>
       </section>
@@ -706,7 +706,7 @@
             <p class="eyebrow">Preguntas frecuentes</p>
             <h2 class="text-h1">Lo que más nos preguntan</h2>
           </div>
-          <details class="faq"><summary>¿Qué recibo con la propuesta en 24 horas?</summary><p>Una propuesta preliminar según el producto y el tamaño de su operación, con alcance y precio de referencia.</p></details><details class="faq"><summary>¿Pago por usuario o por licencia?</summary><p>Expense Buddy se contrata con una implementación única que incluye licencia perpetua. El mantenimiento es opcional, desde 4 UF al mes, e incluye todas las mejoras del producto.</p></details><details class="faq"><summary>¿Expense Buddy funciona sin señal?</summary><p>Sí. Los registros se guardan sin señal y se sincronizan cuando se abre la aplicación con conexión.</p></details><details class="faq"><summary>¿Cuánto tarda Agent Buddy Web?</summary><p>Queda en vivo en menos de un mes. Incluye 30 días de implementación y 60 días de soporte.</p></details><details class="faq"><summary>¿Incluyen entrenamiento?</summary><p>Sí. El valor llega cuando las personas usan la herramienta, por eso cada implementación considera entrenamiento y adopción.</p></details><details class="faq"><summary>¿Y si ningún producto calza con mi problema?</summary><p>Hacemos un proyecto a medida. Parte con un diagnóstico pagado de CLP 490.000 + IVA, 100% acreditable al proyecto dentro de 90 días.</p></details><details class="faq"><summary>¿Trabajan fuera de Chile?</summary><p>Sí. También operamos en Colombia, Perú y Ecuador.</p></details>
+          <details class="faq"><summary>¿Qué recibo con la propuesta en 24 horas?</summary><p>Una propuesta preliminar según el producto y el tamaño de su operación, con alcance y precio de referencia.</p></details><details class="faq"><summary>¿Pago por usuario o por licencia?</summary><p>Expense Buddy se contrata con una implementación única que incluye licencia perpetua. El mantenimiento es opcional, desde 4 UF al mes, e incluye todas las mejoras del producto.</p></details><details class="faq"><summary>¿Expense Buddy funciona sin señal?</summary><p>Sí. Los registros se guardan sin señal y se sincronizan cuando se abre la aplicación con conexión.</p></details><details class="faq"><summary>¿Cuánto tarda Agent Buddy Web?</summary><p>Queda en vivo en menos de un mes. Incluye 30 días de implementación y 60 días de soporte.</p></details><details class="faq"><summary>¿Incluyen entrenamiento?</summary><p>Sí. El valor llega cuando las personas usan la herramienta, por eso cada implementación considera entrenamiento y adopción.</p></details><details class="faq"><summary>¿Y si no sé por dónde empezar?</summary><p>Parta con un diagnóstico a valor fijo de CLP 490.000 + IVA, con oportunidades priorizadas y una maqueta funcionando. El 100% se descuenta de la implementación contratada dentro de 90 días.</p></details><details class="faq"><summary>¿Trabajan fuera de Chile?</summary><p>Sí. También operamos en Colombia, Perú y Ecuador.</p></details>
         </div>
       </section>
 

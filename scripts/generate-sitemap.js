@@ -13,7 +13,7 @@ const PUBLIC = path.join(ROOT, "public");
 const SITE = "https://growthbuddies.cl";
 const { redirects } = JSON.parse(fs.readFileSync(path.join(ROOT, "firebase.json"), "utf8")).hosting;
 const redirected = new Set(redirects.map((redirect) => redirect.source));
-const TOP = ["/expense-buddy", "/docflow-buddy", "/agent-buddy", "/proyecto-a-medida"];
+const TOP = ["/expense-buddy", "/docflow-buddy", "/agent-buddy", "/diagnostico"];
 
 function priority(route) {
   if (route === "/") return "1.0";

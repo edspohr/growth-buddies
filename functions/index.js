@@ -219,9 +219,9 @@ const LEAD_DETAIL_LABELS = {
 };
 
 async function notifyProposalLead(lead, leadId) {
-  const isCustom = lead.product === "proyecto-a-medida";
-  const promise = isCustom
-    ? "Le responde el director en menos de 24 horas."
+  const isDiagnostic = lead.product === "diagnostico";
+  const promise = isDiagnostic
+    ? "Le escribiremos en menos de 24 horas."
     : "Le enviaremos una propuesta preliminar en menos de 24 horas.";
   const ackBody = `
     <p style="font-size:16px;line-height:1.7;margin:0 0 16px;">Hola ${escapeHtml(lead.name)}, recibimos su solicitud sobre ${escapeHtml(lead.interest)}.</p>

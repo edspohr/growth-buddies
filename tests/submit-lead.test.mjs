@@ -34,14 +34,14 @@ test("stores a valid lead per product, without unknown fields", async () => {
   for (const body of [
     { producto: "docflow-buddy", casos_mes: "20 a 100", recepcion_documentos: "Por correo" },
     { producto: "agent-buddy", sitio_web: "empresa.cl", canales: "WhatsApp", interes: "Web" },
-    { producto: "proyecto-a-medida", problema: "Mucho trabajo manual" },
+    { producto: "diagnostico", problema: "Mucho trabajo manual" },
   ]) {
     assert.equal((await post({ ...base, ...body }, "10.0.0.2")).status, 200);
   }
 });
 
 test("rejects invalid data", async () => {
-  const product = { producto: "proyecto-a-medida", problema: "Texto" };
+  const product = { producto: "diagnostico", problema: "Texto" };
   assert.equal((await post({ ...base, ...product, correo: "malo" }, "10.0.0.3")).status, 400);
   assert.equal((await post({ ...base, ...product, nombre: "" }, "10.0.0.3")).status, 400);
   assert.equal((await post({ ...base, producto: "otro" }, "10.0.0.3")).status, 400);
@@ -51,13 +51,13 @@ test("rejects invalid data", async () => {
 
 test("honeypot answers ok and stores nothing", async () => {
   const before = (await leads()).length;
-  const response = await post({ ...base, producto: "proyecto-a-medida", problema: "x", fax: "spam" }, "10.0.0.4");
+  const response = await post({ ...base, producto: "diagnostico", problema: "x", fax: "spam" }, "10.0.0.4");
   assert.equal(response.status, 200);
   assert.equal((await leads()).length, before);
 });
 
 test("limits each address to five submissions per hour", async () => {
-  const body = { ...base, producto: "proyecto-a-medida", problema: "Texto" };
+  const body = { ...base, producto: "diagnostico", problema: "Texto" };
   for (let i = 0; i < 5; i += 1) assert.equal((await post(body, "10.0.0.5")).status, 200);
   assert.equal((await post(body, "10.0.0.5")).status, 429);
   assert.equal((await post(body, "10.0.0.6")).status, 200);

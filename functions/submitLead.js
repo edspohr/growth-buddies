@@ -30,11 +30,13 @@ const PRODUCTS = {
       interes: ["Web", "A medida"],
     },
   },
-  "proyecto-a-medida": {
-    label: "Proyecto a medida",
+  diagnostico: {
+    label: "Diagnóstico",
     qualifiers: { problema: 2000 },
   },
 };
+// Pages cached before the rename still post the old value.
+PRODUCTS["proyecto-a-medida"] = PRODUCTS.diagnostico;
 
 const TEXT_FIELDS = { nombre: 120, empresa: 160, cargo: 120 };
 const OPTIONAL_FIELDS = {

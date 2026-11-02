@@ -61,8 +61,13 @@
     ],
     "redirects": [
       {
+        "source": "/proyecto-a-medida",
+        "destination": "/diagnostico",
+        "type": 301
+      },
+      {
         "source": "/recursos/diagnostico-rapido",
-        "destination": "/proyecto-a-medida#propuesta",
+        "destination": "/diagnostico#propuesta",
         "type": 301
       },
       {
@@ -112,7 +117,7 @@
       },
       {
         "source": "/servicios/automatizacion-inteligente",
-        "destination": "/proyecto-a-medida",
+        "destination": "/diagnostico",
         "type": 301
       },
       {

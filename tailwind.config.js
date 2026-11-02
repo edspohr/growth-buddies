@@ -24,7 +24,7 @@ module.exports = {
     "./expense-buddy/**/*.html",
     "./docflow-buddy/**/*.html",
     "./agent-buddy/**/*.html",
-    "./proyecto-a-medida/**/*.html",
+    "./diagnostico/**/*.html",
   ],
   theme: {
     extend: {
