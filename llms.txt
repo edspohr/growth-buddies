@@ -35,7 +35,6 @@ Expense Buddy does not validate documents with Chile's tax authority (SII), does
 - [Free expense report spreadsheet](https://growthbuddies.cl/recursos/planilla-rendicion-de-gastos)
 - [AI agents for companies in Chile](https://growthbuddies.cl/blog/agentes-ia-para-empresas-chile)
 - [Document management for law firms](https://growthbuddies.cl/docflow-buddy/estudios-juridicos)
-- [Quick automation diagnostic](https://growthbuddies.cl/recursos/diagnostico-rapido)
 - [Blog](https://growthbuddies.cl/blog)
 - [Case studies](https://growthbuddies.cl/casos)
 - [FAQ](https://growthbuddies.cl/preguntas-frecuentes)

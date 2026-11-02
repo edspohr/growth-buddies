@@ -61,6 +61,11 @@
     ],
     "redirects": [
       {
+        "source": "/recursos/diagnostico-rapido",
+        "destination": "/proyecto-a-medida#propuesta",
+        "type": 301
+      },
+      {
         "source": "/metodologia/diagnostico",
         "destination": "/metodologia#diagnostico",
         "type": 301

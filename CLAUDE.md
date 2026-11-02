@@ -45,7 +45,7 @@ Static HTML5 site for a Chilean AI automation consulting firm. No JavaScript fra
 - `/expense-buddy`, `/docflow-buddy`, `/agent-buddy`, `/proyecto-a-medida` — product pages, with sector pages under `/expense-buddy/<slug>` and `/docflow-buddy/<slug>`
 - `/servicios/<slug>/` — service pages
 - `/soluciones` — implementation examples
-- `/recursos/<slug>` — resources, including the quiz at `/recursos/diagnostico-rapido`
+- `/recursos/<slug>` — resources
 - `/blog/<slug>/` — articles
 - `/metodologia/<slug>/` — 4-phase engagement process pages
 - `/equipo/<slug>/` — team bios

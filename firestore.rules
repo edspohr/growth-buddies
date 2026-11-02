@@ -76,19 +76,6 @@ service cloud.firestore {
     }
 
     match /quiz_leads/{id} {
-      allow create: if request.resource.data.keys().hasOnly([
-          'email', 'company', 'answers', 'timestamp', 'source', 'followup_sent', 'landing_page', 'referrer',
-          'utm_source', 'utm_medium', 'utm_campaign'
-        ])
-        && request.resource.data.keys().hasAll(['email', 'answers', 'timestamp'])
-        && hasValidEmail(request.resource.data)
-        && request.resource.data.timestamp == request.time
-        && request.resource.data.answers is map
-        && request.resource.data.answers.size() <= 20
-        && isOptionalText(request.resource.data, 'company', 160)
-        && isOptionalText(request.resource.data, 'source', 60)
-        && (!('followup_sent' in request.resource.data) || request.resource.data.followup_sent == false)
-        && hasValidAttribution(request.resource.data);
       allow read, update, delete: if request.auth != null;
     }
   }

@@ -43,34 +43,19 @@ test("accepts the payloads the site sends", async () => {
       report: "informe-automatizacion-servicios-latam-2026",
     })
   );
-  await assertSucceeds(
-    create("quiz_leads", {
-      ...base(),
-      company: null,
-      answers: { sector: "legal", size: "10" },
-      source: "homepage_quiz",
-      followup_sent: false,
-      landing_page: "https://growthbuddies.cl/",
-      referrer: "direct",
-      utm_source: null,
-      utm_medium: null,
-      utm_campaign: null,
-    })
-  );
 });
 
 test("rejects unexpected fields, bad emails and oversized text", async () => {
   await assertFails(create("guide_leads", { ...base(), admin: true }));
   await assertFails(create("report_leads", { ...base(), email: "no-es-correo" }));
   await assertFails(create("report_leads", { ...base(), name: "x".repeat(121) }));
-  await assertFails(create("quiz_leads", { ...base(), answers: "texto" }));
-  await assertFails(create("quiz_leads", { ...base(), answers: {}, followup_sent: true }));
   await assertFails(create("guide_leads", { email: "ana@empresa.cl", timestamp: new Date(0) }));
 });
 
 test("keeps collections without a form closed", async () => {
   await assertFails(create("leads", base()));
   await assertFails(create("calculator_leads", base()));
+  await assertFails(create("quiz_leads", { ...base(), answers: {} }));
   await assertFails(create("otra", base()));
 });
 
