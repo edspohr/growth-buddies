@@ -87,3 +87,4 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 | 2026-11-01 | Live + rules + functions | Quiz y PDF retirados; propuesta en 24 horas como conversión principal |
 | 2026-11-01 | Live + functions | Proyecto a medida pasa a Diagnóstico de automatización en /diagnostico |
 | 2026-11-01 | Live + functions | Diagnóstico descontable de la implementación; 24 horas; sin devolución; README al día |
+| 2026-11-01 | Live + functions | Descuento incluye capacitación; informe web; sin newsletter; alertas con mejor contraste |
