@@ -711,6 +711,8 @@ h1, h2, h3, h4 {
 @media (min-width: 768px) {
     .device-grid { grid-template-columns: 1fr auto auto; gap: 2rem; }
     .device-grid .device-browser { grid-column: auto; }
+    .device-grid .docflow-second { grid-column: 1 / -1; grid-row: 2; }
+    .device-grid:has(.docflow-second) { grid-template-columns: 1fr auto; }
 }
 
 /* Long-form niche pages */

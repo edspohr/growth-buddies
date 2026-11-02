@@ -6,7 +6,6 @@ Solo cosas que dependen de usted. Lo resuelto se borra de esta lista.
 3. **Formulario del informe.** Probar una vez en `/recursos/informe-automatizacion-servicios-latam` con su correo. Deben llegar dos correos: el del lead y la alerta.
 4. **PDF del informe.** Enviarlo, o avisar para cambiar los textos de la página a "versión web".
 5. **Resend.** Confirmar si `spohr.cl` está verificado. Si lo está, el remitente pasa a `edmundo@spohr.cl`.
-7. **Capturas de DocFlow Buddy.** Aprobar o rechazar las 6 imágenes enviadas. Hasta entonces `/docflow-buddy` usa una ilustración neutra.
 9. **Lead de prueba.** Confirmar que llegaron dos correos (acuse y alerta) del lead "Prueba Claude Etapa 6", y borrarlo del panel si no quiere verlo.
 10. **GA4.** Falta marcar `generate_lead` como evento clave: aparecerá en Eventos recientes tras el primer lead real, hasta 48 horas después.
 11. **Alertas.** Avisar si las alertas de leads deben llegar a otras direcciones además de `edmundo@spohr.cl`.
