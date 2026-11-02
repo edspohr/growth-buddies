@@ -58,7 +58,7 @@ function emailWrapper(headerBg, headerColor, badge, title, body) {
 <body style="margin:0;padding:32px 16px;background:#0a0a0f;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#e2e8f0;">
 <div style="max-width:560px;margin:0 auto;background:#12121f;border-radius:16px;border:1px solid #1e2035;overflow:hidden;">
   <div style="background:${headerBg};padding:24px 32px;">
-    <p style="margin:0 0 8px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:${headerColor}80;">${badge}</p>
+    <p style="margin:0 0 8px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:${headerColor};">${badge}</p>
     <h1 style="margin:0;font-size:22px;font-weight:700;line-height:1.3;color:${headerColor};">${title}</h1>
   </div>
   <div style="padding:32px;">${body}
@@ -259,7 +259,7 @@ async function notifyProposalLead(lead, leadId) {
       to: (process.env.LEAD_ALERT_TO || "edmundo@spohr.cl").split(",").map((address) => address.trim()),
       replyTo: lead.email,
       subject: `Propuesta 24h: ${lead.interest} — ${lead.empresa}`,
-      html: emailWrapper("#00f6ff", "#050510", "Propuesta en 24 horas", `Nuevo lead de ${escapeHtml(lead.empresa)}`, `<table style="width:100%;border-collapse:collapse;">${rows}</table><p style="margin-top:12px;font-size:11px;color:#334155;text-align:center;">Lead ID: ${leadId}</p>`),
+      html: emailWrapper("#050510", "#00f6ff", "Propuesta en 24 horas", `Nuevo lead de ${escapeHtml(lead.empresa)}`, `<table style="width:100%;border-collapse:collapse;">${rows}</table><p style="margin-top:12px;font-size:11px;color:#334155;text-align:center;">Lead ID: ${leadId}</p>`),
     }),
   ]);
   const failed = results.find((result) => result.error);
@@ -321,7 +321,7 @@ exports.notifyNewLead = onDocumentCreated(
       from: "Growth Buddies CRM <crm@growthbuddies.cl>",
       to: ["edmundo@spohr.cl"],
       subject,
-      html: emailWrapper(isPartial ? "#1a1a2e" : "#00f6ff", isPartial ? "#94a3b8" : "#050510", isPartial ? "Lead parcial" : "Lead completo", lead.name || lead.email, body),
+      html: emailWrapper(isPartial ? "#1a1a2e" : "#050510", isPartial ? "#94a3b8" : "#00f6ff", isPartial ? "Lead parcial" : "Lead completo", lead.name || lead.email, body),
     });
 
     console.log(`[notifyNewLead] sent for ${leadId} partial=${isPartial}`);

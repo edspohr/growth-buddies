@@ -2,12 +2,7 @@
 
 Solo cosas que dependen de usted. Lo resuelto se borra de esta lista.
 
-2. **Vercel.** Repositorio ya desconectado. Solo si quiere, borre el proyecto en Vercel. Su cuenta recomienda activar 2FA.
-3. **Formulario del informe.** Probar una vez en `/recursos/informe-automatizacion-servicios-latam` con su correo. Deben llegar dos correos: el del lead y la alerta.
-4. **PDF del informe.** Enviarlo, o avisar para cambiar los textos de la página a "versión web".
-5. **Resend.** Confirmar si `spohr.cl` está verificado. Si lo está, el remitente pasa a `edmundo@spohr.cl`.
-9. **Lead de prueba.** Confirmar que llegaron dos correos (acuse y alerta) del lead "Prueba Claude Etapa 6", y borrarlo del panel si no quiere verlo.
-10. **GA4.** Falta marcar `generate_lead` como evento clave: aparecerá en Eventos recientes tras el primer lead real, hasta 48 horas después.
-11. **Alertas.** Avisar si las alertas de leads deben llegar a otras direcciones además de `edmundo@spohr.cl`.
-14. **Newsletter del blog.** Confirmar si el formulario de suscripción debe seguir; no se revisó en esta etapa.
-17. **Dra. Corral.** Su reseña de Google quedó en el home, aunque su logo salió. Confirmar si se mantiene.
+1. **GA4.** Marcar `generate_lead` como evento clave: aparecerá en Eventos recientes tras el primer lead real, hasta 48 horas después.
+2. **Resend.** `spohr.cl` no aparece en Resend, que solo tiene `growthbuddies.cl`. Si quiere usar `edmundo@spohr.cl` como remitente, agregue el dominio allí, cargue sus registros DNS y avise. Mientras tanto se mantiene `edmundo@growthbuddies.cl`, con respuestas a `edmundo@spohr.cl`.
+3. **Vercel.** Opcional: borrar el proyecto y activar 2FA.
+4. **Backlinks.** Avanzar la lista de `docs/redesign/backlinks.md`.

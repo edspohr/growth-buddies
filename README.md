@@ -13,7 +13,7 @@ Sitio web de [growthbuddies.cl](https://growthbuddies.cl). Growth Buddies SpA es
 
 El CTA principal es "Recibir propuesta en 24 horas", que lleva al formulario. En `/diagnostico` el CTA es "Solicitar diagnóstico".
 
-El diagnóstico tiene un valor fijo de CLP 490.000 + IVA en Chile y se cotiza en moneda local en otros países. Se entrega en 10 a 15 días, con oportunidades priorizadas y una maqueta funcionando. El 100% se descuenta de la implementación contratada dentro de 90 días.
+El diagnóstico tiene un valor fijo de CLP 490.000 + IVA en Chile y se cotiza en moneda local en otros países. Se entrega en 10 a 15 días, con oportunidades priorizadas y una maqueta funcionando. El 100% se descuenta de la implementación o capacitación contratada dentro de 90 días.
 
 ## Stack
 

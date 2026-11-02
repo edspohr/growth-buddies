@@ -406,38 +406,6 @@
       </div>
     </section>
 
-    <!-- Suscríbete Section -->
-    <section class="py-16 px-6 border-t border-[var(--line)]">
-      <div class="max-w-2xl mx-auto text-center">
-        <span class="text-[var(--accent-text)] font-bold tracking-wider text-xs uppercase font-display">Newsletter</span>
-        <h2 class="text-2xl md:text-3xl font-semibold text-[var(--fg)] mt-3 mb-3 font-heading">
-          Suscríbete a nuestros Insights
-        </h2>
-        <p class="text-[var(--fg-muted)] text-sm mb-8">
-          Recibe artículos sobre IA y automatización directamente. Sin spam, solo contenido de valor.
-        </p>
-        <form id="subscribe-form" class="flex flex-col sm:flex-row gap-3 justify-center" novalidate>
-          <label for="subscribe-email" class="sr-only">Tu correo electrónico</label>
-          <input
-            type="email"
-            id="subscribe-email"
-            name="email"
-            placeholder="tu@correo.cl"
-            autocomplete="email"
-            required
-            class="flex-1 max-w-xs bg-[var(--surface)] border border-[var(--line)] text-[var(--fg)] placeholder-[var(--fg-muted)] text-base px-4 py-3 rounded-full focus:outline-none focus:border-[var(--accent)] transition-colors"
-          />
-          <button
-            type="submit"
-            class="bg-[var(--accent)] text-[var(--on-accent)] font-bold text-sm px-6 py-3 rounded-full  hover:scale-105 transition-all duration-200 whitespace-nowrap"
-          >
-            Suscribirme
-          </button>
-        </form>
-        <p class="text-xs text-[var(--fg-muted)] mt-4">Recibirás un correo de confirmación. Sin spam, solo contenido de valor.</p>
-      </div>
-    </section>
-
     </main>
 
                 <footer
@@ -610,18 +578,6 @@
         });
       })();
 
-      // 4. Subscribe Form → WhatsApp
-      (function() {
-        var form = document.getElementById('subscribe-form');
-        if (!form) return;
-        form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          var email = document.getElementById('subscribe-email').value.trim();
-          if (!email) return;
-          var msg = encodeURIComponent('Hola, quiero suscribirme al blog de Growth Buddies. Mi correo es: ' + email);
-          window.open('{{whatsapp}}?text=' + msg, '_blank', 'noopener,noreferrer');
-        });
-      })();
     </script>
 
     <script>

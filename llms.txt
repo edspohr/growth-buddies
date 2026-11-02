@@ -10,7 +10,7 @@ Last updated: 2026-11-01. Website: https://growthbuddies.cl
 - [DocFlow Buddy](https://growthbuddies.cl/docflow-buddy): document and case management with AI for law firms and companies that manage documents for their clients. Case intake, requirements per case type, AI document review, stage tracking with a control view, client portal, email notifications. From 60 UF + VAT.
 - [Agent Buddy Web](https://growthbuddies.cl/agent-buddy): AI assistant on the client's website, trained on their real processes. Fixed package, live in under a month, 30 days of implementation plus 60 days of support. From 20 UF + VAT.
 - [Agent Buddy a medida](https://growthbuddies.cl/agent-buddy): agents connected to the client's processes and systems, multichannel, with human handoff. From 50 UF + VAT.
-- [Diagnóstico de automatización](https://growthbuddies.cl/diagnostico): for companies unsure where to start. Fixed-price diagnostic of CLP 490,000 + VAT in 10 to 15 days, with prioritized opportunities and a working mockup, 100% deductible from an implementation contracted within 90 days.
+- [Diagnóstico de automatización](https://growthbuddies.cl/diagnostico): for companies unsure where to start. Fixed-price diagnostic of CLP 490,000 + VAT in 10 to 15 days, with prioritized opportunities and a working mockup, 100% deductible from an implementation or training contracted within 90 days.
 
 ## What the products do not include
 
