@@ -21,8 +21,12 @@ const allPages = readdirSync(path.join(ROOT, "public"), { recursive: true })
   .map((route) => (route.length > 1 ? route.replace(/\/$/, "") : route))
   .filter((route) => !SKIP.has(route));
 
+// Block analytics so checks against the live site do not count as visits.
+const TRACKERS = /googletagmanager|google-analytics|googleadservices|doubleclick|clarity\.ms/;
 const browser = await chromium.launch({ channel: "chrome" });
-const page = await (await browser.newContext({ viewport: { width: 1280, height: 800 } })).newPage();
+const context = await browser.newContext({ viewport: { width: 1280, height: 800 } });
+await context.route(TRACKERS, (route) => route.abort());
+const page = await context.newPage();
 const routes = paths.length ? paths : allPages;
 let total = 0;
 

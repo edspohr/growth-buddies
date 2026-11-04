@@ -91,3 +91,19 @@ Repo de trabajo: ~/dev/growth-buddies (fuera de iCloud). No usar ~/Documents/web
 | 2026-11-02 | Live | Reseñas: sin 5,0, botón a Google; ficha en vivo programada y apagada |
 | 2026-11-02 | Live | Revisión editorial: perfiles corregidos, 20 páginas retiradas con 301, países, metodología, nosotros y FAQ reescritos |
 | 2026-11-04 | Live | Google Ads cuenta solo formularios; el clic en WhatsApp queda como evento contact en GA4 |
+
+## Punto de partida para evaluar (registrado el 2026-11-04)
+
+Evaluar contra estas cifras a inicios de enero de 2027. El sitio quedó congelado el 2026-11-04.
+
+**Search Console, del 2026-08-02 al 2026-11-01 (3 meses):**
+- Clics: 130. Impresiones: 5.440. CTR medio: 2,4%. Posición media: 9,4.
+- Consultas principales: "growth buddies" (31 clics), "edmundo spohr" (7), "spi americas" (2), "rendicion de gastos" (2, posición 18,8).
+- Unos 35 de los 130 clics llegaron a páginas que hoy redirigen con 301. Las que más aportaban: /servicios/ia-corporativa (11), /soluciones/rendicion-gastos-ia (12, ya redirigida antes), el blog del chatbot (4) y el de legal tech (4).
+- Sitemap reenviado el 2026-11-04 con 28 URL.
+
+**GA4 (propiedad SitioWeb), últimos 90 días al 2026-11-04:**
+- Usuarios activos: 407. Usuarios nuevos: 414. Eventos: 2.200. Eventos clave: 1.
+- Ojo: la última semana está inflada por tráfico interno desde Valparaíso (Edmundo y pruebas automáticas). Desde el 2026-11-04 las pruebas automáticas bloquean la analítica.
+
+**Medición desde el 2026-11-04:** Google Ads cuenta solo los formularios enviados. El clic en WhatsApp queda como evento `contact` en GA4.

@@ -17,8 +17,11 @@ const routes = readdirSync(path.join(ROOT, "public"), { recursive: true })
   .filter((file) => file.endsWith("index.html") && !file.startsWith("admin"))
   .map((file) => "/" + file.replace(/(^|\/)index\.html$/, ""));
 
+// Block analytics so checks against the live site do not count as visits.
+const TRACKERS = /googletagmanager|google-analytics|googleadservices|doubleclick|clarity\.ms/;
 const browser = await chromium.launch({ channel: "chrome" });
 const context = await browser.newContext({ viewport: { width, height: 800 }, isMobile: true, hasTouch: true });
+await context.route(TRACKERS, (route) => route.abort());
 const page = await context.newPage();
 let overflowing = 0;
 

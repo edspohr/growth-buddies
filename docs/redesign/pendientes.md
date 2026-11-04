@@ -11,5 +11,6 @@ Solo cosas que dependen de usted. Lo resuelto se borra de esta lista.
 7. **Ficha en vivo.** Está programada y apagada. Para activarla, cargue en `src/cta.config.json` el Place ID `ChIJc9LuJtfiJyoRxm89vU9LUSI` y la clave de Google, después de revisar qué reseñas muestra Google.
 8. **Imágenes del perfil.** Subir las de `docs/perfil-google/`, con la portada cuadrada como primera opción.
 9. **Confirmar cifras.** El sitio mantiene +40 organizaciones, +20 proyectos, +500 personas y los resultados de SPI e Ingeglobal. Avise si alguna no se puede respaldar.
-10. **LinkedIn.** Su perfil aún ofrece USD 3.000, garantía, el diagnóstico rápido y WhatsApp +56 9 6586 3160, distinto del sitio. Actualícelo.
-11. **Search Console.** Revise en unas semanas las páginas retiradas por si alguna tenía tráfico relevante.
+10. **LinkedIn.** Ya se actualizaron "Acerca de" y la experiencia en Growth Buddies. Falta que revise el titular, que aún dice "Diagnóstico de Automatización con IA para empresas de servicios profesionales", y el teléfono en su información de contacto.
+11. **Search Console.** Revise en unas semanas las páginas retiradas por si alguna tenía tráfico relevante. El sitemap ya se reenvió.
+12. **GA4, tráfico interno.** En Administrar > Flujos de datos > Configurar etiqueta > Definir tráfico interno, agregue su IP y active el filtro, para que sus visitas no cuenten.
